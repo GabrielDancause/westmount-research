@@ -1,0 +1,146 @@
+---
+import BaseHead from '../layouts/BaseHead.astro';
+
+const studies = [
+  {
+    title: "S&P 500 PEG Ratio Rankings 2026",
+    subtitle: "Coming Soon",
+    slug: "#",
+    stat: "500",
+    statLabel: "companies ranked by valuation",
+    desc: "Every S&P 500 company ranked by PEG ratio — the metric that adjusts P/E for growth. Find the most undervalued stocks in the index.",
+    tag: "UPCOMING",
+  },
+  {
+    title: "Dividend Aristocrats: Yield, Payout & Growth",
+    subtitle: "Coming Soon",
+    slug: "#",
+    stat: "65+",
+    statLabel: "companies with 25yr+ dividend streaks",
+    desc: "Complete analysis of every Dividend Aristocrat — current yield, payout ratio, 5-year dividend growth rate, and sector breakdown.",
+    tag: "UPCOMING",
+  },
+  {
+    title: "Online Broker Fee Comparison 2026",
+    subtitle: "Coming Soon",
+    slug: "#",
+    stat: "25+",
+    statLabel: "brokers compared",
+    desc: "Commissions, margin rates, options fees, FX spreads, and account minimums across every major online broker.",
+    tag: "UPCOMING",
+  },
+  {
+    title: "ETF Expense Ratio Index 2026",
+    subtitle: "Coming Soon",
+    slug: "#",
+    stat: "100+",
+    statLabel: "ETFs ranked by true cost",
+    desc: "VOO vs SPY vs IVV — and 100+ more. Every major ETF's expense ratio, tracking error, and AUM side by side.",
+    tag: "UPCOMING",
+  },
+  {
+    title: "Sector P/E Ratios 2026",
+    subtitle: "Coming Soon",
+    slug: "#",
+    stat: "11",
+    statLabel: "GICS sectors analyzed",
+    desc: "Average P/E ratio by sector with historical comparison. Which sectors are overvalued? Which are trading below their 10-year average?",
+    tag: "UPCOMING",
+  },
+  {
+    title: "Stock Buyback Leaders 2026",
+    subtitle: "Coming Soon",
+    slug: "#",
+    stat: "$1T+",
+    statLabel: "in annual buybacks tracked",
+    desc: "Companies repurchasing the most shares — buyback yield, impact on EPS, and whether it's creating or destroying value.",
+    tag: "UPCOMING",
+  },
+];
+---
+<html lang="en">
+<head>
+  <BaseHead />
+  <title>Westmount Research — Equity Research & Market Data</title>
+  <meta name="description" content="Independent equity research. PEG ratios, dividend analysis, broker comparisons, and sector valuations — data-driven, no fluff." />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', -apple-system, sans-serif; background: #060a12; color: #c8d0de; }
+
+    .hero { text-align: center; padding: 100px 24px 70px; background: linear-gradient(180deg, #0a1628 0%, #060a12 100%); position: relative; }
+    .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 50% 40%, rgba(13,71,161,0.08) 0%, transparent 60%); }
+    .hero-content { position: relative; z-index: 1; }
+    .hero h1 { font-size: 3rem; font-weight: 900; letter-spacing: -1.5px; margin-bottom: 8px; color: #fff; }
+    .hero .tagline { color: #4a6fa5; font-size: 0.85rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 16px; }
+    .hero p { color: #5a6a80; font-size: 1.05rem; max-width: 520px; margin: 0 auto; line-height: 1.6; }
+
+    /* Sections */
+    .section-container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+    .section-header { text-align: center; margin-bottom: 32px; padding-top: 20px; }
+    .section-tag { display: inline-block; background: #0d1a2e; color: #4a8fe7; font-size: 0.7rem; font-weight: 800; padding: 4px 14px; border-radius: 20px; letter-spacing: 1px; margin-bottom: 12px; }
+    .section-title { font-size: 1.8rem; font-weight: 900; color: #fff; margin-bottom: 6px; letter-spacing: -0.5px; }
+    .section-sub { color: #4a5568; font-size: 0.9rem; }
+
+    /* Studies */
+    .studies-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 18px; margin-bottom: 60px; }
+    .study-card { background: linear-gradient(135deg, #0a1020 0%, #0d1428 100%); border: 1px solid #152040; border-radius: 16px; padding: 28px 24px; text-decoration: none; color: inherit; display: block; transition: border-color 0.3s, transform 0.2s; position: relative; overflow: hidden; }
+    .study-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, #0D47A1, #1976D2); opacity: 0; transition: opacity 0.3s; }
+    .study-card:hover { border-color: #1976D2; transform: translateY(-2px); }
+    .study-card:hover::before { opacity: 1; }
+    .study-tag { display: inline-block; background: rgba(25,118,210,0.1); color: #4a8fe7; font-size: 0.58rem; font-weight: 800; padding: 3px 10px; border-radius: 12px; letter-spacing: 0.8px; margin-bottom: 14px; }
+    .study-stat { margin-bottom: 14px; }
+    .stat-number { display: block; font-size: 2.2rem; font-weight: 900; color: #4a8fe7; line-height: 1; letter-spacing: -1px; }
+    .stat-label { display: block; font-size: 0.78rem; color: #4a5568; margin-top: 4px; }
+    .study-title { font-size: 1.05rem; font-weight: 800; color: #e0e8f0; margin-bottom: 4px; }
+    .study-subtitle { font-size: 0.75rem; color: #4a8fe7; margin-bottom: 10px; font-weight: 600; }
+    .study-desc { font-size: 0.82rem; color: #5a6a80; line-height: 1.6; }
+
+    .footer { text-align: center; padding: 50px 24px; font-size: 0.75rem; color: #253040; border-top: 1px solid #101828; }
+    .footer a { color: #4a8fe7; text-decoration: none; }
+    .footer .disclaimer { max-width: 600px; margin: 12px auto 0; color: #1e2a3a; font-size: 0.68rem; line-height: 1.5; }
+
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 2.2rem; }
+      .hero { padding: 70px 20px 50px; }
+      .studies-grid { grid-template-columns: 1fr; }
+      .stat-number { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="hero">
+  <div class="hero-content">
+    <div class="tagline">Independent Equity Research</div>
+    <h1>Westmount Research</h1>
+    <p>Data-driven market analysis. PEG ratios, dividend fundamentals, sector valuations, and broker comparisons — no fluff, no paywalls.</p>
+  </div>
+</div>
+
+<div class="section-container">
+  <div class="section-header">
+    <span class="section-tag">📊 RESEARCH</span>
+    <h2 class="section-title">Studies</h2>
+    <p class="section-sub">Original data. Crawled, compiled, ranked.</p>
+  </div>
+  <div class="studies-grid">
+    {studies.map(s => (
+      <a class="study-card" href={s.slug}>
+        <span class="study-tag">{s.tag}</span>
+        <div class="study-stat">
+          <span class="stat-number">{s.stat}</span>
+          <span class="stat-label">{s.statLabel}</span>
+        </div>
+        <h3 class="study-title">{s.title}</h3>
+        <p class="study-subtitle">{s.subtitle}</p>
+        <p class="study-desc">{s.desc}</p>
+      </a>
+    ))}
+  </div>
+</div>
+
+<div class="footer">
+  © 2026 <a href="/">Westmount Research</a> · A <a href="https://gab.ae">GAB Ventures</a> property
+  <div class="disclaimer">This site provides data and analysis for informational purposes only. Nothing here constitutes investment advice. Do your own research.</div>
+</div>
+</body>
+</html>
