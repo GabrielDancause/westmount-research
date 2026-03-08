@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ETF Expense Ratio Index 2026 — Westmount Research</title>
+<meta name="description" content="Compare expense ratios of 86 major ETFs across all categories. Find the cheapest S&P 500, bond, international, and dividend ETFs. Updated March 2026.">
+<link rel="canonical" href="https://westmountresearch.com/etf-expense-ratios">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "ETF Expense Ratio Index 2026",
+  "description": "Compare expense ratios of 86 major ETFs across all categories. Find the cheapest S&P 500, bond, international, and dividend ETFs.",
+  "datePublished": "2026-03-09",
+  "dateModified": "2026-03-09",
+  "author": {"@type": "Organization", "name": "Westmount Research"},
+  "publisher": {"@type": "Organization", "name": "Westmount Research", "url": "https://westmountresearch.com"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "What is the cheapest S&P 500 ETF?", "acceptedAnswer": {"@type": "Answer", "text": "SPLG (SPDR Portfolio S&P 500 ETF) is the cheapest S&P 500 ETF with an expense ratio of just 0.02%. VOO and IVV are tied at 0.03%. SPY, the original and most liquid, charges 0.0945%."}},
+    {"@type": "Question", "name": "Does expense ratio really matter?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. On a $100,000 portfolio over 30 years, the difference between a 0.03% and a 0.50% expense ratio is approximately $14,000 in lost returns (assuming 7% annual growth). For passive index funds tracking the same benchmark, lower expense ratios directly translate to higher net returns."}},
+    {"@type": "Question", "name": "VOO vs SPY which is better?", "acceptedAnswer": {"@type": "Answer", "text": "Both track the S&P 500. VOO charges 0.03% vs SPY's 0.0945%. For buy-and-hold investors, VOO saves ~$65/year per $100,000 invested. SPY has tighter spreads and higher volume, making it preferred by active traders. For long-term holding, VOO is the better choice."}},
+    {"@type": "Question", "name": "What is the average ETF expense ratio?", "acceptedAnswer": {"@type": "Answer", "text": "Across our index of 86 major ETFs, the average expense ratio is 0.164% and the median is 0.09%. Broad-market index funds average around 0.03-0.05%, while thematic and actively managed ETFs average 0.35-0.75%. The industry trend is strongly toward lower fees."}},
+    {"@type": "Question", "name": "Which ETF provider has the lowest fees?", "acceptedAnswer": {"@type": "Answer", "text": "Schwab and Vanguard offer the lowest average expense ratios. Schwab averages 0.046% across 8 ETFs, while Vanguard averages 0.055% across 17 ETFs. SPDR's Portfolio line (SPLG, SPTM, SPYG, SPYV) competes at 0.02-0.04%, though their legacy products like SPY and GLD are pricier."}}
+  ]
+}
+</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#060a12;--card:#0a1020;--border:#152040;--accent:#4a8fe7;--text:#e0e6f0;--muted:#8892a8;--green:#34d399;--red:#f87171;--yellow:#fbbf24}
+body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-serif;line-height:1.6;min-height:100vh}
+.container{max-width:1200px;margin:0 auto;padding:0 20px}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* Header */
+header{padding:40px 0 20px;border-bottom:1px solid var(--border)}
+.badge{display:inline-block;background:var(--accent);color:#fff;font-size:11px;font-weight:700;letter-spacing:1.5px;padding:4px 12px;border-radius:3px;text-transform:uppercase;margin-bottom:12px}
+header h1{font-size:clamp(28px,4vw,42px);font-weight:800;line-height:1.15;margin-bottom:8px}
+header p.subtitle{color:var(--muted);font-size:18px;max-width:700px}
+.meta{color:var(--muted);font-size:13px;margin-top:12px;font-family:'JetBrains Mono',monospace}
+
+/* Stats row */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin:32px 0}
+.stat{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:20px;text-align:center}
+.stat .val{font-size:32px;font-weight:800;color:var(--accent);font-family:'JetBrains Mono',monospace}
+.stat .label{font-size:13px;color:var(--muted);margin-top:4px}
+
+/* Chart */
+.chart-section{margin:32px 0}
+.chart-section h2{font-size:22px;margin-bottom:16px}
+.chart-wrap{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:24px;overflow-x:auto}
+.bar-row{display:flex;align-items:center;margin-bottom:6px;font-size:13px}
+.bar-label{width:55px;text-align:right;margin-right:10px;font-family:'JetBrains Mono',monospace;color:var(--muted);flex-shrink:0}
+.bar{height:22px;border-radius:3px;display:flex;align-items:center;padding-left:8px;font-size:11px;font-weight:600;min-width:2px;color:#fff;font-family:'JetBrains Mono',monospace;transition:opacity .2s}
+.bar:hover{opacity:.85}
+.bar-name{margin-left:8px;color:var(--muted);font-size:11px;font-family:'Inter',sans-serif;white-space:nowrap}
+
+/* Findings */
+.findings{margin:32px 0}
+.findings h2{font-size:22px;margin-bottom:16px}
+.finding-card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:20px;margin-bottom:12px}
+.finding-card h3{font-size:16px;margin-bottom:6px;color:var(--accent)}
+.finding-card p{color:var(--muted);font-size:14px}
+
+/* Table */
+.table-section{margin:32px 0}
+.table-section h2{font-size:22px;margin-bottom:12px}
+.controls{display:flex;gap:12px;margin-bottom:16px;flex-wrap:wrap}
+.controls select,.controls input{background:var(--card);border:1px solid var(--border);color:var(--text);padding:8px 12px;border-radius:6px;font-size:14px;font-family:'Inter',sans-serif}
+.controls input{min-width:200px}
+.table-wrap{overflow-x:auto;border-radius:8px;border:1px solid var(--border)}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{background:#0c1428;color:var(--muted);font-weight:600;text-transform:uppercase;font-size:11px;letter-spacing:.5px;padding:12px 14px;text-align:left;cursor:pointer;white-space:nowrap;border-bottom:1px solid var(--border);user-select:none;position:sticky;top:0}
+th:hover{color:var(--accent)}
+th.sorted-asc::after{content:' ▲';color:var(--accent)}
+th.sorted-desc::after{content:' ▼';color:var(--accent)}
+td{padding:10px 14px;border-bottom:1px solid var(--border);white-space:nowrap}
+tr:hover{background:rgba(74,143,231,.06)}
+.ticker{font-family:'JetBrains Mono',monospace;font-weight:600;color:var(--accent)}
+.er-low{color:var(--green)}
+.er-mid{color:var(--yellow)}
+.er-high{color:var(--red)}
+.num{font-family:'JetBrains Mono',monospace;text-align:right}
+
+/* Issuer comparison */
+.issuer-section{margin:32px 0}
+.issuer-section h2{font-size:22px;margin-bottom:16px}
+.issuer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.issuer-card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:16px}
+.issuer-card h3{font-size:15px;margin-bottom:8px}
+.issuer-card .avg{font-family:'JetBrains Mono',monospace;font-size:24px;font-weight:700}
+.issuer-card .detail{font-size:12px;color:var(--muted);margin-top:4px}
+
+/* FAQ */
+.faq-section{margin:32px 0}
+.faq-section h2{font-size:22px;margin-bottom:16px}
+.faq-item{background:var(--card);border:1px solid var(--border);border-radius:8px;margin-bottom:10px;overflow:hidden}
+.faq-q{padding:16px 20px;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center}
+.faq-q:hover{color:var(--accent)}
+.faq-q::after{content:'+';font-size:20px;color:var(--muted);transition:transform .2s}
+.faq-item.open .faq-q::after{transform:rotate(45deg);color:var(--accent)}
+.faq-a{padding:0 20px 16px;color:var(--muted);font-size:14px;line-height:1.7;display:none}
+.faq-item.open .faq-a{display:block}
+
+/* Methodology */
+.methodology{margin:32px 0;background:var(--card);border:1px solid var(--border);border-radius:8px;padding:24px}
+.methodology h2{font-size:18px;margin-bottom:12px}
+.methodology p{color:var(--muted);font-size:14px;margin-bottom:10px;line-height:1.7}
+
+/* Citation */
+.citation{margin:32px 0;background:var(--card);border:1px solid var(--border);border-radius:8px;padding:20px}
+.citation h3{font-size:14px;margin-bottom:8px;color:var(--muted)}
+.citation code{display:block;background:var(--bg);padding:14px;border-radius:6px;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted);white-space:pre-wrap;word-break:break-all}
+
+/* Disclaimer */
+.disclaimer{margin:20px 0;padding:16px;border:1px solid var(--border);border-radius:8px;font-size:12px;color:var(--muted);text-align:center;font-style:italic}
+
+/* Footer */
+footer{border-top:1px solid var(--border);padding:24px 0;text-align:center;color:var(--muted);font-size:13px;margin-top:40px}
+
+@media(max-width:640px){
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .controls{flex-direction:column}
+  .controls input,.controls select{width:100%}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <div class="badge">Original Research</div>
+  <h1>ETF Expense Ratio Index 2026</h1>
+  <p class="subtitle">86 ETFs compared by cost — find the cheapest funds for every investment strategy</p>
+  <div class="meta">Published March 9, 2026 · Data from fund prospectuses</div>
+</header>
+
+<div class="stats" id="stats"></div>
+
+<div class="chart-section">
+  <h2>Expense Ratios: Cheapest to Most Expensive</h2>
+  <div class="chart-wrap" id="chart"></div>
+</div>
+
+<div class="issuer-section">
+  <h2>Average Expense Ratio by Provider</h2>
+  <div class="issuer-grid" id="issuers"></div>
+</div>
+
+<div class="findings">
+  <h2>Key Findings</h2>
+  <div id="findings"></div>
+</div>
+
+<div class="table-section">
+  <h2>Full ETF Comparison Table</h2>
+  <div class="controls">
+    <input type="text" id="search" placeholder="Search by ticker or name…">
+    <select id="catFilter">
+      <option value="">All Categories</option>
+      <option value="US Equity">US Equity</option>
+      <option value="International">International</option>
+      <option value="Bond">Bond</option>
+      <option value="Sector">Sector</option>
+      <option value="Thematic">Thematic</option>
+      <option value="Dividend">Dividend</option>
+      <option value="Commodity">Commodity</option>
+    </select>
+    <select id="issuerFilter">
+      <option value="">All Issuers</option>
+    </select>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th data-key="ticker">Ticker</th>
+          <th data-key="name">Fund Name</th>
+          <th data-key="issuer">Issuer</th>
+          <th data-key="expenseRatio" data-type="num">Expense Ratio</th>
+          <th data-key="aumB" data-type="num">AUM ($B)</th>
+          <th data-key="category">Category</th>
+          <th data-key="dividendYield" data-type="num">Div Yield</th>
+          <th data-key="index">Index Tracked</th>
+          <th data-key="inceptionYear" data-type="num">Inception</th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+  </div>
+</div>
+
+<div class="faq-section">
+  <h2>Frequently Asked Questions</h2>
+  <div id="faq"></div>
+</div>
+
+<div class="methodology">
+  <h2>Methodology</h2>
+  <p>Expense ratios were sourced from official fund prospectuses filed with the SEC and verified against issuer websites (Vanguard, iShares/BlackRock, SPDR/State Street, Schwab, Invesco, and others). AUM figures are approximate as of Q1 2026 and may fluctuate with market conditions and fund flows.</p>
+  <p>This index covers 86 of the most widely held ETFs across seven categories: US Equity, International, Bond, Sector, Thematic, Dividend, and Commodity. ETFs were selected based on AUM, trading volume, and investor relevance. All data is publicly available from official fund documentation.</p>
+  <p>Expense ratios represent the total annual fund operating expenses as a percentage of assets. They are deducted from fund returns automatically and reduce the net asset value over time. Lower expense ratios directly benefit long-term investors.</p>
+</div>
+
+<div class="citation">
+  <h3>Cite this research</h3>
+  <code>Westmount Research. "ETF Expense Ratio Index 2026." Published March 9, 2026. https://westmountresearch.com/etf-expense-ratios</code>
+</div>
+
+<div class="disclaimer">This site provides data for informational purposes only. Not investment advice.</div>
+
+<footer>© 2026 Westmount Research · A GAB Ventures property</footer>
+</div>
+
+<script>
+const DATA = {"crawlDate": "2026-03-09", "methodology": "Expense ratios sourced from fund prospectuses and verified against issuer websites (Vanguard, iShares/BlackRock, SPDR/State Street, Schwab, Invesco). AUM figures are approximate as of Q1 2026. All data is publicly available from official fund documentation.", "totalEtfs": 86, "results": [{"ticker": "SPLG", "name": "SPDR Portfolio S&P 500 ETF", "issuer": "SPDR", "category": "US Equity", "index": "S&P 500", "expenseRatio": 0.02, "aumB": 48, "dividendYield": 1.3, "inceptionYear": 2005, "avgVolume": null, "ytdReturn": null}, {"ticker": "VOO", "name": "Vanguard S&P 500 ETF", "issuer": "Vanguard", "category": "US Equity", "index": "S&P 500", "expenseRatio": 0.03, "aumB": 560, "dividendYield": 1.3, "inceptionYear": 2010, "avgVolume": null, "ytdReturn": null}, {"ticker": "IVV", "name": "iShares Core S&P 500 ETF", "issuer": "iShares", "category": "US Equity", "index": "S&P 500", "expenseRatio": 0.03, "aumB": 530, "dividendYield": 1.3, "inceptionYear": 2000, "avgVolume": null, "ytdReturn": null}, {"ticker": "VTI", "name": "Vanguard Total Stock Market ETF", "issuer": "Vanguard", "category": "US Equity", "index": "CRSP US Total Market", "expenseRatio": 0.03, "aumB": 430, "dividendYield": 1.3, "inceptionYear": 2001, "avgVolume": null, "ytdReturn": null}, {"ticker": "ITOT", "name": "iShares Core S&P Total US Stock Market ETF", "issuer": "iShares", "category": "US Equity", "index": "S&P Total Market", "expenseRatio": 0.03, "aumB": 65, "dividendYield": 1.2, "inceptionYear": 2004, "avgVolume": null, "ytdReturn": null}, {"ticker": "SPTM", "name": "SPDR Portfolio S&P 1500 Composite Stock Market ETF", "issuer": "SPDR", "category": "US Equity", "index": "S&P Composite 1500", "expenseRatio": 0.03, "aumB": 10, "dividendYield": 1.3, "inceptionYear": 2000, "avgVolume": null, "ytdReturn": null}, {"ticker": "BND", "name": "Vanguard Total Bond Market ETF", "issuer": "Vanguard", "category": "Bond", "index": "Bloomberg US Aggregate", "expenseRatio": 0.03, "aumB": 115, "dividendYield": 4.3, "inceptionYear": 2007, "avgVolume": null, "ytdReturn": null}, {"ticker": "AGG", "name": "iShares Core US Aggregate Bond ETF", "issuer": "iShares", "category": "Bond", "index": "Bloomberg US Aggregate", "expenseRatio": 0.03, "aumB": 115, "dividendYield": 4.2, "inceptionYear": 2003, "avgVolume": null, "ytdReturn": null}, {"ticker": "SCHB", "name": "Schwab US Broad Market ETF", "issuer": "Schwab", "category": "US Equity", "index": "Dow Jones US Broad Stock Market", "expenseRatio": 0.03, "aumB": 28, "dividendYield": 1.3, "inceptionYear": 2009, "avgVolume": null, "ytdReturn": null}, {"ticker": "SCHZ", "name": "Schwab US Aggregate Bond ETF", "issuer": "Schwab", "category": "Bond", "index": "Bloomberg US Aggregate", "expenseRatio": 0.03, "aumB": 8, "dividendYield": 4.1, "inceptionYear": 2011, "avgVolume": null, "ytdReturn": null}, {"ticker": "SCHG", "name": "Schwab US Large-Cap Growth ETF", "issuer": "Schwab", "category": "US Equity", "index": "Dow Jones US Large-Cap Growth Total Stock Market", "expenseRatio": 0.04, "aumB": 35, "dividendYield": 0.4, "inceptionYear": 2009, "avgVolume": null, "ytdReturn": null}, {"ticker": "SCHV", "name": "Schwab US Large-Cap Value ETF", "issuer": "Schwab", "category": "US Equity", "index": "Dow Jones US Large-Cap Value Total Stock Market", "expenseRatio": 0.04, "aumB": 12, "dividendYield": 2.3, "inceptionYear": 2009, "avgVolume": null, "ytdReturn": null}, {"ticker": "SCHA", "name": "Schwab US Small-Cap ETF", "issuer": "Schwab", "category": "US Equity", "index": "Dow Jones US Small-Cap Total Stock Market", "expenseRatio": 0.04, "aumB": 16, "dividendYield": 1.3, "inceptionYear": 2009, "avgVolume": null, "ytdReturn": null}, {"ticker": "SPYG", "name": "SPDR Portfolio S&P 500 Growth ETF", "issuer": "SPDR", "category": "US Equity", "index": "S&P 500 Growth", "expenseRatio": 0.04, "aumB": 28, "dividendYield": 0.7, "inceptionYear": 2000, "avgVolume": null, "ytdReturn": null}, {"ticker": "SPYV", "name": "SPDR Portfolio S&P 500 Value ETF", "issuer": "SPDR", "category": "US Equity", "index": "S&P 500 Value", "expenseRatio": 0.04, "aumB": 22, "dividendYield": 2.2, "inceptionYear": 2000, "avgVolume": null, "ytdReturn": null}, {"ticker": "VUG", "name": "Vanguard Growth ETF", "issuer": "Vanguard", "category": "US Equity", "index": "CRSP US Large Cap Growth", "expenseRatio": 0.04, "aumB": 130, "dividendYield": 0.5, "inceptionYear": 2004, "avgVolume": null, "ytdReturn": null}, {"ticker": "VTV", "name": "Vanguard Value ETF", "issuer": "Vanguard", "category": "US Equity", "index": "CRSP US Large Cap Value", "expenseRatio": 0.04, "aumB": 115, "dividendYield": 2.4, "inceptionYear": 2004, "avgVolume": null, "ytdReturn": null}, {"ticker": "VO", "name": "Vanguard Mid-Cap ETF", "issuer": "Vanguard", "category": "US Equity", "index": "CRSP US Mid Cap", "expenseRatio": 0.04, "aumB": 60, "dividendYield": 1.4, "inceptionYear": 2004, "avgVolume": null, "ytdReturn": null}, {"ticker": "VCIT", "name": "Vanguard Intermediate-Term Corporate Bond ETF", "issuer": "Vanguard", "category": "Bond", "index": "Bloomberg US 5-10 Year Corporate", "expenseRatio": 0.04, "aumB": 50, "dividendYield": 4.8, "inceptionYear": 2009, "avgVolume": null, "ytdReturn": null}, {"ticker": "VGSH", "name": "Vanguard Short-Term Treasury ETF", "issuer": "Vanguard", "category": "Bond", "index": "Bloomberg US Treasury 1-3 Year", "expenseRatio": 0.04, "aumB": 22, "dividendYield": 4.1, "inceptionYear": 2009, "avgVolume": null, "ytdReturn": null}, {"ticker": "VB", "name": "Vanguard Small-Cap ETF", "issuer": "Vanguard", "category": "US Equity", "index": "CRSP US Small Cap", "expenseRatio": 0.05, "aumB": 55, "dividendYield": 1.5, "inceptionYear": 2004, "avgVolume": null, "ytdReturn": null}, {"ticker": "VIG", "name": "Vanguard Dividend Appreciation ETF", "issuer": "Vanguard", "category": "Dividend", "index": "S&P US Dividend Growers", "expenseRatio": 0.05, "aumB": 90, "dividendYield": 1.7, "inceptionYear": 2006, "avgVolume": null, "ytdReturn": null}, {"ticker": "IJH", "name": "iShares Core S&P Mid-Cap ETF", "issuer": "iShares", "category": "US Equity", "index": "S&P MidCap 400", "expenseRatio": 0.05, "aumB": 80, "dividendYield": 1.4, "inceptionYear": 2000, "avgVolume": null, "ytdReturn": null}, {"ticker": "VEA", "name": "Vanguard FTSE Developed Markets ETF", "issuer": "Vanguard", "category": "International", "index": "FTSE Developed All Cap ex US", "expenseRatio": 0.05, "aumB": 120, "dividendYield": 3.0, "inceptionYear": 2007, "avgVolume": null, "ytdReturn": null}, {"ticker": "SCHF", "name": "Schwab International Equity ETF", "issuer": "Schwab", "category": "International", "index": "FTSE Developed ex US", "expenseRatio": 0.06, "aumB": 35, "dividendYield": 2.9, "inceptionYear": 2009, "avgVolume": null, "ytdReturn": null}, {"ticker": "SCHD", "name": "Schwab US Dividend Equity ETF", "issuer": "Schwab", "category": "Dividend", "index": "Dow Jones US Dividend 100", "expenseRatio": 0.06, "aumB": 65, "dividendYield": 3.4, "inceptionYear": 2011, "avgVolume": null, "ytdReturn": null}, {"ticker": "IJR", "name": "iShares Core S&P Small-Cap ETF", "issuer": "iShares", "category": "US Equity", "index": "S&P SmallCap 600", "expenseRatio": 0.06, "aumB": 80, "dividendYield": 1.4, "inceptionYear": 2000, "avgVolume": null, "ytdReturn": null}, {"ticker": "VYM", "name": "Vanguard High Dividend Yield ETF", "issuer": "Vanguard", "category": "Dividend", "index": "FTSE High Dividend Yield", "expenseRatio": 0.06, "aumB": 55, "dividendYield": 2.8, "inceptionYear": 2006, "avgVolume": null, "ytdReturn": null}, {"ticker": "VXUS", "name": "Vanguard Total International Stock ETF", "issuer": "Vanguard", "category": "International", "index": "FTSE Global All Cap ex US", "expenseRatio": 0.07, "aumB": 75, "dividendYield": 2.9, "inceptionYear": 2011, "avgVolume": null, "ytdReturn": null}, {"ticker": "IXUS", "name": "iShares Core MSCI Total International Stock ETF", "issuer": "iShares", "category": "International", "index": "MSCI ACWI ex USA", "expenseRatio": 0.07, "aumB": 38, "dividendYield": 2.8, "inceptionYear": 2012, "avgVolume": null, "ytdReturn": null}, {"ticker": "IEFA", "name": "iShares Core MSCI EAFE ETF", "issuer": "iShares", "category": "International", "index": "MSCI EAFE IMI", "expenseRatio": 0.07, "aumB": 120, "dividendYield": 2.8, "inceptionYear": 2012, "avgVolume": null, "ytdReturn": null}, {"ticker": "MUB", "name": "iShares National Muni Bond ETF", "issuer": "iShares", "category": "Bond", "index": "S&P National AMT-Free Municipal Bond", "expenseRatio": 0.07, "aumB": 35, "dividendYield": 3.2, "inceptionYear": 2007, "avgVolume": null, "ytdReturn": null}, {"ticker": "MGK", "name": "Vanguard Mega Cap Growth ETF", "issuer": "Vanguard", "category": "US Equity", "index": "CRSP US Mega Cap Growth", "expenseRatio": 0.07, "aumB": 18, "dividendYield": 0.4, "inceptionYear": 2007, "avgVolume": null, "ytdReturn": null}, {"ticker": "SCHH", "name": "Schwab US REIT ETF", "issuer": "Schwab", "category": "Sector", "index": "Dow Jones Equity All REIT Capped", "expenseRatio": 0.07, "aumB": 7, "dividendYield": 3.5, "inceptionYear": 2011, "avgVolume": null, "ytdReturn": null}, {"ticker": "VWO", "name": "Vanguard FTSE Emerging Markets ETF", "issuer": "Vanguard", "category": "International", "index": "FTSE Emerging Markets", "expenseRatio": 0.08, "aumB": 37, "dividendYield": 3.2, "inceptionYear": 2005, "avgVolume": null, "ytdReturn": null}, {"ticker": "HDV", "name": "iShares Core High Dividend ETF", "issuer": "iShares", "category": "Dividend", "index": "Morningstar Dividend Yield Focus", "expenseRatio": 0.08, "aumB": 10, "dividendYield": 3.5, "inceptionYear": 2011, "avgVolume": null, "ytdReturn": null}, {"ticker": "DGRO", "name": "iShares Core Dividend Growth ETF", "issuer": "iShares", "category": "Dividend", "index": "Morningstar US Dividend Growth", "expenseRatio": 0.08, "aumB": 28, "dividendYield": 2.2, "inceptionYear": 2014, "avgVolume": null, "ytdReturn": null}, {"ticker": "XLK", "name": "Technology Select Sector SPDR Fund", "issuer": "SPDR", "category": "Sector", "index": "Technology Select Sector", "expenseRatio": 0.09, "aumB": 70, "dividendYield": 0.6, "inceptionYear": 1998, "avgVolume": null, "ytdReturn": null}, {"ticker": "XLF", "name": "Financial Select Sector SPDR Fund", "issuer": "SPDR", "category": "Sector", "index": "Financial Select Sector", "expenseRatio": 0.09, "aumB": 45, "dividendYield": 1.6, "inceptionYear": 1998, "avgVolume": null, "ytdReturn": null}, {"ticker": "XLV", "name": "Health Care Select Sector SPDR Fund", "issuer": "SPDR", "category": "Sector", "index": "Health Care Select Sector", "expenseRatio": 0.09, "aumB": 37, "dividendYield": 1.5, "inceptionYear": 1998, "avgVolume": null, "ytdReturn": null}, {"ticker": "XLE", "name": "Energy Select Sector SPDR Fund", "issuer": "SPDR", "category": "Sector", "index": "Energy Select Sector", "expenseRatio": 0.09, "aumB": 35, "dividendYield": 3.3, "inceptionYear": 1998, "avgVolume": null, "ytdReturn": null}, {"ticker": "XLI", "name": "Industrial Select Sector SPDR Fund", "issuer": "SPDR", "category": "Sector", "index": "Industrial Select Sector", "expenseRatio": 0.09, "aumB": 20, "dividendYield": 1.5, "inceptionYear": 1998, "avgVolume": null, "ytdReturn": null}, {"ticker": "XLY", "name": "Consumer Discretionary Select Sector SPDR Fund", "issuer": "SPDR", "category": "Sector", "index": "Consumer Discretionary Select Sector", "expenseRatio": 0.09, "aumB": 20, "dividendYield": 0.8, "inceptionYear": 1998, "avgVolume": null, "ytdReturn": null}, {"ticker": "XLP", "name": "Consumer Staples Select Sector SPDR Fund", "issuer": "SPDR", "category": "Sector", "index": "Consumer Staples Select Sector", "expenseRatio": 0.09, "aumB": 17, "dividendYield": 2.6, "inceptionYear": 1998, "avgVolume": null, "ytdReturn": null}, {"ticker": "XLU", "name": "Utilities Select Sector SPDR Fund", "issuer": "SPDR", "category": "Sector", "index": "Utilities Select Sector", "expenseRatio": 0.09, "aumB": 15, "dividendYield": 3.0, "inceptionYear": 1998, "avgVolume": null, "ytdReturn": null}, {"ticker": "XLB", "name": "Materials Select Sector SPDR Fund", "issuer": "SPDR", "category": "Sector", "index": "Materials Select Sector", "expenseRatio": 0.09, "aumB": 5, "dividendYield": 1.8, "inceptionYear": 1998, "avgVolume": null, "ytdReturn": null}, {"ticker": "XLRE", "name": "Real Estate Select Sector SPDR Fund", "issuer": "SPDR", "category": "Sector", "index": "Real Estate Select Sector", "expenseRatio": 0.09, "aumB": 6, "dividendYield": 3.4, "inceptionYear": 2015, "avgVolume": null, "ytdReturn": null}, {"ticker": "XLC", "name": "Communication Services Select Sector SPDR Fund", "issuer": "SPDR", "category": "Sector", "index": "Communication Services Select Sector", "expenseRatio": 0.09, "aumB": 18, "dividendYield": 0.7, "inceptionYear": 2018, "avgVolume": null, "ytdReturn": null}, {"ticker": "IEMG", "name": "iShares Core MSCI Emerging Markets ETF", "issuer": "iShares", "category": "International", "index": "MSCI Emerging Markets IMI", "expenseRatio": 0.09, "aumB": 28, "dividendYield": 2.5, "inceptionYear": 2012, "avgVolume": null, "ytdReturn": null}, {"ticker": "SPY", "name": "SPDR S&P 500 ETF Trust", "issuer": "SPDR", "category": "US Equity", "index": "S&P 500", "expenseRatio": 0.0945, "aumB": 590, "dividendYield": 1.2, "inceptionYear": 1993, "avgVolume": null, "ytdReturn": null}, {"ticker": "VGT", "name": "Vanguard Information Technology ETF", "issuer": "Vanguard", "category": "Sector", "index": "MSCI US IMI Information Technology 25/50", "expenseRatio": 0.1, "aumB": 80, "dividendYield": 0.6, "inceptionYear": 2004, "avgVolume": null, "ytdReturn": null}, {"ticker": "GLDM", "name": "SPDR Gold MiniShares Trust", "issuer": "SPDR", "category": "Commodity", "index": "Gold Spot Price", "expenseRatio": 0.1, "aumB": 9, "dividendYield": null, "inceptionYear": 2018, "avgVolume": null, "ytdReturn": null}, {"ticker": "VNQ", "name": "Vanguard Real Estate ETF", "issuer": "Vanguard", "category": "Sector", "index": "MSCI US IMI Real Estate 25/50", "expenseRatio": 0.12, "aumB": 35, "dividendYield": 3.8, "inceptionYear": 2004, "avgVolume": null, "ytdReturn": null}, {"ticker": "BIL", "name": "SPDR Bloomberg 1-3 Month T-Bill ETF", "issuer": "SPDR", "category": "Bond", "index": "Bloomberg 1-3 Month US Treasury Bill", "expenseRatio": 0.1356, "aumB": 35, "dividendYield": 5.0, "inceptionYear": 2007, "avgVolume": null, "ytdReturn": null}, {"ticker": "LQD", "name": "iShares iBoxx $ Investment Grade Corporate Bond ETF", "issuer": "iShares", "category": "Bond", "index": "iBoxx USD Liquid IG", "expenseRatio": 0.14, "aumB": 32, "dividendYield": 4.9, "inceptionYear": 2002, "avgVolume": null, "ytdReturn": null}, {"ticker": "TLT", "name": "iShares 20+ Year Treasury Bond ETF", "issuer": "iShares", "category": "Bond", "index": "ICE US Treasury 20+ Year", "expenseRatio": 0.15, "aumB": 55, "dividendYield": 4.4, "inceptionYear": 2002, "avgVolume": null, "ytdReturn": null}, {"ticker": "SHY", "name": "iShares 1-3 Year Treasury Bond ETF", "issuer": "iShares", "category": "Bond", "index": "ICE US Treasury 1-3 Year", "expenseRatio": 0.15, "aumB": 25, "dividendYield": 3.9, "inceptionYear": 2002, "avgVolume": null, "ytdReturn": null}, {"ticker": "QQQM", "name": "Invesco Nasdaq 100 ETF", "issuer": "Invesco", "category": "Thematic", "index": "Nasdaq-100", "expenseRatio": 0.15, "aumB": 35, "dividendYield": 0.5, "inceptionYear": 2020, "avgVolume": null, "ytdReturn": null}, {"ticker": "AOR", "name": "iShares Core Growth Allocation ETF", "issuer": "iShares", "category": "US Equity", "index": "S&P Target Risk Growth", "expenseRatio": 0.15, "aumB": 1.8, "dividendYield": 2.5, "inceptionYear": 2008, "avgVolume": null, "ytdReturn": null}, {"ticker": "AOA", "name": "iShares Core Aggressive Allocation ETF", "issuer": "iShares", "category": "US Equity", "index": "S&P Target Risk Aggressive", "expenseRatio": 0.15, "aumB": 1.5, "dividendYield": 2.0, "inceptionYear": 2008, "avgVolume": null, "ytdReturn": null}, {"ticker": "ESGU", "name": "iShares ESG Aware MSCI USA ETF", "issuer": "iShares", "category": "US Equity", "index": "MSCI USA Extended ESG Focus", "expenseRatio": 0.15, "aumB": 12, "dividendYield": 1.2, "inceptionYear": 2016, "avgVolume": null, "ytdReturn": null}, {"ticker": "TIP", "name": "iShares TIPS Bond ETF", "issuer": "iShares", "category": "Bond", "index": "Bloomberg US Treasury Inflation Protected", "expenseRatio": 0.19, "aumB": 20, "dividendYield": 4.5, "inceptionYear": 2003, "avgVolume": null, "ytdReturn": null}, {"ticker": "IWF", "name": "iShares Russell 1000 Growth ETF", "issuer": "iShares", "category": "US Equity", "index": "Russell 1000 Growth", "expenseRatio": 0.19, "aumB": 90, "dividendYield": 0.5, "inceptionYear": 2000, "avgVolume": null, "ytdReturn": null}, {"ticker": "IWD", "name": "iShares Russell 1000 Value ETF", "issuer": "iShares", "category": "US Equity", "index": "Russell 1000 Value", "expenseRatio": 0.19, "aumB": 52, "dividendYield": 2.0, "inceptionYear": 2000, "avgVolume": null, "ytdReturn": null}, {"ticker": "IWM", "name": "iShares Russell 2000 ETF", "issuer": "iShares", "category": "US Equity", "index": "Russell 2000", "expenseRatio": 0.19, "aumB": 60, "dividendYield": 1.3, "inceptionYear": 2000, "avgVolume": null, "ytdReturn": null}, {"ticker": "QQQ", "name": "Invesco QQQ Trust", "issuer": "Invesco", "category": "Thematic", "index": "Nasdaq-100", "expenseRatio": 0.2, "aumB": 310, "dividendYield": 0.5, "inceptionYear": 1999, "avgVolume": null, "ytdReturn": null}, {"ticker": "RSP", "name": "Invesco S&P 500 Equal Weight ETF", "issuer": "Invesco", "category": "US Equity", "index": "S&P 500 Equal Weight", "expenseRatio": 0.2, "aumB": 70, "dividendYield": 1.6, "inceptionYear": 2003, "avgVolume": null, "ytdReturn": null}, {"ticker": "IAU", "name": "iShares Gold Trust", "issuer": "iShares", "category": "Commodity", "index": "Gold Spot Price", "expenseRatio": 0.25, "aumB": 33, "dividendYield": null, "inceptionYear": 2005, "avgVolume": null, "ytdReturn": null}, {"ticker": "SUSA", "name": "iShares MSCI USA ESG Select ETF", "issuer": "iShares", "category": "US Equity", "index": "MSCI USA ESG Extended Focus", "expenseRatio": 0.25, "aumB": 4, "dividendYield": 1.1, "inceptionYear": 2005, "avgVolume": null, "ytdReturn": null}, {"ticker": "EFA", "name": "iShares MSCI EAFE ETF", "issuer": "iShares", "category": "International", "index": "MSCI EAFE", "expenseRatio": 0.32, "aumB": 55, "dividendYield": 3.0, "inceptionYear": 2001, "avgVolume": null, "ytdReturn": null}, {"ticker": "SOXX", "name": "iShares Semiconductor ETF", "issuer": "iShares", "category": "Thematic", "index": "ICE Semiconductor", "expenseRatio": 0.35, "aumB": 14, "dividendYield": 0.7, "inceptionYear": 2001, "avgVolume": null, "ytdReturn": null}, {"ticker": "SMH", "name": "VanEck Semiconductor ETF", "issuer": "VanEck", "category": "Thematic", "index": "MVIS US Listed Semiconductor 25", "expenseRatio": 0.35, "aumB": 25, "dividendYield": 0.6, "inceptionYear": 2011, "avgVolume": null, "ytdReturn": null}, {"ticker": "NOBL", "name": "ProShares S&P 500 Dividend Aristocrats ETF", "issuer": "ProShares", "category": "Dividend", "index": "S&P 500 Dividend Aristocrats", "expenseRatio": 0.35, "aumB": 11, "dividendYield": 2.1, "inceptionYear": 2013, "avgVolume": null, "ytdReturn": null}, {"ticker": "JEPI", "name": "JPMorgan Equity Premium Income ETF", "issuer": "JPMorgan", "category": "Dividend", "index": "Actively Managed", "expenseRatio": 0.35, "aumB": 36, "dividendYield": 7.2, "inceptionYear": 2020, "avgVolume": null, "ytdReturn": null}, {"ticker": "JEPQ", "name": "JPMorgan Nasdaq Equity Premium Income ETF", "issuer": "JPMorgan", "category": "Dividend", "index": "Actively Managed", "expenseRatio": 0.35, "aumB": 20, "dividendYield": 9.5, "inceptionYear": 2022, "avgVolume": null, "ytdReturn": null}, {"ticker": "DVY", "name": "iShares Select Dividend ETF", "issuer": "iShares", "category": "Dividend", "index": "Dow Jones US Select Dividend", "expenseRatio": 0.38, "aumB": 18, "dividendYield": 3.5, "inceptionYear": 2003, "avgVolume": null, "ytdReturn": null}, {"ticker": "GLD", "name": "SPDR Gold Shares", "issuer": "SPDR", "category": "Commodity", "index": "Gold Spot Price", "expenseRatio": 0.4, "aumB": 75, "dividendYield": null, "inceptionYear": 2004, "avgVolume": null, "ytdReturn": null}, {"ticker": "ICLN", "name": "iShares Global Clean Energy ETF", "issuer": "iShares", "category": "Thematic", "index": "S&P Global Clean Energy", "expenseRatio": 0.4, "aumB": 2.5, "dividendYield": 1.8, "inceptionYear": 2008, "avgVolume": null, "ytdReturn": null}, {"ticker": "HYG", "name": "iShares iBoxx $ High Yield Corporate Bond ETF", "issuer": "iShares", "category": "Bond", "index": "iBoxx USD Liquid High Yield", "expenseRatio": 0.49, "aumB": 15, "dividendYield": 5.8, "inceptionYear": 2007, "avgVolume": null, "ytdReturn": null}, {"ticker": "COWZ", "name": "Pacer US Cash Cows 100 ETF", "issuer": "Pacer", "category": "US Equity", "index": "Pacer US Cash Cows 100", "expenseRatio": 0.49, "aumB": 25, "dividendYield": 2.0, "inceptionYear": 2016, "avgVolume": null, "ytdReturn": null}, {"ticker": "SLV", "name": "iShares Silver Trust", "issuer": "iShares", "category": "Commodity", "index": "Silver Spot Price", "expenseRatio": 0.5, "aumB": 12, "dividendYield": null, "inceptionYear": 2006, "avgVolume": null, "ytdReturn": null}, {"ticker": "PDBC", "name": "Invesco Optimum Yield Diversified Commodity Strategy No K-1 ETF", "issuer": "Invesco", "category": "Commodity", "index": "DBIQ Optimum Yield Diversified Commodity", "expenseRatio": 0.59, "aumB": 4.5, "dividendYield": null, "inceptionYear": 2014, "avgVolume": null, "ytdReturn": null}, {"ticker": "USO", "name": "United States Oil Fund", "issuer": "USCF", "category": "Commodity", "index": "WTI Crude Oil", "expenseRatio": 0.6, "aumB": 1.2, "dividendYield": null, "inceptionYear": 2006, "avgVolume": null, "ytdReturn": null}, {"ticker": "HACK", "name": "ETFMG Prime Cyber Security ETF", "issuer": "ETFMG", "category": "Thematic", "index": "ISE Cyber Security", "expenseRatio": 0.6, "aumB": 1.8, "dividendYield": 0.3, "inceptionYear": 2014, "avgVolume": null, "ytdReturn": null}, {"ticker": "EEM", "name": "iShares MSCI Emerging Markets ETF", "issuer": "iShares", "category": "International", "index": "MSCI Emerging Markets", "expenseRatio": 0.68, "aumB": 18, "dividendYield": 2.3, "inceptionYear": 2003, "avgVolume": null, "ytdReturn": null}, {"ticker": "ARKK", "name": "ARK Innovation ETF", "issuer": "ARK Invest", "category": "Thematic", "index": "Actively Managed", "expenseRatio": 0.75, "aumB": 5, "dividendYield": null, "inceptionYear": 2014, "avgVolume": null, "ytdReturn": null}]};
+const etfs = DATA.results;
+
+// Stats
+const ers = etfs.map(e=>e.expenseRatio).filter(v=>v!=null);
+const avgER = (ers.reduce((a,b)=>a+b,0)/ers.length);
+const medER = ers.sort((a,b)=>a-b)[Math.floor(ers.length/2)];
+const totalAUM = etfs.reduce((a,e)=>a+(e.aumB||0),0);
+const cheapest = etfs[0];
+
+document.getElementById('stats').innerHTML = `
+  <div class="stat"><div class="val">${DATA.totalEtfs}</div><div class="label">ETFs Compared</div></div>
+  <div class="stat"><div class="val">${avgER.toFixed(3)}%</div><div class="label">Average Expense Ratio</div></div>
+  <div class="stat"><div class="val">${medER.toFixed(2)}%</div><div class="label">Median Expense Ratio</div></div>
+  <div class="stat"><div class="val">$${totalAUM.toFixed(0)}B</div><div class="label">Total AUM Covered</div></div>
+  <div class="stat"><div class="val">${cheapest.ticker}</div><div class="label">Cheapest ETF (${cheapest.expenseRatio}%)</div></div>
+`;
+
+// Chart — top 30 by expense ratio (sorted cheapest first, show variety)
+const chartData = etfs.filter(e=>e.expenseRatio!=null).slice(0,30);
+const maxER = Math.max(...chartData.map(e=>e.expenseRatio));
+const chartEl = document.getElementById('chart');
+chartData.forEach(e=>{
+  const pct = (e.expenseRatio/maxER)*100;
+  const color = e.expenseRatio <= 0.05 ? 'var(--green)' : e.expenseRatio <= 0.20 ? 'var(--accent)' : e.expenseRatio <= 0.40 ? 'var(--yellow)' : 'var(--red)';
+  chartEl.innerHTML += `<div class="bar-row"><span class="bar-label">${e.ticker}</span><div class="bar" style="width:${Math.max(pct,3)}%;background:${color}">${e.expenseRatio}%</div><span class="bar-name">${e.name}</span></div>`;
+});
+
+// Issuer comparison
+const issuerMap = {};
+etfs.forEach(e=>{
+  if(!issuerMap[e.issuer]) issuerMap[e.issuer]={sum:0,count:0,minER:Infinity,aum:0};
+  const im = issuerMap[e.issuer];
+  if(e.expenseRatio!=null){im.sum+=e.expenseRatio;im.count++;}
+  if(e.expenseRatio!=null && e.expenseRatio<im.minER) im.minER=e.expenseRatio;
+  im.aum+=(e.aumB||0);
+});
+const issuers = Object.entries(issuerMap).sort((a,b)=>(a[1].sum/a[1].count)-(b[1].sum/b[1].count));
+const issuerEl = document.getElementById('issuers');
+issuers.forEach(([name,d])=>{
+  const avg = d.count?d.sum/d.count:0;
+  const color = avg <= 0.06 ? 'var(--green)' : avg <= 0.20 ? 'var(--accent)' : avg <= 0.40 ? 'var(--yellow)' : 'var(--red)';
+  issuerEl.innerHTML += `<div class="issuer-card"><h3>${name}</h3><div class="avg" style="color:${color}">${avg.toFixed(3)}%</div><div class="detail">${d.count} ETFs · Cheapest: ${d.minER.toFixed(2)}% · $${d.aum.toFixed(0)}B AUM</div></div>`;
+});
+
+// Findings
+const findingsData = [
+  {title:"Vanguard and Schwab dominate the low-cost space", text:"Schwab's average expense ratio of 0.046% edges out Vanguard's 0.055%. Both providers have driven the industry fee war, with their cheapest funds at just 0.02-0.03%. For broad-market exposure, there's virtually no reason to pay more than 0.05%."},
+  {title:"SPY is the most expensive S&P 500 ETF", text:"Despite being the most traded ETF in the world with $590B in AUM, SPY charges 0.0945% — more than 3x what VOO (0.03%) and nearly 5x what SPLG (0.02%) charge. Legacy structure and trust status prevent fee cuts, costing long-term investors thousands."},
+  {title:"Actively managed ETFs charge 5-25x more than passive index funds", text:"ARKK (0.75%), JEPI (0.35%), and JEPQ (0.35%) show the premium for active management. Passive S&P 500 funds at 0.02-0.03% offer identical market exposure at a fraction of the cost. The fee gap narrows only for niche strategies."},
+  {title:"Commodity ETFs are consistently the most expensive category", text:"Gold (GLD: 0.40%), silver (SLV: 0.50%), and oil (USO: 0.60%) ETFs carry higher expense ratios due to physical storage and futures contract rolling costs. GLDM at 0.10% is the notable exception for gold exposure."},
+  {title:"The median ETF now costs just 0.09%", text:"Across 86 major ETFs, the median expense ratio has fallen to 0.09%. A decade ago, 0.20% was considered cheap. The fee compression has saved investors billions and shows no signs of reversing."}
+];
+const findingsEl = document.getElementById('findings');
+findingsData.forEach(f=>{
+  findingsEl.innerHTML += `<div class="finding-card"><h3>${f.title}</h3><p>${f.text}</p></div>`;
+});
+
+// Table
+const tbody = document.getElementById('tbody');
+const searchEl = document.getElementById('search');
+const catFilter = document.getElementById('catFilter');
+const issuerFilterEl = document.getElementById('issuerFilter');
+
+// Populate issuer filter
+const uniqueIssuers = [...new Set(etfs.map(e=>e.issuer))].sort();
+uniqueIssuers.forEach(i=>{issuerFilterEl.innerHTML+=`<option value="${i}">${i}</option>`});
+
+let sortKey = 'expenseRatio', sortDir = 1;
+
+function erClass(er){
+  if(er==null) return '';
+  if(er<=0.05) return 'er-low';
+  if(er<=0.20) return 'er-mid';
+  return 'er-high';
+}
+
+function renderTable(){
+  const q = searchEl.value.toLowerCase();
+  const cat = catFilter.value;
+  const iss = issuerFilterEl.value;
+  let filtered = etfs.filter(e=>{
+    if(q && !e.ticker.toLowerCase().includes(q) && !e.name.toLowerCase().includes(q)) return false;
+    if(cat && e.category!==cat) return false;
+    if(iss && e.issuer!==iss) return false;
+    return true;
+  });
+  filtered.sort((a,b)=>{
+    let va=a[sortKey], vb=b[sortKey];
+    if(va==null) return 1; if(vb==null) return -1;
+    if(typeof va==='string') return va.localeCompare(vb)*sortDir;
+    return (va-vb)*sortDir;
+  });
+  tbody.innerHTML = filtered.map(e=>`<tr>
+    <td class="ticker">${e.ticker}</td>
+    <td>${e.name}</td>
+    <td>${e.issuer}</td>
+    <td class="num ${erClass(e.expenseRatio)}">${e.expenseRatio!=null?e.expenseRatio.toFixed(e.expenseRatio<0.1?4:2)+'%':'—'}</td>
+    <td class="num">${e.aumB!=null?'$'+e.aumB.toFixed(1):'—'}</td>
+    <td>${e.category}</td>
+    <td class="num">${e.dividendYield!=null?e.dividendYield.toFixed(1)+'%':'—'}</td>
+    <td style="font-size:12px;color:var(--muted);max-width:200px;overflow:hidden;text-overflow:ellipsis">${e.index||'—'}</td>
+    <td class="num">${e.inceptionYear||'—'}</td>
+  </tr>`).join('');
+}
+
+// Sort headers
+document.querySelectorAll('th[data-key]').forEach(th=>{
+  th.addEventListener('click',()=>{
+    const key = th.dataset.key;
+    if(sortKey===key) sortDir*=-1; else {sortKey=key;sortDir=1;}
+    document.querySelectorAll('th').forEach(t=>t.classList.remove('sorted-asc','sorted-desc'));
+    th.classList.add(sortDir===1?'sorted-asc':'sorted-desc');
+    renderTable();
+  });
+});
+
+searchEl.addEventListener('input', renderTable);
+catFilter.addEventListener('change', renderTable);
+issuerFilterEl.addEventListener('change', renderTable);
+
+// FAQ
+const faqData = [
+  {q:"What is the cheapest S&P 500 ETF?",a:"SPLG (SPDR Portfolio S&P 500 ETF) is the cheapest S&P 500 ETF with an expense ratio of just 0.02%. VOO and IVV are tied at 0.03%. SPY, the original and most liquid S&P 500 ETF, charges 0.0945% — nearly 5x more than SPLG. For buy-and-hold investors, the cheaper options deliver virtually identical performance with lower drag."},
+  {q:"Does expense ratio really matter?",a:"Yes, significantly. On a $100,000 portfolio growing at 7% annually over 30 years, a 0.03% expense ratio costs ~$2,800 total, while a 0.50% ratio costs ~$17,000 — a difference of $14,200. For passive index funds tracking the same benchmark, a lower expense ratio directly translates to higher net returns. It's one of the few variables investors can fully control."},
+  {q:"VOO vs SPY: which is better?",a:"Both track the S&P 500 identically. VOO charges 0.03% vs SPY's 0.0945%, saving ~$65/year per $100,000 invested. SPY has tighter bid-ask spreads and higher daily volume, making it preferred by active traders and institutions. For long-term investors holding for years, VOO (or even cheaper SPLG at 0.02%) is the better choice. SPY's trust structure prevents it from lowering fees or lending securities."},
+  {q:"What is the average ETF expense ratio?",a:"Across our index of 86 major ETFs, the average expense ratio is 0.164% and the median is 0.09%. Broad-market index funds average 0.03-0.05%, sector ETFs around 0.09%, international funds 0.05-0.32%, and thematic/actively managed ETFs 0.35-0.75%. The industry trend is strongly toward lower fees, with multiple fund families now offering core products below 0.05%."},
+  {q:"Which ETF provider has the lowest fees?",a:"Schwab leads with an average expense ratio of 0.046% across 8 ETFs, followed closely by Vanguard at 0.055% across 17 ETFs. SPDR's Portfolio line (SPLG, SPTM, SPYG, SPYV) is extremely competitive at 0.02-0.04%, though their legacy products like SPY (0.0945%) and GLD (0.40%) bring up the average. iShares Core series funds are also competitive at 0.03-0.09%."}
+];
+const faqEl = document.getElementById('faq');
+faqData.forEach(f=>{
+  const div = document.createElement('div');
+  div.className='faq-item';
+  div.innerHTML=`<div class="faq-q">${f.q}</div><div class="faq-a">${f.a}</div>`;
+  div.querySelector('.faq-q').addEventListener('click',()=>div.classList.toggle('open'));
+  faqEl.appendChild(div);
+});
+
+// Initial render
+renderTable();
+// Set initial sort indicator
+document.querySelector('th[data-key="expenseRatio"]').classList.add('sorted-asc');
+</script>
+</body>
+</html>
