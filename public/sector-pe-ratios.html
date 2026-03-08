@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GICS Sector P/E Ratios 2026: Which Sectors Are Overvalued? | Westmount Research</title>
+<meta name="description" content="Average P/E ratio for all 11 GICS sectors with historical comparison. Find which sectors are overvalued and which trade below their 10-year average. Updated March 2026.">
+<link rel="canonical" href="https://westmountresearch.com/sector-pe-ratios">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "GICS Sector P/E Ratios 2026: Which Sectors Are Overvalued?",
+  "description": "Average P/E ratio for all 11 GICS sectors with historical comparison. Find which sectors are overvalued relative to their 10-year average.",
+  "datePublished": "2026-03-09",
+  "dateModified": "2026-03-09",
+  "author": {"@type": "Organization", "name": "Westmount Research", "url": "https://westmountresearch.com"},
+  "publisher": {"@type": "Organization", "name": "Westmount Research", "url": "https://westmountresearch.com"},
+  "mainEntityOfPage": "https://westmountresearch.com/sector-pe-ratios"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Which stock market sector has the highest P/E ratio?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "As of March 2026, Communication Services has the highest trailing P/E ratio at 37.47, driven by mega-cap platforms like Alphabet and Meta. Information Technology follows at 34.96, and Real Estate is third at 32.72. However, when adjusted for growth (PEG ratio), Technology actually appears more reasonably valued at 1.34 PEG vs Communication Services at 2.44."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the tech sector overvalued?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Information Technology sector trades at a trailing P/E of 34.96 — a 27% premium to its 10-year average of 27.5. However, the sector's PEG ratio of 1.34 (the lowest of all sectors) suggests the elevated P/E is partly justified by exceptional 33% 5-year earnings growth. The forward P/E of 24.96 narrows the gap further. The sector is expensive on an absolute basis but appears reasonably priced when growth-adjusted."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the average P/E ratio of the S&P 500?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The S&P 500 trailing P/E ratio is 28.95 as of March 2026. The historical mean P/E is 16.20 and the median is 15.06, meaning the current market trades at roughly 79% above its long-term average. Elevated earnings growth expectations and mega-cap tech concentration contribute to this above-average multiple."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which sector is the most undervalued?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Real Estate is the only GICS sector trading below its 10-year average P/E, at a 12% discount (32.72 current vs 37.0 historical). Financials offer the lowest absolute P/E at 16.92 and the second-lowest PEG at 1.44. Energy is closest to fair value at only a 7% premium, while Materials has the second-lowest PEG at 1.40 thanks to strong forward growth expectations."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you compare sector valuations?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Comparing sector P/E ratios requires context. Key approaches: (1) Compare current P/E to the sector's own 10-year historical average to assess relative premium/discount. (2) Use PEG ratio (P/E divided by earnings growth rate) to adjust for different growth profiles — a PEG below 1.0 suggests undervaluation. (3) Compare trailing vs forward P/E to see if earnings are expected to improve. (4) Consider P/B and P/S ratios for capital-intensive vs asset-light sectors. No single metric tells the full story."
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', -apple-system, sans-serif; background: #060a12; color: #c8d0de; line-height: 1.6; }
+  a { color: #4a8fe7; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+  /* Header */
+  .header { text-align: center; padding: 60px 24px 40px; border-bottom: 1px solid #152040; }
+  .header-brand { font-size: 0.8rem; color: #4a8fe7; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 4px; }
+  .header-brand a { color: #4a8fe7; }
+  .research-tag { display: inline-block; background: rgba(74,143,231,0.12); color: #4a8fe7; font-size: 0.62rem; font-weight: 800; padding: 4px 14px; border-radius: 20px; letter-spacing: 1.5px; margin-bottom: 16px; }
+  .header h1 { font-size: 2.4rem; font-weight: 900; color: #fff; letter-spacing: -1px; margin-bottom: 8px; line-height: 1.15; }
+  .header .subtitle { color: #5a6a80; font-size: 0.95rem; margin-bottom: 6px; }
+  .header .date { color: #3a4a60; font-size: 0.78rem; font-family: 'JetBrains Mono', monospace; }
+
+  /* Big Stats */
+  .stats-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 16px; padding: 40px 0; }
+  .stat-card { background: #0a1020; border: 1px solid #152040; border-radius: 14px; padding: 24px 20px; text-align: center; }
+  .stat-card .num { font-size: 2rem; font-weight: 900; color: #4a8fe7; font-family: 'JetBrains Mono', monospace; line-height: 1; }
+  .stat-card .lbl { font-size: 0.72rem; color: #5a6a80; margin-top: 6px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+  /* Key Findings */
+  .section-title { font-size: 1.4rem; font-weight: 800; color: #fff; margin-bottom: 20px; }
+  .findings { margin-bottom: 50px; }
+  .finding { background: #0a1020; border: 1px solid #152040; border-radius: 12px; padding: 20px 24px; margin-bottom: 12px; }
+  .finding strong { color: #4a8fe7; }
+  .finding p { font-size: 0.88rem; color: #a0aab8; }
+
+  /* Chart */
+  .chart-section { margin-bottom: 50px; }
+  .chart-container { background: #0a1020; border: 1px solid #152040; border-radius: 14px; padding: 30px 24px; overflow-x: auto; }
+  .bar-row { display: flex; align-items: center; margin-bottom: 10px; gap: 12px; }
+  .bar-label { min-width: 180px; font-size: 0.78rem; color: #c8d0de; font-weight: 600; text-align: right; flex-shrink: 0; }
+  .bar-track { flex: 1; height: 28px; background: #0d1428; border-radius: 6px; position: relative; overflow: hidden; display: flex; align-items: center; }
+  .bar-fill { height: 100%; border-radius: 6px; display: flex; align-items: center; padding-left: 10px; min-width: 40px; transition: width 0.3s; }
+  .bar-fill span { font-size: 0.72rem; font-weight: 700; color: #fff; font-family: 'JetBrains Mono', monospace; white-space: nowrap; }
+  .bar-hist { position: absolute; top: 0; height: 100%; border-left: 2px dashed #ff6b6b88; z-index: 2; }
+  .bar-hist-label { position: absolute; top: -18px; transform: translateX(-50%); font-size: 0.58rem; color: #ff6b6b; font-family: 'JetBrains Mono', monospace; white-space: nowrap; }
+  .legend { display: flex; gap: 24px; margin-top: 16px; justify-content: center; flex-wrap: wrap; }
+  .legend-item { display: flex; align-items: center; gap: 6px; font-size: 0.72rem; color: #5a6a80; }
+  .legend-swatch { width: 14px; height: 14px; border-radius: 4px; }
+
+  /* Premium/Discount chart */
+  .premium-chart { margin-top: 30px; }
+  .pd-row { display: flex; align-items: center; margin-bottom: 8px; gap: 12px; }
+  .pd-label { min-width: 180px; font-size: 0.78rem; color: #c8d0de; font-weight: 600; text-align: right; flex-shrink: 0; }
+  .pd-track { flex: 1; height: 24px; position: relative; display: flex; align-items: center; }
+  .pd-center { position: absolute; left: 50%; top: 0; height: 100%; border-left: 1px solid #253040; z-index: 1; }
+  .pd-bar { height: 100%; border-radius: 4px; position: absolute; z-index: 2; display: flex; align-items: center; justify-content: center; }
+  .pd-bar span { font-size: 0.65rem; font-weight: 700; color: #fff; font-family: 'JetBrains Mono', monospace; white-space: nowrap; }
+
+  /* Table */
+  .table-section { margin-bottom: 50px; }
+  .table-wrap { overflow-x: auto; background: #0a1020; border: 1px solid #152040; border-radius: 14px; }
+  table { width: 100%; border-collapse: collapse; min-width: 900px; }
+  th { background: #0d1428; color: #4a8fe7; font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; padding: 14px 12px; text-align: left; cursor: pointer; user-select: none; white-space: nowrap; border-bottom: 1px solid #152040; position: sticky; top: 0; }
+  th:hover { background: #111b30; }
+  th.sorted-asc::after { content: ' ▲'; }
+  th.sorted-desc::after { content: ' ▼'; }
+  td { padding: 12px 12px; font-size: 0.82rem; border-bottom: 1px solid #0d1428; white-space: nowrap; }
+  tr:hover td { background: #0d1428; }
+  .premium { color: #ff6b6b; }
+  .discount { color: #4ade80; }
+  .neutral { color: #5a6a80; }
+  td.sector-name { font-weight: 700; color: #e0e8f0; }
+
+  /* FAQ */
+  .faq-section { margin-bottom: 50px; }
+  .faq-item { background: #0a1020; border: 1px solid #152040; border-radius: 12px; margin-bottom: 12px; overflow: hidden; }
+  .faq-q { padding: 18px 24px; font-weight: 700; color: #e0e8f0; font-size: 0.92rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+  .faq-q::after { content: '+'; color: #4a8fe7; font-size: 1.2rem; font-weight: 700; transition: transform 0.2s; }
+  .faq-q.open::after { content: '−'; }
+  .faq-a { padding: 0 24px 18px; font-size: 0.85rem; color: #8a9ab0; line-height: 1.7; display: none; }
+  .faq-a.open { display: block; }
+
+  /* Methodology */
+  .methodology { background: #0a1020; border: 1px solid #152040; border-radius: 14px; padding: 30px; margin-bottom: 50px; }
+  .methodology h2 { font-size: 1.1rem; font-weight: 800; color: #fff; margin-bottom: 14px; }
+  .methodology p, .methodology li { font-size: 0.82rem; color: #6a7a8a; line-height: 1.7; }
+  .methodology ul { padding-left: 20px; margin: 10px 0; }
+
+  /* Citation */
+  .citation { background: #0d1428; border: 1px solid #152040; border-radius: 12px; padding: 20px 24px; margin-bottom: 50px; }
+  .citation-title { font-size: 0.72rem; color: #4a8fe7; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+  .citation-text { font-size: 0.78rem; color: #6a7a8a; font-family: 'JetBrains Mono', monospace; line-height: 1.7; }
+
+  /* Footer */
+  .footer { text-align: center; padding: 40px 24px; border-top: 1px solid #101828; }
+  .footer-copy { font-size: 0.75rem; color: #253040; }
+  .footer-copy a { color: #4a8fe7; }
+  .disclaimer { max-width: 600px; margin: 10px auto 0; font-size: 0.68rem; color: #1e2a3a; line-height: 1.5; }
+
+  @media (max-width: 700px) {
+    .header h1 { font-size: 1.7rem; }
+    .stats-row { grid-template-columns: repeat(2, 1fr); }
+    .bar-label, .pd-label { min-width: 120px; font-size: 0.7rem; }
+    table { min-width: 700px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-brand"><a href="/">Westmount Research</a></div>
+  <span class="research-tag">ORIGINAL RESEARCH</span>
+  <h1>GICS Sector P/E Ratios 2026</h1>
+  <p class="subtitle">Which sectors are overvalued? Current vs 10-year historical P/E for all 11 sectors.</p>
+  <p class="date">Data as of March 9, 2026 · Source: Finviz, Multpl.com, S&P Global</p>
+</div>
+
+<div class="container">
+
+  <!-- Big Stats -->
+  <div class="stats-row">
+    <div class="stat-card">
+      <div class="num">11</div>
+      <div class="lbl">GICS Sectors</div>
+    </div>
+    <div class="stat-card">
+      <div class="num">28.95</div>
+      <div class="lbl">S&P 500 P/E</div>
+    </div>
+    <div class="stat-card">
+      <div class="num">16.92</div>
+      <div class="lbl">Lowest Sector P/E</div>
+    </div>
+    <div class="stat-card">
+      <div class="num">37.47</div>
+      <div class="lbl">Highest Sector P/E</div>
+    </div>
+    <div class="stat-card">
+      <div class="num">1</div>
+      <div class="lbl">Sector Below Avg</div>
+    </div>
+  </div>
+
+  <!-- Key Findings -->
+  <div class="findings">
+    <h2 class="section-title">Key Findings</h2>
+    <div class="finding"><p><strong>10 of 11 sectors trade above their 10-year average P/E.</strong> Only Real Estate trades below its historical norm (-12%), pressured by elevated interest rates.</p></div>
+    <div class="finding"><p><strong>Communication Services is the most stretched</strong> at 89% above its 10-year average (37.47 vs 19.8), driven by Alphabet and Meta's dominance and AI-era re-rating.</p></div>
+    <div class="finding"><p><strong>Financials offer the lowest absolute P/E (16.92)</strong> and the second-best growth-adjusted value (PEG 1.44). Technology has the best PEG at 1.34 despite its elevated P/E.</p></div>
+    <div class="finding"><p><strong>Consumer Staples has the worst PEG ratio (2.95)</strong> — investors pay a steep safety premium for single-digit earnings growth. The defensive trade is expensive.</p></div>
+    <div class="finding"><p><strong>Materials are the stealth performer.</strong> Best 1-year return (+45%), lowest PEG alongside Tech (1.40), and forward P/E of just 14.9. Commodity supercycle tailwinds are real.</p></div>
+  </div>
+
+  <!-- P/E Bar Chart -->
+  <div class="chart-section">
+    <h2 class="section-title">Current P/E vs Historical Average</h2>
+    <div class="chart-container">
+      <div id="peChart"></div>
+      <div class="legend">
+        <div class="legend-item"><div class="legend-swatch" style="background:#4a8fe7;"></div> Current Trailing P/E</div>
+        <div class="legend-item"><div class="legend-swatch" style="background:#ff6b6b;"></div> Forward P/E</div>
+        <div class="legend-item"><div class="legend-swatch" style="border:2px dashed #fbbf24; background:transparent;"></div> 10-Year Historical Avg</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Premium/Discount Chart -->
+  <div class="chart-section">
+    <h2 class="section-title">Premium / Discount vs 10-Year Average</h2>
+    <div class="chart-container premium-chart">
+      <div id="pdChart"></div>
+    </div>
+  </div>
+
+  <!-- Table -->
+  <div class="table-section">
+    <h2 class="section-title">Full Sector Comparison</h2>
+    <div class="table-wrap">
+      <table id="sectorTable">
+        <thead>
+          <tr>
+            <th data-col="sector">Sector</th>
+            <th data-col="currentPe" data-type="num">P/E</th>
+            <th data-col="forwardPe" data-type="num">Fwd P/E</th>
+            <th data-col="historicalAvgPe" data-type="num">10yr Avg</th>
+            <th data-col="premiumDiscountPct" data-type="num">vs Avg</th>
+            <th data-col="peg" data-type="num">PEG</th>
+            <th data-col="earningsGrowth5yr" data-type="num">EPS 5yr</th>
+            <th data-col="earningsGrowthFwd5yr" data-type="num">Fwd EPS</th>
+            <th data-col="marketCapT" data-type="num">Mkt Cap</th>
+            <th data-col="sp500WeightPct" data-type="num">Weight</th>
+            <th data-col="ytdReturn" data-type="num">YTD</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="faq-section">
+    <h2 class="section-title">Frequently Asked Questions</h2>
+    <div id="faqList"></div>
+  </div>
+
+  <!-- Methodology -->
+  <div class="methodology">
+    <h2>Methodology</h2>
+    <p>This study analyzes the price-to-earnings ratios of all 11 GICS (Global Industry Classification Standard) sectors as represented in the U.S. equity market.</p>
+    <ul>
+      <li><strong>Current P/E:</strong> Trailing twelve-month aggregate earnings, sourced from Finviz sector screener.</li>
+      <li><strong>Forward P/E:</strong> Based on sell-side analyst consensus estimates for the next 12 months.</li>
+      <li><strong>Historical 10-Year Average:</strong> Compiled from S&P Global sector valuation archives and Fidelity research (2016–2025 average).</li>
+      <li><strong>PEG Ratio:</strong> P/E divided by forward 5-year EPS growth estimate — adjusts for growth differences between sectors.</li>
+      <li><strong>Market Cap Weights:</strong> Calculated from aggregate market capitalization of all publicly listed companies in each sector.</li>
+      <li><strong>Premium/Discount:</strong> Percentage difference between current trailing P/E and 10-year historical average P/E.</li>
+    </ul>
+    <p style="margin-top: 12px;">P/E ratios for different sectors are not directly comparable. Capital-intensive sectors (Utilities, Real Estate) traditionally trade at different multiples than asset-light sectors (Technology, Communication Services). This study provides both absolute and relative-to-history comparisons.</p>
+    <p style="margin-top: 8px;">Data refreshed: March 9, 2026.</p>
+  </div>
+
+  <!-- Citation -->
+  <div class="citation">
+    <div class="citation-title">📋 Cite This Research</div>
+    <div class="citation-text">
+      Westmount Research. "GICS Sector P/E Ratios 2026: Which Sectors Are Overvalued?" March 9, 2026.<br>
+      https://westmountresearch.com/sector-pe-ratios
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  <div class="footer-copy">© 2026 <a href="/">Westmount Research</a> · A <a href="https://gab.ae">GAB Ventures</a> property</div>
+  <div class="disclaimer">This site provides data and analysis for informational purposes only. Nothing here constitutes investment advice. Do your own research.</div>
+</div>
+
+<script>
+const data = [
+  { sector: "Communication Services", currentPe: 37.47, forwardPe: 29.19, historicalAvgPe: 19.8, premiumDiscountPct: 89.2, peg: 2.44, earningsGrowth5yr: 24.75, earningsGrowthFwd5yr: 15.33, marketCapT: 11.81, sp500WeightPct: 13.1, ytdReturn: -2.63 },
+  { sector: "Information Technology", currentPe: 34.96, forwardPe: 24.96, historicalAvgPe: 27.5, premiumDiscountPct: 27.1, peg: 1.34, earningsGrowth5yr: 33.44, earningsGrowthFwd5yr: 26.09, marketCapT: 24.95, sp500WeightPct: 27.6, ytdReturn: -4.51 },
+  { sector: "Real Estate", currentPe: 32.72, forwardPe: 29.15, historicalAvgPe: 37.0, premiumDiscountPct: -11.6, peg: 3.19, earningsGrowth5yr: 10.61, earningsGrowthFwd5yr: 10.25, marketCapT: 1.74, sp500WeightPct: 1.9, ytdReturn: 5.39 },
+  { sector: "Industrials", currentPe: 31.78, forwardPe: 22.48, historicalAvgPe: 21.5, premiumDiscountPct: 47.8, peg: 1.89, earningsGrowth5yr: 17.96, earningsGrowthFwd5yr: 16.80, marketCapT: 7.37, sp500WeightPct: 8.1, ytdReturn: 9.79 },
+  { sector: "Consumer Discretionary", currentPe: 29.68, forwardPe: 20.40, historicalAvgPe: 23.5, premiumDiscountPct: 26.3, peg: 1.71, earningsGrowth5yr: 27.29, earningsGrowthFwd5yr: 17.31, marketCapT: 8.89, sp500WeightPct: 9.8, ytdReturn: -6.01 },
+  { sector: "Health Care", currentPe: 28.99, forwardPe: 17.30, historicalAvgPe: 22.0, premiumDiscountPct: 31.8, peg: 2.16, earningsGrowth5yr: 11.78, earningsGrowthFwd5yr: 13.40, marketCapT: 8.50, sp500WeightPct: 9.4, ytdReturn: -1.38 },
+  { sector: "Consumer Staples", currentPe: 27.70, forwardPe: 20.45, historicalAvgPe: 21.5, premiumDiscountPct: 28.8, peg: 2.95, earningsGrowth5yr: 8.41, earningsGrowthFwd5yr: 9.40, marketCapT: 4.50, sp500WeightPct: 5.0, ytdReturn: 9.36 },
+  { sector: "Materials", currentPe: 26.20, forwardPe: 14.92, historicalAvgPe: 20.0, premiumDiscountPct: 31.0, peg: 1.40, earningsGrowth5yr: 16.53, earningsGrowthFwd5yr: 18.68, marketCapT: 2.89, sp500WeightPct: 3.2, ytdReturn: 14.13 },
+  { sector: "Utilities", currentPe: 22.40, forwardPe: 16.15, historicalAvgPe: 18.5, premiumDiscountPct: 21.1, peg: 1.84, earningsGrowth5yr: 11.90, earningsGrowthFwd5yr: 12.19, marketCapT: 1.93, sp500WeightPct: 2.1, ytdReturn: 8.66 },
+  { sector: "Energy", currentPe: 19.27, forwardPe: 15.31, historicalAvgPe: 18.0, premiumDiscountPct: 7.1, peg: 1.88, earningsGrowth5yr: 23.39, earningsGrowthFwd5yr: 10.26, marketCapT: 4.42, sp500WeightPct: 4.9, ytdReturn: 24.61 },
+  { sector: "Financials", currentPe: 16.92, forwardPe: 13.43, historicalAvgPe: 14.5, premiumDiscountPct: 16.7, peg: 1.44, earningsGrowth5yr: 18.48, earningsGrowthFwd5yr: 11.79, marketCapT: 13.45, sp500WeightPct: 14.9, ytdReturn: -6.30 }
+];
+
+// Sort by current P/E desc for chart
+const sorted = [...data].sort((a, b) => b.currentPe - a.currentPe);
+const maxPe = 42;
+
+// P/E Bar Chart
+const peChart = document.getElementById('peChart');
+sorted.forEach(d => {
+  const pct = (d.currentPe / maxPe) * 100;
+  const fwdPct = (d.forwardPe / maxPe) * 100;
+  const histPct = (d.historicalAvgPe / maxPe) * 100;
+  peChart.innerHTML += `
+    <div class="bar-row">
+      <div class="bar-label">${d.sector}</div>
+      <div class="bar-track">
+        <div class="bar-fill" style="width:${pct}%;background:linear-gradient(90deg,#1a3a6e,#4a8fe7);position:relative;z-index:1;">
+          <span>${d.currentPe.toFixed(1)}</span>
+        </div>
+        <div class="bar-hist" style="left:${histPct}%;">
+          <div class="bar-hist-label">${d.historicalAvgPe.toFixed(1)}</div>
+        </div>
+      </div>
+    </div>`;
+});
+
+// Premium/Discount Chart
+const pdChart = document.getElementById('pdChart');
+const pdSorted = [...data].sort((a, b) => b.premiumDiscountPct - a.premiumDiscountPct);
+const maxPD = 100;
+pdSorted.forEach(d => {
+  const val = d.premiumDiscountPct;
+  const isNeg = val < 0;
+  const barWidth = Math.abs(val) / maxPD * 50;
+  const left = isNeg ? (50 - barWidth) : 50;
+  const color = isNeg ? '#4ade80' : (val > 40 ? '#ff6b6b' : '#4a8fe7');
+  pdChart.innerHTML += `
+    <div class="pd-row">
+      <div class="pd-label">${d.sector}</div>
+      <div class="pd-track" style="background:#0d1428;border-radius:4px;">
+        <div class="pd-center"></div>
+        <div class="pd-bar" style="left:${left}%;width:${barWidth}%;background:${color};border-radius:4px;">
+          <span>${val > 0 ? '+' : ''}${val.toFixed(1)}%</span>
+        </div>
+      </div>
+    </div>`;
+});
+
+// Table
+const tbody = document.getElementById('tableBody');
+function renderTable(d) {
+  tbody.innerHTML = '';
+  d.forEach(r => {
+    const pdClass = r.premiumDiscountPct > 0 ? 'premium' : r.premiumDiscountPct < 0 ? 'discount' : 'neutral';
+    const pdSign = r.premiumDiscountPct > 0 ? '+' : '';
+    const ytdClass = r.ytdReturn >= 0 ? 'discount' : 'premium';
+    tbody.innerHTML += `<tr>
+      <td class="sector-name">${r.sector}</td>
+      <td>${r.currentPe.toFixed(2)}</td>
+      <td>${r.forwardPe.toFixed(2)}</td>
+      <td>${r.historicalAvgPe.toFixed(1)}</td>
+      <td class="${pdClass}">${pdSign}${r.premiumDiscountPct.toFixed(1)}%</td>
+      <td>${r.peg.toFixed(2)}</td>
+      <td>${r.earningsGrowth5yr.toFixed(1)}%</td>
+      <td>${r.earningsGrowthFwd5yr.toFixed(1)}%</td>
+      <td>$${r.marketCapT.toFixed(2)}T</td>
+      <td>${r.sp500WeightPct.toFixed(1)}%</td>
+      <td class="${ytdClass}">${r.ytdReturn > 0 ? '+' : ''}${r.ytdReturn.toFixed(2)}%</td>
+    </tr>`;
+  });
+}
+renderTable(sorted);
+
+// Sorting
+let sortCol = 'currentPe', sortDir = 'desc';
+document.querySelectorAll('#sectorTable th').forEach(th => {
+  th.addEventListener('click', () => {
+    const col = th.dataset.col;
+    const isNum = th.dataset.type === 'num';
+    if (sortCol === col) sortDir = sortDir === 'asc' ? 'desc' : 'asc';
+    else { sortCol = col; sortDir = isNum ? 'desc' : 'asc'; }
+    document.querySelectorAll('#sectorTable th').forEach(t => t.classList.remove('sorted-asc', 'sorted-desc'));
+    th.classList.add(sortDir === 'asc' ? 'sorted-asc' : 'sorted-desc');
+    const s = [...data].sort((a, b) => {
+      let va = a[col], vb = b[col];
+      if (typeof va === 'string') return sortDir === 'asc' ? va.localeCompare(vb) : vb.localeCompare(va);
+      return sortDir === 'asc' ? va - vb : vb - va;
+    });
+    renderTable(s);
+  });
+});
+
+// FAQ
+const faqs = [
+  { q: "Which stock market sector has the highest P/E ratio?", a: "As of March 2026, Communication Services has the highest trailing P/E ratio at 37.47, driven by mega-cap platforms like Alphabet and Meta. Information Technology follows at 34.96, and Real Estate is third at 32.72. However, when adjusted for growth (PEG ratio), Technology actually appears more reasonably valued at 1.34 PEG vs Communication Services at 2.44." },
+  { q: "Is the tech sector overvalued?", a: "The Information Technology sector trades at a trailing P/E of 34.96 — a 27% premium to its 10-year average of 27.5. However, the sector's PEG ratio of 1.34 (the lowest of all sectors) suggests the elevated P/E is partly justified by exceptional 33% 5-year earnings growth. The forward P/E of 24.96 narrows the gap further. Expensive on an absolute basis, but reasonably priced when growth-adjusted." },
+  { q: "What is the average P/E ratio of the S&P 500?", a: "The S&P 500 trailing P/E ratio is 28.95 as of March 2026. The historical mean P/E is 16.20 and the median is 15.06, meaning the current market trades at roughly 79% above its long-term average. Elevated earnings growth expectations and mega-cap tech concentration contribute to this above-average multiple." },
+  { q: "Which sector is the most undervalued?", a: "Real Estate is the only GICS sector trading below its 10-year average P/E, at a 12% discount (32.72 current vs 37.0 historical). Financials offer the lowest absolute P/E at 16.92 and the second-lowest PEG at 1.44. Energy is closest to fair value at only a 7% premium to its historical average." },
+  { q: "How do you compare sector valuations?", a: "Key approaches: (1) Compare current P/E to the sector's own 10-year historical average to assess relative premium/discount. (2) Use PEG ratio (P/E ÷ earnings growth rate) to adjust for different growth profiles — a PEG below 1.0 suggests undervaluation. (3) Compare trailing vs forward P/E to see if earnings are expected to improve. (4) Consider P/B and P/S ratios for capital-intensive vs asset-light sectors. No single metric tells the full story." }
+];
+
+const faqList = document.getElementById('faqList');
+faqs.forEach(f => {
+  const item = document.createElement('div');
+  item.className = 'faq-item';
+  item.innerHTML = `<div class="faq-q">${f.q}</div><div class="faq-a">${f.a}</div>`;
+  item.querySelector('.faq-q').addEventListener('click', function() {
+    this.classList.toggle('open');
+    this.nextElementSibling.classList.toggle('open');
+  });
+  faqList.appendChild(item);
+});
+</script>
+
+</body>
+</html>
