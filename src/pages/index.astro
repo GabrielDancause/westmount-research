@@ -100,7 +100,14 @@ const studies = [
   }
 ];
 
-const guides = []; // westmount-research is studies only
+const guides = [
+  {
+    emoji: '📖',
+    name: 'How to Read Financial Statements',
+    slug: '/guide-reading-financial-statements.html',
+    desc: 'Understand income statements, balance sheets, and cash flow — the foundation of investing.'
+  }
+];
 const lists = []; // westmount-research is studies only
 ---
 <html lang="en">
@@ -304,6 +311,26 @@ const lists = []; // westmount-research is studies only
       <p>Data-driven market analysis. PEG ratios, dividend fundamentals, sector valuations, and broker comparisons — no fluff, no paywalls.</p>
     </div>
   </div>
+
+  <!-- Guides Section -->
+  {guides.length > 0 && (
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-tag">📖 GUIDES</span>
+        <h2 class="section-title">Educational Guides</h2>
+        <p class="section-sub">In-depth explanations of market fundamentals.</p>
+      </div>
+      <div class="studies-grid">
+        {guides.map(guide => (
+          <a class="study-card" href={guide.slug}>
+            {guide.emoji && <span class="study-emoji">{guide.emoji}</span>}
+            <h3 class="study-name">{guide.name}</h3>
+            <p class="study-desc">{guide.desc}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  )}
 
   <!-- Studies Section -->
   {studies.length > 0 && (

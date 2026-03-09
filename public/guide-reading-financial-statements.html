@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Read Financial Statements - Westmount Fundamentals</title>
+  <meta name="description" content="A comprehensive, beginner-friendly guide to reading the 3 main financial statements: Income Statement, Balance Sheet, and Cash Flow Statement.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #060a12;
+      --card-bg: #0a1020;
+      --border: #152040;
+      --accent: #4a8fe7;
+      --text: #c8d0de;
+      --text-muted: #6a7a90;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 1.05rem;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width: 800px; margin: 0 auto; padding: 40px 24px; }
+
+    /* Header */
+    header { text-align: center; margin-bottom: 60px; }
+    .tagline {
+      color: var(--accent);
+      font-size: 0.85rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      display: inline-block;
+      background: rgba(74,143,231,0.1);
+      padding: 6px 16px;
+      border-radius: 20px;
+    }
+    h1 {
+      font-size: 3rem;
+      font-weight: 900;
+      color: #fff;
+      letter-spacing: -1.5px;
+      line-height: 1.2;
+      margin-bottom: 24px;
+    }
+    .author-date { color: var(--text-muted); font-size: 0.95rem; }
+
+    /* Typography */
+    h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #fff;
+      margin: 48px 0 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+      letter-spacing: -0.5px;
+    }
+    h3 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #e0e8f0;
+      margin: 32px 0 16px;
+    }
+    p { margin-bottom: 20px; }
+    ul, ol { margin: 0 0 24px 24px; }
+    li { margin-bottom: 10px; }
+    strong, .highlight { color: var(--accent); font-weight: 700; }
+
+    /* Callouts & Cards */
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      margin: 32px 0;
+    }
+    .example-box {
+      font-family: 'JetBrains Mono', monospace;
+      background: #040810;
+      border: 1px solid var(--border);
+      padding: 20px;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-size: 0.9rem;
+      color: #a0b0c0;
+      margin: 24px 0;
+    }
+    .example-box table { width: 100%; border-collapse: collapse; }
+    .example-box th, .example-box td { padding: 8px; text-align: left; border-bottom: 1px solid #1a2332; }
+    .example-box th { color: #fff; font-weight: bold; border-bottom: 2px solid var(--border); }
+    .example-box tr.total td { font-weight: bold; color: var(--accent); border-top: 1px solid var(--border); }
+
+    /* FAQ Section */
+    .faq-item { margin-bottom: 24px; border-bottom: 1px solid var(--border); padding-bottom: 24px; }
+    .faq-q { font-weight: 700; color: #fff; font-size: 1.1rem; margin-bottom: 12px; display: block; }
+    .faq-a { color: var(--text); }
+
+    /* Footer */
+    footer {
+      margin-top: 80px;
+      padding-top: 40px;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      text-align: center;
+    }
+    .footer-links { margin-bottom: 16px; }
+    .footer-links a { margin: 0 10px; }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 2.2rem; }
+      h2 { font-size: 1.6rem; }
+    }
+  </style>
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "headline": "How to Read Financial Statements: A Beginner's Guide",
+        "description": "Understand income statements, balance sheets, and cash flow — the foundation of investing. Learn how to read the three main financial statements.",
+        "author": {
+          "@type": "Organization",
+          "name": "Westmount Fundamentals"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Westmount Fundamentals"
+        },
+        "datePublished": "2026-01-01"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Why is the cash flow statement often considered more important than the income statement?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The income statement includes non-cash items (like depreciation) and recognizes revenue when earned, not when cash is received. The cash flow statement shows actual cash moving in and out, revealing a company's true ability to fund operations, pay debt, and return money to shareholders."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is a good Current Ratio?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A current ratio between 1.5 and 2.0 is generally considered healthy. Below 1.0 indicates potential short-term liquidity issues, while a very high ratio (e.g., above 3.0) might mean the company isn't using its assets efficiently."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the difference between Gross Margin and Operating Margin?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Gross margin only deducts the direct costs of making a product (COGS). Operating margin goes further by deducting all operating expenses like SG&A (Sales, General, and Administrative) and R&D, showing the profitability of core business operations."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can a company be profitable but go bankrupt?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. If a company recognizes a lot of revenue on credit (boosting net income) but fails to collect cash, it may run out of money to pay its bills. This highlights the importance of the Operating Cash Flow metric."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Where can I find these financial statements for real companies?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Publicly traded companies in the US file 10-K (annual) and 10-Q (quarterly) reports with the SEC. You can find these on the SEC EDGAR database, the company's investor relations website, or financial data sites like Yahoo Finance."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="tagline">Educational Guide</div>
+      <h1>How to Read Financial Statements</h1>
+      <div class="author-date">By Westmount Fundamentals · Updated 2026</div>
+    </header>
+
+    <div class="content">
+      <p>Investing without knowing how to read financial statements is like flying blind. A stock chart tells you what the price has done in the past, but the financial statements tell you <em>why</em> the company has value, how it makes money, and whether it's built to last.</p>
+      <p>Every public company releases three main financial statements. Together, they form a complete picture of financial health. In this guide, we'll break down the <strong>Income Statement</strong>, the <strong>Balance Sheet</strong>, and the <strong>Cash Flow Statement</strong>.</p>
+
+      <h2>1. The Income Statement (The P&L)</h2>
+      <p>The Income Statement (also called the Profit and Loss statement, or P&L) shows a company's financial performance over a specific period (usually a quarter or a year). It tells you how much money the company made, what it spent to make that money, and what's left over at the bottom.</p>
+
+      <h3>Key Line Items</h3>
+      <ul>
+        <li><span class="highlight">Revenue (Top Line):</span> Total money brought in from sales before any expenses are deducted.</li>
+        <li><span class="highlight">Cost of Goods Sold (COGS):</span> The direct costs required to produce the goods or services sold (e.g., raw materials, factory labor).</li>
+        <li><span class="highlight">Gross Profit:</span> Revenue minus COGS. The core profitability of the product itself.</li>
+        <li><span class="highlight">Operating Expenses (OpEx):</span> The costs of running the business not directly tied to production (e.g., marketing, salaries of management, research & development, rent).</li>
+        <li><span class="highlight">Operating Income:</span> Gross profit minus Operating Expenses. The profit made from core operations.</li>
+        <li><span class="highlight">Net Income (Bottom Line):</span> Operating income minus interest, taxes, and other non-operating expenses. This is the company's total profit.</li>
+      </ul>
+
+      <div class="example-box">
+        <strong>Example: Simplified Tech Corp Income Statement</strong>
+        <table>
+          <tr><td>Revenue</td><td>$10,000,000</td></tr>
+          <tr><td>- Cost of Goods Sold (COGS)</td><td>$3,000,000</td></tr>
+          <tr class="total"><td>= Gross Profit</td><td>$7,000,000</td></tr>
+          <tr><td>- Operating Expenses (SG&A, R&D)</td><td>$4,000,000</td></tr>
+          <tr class="total"><td>= Operating Income</td><td>$3,000,000</td></tr>
+          <tr><td>- Taxes & Interest</td><td>$500,000</td></tr>
+          <tr class="total"><td>= Net Income</td><td>$2,500,000</td></tr>
+        </table>
+      </div>
+
+      <h2>2. The Balance Sheet</h2>
+      <p>While the income statement shows performance over time, the Balance Sheet is a snapshot of what the company owns and owes at a <em>specific moment</em> in time. It follows the fundamental accounting equation:</p>
+
+      <div class="card" style="text-align: center; font-size: 1.5rem; font-weight: 800;">
+        Assets = Liabilities + Shareholders' Equity
+      </div>
+
+      <h3>Assets (What the company owns)</h3>
+      <p>Assets are divided into <strong>Current Assets</strong> (cash or items easily converted to cash within one year, like inventory and accounts receivable) and <strong>Non-Current Assets</strong> (long-term investments like property, plants, equipment, and intellectual property).</p>
+
+      <h3>Liabilities (What the company owes)</h3>
+      <p>Liabilities are debts and obligations. <strong>Current Liabilities</strong> must be paid within one year (like accounts payable and short-term debt). <strong>Non-Current Liabilities</strong> are long-term obligations (like long-term bonds or mortgages).</p>
+
+      <h3>Shareholders' Equity (What's left for owners)</h3>
+      <p>Also known as "Book Value." If the company sold all its assets and paid off all its debts, this is the amount left over for the shareholders.</p>
+
+      <div class="example-box">
+        <strong>Example: Simplified Tech Corp Balance Sheet</strong>
+        <table>
+          <tr><th>Assets</th><th></th></tr>
+          <tr><td>Cash & Equivalents (Current)</td><td>$5,000,000</td></tr>
+          <tr><td>Property & Equipment (Non-Current)</td><td>$15,000,000</td></tr>
+          <tr class="total"><td>Total Assets</td><td>$20,000,000</td></tr>
+          <tr><th>Liabilities</th><th></th></tr>
+          <tr><td>Short-Term Debt (Current)</td><td>$2,000,000</td></tr>
+          <tr><td>Long-Term Debt (Non-Current)</td><td>$8,000,000</td></tr>
+          <tr class="total"><td>Total Liabilities</td><td>$10,000,000</td></tr>
+          <tr><th>Equity</th><th></th></tr>
+          <tr><td>Retained Earnings & Capital</td><td>$10,000,000</td></tr>
+          <tr class="total"><td>Total Liabilities + Equity</td><td>$20,000,000</td></tr>
+        </table>
+      </div>
+
+      <h2>3. The Cash Flow Statement</h2>
+      <p>Because of accounting rules (like depreciation and recognizing revenue before cash is received), "Net Income" doesn't equal cash in the bank. The Cash Flow Statement tracks the actual movement of cash in and out of the business.</p>
+      <p>Many investors argue that <strong>cash flow matters more than earnings</strong>. A company can show accounting profits on the income statement while bleeding cash and heading toward bankruptcy.</p>
+
+      <h3>The Three Sections</h3>
+      <ul>
+        <li><span class="highlight">Operating Cash Flow (OCF):</span> Cash generated from core business operations. It starts with Net Income and adjusts for non-cash expenses (like depreciation) and changes in working capital.</li>
+        <li><span class="highlight">Investing Cash Flow:</span> Cash spent on or generated from long-term investments, primarily Capital Expenditures (CapEx) like buying new factories or servers.</li>
+        <li><span class="highlight">Financing Cash Flow:</span> Cash flows from raising capital or returning it to shareholders. This includes issuing debt, repaying debt, paying dividends, or buying back stock.</li>
+      </ul>
+
+      <p><strong>Free Cash Flow (FCF)</strong> is a crucial metric derived here: it's Operating Cash Flow minus Capital Expenditures. It represents the cash available to return to shareholders after maintaining the business.</p>
+
+      <h2>4. Key Ratios Derived From These Statements</h2>
+      <p>You can combine numbers from these statements to gauge a company's health and valuation:</p>
+      <ul>
+        <li><strong>Gross Margin (Income Statement):</strong> Gross Profit ÷ Revenue. Measures production efficiency and pricing power.</li>
+        <li><strong>Current Ratio (Balance Sheet):</strong> Current Assets ÷ Current Liabilities. Measures short-term liquidity. A ratio under 1.0 means the company may struggle to pay its immediate bills.</li>
+        <li><strong>Debt-to-Equity (Balance Sheet):</strong> Total Liabilities ÷ Shareholders' Equity. Measures financial leverage and risk.</li>
+        <li><strong>Price-to-Earnings (P/E) Ratio:</strong> Stock Price ÷ Earnings Per Share (from Net Income). Measures how much you pay for $1 of profit.</li>
+      </ul>
+
+      <h2>5. Red Flags to Watch For</h2>
+      <div class="card">
+        <ul>
+          <li><strong>Rising Revenue but Falling Gross Margins:</strong> The company is selling more, but it's costing them more to make the product, squeezing profitability.</li>
+          <li><strong>Accounts Receivable Growing Faster Than Revenue:</strong> The company is booking sales but failing to collect the cash from customers.</li>
+          <li><strong>Negative Operating Cash Flow Despite Positive Net Income:</strong> Accounting tricks may be inflating earnings, but the business isn't actually generating cash.</li>
+          <li><strong>Ballooning Long-Term Debt:</strong> High debt levels make a company fragile during economic downturns due to crushing interest payments.</li>
+        </ul>
+      </div>
+
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <span class="faq-q">Why is the cash flow statement often considered more important than the income statement?</span>
+        <span class="faq-a">The income statement includes non-cash items (like depreciation) and recognizes revenue when earned, not when cash is received. The cash flow statement shows actual cash moving in and out, revealing a company's true ability to fund operations, pay debt, and return money to shareholders.</span>
+      </div>
+      <div class="faq-item">
+        <span class="faq-q">What is a good Current Ratio?</span>
+        <span class="faq-a">A current ratio between 1.5 and 2.0 is generally considered healthy. Below 1.0 indicates potential short-term liquidity issues, while a very high ratio (e.g., above 3.0) might mean the company isn't using its assets efficiently.</span>
+      </div>
+      <div class="faq-item">
+        <span class="faq-q">What is the difference between Gross Margin and Operating Margin?</span>
+        <span class="faq-a">Gross margin only deducts the direct costs of making a product (COGS). Operating margin goes further by deducting all operating expenses like SG&A (Sales, General, and Administrative) and R&D, showing the profitability of core business operations.</span>
+      </div>
+      <div class="faq-item">
+        <span class="faq-q">Can a company be profitable but go bankrupt?</span>
+        <span class="faq-a">Yes. If a company recognizes a lot of revenue on credit (boosting net income) but fails to collect cash, it may run out of money to pay its bills. This highlights the importance of the Operating Cash Flow metric.</span>
+      </div>
+      <div class="faq-item">
+        <span class="faq-q">Where can I find these financial statements for real companies?</span>
+        <span class="faq-a">Publicly traded companies in the US file 10-K (annual) and 10-Q (quarterly) reports with the SEC. You can find these on the SEC EDGAR database, the company's investor relations website, or financial data sites like Yahoo Finance.</span>
+      </div>
+
+    </div>
+
+    <footer>
+      <div class="footer-links">
+        <a href="/">Home</a>
+      </div>
+      <p><strong>Methodology:</strong> This guide outlines standard GAAP (Generally Accepted Accounting Principles) definitions and practices for educational purposes. Real-world financial statements may include non-GAAP metrics and complex adjustments.</p>
+      <p><strong>Disclaimer:</strong> This content is for informational and educational purposes only and does not constitute financial, investment, or legal advice. Always do your own research or consult a professional before making investment decisions.</p>
+      <p>&copy; 2026 Westmount Fundamentals. All rights reserved.</p>
+    </footer>
+  </div>
+</body>
+</html>
