@@ -1,0 +1,4072 @@
+[
+  {
+    "ticker": "ARE",
+    "company": "Alexandria Real Estate Equities",
+    "sector": "Real Estate",
+    "dividendYield": 0.0804,
+    "divGrowth5yr": 0.019943229237698423,
+    "payoutRatio": 6.8946996,
+    "consecutiveYears": 0,
+    "marketCapB": 8.791527424
+  },
+  {
+    "ticker": "CAG",
+    "company": "ConAgra Brands, Inc.",
+    "sector": "Consumer Defensive",
+    "dividendYield": 0.0736,
+    "divGrowth5yr": -0.21524851802565148,
+    "payoutRatio": 0.791,
+    "consecutiveYears": 0,
+    "marketCapB": 9.098587136
+  },
+  {
+    "ticker": "LYB",
+    "company": "LyondellBasell Industries NV",
+    "sector": "Basic Materials",
+    "dividendYield": 0.0715,
+    "divGrowth5yr": -0.3108825868762738,
+    "payoutRatio": 11.468101,
+    "consecutiveYears": 0,
+    "marketCapB": 21.62082816
+  },
+  {
+    "ticker": "DOC",
+    "company": "Healthpeak Properties, Inc.",
+    "sector": "Real Estate",
+    "dividendYield": 0.0706,
+    "divGrowth5yr": -0.2983996705722102,
+    "payoutRatio": 12.2003,
+    "consecutiveYears": 0,
+    "marketCapB": 12.010359808
+  },
+  {
+    "ticker": "PGR",
+    "company": "Progressive Corporation (The)",
+    "sector": "Financial Services",
+    "dividendYield": 0.066,
+    "divGrowth5yr": 0.16271101521949816,
+    "payoutRatio": 0.7228,
+    "consecutiveYears": 4,
+    "marketCapB": 123.390550016
+  },
+  {
+    "ticker": "KHC",
+    "company": "The Kraft Heinz Company",
+    "sector": "Consumer Defensive",
+    "dividendYield": 0.0652,
+    "divGrowth5yr": -0.242141716744801,
+    "payoutRatio": 0.7306,
+    "consecutiveYears": 0,
+    "marketCapB": 29.04909824
+  },
+  {
+    "ticker": "UPS",
+    "company": "United Parcel Service, Inc.",
+    "sector": "Industrials",
+    "dividendYield": 0.0641,
+    "divGrowth5yr": -0.16663215972061385,
+    "payoutRatio": 1,
+    "consecutiveYears": 0,
+    "marketCapB": 86.914048
+  },
+  {
+    "ticker": "MO",
+    "company": "Altria Group, Inc.",
+    "sector": "Consumer Defensive",
+    "dividendYield": 0.0637,
+    "divGrowth5yr": 0.04117296495987799,
+    "payoutRatio": 1.0097001,
+    "consecutiveYears": 5,
+    "marketCapB": 111.648456704
+  },
+  {
+    "ticker": "PFE",
+    "company": "Pfizer, Inc.",
+    "sector": "Healthcare",
+    "dividendYield": 0.0636,
+    "divGrowth5yr": -0.22719704961967668,
+    "payoutRatio": 1.2647,
+    "consecutiveYears": 0,
+    "marketCapB": 153.813532672
+  },
+  {
+    "ticker": "HPQ",
+    "company": "HP Inc.",
+    "sector": "Technology",
+    "dividendYield": 0.0617,
+    "divGrowth5yr": 0.10079571842669632,
+    "payoutRatio": 0.4425,
+    "consecutiveYears": 5,
+    "marketCapB": 17.86397696
+  },
+  {
+    "ticker": "CPB",
+    "company": "The Campbell's Company",
+    "sector": "Consumer Defensive",
+    "dividendYield": 0.060500003,
+    "divGrowth5yr": -0.23412026503254513,
+    "payoutRatio": 0.80410004,
+    "consecutiveYears": 0,
+    "marketCapB": 7.69186304
+  },
+  {
+    "ticker": "AMCR",
+    "company": "Amcor plc",
+    "sector": "Consumer Cyclical",
+    "dividendYield": 0.060100004,
+    "divGrowth5yr": -0.22797208805972435,
+    "payoutRatio": 1.9267,
+    "consecutiveYears": 0,
+    "marketCapB": 19.9973376
+  },
+  {
+    "ticker": "VICI",
+    "company": "VICI Properties Inc.",
+    "sector": "Real Estate",
+    "dividendYield": 0.060100004,
+    "divGrowth5yr": 0.07053337633330758,
+    "payoutRatio": 0.67620003,
+    "consecutiveYears": 5,
+    "marketCapB": 31.711633408
+  },
+  {
+    "ticker": "BBY",
+    "company": "Best Buy Co., Inc.",
+    "sector": "Consumer Cyclical",
+    "dividendYield": 0.057600003,
+    "divGrowth5yr": 0.11550670014054099,
+    "payoutRatio": 1.2508,
+    "consecutiveYears": 5,
+    "marketCapB": 14.009551872
+  },
+  {
+    "ticker": "TROW",
+    "company": "T. Rowe Price Group, Inc.",
+    "sector": "Financial Services",
+    "dividendYield": 0.0575,
+    "divGrowth5yr": 0.07130280567333513,
+    "payoutRatio": 0.5498,
+    "consecutiveYears": 3,
+    "marketCapB": 19.728623616
+  },
+  {
+    "ticker": "PRU",
+    "company": "Prudential Financial, Inc.",
+    "sector": "Financial Services",
+    "dividendYield": 0.0561,
+    "divGrowth5yr": -0.21173173825709546,
+    "payoutRatio": 0.5405,
+    "consecutiveYears": 0,
+    "marketCapB": 33.797761024
+  },
+  {
+    "ticker": "VZ",
+    "company": "Verizon Communications Inc.",
+    "sector": "Communication Services",
+    "dividendYield": 0.0554,
+    "divGrowth5yr": -0.22847154503929779,
+    "payoutRatio": 0.5037,
+    "consecutiveYears": 0,
+    "marketCapB": 215.608016896
+  },
+  {
+    "ticker": "GIS",
+    "company": "General Mills, Inc.",
+    "sector": "Consumer Defensive",
+    "dividendYield": 0.0551,
+    "divGrowth5yr": -0.21451131476929108,
+    "payoutRatio": 0.5204,
+    "consecutiveYears": 0,
+    "marketCapB": 23.632351232
+  },
+  {
+    "ticker": "BXP",
+    "company": "BXP, Inc.",
+    "sector": "Real Estate",
+    "dividendYield": 0.0529,
+    "divGrowth5yr": -0.030359733904420927,
+    "payoutRatio": 1.9310001,
+    "consecutiveYears": 0,
+    "marketCapB": 9.373395968
+  },
+  {
+    "ticker": "DOW",
+    "company": "Dow Inc.",
+    "sector": "Basic Materials",
+    "dividendYield": 0.052600004,
+    "divGrowth5yr": -0.3402460446135529,
+    "payoutRatio": 7,
+    "consecutiveYears": 0,
+    "marketCapB": 23.879532544
+  },
+  {
+    "ticker": "SWKS",
+    "company": "Skyworks Solutions, Inc.",
+    "sector": "Technology",
+    "dividendYield": 0.051799998,
+    "divGrowth5yr": -0.19650255972320396,
+    "payoutRatio": 1.0805,
+    "consecutiveYears": 0,
+    "marketCapB": 8.238218752
+  },
+  {
+    "ticker": "BEN",
+    "company": "Franklin Resources, Inc.",
+    "sector": "Financial Services",
+    "dividendYield": 0.050300002,
+    "divGrowth5yr": 0.034266939154635745,
+    "payoutRatio": 1.1944001,
+    "consecutiveYears": 0,
+    "marketCapB": 13.681291264
+  },
+  {
+    "ticker": "O",
+    "company": "Realty Income Corporation",
+    "sector": "Real Estate",
+    "dividendYield": 0.0498,
+    "divGrowth5yr": -0.3724895857041538,
+    "payoutRatio": 2.7547,
+    "consecutiveYears": 0,
+    "marketCapB": 60.82537472
+  },
+  {
+    "ticker": "AES",
+    "company": "The AES Corporation",
+    "sector": "Utilities",
+    "dividendYield": 0.0497,
+    "divGrowth5yr": 0.0424022162772979,
+    "payoutRatio": 0.46080002,
+    "consecutiveYears": 5,
+    "marketCapB": 10.076511232
+  },
+  {
+    "ticker": "F",
+    "company": "Ford Motor Company",
+    "sector": "Consumer Cyclical",
+    "dividendYield": 0.0494,
+    "divGrowth5yr": 0.08447177119769855,
+    "payoutRatio": 0.641,
+    "consecutiveYears": 0,
+    "marketCapB": 48.47212544
+  },
+  {
+    "ticker": "ARES",
+    "company": "Ares Management Corporation",
+    "sector": "Financial Services",
+    "dividendYield": 0.049099997,
+    "divGrowth5yr": 0.22865967908314722,
+    "payoutRatio": 2.6199,
+    "consecutiveYears": 5,
+    "marketCapB": 36.404441088
+  },
+  {
+    "ticker": "KMB",
+    "company": "Kimberly-Clark Corporation",
+    "sector": "Consumer Defensive",
+    "dividendYield": 0.049000002,
+    "divGrowth5yr": -0.22437995319965243,
+    "payoutRatio": 1.037,
+    "consecutiveYears": 0,
+    "marketCapB": 34.712440832
+  },
+  {
+    "ticker": "EIX",
+    "company": "Edison International",
+    "sector": "Utilities",
+    "dividendYield": 0.048899997,
+    "divGrowth5yr": -0.2005694462056935,
+    "payoutRatio": 0.2909,
+    "consecutiveYears": 0,
+    "marketCapB": 27.612596224
+  },
+  {
+    "ticker": "HRL",
+    "company": "Hormel Foods Corporation",
+    "sector": "Consumer Defensive",
+    "dividendYield": 0.0479,
+    "divGrowth5yr": -0.21453233934568483,
+    "payoutRatio": 1.3061999,
+    "consecutiveYears": 0,
+    "marketCapB": 13.437940736
+  },
+  {
+    "ticker": "OKE",
+    "company": "ONEOK, Inc.",
+    "sector": "Energy",
+    "dividendYield": 0.0479,
+    "divGrowth5yr": 0.019542003607296188,
+    "payoutRatio": 0.7601,
+    "consecutiveYears": 5,
+    "marketCapB": 54.747090944
+  },
+  {
+    "ticker": "CCI",
+    "company": "Crown Castle Inc.",
+    "sector": "Real Estate",
+    "dividendYield": 0.047,
+    "divGrowth5yr": -0.007244157502670157,
+    "payoutRatio": 1.8859,
+    "consecutiveYears": 0,
+    "marketCapB": 39.43385088
+  },
+  {
+    "ticker": "IP",
+    "company": "International Paper Company",
+    "sector": "Consumer Cyclical",
+    "dividendYield": 0.0468,
+    "divGrowth5yr": -0.24761775701597755,
+    "payoutRatio": 1.5812,
+    "consecutiveYears": 0,
+    "marketCapB": 20.873353216
+  },
+  {
+    "ticker": "UDR",
+    "company": "UDR, Inc.",
+    "sector": "Real Estate",
+    "dividendYield": 0.0462,
+    "divGrowth5yr": -0.2157039747933862,
+    "payoutRatio": 1.5177001,
+    "consecutiveYears": 0,
+    "marketCapB": 14.0242176
+  },
+  {
+    "ticker": "MAA",
+    "company": "Mid-America Apartment Communiti",
+    "sector": "Real Estate",
+    "dividendYield": 0.0461,
+    "divGrowth5yr": -0.1789274845436376,
+    "payoutRatio": 1.6032001,
+    "consecutiveYears": 0,
+    "marketCapB": 15.937931264
+  },
+  {
+    "ticker": "INVH",
+    "company": "Invitation Homes Inc.",
+    "sector": "Real Estate",
+    "dividendYield": 0.0458,
+    "divGrowth5yr": 0.14289655141156077,
+    "payoutRatio": 1.2188,
+    "consecutiveYears": 1,
+    "marketCapB": 16.067269632
+  },
+  {
+    "ticker": "KVUE",
+    "company": "Kenvue Inc.",
+    "sector": "Consumer Defensive",
+    "dividendYield": 0.045100003,
+    "divGrowth5yr": -0.19585484828218847,
+    "payoutRatio": 1.0855,
+    "consecutiveYears": 0,
+    "marketCapB": 35.24870144
+  },
+  {
+    "ticker": "KIM",
+    "company": "Kimco Realty Corporation (HC)",
+    "sector": "Real Estate",
+    "dividendYield": 0.044699997,
+    "divGrowth5yr": -0.174926027830268,
+    "payoutRatio": 1.2317,
+    "consecutiveYears": 0,
+    "marketCapB": 15.765078016
+  },
+  {
+    "ticker": "TFC",
+    "company": "Truist Financial Corporation",
+    "sector": "Financial Services",
+    "dividendYield": 0.044699997,
+    "divGrowth5yr": -0.22500646455615092,
+    "payoutRatio": 0.5445,
+    "consecutiveYears": 0,
+    "marketCapB": 58.073841664
+  },
+  {
+    "ticker": "SPG",
+    "company": "Simon Property Group, Inc.",
+    "sector": "Real Estate",
+    "dividendYield": 0.0444,
+    "divGrowth5yr": 0.0734034155465566,
+    "payoutRatio": 0.6034,
+    "consecutiveYears": 4,
+    "marketCapB": 63.310647296
+  },
+  {
+    "ticker": "EQR",
+    "company": "Equity Residential",
+    "sector": "Real Estate",
+    "dividendYield": 0.0442,
+    "divGrowth5yr": -0.22076009231055782,
+    "payoutRatio": 0.9435,
+    "consecutiveYears": 0,
+    "marketCapB": 24.594931712
+  },
+  {
+    "ticker": "EXR",
+    "company": "Extra Space Storage Inc",
+    "sector": "Real Estate",
+    "dividendYield": 0.0442,
+    "divGrowth5yr": 0.12474611314209483,
+    "payoutRatio": 1.4117999,
+    "consecutiveYears": 5,
+    "marketCapB": 32.490319872
+  },
+  {
+    "ticker": "SWK",
+    "company": "Stanley Black & Decker, Inc.",
+    "sector": "Industrials",
+    "dividendYield": 0.0436,
+    "divGrowth5yr": 0.03488913822471096,
+    "payoutRatio": 1.2452999,
+    "consecutiveYears": 5,
+    "marketCapB": 11.79844608
+  },
+  {
+    "ticker": "CLX",
+    "company": "Clorox Company (The)",
+    "sector": "Consumer Defensive",
+    "dividendYield": 0.0433,
+    "divGrowth5yr": -0.22861148859006386,
+    "payoutRatio": 0.8052,
+    "consecutiveYears": 0,
+    "marketCapB": 13.986270208
+  },
+  {
+    "ticker": "BX",
+    "company": "Blackstone Inc.",
+    "sector": "Financial Services",
+    "dividendYield": 0.0429,
+    "divGrowth5yr": -0.1603397180245636,
+    "payoutRatio": 1.2119,
+    "consecutiveYears": 0,
+    "marketCapB": 135.752105984
+  },
+  {
+    "ticker": "PAYX",
+    "company": "Paychex, Inc.",
+    "sector": "Technology",
+    "dividendYield": 0.0428,
+    "divGrowth5yr": -0.16113884994221106,
+    "payoutRatio": 0.9548,
+    "consecutiveYears": 0,
+    "marketCapB": 36.201869312
+  },
+  {
+    "ticker": "ES",
+    "company": "Eversource Energy (D/B/A)",
+    "sector": "Utilities",
+    "dividendYield": 0.0423,
+    "divGrowth5yr": -0.2004791702669857,
+    "payoutRatio": 0.66010004,
+    "consecutiveYears": 0,
+    "marketCapB": 27.951968256
+  },
+  {
+    "ticker": "D",
+    "company": "Dominion Energy, Inc.",
+    "sector": "Utilities",
+    "dividendYield": 0.0422,
+    "divGrowth5yr": -0.23321221777419743,
+    "payoutRatio": 0.76949996,
+    "consecutiveYears": 0,
+    "marketCapB": 55.574401024
+  },
+  {
+    "ticker": "SW",
+    "company": "Smurfit WestRock plc",
+    "sector": "Consumer Cyclical",
+    "dividendYield": 0.0422,
+    "divGrowth5yr": -0.20007021159845206,
+    "payoutRatio": 1.2955999,
+    "consecutiveYears": 0,
+    "marketCapB": 22.464272384
+  },
+  {
+    "ticker": "BMY",
+    "company": "Bristol-Myers Squibb Company",
+    "sector": "Healthcare",
+    "dividendYield": 0.0418,
+    "divGrowth5yr": -0.1558791201558899,
+    "payoutRatio": 0.71970004,
+    "consecutiveYears": 0,
+    "marketCapB": 122.779000832
+  },
+  {
+    "ticker": "FRT",
+    "company": "Federal Realty Investment Trust",
+    "sector": "Real Estate",
+    "dividendYield": 0.0417,
+    "divGrowth5yr": -0.2331087742828386,
+    "payoutRatio": 0.953,
+    "consecutiveYears": 0,
+    "marketCapB": 9.335904256
+  },
+  {
+    "ticker": "HST",
+    "company": "Host Hotels & Resorts, Inc.",
+    "sector": "Real Estate",
+    "dividendYield": 0.0416,
+    "divGrowth5yr": 0.36564783932340417,
+    "payoutRatio": 0.72730005,
+    "consecutiveYears": 3,
+    "marketCapB": 13.397331968
+  },
+  {
+    "ticker": "CMCSA",
+    "company": "Comcast Corporation",
+    "sector": "Communication Services",
+    "dividendYield": 0.0414,
+    "divGrowth5yr": -0.1851261891300483,
+    "payoutRatio": 0.18370001,
+    "consecutiveYears": 0,
+    "marketCapB": 116.27667456
+  },
+  {
+    "ticker": "KEY",
+    "company": "KeyCorp",
+    "sector": "Financial Services",
+    "dividendYield": 0.041300002,
+    "divGrowth5yr": -0.22849540053432937,
+    "payoutRatio": 0.5395,
+    "consecutiveYears": 0,
+    "marketCapB": 21.640398848
+  },
+  {
+    "ticker": "TAP",
+    "company": "Molson Coors Beverage Company",
+    "sector": "Consumer Defensive",
+    "dividendYield": 0.041199997,
+    "divGrowth5yr": -0.06729036105934671,
+    "payoutRatio": 0.35900003,
+    "consecutiveYears": 0,
+    "marketCapB": 9.208036352
+  },
+  {
+    "ticker": "ESS",
+    "company": "Essex Property Trust, Inc.",
+    "sector": "Real Estate",
+    "dividendYield": 0.0404,
+    "divGrowth5yr": -0.21014864198671568,
+    "payoutRatio": 0.9885,
+    "consecutiveYears": 0,
+    "marketCapB": 17.639675904
+  },
+  {
+    "ticker": "AVB",
+    "company": "AvalonBay Communities, Inc.",
+    "sector": "Real Estate",
+    "dividendYield": 0.04,
+    "divGrowth5yr": 0.019361401574700343,
+    "payoutRatio": 0.94589996,
+    "consecutiveYears": 5,
+    "marketCapB": 25.188325376
+  },
+  {
+    "ticker": "CPT",
+    "company": "Camden Property Trust",
+    "sector": "Real Estate",
+    "dividendYield": 0.0398,
+    "divGrowth5yr": 0.04814711030100338,
+    "payoutRatio": 1.1863999,
+    "consecutiveYears": 5,
+    "marketCapB": 11.334294528
+  },
+  {
+    "ticker": "SJM",
+    "company": "The J.M. Smucker Company",
+    "sector": "Consumer Defensive",
+    "dividendYield": 0.0396,
+    "divGrowth5yr": -0.21876772482541962,
+    "payoutRatio": 0.8606,
+    "consecutiveYears": 0,
+    "marketCapB": 11.865476096
+  },
+  {
+    "ticker": "USB",
+    "company": "U.S. Bancorp",
+    "sector": "Financial Services",
+    "dividendYield": 0.039,
+    "divGrowth5yr": 0.039594988207552584,
+    "payoutRatio": 0.4416,
+    "consecutiveYears": 5,
+    "marketCapB": 81.367048192
+  },
+  {
+    "ticker": "PSA",
+    "company": "Public Storage",
+    "sector": "Real Estate",
+    "dividendYield": 0.038900003,
+    "divGrowth5yr": 0.08447177119769855,
+    "payoutRatio": 1.3319,
+    "consecutiveYears": 2,
+    "marketCapB": 54.078803968
+  },
+  {
+    "ticker": "T",
+    "company": "AT&T Inc.",
+    "sector": "Communication Services",
+    "dividendYield": 0.0388,
+    "divGrowth5yr": -0.3313539364229784,
+    "payoutRatio": 0.2738,
+    "consecutiveYears": 0,
+    "marketCapB": 203.04183296
+  },
+  {
+    "ticker": "RF",
+    "company": "Regions Financial Corporation",
+    "sector": "Financial Services",
+    "dividendYield": 0.038599998,
+    "divGrowth5yr": -0.1642690161873961,
+    "payoutRatio": 0.44779998,
+    "consecutiveYears": 0,
+    "marketCapB": 23.71074048
+  },
+  {
+    "ticker": "REG",
+    "company": "Regency Centers Corporation",
+    "sector": "Real Estate",
+    "dividendYield": 0.038399998,
+    "divGrowth5yr": 0.03815210271659408,
+    "payoutRatio": 1.0177,
+    "consecutiveYears": 5,
+    "marketCapB": 14.689342464
+  },
+  {
+    "ticker": "HBAN",
+    "company": "Huntington Bancshares Incorpora",
+    "sector": "Financial Services",
+    "dividendYield": 0.038,
+    "divGrowth5yr": 0.006579515097667965,
+    "payoutRatio": 0.44599998,
+    "consecutiveYears": 5,
+    "marketCapB": 33.105911808
+  },
+  {
+    "ticker": "TGT",
+    "company": "Target Corporation",
+    "sector": "Consumer Defensive",
+    "dividendYield": 0.0378,
+    "divGrowth5yr": -0.18446321695422896,
+    "payoutRatio": 0.5455,
+    "consecutiveYears": 0,
+    "marketCapB": 54.88687104
+  },
+  {
+    "ticker": "OMC",
+    "company": "Omnicom Group Inc.",
+    "sector": "Communication Services",
+    "dividendYield": 0.0377,
+    "divGrowth5yr": 0.0220800938152379,
+    "payoutRatio": 0.413,
+    "consecutiveYears": 5,
+    "marketCapB": 26.719291392
+  },
+  {
+    "ticker": "CVX",
+    "company": "Chevron Corporation",
+    "sector": "Energy",
+    "dividendYield": 0.0375,
+    "divGrowth5yr": -0.19635342854278737,
+    "payoutRatio": 1.0317,
+    "consecutiveYears": 0,
+    "marketCapB": 379.757232128
+  },
+  {
+    "ticker": "GPC",
+    "company": "Genuine Parts Company",
+    "sector": "Consumer Cyclical",
+    "dividendYield": 0.0368,
+    "divGrowth5yr": -0.20078590802649188,
+    "payoutRatio": 8.766,
+    "consecutiveYears": 0,
+    "marketCapB": 16.070043648
+  },
+  {
+    "ticker": "FE",
+    "company": "FirstEnergy Corp.",
+    "sector": "Utilities",
+    "dividendYield": 0.0366,
+    "divGrowth5yr": 0.024418974332246268,
+    "payoutRatio": 1,
+    "consecutiveYears": 5,
+    "marketCapB": 29.382107136
+  },
+  {
+    "ticker": "AMT",
+    "company": "American Tower Corporation (REI",
+    "sector": "Real Estate",
+    "dividendYield": 0.0365,
+    "divGrowth5yr": 0.0846313227378106,
+    "payoutRatio": 1.2593,
+    "consecutiveYears": 5,
+    "marketCapB": 88.287772672
+  },
+  {
+    "ticker": "PEP",
+    "company": "Pepsico, Inc.",
+    "sector": "Consumer Defensive",
+    "dividendYield": 0.0357,
+    "divGrowth5yr": -0.1964663319711637,
+    "payoutRatio": 0.9371,
+    "consecutiveYears": 0,
+    "marketCapB": 217.995034624
+  },
+  {
+    "ticker": "IVZ",
+    "company": "Invesco Ltd",
+    "sector": "Financial Services",
+    "dividendYield": 0.0355,
+    "divGrowth5yr": -0.20589207556247546,
+    "payoutRatio": 0.5646,
+    "consecutiveYears": 0,
+    "marketCapB": 10.501758976
+  },
+  {
+    "ticker": "PNW",
+    "company": "Pinnacle West Capital Corporati",
+    "sector": "Utilities",
+    "dividendYield": 0.0355,
+    "divGrowth5yr": 0.02490042532691472,
+    "payoutRatio": 0.7119,
+    "consecutiveYears": 5,
+    "marketCapB": 12.385548288
+  },
+  {
+    "ticker": "KMI",
+    "company": "Kinder Morgan, Inc.",
+    "sector": "Energy",
+    "dividendYield": 0.0348,
+    "divGrowth5yr": 0.023507576096077232,
+    "payoutRatio": 0.85040003,
+    "consecutiveYears": 5,
+    "marketCapB": 74.709000192
+  },
+  {
+    "ticker": "PM",
+    "company": "Philip Morris International Inc",
+    "sector": "Consumer Defensive",
+    "dividendYield": 0.0346,
+    "divGrowth5yr": 0.0353809078917704,
+    "payoutRatio": 0.7765,
+    "consecutiveYears": 5,
+    "marketCapB": 264.60438528
+  },
+  {
+    "ticker": "WY",
+    "company": "Weyerhaeuser Company",
+    "sector": "Real Estate",
+    "dividendYield": 0.0343,
+    "divGrowth5yr": 0.10494795379650323,
+    "payoutRatio": 1.8666999,
+    "consecutiveYears": 0,
+    "marketCapB": 17.661093888
+  },
+  {
+    "ticker": "MDLZ",
+    "company": "Mondelez International, Inc.",
+    "sector": "Consumer Defensive",
+    "dividendYield": 0.0342,
+    "divGrowth5yr": 0.1008397341583922,
+    "payoutRatio": 1.0265,
+    "consecutiveYears": 5,
+    "marketCapB": 75.35693824
+  },
+  {
+    "ticker": "CVS",
+    "company": "CVS Health Corporation",
+    "sector": "Healthcare",
+    "dividendYield": 0.0341,
+    "divGrowth5yr": -0.19766021099454212,
+    "payoutRatio": 1.9137,
+    "consecutiveYears": 0,
+    "marketCapB": 99.130687488
+  },
+  {
+    "ticker": "EXC",
+    "company": "Exelon Corporation",
+    "sector": "Utilities",
+    "dividendYield": 0.034,
+    "divGrowth5yr": -0.1740614028376013,
+    "payoutRatio": 0.5861,
+    "consecutiveYears": 0,
+    "marketCapB": 50.48997888
+  },
+  {
+    "ticker": "PFG",
+    "company": "Principal Financial Group Inc",
+    "sector": "Financial Services",
+    "dividendYield": 0.0339,
+    "divGrowth5yr": 0.06576275663547415,
+    "payoutRatio": 0.58669996,
+    "consecutiveYears": 5,
+    "marketCapB": 20.2689536
+  },
+  {
+    "ticker": "VTRS",
+    "company": "Viatris Inc.",
+    "sector": "Healthcare",
+    "dividendYield": 0.0339,
+    "divGrowth5yr": 0.0982009735522249,
+    "payoutRatio": 9.6,
+    "consecutiveYears": 4,
+    "marketCapB": 16.309060608
+  },
+  {
+    "ticker": "FITB",
+    "company": "Fifth Third Bancorp",
+    "sector": "Financial Services",
+    "dividendYield": 0.033800002,
+    "divGrowth5yr": 0.07354287292628658,
+    "payoutRatio": 0.4363,
+    "consecutiveYears": 5,
+    "marketCapB": 42.656038912
+  },
+  {
+    "ticker": "MOS",
+    "company": "Mosaic Company (The)",
+    "sector": "Basic Materials",
+    "dividendYield": 0.0334,
+    "divGrowth5yr": 0.3449016775452185,
+    "payoutRatio": 0.5176,
+    "consecutiveYears": 1,
+    "marketCapB": 8.353563136
+  },
+  {
+    "ticker": "EVRG",
+    "company": "Evergy, Inc.",
+    "sector": "Utilities",
+    "dividendYield": 0.033299997,
+    "divGrowth5yr": 0.056549392638509444,
+    "payoutRatio": 0.737,
+    "consecutiveYears": 5,
+    "marketCapB": 19.19627264
+  },
+  {
+    "ticker": "TSN",
+    "company": "Tyson Foods, Inc.",
+    "sector": "Consumer Defensive",
+    "dividendYield": 0.0332,
+    "divGrowth5yr": -0.22249866278597186,
+    "payoutRatio": 3.5893,
+    "consecutiveYears": 0,
+    "marketCapB": 21.6282112
+  },
+  {
+    "ticker": "LW",
+    "company": "Lamb Weston Holdings, Inc.",
+    "sector": "Consumer Defensive",
+    "dividendYield": 0.033,
+    "divGrowth5yr": 0.09975204344332944,
+    "payoutRatio": 0.5362,
+    "consecutiveYears": 5,
+    "marketCapB": 6.414394368
+  },
+  {
+    "ticker": "PNC",
+    "company": "PNC Financial Services Group, I",
+    "sector": "Financial Services",
+    "dividendYield": 0.033,
+    "divGrowth5yr": -0.18746601127018026,
+    "payoutRatio": 0.3978,
+    "consecutiveYears": 0,
+    "marketCapB": 83.33717504
+  },
+  {
+    "ticker": "IRM",
+    "company": "Iron Mountain Incorporated (Del",
+    "sector": "Real Estate",
+    "dividendYield": 0.032899998,
+    "divGrowth5yr": 0.05388704821886159,
+    "payoutRatio": 6.5694,
+    "consecutiveYears": 5,
+    "marketCapB": 31.115945984
+  },
+  {
+    "ticker": "WEC",
+    "company": "WEC Energy Group, Inc.",
+    "sector": "Utilities",
+    "dividendYield": 0.032899998,
+    "divGrowth5yr": -0.18873891672201515,
+    "payoutRatio": 0.7422,
+    "consecutiveYears": 0,
+    "marketCapB": 37.68676352
+  },
+  {
+    "ticker": "KDP",
+    "company": "Keurig Dr Pepper Inc.",
+    "sector": "Consumer Defensive",
+    "dividendYield": 0.0326,
+    "divGrowth5yr": -0.19396067990137722,
+    "payoutRatio": 0.6013,
+    "consecutiveYears": 0,
+    "marketCapB": 38.382317568
+  },
+  {
+    "ticker": "DUK",
+    "company": "Duke Energy Corporation (Holdin",
+    "sector": "Utilities",
+    "dividendYield": 0.0322,
+    "divGrowth5yr": -0.2286402024588462,
+    "payoutRatio": 0.6688,
+    "consecutiveYears": 0,
+    "marketCapB": 103.040114688
+  },
+  {
+    "ticker": "PEG",
+    "company": "Public Service Enterprise Group",
+    "sector": "Utilities",
+    "dividendYield": 0.0322,
+    "divGrowth5yr": 0.051547496797280434,
+    "payoutRatio": 0.59720004,
+    "consecutiveYears": 5,
+    "marketCapB": 41.60448512
+  },
+  {
+    "ticker": "FIS",
+    "company": "Fidelity National Information S",
+    "sector": "Technology",
+    "dividendYield": 0.0319,
+    "divGrowth5yr": 0.027066087089351765,
+    "payoutRatio": 2.1917999,
+    "consecutiveYears": 1,
+    "marketCapB": 26.664136704
+  },
+  {
+    "ticker": "PLD",
+    "company": "Prologis, Inc.",
+    "sector": "Real Estate",
+    "dividendYield": 0.0318,
+    "divGrowth5yr": 0.11732283861391091,
+    "payoutRatio": 1.1348001,
+    "consecutiveYears": 5,
+    "marketCapB": 125.062856704
+  },
+  {
+    "ticker": "CFG",
+    "company": "Citizens Financial Group, Inc.",
+    "sector": "Financial Services",
+    "dividendYield": 0.0317,
+    "divGrowth5yr": 0.019719606495469222,
+    "payoutRatio": 0.4456,
+    "consecutiveYears": 5,
+    "marketCapB": 24.927379456
+  },
+  {
+    "ticker": "MET",
+    "company": "MetLife, Inc.",
+    "sector": "Financial Services",
+    "dividendYield": 0.031600002,
+    "divGrowth5yr": 0.04323851793701983,
+    "payoutRatio": 0.4772,
+    "consecutiveYears": 5,
+    "marketCapB": 47.328186368
+  },
+  {
+    "ticker": "MDT",
+    "company": "Medtronic plc.",
+    "sector": "Healthcare",
+    "dividendYield": 0.0312,
+    "divGrowth5yr": 0.044167851397406865,
+    "payoutRatio": 0.79050004,
+    "consecutiveYears": 5,
+    "marketCapB": 116.705140736
+  },
+  {
+    "ticker": "EOG",
+    "company": "EOG Resources, Inc.",
+    "sector": "Energy",
+    "dividendYield": 0.031,
+    "divGrowth5yr": -0.2605573161721104,
+    "payoutRatio": 0.4326,
+    "consecutiveYears": 0,
+    "marketCapB": 71.302864896
+  },
+  {
+    "ticker": "UNH",
+    "company": "UnitedHealth Group Incorporated",
+    "sector": "Healthcare",
+    "dividendYield": 0.0309,
+    "divGrowth5yr": 0.12567604092234652,
+    "payoutRatio": 0.65989995,
+    "consecutiveYears": 5,
+    "marketCapB": 260.030988288
+  },
+  {
+    "ticker": "ADM",
+    "company": "Archer-Daniels-Midland Company",
+    "sector": "Consumer Defensive",
+    "dividendYield": 0.0308,
+    "divGrowth5yr": -0.1887619253463262,
+    "payoutRatio": 0.91480005,
+    "consecutiveYears": 0,
+    "marketCapB": 32.452253696
+  },
+  {
+    "ticker": "ED",
+    "company": "Consolidated Edison, Inc.",
+    "sector": "Utilities",
+    "dividendYield": 0.0306,
+    "divGrowth5yr": -0.22122813287250076,
+    "payoutRatio": 0.6028,
+    "consecutiveYears": 0,
+    "marketCapB": 40.567066624
+  },
+  {
+    "ticker": "PSX",
+    "company": "Phillips 66",
+    "sector": "Energy",
+    "dividendYield": 0.0306,
+    "divGrowth5yr": -0.1890034063604895,
+    "payoutRatio": 0.4402,
+    "consecutiveYears": 0,
+    "marketCapB": 66.507481088
+  },
+  {
+    "ticker": "APA",
+    "company": "APA Corporation",
+    "sector": "Energy",
+    "dividendYield": 0.0306,
+    "divGrowth5yr": 0.1261913425989749,
+    "payoutRatio": 0.2392,
+    "consecutiveYears": 0,
+    "marketCapB": 11.69246208
+  },
+  {
+    "ticker": "SO",
+    "company": "Southern Company (The)",
+    "sector": "Utilities",
+    "dividendYield": 0.0304,
+    "divGrowth5yr": -0.22342020720056366,
+    "payoutRatio": 0.75,
+    "consecutiveYears": 0,
+    "marketCapB": 109.1182592
+  },
+  {
+    "ticker": "ACN",
+    "company": "Accenture plc",
+    "sector": "Technology",
+    "dividendYield": 0.030299999,
+    "divGrowth5yr": 0.06243366912582826,
+    "payoutRatio": 0.5017,
+    "consecutiveYears": 0,
+    "marketCapB": 133.329862656
+  },
+  {
+    "ticker": "ABBV",
+    "company": "AbbVie Inc.",
+    "sector": "Healthcare",
+    "dividendYield": 0.0301,
+    "divGrowth5yr": -0.19756742276620098,
+    "payoutRatio": 2.7679,
+    "consecutiveYears": 0,
+    "marketCapB": 406.87337472
+  },
+  {
+    "ticker": "ADP",
+    "company": "Automatic Data Processing, Inc.",
+    "sector": "Technology",
+    "dividendYield": 0.0301,
+    "divGrowth5yr": 0.11544252786259568,
+    "payoutRatio": 0.6071,
+    "consecutiveYears": 5,
+    "marketCapB": 91.508547584
+  },
+  {
+    "ticker": "DTE",
+    "company": "DTE Energy Company",
+    "sector": "Utilities",
+    "dividendYield": 0.03,
+    "divGrowth5yr": 0.04790653293798086,
+    "payoutRatio": 0.6309,
+    "consecutiveYears": 5,
+    "marketCapB": 31.197579264
+  },
+  {
+    "ticker": "EXE",
+    "company": "Expand Energy Corporation",
+    "sector": "Energy",
+    "dividendYield": 0.0299,
+    "divGrowth5yr": -0.12576962716585216,
+    "payoutRatio": 0.42139998,
+    "consecutiveYears": 0,
+    "marketCapB": 25.684148224
+  },
+  {
+    "ticker": "MKC",
+    "company": "McCormick & Company, Incorporat",
+    "sector": "Consumer Defensive",
+    "dividendYield": 0.0296,
+    "divGrowth5yr": 0.07579488180713856,
+    "payoutRatio": 0.6143,
+    "consecutiveYears": 5,
+    "marketCapB": 17.408219136
+  },
+  {
+    "ticker": "PPL",
+    "company": "PPL Corporation",
+    "sector": "Utilities",
+    "dividendYield": 0.0296,
+    "divGrowth5yr": -0.08034929086112208,
+    "payoutRatio": 0.6855,
+    "consecutiveYears": 3,
+    "marketCapB": 28.96287744
+  },
+  {
+    "ticker": "HAS",
+    "company": "Hasbro, Inc.",
+    "sector": "Consumer Cyclical",
+    "dividendYield": 0.0296,
+    "divGrowth5yr": -0.23773526688804436,
+    "payoutRatio": 0.92410004,
+    "consecutiveYears": 0,
+    "marketCapB": 13.293396992
+  },
+  {
+    "ticker": "CMS",
+    "company": "CMS Energy Corporation",
+    "sector": "Utilities",
+    "dividendYield": 0.0295,
+    "divGrowth5yr": -0.2000458026582016,
+    "payoutRatio": 0.6156,
+    "consecutiveYears": 0,
+    "marketCapB": 23.643437056
+  },
+  {
+    "ticker": "DRI",
+    "company": "Darden Restaurants, Inc.",
+    "sector": "Consumer Cyclical",
+    "dividendYield": 0.0295,
+    "divGrowth5yr": -0.1534464547928146,
+    "payoutRatio": 0.608,
+    "consecutiveYears": 0,
+    "marketCapB": 23.63262976
+  },
+  {
+    "ticker": "MRK",
+    "company": "Merck & Company, Inc.",
+    "sector": "Healthcare",
+    "dividendYield": 0.0294,
+    "divGrowth5yr": 0.06747250322741993,
+    "payoutRatio": 0.45049998,
+    "consecutiveYears": 5,
+    "marketCapB": 286.278254592
+  },
+  {
+    "ticker": "TXN",
+    "company": "Texas Instruments Incorporated",
+    "sector": "Technology",
+    "dividendYield": 0.0294,
+    "divGrowth5yr": 0.08134418695281065,
+    "payoutRatio": 1.0092,
+    "consecutiveYears": 5,
+    "marketCapB": 175.555067904
+  },
+  {
+    "ticker": "NKE",
+    "company": "Nike, Inc.",
+    "sector": "Consumer Cyclical",
+    "dividendYield": 0.028800001,
+    "divGrowth5yr": -0.18352840050324426,
+    "payoutRatio": 0.9415,
+    "consecutiveYears": 0,
+    "marketCapB": 84.396654592
+  },
+  {
+    "ticker": "LNT",
+    "company": "Alliant Energy Corporation",
+    "sector": "Utilities",
+    "dividendYield": 0.028800001,
+    "divGrowth5yr": 0.059363175944590285,
+    "payoutRatio": 0.6465,
+    "consecutiveYears": 5,
+    "marketCapB": 18.40228352
+  },
+  {
+    "ticker": "AEP",
+    "company": "American Electric Power Company",
+    "sector": "Utilities",
+    "dividendYield": 0.028800001,
+    "divGrowth5yr": -0.20545139386802203,
+    "payoutRatio": 0.56159997,
+    "consecutiveYears": 0,
+    "marketCapB": 71.32340224
+  },
+  {
+    "ticker": "COP",
+    "company": "ConocoPhillips",
+    "sector": "Energy",
+    "dividendYield": 0.0287,
+    "divGrowth5yr": -0.1550151256342821,
+    "payoutRatio": 0.5008,
+    "consecutiveYears": 0,
+    "marketCapB": 143.09924864
+  },
+  {
+    "ticker": "XEL",
+    "company": "Xcel Energy Inc.",
+    "sector": "Utilities",
+    "dividendYield": 0.0287,
+    "divGrowth5yr": 0.10456223763762407,
+    "payoutRatio": 0.6667,
+    "consecutiveYears": 1,
+    "marketCapB": 51.482312704
+  },
+  {
+    "ticker": "MTB",
+    "company": "M&T Bank Corporation",
+    "sector": "Financial Services",
+    "dividendYield": 0.028499998,
+    "divGrowth5yr": -0.1972584382397693,
+    "payoutRatio": 0.3353,
+    "consecutiveYears": 0,
+    "marketCapB": 32.34576384
+  },
+  {
+    "ticker": "CTRA",
+    "company": "Coterra Energy Inc.",
+    "sector": "Energy",
+    "dividendYield": 0.028399998,
+    "divGrowth5yr": 0.1708049129648923,
+    "payoutRatio": 0.39290002,
+    "consecutiveYears": 1,
+    "marketCapB": 23.56023296
+  },
+  {
+    "ticker": "SRE",
+    "company": "DBA Sempra",
+    "sector": "Utilities",
+    "dividendYield": 0.028399998,
+    "divGrowth5yr": 0.04302491816500664,
+    "payoutRatio": 0.9382,
+    "consecutiveYears": 5,
+    "marketCapB": 60.51371008
+  },
+  {
+    "ticker": "WMB",
+    "company": "Williams Companies, Inc. (The)",
+    "sector": "Energy",
+    "dividendYield": 0.028299998,
+    "divGrowth5yr": 0.04563955259127317,
+    "payoutRatio": 0.9346,
+    "consecutiveYears": 5,
+    "marketCapB": 90.688847872
+  },
+  {
+    "ticker": "MCHP",
+    "company": "Microchip Technology Incorporat",
+    "sector": "Technology",
+    "dividendYield": 0.028099999,
+    "divGrowth5yr": -0.11790703106604683,
+    "payoutRatio": 3.1772,
+    "consecutiveYears": 0,
+    "marketCapB": 35.014172672
+  },
+  {
+    "ticker": "STZ",
+    "company": "Constellation Brands, Inc.",
+    "sector": "Consumer Defensive",
+    "dividendYield": 0.0279,
+    "divGrowth5yr": -0.19567510924268772,
+    "payoutRatio": 0.6389,
+    "consecutiveYears": 0,
+    "marketCapB": 25.499529216
+  },
+  {
+    "ticker": "STT",
+    "company": "State Street Corporation",
+    "sector": "Financial Services",
+    "dividendYield": 0.0278,
+    "divGrowth5yr": -0.17364899713595205,
+    "payoutRatio": 0.3404,
+    "consecutiveYears": 0,
+    "marketCapB": 33.807978496
+  },
+  {
+    "ticker": "DLR",
+    "company": "Digital Realty Trust, Inc.",
+    "sector": "Real Estate",
+    "dividendYield": 0.0277,
+    "divGrowth5yr": 0.017251553126248265,
+    "payoutRatio": 1.3630999,
+    "consecutiveYears": 5,
+    "marketCapB": 61.632045056
+  },
+  {
+    "ticker": "PG",
+    "company": "Procter & Gamble Company (The)",
+    "sector": "Consumer Defensive",
+    "dividendYield": 0.0275,
+    "divGrowth5yr": -0.20842208103654136,
+    "payoutRatio": 0.6188,
+    "consecutiveYears": 0,
+    "marketCapB": 359.568769024
+  },
+  {
+    "ticker": "NEE",
+    "company": "NextEra Energy, Inc.",
+    "sector": "Utilities",
+    "dividendYield": 0.0274,
+    "divGrowth5yr": -0.1655631687948972,
+    "payoutRatio": 0.6867,
+    "consecutiveYears": 0,
+    "marketCapB": 189.642162176
+  },
+  {
+    "ticker": "AMGN",
+    "company": "Amgen Inc.",
+    "sector": "Healthcare",
+    "dividendYield": 0.0273,
+    "divGrowth5yr": -0.18573535876056668,
+    "payoutRatio": 0.669,
+    "consecutiveYears": 0,
+    "marketCapB": 199.20166912
+  },
+  {
+    "ticker": "XOM",
+    "company": "Exxon Mobil Corporation",
+    "sector": "Energy",
+    "dividendYield": 0.0272,
+    "divGrowth5yr": -0.21656610079976868,
+    "payoutRatio": 0.597,
+    "consecutiveYears": 0,
+    "marketCapB": 630.056353792
+  },
+  {
+    "ticker": "HPE",
+    "company": "Hewlett Packard Enterprise Comp",
+    "sector": "Technology",
+    "dividendYield": 0.027,
+    "divGrowth5yr": 0.02116799371172129,
+    "payoutRatio": 0.6118,
+    "consecutiveYears": 5,
+    "marketCapB": 28.198684672
+  },
+  {
+    "ticker": "AEE",
+    "company": "Ameren Corporation",
+    "sector": "Utilities",
+    "dividendYield": 0.0269,
+    "divGrowth5yr": 0.07264909054577684,
+    "payoutRatio": 0.53080004,
+    "consecutiveYears": 5,
+    "marketCapB": 30.826860544
+  },
+  {
+    "ticker": "KO",
+    "company": "Coca-Cola Company (The)",
+    "sector": "Consumer Defensive",
+    "dividendYield": 0.026700001,
+    "divGrowth5yr": 0.044617420086995985,
+    "payoutRatio": 0.6711,
+    "consecutiveYears": 5,
+    "marketCapB": 331.395956736
+  },
+  {
+    "ticker": "APD",
+    "company": "Air Products and Chemicals, Inc",
+    "sector": "Basic Materials",
+    "dividendYield": 0.026600001,
+    "divGrowth5yr": -0.21487219840793648,
+    "payoutRatio": 1.0099,
+    "consecutiveYears": 0,
+    "marketCapB": 60.602507264
+  },
+  {
+    "ticker": "PPG",
+    "company": "PPG Industries, Inc.",
+    "sector": "Basic Materials",
+    "dividendYield": 0.026600001,
+    "divGrowth5yr": -0.20671364922151592,
+    "payoutRatio": 0.4017,
+    "consecutiveYears": 0,
+    "marketCapB": 23.846885376
+  },
+  {
+    "ticker": "SNA",
+    "company": "Snap-On Incorporated",
+    "sector": "Industrials",
+    "dividendYield": 0.026199998,
+    "divGrowth5yr": -0.13743112050575346,
+    "payoutRatio": 0.4617,
+    "consecutiveYears": 0,
+    "marketCapB": 19.354093568
+  },
+  {
+    "ticker": "QCOM",
+    "company": "QUALCOMM Incorporated",
+    "sector": "Technology",
+    "dividendYield": 0.026199998,
+    "divGrowth5yr": -0.19845567184991852,
+    "payoutRatio": 0.7097,
+    "consecutiveYears": 0,
+    "marketCapB": 144.885661696
+  },
+  {
+    "ticker": "HD",
+    "company": "Home Depot, Inc. (The)",
+    "sector": "Consumer Cyclical",
+    "dividendYield": 0.025999999,
+    "divGrowth5yr": 0.08924936491294377,
+    "payoutRatio": 0.6465,
+    "consecutiveYears": 5,
+    "marketCapB": 356.3134976
+  },
+  {
+    "ticker": "IBM",
+    "company": "International Business Machines",
+    "sector": "Technology",
+    "dividendYield": 0.025999999,
+    "divGrowth5yr": -0.23312382854427294,
+    "payoutRatio": 0.6023,
+    "consecutiveYears": 0,
+    "marketCapB": 242.81022464
+  },
+  {
+    "ticker": "HSY",
+    "company": "The Hershey Company",
+    "sector": "Consumer Defensive",
+    "dividendYield": 0.025799999,
+    "divGrowth5yr": -0.15697113012621622,
+    "payoutRatio": 1.2627,
+    "consecutiveYears": 0,
+    "marketCapB": 45.6246272
+  },
+  {
+    "ticker": "NI",
+    "company": "NiSource Inc",
+    "sector": "Utilities",
+    "dividendYield": 0.025799999,
+    "divGrowth5yr": 0.059223841048812176,
+    "payoutRatio": 0.5744,
+    "consecutiveYears": 5,
+    "marketCapB": 22.232651776
+  },
+  {
+    "ticker": "SBAC",
+    "company": "SBA Communications Corporation",
+    "sector": "Real Estate",
+    "dividendYield": 0.0254,
+    "divGrowth5yr": 0.19007410434547412,
+    "payoutRatio": 0.45310003,
+    "consecutiveYears": 5,
+    "marketCapB": 20.76946432
+  },
+  {
+    "ticker": "SYY",
+    "company": "Sysco Corporation",
+    "sector": "Consumer Defensive",
+    "dividendYield": 0.0253,
+    "divGrowth5yr": -0.21744442929103547,
+    "payoutRatio": 0.5741,
+    "consecutiveYears": 0,
+    "marketCapB": 40.81926144
+  },
+  {
+    "ticker": "MTCH",
+    "company": "Match Group, Inc.",
+    "sector": "Communication Services",
+    "dividendYield": 0.0253,
+    "divGrowth5yr": -0.75,
+    "payoutRatio": 0.3193,
+    "consecutiveYears": 0,
+    "marketCapB": 7.193058816
+  },
+  {
+    "ticker": "SLB",
+    "company": "SLB Limited",
+    "sector": "Energy",
+    "dividendYield": 0.0252,
+    "divGrowth5yr": -0.10014941707837521,
+    "payoutRatio": 0.48509997,
+    "consecutiveYears": 0,
+    "marketCapB": 70.131048448
+  },
+  {
+    "ticker": "BDX",
+    "company": "Becton, Dickinson and Company",
+    "sector": "Healthcare",
+    "dividendYield": 0.0251,
+    "divGrowth5yr": 0.05960011630146678,
+    "payoutRatio": 0.6814,
+    "consecutiveYears": 5,
+    "marketCapB": 60.546756608
+  },
+  {
+    "ticker": "SBUX",
+    "company": "Starbucks Corporation",
+    "sector": "Consumer Cyclical",
+    "dividendYield": 0.0251,
+    "divGrowth5yr": -0.19552088612817398,
+    "payoutRatio": 2.0417,
+    "consecutiveYears": 0,
+    "marketCapB": 112.77930496
+  },
+  {
+    "ticker": "MS",
+    "company": "Morgan Stanley",
+    "sector": "Financial Services",
+    "dividendYield": 0.025,
+    "divGrowth5yr": 0.22423992536427462,
+    "payoutRatio": 0.3771,
+    "consecutiveYears": 5,
+    "marketCapB": 254.48636416
+  },
+  {
+    "ticker": "VTR",
+    "company": "Ventas, Inc.",
+    "sector": "Real Estate",
+    "dividendYield": 0.024500001,
+    "divGrowth5yr": -0.02173658633844977,
+    "payoutRatio": 3.5556,
+    "consecutiveYears": 4,
+    "marketCapB": 40.310300672
+  },
+  {
+    "ticker": "AWK",
+    "company": "American Water Works Company, I",
+    "sector": "Utilities",
+    "dividendYield": 0.0241,
+    "divGrowth5yr": -0.18892600109594893,
+    "payoutRatio": 0.5707,
+    "consecutiveYears": 0,
+    "marketCapB": 26.839240704
+  },
+  {
+    "ticker": "BLK",
+    "company": "BlackRock, Inc.",
+    "sector": "Financial Services",
+    "dividendYield": 0.024,
+    "divGrowth5yr": -0.19085022854761713,
+    "payoutRatio": 0.5902,
+    "consecutiveYears": 0,
+    "marketCapB": 148.612169728
+  },
+  {
+    "ticker": "BG",
+    "company": "Bunge Limited",
+    "sector": "Consumer Defensive",
+    "dividendYield": 0.024,
+    "divGrowth5yr": -0.1933802790946486,
+    "payoutRatio": 0.5639,
+    "consecutiveYears": 0,
+    "marketCapB": 22.576705536
+  },
+  {
+    "ticker": "EG",
+    "company": "Everest Group, Ltd.",
+    "sector": "Financial Services",
+    "dividendYield": 0.0239,
+    "divGrowth5yr": -0.0839194542993893,
+    "payoutRatio": 0.2116,
+    "consecutiveYears": 0,
+    "marketCapB": 13.49475328
+  },
+  {
+    "ticker": "ELV",
+    "company": "Elevance Health, Inc.",
+    "sector": "Healthcare",
+    "dividendYield": 0.0238,
+    "divGrowth5yr": 0.12474611314209483,
+    "payoutRatio": 0.2713,
+    "consecutiveYears": 5,
+    "marketCapB": 63.924903936
+  },
+  {
+    "ticker": "ETR",
+    "company": "Entergy Corporation",
+    "sector": "Utilities",
+    "dividendYield": 0.023699999,
+    "divGrowth5yr": -0.19809202421473293,
+    "payoutRatio": 0.624,
+    "consecutiveYears": 0,
+    "marketCapB": 47.42803456
+  },
+  {
+    "ticker": "POOL",
+    "company": "Pool Corporation",
+    "sector": "Industrials",
+    "dividendYield": 0.0234,
+    "divGrowth5yr": 0.16668588412984486,
+    "payoutRatio": 0.4562,
+    "consecutiveYears": 5,
+    "marketCapB": 7.97336576
+  },
+  {
+    "ticker": "FANG",
+    "company": "Diamondback Energy, Inc.",
+    "sector": "Energy",
+    "dividendYield": 0.0233,
+    "divGrowth5yr": -0.09711954855256577,
+    "payoutRatio": 0.6981,
+    "consecutiveYears": 0,
+    "marketCapB": 51.368251392
+  },
+  {
+    "ticker": "ITW",
+    "company": "Illinois Tool Works Inc.",
+    "sector": "Industrials",
+    "dividendYield": 0.0232,
+    "divGrowth5yr": 0.0707143495642446,
+    "payoutRatio": 0.59290004,
+    "consecutiveYears": 5,
+    "marketCapB": 79.877513216
+  },
+  {
+    "ticker": "ABT",
+    "company": "Abbott Laboratories",
+    "sector": "Healthcare",
+    "dividendYield": 0.023,
+    "divGrowth5yr": -0.18938691690105092,
+    "payoutRatio": 0.6344,
+    "consecutiveYears": 0,
+    "marketCapB": 190.380539904
+  },
+  {
+    "ticker": "BAC",
+    "company": "Bank of America Corporation",
+    "sector": "Financial Services",
+    "dividendYield": 0.023,
+    "divGrowth5yr": -0.185271918140973,
+    "payoutRatio": 0.28350002,
+    "consecutiveYears": 0,
+    "marketCapB": 355.193389056
+  },
+  {
+    "ticker": "CI",
+    "company": "The Cigna Group",
+    "sector": "Healthcare",
+    "dividendYield": 0.023,
+    "divGrowth5yr": -0.17165182184953087,
+    "payoutRatio": 0.2723,
+    "consecutiveYears": 0,
+    "marketCapB": 72.559386624
+  },
+  {
+    "ticker": "AIG",
+    "company": "American International Group, I",
+    "sector": "Financial Services",
+    "dividendYield": 0.0229,
+    "divGrowth5yr": 0.06454890068642571,
+    "payoutRatio": 0.3223,
+    "consecutiveYears": 5,
+    "marketCapB": 42.475429888
+  },
+  {
+    "ticker": "GILD",
+    "company": "Gilead Sciences, Inc.",
+    "sector": "Healthcare",
+    "dividendYield": 0.0228,
+    "divGrowth5yr": 0.03044219892825617,
+    "payoutRatio": 0.4661,
+    "consecutiveYears": 5,
+    "marketCapB": 178.714902528
+  },
+  {
+    "ticker": "MCD",
+    "company": "McDonald's Corporation",
+    "sector": "Consumer Cyclical",
+    "dividendYield": 0.0227,
+    "divGrowth5yr": -0.18741139447942456,
+    "payoutRatio": 0.6,
+    "consecutiveYears": 0,
+    "marketCapB": 234.105061376
+  },
+  {
+    "ticker": "NTRS",
+    "company": "Northern Trust Corporation",
+    "sector": "Financial Services",
+    "dividendYield": 0.0227,
+    "divGrowth5yr": -0.2216294584488292,
+    "payoutRatio": 0.3547,
+    "consecutiveYears": 0,
+    "marketCapB": 25.753874432
+  },
+  {
+    "ticker": "C",
+    "company": "Citigroup, Inc.",
+    "sector": "Financial Services",
+    "dividendYield": 0.0225,
+    "divGrowth5yr": 0.026057179358307092,
+    "payoutRatio": 0.3319,
+    "consecutiveYears": 5,
+    "marketCapB": 186.354958336
+  },
+  {
+    "ticker": "PKG",
+    "company": "Packaging Corporation of Americ",
+    "sector": "Consumer Cyclical",
+    "dividendYield": 0.0225,
+    "divGrowth5yr": 0.08210155391673468,
+    "payoutRatio": 0.5828,
+    "consecutiveYears": 5,
+    "marketCapB": 20.021696512
+  },
+  {
+    "ticker": "ERIE",
+    "company": "Erie Indemnity Company",
+    "sector": "Financial Services",
+    "dividendYield": 0.0225,
+    "divGrowth5yr": -0.18782653367754842,
+    "payoutRatio": 0.5199,
+    "consecutiveYears": 0,
+    "marketCapB": 13.58752256
+  },
+  {
+    "ticker": "WFC",
+    "company": "Wells Fargo & Company",
+    "sector": "Financial Services",
+    "dividendYield": 0.0224,
+    "divGrowth5yr": 0.06860651625917491,
+    "payoutRatio": 0.2716,
+    "consecutiveYears": 4,
+    "marketCapB": 252.445179904
+  },
+  {
+    "ticker": "CL",
+    "company": "Colgate-Palmolive Company",
+    "sector": "Consumer Defensive",
+    "dividendYield": 0.0222,
+    "divGrowth5yr": -0.21903771225911473,
+    "payoutRatio": 0.78330004,
+    "consecutiveYears": 0,
+    "marketCapB": 74.992828416
+  },
+  {
+    "ticker": "GEN",
+    "company": "Gen Digital Inc.",
+    "sector": "Technology",
+    "dividendYield": 0.0221,
+    "divGrowth5yr": -0.242141716744801,
+    "payoutRatio": 0.5155,
+    "consecutiveYears": 0,
+    "marketCapB": 13.94395136
+  },
+  {
+    "ticker": "AFL",
+    "company": "AFLAC Incorporated",
+    "sector": "Financial Services",
+    "dividendYield": 0.0219,
+    "divGrowth5yr": -0.14305848936659393,
+    "payoutRatio": 0.3402,
+    "consecutiveYears": 0,
+    "marketCapB": 57.46675712
+  },
+  {
+    "ticker": "GS",
+    "company": "Goldman Sachs Group, Inc. (The)",
+    "sector": "Financial Services",
+    "dividendYield": 0.0219,
+    "divGrowth5yr": -0.07090562353743979,
+    "payoutRatio": 0.2728,
+    "consecutiveYears": 0,
+    "marketCapB": 246.36727296
+  },
+  {
+    "ticker": "IFF",
+    "company": "International Flavors & Fragran",
+    "sector": "Basic Materials",
+    "dividendYield": 0.0217,
+    "divGrowth5yr": -0.12047278998624156,
+    "payoutRatio": 1.6841999,
+    "consecutiveYears": 1,
+    "marketCapB": 18.892228608
+  },
+  {
+    "ticker": "UNP",
+    "company": "Union Pacific Corporation",
+    "sector": "Industrials",
+    "dividendYield": 0.0217,
+    "divGrowth5yr": -0.20295221567770283,
+    "payoutRatio": 0.4541,
+    "consecutiveYears": 0,
+    "marketCapB": 150.78670336
+  },
+  {
+    "ticker": "ATO",
+    "company": "Atmos Energy Corporation",
+    "sector": "Utilities",
+    "dividendYield": 0.0216,
+    "divGrowth5yr": -0.17106243866158055,
+    "payoutRatio": 0.4707,
+    "consecutiveYears": 0,
+    "marketCapB": 30.612822016
+  },
+  {
+    "ticker": "DVN",
+    "company": "Devon Energy Corporation",
+    "sector": "Energy",
+    "dividendYield": 0.0216,
+    "divGrowth5yr": 0.07140202794100681,
+    "payoutRatio": 0.23020001,
+    "consecutiveYears": 0,
+    "marketCapB": 27.589357568
+  },
+  {
+    "ticker": "JNJ",
+    "company": "Johnson & Johnson",
+    "sector": "Healthcare",
+    "dividendYield": 0.0216,
+    "divGrowth5yr": -0.20869143613023733,
+    "payoutRatio": 0.466,
+    "consecutiveYears": 0,
+    "marketCapB": 579.339681792
+  },
+  {
+    "ticker": "CINF",
+    "company": "Cincinnati Financial Corporatio",
+    "sector": "Financial Services",
+    "dividendYield": 0.0215,
+    "divGrowth5yr": 0.0771435877927431,
+    "payoutRatio": 0.22940001,
+    "consecutiveYears": 5,
+    "marketCapB": 25.803900928
+  },
+  {
+    "ticker": "VLO",
+    "company": "Valero Energy Corporation",
+    "sector": "Energy",
+    "dividendYield": 0.0214,
+    "divGrowth5yr": 0.02889361837940907,
+    "payoutRatio": 0.5971,
+    "consecutiveYears": 5,
+    "marketCapB": 68.514291712
+  },
+  {
+    "ticker": "CSCO",
+    "company": "Cisco Systems, Inc.",
+    "sector": "Technology",
+    "dividendYield": 0.0214,
+    "divGrowth5yr": -0.22537179793765438,
+    "payoutRatio": 0.5899,
+    "consecutiveYears": 0,
+    "marketCapB": 310.714073088
+  },
+  {
+    "ticker": "CNP",
+    "company": "CenterPoint Energy, Inc (Holdin",
+    "sector": "Utilities",
+    "dividendYield": 0.0211,
+    "divGrowth5yr": -0.18761312951063092,
+    "payoutRatio": 0.55,
+    "consecutiveYears": 0,
+    "marketCapB": 28.471728128
+  },
+  {
+    "ticker": "AVY",
+    "company": "Avery Dennison Corporation",
+    "sector": "Consumer Cyclical",
+    "dividendYield": 0.0209,
+    "divGrowth5yr": -0.18782569887852418,
+    "payoutRatio": 0.4209,
+    "consecutiveYears": 0,
+    "marketCapB": 13.810352128
+  },
+  {
+    "ticker": "JPM",
+    "company": "JP Morgan Chase & Co.",
+    "sector": "Financial Services",
+    "dividendYield": 0.0207,
+    "divGrowth5yr": -0.16520871403878834,
+    "payoutRatio": 0.2897,
+    "consecutiveYears": 0,
+    "marketCapB": 780.736987136
+  },
+  {
+    "ticker": "NTAP",
+    "company": "NetApp, Inc.",
+    "sector": "Technology",
+    "dividendYield": 0.020599999,
+    "divGrowth5yr": -0.23308107567960534,
+    "payoutRatio": 0.349,
+    "consecutiveYears": 0,
+    "marketCapB": 20.015978496
+  },
+  {
+    "ticker": "EQIX",
+    "company": "Equinix, Inc.",
+    "sector": "Real Estate",
+    "dividendYield": 0.020499999,
+    "divGrowth5yr": -0.14779993554237147,
+    "payoutRatio": 1.3634,
+    "consecutiveYears": 0,
+    "marketCapB": 92.084518912
+  },
+  {
+    "ticker": "BAX",
+    "company": "Baxter International Inc.",
+    "sector": "Healthcare",
+    "dividendYield": 0.020399999,
+    "divGrowth5yr": -0.6083356416234766,
+    "payoutRatio": 3.0769,
+    "consecutiveYears": 0,
+    "marketCapB": 9.101329408
+  },
+  {
+    "ticker": "CDW",
+    "company": "CDW Corporation",
+    "sector": "Technology",
+    "dividendYield": 0.020399999,
+    "divGrowth5yr": -0.18006707605092198,
+    "payoutRatio": 0.31,
+    "consecutiveYears": 0,
+    "marketCapB": 16.068501504
+  },
+  {
+    "ticker": "MMM",
+    "company": "3M Company",
+    "sector": "Industrials",
+    "dividendYield": 0.020299999,
+    "divGrowth5yr": -0.30896375193074865,
+    "payoutRatio": 0.48669997,
+    "consecutiveYears": 0,
+    "marketCapB": 80.801046528
+  },
+  {
+    "ticker": "ALL",
+    "company": "Allstate Corporation (The)",
+    "sector": "Financial Services",
+    "dividendYield": 0.020299999,
+    "divGrowth5yr": -0.1972584382397693,
+    "payoutRatio": 0.105100006,
+    "consecutiveYears": 0,
+    "marketCapB": 55.104651264
+  },
+  {
+    "ticker": "HON",
+    "company": "Honeywell International Inc.",
+    "sector": "Industrials",
+    "dividendYield": 0.0202,
+    "divGrowth5yr": -0.1965031731418363,
+    "payoutRatio": 0.605,
+    "consecutiveYears": 0,
+    "marketCapB": 158.554800128
+  },
+  {
+    "ticker": "LMT",
+    "company": "Lockheed Martin Corporation",
+    "sector": "Industrials",
+    "dividendYield": 0.0201,
+    "divGrowth5yr": -0.20108119089305987,
+    "payoutRatio": 0.62119997,
+    "consecutiveYears": 0,
+    "marketCapB": 155.446099968
+  },
+  {
+    "ticker": "MAS",
+    "company": "Masco Corporation",
+    "sector": "Industrials",
+    "dividendYield": 0.0201,
+    "divGrowth5yr": -0.176509385333392,
+    "payoutRatio": 0.32119998,
+    "consecutiveYears": 0,
+    "marketCapB": 12.961627136
+  },
+  {
+    "ticker": "NXPI",
+    "company": "NXP Semiconductors N.V.",
+    "sector": "Technology",
+    "dividendYield": 0.0201,
+    "divGrowth5yr": 0.22011660449901926,
+    "payoutRatio": 0.5102,
+    "consecutiveYears": 5,
+    "marketCapB": 50.978254848
+  },
+  {
+    "ticker": "HAL",
+    "company": "Halliburton Company",
+    "sector": "Energy",
+    "dividendYield": 0.02,
+    "divGrowth5yr": -0.011366589361043511,
+    "payoutRatio": 0.45330003,
+    "consecutiveYears": 0,
+    "marketCapB": 28.657385472
+  },
+  {
+    "ticker": "CTSH",
+    "company": "Cognizant Technology Solutions ",
+    "sector": "Technology",
+    "dividendYield": 0.0199,
+    "divGrowth5yr": -0.19230286689891096,
+    "payoutRatio": 0.2719,
+    "consecutiveYears": 0,
+    "marketCapB": 31.98015488
+  },
+  {
+    "ticker": "BR",
+    "company": "Broadridge Financial Solutions,",
+    "sector": "Technology",
+    "dividendYield": 0.0198,
+    "divGrowth5yr": 0.1071687246416515,
+    "payoutRatio": 0.4104,
+    "consecutiveYears": 5,
+    "marketCapB": 22.985486336
+  },
+  {
+    "ticker": "HUM",
+    "company": "Humana Inc.",
+    "sector": "Healthcare",
+    "dividendYield": 0.0198,
+    "divGrowth5yr": 0.07204409913393905,
+    "payoutRatio": 0.35979998,
+    "consecutiveYears": 5,
+    "marketCapB": 21.604767744
+  },
+  {
+    "ticker": "LEN",
+    "company": "Lennar Corporation",
+    "sector": "Consumer Cyclical",
+    "dividendYield": 0.0198,
+    "divGrowth5yr": 0.2701350461760643,
+    "payoutRatio": 0.25059998,
+    "consecutiveYears": 5,
+    "marketCapB": 24.987650048
+  },
+  {
+    "ticker": "AOS",
+    "company": "A.O. Smith Corporation",
+    "sector": "Industrials",
+    "dividendYield": 0.0197,
+    "divGrowth5yr": 0.07085483560851769,
+    "payoutRatio": 0.3584,
+    "consecutiveYears": 5,
+    "marketCapB": 9.819967488
+  },
+  {
+    "ticker": "MRSH",
+    "company": "Marsh",
+    "sector": "Financial Services",
+    "dividendYield": 0.0197,
+    "divGrowth5yr": -0.14760184159617418,
+    "payoutRatio": 0.4069,
+    "consecutiveYears": 0,
+    "marketCapB": 89.692667904
+  },
+  {
+    "ticker": "LVS",
+    "company": "Las Vegas Sands Corp.",
+    "sector": "Consumer Cyclical",
+    "dividendYield": 0.0196,
+    "divGrowth5yr": -0.14902717034421586,
+    "payoutRatio": 0.4255,
+    "consecutiveYears": 0,
+    "marketCapB": 36.240805888
+  },
+  {
+    "ticker": "DPZ",
+    "company": "Domino's Pizza Inc",
+    "sector": "Consumer Cyclical",
+    "dividendYield": 0.0195,
+    "divGrowth5yr": 0.174061722440779,
+    "payoutRatio": 0.3961,
+    "consecutiveYears": 5,
+    "marketCapB": 13.734377472
+  },
+  {
+    "ticker": "FDS",
+    "company": "FactSet Research Systems Inc.",
+    "sector": "Financial Services",
+    "dividendYield": 0.0195,
+    "divGrowth5yr": -0.19380883847289132,
+    "payoutRatio": 0.2761,
+    "consecutiveYears": 0,
+    "marketCapB": 8.452040704
+  },
+  {
+    "ticker": "FAST",
+    "company": "Fastenal Company",
+    "sector": "Industrials",
+    "dividendYield": 0.0194,
+    "divGrowth5yr": -0.15587912015589,
+    "payoutRatio": 0.8028,
+    "consecutiveYears": 0,
+    "marketCapB": 53.351346176
+  },
+  {
+    "ticker": "OXY",
+    "company": "Occidental Petroleum Corporatio",
+    "sector": "Energy",
+    "dividendYield": 0.019199999,
+    "divGrowth5yr": 0.03202799005791701,
+    "payoutRatio": 0.7111,
+    "consecutiveYears": 4,
+    "marketCapB": 53.445787648
+  },
+  {
+    "ticker": "LOW",
+    "company": "Lowe's Companies, Inc.",
+    "sector": "Consumer Cyclical",
+    "dividendYield": 0.0191,
+    "divGrowth5yr": -0.1558791201558899,
+    "payoutRatio": 0.40080002,
+    "consecutiveYears": 0,
+    "marketCapB": 141.2980736
+  },
+  {
+    "ticker": "TSCO",
+    "company": "Tractor Supply Company",
+    "sector": "Consumer Cyclical",
+    "dividendYield": 0.0191,
+    "divGrowth5yr": -0.10417416670380442,
+    "payoutRatio": 0.4466,
+    "consecutiveYears": 0,
+    "marketCapB": 26.40178176
+  },
+  {
+    "ticker": "KR",
+    "company": "Kroger Company (The)",
+    "sector": "Consumer Defensive",
+    "dividendYield": 0.0189,
+    "divGrowth5yr": -0.14808809300138082,
+    "payoutRatio": 1.1593,
+    "consecutiveYears": 0,
+    "marketCapB": 49.11108096
+  },
+  {
+    "ticker": "APO",
+    "company": "Apollo Global Management, Inc. ",
+    "sector": "Financial Services",
+    "dividendYield": 0.0188,
+    "divGrowth5yr": -0.2465226940859122,
+    "payoutRatio": 0.35970002,
+    "consecutiveYears": 0,
+    "marketCapB": 63.091933184
+  },
+  {
+    "ticker": "OTIS",
+    "company": "Otis Worldwide Corporation",
+    "sector": "Industrials",
+    "dividendYield": 0.0188,
+    "divGrowth5yr": -0.1451453220087412,
+    "payoutRatio": 0.4714,
+    "consecutiveYears": 0,
+    "marketCapB": 34.770448384
+  },
+  {
+    "ticker": "YUM",
+    "company": "Yum! Brands, Inc.",
+    "sector": "Consumer Cyclical",
+    "dividendYield": 0.0188,
+    "divGrowth5yr": -0.17812408524138712,
+    "payoutRatio": 0.5117,
+    "consecutiveYears": 0,
+    "marketCapB": 44.424454144
+  },
+  {
+    "ticker": "BK",
+    "company": "The Bank of New York Mellon Cor",
+    "sector": "Financial Services",
+    "dividendYield": 0.0184,
+    "divGrowth5yr": -0.1642690161873961,
+    "payoutRatio": 0.2703,
+    "consecutiveYears": 0,
+    "marketCapB": 80.355540992
+  },
+  {
+    "ticker": "TMUS",
+    "company": "T-Mobile US, Inc.",
+    "sector": "Communication Services",
+    "dividendYield": 0.0184,
+    "divGrowth5yr": 0.1620610329799912,
+    "payoutRatio": 0.3765,
+    "consecutiveYears": 0,
+    "marketCapB": 247.827513344
+  },
+  {
+    "ticker": "SYF",
+    "company": "Synchrony Financial",
+    "sector": "Financial Services",
+    "dividendYield": 0.018,
+    "divGrowth5yr": 0.054977102369160535,
+    "payoutRatio": 0.123900004,
+    "consecutiveYears": 5,
+    "marketCapB": 24.012607488
+  },
+  {
+    "ticker": "NSC",
+    "company": "Norfolk Southern Corporation",
+    "sector": "Industrials",
+    "dividendYield": 0.0178,
+    "divGrowth5yr": 0.0750809910289123,
+    "payoutRatio": 0.42349997,
+    "consecutiveYears": 5,
+    "marketCapB": 68.009394176
+  },
+  {
+    "ticker": "DD",
+    "company": "DuPont de Nemours, Inc.",
+    "sector": "Basic Materials",
+    "dividendYield": 0.0177,
+    "divGrowth5yr": -0.1681417295236296,
+    "payoutRatio": 6.8095,
+    "consecutiveYears": 0,
+    "marketCapB": 18.962823168
+  },
+  {
+    "ticker": "ZTS",
+    "company": "Zoetis Inc.",
+    "sector": "Healthcare",
+    "dividendYield": 0.0175,
+    "divGrowth5yr": -0.11924488522892884,
+    "payoutRatio": 0.33220002,
+    "consecutiveYears": 0,
+    "marketCapB": 53.513375744
+  },
+  {
+    "ticker": "CF",
+    "company": "CF Industries Holdings, Inc.",
+    "sector": "Basic Materials",
+    "dividendYield": 0.0173,
+    "divGrowth5yr": -0.16062167251461246,
+    "payoutRatio": 0.22299999,
+    "consecutiveYears": 0,
+    "marketCapB": 18.058743808
+  },
+  {
+    "ticker": "MPC",
+    "company": "Marathon Petroleum Corporation",
+    "sector": "Energy",
+    "dividendYield": 0.0173,
+    "divGrowth5yr": -0.15491108907924844,
+    "payoutRatio": 0.2821,
+    "consecutiveYears": 0,
+    "marketCapB": 66.517311488
+  },
+  {
+    "ticker": "DGX",
+    "company": "Quest Diagnostics Incorporated",
+    "sector": "Healthcare",
+    "dividendYield": 0.0173,
+    "divGrowth5yr": -0.19858969193940412,
+    "payoutRatio": 0.36,
+    "consecutiveYears": 0,
+    "marketCapB": 22.160590848
+  },
+  {
+    "ticker": "LUV",
+    "company": "Southwest Airlines Company",
+    "sector": "Industrials",
+    "dividendYield": 0.0173,
+    "divGrowth5yr": 0.3195079107728942,
+    "payoutRatio": 0.9114,
+    "consecutiveYears": 1,
+    "marketCapB": 21.492965376
+  },
+  {
+    "ticker": "DELL",
+    "company": "Dell Technologies Inc.",
+    "sector": "Technology",
+    "dividendYield": 0.0172,
+    "divGrowth5yr": -0.14664246575399642,
+    "payoutRatio": 0.24190001,
+    "consecutiveYears": 0,
+    "marketCapB": 98.17092096
+  },
+  {
+    "ticker": "GRMN",
+    "company": "Garmin Ltd.",
+    "sector": "Technology",
+    "dividendYield": 0.0172,
+    "divGrowth5yr": 0.07528000640556964,
+    "payoutRatio": 0.4016,
+    "consecutiveYears": 5,
+    "marketCapB": 46.865231872
+  },
+  {
+    "ticker": "HIG",
+    "company": "The Hartford Insurance Group, I",
+    "sector": "Financial Services",
+    "dividendYield": 0.0172,
+    "divGrowth5yr": -0.16003755341915427,
+    "payoutRatio": 0.16219999,
+    "consecutiveYears": 0,
+    "marketCapB": 38.836867072
+  },
+  {
+    "ticker": "COF",
+    "company": "Capital One Financial Corporati",
+    "sector": "Financial Services",
+    "dividendYield": 0.017,
+    "divGrowth5yr": -0.2100068459106723,
+    "payoutRatio": 0.77379996,
+    "consecutiveYears": 0,
+    "marketCapB": 116.742782976
+  },
+  {
+    "ticker": "TRGP",
+    "company": "Targa Resources, Inc.",
+    "sector": "Energy",
+    "dividendYield": 0.016900001,
+    "divGrowth5yr": 0.253860379718696,
+    "payoutRatio": 0.44169998,
+    "consecutiveYears": 4,
+    "marketCapB": 50.986565632
+  },
+  {
+    "ticker": "PSKY",
+    "company": "Paramount Skydance Corporation",
+    "sector": "Communication Services",
+    "dividendYield": 0.0167,
+    "divGrowth5yr": -0.2692787241890373,
+    "payoutRatio": 6.6667,
+    "consecutiveYears": 1,
+    "marketCapB": 13.226973184
+  },
+  {
+    "ticker": "CARR",
+    "company": "Carrier Global Corporation",
+    "sector": "Industrials",
+    "dividendYield": 0.0165,
+    "divGrowth5yr": -0.1399410628175578,
+    "payoutRatio": 0.5325,
+    "consecutiveYears": 0,
+    "marketCapB": 48.771489792
+  },
+  {
+    "ticker": "GD",
+    "company": "General Dynamics Corporation",
+    "sector": "Industrials",
+    "dividendYield": 0.0165,
+    "divGrowth5yr": -0.20318981683314463,
+    "payoutRatio": 0.38830003,
+    "consecutiveYears": 0,
+    "marketCapB": 98.28397056
+  },
+  {
+    "ticker": "CME",
+    "company": "CME Group Inc.",
+    "sector": "Financial Services",
+    "dividendYield": 0.0164,
+    "divGrowth5yr": -0.032560983102738805,
+    "payoutRatio": 0.44799998,
+    "consecutiveYears": 0,
+    "marketCapB": 114.00138752
+  },
+  {
+    "ticker": "FDX",
+    "company": "FedEx Corporation",
+    "sector": "Industrials",
+    "dividendYield": 0.0162,
+    "divGrowth5yr": 0.17121399933763493,
+    "payoutRatio": 0.3132,
+    "consecutiveYears": 5,
+    "marketCapB": 84.731609088
+  },
+  {
+    "ticker": "DG",
+    "company": "Dollar General Corporation",
+    "sector": "Consumer Defensive",
+    "dividendYield": 0.0161,
+    "divGrowth5yr": -0.1829146959619503,
+    "payoutRatio": 0.4076,
+    "consecutiveYears": 0,
+    "marketCapB": 32.205590528
+  },
+  {
+    "ticker": "EMR",
+    "company": "Emerson Electric Company",
+    "sector": "Industrials",
+    "dividendYield": 0.016,
+    "divGrowth5yr": -0.22845832590000226,
+    "payoutRatio": 0.5239,
+    "consecutiveYears": 0,
+    "marketCapB": 77.800112128
+  },
+  {
+    "ticker": "TKO",
+    "company": "TKO Group Holdings, Inc.",
+    "sector": "Communication Services",
+    "dividendYield": 0.0154,
+    "divGrowth5yr": 0.36803535012762545,
+    "payoutRatio": 1.0177,
+    "consecutiveYears": 0,
+    "marketCapB": 15.995982848
+  },
+  {
+    "ticker": "BKR",
+    "company": "Baker Hughes Company",
+    "sector": "Energy",
+    "dividendYield": 0.0154,
+    "divGrowth5yr": -0.20406231439453282,
+    "payoutRatio": 0.3538,
+    "consecutiveYears": 0,
+    "marketCapB": 59.10642688
+  },
+  {
+    "ticker": "RCL",
+    "company": "Royal Caribbean Cruises Ltd.",
+    "sector": "Consumer Cyclical",
+    "dividendYield": 0.0153,
+    "divGrowth5yr": 0.11514868362859176,
+    "payoutRatio": 0.2242,
+    "consecutiveYears": 0,
+    "marketCapB": 75.836014592
+  },
+  {
+    "ticker": "AIZ",
+    "company": "Assurant, Inc.",
+    "sector": "Financial Services",
+    "dividendYield": 0.0150999995,
+    "divGrowth5yr": -0.19846921533924156,
+    "payoutRatio": 0.19370002,
+    "consecutiveYears": 0,
+    "marketCapB": 11.163580416
+  },
+  {
+    "ticker": "EL",
+    "company": "Estee Lauder Companies, Inc. (T",
+    "sector": "Consumer Defensive",
+    "dividendYield": 0.0150999995,
+    "divGrowth5yr": -0.307013481402983,
+    "payoutRatio": 4.7143,
+    "consecutiveYears": 0,
+    "marketCapB": 33.539332096
+  },
+  {
+    "ticker": "ROK",
+    "company": "Rockwell Automation, Inc.",
+    "sector": "Industrials",
+    "dividendYield": 0.0149,
+    "divGrowth5yr": -0.20443029313976302,
+    "payoutRatio": 0.6069,
+    "consecutiveYears": 0,
+    "marketCapB": 41.581162496
+  },
+  {
+    "ticker": "DIS",
+    "company": "Walt Disney Company (The)",
+    "sector": "Communication Services",
+    "dividendYield": 0.0148,
+    "divGrowth5yr": 1.0412414523193152,
+    "payoutRatio": 0.1841,
+    "consecutiveYears": 2,
+    "marketCapB": 180.069711872
+  },
+  {
+    "ticker": "CMI",
+    "company": "Cummins Inc.",
+    "sector": "Industrials",
+    "dividendYield": 0.0145000005,
+    "divGrowth5yr": -0.1861049751822067,
+    "payoutRatio": 0.3727,
+    "consecutiveYears": 0,
+    "marketCapB": 74.502955008
+  },
+  {
+    "ticker": "WELL",
+    "company": "Welltower Inc.",
+    "sector": "Real Estate",
+    "dividendYield": 0.0145000005,
+    "divGrowth5yr": -0.21228633655147378,
+    "payoutRatio": 1.9858999,
+    "consecutiveYears": 0,
+    "marketCapB": 142.543863808
+  },
+  {
+    "ticker": "IEX",
+    "company": "IDEX Corporation",
+    "sector": "Industrials",
+    "dividendYield": 0.014400001,
+    "divGrowth5yr": -0.19650255972320396,
+    "payoutRatio": 0.4399,
+    "consecutiveYears": 0,
+    "marketCapB": 14.812703744
+  },
+  {
+    "ticker": "MSCI",
+    "company": "MSCI Inc.",
+    "sector": "Financial Services",
+    "dividendYield": 0.014400001,
+    "divGrowth5yr": -0.10848122126469928,
+    "payoutRatio": 0.4589,
+    "consecutiveYears": 0,
+    "marketCapB": 42.772426752
+  },
+  {
+    "ticker": "TRV",
+    "company": "The Travelers Companies, Inc.",
+    "sector": "Financial Services",
+    "dividendYield": 0.014400001,
+    "divGrowth5yr": 0.05237826812572166,
+    "payoutRatio": 0.1586,
+    "consecutiveYears": 5,
+    "marketCapB": 68.326555648
+  },
+  {
+    "ticker": "RJF",
+    "company": "Raymond James Financial, Inc.",
+    "sector": "Financial Services",
+    "dividendYield": 0.014199999,
+    "divGrowth5yr": -0.12285360236737275,
+    "payoutRatio": 0.19940001,
+    "consecutiveYears": 0,
+    "marketCapB": 30.025299968
+  },
+  {
+    "ticker": "WSM",
+    "company": "Williams-Sonoma, Inc.",
+    "sector": "Consumer Cyclical",
+    "dividendYield": 0.014199999,
+    "divGrowth5yr": -0.11416728965524281,
+    "payoutRatio": 0.2811,
+    "consecutiveYears": 0,
+    "marketCapB": 22.26689024
+  },
+  {
+    "ticker": "CRH",
+    "company": "CRH PLC",
+    "sector": "Basic Materials",
+    "dividendYield": 0.014099999,
+    "divGrowth5yr": -0.19587914906873827,
+    "payoutRatio": 0.26860002,
+    "consecutiveYears": 0,
+    "marketCapB": 71.289233408
+  },
+  {
+    "ticker": "XYL",
+    "company": "Xylem Inc.",
+    "sector": "Industrials",
+    "dividendYield": 0.0139999995,
+    "divGrowth5yr": -0.1742471399348352,
+    "payoutRatio": 0.4082,
+    "consecutiveYears": 0,
+    "marketCapB": 29.983215616
+  },
+  {
+    "ticker": "CHRW",
+    "company": "C.H. Robinson Worldwide, Inc.",
+    "sector": "Industrials",
+    "dividendYield": 0.0139999995,
+    "divGrowth5yr": -0.21249115032421684,
+    "payoutRatio": 0.5155,
+    "consecutiveYears": 0,
+    "marketCapB": 21.309046784
+  },
+  {
+    "ticker": "CSX",
+    "company": "CSX Corporation",
+    "sector": "Industrials",
+    "dividendYield": 0.0139999995,
+    "divGrowth5yr": -0.17782994906556016,
+    "payoutRatio": 0.3377,
+    "consecutiveYears": 0,
+    "marketCapB": 74.289291264
+  },
+  {
+    "ticker": "WM",
+    "company": "Waste Management, Inc.",
+    "sector": "Industrials",
+    "dividendYield": 0.0139,
+    "divGrowth5yr": 0.08645436537245299,
+    "payoutRatio": 0.4925,
+    "consecutiveYears": 5,
+    "marketCapB": 99.240771584
+  },
+  {
+    "ticker": "ALLE",
+    "company": "Allegion plc",
+    "sector": "Industrials",
+    "dividendYield": 0.0138,
+    "divGrowth5yr": -0.04439582076655946,
+    "payoutRatio": 0.2742,
+    "consecutiveYears": 0,
+    "marketCapB": 12.953696256
+  },
+  {
+    "ticker": "AMP",
+    "company": "Ameriprise Financial, Inc.",
+    "sector": "Financial Services",
+    "dividendYield": 0.0138,
+    "divGrowth5yr": -0.18427597914655025,
+    "payoutRatio": 0.1731,
+    "consecutiveYears": 0,
+    "marketCapB": 43.190939648
+  },
+  {
+    "ticker": "TEL",
+    "company": "TE Connectivity plc",
+    "sector": "Technology",
+    "dividendYield": 0.0138,
+    "divGrowth5yr": -0.18544834260140497,
+    "payoutRatio": 0.40060002,
+    "consecutiveYears": 0,
+    "marketCapB": 60.424282112
+  },
+  {
+    "ticker": "JKHY",
+    "company": "Jack Henry & Associates, Inc.",
+    "sector": "Technology",
+    "dividendYield": 0.0137,
+    "divGrowth5yr": -0.1981328864619024,
+    "payoutRatio": 0.33290002,
+    "consecutiveYears": 0,
+    "marketCapB": 12.436562944
+  },
+  {
+    "ticker": "LHX",
+    "company": "L3Harris Technologies, Inc.",
+    "sector": "Industrials",
+    "dividendYield": 0.0136,
+    "divGrowth5yr": -0.21068570182143642,
+    "payoutRatio": 0.56270003,
+    "consecutiveYears": 0,
+    "marketCapB": 68.575440896
+  },
+  {
+    "ticker": "SCHW",
+    "company": "Charles Schwab Corporation (The",
+    "sector": "Financial Services",
+    "dividendYield": 0.0134000005,
+    "divGrowth5yr": -0.14971699958280604,
+    "payoutRatio": 0.2323,
+    "consecutiveYears": 0,
+    "marketCapB": 169.217703936
+  },
+  {
+    "ticker": "EBAY",
+    "company": "eBay Inc.",
+    "sector": "Consumer Cyclical",
+    "dividendYield": 0.0134000005,
+    "divGrowth5yr": -0.15509897013626717,
+    "payoutRatio": 0.2723,
+    "consecutiveYears": 0,
+    "marketCapB": 41.904918528
+  },
+  {
+    "ticker": "NUE",
+    "company": "Nucor Corporation",
+    "sector": "Basic Materials",
+    "dividendYield": 0.013300001,
+    "divGrowth5yr": 0.06487283591585125,
+    "payoutRatio": 0.29389998,
+    "consecutiveYears": 5,
+    "marketCapB": 38.619897856
+  },
+  {
+    "ticker": "VRSN",
+    "company": "VeriSign, Inc.",
+    "sector": "Technology",
+    "dividendYield": 0.013300001,
+    "divGrowth5yr": -0.6493506493506493,
+    "payoutRatio": 0.2622,
+    "consecutiveYears": 0,
+    "marketCapB": 22.598406144
+  },
+  {
+    "ticker": "LIN",
+    "company": "Linde plc",
+    "sector": "Basic Materials",
+    "dividendYield": 0.013200001,
+    "divGrowth5yr": 0.0926800010017903,
+    "payoutRatio": 0.4107,
+    "consecutiveYears": 5,
+    "marketCapB": 224.625672192
+  },
+  {
+    "ticker": "GPN",
+    "company": "Global Payments Inc.",
+    "sector": "Industrials",
+    "dividendYield": 0.013099999,
+    "divGrowth5yr": 0.0509476404473832,
+    "payoutRatio": 0.22569999,
+    "consecutiveYears": 5,
+    "marketCapB": 21.384460288
+  },
+  {
+    "ticker": "ORCL",
+    "company": "Oracle Corporation",
+    "sector": "Technology",
+    "dividendYield": 0.013099999,
+    "divGrowth5yr": -0.16062167251461246,
+    "payoutRatio": 0.35709998,
+    "consecutiveYears": 0,
+    "marketCapB": 439.620993024
+  },
+  {
+    "ticker": "RTX",
+    "company": "RTX Corporation",
+    "sector": "Industrials",
+    "dividendYield": 0.012999999,
+    "divGrowth5yr": -0.19447521595363937,
+    "payoutRatio": 0.53830004,
+    "consecutiveYears": 0,
+    "marketCapB": 281.558253568
+  },
+  {
+    "ticker": "HII",
+    "company": "Huntington Ingalls Industries, ",
+    "sector": "Industrials",
+    "dividendYield": 0.0128999995,
+    "divGrowth5yr": -0.2139969144033772,
+    "payoutRatio": 0.35279998,
+    "consecutiveYears": 0,
+    "marketCapB": 16.83942912
+  },
+  {
+    "ticker": "ADI",
+    "company": "Analog Devices, Inc.",
+    "sector": "Technology",
+    "dividendYield": 0.0128999995,
+    "divGrowth5yr": -0.16805096827636246,
+    "payoutRatio": 0.7239,
+    "consecutiveYears": 0,
+    "marketCapB": 154.17974784
+  },
+  {
+    "ticker": "BALL",
+    "company": "Ball Corporation",
+    "sector": "Consumer Cyclical",
+    "dividendYield": 0.0128,
+    "divGrowth5yr": -0.2216294584488292,
+    "payoutRatio": 0.24239999,
+    "consecutiveYears": 0,
+    "marketCapB": 16.757239808
+  },
+  {
+    "ticker": "DAL",
+    "company": "Delta Air Lines, Inc.",
+    "sector": "Industrials",
+    "dividendYield": 0.0127,
+    "divGrowth5yr": -0.11933892609328867,
+    "payoutRatio": 0.0881,
+    "consecutiveYears": 0,
+    "marketCapB": 38.541242368
+  },
+  {
+    "ticker": "ETN",
+    "company": "Eaton Corporation, PLC",
+    "sector": "Industrials",
+    "dividendYield": 0.0127,
+    "divGrowth5yr": 0.0663358442684201,
+    "payoutRatio": 0.39810002,
+    "consecutiveYears": 0,
+    "marketCapB": 135.379075072
+  },
+  {
+    "ticker": "WTW",
+    "company": "Willis Towers Watson Public Lim",
+    "sector": "Financial Services",
+    "dividendYield": 0.0127,
+    "divGrowth5yr": 0.05999306759775491,
+    "payoutRatio": 0.22629999,
+    "consecutiveYears": 5,
+    "marketCapB": 29.006086144
+  },
+  {
+    "ticker": "AXP",
+    "company": "American Express Company",
+    "sector": "Financial Services",
+    "dividendYield": 0.0126,
+    "divGrowth5yr": -0.13770259110928906,
+    "payoutRatio": 0.2133,
+    "consecutiveYears": 0,
+    "marketCapB": 207.34435328
+  },
+  {
+    "ticker": "ICE",
+    "company": "Intercontinental Exchange Inc.",
+    "sector": "Financial Services",
+    "dividendYield": 0.0125,
+    "divGrowth5yr": 0.09856054330611785,
+    "payoutRatio": 0.3328,
+    "consecutiveYears": 5,
+    "marketCapB": 94.757978112
+  },
+  {
+    "ticker": "ROL",
+    "company": "Rollins, Inc.",
+    "sector": "Consumer Cyclical",
+    "dividendYield": 0.0125,
+    "divGrowth5yr": -0.15308395671020503,
+    "payoutRatio": 0.6228,
+    "consecutiveYears": 0,
+    "marketCapB": 28.038053888
+  },
+  {
+    "ticker": "AJG",
+    "company": "Arthur J. Gallagher & Co.",
+    "sector": "Financial Services",
+    "dividendYield": 0.0123000005,
+    "divGrowth5yr": -0.18274165797437714,
+    "payoutRatio": 0.45299998,
+    "consecutiveYears": 0,
+    "marketCapB": 58.652225536
+  },
+  {
+    "ticker": "NRG",
+    "company": "NRG Energy, Inc.",
+    "sector": "Utilities",
+    "dividendYield": 0.0123000005,
+    "divGrowth5yr": 0.0796084730466029,
+    "payoutRatio": 0.4389,
+    "consecutiveYears": 5,
+    "marketCapB": 33.129039872
+  },
+  {
+    "ticker": "CHD",
+    "company": "Church & Dwight Company, Inc.",
+    "sector": "Consumer Defensive",
+    "dividendYield": 0.012200001,
+    "divGrowth5yr": -0.21173173825709546,
+    "payoutRatio": 0.39069998,
+    "consecutiveYears": 0,
+    "marketCapB": 24.181098496
+  },
+  {
+    "ticker": "DHI",
+    "company": "D.R. Horton, Inc.",
+    "sector": "Consumer Cyclical",
+    "dividendYield": 0.012200001,
+    "divGrowth5yr": 0.17877030702271846,
+    "payoutRatio": 0.15010001,
+    "consecutiveYears": 5,
+    "marketCapB": 42.867318784
+  },
+  {
+    "ticker": "NOC",
+    "company": "Northrop Grumman Corporation",
+    "sector": "Industrials",
+    "dividendYield": 0.012200001,
+    "divGrowth5yr": -0.17812408524138712,
+    "payoutRatio": 0.3091,
+    "consecutiveYears": 0,
+    "marketCapB": 107.914919936
+  },
+  {
+    "ticker": "NDAQ",
+    "company": "Nasdaq, Inc.",
+    "sector": "Financial Services",
+    "dividendYield": 0.012200001,
+    "divGrowth5yr": 0.10179768190520622,
+    "payoutRatio": 0.3398,
+    "consecutiveYears": 5,
+    "marketCapB": 50.493128704
+  },
+  {
+    "ticker": "JCI",
+    "company": "Johnson Controls International ",
+    "sector": "Industrials",
+    "dividendYield": 0.0121,
+    "divGrowth5yr": -0.06580040196124082,
+    "payoutRatio": 0.5168,
+    "consecutiveYears": 0,
+    "marketCapB": 81.03755776
+  },
+  {
+    "ticker": "HUBB",
+    "company": "Hubbell Inc",
+    "sector": "Industrials",
+    "dividendYield": 0.012,
+    "divGrowth5yr": -0.18667693289758058,
+    "payoutRatio": 0.32529998,
+    "consecutiveYears": 0,
+    "marketCapB": 25.067821056
+  },
+  {
+    "ticker": "NDSN",
+    "company": "Nordson Corporation",
+    "sector": "Industrials",
+    "dividendYield": 0.012,
+    "divGrowth5yr": 0.2091285343423348,
+    "payoutRatio": 0.3463,
+    "consecutiveYears": 1,
+    "marketCapB": 15.219997696
+  },
+  {
+    "ticker": "PYPL",
+    "company": "PayPal Holdings, Inc.",
+    "sector": "Financial Services",
+    "dividendYield": 0.0119,
+    "divGrowth5yr": 0,
+    "payoutRatio": 0.025899999,
+    "consecutiveYears": 1,
+    "marketCapB": 43.947573248
+  },
+  {
+    "ticker": "CB",
+    "company": "Chubb Limited",
+    "sector": "Financial Services",
+    "dividendYield": 0.0117999995,
+    "divGrowth5yr": -0.0946012846107408,
+    "payoutRatio": 0.1488,
+    "consecutiveYears": 0,
+    "marketCapB": 129.084678144
+  },
+  {
+    "ticker": "PNR",
+    "company": "Pentair plc.",
+    "sector": "Industrials",
+    "dividendYield": 0.0113,
+    "divGrowth5yr": -0.19526154400017437,
+    "payoutRatio": 0.2545,
+    "consecutiveYears": 0,
+    "marketCapB": 15.082872832
+  },
+  {
+    "ticker": "STLD",
+    "company": "Steel Dynamics, Inc.",
+    "sector": "Basic Materials",
+    "dividendYield": 0.0112,
+    "divGrowth5yr": 0.1486983549970351,
+    "payoutRatio": 0.25030002,
+    "consecutiveYears": 5,
+    "marketCapB": 26.514466816
+  },
+  {
+    "ticker": "TPR",
+    "company": "Tapestry, Inc.",
+    "sector": "Consumer Cyclical",
+    "dividendYield": 0.0111,
+    "divGrowth5yr": -0.043647500209963,
+    "payoutRatio": 0.5814,
+    "consecutiveYears": 0,
+    "marketCapB": 29.5002624
+  },
+  {
+    "ticker": "DE",
+    "company": "Deere & Company",
+    "sector": "Industrials",
+    "dividendYield": 0.011,
+    "divGrowth5yr": 0.16343007020052136,
+    "payoutRatio": 0.3655,
+    "consecutiveYears": 5,
+    "marketCapB": 159.301189632
+  },
+  {
+    "ticker": "PCG",
+    "company": "Pacific Gas & Electric Co.",
+    "sector": "Utilities",
+    "dividendYield": 0.011,
+    "divGrowth5yr": 2.5355339059327378,
+    "payoutRatio": 0.105900005,
+    "consecutiveYears": 2,
+    "marketCapB": 39.959056384
+  },
+  {
+    "ticker": "PCAR",
+    "company": "PACCAR Inc.",
+    "sector": "Industrials",
+    "dividendYield": 0.011,
+    "divGrowth5yr": -0.2948892414194092,
+    "payoutRatio": 0.2927,
+    "consecutiveYears": 0,
+    "marketCapB": 63.333466112
+  },
+  {
+    "ticker": "PAYC",
+    "company": "Paycom Software, Inc.",
+    "sector": "Technology",
+    "dividendYield": 0.0109,
+    "divGrowth5yr": 0.15470053837925146,
+    "payoutRatio": 0.1856,
+    "consecutiveYears": 2,
+    "marketCapB": 7.577593344
+  },
+  {
+    "ticker": "RL",
+    "company": "Ralph Lauren Corporation",
+    "sector": "Consumer Cyclical",
+    "dividendYield": 0.0108,
+    "divGrowth5yr": 0.3895361551645693,
+    "payoutRatio": 0.24229999,
+    "consecutiveYears": 5,
+    "marketCapB": 20.518373376
+  },
+  {
+    "ticker": "RSG",
+    "company": "Republic Services, Inc.",
+    "sector": "Industrials",
+    "dividendYield": 0.0108,
+    "divGrowth5yr": -0.1879526560526693,
+    "payoutRatio": 0.3518,
+    "consecutiveYears": 0,
+    "marketCapB": 71.524663296
+  },
+  {
+    "ticker": "EQT",
+    "company": "EQT Corporation",
+    "sector": "Energy",
+    "dividendYield": 0.0107,
+    "divGrowth5yr": 0.4062823883876354,
+    "payoutRatio": 0.1926,
+    "consecutiveYears": 0,
+    "marketCapB": 38.680014848
+  },
+  {
+    "ticker": "LH",
+    "company": "Labcorp Holdings Inc.",
+    "sector": "Healthcare",
+    "dividendYield": 0.0107,
+    "divGrowth5yr": -0.2107621970770528,
+    "payoutRatio": 0.2753,
+    "consecutiveYears": 0,
+    "marketCapB": 22.355644416
+  },
+  {
+    "ticker": "STE",
+    "company": "STERIS plc (Ireland)",
+    "sector": "Healthcare",
+    "dividendYield": 0.0107,
+    "divGrowth5yr": -0.17615313714422753,
+    "payoutRatio": 0.33470002,
+    "consecutiveYears": 0,
+    "marketCapB": 22.62386688
+  },
+  {
+    "ticker": "TJX",
+    "company": "TJX Companies, Inc. (The)",
+    "sector": "Consumer Cyclical",
+    "dividendYield": 0.0107,
+    "divGrowth5yr": -0.16387517483257819,
+    "payoutRatio": 0.3388,
+    "consecutiveYears": 0,
+    "marketCapB": 177.324539904
+  },
+  {
+    "ticker": "J",
+    "company": "Jacobs Solutions Inc.",
+    "sector": "Industrials",
+    "dividendYield": 0.0105,
+    "divGrowth5yr": -0.12322625152742694,
+    "payoutRatio": 0.3377,
+    "consecutiveYears": 0,
+    "marketCapB": 16.153298944
+  },
+  {
+    "ticker": "MSI",
+    "company": "Motorola Solutions, Inc.",
+    "sector": "Technology",
+    "dividendYield": 0.0105,
+    "divGrowth5yr": 0.11240889553102096,
+    "payoutRatio": 0.3514,
+    "consecutiveYears": 5,
+    "marketCapB": 76.74187776
+  },
+  {
+    "ticker": "EXPD",
+    "company": "Expeditors International of Was",
+    "sector": "Industrials",
+    "dividendYield": 0.0105,
+    "divGrowth5yr": 0.0816767036783399,
+    "payoutRatio": 0.2588,
+    "consecutiveYears": 5,
+    "marketCapB": 19.68231424
+  },
+  {
+    "ticker": "FOX",
+    "company": "Fox Corporation",
+    "sector": "Communication Services",
+    "dividendYield": 0.010299999,
+    "divGrowth5yr": -0.09840387872029777,
+    "payoutRatio": 0.1319,
+    "consecutiveYears": 0,
+    "marketCapB": 25.354838016
+  },
+  {
+    "ticker": "ZBH",
+    "company": "Zimmer Biomet Holdings, Inc.",
+    "sector": "Healthcare",
+    "dividendYield": 0.010199999,
+    "divGrowth5yr": 0.005929017907864376,
+    "payoutRatio": 0.27040002,
+    "consecutiveYears": 5,
+    "marketCapB": 18.650865664
+  },
+  {
+    "ticker": "FCX",
+    "company": "Freeport-McMoRan, Inc.",
+    "sector": "Basic Materials",
+    "dividendYield": 0.0101,
+    "divGrowth5yr": -0.07789208851827223,
+    "payoutRatio": 0.39470002,
+    "consecutiveYears": 0,
+    "marketCapB": 85.312290816
+  },
+  {
+    "ticker": "ALB",
+    "company": "Albemarle Corporation",
+    "sector": "Basic Materials",
+    "dividendYield": 0.01,
+    "divGrowth5yr": 0.010180215943888626,
+    "payoutRatio": 0.5797,
+    "consecutiveYears": 5,
+    "marketCapB": 19.125424128
+  },
+  {
+    "ticker": "DOV",
+    "company": "Dover Corporation",
+    "sector": "Industrials",
+    "dividendYield": 0.01,
+    "divGrowth5yr": -0.23540746514237654,
+    "payoutRatio": 0.2597,
+    "consecutiveYears": 0,
+    "marketCapB": 28.585474048
+  },
+  {
+    "ticker": "LII",
+    "company": "Lennox International, Inc.",
+    "sector": "Industrials",
+    "dividendYield": 0.01,
+    "divGrowth5yr": 0.10394676795501812,
+    "payoutRatio": 0.2216,
+    "consecutiveYears": 5,
+    "marketCapB": 18.149111808
+  },
+  {
+    "ticker": "EFX",
+    "company": "Equifax, Inc.",
+    "sector": "Industrials",
+    "dividendYield": 0.0099,
+    "divGrowth5yr": 0.0391241569508578,
+    "payoutRatio": 0.35529998,
+    "consecutiveYears": 5,
+    "marketCapB": 25.43715328
+  },
+  {
+    "ticker": "TT",
+    "company": "Trane Technologies plc",
+    "sector": "Industrials",
+    "dividendYield": 0.0099,
+    "divGrowth5yr": -0.14953693116334887,
+    "payoutRatio": 0.2861,
+    "consecutiveYears": 0,
+    "marketCapB": 93.824425984
+  },
+  {
+    "ticker": "ROP",
+    "company": "Roper Technologies, Inc.",
+    "sector": "Technology",
+    "dividendYield": 0.0099,
+    "divGrowth5yr": -0.16575310056702353,
+    "payoutRatio": 0.2324,
+    "consecutiveYears": 0,
+    "marketCapB": 39.556755456
+  },
+  {
+    "ticker": "ECL",
+    "company": "Ecolab Inc.",
+    "sector": "Basic Materials",
+    "dividendYield": 0.0098,
+    "divGrowth5yr": 0.07234516499000798,
+    "payoutRatio": 0.36810002,
+    "consecutiveYears": 5,
+    "marketCapB": 80.067887104
+  },
+  {
+    "ticker": "WYNN",
+    "company": "Wynn Resorts, Limited",
+    "sector": "Consumer Cyclical",
+    "dividendYield": 0.0098,
+    "divGrowth5yr": -0.2062994740159002,
+    "payoutRatio": 0.3185,
+    "consecutiveYears": 0,
+    "marketCapB": 10.565055488
+  },
+  {
+    "ticker": "SHW",
+    "company": "Sherwin-Williams Company (The)",
+    "sector": "Basic Materials",
+    "dividendYield": 0.0097,
+    "divGrowth5yr": -0.18316664954179762,
+    "payoutRatio": 0.308,
+    "consecutiveYears": 0,
+    "marketCapB": 81.735942144
+  },
+  {
+    "ticker": "SYK",
+    "company": "Stryker Corporation",
+    "sector": "Healthcare",
+    "dividendYield": 0.0097,
+    "divGrowth5yr": 0.07621143227241212,
+    "payoutRatio": 0.4048,
+    "consecutiveYears": 5,
+    "marketCapB": 139.512987648
+  },
+  {
+    "ticker": "URI",
+    "company": "United Rentals, Inc.",
+    "sector": "Industrials",
+    "dividendYield": 0.0097,
+    "divGrowth5yr": -0.3070293518021011,
+    "payoutRatio": 0.18540001,
+    "consecutiveYears": 0,
+    "marketCapB": 51.514966016
+  },
+  {
+    "ticker": "GM",
+    "company": "General Motors Company",
+    "sector": "Consumer Cyclical",
+    "dividendYield": 0.0095999995,
+    "divGrowth5yr": -0.13881237266310953,
+    "payoutRatio": 0.1743,
+    "consecutiveYears": 0,
+    "marketCapB": 70.160498688
+  },
+  {
+    "ticker": "INTU",
+    "company": "Intuit Inc.",
+    "sector": "Technology",
+    "dividendYield": 0.0095999995,
+    "divGrowth5yr": -0.1330320709080891,
+    "payoutRatio": 0.2915,
+    "consecutiveYears": 0,
+    "marketCapB": 133.897142272
+  },
+  {
+    "ticker": "RMD",
+    "company": "ResMed Inc.",
+    "sector": "Healthcare",
+    "dividendYield": 0.0095,
+    "divGrowth5yr": -0.18016350471687892,
+    "payoutRatio": 0.2235,
+    "consecutiveYears": 0,
+    "marketCapB": 36.910493696
+  },
+  {
+    "ticker": "CAH",
+    "company": "Cardinal Health, Inc.",
+    "sector": "Healthcare",
+    "dividendYield": 0.0094,
+    "divGrowth5yr": -0.23567635892958283,
+    "payoutRatio": 0.2932,
+    "consecutiveYears": 0,
+    "marketCapB": 51.247120384
+  },
+  {
+    "ticker": "CTVA",
+    "company": "Corteva, Inc.",
+    "sector": "Basic Materials",
+    "dividendYield": 0.0094,
+    "divGrowth5yr": -0.1972584382397693,
+    "payoutRatio": 0.4,
+    "consecutiveYears": 0,
+    "marketCapB": 52.00433152
+  },
+  {
+    "ticker": "FOXA",
+    "company": "Fox Corporation",
+    "sector": "Communication Services",
+    "dividendYield": 0.0094,
+    "divGrowth5yr": -0.09840387872029777,
+    "payoutRatio": 0.1319,
+    "consecutiveYears": 0,
+    "marketCapB": 25.430175744
+  },
+  {
+    "ticker": "GL",
+    "company": "Globe Life Inc.",
+    "sector": "Financial Services",
+    "dividendYield": 0.0093,
+    "divGrowth5yr": -0.19159051163768637,
+    "payoutRatio": 0.076799996,
+    "consecutiveYears": 0,
+    "marketCapB": 11.318351872
+  },
+  {
+    "ticker": "LDOS",
+    "company": "Leidos Holdings, Inc.",
+    "sector": "Technology",
+    "dividendYield": 0.0093,
+    "divGrowth5yr": 0.036882964320934075,
+    "payoutRatio": 0.1463,
+    "consecutiveYears": 5,
+    "marketCapB": 22.74415616
+  },
+  {
+    "ticker": "VRSK",
+    "company": "Verisk Analytics, Inc.",
+    "sector": "Industrials",
+    "dividendYield": 0.0093,
+    "divGrowth5yr": 0.10756634324828984,
+    "payoutRatio": 0.2778,
+    "consecutiveYears": 5,
+    "marketCapB": 29.94280448
+  },
+  {
+    "ticker": "GLW",
+    "company": "Corning Incorporated",
+    "sector": "Technology",
+    "dividendYield": 0.0091,
+    "divGrowth5yr": -0.2184129416295345,
+    "payoutRatio": 0.612,
+    "consecutiveYears": 0,
+    "marketCapB": 105.776422912
+  },
+  {
+    "ticker": "A",
+    "company": "Agilent Technologies, Inc.",
+    "sector": "Healthcare",
+    "dividendYield": 0.0089,
+    "divGrowth5yr": -0.19954726689637003,
+    "payoutRatio": 0.22049999,
+    "consecutiveYears": 0,
+    "marketCapB": 32.546357248
+  },
+  {
+    "ticker": "CAT",
+    "company": "Caterpillar, Inc.",
+    "sector": "Industrials",
+    "dividendYield": 0.0089,
+    "divGrowth5yr": -0.1880923458900433,
+    "payoutRatio": 0.3105,
+    "consecutiveYears": 0,
+    "marketCapB": 318.647304192
+  },
+  {
+    "ticker": "NEM",
+    "company": "Newmont Corporation",
+    "sector": "Basic Materials",
+    "dividendYield": 0.0089,
+    "divGrowth5yr": -0.34760573680909457,
+    "payoutRatio": 0.1565,
+    "consecutiveYears": 0,
+    "marketCapB": 126.902976512
+  },
+  {
+    "ticker": "MSFT",
+    "company": "Microsoft Corporation",
+    "sector": "Technology",
+    "dividendYield": 0.0089,
+    "divGrowth5yr": -0.1692646117121328,
+    "payoutRatio": 0.21280001,
+    "consecutiveYears": 0,
+    "marketCapB": 3039.54526208
+  },
+  {
+    "ticker": "CTAS",
+    "company": "Cintas Corporation",
+    "sector": "Industrials",
+    "dividendYield": 0.0088,
+    "divGrowth5yr": -0.11944047821175208,
+    "payoutRatio": 0.36360002,
+    "consecutiveYears": 0,
+    "marketCapB": 81.824079872
+  },
+  {
+    "ticker": "AON",
+    "company": "Aon plc",
+    "sector": "Financial Services",
+    "dividendYield": 0.0087,
+    "divGrowth5yr": 0.03993831555726812,
+    "payoutRatio": 0.171,
+    "consecutiveYears": 0,
+    "marketCapB": 73.206956032
+  },
+  {
+    "ticker": "MCO",
+    "company": "Moody's Corporation",
+    "sector": "Financial Services",
+    "dividendYield": 0.0087,
+    "divGrowth5yr": -0.16116390702900107,
+    "payoutRatio": 0.2751,
+    "consecutiveYears": 0,
+    "marketCapB": 83.680280576
+  },
+  {
+    "ticker": "CRM",
+    "company": "Salesforce, Inc.",
+    "sector": "Technology",
+    "dividendYield": 0.0087,
+    "divGrowth5yr": 0.039999999999999813,
+    "payoutRatio": 0.2133,
+    "consecutiveYears": 1,
+    "marketCapB": 189.377069056
+  },
+  {
+    "ticker": "BRO",
+    "company": "Brown & Brown, Inc.",
+    "sector": "Financial Services",
+    "dividendYield": 0.0086,
+    "divGrowth5yr": 0.12062207767059996,
+    "payoutRatio": 0.19459999,
+    "consecutiveYears": 5,
+    "marketCapB": 25.094428672
+  },
+  {
+    "ticker": "SPGI",
+    "company": "S&P Global Inc.",
+    "sector": "Financial Services",
+    "dividendYield": 0.0086,
+    "divGrowth5yr": -0.20632225345555721,
+    "payoutRatio": 0.2619,
+    "consecutiveYears": 0,
+    "marketCapB": 136.974606336
+  },
+  {
+    "ticker": "BKNG",
+    "company": "Booking Holdings Inc. Common St",
+    "sector": "Consumer Cyclical",
+    "dividendYield": 0.0086,
+    "divGrowth5yr": -0.4522774424948339,
+    "payoutRatio": 0.2319,
+    "consecutiveYears": 0,
+    "marketCapB": 146.677727232
+  },
+  {
+    "ticker": "V",
+    "company": "Visa Inc.",
+    "sector": "Financial Services",
+    "dividendYield": 0.0084,
+    "divGrowth5yr": -0.12879831363959837,
+    "payoutRatio": 0.2291,
+    "consecutiveYears": 0,
+    "marketCapB": 611.882631168
+  },
+  {
+    "ticker": "JBHT",
+    "company": "J.B. Hunt Transport Services, I",
+    "sector": "Industrials",
+    "dividendYield": 0.0084,
+    "divGrowth5yr": 0.1025994778190622,
+    "payoutRatio": 0.2876,
+    "consecutiveYears": 5,
+    "marketCapB": 20.318642176
+  },
+  {
+    "ticker": "ROST",
+    "company": "Ross Stores, Inc.",
+    "sector": "Consumer Cyclical",
+    "dividendYield": 0.0084,
+    "divGrowth5yr": 0.4155787379926128,
+    "payoutRatio": 0.2473,
+    "consecutiveYears": 5,
+    "marketCapB": 68.8666624
+  },
+  {
+    "ticker": "STX",
+    "company": "Seagate Technology Holdings PLC",
+    "sector": "Technology",
+    "dividendYield": 0.0084,
+    "divGrowth5yr": 0.020514879586408963,
+    "payoutRatio": 0.32770002,
+    "consecutiveYears": 5,
+    "marketCapB": 79.036153856
+  },
+  {
+    "ticker": "MAR",
+    "company": "Marriott International",
+    "sector": "Consumer Cyclical",
+    "dividendYield": 0.0083,
+    "divGrowth5yr": 0.06897294358221773,
+    "payoutRatio": 0.2776,
+    "consecutiveYears": 0,
+    "marketCapB": 85.802000384
+  },
+  {
+    "ticker": "DHR",
+    "company": "Danaher Corporation",
+    "sector": "Healthcare",
+    "dividendYield": 0.0082,
+    "divGrowth5yr": 0.14931101594484608,
+    "payoutRatio": 0.2545,
+    "consecutiveYears": 5,
+    "marketCapB": 138.2457344
+  },
+  {
+    "ticker": "KKR",
+    "company": "KKR & Co. Inc.",
+    "sector": "Financial Services",
+    "dividendYield": 0.0081,
+    "divGrowth5yr": -0.2015285824530837,
+    "payoutRatio": 0.312,
+    "consecutiveYears": 0,
+    "marketCapB": 84.573446144
+  },
+  {
+    "ticker": "PHM",
+    "company": "PulteGroup, Inc.",
+    "sector": "Consumer Cyclical",
+    "dividendYield": 0.0081,
+    "divGrowth5yr": 0.12970113373747605,
+    "payoutRatio": 0.08270001,
+    "consecutiveYears": 5,
+    "marketCapB": 24.587196416
+  },
+  {
+    "ticker": "GWW",
+    "company": "W.W. Grainger, Inc.",
+    "sector": "Industrials",
+    "dividendYield": 0.0081,
+    "divGrowth5yr": -0.18769053022923665,
+    "payoutRatio": 0.2494,
+    "consecutiveYears": 0,
+    "marketCapB": 52.912427008
+  },
+  {
+    "ticker": "NWSA",
+    "company": "News Corporation",
+    "sector": "Communication Services",
+    "dividendYield": 0.0081,
+    "divGrowth5yr": 0,
+    "payoutRatio": 0.2597,
+    "consecutiveYears": 5,
+    "marketCapB": 14.112111616
+  },
+  {
+    "ticker": "WMT",
+    "company": "Walmart Inc.",
+    "sector": "Consumer Defensive",
+    "dividendYield": 0.008,
+    "divGrowth5yr": 0.054773163227226584,
+    "payoutRatio": 0.3443,
+    "consecutiveYears": 5,
+    "marketCapB": 987.03900672
+  },
+  {
+    "ticker": "AVGO",
+    "company": "Broadcom Inc.",
+    "sector": "Technology",
+    "dividendYield": 0.007900001,
+    "divGrowth5yr": 0.12633302989831052,
+    "payoutRatio": 0.4948,
+    "consecutiveYears": 5,
+    "marketCapB": 1566.753947648
+  },
+  {
+    "ticker": "PH",
+    "company": "Parker-Hannifin Corporation",
+    "sector": "Industrials",
+    "dividendYield": 0.0078,
+    "divGrowth5yr": 0.148371834661432,
+    "payoutRatio": 0.2565,
+    "consecutiveYears": 5,
+    "marketCapB": 116.588724224
+  },
+  {
+    "ticker": "MPWR",
+    "company": "Monolithic Power Systems, Inc.",
+    "sector": "Technology",
+    "dividendYield": 0.0078,
+    "divGrowth5yr": 0.2555410564613725,
+    "payoutRatio": 0.48520002,
+    "consecutiveYears": 5,
+    "marketCapB": 50.255572992
+  },
+  {
+    "ticker": "APH",
+    "company": "Amphenol Corporation",
+    "sector": "Technology",
+    "dividendYield": 0.0076,
+    "divGrowth5yr": 0.23434506475160144,
+    "payoutRatio": 0.22309999,
+    "consecutiveYears": 5,
+    "marketCapB": 162.09657856
+  },
+  {
+    "ticker": "VMC",
+    "company": "Vulcan Materials Company (Holdi",
+    "sector": "Basic Materials",
+    "dividendYield": 0.0076,
+    "divGrowth5yr": 0.0758294599404643,
+    "payoutRatio": 0.24049999,
+    "consecutiveYears": 5,
+    "marketCapB": 36.334678016
+  },
+  {
+    "ticker": "NWS",
+    "company": "News Corporation",
+    "sector": "Communication Services",
+    "dividendYield": 0.0072000003,
+    "divGrowth5yr": 0,
+    "payoutRatio": 0.2597,
+    "consecutiveYears": 5,
+    "marketCapB": 15.30677248
+  },
+  {
+    "ticker": "COR",
+    "company": "Cencora, Inc.",
+    "sector": "Healthcare",
+    "dividendYield": 0.0067000003,
+    "divGrowth5yr": -0.3850024648834821,
+    "payoutRatio": 0.2701,
+    "consecutiveYears": 0,
+    "marketCapB": 69.731467264
+  },
+  {
+    "ticker": "MA",
+    "company": "Mastercard Incorporated",
+    "sector": "Financial Services",
+    "dividendYield": 0.0067000003,
+    "divGrowth5yr": -0.13143701581221,
+    "payoutRatio": 0.184,
+    "consecutiveYears": 0,
+    "marketCapB": 466.1559296
+  },
+  {
+    "ticker": "EXPE",
+    "company": "Expedia Group, Inc.",
+    "sector": "Consumer Cyclical",
+    "dividendYield": 0.0067000003,
+    "divGrowth5yr": 0.05915711193399775,
+    "payoutRatio": 0.16309999,
+    "consecutiveYears": 0,
+    "marketCapB": 30.587154432
+  },
+  {
+    "ticker": "LLY",
+    "company": "Eli Lilly and Company",
+    "sector": "Healthcare",
+    "dividendYield": 0.0063,
+    "divGrowth5yr": -0.12639836691770578,
+    "payoutRatio": 0.26139998,
+    "consecutiveYears": 0,
+    "marketCapB": 886.36391424
+  },
+  {
+    "ticker": "AME",
+    "company": "AMETEK, Inc.",
+    "sector": "Industrials",
+    "dividendYield": 0.0061000003,
+    "divGrowth5yr": 0.11485359272536089,
+    "payoutRatio": 0.19379999,
+    "consecutiveYears": 5,
+    "marketCapB": 51.100655616
+  },
+  {
+    "ticker": "ODFL",
+    "company": "Old Dominion Freight Line, Inc.",
+    "sector": "Industrials",
+    "dividendYield": 0.006,
+    "divGrowth5yr": -0.06229204289621937,
+    "payoutRatio": 0.2314,
+    "consecutiveYears": 0,
+    "marketCapB": 40.558821376
+  },
+  {
+    "ticker": "HCA",
+    "company": "HCA Healthcare, Inc.",
+    "sector": "Healthcare",
+    "dividendYield": 0.0058999998,
+    "divGrowth5yr": 0.3019081704053441,
+    "payoutRatio": 0.1017,
+    "consecutiveYears": 5,
+    "marketCapB": 119.148150784
+  },
+  {
+    "ticker": "TECH",
+    "company": "Bio-Techne Corp",
+    "sector": "Healthcare",
+    "dividendYield": 0.0058999998,
+    "divGrowth5yr": -0.242141716744801,
+    "payoutRatio": 0.6038,
+    "consecutiveYears": 0,
+    "marketCapB": 8.43126784
+  },
+  {
+    "ticker": "CCL",
+    "company": "Carnival Corporation",
+    "sector": "Consumer Cyclical",
+    "dividendYield": 0.0058,
+    "divGrowth5yr": -0.18181117699997296,
+    "payoutRatio": null,
+    "consecutiveYears": 0,
+    "marketCapB": 35.722752
+  },
+  {
+    "ticker": "GE",
+    "company": "GE Aerospace",
+    "sector": "Industrials",
+    "dividendYield": 0.0058,
+    "divGrowth5yr": 0.48505709391047924,
+    "payoutRatio": 0.17889999,
+    "consecutiveYears": 5,
+    "marketCapB": 340.820885504
+  },
+  {
+    "ticker": "VST",
+    "company": "Vistra Corp.",
+    "sector": "Utilities",
+    "dividendYield": 0.0057,
+    "divGrowth5yr": 0.10805815798182983,
+    "payoutRatio": 0.3223,
+    "consecutiveYears": 5,
+    "marketCapB": 53.754662912
+  },
+  {
+    "ticker": "AMAT",
+    "company": "Applied Materials, Inc.",
+    "sector": "Technology",
+    "dividendYield": 0.0057,
+    "divGrowth5yr": -0.13318584316485482,
+    "payoutRatio": 0.1826,
+    "consecutiveYears": 0,
+    "marketCapB": 257.716862976
+  },
+  {
+    "ticker": "KLAC",
+    "company": "KLA Corporation",
+    "sector": "Technology",
+    "dividendYield": 0.0057,
+    "divGrowth5yr": -0.13396030422480432,
+    "payoutRatio": 0.21540001,
+    "consecutiveYears": 0,
+    "marketCapB": 176.663576576
+  },
+  {
+    "ticker": "VLTO",
+    "company": "Veralto Corp",
+    "sector": "Industrials",
+    "dividendYield": 0.0055,
+    "divGrowth5yr": 1.2607766610417563,
+    "payoutRatio": 0.1223,
+    "consecutiveYears": 2,
+    "marketCapB": 23.421888512
+  },
+  {
+    "ticker": "MLM",
+    "company": "Martin Marietta Materials, Inc.",
+    "sector": "Basic Materials",
+    "dividendYield": 0.0054,
+    "divGrowth5yr": -0.18860333585004307,
+    "payoutRatio": 0.1983,
+    "consecutiveYears": 0,
+    "marketCapB": 36.789743616
+  },
+  {
+    "ticker": "CEG",
+    "company": "Constellation Energy Corporatio",
+    "sector": "Utilities",
+    "dividendYield": 0.0053,
+    "divGrowth5yr": 0.40132070093328975,
+    "payoutRatio": 0.20959999,
+    "consecutiveYears": 3,
+    "marketCapB": 115.49663232
+  },
+  {
+    "ticker": "COST",
+    "company": "Costco Wholesale Corporation",
+    "sector": "Consumer Defensive",
+    "dividendYield": 0.0052,
+    "divGrowth5yr": -0.16875687494850045,
+    "payoutRatio": 0.271,
+    "consecutiveYears": 1,
+    "marketCapB": 443.114160128
+  },
+  {
+    "ticker": "LRCX",
+    "company": "Lam Research Corporation",
+    "sector": "Technology",
+    "dividendYield": 0.0052,
+    "divGrowth5yr": -0.14225723363184883,
+    "payoutRatio": 0.20120001,
+    "consecutiveYears": 0,
+    "marketCapB": 250.364444672
+  },
+  {
+    "ticker": "WRB",
+    "company": "W.R. Berkley Corporation",
+    "sector": "Financial Services",
+    "dividendYield": 0.0050999997,
+    "divGrowth5yr": -0.36810367958829304,
+    "payoutRatio": 0.0787,
+    "consecutiveYears": 0,
+    "marketCapB": 26.57107968
+  },
+  {
+    "ticker": "REGN",
+    "company": "Regeneron Pharmaceuticals, Inc.",
+    "sector": "Healthcare",
+    "dividendYield": 0.0049,
+    "divGrowth5yr": -0.7329545454545454,
+    "payoutRatio": 0.0849,
+    "consecutiveYears": 0,
+    "marketCapB": 80.332251136
+  },
+  {
+    "ticker": "IBKR",
+    "company": "Interactive Brokers Group, Inc.",
+    "sector": "Financial Services",
+    "dividendYield": 0.0047999998,
+    "divGrowth5yr": -0.043647500209963,
+    "payoutRatio": 0.1363,
+    "consecutiveYears": 0,
+    "marketCapB": 113.39087872
+  },
+  {
+    "ticker": "TPL",
+    "company": "Texas Pacific Land Corporation",
+    "sector": "Energy",
+    "dividendYield": 0.0046,
+    "divGrowth5yr": -0.13263860466331368,
+    "payoutRatio": 0.3061,
+    "consecutiveYears": 0,
+    "marketCapB": 36.196384768
+  },
+  {
+    "ticker": "FTV",
+    "company": "Fortive Corporation",
+    "sector": "Technology",
+    "dividendYield": 0.0045,
+    "divGrowth5yr": 0.05373207467454577,
+    "payoutRatio": 0.1761,
+    "consecutiveYears": 0,
+    "marketCapB": 18.22773248
+  },
+  {
+    "ticker": "WAB",
+    "company": "Westinghouse Air Brake Technolo",
+    "sector": "Industrials",
+    "dividendYield": 0.0043,
+    "divGrowth5yr": -0.08372868365691799,
+    "payoutRatio": 0.1464,
+    "consecutiveYears": 0,
+    "marketCapB": 41.829801984
+  },
+  {
+    "ticker": "UHS",
+    "company": "Universal Health Services, Inc.",
+    "sector": "Healthcare",
+    "dividendYield": 0.0042,
+    "divGrowth5yr": -0.242141716744801,
+    "payoutRatio": 0.0346,
+    "consecutiveYears": 0,
+    "marketCapB": 11.76834048
+  },
+  {
+    "ticker": "AAPL",
+    "company": "Apple Inc.",
+    "sector": "Technology",
+    "dividendYield": 0.004,
+    "divGrowth5yr": -0.21369425621368343,
+    "payoutRatio": 0.1304,
+    "consecutiveYears": 0,
+    "marketCapB": 3784.127807488
+  },
+  {
+    "ticker": "EA",
+    "company": "Electronic Arts Inc.",
+    "sector": "Communication Services",
+    "dividendYield": 0.0038,
+    "divGrowth5yr": -0.2250941533494626,
+    "payoutRatio": 0.2846,
+    "consecutiveYears": 0,
+    "marketCapB": 49.5502336
+  },
+  {
+    "ticker": "MCK",
+    "company": "McKesson Corporation",
+    "sector": "Healthcare",
+    "dividendYield": 0.0036000002,
+    "divGrowth5yr": -0.14359583646336205,
+    "payoutRatio": 0.0883,
+    "consecutiveYears": 0,
+    "marketCapB": 113.461182464
+  },
+  {
+    "ticker": "WST",
+    "company": "West Pharmaceutical Services, I",
+    "sector": "Healthcare",
+    "dividendYield": 0.0036000002,
+    "divGrowth5yr": -0.20436346381319848,
+    "payoutRatio": 0.1252,
+    "consecutiveYears": 0,
+    "marketCapB": 17.70720256
+  },
+  {
+    "ticker": "TMO",
+    "company": "Thermo Fisher Scientific Inc",
+    "sector": "Healthcare",
+    "dividendYield": 0.0034999999,
+    "divGrowth5yr": 0.14342887420949846,
+    "payoutRatio": 0.096999995,
+    "consecutiveYears": 5,
+    "marketCapB": 186.473955328
+  },
+  {
+    "ticker": "META",
+    "company": "Meta Platforms, Inc.",
+    "sector": "Communication Services",
+    "dividendYield": 0.0033000002,
+    "divGrowth5yr": 0.050000000000000044,
+    "payoutRatio": 0.08939999,
+    "consecutiveYears": 1,
+    "marketCapB": 1631.209127936
+  },
+  {
+    "ticker": "RVTY",
+    "company": "Revvity, Inc.",
+    "sector": "Healthcare",
+    "dividendYield": 0.0031,
+    "divGrowth5yr": -0.242141716744801,
+    "payoutRatio": 0.1359,
+    "consecutiveYears": 0,
+    "marketCapB": 10.355729408
+  },
+  {
+    "ticker": "GOOGL",
+    "company": "Alphabet Inc.",
+    "sector": "Communication Services",
+    "dividendYield": 0.0028,
+    "divGrowth5yr": 0.3833333333333331,
+    "payoutRatio": 0.076799996,
+    "consecutiveYears": 1,
+    "marketCapB": 3610.712735744
+  },
+  {
+    "ticker": "GOOG",
+    "company": "Alphabet Inc.",
+    "sector": "Communication Services",
+    "dividendYield": 0.0028,
+    "divGrowth5yr": 0.3833333333333331,
+    "payoutRatio": 0.076799996,
+    "consecutiveYears": 1,
+    "marketCapB": 3608.535105536
+  },
+  {
+    "ticker": "EME",
+    "company": "EMCOR Group, Inc.",
+    "sector": "Industrials",
+    "dividendYield": 0.0023,
+    "divGrowth5yr": -0.05111991994525078,
+    "payoutRatio": 0.0355,
+    "consecutiveYears": 0,
+    "marketCapB": 31.595298816
+  },
+  {
+    "ticker": "L",
+    "company": "Loews Corporation",
+    "sector": "Financial Services",
+    "dividendYield": 0.0023,
+    "divGrowth5yr": -0.242141716744801,
+    "payoutRatio": 0.031400003,
+    "consecutiveYears": 0,
+    "marketCapB": 22.662289408
+  },
+  {
+    "ticker": "HLT",
+    "company": "Hilton Worldwide Holdings Inc.",
+    "sector": "Consumer Cyclical",
+    "dividendYield": 0.002,
+    "divGrowth5yr": 0,
+    "payoutRatio": 0.098000005,
+    "consecutiveYears": 0,
+    "marketCapB": 69.414445056
+  },
+  {
+    "ticker": "WDC",
+    "company": "Western Digital Corporation",
+    "sector": "Technology",
+    "dividendYield": 0.002,
+    "divGrowth5yr": -0.2591249552143764,
+    "payoutRatio": 0.0307,
+    "consecutiveYears": 0,
+    "marketCapB": 83.850805248
+  },
+  {
+    "ticker": "GEV",
+    "company": "GE Vernova Inc.",
+    "sector": "Industrials",
+    "dividendYield": 0.0019,
+    "divGrowth5yr": 0.41421356237309515,
+    "payoutRatio": 0.070700005,
+    "consecutiveYears": 0,
+    "marketCapB": 214.134226944
+  },
+  {
+    "ticker": "GEHC",
+    "company": "GE HealthCare Technologies Inc.",
+    "sector": "Healthcare",
+    "dividendYield": 0.0019,
+    "divGrowth5yr": -0.27008014335201835,
+    "payoutRatio": 0.0308,
+    "consecutiveYears": 0,
+    "marketCapB": 33.848532992
+  },
+  {
+    "ticker": "TER",
+    "company": "Teradyne, Inc.",
+    "sector": "Technology",
+    "dividendYield": 0.0019,
+    "divGrowth5yr": -0.20131289592308488,
+    "payoutRatio": 0.1383,
+    "consecutiveYears": 0,
+    "marketCapB": 42.747600896
+  },
+  {
+    "ticker": "FIX",
+    "company": "Comfort Systems USA, Inc.",
+    "sector": "Industrials",
+    "dividendYield": 0.0018000001,
+    "divGrowth5yr": 0.07837884744794898,
+    "payoutRatio": 0.0675,
+    "consecutiveYears": 0,
+    "marketCapB": 45.114945536
+  },
+  {
+    "ticker": "HWM",
+    "company": "Howmet Aerospace Inc.",
+    "sector": "Industrials",
+    "dividendYield": 0.0018000001,
+    "divGrowth5yr": 0.9567820317625089,
+    "payoutRatio": 0.118599996,
+    "consecutiveYears": 5,
+    "marketCapB": 100.677328896
+  },
+  {
+    "ticker": "JBL",
+    "company": "Jabil Inc.",
+    "sector": "Technology",
+    "dividendYield": 0.0013,
+    "divGrowth5yr": -0.242141716744801,
+    "payoutRatio": 0.050100002,
+    "consecutiveYears": 0,
+    "marketCapB": 25.753946112
+  },
+  {
+    "ticker": "Q",
+    "company": "Qnity Electronics, Inc.",
+    "sector": "Technology",
+    "dividendYield": 0.0013,
+    "divGrowth5yr": 0.3333333333333335,
+    "payoutRatio": 0.0182,
+    "consecutiveYears": 1,
+    "marketCapB": 23.091832832
+  },
+  {
+    "ticker": "MU",
+    "company": "Micron Technology, Inc.",
+    "sector": "Technology",
+    "dividendYield": 0.0011999999,
+    "divGrowth5yr": 0.23149303238398788,
+    "payoutRatio": 0.0437,
+    "consecutiveYears": 4,
+    "marketCapB": 416.776060928
+  },
+  {
+    "ticker": "IR",
+    "company": "Ingersoll Rand Inc.",
+    "sector": "Industrials",
+    "dividendYield": 0.00090000004,
+    "divGrowth5yr": 0,
+    "payoutRatio": 0.0552,
+    "consecutiveYears": 0,
+    "marketCapB": 34.149392384
+  },
+  {
+    "ticker": "PWR",
+    "company": "Quanta Services, Inc.",
+    "sector": "Industrials",
+    "dividendYield": 0.0008,
+    "divGrowth5yr": -0.09380004555508936,
+    "payoutRatio": 0.060300004,
+    "consecutiveYears": 0,
+    "marketCapB": 80.822919168
+  },
+  {
+    "ticker": "TXT",
+    "company": "Textron Inc.",
+    "sector": "Industrials",
+    "dividendYield": 0.0008,
+    "divGrowth5yr": 0,
+    "payoutRatio": 0.0156,
+    "consecutiveYears": 5,
+    "marketCapB": 16.538464256
+  },
+  {
+    "ticker": "NVDA",
+    "company": "NVIDIA Corporation",
+    "sector": "Technology",
+    "dividendYield": 0.0002,
+    "divGrowth5yr": 0.20112443398143132,
+    "payoutRatio": 0.0082,
+    "consecutiveYears": 5,
+    "marketCapB": 4323.494854656
+  }
+]
