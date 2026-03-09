@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>S&P 500 Market Cap Concentration 2026 — Westmount Research</title>
+<meta name="description" content="How top-heavy is the S&P 500? The top 10 stocks control 37.3% of the index. 503 companies ranked by weight with concentration analysis, sector breakdown, and interactive data.">
+<link rel="canonical" href="https://westmountresearch.com/market-concentration">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "S&P 500 Market Cap Concentration 2026: How Top-Heavy Is the Index?",
+  "description": "503 S&P 500 companies ranked by index weight. Top 10 stocks control 37.3% of the index. Interactive data, sector breakdown, and concentration analysis.",
+  "datePublished": "2026-03-09",
+  "dateModified": "2026-03-09",
+  "author": {"@type": "Organization", "name": "Westmount Research", "url": "https://westmountresearch.com"},
+  "publisher": {"@type": "Organization", "name": "Westmount Research", "url": "https://westmountresearch.com"},
+  "mainEntityOfPage": "https://westmountresearch.com/market-concentration"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "What percentage of the S&P 500 is the top 10 stocks?", "acceptedAnswer": {"@type": "Answer", "text": "As of March 2026, the top 10 stocks represent approximately 37.3% of the S&P 500 by market cap weight. The top 5 alone account for 25.1%. This level of concentration is historically elevated."}},
+    {"@type": "Question", "name": "Is the S&P 500 too concentrated?", "acceptedAnswer": {"@type": "Answer", "text": "The S&P 500's concentration is at elevated levels. The top 20 stocks control 47.6% of the index, meaning 4% of companies drive nearly half the returns. This creates risks if large-cap tech declines, as the bottom 400+ stocks only make up ~52% of the index."}},
+    {"@type": "Question", "name": "Which stock has the highest weight in the S&P 500?", "acceptedAnswer": {"@type": "Answer", "text": "NVIDIA (NVDA) has the highest weight at 7.08%, followed by Apple (AAPL) at 6.19% and Microsoft (MSFT) at 4.97%. The top 3 stocks alone represent 18.2% of the index."}},
+    {"@type": "Question", "name": "What is market cap weighting?", "acceptedAnswer": {"@type": "Answer", "text": "Market cap weighting means each company's influence on the index is proportional to its total market value. A $4 trillion company like NVIDIA has ~700x more influence than a $6 billion company at the bottom of the index. This is why the S&P 500 can rise even when most stocks fall."}},
+    {"@type": "Question", "name": "Should I invest in equal-weight S&P 500 instead?", "acceptedAnswer": {"@type": "Answer", "text": "The Invesco S&P 500 Equal Weight ETF (RSP) gives each stock ~0.2% weight regardless of size. This reduces concentration risk and increases exposure to mid-cap stocks. Equal-weight has historically outperformed during periods when large-cap leadership rotates, but underperforms when mega-caps dominate (as in 2023-2025)."}}
+  ]
+}
+</script>
+
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Inter', -apple-system, sans-serif; background: #060a12; color: #c8d0de; line-height: 1.6; }
+a { color: #4a8fe7; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.back-nav { padding: 20px 24px; max-width: 1200px; margin: 0 auto; }
+.back-nav a { font-size: 0.82rem; color: #4a6fa5; font-weight: 600; }
+.back-nav a:hover { color: #4a8fe7; }
+
+.hero { text-align: center; padding: 60px 24px 50px; }
+.hero-tag { display: inline-block; background: rgba(74,143,231,0.1); color: #4a8fe7; font-size: 0.65rem; font-weight: 800; padding: 5px 16px; border-radius: 20px; letter-spacing: 1.5px; margin-bottom: 20px; border: 1px solid rgba(74,143,231,0.2); }
+.hero h1 { font-size: 2.6rem; font-weight: 900; color: #fff; letter-spacing: -1.5px; margin-bottom: 10px; line-height: 1.15; }
+.hero .subtitle { color: #4a6fa5; font-size: 0.95rem; font-weight: 500; }
+.hero .date { color: #2a3a50; font-size: 0.78rem; margin-top: 10px; }
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+/* Big stats */
+.stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 50px; }
+.stat-card { background: linear-gradient(135deg, #0a1020 0%, #0d1428 100%); border: 1px solid #152040; border-radius: 14px; padding: 24px 20px; text-align: center; }
+.stat-number { font-family: 'JetBrains Mono', monospace; font-size: 2rem; font-weight: 700; color: #4a8fe7; display: block; }
+.stat-label { font-size: 0.72rem; color: #4a6fa5; margin-top: 4px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+
+/* Sections */
+.section { margin-bottom: 50px; }
+.section-title { font-size: 1.4rem; font-weight: 800; color: #e0e8f0; margin-bottom: 6px; letter-spacing: -0.5px; }
+.section-sub { font-size: 0.82rem; color: #4a6fa5; margin-bottom: 24px; }
+
+/* Key findings */
+.findings { display: grid; gap: 12px; margin-bottom: 50px; }
+.finding { background: #0a1020; border-left: 3px solid #4a8fe7; padding: 16px 20px; border-radius: 0 10px 10px 0; }
+.finding strong { color: #e0e8f0; }
+
+/* Chart */
+.chart-container { background: #0a1020; border: 1px solid #152040; border-radius: 14px; padding: 28px 24px; margin-bottom: 50px; overflow-x: auto; }
+.chart-title { font-size: 1.1rem; font-weight: 700; color: #e0e8f0; margin-bottom: 20px; }
+.bar-row { display: flex; align-items: center; margin-bottom: 6px; }
+.bar-label { width: 100px; font-size: 0.75rem; font-family: 'JetBrains Mono', monospace; color: #8090a8; text-align: right; padding-right: 12px; flex-shrink: 0; white-space: nowrap; overflow: hidden; }
+.bar-track { flex: 1; height: 22px; position: relative; }
+.bar-fill { height: 100%; border-radius: 4px; background: linear-gradient(90deg, #1a4a8f, #4a8fe7); position: relative; min-width: 2px; transition: width 0.5s; }
+.bar-value { position: absolute; right: -45px; top: 50%; transform: translateY(-50%); font-size: 0.7rem; font-family: 'JetBrains Mono', monospace; color: #6a8ab0; white-space: nowrap; }
+.bar-company { width: 140px; font-size: 0.7rem; color: #5a7090; padding-left: 50px; flex-shrink: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+/* Sector chart */
+.sector-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px; margin-bottom: 30px; }
+.sector-card { background: #0a1020; border: 1px solid #152040; border-radius: 12px; padding: 18px 16px; display: flex; justify-content: space-between; align-items: center; }
+.sector-name { font-size: 0.85rem; font-weight: 600; color: #c8d0de; }
+.sector-meta { text-align: right; }
+.sector-weight { font-family: 'JetBrains Mono', monospace; font-size: 1.1rem; font-weight: 700; color: #4a8fe7; }
+.sector-count { font-size: 0.7rem; color: #4a6fa5; }
+
+/* Concentration visual */
+.conc-visual { background: #0a1020; border: 1px solid #152040; border-radius: 14px; padding: 28px 24px; margin-bottom: 50px; }
+.conc-bar-outer { height: 40px; background: #0d1428; border-radius: 8px; overflow: hidden; display: flex; margin: 16px 0; }
+.conc-segment { height: 100%; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; font-weight: 700; color: #fff; transition: width 0.5s; }
+.conc-legend { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 12px; }
+.conc-legend-item { display: flex; align-items: center; gap: 6px; font-size: 0.78rem; color: #8090a8; }
+.conc-dot { width: 10px; height: 10px; border-radius: 3px; flex-shrink: 0; }
+
+/* Table */
+.table-controls { display: flex; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; align-items: center; }
+.table-controls input, .table-controls select { background: #0d1428; border: 1px solid #152040; color: #c8d0de; padding: 8px 14px; border-radius: 8px; font-size: 0.82rem; font-family: 'Inter', sans-serif; outline: none; }
+.table-controls input:focus, .table-controls select:focus { border-color: #4a8fe7; }
+.table-controls input { flex: 1; min-width: 200px; }
+.result-count { font-size: 0.75rem; color: #4a6fa5; margin-left: auto; font-family: 'JetBrains Mono', monospace; }
+
+.table-wrap { overflow-x: auto; border-radius: 12px; border: 1px solid #152040; }
+table { width: 100%; border-collapse: collapse; font-size: 0.8rem; }
+thead th { background: #0a1020; color: #4a8fe7; font-weight: 700; padding: 12px 14px; text-align: left; cursor: pointer; user-select: none; white-space: nowrap; border-bottom: 2px solid #152040; position: sticky; top: 0; z-index: 2; }
+thead th:hover { color: #7ab4f5; }
+thead th.sorted-asc::after { content: ' ▲'; font-size: 0.65rem; }
+thead th.sorted-desc::after { content: ' ▼'; font-size: 0.65rem; }
+tbody tr { border-bottom: 1px solid #0d1428; transition: background 0.15s; }
+tbody tr:hover { background: rgba(74,143,231,0.04); }
+tbody td { padding: 10px 14px; white-space: nowrap; }
+.ticker-cell { font-family: 'JetBrains Mono', monospace; font-weight: 700; color: #4a8fe7; }
+.num-cell { font-family: 'JetBrains Mono', monospace; text-align: right; color: #8090a8; }
+.weight-cell { font-family: 'JetBrains Mono', monospace; text-align: right; font-weight: 600; }
+.top10-row { background: rgba(74,143,231,0.03); }
+.top10-row .weight-cell { color: #4a8fe7; }
+
+/* FAQ */
+.faq-list { display: grid; gap: 12px; }
+.faq-item { background: #0a1020; border: 1px solid #152040; border-radius: 12px; overflow: hidden; }
+.faq-q { padding: 18px 20px; font-weight: 700; color: #e0e8f0; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 0.92rem; }
+.faq-q::after { content: '+'; font-size: 1.2rem; color: #4a8fe7; flex-shrink: 0; margin-left: 12px; transition: transform 0.2s; }
+.faq-item.open .faq-q::after { content: '−'; }
+.faq-a { padding: 0 20px 18px; font-size: 0.85rem; color: #8090a8; line-height: 1.7; display: none; }
+.faq-item.open .faq-a { display: block; }
+
+/* Methodology & Citation */
+.methodology { background: #0a1020; border: 1px solid #152040; border-radius: 14px; padding: 28px 24px; margin-bottom: 30px; }
+.methodology h3 { font-size: 1rem; font-weight: 700; color: #e0e8f0; margin-bottom: 12px; }
+.methodology p, .methodology li { font-size: 0.82rem; color: #6a8090; line-height: 1.7; }
+.methodology ul { padding-left: 20px; margin-top: 8px; }
+
+.citation { background: #0a1020; border: 1px solid #152040; border-radius: 14px; padding: 24px; margin-bottom: 30px; }
+.citation h3 { font-size: 0.9rem; font-weight: 700; color: #e0e8f0; margin-bottom: 10px; }
+.citation code { display: block; background: #060a12; border: 1px solid #152040; border-radius: 8px; padding: 14px; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; color: #6a8ab0; line-height: 1.6; white-space: pre-wrap; word-break: break-all; }
+
+.footer { text-align: center; padding: 50px 24px; font-size: 0.75rem; color: #253040; border-top: 1px solid #101828; margin-top: 40px; }
+.footer a { color: #4a8fe7; }
+.disclaimer { max-width: 600px; margin: 12px auto 0; color: #1e2a3a; font-size: 0.68rem; line-height: 1.5; }
+
+@media (max-width: 768px) {
+  .hero h1 { font-size: 1.8rem; }
+  .stats-row { grid-template-columns: repeat(2, 1fr); }
+  .bar-company { display: none; }
+  .bar-label { width: 65px; font-size: 0.68rem; }
+  .sector-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<nav class="back-nav"><a href="/">← Westmount Research</a></nav>
+
+<header class="hero">
+  <span class="hero-tag">ORIGINAL RESEARCH</span>
+  <h1>S&P 500 Market Cap Concentration 2026</h1>
+  <p class="subtitle">How Top-Heavy Is the Index?</p>
+  <p class="date">Published March 9, 2026 · 503 companies analyzed</p>
+</header>
+
+<div class="container">
+  <!-- Big Stats -->
+  <div class="stats-row" id="stats-row"></div>
+
+  <!-- Concentration Visual -->
+  <div class="conc-visual">
+    <h2 class="chart-title">Index Weight Distribution</h2>
+    <p style="font-size:0.82rem;color:#6a8090;margin-bottom:12px;">How much of the S&P 500 is controlled by the top stocks?</p>
+    <div class="conc-bar-outer" id="conc-bar"></div>
+    <div class="conc-legend" id="conc-legend"></div>
+  </div>
+
+  <!-- Key Findings -->
+  <div class="section">
+    <h2 class="section-title">Key Findings</h2>
+    <p class="section-sub">What the concentration data reveals</p>
+    <div class="findings" id="findings"></div>
+  </div>
+
+  <!-- Top 20 Bar Chart -->
+  <div class="chart-container">
+    <h3 class="chart-title">Top 20 Stocks by Index Weight</h3>
+    <div id="bar-chart"></div>
+  </div>
+
+  <!-- Sector Breakdown -->
+  <div class="section">
+    <h2 class="section-title">Sector Concentration</h2>
+    <p class="section-sub">Weight of each GICS sector in the S&P 500</p>
+    <div class="sector-grid" id="sector-grid"></div>
+  </div>
+
+  <!-- Full Table -->
+  <div class="section">
+    <h2 class="section-title">All S&P 500 Companies by Weight</h2>
+    <p class="section-sub">Click any column to sort · Search by ticker or company name</p>
+    <div class="table-controls">
+      <input type="text" id="search" placeholder="Search ticker or company…">
+      <select id="sector-filter"><option value="">All Sectors</option></select>
+      <span class="result-count" id="result-count"></span>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th data-col="rank">#</th>
+            <th data-col="ticker">Ticker</th>
+            <th data-col="company">Company</th>
+            <th data-col="sector">Sector</th>
+            <th data-col="weightPct">Weight %</th>
+            <th data-col="marketCapB">Mkt Cap ($B)</th>
+            <th data-col="peRatio">P/E</th>
+            <th data-col="priceUSD">Price</th>
+          </tr>
+        </thead>
+        <tbody id="table-body"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="section">
+    <h2 class="section-title">Frequently Asked Questions</h2>
+    <p class="section-sub">Common questions about S&P 500 concentration</p>
+    <div class="faq-list" id="faq-list"></div>
+  </div>
+
+  <!-- Methodology -->
+  <div class="methodology">
+    <h3>Methodology</h3>
+    <p>This study analyzes the market capitalization concentration of the S&P 500 index as of March 2026.</p>
+    <ul>
+      <li><strong>Constituent weights</strong> sourced from SlickCharts.com, which derives data from the S&P Dow Jones Indices.</li>
+      <li><strong>Financial metrics</strong> (sector, P/E ratio, market cap) enriched via Finviz screener for all 501+ constituents.</li>
+      <li><strong>Concentration metrics</strong> computed as cumulative weight of top N stocks (top 5, 10, 20, 50).</li>
+      <li><strong>Sector breakdown</strong> uses Finviz sector classifications (similar to GICS).</li>
+      <li>Data represents a point-in-time snapshot. Weights change daily as prices move.</li>
+      <li>Some dual-class stocks (e.g., GOOGL/GOOG) appear as separate entries per index methodology.</li>
+    </ul>
+  </div>
+
+  <!-- Citation -->
+  <div class="citation">
+    <h3>Cite This Research</h3>
+    <code>Westmount Research. "S&P 500 Market Cap Concentration 2026: How Top-Heavy Is the Index?" westmountresearch.com/market-concentration. Published March 9, 2026.</code>
+  </div>
+</div>
+
+<footer class="footer">
+  © 2026 <a href="/">Westmount Research</a> · A <a href="https://gab.ae">GAB Ventures</a> property
+  <div class="disclaimer">This site provides data and analysis for informational purposes only. Nothing here constitutes investment advice. Do your own research.</div>
+</footer>
+
+<script>
+const DATA_URL = '/data/market-concentration.json';
+let DATA = null;
+let sortCol = 'rank', sortDir = 1;
+
+async function init() {
+  const resp = await fetch(DATA_URL);
+  DATA = await resp.json();
+  renderStats();
+  renderConcentration();
+  renderFindings();
+  renderBarChart();
+  renderSectors();
+  populateFilters();
+  renderTable();
+  renderFAQ();
+}
+
+function fmt(n, d=2) { return n != null ? n.toLocaleString('en-US', {minimumFractionDigits:d, maximumFractionDigits:d}) : '—'; }
+function fmtInt(n) { return n != null ? n.toLocaleString('en-US') : '—'; }
+
+function renderStats() {
+  const c = DATA.concentration;
+  const stats = [
+    { num: DATA.totalCompanies, label: 'Companies Tracked' },
+    { num: fmt(c.top10WeightPct,1) + '%', label: 'Top 10 Weight' },
+    { num: fmt(c.top5WeightPct,1) + '%', label: 'Top 5 Weight' },
+    { num: fmt(c.top50WeightPct,1) + '%', label: 'Top 50 Weight' },
+  ];
+  document.getElementById('stats-row').innerHTML = stats.map(s =>
+    `<div class="stat-card"><span class="stat-number">${s.num}</span><span class="stat-label">${s.label}</span></div>`
+  ).join('');
+}
+
+function renderConcentration() {
+  const c = DATA.concentration;
+  const segments = [
+    { label: 'Top 5', pct: c.top5WeightPct, color: '#1565C0' },
+    { label: '#6–10', pct: c.top10WeightPct - c.top5WeightPct, color: '#1976D2' },
+    { label: '#11–20', pct: c.top20WeightPct - c.top10WeightPct, color: '#2196F3' },
+    { label: '#21–50', pct: c.top50WeightPct - c.top20WeightPct, color: '#42A5F5' },
+    { label: '#51–503', pct: 100 - c.top50WeightPct, color: '#152040' },
+  ];
+  document.getElementById('conc-bar').innerHTML = segments.map(s =>
+    `<div class="conc-segment" style="width:${s.pct}%;background:${s.color}" title="${s.label}: ${fmt(s.pct,1)}%">${s.pct > 6 ? fmt(s.pct,1)+'%' : ''}</div>`
+  ).join('');
+  document.getElementById('conc-legend').innerHTML = segments.map(s =>
+    `<div class="conc-legend-item"><div class="conc-dot" style="background:${s.color}"></div>${s.label} — ${fmt(s.pct,1)}%</div>`
+  ).join('');
+}
+
+function renderFindings() {
+  const c = DATA.concentration;
+  const top = DATA.results[0];
+  const topSector = DATA.sectorBreakdown[0];
+  const bottom400 = c.bottomRemaining;
+  const findings = [
+    `<strong>Extreme top-heaviness:</strong> The top 10 stocks control ${fmt(c.top10WeightPct,1)}% of the S&P 500 — meaning just 2% of companies drive over a third of the index's returns.`,
+    `<strong>${top.ticker} leads:</strong> ${top.company} alone has a ${fmt(top.weightPct,2)}% weight, making a single stock more influential than entire sectors like Real Estate or Materials.`,
+    `<strong>Technology dominance:</strong> The ${topSector.sector} sector holds ${fmt(topSector.weightPct,1)}% of the index across ${topSector.count} companies — nearly 3× the weight of the next largest sector.`,
+    `<strong>The long tail problem:</strong> The bottom ${bottom400.count} companies share just ${fmt(bottom400.weightPct,1)}% — averaging ${fmt(bottom400.weightPct / bottom400.count, 3)}% each. Their performance is essentially invisible to index investors.`,
+    `<strong>Top 50 = majority:</strong> Just 50 stocks (10% of the index) control ${fmt(c.top50WeightPct,1)}% of total weight. An equal-weight approach would give every stock ~0.2% — dramatically different exposure.`,
+  ];
+  document.getElementById('findings').innerHTML = findings.map(f =>
+    `<div class="finding">${f}</div>`
+  ).join('');
+}
+
+function renderBarChart() {
+  const top20 = DATA.results.slice(0, 20);
+  const maxW = top20[0].weightPct;
+  document.getElementById('bar-chart').innerHTML = top20.map(r =>
+    `<div class="bar-row">
+      <div class="bar-label">${r.ticker}</div>
+      <div class="bar-track"><div class="bar-fill" style="width:${(r.weightPct/maxW*75)}%"><span class="bar-value">${fmt(r.weightPct,2)}%</span></div></div>
+      <div class="bar-company">${r.company || ''}</div>
+    </div>`
+  ).join('');
+}
+
+function renderSectors() {
+  const maxW = DATA.sectorBreakdown[0].weightPct;
+  document.getElementById('sector-grid').innerHTML = DATA.sectorBreakdown.map(s =>
+    `<div class="sector-card">
+      <div><div class="sector-name">${s.sector}</div><div style="height:4px;background:#152040;border-radius:2px;margin-top:8px;width:200px;"><div style="height:100%;background:#4a8fe7;border-radius:2px;width:${(s.weightPct/maxW*100)}%"></div></div></div>
+      <div class="sector-meta"><div class="sector-weight">${fmt(s.weightPct,1)}%</div><div class="sector-count">${s.count} stocks</div></div>
+    </div>`
+  ).join('');
+}
+
+function populateFilters() {
+  const sectors = [...new Set(DATA.results.map(r => r.sector).filter(Boolean))].sort();
+  const sel = document.getElementById('sector-filter');
+  sectors.forEach(s => { const o = document.createElement('option'); o.value = s; o.textContent = s; sel.appendChild(o); });
+  sel.addEventListener('change', renderTable);
+  document.getElementById('search').addEventListener('input', renderTable);
+}
+
+function renderTable() {
+  const search = document.getElementById('search').value.toLowerCase();
+  const sector = document.getElementById('sector-filter').value;
+  let rows = DATA.results.filter(r => r.weightPct != null);
+  if (search) rows = rows.filter(r => (r.ticker||'').toLowerCase().includes(search) || (r.company||'').toLowerCase().includes(search));
+  if (sector) rows = rows.filter(r => r.sector === sector);
+
+  rows.sort((a, b) => {
+    let va = a[sortCol], vb = b[sortCol];
+    if (va == null) return 1; if (vb == null) return -1;
+    if (typeof va === 'string') return va.localeCompare(vb) * sortDir;
+    return (va - vb) * sortDir;
+  });
+
+  document.getElementById('result-count').textContent = `${rows.length} companies`;
+
+  document.getElementById('table-body').innerHTML = rows.map(r =>
+    `<tr class="${r.rank && r.rank <= 10 ? 'top10-row' : ''}">
+      <td class="num-cell">${r.rank || '—'}</td>
+      <td class="ticker-cell">${r.ticker}</td>
+      <td>${r.company || '—'}</td>
+      <td style="font-size:0.75rem;color:#5a7090">${r.sector || '—'}</td>
+      <td class="weight-cell">${fmt(r.weightPct, 3)}</td>
+      <td class="num-cell">${r.marketCapB ? fmt(r.marketCapB, 1) : '—'}</td>
+      <td class="num-cell">${r.peRatio ? fmt(r.peRatio, 1) : '—'}</td>
+      <td class="num-cell">${r.priceUSD ? '$' + fmt(r.priceUSD, 2) : '—'}</td>
+    </tr>`
+  ).join('');
+
+  // Update sort indicators
+  document.querySelectorAll('thead th').forEach(th => {
+    th.classList.remove('sorted-asc', 'sorted-desc');
+    if (th.dataset.col === sortCol) th.classList.add(sortDir === 1 ? 'sorted-asc' : 'sorted-desc');
+  });
+}
+
+// Sort handlers
+document.querySelectorAll('thead th').forEach(th => {
+  th.addEventListener('click', () => {
+    const col = th.dataset.col;
+    if (!col) return;
+    if (sortCol === col) sortDir *= -1;
+    else { sortCol = col; sortDir = 1; }
+    renderTable();
+  });
+});
+
+// FAQ
+function renderFAQ() {
+  const faqs = [
+    { q: 'What percentage of the S&P 500 is the top 10 stocks?', a: `As of March 2026, the top 10 stocks represent approximately ${fmt(DATA.concentration.top10WeightPct,1)}% of the S&P 500 by market cap weight. The top 5 alone account for ${fmt(DATA.concentration.top5WeightPct,1)}%. This level of concentration is historically elevated — in 2015, the top 10 held roughly 18% of the index.` },
+    { q: 'Is the S&P 500 too concentrated?', a: `The S&P 500's concentration is at elevated levels. The top 20 stocks control ${fmt(DATA.concentration.top20WeightPct,1)}% of the index, meaning 4% of companies drive nearly half the returns. This creates risk if large-cap leadership rotates. However, concentration isn't inherently bad — it reflects the market's view that these companies deserve premium valuations. The key risk is that a decline in a handful of mega-caps can drag the entire index lower, even if most stocks are performing well.` },
+    { q: 'Which stock has the highest weight in the S&P 500?', a: `${DATA.results[0].company} (${DATA.results[0].ticker}) has the highest weight at ${fmt(DATA.results[0].weightPct,2)}%, followed by ${DATA.results[1].company} (${DATA.results[1].ticker}) at ${fmt(DATA.results[1].weightPct,2)}% and ${DATA.results[2].company} (${DATA.results[2].ticker}) at ${fmt(DATA.results[2].weightPct,2)}%. The top 3 stocks alone represent ${fmt(DATA.results[0].weightPct + DATA.results[1].weightPct + DATA.results[2].weightPct, 1)}% of the index.` },
+    { q: 'What is market cap weighting?', a: 'Market cap weighting means each company\'s influence on the index is proportional to its total market value (share price × shares outstanding). A $4 trillion company has roughly 700× more influence on the index than a $6 billion company. This is why the S&P 500 can rise even when the majority of its stocks fall — if mega-caps go up, they pull the index higher.' },
+    { q: 'Should I invest in equal-weight S&P 500 instead?', a: 'The Invesco S&P 500 Equal Weight ETF (RSP) gives each stock approximately 0.2% weight regardless of size. This reduces concentration risk and increases mid-cap exposure. Equal-weight has historically outperformed during periods of leadership rotation (value over growth) but underperformed during mega-cap rallies (2020–2024). Consider it a complement to, rather than replacement for, cap-weighted exposure.' },
+  ];
+  document.getElementById('faq-list').innerHTML = faqs.map(f =>
+    `<div class="faq-item"><div class="faq-q">${f.q}</div><div class="faq-a">${f.a}</div></div>`
+  ).join('');
+  document.querySelectorAll('.faq-item').forEach(item => {
+    item.querySelector('.faq-q').addEventListener('click', () => item.classList.toggle('open'));
+  });
+}
+
+init();
+</script>
+</body>
+</html>
