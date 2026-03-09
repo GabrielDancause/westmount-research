@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Options Profit Calculator | Westmount Fundamentals</title>
+    <meta name="description" content="Calculate options profit, loss, and breakeven points for various strategies including calls, puts, covered calls, straddles, and strangles. Includes Greeks calculation.">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Options Profit Calculator",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Any",
+      "description": "Calculate options profit, loss, and breakeven points for various strategies including calls, puts, covered calls, straddles, and strangles. Includes Greeks calculation.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-main: #060a12;
+            --bg-card: #0a1020;
+            --border-color: #152040;
+            --accent: #4a8fe7;
+            --accent-hover: #6ba3f0;
+            --text-main: #c8d0de;
+            --text-muted: #5a6a80;
+            --profit: #2ecc71;
+            --loss: #e74c3c;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(180deg, #0a1628 0%, #060a12 100%);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 30px;
+        }
+
+        .panel {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 24px;
+        }
+
+        h2 {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+
+        input, select {
+            width: 100%;
+            background: var(--bg-main);
+            border: 1px solid var(--border-color);
+            color: #fff;
+            padding: 10px 12px;
+            border-radius: 6px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1rem;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        .btn {
+            width: 100%;
+            background: var(--accent);
+            color: #fff;
+            border: none;
+            padding: 12px;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+            margin-top: 10px;
+        }
+
+        .btn:hover {
+            background: var(--accent-hover);
+        }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .stat-box {
+            background: rgba(74, 143, 231, 0.05);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 16px;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .stat-value.profit { color: var(--profit); }
+        .stat-value.loss { color: var(--loss); }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 4px;
+        }
+
+        .greeks-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .chart-container {
+            position: relative;
+            height: 400px;
+            width: 100%;
+        }
+
+        /* FAQ & Methodology */
+        .info-section {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .info-section h3 {
+            color: #fff;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .info-section p {
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 20px;
+        }
+
+        .faq-item h4 {
+            color: var(--text-main);
+            margin-bottom: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid var(--border-color);
+            background: #040810;
+            margin-top: 60px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .disclaimer {
+            max-width: 800px;
+            margin: 15px auto 0;
+            font-size: 0.75rem;
+        }
+
+        @media (max-width: 900px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            .summary-grid, .greeks-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 500px) {
+            .summary-grid, .greeks-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Options Profit Calculator</h1>
+        <p class="subtitle">Visualize P/L at expiration and calculate Option Greeks.</p>
+    </header>
+
+    <div class="container">
+        <!-- Input Panel -->
+        <div class="panel">
+            <h2>Strategy Configuration</h2>
+
+            <div class="form-group">
+                <label>Strategy</label>
+                <select id="strategy" onchange="toggleInputs()">
+                    <option value="long_call">Long Call</option>
+                    <option value="long_put">Long Put</option>
+                    <option value="covered_call">Covered Call</option>
+                    <option value="protective_put">Protective Put</option>
+                    <option value="straddle">Long Straddle</option>
+                    <option value="strangle">Long Strangle</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Current Stock Price ($)</label>
+                <input type="number" id="stockPrice" value="100" step="0.01">
+            </div>
+
+            <div class="form-group">
+                <label id="strikeLabel">Strike Price ($)</label>
+                <input type="number" id="strikePrice" value="105" step="0.01">
+            </div>
+
+            <div class="form-group hidden" id="strikePrice2Group">
+                <label>Put Strike Price ($) [Strangle Only]</label>
+                <input type="number" id="strikePrice2" value="95" step="0.01">
+            </div>
+
+            <div class="form-group">
+                <label id="premiumLabel">Option Premium ($)</label>
+                <input type="number" id="premium" value="2.50" step="0.01">
+            </div>
+
+            <div class="form-group hidden" id="premium2Group">
+                <label>Put Premium ($) [Straddle/Strangle]</label>
+                <input type="number" id="premium2" value="2.00" step="0.01">
+            </div>
+
+            <div class="form-group">
+                <label>Number of Contracts</label>
+                <input type="number" id="contracts" value="1" step="1">
+            </div>
+
+            <div class="form-group">
+                <label>Days to Expiration</label>
+                <input type="number" id="dte" value="30" step="1">
+            </div>
+
+            <div class="form-group">
+                <label>Implied Volatility (%) - For Greeks</label>
+                <input type="number" id="iv" value="30" step="0.1">
+            </div>
+
+            <button class="btn" onclick="calculate()">Calculate & Update Chart</button>
+        </div>
+
+        <!-- Output Panel -->
+        <div class="panel">
+            <h2>Profit / Loss Summary</h2>
+
+            <div class="summary-grid">
+                <div class="stat-box">
+                    <div class="stat-value" id="maxProfit">--</div>
+                    <div class="stat-label">Max Profit</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value" id="maxLoss">--</div>
+                    <div class="stat-label">Max Loss</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value" id="breakeven">--</div>
+                    <div class="stat-label">Breakeven</div>
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <canvas id="plChart"></canvas>
+            </div>
+
+            <h2 style="margin-top: 40px;">Estimated Greeks</h2>
+            <div class="greeks-grid">
+                <div class="stat-box">
+                    <div class="stat-value" id="gDelta" style="font-size: 1.2rem;">--</div>
+                    <div class="stat-label">Delta (Δ)</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value" id="gGamma" style="font-size: 1.2rem;">--</div>
+                    <div class="stat-label">Gamma (Γ)</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value" id="gTheta" style="font-size: 1.2rem;">--</div>
+                    <div class="stat-label">Theta (Θ)</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value" id="gVega" style="font-size: 1.2rem;">--</div>
+                    <div class="stat-label">Vega (ν)</div>
+                </div>
+            </div>
+            <p style="font-size: 0.8rem; color: var(--text-muted); text-align: center; margin-top: 10px;">
+                *Greeks calculated using Black-Scholes model assuming 5% risk-free rate.
+            </p>
+        </div>
+    </div>
+
+    <div class="info-section">
+        <h3>Methodology</h3>
+        <p>The Profit/Loss chart is generated by evaluating the option payoff function at expiration across a range of underlying asset prices. The x-axis represents the stock price at expiration, and the y-axis represents the total dollar profit or loss. For strategies involving stock (Covered Call, Protective Put), the initial stock purchase price is factored into the total cost basis.</p>
+        <p>The Options Greeks (Delta, Gamma, Theta, Vega) are estimated using the standard Black-Scholes-Merton model for European options. The calculation assumes continuous dividend yield of 0% and a constant risk-free interest rate of 5%. Theta is expressed as a 1-day decay. Note that these are theoretical values and actual market prices/greeks may differ due to volatility skew, early exercise risk (for American options), and market bid/ask spreads.</p>
+
+        <h3 style="margin-top: 40px;">Frequently Asked Questions</h3>
+
+        <div class="faq-item">
+            <h4>What does the breakeven point mean?</h4>
+            <p>The breakeven point is the exact stock price at expiration where your strategy makes $0 profit and $0 loss. It accounts for the premiums paid or collected.</p>
+        </div>
+
+        <div class="faq-item">
+            <h4>Why is my Max Profit shown as Infinite?</h4>
+            <p>For strategies like a Long Call or a Long Put (technically bounded by the stock going to zero, but practically very high), the profit potential is theoretically unlimited if the underlying stock price continues to rise indefinitely.</p>
+        </div>
+
+        <div class="faq-item">
+            <h4>What is Delta?</h4>
+            <p>Delta measures the expected change in the option's price for a $1 change in the underlying stock. A Delta of 0.50 means the option price should increase by $0.50 if the stock goes up by $1.</p>
+        </div>
+    </div>
+
+    <footer>
+        © <span id="year"></span> <a href="/">westmount-research</a> · A <a href="https://gab.ae">GAB Ventures</a> property
+        <div class="disclaimer">
+            <strong>Disclaimer:</strong> This options profit calculator is provided for educational and informational purposes only. Options trading entails significant risk and is not appropriate for all investors. The calculations provided by this tool are theoretical estimates based on user inputs and standard pricing models (e.g., Black-Scholes), which assume constant volatility and risk-free rates. Actual market conditions, liquidity, bid/ask spreads, commissions, and early assignment risks are not fully captured. Do not make investment decisions solely based on this tool. Always consult with a qualified financial advisor or tax professional before trading.
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        let chartInstance = null;
+
+        // Normal distribution CDF
+        function N(x) {
+            let t = 1 / (1 + 0.2316419 * Math.abs(x));
+            let d = 0.3989423 * Math.exp(-x * x / 2);
+            let p = d * t * (0.3193815 + t * (-0.3565638 + t * (1.781478 + t * (-1.821256 + t * 1.330274))));
+            return x > 0 ? 1 - p : p;
+        }
+
+        // Normal distribution PDF
+        function n(x) {
+            return (1 / Math.sqrt(2 * Math.PI)) * Math.exp(-0.5 * x * x);
+        }
+
+        // Black-Scholes Greeks Calculator
+        function calcGreeks(type, S, K, T, r, v) {
+            if (T <= 0) T = 0.0001; // Avoid div by zero
+
+            let d1 = (Math.log(S / K) + (r + v * v / 2) * T) / (v * Math.sqrt(T));
+            let d2 = d1 - v * Math.sqrt(T);
+
+            let delta, gamma, theta, vega;
+
+            gamma = n(d1) / (S * v * Math.sqrt(T));
+            vega = S * n(d1) * Math.sqrt(T) / 100; // Divided by 100 for 1% change
+
+            if (type === 'call') {
+                delta = N(d1);
+                theta = (-S * n(d1) * v / (2 * Math.sqrt(T)) - r * K * Math.exp(-r * T) * N(d2)) / 365;
+            } else {
+                delta = N(d1) - 1;
+                theta = (-S * n(d1) * v / (2 * Math.sqrt(T)) + r * K * Math.exp(-r * T) * N(-d2)) / 365;
+            }
+
+            return { delta, gamma, theta, vega };
+        }
+
+        function toggleInputs() {
+            const strategy = document.getElementById('strategy').value;
+            const strikeLabel = document.getElementById('strikeLabel');
+            const premiumLabel = document.getElementById('premiumLabel');
+
+            const strike2Group = document.getElementById('strikePrice2Group');
+            const premium2Group = document.getElementById('premium2Group');
+
+            strike2Group.classList.add('hidden');
+            premium2Group.classList.add('hidden');
+
+            if (strategy === 'straddle') {
+                strikeLabel.textContent = "Call & Put Strike Price ($)";
+                premiumLabel.textContent = "Call Premium ($)";
+                premium2Group.classList.remove('hidden');
+            } else if (strategy === 'strangle') {
+                strikeLabel.textContent = "Call Strike Price ($)";
+                premiumLabel.textContent = "Call Premium ($)";
+                strike2Group.classList.remove('hidden');
+                premium2Group.classList.remove('hidden');
+            } else if (strategy === 'long_call' || strategy === 'covered_call') {
+                strikeLabel.textContent = "Call Strike Price ($)";
+                premiumLabel.textContent = "Call Premium ($)";
+            } else if (strategy === 'long_put' || strategy === 'protective_put') {
+                strikeLabel.textContent = "Put Strike Price ($)";
+                premiumLabel.textContent = "Put Premium ($)";
+            }
+        }
+
+        function formatCurrency(val) {
+            if (val === Infinity) return "Infinite";
+            if (val === -Infinity) return "Unlimited Loss";
+            if (isNaN(val)) return "--";
+            return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(val);
+        }
+
+        function calculate() {
+            const strategy = document.getElementById('strategy').value;
+            const S = parseFloat(document.getElementById('stockPrice').value);
+            const K1 = parseFloat(document.getElementById('strikePrice').value);
+            const K2 = parseFloat(document.getElementById('strikePrice2').value); // For Strangle
+            const P1 = parseFloat(document.getElementById('premium').value);
+            const P2 = parseFloat(document.getElementById('premium2').value); // For Straddle/Strangle
+            const qty = parseInt(document.getElementById('contracts').value) * 100; // 100 shares per contract
+            const dte = parseInt(document.getElementById('dte').value);
+            const iv = parseFloat(document.getElementById('iv').value) / 100;
+
+            let maxProf = 0, maxLoss = 0, be = [];
+
+            // P/L Data Generation
+            let labels = [];
+            let data = [];
+
+            const minPrice = Math.max(0, S * 0.5);
+            const maxPrice = S * 1.5;
+            const step = (maxPrice - minPrice) / 100;
+
+            for (let price = minPrice; price <= maxPrice; price += step) {
+                labels.push(price.toFixed(2));
+                let pl = 0;
+
+                switch (strategy) {
+                    case 'long_call':
+                        pl = (Math.max(0, price - K1) - P1) * qty;
+                        break;
+                    case 'long_put':
+                        pl = (Math.max(0, K1 - price) - P1) * qty;
+                        break;
+                    case 'covered_call':
+                        // Long stock + Short Call
+                        let stockPL = (price - S) * qty;
+                        let shortCallPL = (P1 - Math.max(0, price - K1)) * qty;
+                        pl = stockPL + shortCallPL;
+                        break;
+                    case 'protective_put':
+                        // Long stock + Long Put
+                        let stockPL2 = (price - S) * qty;
+                        let longPutPL = (Math.max(0, K1 - price) - P1) * qty;
+                        pl = stockPL2 + longPutPL;
+                        break;
+                    case 'straddle':
+                        // Long Call + Long Put same strike
+                        let callPL = (Math.max(0, price - K1) - P1) * qty;
+                        let putPL = (Math.max(0, K1 - price) - P2) * qty;
+                        pl = callPL + putPL;
+                        break;
+                    case 'strangle':
+                        // Long Call K1 + Long Put K2 (usually K2 < K1)
+                        let callStrangle = (Math.max(0, price - K1) - P1) * qty;
+                        let putStrangle = (Math.max(0, K2 - price) - P2) * qty;
+                        pl = callStrangle + putStrangle;
+                        break;
+                }
+                data.push(pl);
+            }
+
+            // Calculate Max Profit, Loss, Breakevens analytically
+            switch (strategy) {
+                case 'long_call':
+                    maxLoss = -P1 * qty;
+                    maxProf = Infinity;
+                    be.push(K1 + P1);
+                    break;
+                case 'long_put':
+                    maxLoss = -P1 * qty;
+                    maxProf = (K1 - P1) * qty;
+                    be.push(K1 - P1);
+                    break;
+                case 'covered_call':
+                    maxLoss = -(S - P1) * qty; // Stock goes to 0
+                    maxProf = (K1 - S + P1) * qty;
+                    be.push(S - P1);
+                    break;
+                case 'protective_put':
+                    maxLoss = -(S - K1 + P1) * qty;
+                    maxProf = Infinity;
+                    be.push(S + P1);
+                    break;
+                case 'straddle':
+                    maxLoss = -(P1 + P2) * qty;
+                    maxProf = Infinity;
+                    be.push(K1 - (P1 + P2), K1 + (P1 + P2));
+                    break;
+                case 'strangle':
+                    maxLoss = -(P1 + P2) * qty;
+                    maxProf = Infinity;
+                    be.push(K2 - (P1 + P2), K1 + (P1 + P2));
+                    break;
+            }
+
+            // Update UI
+            const mpEl = document.getElementById('maxProfit');
+            const mlEl = document.getElementById('maxLoss');
+
+            mpEl.textContent = formatCurrency(maxProf);
+            mpEl.className = 'stat-value ' + (maxProf > 0 || maxProf === Infinity ? 'profit' : '');
+
+            mlEl.textContent = formatCurrency(maxLoss);
+            mlEl.className = 'stat-value ' + (maxLoss < 0 ? 'loss' : '');
+
+            document.getElementById('breakeven').textContent = be.map(b => formatCurrency(b)).join(" & ");
+
+            // Calculate Greeks
+            const T = dte / 365;
+            const r = 0.05; // 5% risk free
+            let greeks = { delta: 0, gamma: 0, theta: 0, vega: 0 };
+
+            if (strategy === 'long_call' || strategy === 'covered_call') {
+                greeks = calcGreeks('call', S, K1, T, r, iv);
+                if (strategy === 'covered_call') {
+                    // Short call greeks + Stock greeks (Delta 1, others 0)
+                    greeks.delta = 1 - greeks.delta;
+                    greeks.gamma = -greeks.gamma;
+                    greeks.theta = -greeks.theta;
+                    greeks.vega = -greeks.vega;
+                }
+            } else if (strategy === 'long_put' || strategy === 'protective_put') {
+                greeks = calcGreeks('put', S, K1, T, r, iv);
+                if (strategy === 'protective_put') {
+                    // Long stock + Long put
+                    greeks.delta = 1 + greeks.delta; // Put delta is negative
+                }
+            } else if (strategy === 'straddle') {
+                let cg = calcGreeks('call', S, K1, T, r, iv);
+                let pg = calcGreeks('put', S, K1, T, r, iv);
+                greeks.delta = cg.delta + pg.delta;
+                greeks.gamma = cg.gamma + pg.gamma;
+                greeks.theta = cg.theta + pg.theta;
+                greeks.vega = cg.vega + pg.vega;
+            } else if (strategy === 'strangle') {
+                let cg = calcGreeks('call', S, K1, T, r, iv);
+                let pg = calcGreeks('put', S, K2, T, r, iv);
+                greeks.delta = cg.delta + pg.delta;
+                greeks.gamma = cg.gamma + pg.gamma;
+                greeks.theta = cg.theta + pg.theta;
+                greeks.vega = cg.vega + pg.vega;
+            }
+
+            // Adjust for total position size (Contracts * 100)
+            const multiplier = qty;
+
+            document.getElementById('gDelta').textContent = (greeks.delta * multiplier / 100).toFixed(4); // Per share equivalent
+            document.getElementById('gGamma').textContent = (greeks.gamma).toFixed(4);
+            document.getElementById('gTheta').textContent = (greeks.theta * multiplier / 100).toFixed(4); // $ per day per share
+            document.getElementById('gVega').textContent = (greeks.vega * multiplier / 100).toFixed(4); // $ per 1% IV per share
+
+            drawChart(labels, data, be);
+        }
+
+        function drawChart(labels, data, breakevens) {
+            const ctx = document.getElementById('plChart').getContext('2d');
+
+            if (chartInstance) {
+                chartInstance.destroy();
+            }
+
+            const pointColors = data.map(val => val >= 0 ? 'rgba(46, 204, 113, 1)' : 'rgba(231, 76, 60, 1)');
+
+            chartInstance = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Profit / Loss ($)',
+                        data: data,
+                        borderColor: '#4a8fe7',
+                        borderWidth: 2,
+                        pointBackgroundColor: pointColors,
+                        pointRadius: 0,
+                        pointHoverRadius: 6,
+                        fill: {
+                            target: 'origin',
+                            above: 'rgba(46, 204, 113, 0.2)',   // Profit area
+                            below: 'rgba(231, 76, 60, 0.2)'     // Loss area
+                        }
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    interaction: {
+                        mode: 'index',
+                        intersect: false,
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    let label = context.dataset.label || '';
+                                    if (label) {
+                                        label += ': ';
+                                    }
+                                    if (context.parsed.y !== null) {
+                                        label += new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(context.parsed.y);
+                                    }
+                                    return label;
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            grid: { color: '#152040' },
+                            ticks: { color: '#5a6a80' },
+                            title: {
+                                display: true,
+                                text: 'Stock Price at Expiration ($)',
+                                color: '#5a6a80'
+                            }
+                        },
+                        y: {
+                            grid: {
+                                color: (context) => context.tick.value === 0 ? '#4a8fe7' : '#152040',
+                                lineWidth: (context) => context.tick.value === 0 ? 2 : 1
+                            },
+                            ticks: { color: '#5a6a80' },
+                            title: {
+                                display: true,
+                                text: 'Profit / Loss ($)',
+                                color: '#5a6a80'
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        // Initialize on load
+        window.onload = () => {
+            toggleInputs();
+            calculate();
+        };
+    </script>
+</body>
+</html>
