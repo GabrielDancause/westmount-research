@@ -1,0 +1,2208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insider Trading Tracker: Who Is Buying & Selling Their Own Stock? 2026</title>
+    <meta name="description" content="Tracking recent insider transactions from CEOs, CFOs, and Directors. Discover which sectors and companies are seeing the most executive buying in 2026.">
+    <link rel="canonical" href="https://westmountresearch.com/insider-trading">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #060a12;
+            --card-bg: #0a1020;
+            --border-color: #152040;
+            --accent-color: #4a8fe7;
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --buy-color: #22c55e;
+            --sell-color: #ef4444;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+        .container { max-width: 1000px; margin: 0 auto; padding: 2rem; }
+        header { margin-bottom: 4rem; text-align: center; }
+        h1 { font-size: 2.5rem; font-weight: 800; margin-bottom: 1rem; color: #fff; }
+        .subtitle { font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 2rem; }
+        .tag { display: inline-block; background: rgba(74, 143, 231, 0.1); color: var(--accent-color); padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.875rem; font-weight: 600; margin-bottom: 1rem; }
+
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-bottom: 4rem; }
+        .stat-card { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 0.5rem; padding: 1.5rem; text-align: center; }
+        .stat-value { font-size: 2rem; font-weight: 700; color: var(--accent-color); font-family: 'JetBrains Mono', monospace; }
+        .stat-label { font-size: 0.875rem; color: var(--text-secondary); margin-top: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em; }
+
+        .dashboard-section { margin-bottom: 3rem; }
+        .dashboard-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+        @media (max-width: 768px) { .dashboard-grid { grid-template-columns: 1fr; } }
+
+        .list-card { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 0.5rem; padding: 1.5rem; }
+        .list-card h3 { margin-bottom: 1rem; font-size: 1.2rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; }
+        .list-item { display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .list-item:last-child { border-bottom: none; }
+
+        table { width: 100%; border-collapse: collapse; margin-bottom: 3rem; background: var(--card-bg); border-radius: 0.5rem; overflow: hidden; }
+        th, td { padding: 1rem; text-align: left; border-bottom: 1px solid var(--border-color); }
+        th { background: rgba(255,255,255,0.02); font-weight: 600; color: var(--text-secondary); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; }
+        td { font-size: 0.9rem; }
+        .company-name { font-weight: 600; color: #fff; display: block; }
+        .ticker { font-size: 0.75rem; color: var(--text-muted); font-family: 'JetBrains Mono', monospace; }
+        .insider { font-family: 'Inter', sans-serif; font-size: 0.85rem; }
+        .title { font-size: 0.75rem; color: var(--text-secondary); background: rgba(255,255,255,0.05); padding: 0.1rem 0.3rem; border-radius: 0.25rem; display: inline-block; margin-top: 0.25rem; }
+
+        .type-Buy { color: var(--buy-color); font-weight: 600; }
+        .type-Sell { color: var(--sell-color); font-weight: 600; }
+
+        .money { font-family: 'JetBrains Mono', monospace; text-align: right; }
+        th.money-header { text-align: right; }
+
+        .faq, .methodology, .disclaimer { margin-bottom: 3rem; background: var(--card-bg); border: 1px solid var(--border-color); padding: 2rem; border-radius: 0.5rem; }
+        h2 { font-size: 1.5rem; margin-bottom: 1.5rem; color: #fff; }
+        h3 { font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--accent-color); }
+        p { color: var(--text-secondary); margin-bottom: 1rem; }
+
+        footer { text-align: center; padding: 2rem; border-top: 1px solid var(--border-color); color: var(--text-muted); font-size: 0.875rem; }
+    </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Insider Trading Tracker: Who Is Buying & Selling Their Own Stock?",
+      "datePublished": "2026-03-01T08:00:00+08:00",
+      "dateModified": "2026-03-01T08:00:00+08:00",
+      "author": [{
+          "@type": "Organization",
+          "name": "Westmount Research",
+          "url": "https://westmountresearch.com"
+      }]
+    }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <span class="tag">ORIGINAL RESEARCH 2026</span>
+            <h1>Insider Trading Tracker</h1>
+            <p class="subtitle">Tracking recent transactions by CEOs, CFOs, and Directors. <strong>120</strong> recent transactions analyzed.</p>
+        </header>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-value">41</div>
+                <div class="stat-label">Recent Buys Tracked</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">79</div>
+                <div class="stat-label">Recent Sells Tracked</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">E.W. Scripps Co</div>
+                <div class="stat-label">Most Bought Company</div>
+            </div>
+        </div>
+
+        <div class="dashboard-section">
+            <div class="dashboard-grid" style="margin-bottom: 2rem;">
+                <div class="list-card">
+                    <h3 style="color: var(--buy-color)">Highest Buying Activity</h3>
+
+                        <div class="list-item">
+                            <span>E.W. Scripps Co</span>
+                            <span style="font-family: 'JetBrains Mono', monospace;">5 buys</span>
+                        </div>
+
+                        <div class="list-item">
+                            <span>Nuveen Churchill Direct Lending Corp.</span>
+                            <span style="font-family: 'JetBrains Mono', monospace;">3 buys</span>
+                        </div>
+
+                        <div class="list-item">
+                            <span>Miami International Holdings, Inc.</span>
+                            <span style="font-family: 'JetBrains Mono', monospace;">2 buys</span>
+                        </div>
+
+                        <div class="list-item">
+                            <span>First Financial Bankshares Inc</span>
+                            <span style="font-family: 'JetBrains Mono', monospace;">2 buys</span>
+                        </div>
+
+                        <div class="list-item">
+                            <span>Ltc Properties Inc</span>
+                            <span style="font-family: 'JetBrains Mono', monospace;">1 buys</span>
+                        </div>
+
+                </div>
+                <div class="list-card">
+                    <h3 style="color: var(--sell-color)">Highest Selling Activity</h3>
+
+                        <div class="list-item">
+                            <span>Delek Us Holdings, Inc.</span>
+                            <span style="font-family: 'JetBrains Mono', monospace;">5 sells</span>
+                        </div>
+
+                        <div class="list-item">
+                            <span>Madrigal Pharmaceuticals, Inc.</span>
+                            <span style="font-family: 'JetBrains Mono', monospace;">5 sells</span>
+                        </div>
+
+                        <div class="list-item">
+                            <span>Brightspring Health Services, Inc.</span>
+                            <span style="font-family: 'JetBrains Mono', monospace;">3 sells</span>
+                        </div>
+
+                        <div class="list-item">
+                            <span>Bank of America Corp /De/</span>
+                            <span style="font-family: 'JetBrains Mono', monospace;">3 sells</span>
+                        </div>
+
+                        <div class="list-item">
+                            <span>Light & Wonder, Inc.</span>
+                            <span style="font-family: 'JetBrains Mono', monospace;">2 sells</span>
+                        </div>
+
+                </div>
+            </div>
+            <div class="dashboard-grid">
+                <div class="list-card">
+                    <h3 style="color: var(--accent-color)">Heaviest Sector Activity</h3>
+
+                        <div class="list-item">
+                            <span>Healthcare</span>
+                            <span style="font-family: 'JetBrains Mono', monospace;">24 trades</span>
+                        </div>
+
+                        <div class="list-item">
+                            <span>Financial Services</span>
+                            <span style="font-family: 'JetBrains Mono', monospace;">21 trades</span>
+                        </div>
+
+                        <div class="list-item">
+                            <span>Technology</span>
+                            <span style="font-family: 'JetBrains Mono', monospace;">19 trades</span>
+                        </div>
+
+                        <div class="list-item">
+                            <span>Energy</span>
+                            <span style="font-family: 'JetBrains Mono', monospace;">14 trades</span>
+                        </div>
+
+                        <div class="list-item">
+                            <span>Industrials</span>
+                            <span style="font-family: 'JetBrains Mono', monospace;">12 trades</span>
+                        </div>
+
+                </div>
+                <div class="list-card">
+                    <h3 style="color: var(--text-primary)">Buy/Sell Ratio by Sector</h3>
+
+                        <div class="list-item">
+                            <span>Healthcare</span>
+                            <span style="font-family: 'JetBrains Mono', monospace; color: var(--sell-color)">0.26x</span>
+                        </div>
+
+                        <div class="list-item">
+                            <span>Financial Services</span>
+                            <span style="font-family: 'JetBrains Mono', monospace; color: var(--buy-color)">2.00x</span>
+                        </div>
+
+                        <div class="list-item">
+                            <span>Technology</span>
+                            <span style="font-family: 'JetBrains Mono', monospace; color: var(--sell-color)">0.12x</span>
+                        </div>
+
+                        <div class="list-item">
+                            <span>Energy</span>
+                            <span style="font-family: 'JetBrains Mono', monospace; color: var(--sell-color)">0.08x</span>
+                        </div>
+
+                        <div class="list-item">
+                            <span>Industrials</span>
+                            <span style="font-family: 'JetBrains Mono', monospace; color: var(--sell-color)">0.33x</span>
+                        </div>
+
+                </div>
+            </div>
+        </div>
+
+        <h2>Recent Transactions</h2>
+        <div style="overflow-x: auto;">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Company</th>
+                        <th>Insider</th>
+                        <th>Type</th>
+                        <th class="money-header">Price</th>
+                        <th class="money-header">Shares</th>
+                        <th class="money-header">Total Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Ltc Properties Inc</span>
+                            <span class="ticker">LTC · Real Estate</span>
+                        </td>
+                        <td>
+                            <div class="insider">Gruber David L</div>
+                            <div class="title">Dir</div>
+                        </td>
+                        <td class="type-Buy">Buy</td>
+                        <td class="money">$38.00</td>
+                        <td class="money">7,000</td>
+                        <td class="money" style="font-weight: 600;">$266,000</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Cascade Private Capital Fund</span>
+                            <span class="ticker">CPEFX </span>
+                        </td>
+                        <td>
+                            <div class="insider">Garcia Dominic Jerome</div>
+                            <div class="title">Dir</div>
+                        </td>
+                        <td class="type-Buy">Buy</td>
+                        <td class="money">$20.46</td>
+                        <td class="money">26,775</td>
+                        <td class="money" style="font-weight: 600;">$547,808</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Miami International Holdings, Inc.</span>
+                            <span class="ticker">MIAX · Financial Services</span>
+                        </td>
+                        <td>
+                            <div class="insider">Stahl Murray</div>
+                            <div class="title">Dir</div>
+                        </td>
+                        <td class="type-Buy">Buy</td>
+                        <td class="money">$43.08</td>
+                        <td class="money">7,200</td>
+                        <td class="money" style="font-weight: 600;">$310,176</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Miami International Holdings, Inc.</span>
+                            <span class="ticker">MIAX · Financial Services</span>
+                        </td>
+                        <td>
+                            <div class="insider">Stahl Murray</div>
+                            <div class="title">Dir</div>
+                        </td>
+                        <td class="type-Buy">Buy</td>
+                        <td class="money">$43.38</td>
+                        <td class="money">7,200</td>
+                        <td class="money" style="font-weight: 600;">$312,336</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Biglari Holdings Inc.</span>
+                            <span class="ticker">BH · Consumer Cyclical</span>
+                        </td>
+                        <td>
+                            <div class="insider">Biglari, Sardar</div>
+                            <div class="title">COB, CEO, 10%</div>
+                        </td>
+                        <td class="type-Buy">Buy</td>
+                        <td class="money">$307.20</td>
+                        <td class="money">2,441</td>
+                        <td class="money" style="font-weight: 600;">$749,875</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Nuveen Churchill Direct Lending Corp.</span>
+                            <span class="ticker">NCDL · Financial Services</span>
+                        </td>
+                        <td>
+                            <div class="insider">McCally John</div>
+                            <div class="title">VP, Secretary</div>
+                        </td>
+                        <td class="type-Buy">Buy</td>
+                        <td class="money">$13.30</td>
+                        <td class="money">2,000</td>
+                        <td class="money" style="font-weight: 600;">$26,595</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Nuveen Churchill Direct Lending Corp.</span>
+                            <span class="ticker">NCDL · Financial Services</span>
+                        </td>
+                        <td>
+                            <div class="insider">Linett Mat</div>
+                            <div class="title">Senior Managing Director</div>
+                        </td>
+                        <td class="type-Buy">Buy</td>
+                        <td class="money">$13.05</td>
+                        <td class="money">2,000</td>
+                        <td class="money" style="font-weight: 600;">$26,099</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Nuveen Churchill Direct Lending Corp.</span>
+                            <span class="ticker">NCDL · Financial Services</span>
+                        </td>
+                        <td>
+                            <div class="insider">Strife Jason</div>
+                            <div class="title">Member-Sub-Adv's Joint Inv Com</div>
+                        </td>
+                        <td class="type-Buy">Buy</td>
+                        <td class="money">$13.40</td>
+                        <td class="money">7,690</td>
+                        <td class="money" style="font-weight: 600;">$103,046</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Atlas Energy Solutions Inc.</span>
+                            <span class="ticker">AESI · Energy</span>
+                        </td>
+                        <td>
+                            <div class="insider">Rogers Douglas G</div>
+                            <div class="title">Dir</div>
+                        </td>
+                        <td class="type-Buy">Buy</td>
+                        <td class="money">$13.27</td>
+                        <td class="money">7,000</td>
+                        <td class="money" style="font-weight: 600;">$92,862</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Republic Power Group Ltd</span>
+                            <span class="ticker">RPGL · Technology</span>
+                        </td>
+                        <td>
+                            <div class="insider">Cetera Wealth Services, LLC</div>
+                            <div class="title">10%</div>
+                        </td>
+                        <td class="type-Buy">Buy</td>
+                        <td class="money">$7.20</td>
+                        <td class="money">1,298,172</td>
+                        <td class="money" style="font-weight: 600;">$9,345,281</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Bjs Restaurants Inc</span>
+                            <span class="ticker">BJRI · Consumer Cyclical</span>
+                        </td>
+                        <td>
+                            <div class="insider">Richmond C Bradford</div>
+                            <div class="title">Dir</div>
+                        </td>
+                        <td class="type-Buy">Buy</td>
+                        <td class="money">$34.50</td>
+                        <td class="money">1,000</td>
+                        <td class="money" style="font-weight: 600;">$34,500</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Ma Specialty Credit Income Fund</span>
+                            <span class="ticker">SCISX </span>
+                        </td>
+                        <td>
+                            <div class="insider">Ma Eagle Holdings Fund</div>
+                            <div class="title">10%</div>
+                        </td>
+                        <td class="type-Buy">Buy</td>
+                        <td class="money">$24.80</td>
+                        <td class="money">139,018</td>
+                        <td class="money" style="font-weight: 600;">$3,447,646</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Tutor Perini Corp</span>
+                            <span class="ticker">TPC · Industrials</span>
+                        </td>
+                        <td>
+                            <div class="insider">Arkley Peter</div>
+                            <div class="title">Dir</div>
+                        </td>
+                        <td class="type-Buy">Buy</td>
+                        <td class="money">$72.96</td>
+                        <td class="money">25,000</td>
+                        <td class="money" style="font-weight: 600;">$1,824,002</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">New Mountain Finance Corp</span>
+                            <span class="ticker">NMFC · Financial Services</span>
+                        </td>
+                        <td>
+                            <div class="insider">Klinsky Steven B</div>
+                            <div class="title">Dir, 10%</div>
+                        </td>
+                        <td class="type-Buy">Buy</td>
+                        <td class="money">$8.10</td>
+                        <td class="money">237,873</td>
+                        <td class="money" style="font-weight: 600;">$1,926,771</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Edesa Biotech, Inc.</span>
+                            <span class="ticker">EDSA · Healthcare</span>
+                        </td>
+                        <td>
+                            <div class="insider">Nijhawan Pardeep</div>
+                            <div class="title">CEO, 10%</div>
+                        </td>
+                        <td class="type-Buy">Buy</td>
+                        <td class="money">$3.90</td>
+                        <td class="money">10,000</td>
+                        <td class="money" style="font-weight: 600;">$39,000</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">E.W. Scripps Co</span>
+                            <span class="ticker">SSP · Communication Services</span>
+                        </td>
+                        <td>
+                            <div class="insider">Granado Corina S.</div>
+                            <div class="title">10%</div>
+                        </td>
+                        <td class="type-Buy">Buy</td>
+                        <td class="money">$4.43</td>
+                        <td class="money">60,266</td>
+                        <td class="money" style="font-weight: 600;">$266,725</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">E.W. Scripps Co</span>
+                            <span class="ticker">SSP · Communication Services</span>
+                        </td>
+                        <td>
+                            <div class="insider">Scripps Eaton M</div>
+                            <div class="title">10%</div>
+                        </td>
+                        <td class="type-Buy">Buy</td>
+                        <td class="money">$4.31</td>
+                        <td class="money">58,983</td>
+                        <td class="money" style="font-weight: 600;">$253,940</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">E.W. Scripps Co</span>
+                            <span class="ticker">SSP · Communication Services</span>
+                        </td>
+                        <td>
+                            <div class="insider">Granado Anthony S.</div>
+                            <div class="title">10%</div>
+                        </td>
+                        <td class="type-Buy">Buy</td>
+                        <td class="money">$4.31</td>
+                        <td class="money">8,258</td>
+                        <td class="money" style="font-weight: 600;">$35,553</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">E.W. Scripps Co</span>
+                            <span class="ticker">SSP · Communication Services</span>
+                        </td>
+                        <td>
+                            <div class="insider">Klenzing Margaret Scripps</div>
+                            <div class="title">10%</div>
+                        </td>
+                        <td class="type-Buy">Buy</td>
+                        <td class="money">$4.29</td>
+                        <td class="money">260,485</td>
+                        <td class="money" style="font-weight: 600;">$1,117,321</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">E.W. Scripps Co</span>
+                            <span class="ticker">SSP · Communication Services</span>
+                        </td>
+                        <td>
+                            <div class="insider">Brickner Rebecca Scripps</div>
+                            <div class="title">10%</div>
+                        </td>
+                        <td class="type-Buy">Buy</td>
+                        <td class="money">$4.29</td>
+                        <td class="money">130,242</td>
+                        <td class="money" style="font-weight: 600;">$558,658</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Generate Biomedicines, Inc.</span>
+                            <span class="ticker">GENB </span>
+                        </td>
+                        <td>
+                            <div class="insider">Nally Michael</div>
+                            <div class="title">CEO</div>
+                        </td>
+                        <td class="type-Buy">Buy</td>
+                        <td class="money">$12.00</td>
+                        <td class="money">20,000</td>
+                        <td class="money" style="font-weight: 600;">$240,000</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Chain Bridge Bancorp Inc</span>
+                            <span class="ticker">CBNA · Financial Services</span>
+                        </td>
+                        <td>
+                            <div class="insider">Pollock James R.</div>
+                            <div class="title">Corporate Development Officer</div>
+                        </td>
+                        <td class="type-Buy">Buy</td>
+                        <td class="money">$35.25</td>
+                        <td class="money">714</td>
+                        <td class="money" style="font-weight: 600;">$25,169</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Icf International, Inc.</span>
+                            <span class="ticker">ICFI · Industrials</span>
+                        </td>
+                        <td>
+                            <div class="insider">Mehl Randall</div>
+                            <div class="title">Dir</div>
+                        </td>
+                        <td class="type-Buy">Buy</td>
+                        <td class="money">$74.30</td>
+                        <td class="money">1,100</td>
+                        <td class="money" style="font-weight: 600;">$81,730</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Csx Corp</span>
+                            <span class="ticker">CSX · Industrials</span>
+                        </td>
+                        <td>
+                            <div class="insider">Angel Stephen F</div>
+                            <div class="title">Pres, CEO</div>
+                        </td>
+                        <td class="type-Buy">Buy</td>
+                        <td class="money">$40.27</td>
+                        <td class="money">25,000</td>
+                        <td class="money" style="font-weight: 600;">$1,006,750</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Walker & Dunlop, Inc.</span>
+                            <span class="ticker">WD · Financial Services</span>
+                        </td>
+                        <td>
+                            <div class="insider">Freedman Ernest Michael</div>
+                            <div class="title">Dir</div>
+                        </td>
+                        <td class="type-Buy">Buy</td>
+                        <td class="money">$49.21</td>
+                        <td class="money">5,000</td>
+                        <td class="money" style="font-weight: 600;">$246,044</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Four Corners Property Trust, Inc.</span>
+                            <span class="ticker">FCPT · Real Estate</span>
+                        </td>
+                        <td>
+                            <div class="insider">Lenehan William H</div>
+                            <div class="title">Pres, CEO</div>
+                        </td>
+                        <td class="type-Buy">Buy</td>
+                        <td class="money">$25.49</td>
+                        <td class="money">7,865</td>
+                        <td class="money" style="font-weight: 600;">$200,487</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Pcb Bancorp</span>
+                            <span class="ticker">PCB · Financial Services</span>
+                        </td>
+                        <td>
+                            <div class="insider">Lee Sang Young</div>
+                            <div class="title">Dir, 10%</div>
+                        </td>
+                        <td class="type-Buy">Buy</td>
+                        <td class="money">$22.19</td>
+                        <td class="money">8,590</td>
+                        <td class="money" style="font-weight: 600;">$190,583</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Delcath Systems, Inc.</span>
+                            <span class="ticker">DCTH · Healthcare</span>
+                        </td>
+                        <td>
+                            <div class="insider">Pennell Sandra</div>
+                            <div class="title">CFO</div>
+                        </td>
+                        <td class="type-Buy">Buy</td>
+                        <td class="money">$9.04</td>
+                        <td class="money">5,533</td>
+                        <td class="money" style="font-weight: 600;">$50,018</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Hycroft Mining Holding Corp</span>
+                            <span class="ticker">HYMC · Basic Materials</span>
+                        </td>
+                        <td>
+                            <div class="insider">Sprott Eric</div>
+                            <div class="title">10%</div>
+                        </td>
+                        <td class="type-Buy">Buy</td>
+                        <td class="money">$40.85</td>
+                        <td class="money">100,000</td>
+                        <td class="money" style="font-weight: 600;">$4,085,000</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Alpha Cognition Inc.</span>
+                            <span class="ticker">ACOG · Healthcare</span>
+                        </td>
+                        <td>
+                            <div class="insider">Opaleye Management Inc.</div>
+                            <div class="title">10%</div>
+                        </td>
+                        <td class="type-Buy">Buy</td>
+                        <td class="money">$5.80</td>
+                        <td class="money">66,818</td>
+                        <td class="money" style="font-weight: 600;">$387,622</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Eagle Financial Services Inc</span>
+                            <span class="ticker">EFSI · Financial Services</span>
+                        </td>
+                        <td>
+                            <div class="insider">Hill Edward III</div>
+                            <div class="title">Dir</div>
+                        </td>
+                        <td class="type-Buy">Buy</td>
+                        <td class="money">$34.62</td>
+                        <td class="money">939</td>
+                        <td class="money" style="font-weight: 600;">$32,508</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Stepstone Private Venture & Growth Fund</span>
+                            <span class="ticker">XSPIX </span>
+                        </td>
+                        <td>
+                            <div class="insider">Sittema Thomas Kent</div>
+                            <div class="title">Trustee</div>
+                        </td>
+                        <td class="type-Buy">Buy</td>
+                        <td class="money">$37.26</td>
+                        <td class="money">24,825</td>
+                        <td class="money" style="font-weight: 600;">$925,000</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Lee Enterprises, Inc</span>
+                            <span class="ticker">LEE · Communication Services</span>
+                        </td>
+                        <td>
+                            <div class="insider">Hoffmann David Henry</div>
+                            <div class="title">Dir, 10%</div>
+                        </td>
+                        <td class="type-Buy">Buy</td>
+                        <td class="money">$9.21</td>
+                        <td class="money">38,000</td>
+                        <td class="money" style="font-weight: 600;">$349,980</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Citizens Financial Services Inc</span>
+                            <span class="ticker">CZFS · Financial Services</span>
+                        </td>
+                        <td>
+                            <div class="insider">Painter John P II</div>
+                            <div class="title">Dir</div>
+                        </td>
+                        <td class="type-Buy">Buy</td>
+                        <td class="money">$61.00</td>
+                        <td class="money">675</td>
+                        <td class="money" style="font-weight: 600;">$41,175</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Healthcare Realty Trust Inc</span>
+                            <span class="ticker">HR · Real Estate</span>
+                        </td>
+                        <td>
+                            <div class="insider">Bohjalian Thomas N</div>
+                            <div class="title">Dir</div>
+                        </td>
+                        <td class="type-Buy">Buy</td>
+                        <td class="money">$18.09</td>
+                        <td class="money">10,000</td>
+                        <td class="money" style="font-weight: 600;">$180,900</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">First Financial Bankshares Inc</span>
+                            <span class="ticker">FFIN · Financial Services</span>
+                        </td>
+                        <td>
+                            <div class="insider">Goodrich Brian D.</div>
+                            <div class="title">EVP - GC</div>
+                        </td>
+                        <td class="type-Buy">Buy</td>
+                        <td class="money">$30.13</td>
+                        <td class="money">1,565</td>
+                        <td class="money" style="font-weight: 600;">$47,153</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">First Financial Bankshares Inc</span>
+                            <span class="ticker">FFIN · Financial Services</span>
+                        </td>
+                        <td>
+                            <div class="insider">Trotter Johnny</div>
+                            <div class="title">Dir</div>
+                        </td>
+                        <td class="type-Buy">Buy</td>
+                        <td class="money">$30.02</td>
+                        <td class="money">4,000</td>
+                        <td class="money" style="font-weight: 600;">$120,080</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Muncy Columbia Financial Corp</span>
+                            <span class="ticker">CCFN · Financial Services</span>
+                        </td>
+                        <td>
+                            <div class="insider">Kline Loni N.</div>
+                            <div class="title">EVP, Chief Growth Officer</div>
+                        </td>
+                        <td class="type-Buy">Buy</td>
+                        <td class="money">$61.85</td>
+                        <td class="money">498</td>
+                        <td class="money" style="font-weight: 600;">$30,801</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Elevance Health, Inc.</span>
+                            <span class="ticker">ELV · Healthcare</span>
+                        </td>
+                        <td>
+                            <div class="insider">Collis Steven H</div>
+                            <div class="title">Dir</div>
+                        </td>
+                        <td class="type-Buy">Buy</td>
+                        <td class="money">$289.84</td>
+                        <td class="money">3,000</td>
+                        <td class="money" style="font-weight: 600;">$869,520</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Promis Neurosciences Inc.</span>
+                            <span class="ticker">PMN · Healthcare</span>
+                        </td>
+                        <td>
+                            <div class="insider">Williams Eugene</div>
+                            <div class="title">Dir</div>
+                        </td>
+                        <td class="type-Buy">Buy</td>
+                        <td class="money">$24.40</td>
+                        <td class="money">2,000</td>
+                        <td class="money" style="font-weight: 600;">$48,800</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Clearone Inc</span>
+                            <span class="ticker">CLRO · Technology</span>
+                        </td>
+                        <td>
+                            <div class="insider">First Finance Ltd.</div>
+                            <div class="title">10%</div>
+                        </td>
+                        <td class="type-Buy">Buy</td>
+                        <td class="money">$4.00</td>
+                        <td class="money">437,500</td>
+                        <td class="money" style="font-weight: 600;">$1,750,000</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Light & Wonder, Inc.</span>
+                            <span class="ticker">ASX · Technology</span>
+                        </td>
+                        <td>
+                            <div class="insider">Kalabic Vanja</div>
+                            <div class="title">SVP, Chief Accounting Officer</div>
+                        </td>
+                        <td class="type-Sell">Sell</td>
+                        <td class="money">$90.19</td>
+                        <td class="money">-1,520</td>
+                        <td class="money" style="font-weight: 600;">-$137,089</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Light & Wonder, Inc.</span>
+                            <span class="ticker">ASX · Technology</span>
+                        </td>
+                        <td>
+                            <div class="insider">Chow Oliver</div>
+                            <div class="title">EVP, CFO, Treas</div>
+                        </td>
+                        <td class="type-Sell">Sell</td>
+                        <td class="money">$90.22</td>
+                        <td class="money">-5,144</td>
+                        <td class="money" style="font-weight: 600;">-$464,092</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Delek Us Holdings, Inc.</span>
+                            <span class="ticker">DK · Energy</span>
+                        </td>
+                        <td>
+                            <div class="insider">Yemin Ezra Uzi</div>
+                            <div class="title">Dir</div>
+                        </td>
+                        <td class="type-Sell">Sell</td>
+                        <td class="money">$43.17</td>
+                        <td class="money">-84,650</td>
+                        <td class="money" style="font-weight: 600;">-$3,654,341</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Delek Us Holdings, Inc.</span>
+                            <span class="ticker">DK · Energy</span>
+                        </td>
+                        <td>
+                            <div class="insider">Zohar Shlomo</div>
+                            <div class="title">Dir</div>
+                        </td>
+                        <td class="type-Sell">Sell</td>
+                        <td class="money">$44.38</td>
+                        <td class="money">-29,372</td>
+                        <td class="money" style="font-weight: 600;">-$1,303,383</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Delek Us Holdings, Inc.</span>
+                            <span class="ticker">DK · Energy</span>
+                        </td>
+                        <td>
+                            <div class="insider">Israel Joseph</div>
+                            <div class="title">EVP</div>
+                        </td>
+                        <td class="type-Sell">Sell</td>
+                        <td class="money">$40.65</td>
+                        <td class="money">-38,000</td>
+                        <td class="money" style="font-weight: 600;">-$1,544,700</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Delek Us Holdings, Inc.</span>
+                            <span class="ticker">DK · Energy</span>
+                        </td>
+                        <td>
+                            <div class="insider">Spiegel Reuven</div>
+                            <div class="title">EVP, Special Projects</div>
+                        </td>
+                        <td class="type-Sell">Sell</td>
+                        <td class="money">$42.84</td>
+                        <td class="money">-20,000</td>
+                        <td class="money" style="font-weight: 600;">-$856,800</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Delek Us Holdings, Inc.</span>
+                            <span class="ticker">DK · Energy</span>
+                        </td>
+                        <td>
+                            <div class="insider">Finnerty William J</div>
+                            <div class="title">Dir</div>
+                        </td>
+                        <td class="type-Sell">Sell</td>
+                        <td class="money">$42.75</td>
+                        <td class="money">-5,392</td>
+                        <td class="money" style="font-weight: 600;">-$230,508</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Coreweave, Inc.</span>
+                            <span class="ticker">CRWV · Technology</span>
+                        </td>
+                        <td>
+                            <div class="insider">Venturo Brian M</div>
+                            <div class="title">Chief Strategy Officer</div>
+                        </td>
+                        <td class="type-Sell">Sell</td>
+                        <td class="money">$79.33</td>
+                        <td class="money">-281,250</td>
+                        <td class="money" style="font-weight: 600;">-$22,312,308</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Civeo Corp</span>
+                            <span class="ticker">CVEO · Consumer Cyclical</span>
+                        </td>
+                        <td>
+                            <div class="insider">McCann Peter</div>
+                            <div class="title">SVP, Australia</div>
+                        </td>
+                        <td class="type-Sell">Sell</td>
+                        <td class="money">$28.64</td>
+                        <td class="money">-4,000</td>
+                        <td class="money" style="font-weight: 600;">-$114,560</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Rimini Street, Inc.</span>
+                            <span class="ticker">RMNI · Technology</span>
+                        </td>
+                        <td>
+                            <div class="insider">Ravin Seth A.</div>
+                            <div class="title">Pres, CEO, COB, 10%</div>
+                        </td>
+                        <td class="type-Sell">Sell</td>
+                        <td class="money">$3.64</td>
+                        <td class="money">-52,085</td>
+                        <td class="money" style="font-weight: 600;">-$189,735</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Cipher Digital Inc.</span>
+                            <span class="ticker">CIFR · Technology</span>
+                        </td>
+                        <td>
+                            <div class="insider">Newsome James E</div>
+                            <div class="title">Dir</div>
+                        </td>
+                        <td class="type-Sell">Sell</td>
+                        <td class="money">$15.74</td>
+                        <td class="money">-45,161</td>
+                        <td class="money" style="font-weight: 600;">-$710,834</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Clear Secure, Inc.</span>
+                            <span class="ticker">YOU · Technology</span>
+                        </td>
+                        <td>
+                            <div class="insider">Alclear Investments, LLC</div>
+                            <div class="title">See Remarks, 10%</div>
+                        </td>
+                        <td class="type-Sell">Sell</td>
+                        <td class="money">$48.51</td>
+                        <td class="money">-174,324</td>
+                        <td class="money" style="font-weight: 600;">-$8,457,128</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Clear Secure, Inc.</span>
+                            <span class="ticker">YOU · Technology</span>
+                        </td>
+                        <td>
+                            <div class="insider">Seidman Becker Caryn</div>
+                            <div class="title">CEO, 10%</div>
+                        </td>
+                        <td class="type-Sell">Sell</td>
+                        <td class="money">$48.51</td>
+                        <td class="money">-174,324</td>
+                        <td class="money" style="font-weight: 600;">-$8,457,128</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Titan International Inc</span>
+                            <span class="ticker">TWI · Industrials</span>
+                        </td>
+                        <td>
+                            <div class="insider">Aipct Holdings LLC</div>
+                            <div class="title">10%</div>
+                        </td>
+                        <td class="type-Sell">Sell</td>
+                        <td class="money">$8.95</td>
+                        <td class="money">-3,041,288</td>
+                        <td class="money" style="font-weight: 600;">-$27,219,528</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Baldwin Insurance Group, Inc.</span>
+                            <span class="ticker">BWIN · Financial Services</span>
+                        </td>
+                        <td>
+                            <div class="insider">Krystyn Elizabeth</div>
+                            <div class="title">Member of 10% Owner Group</div>
+                        </td>
+                        <td class="type-Sell">Sell</td>
+                        <td class="money">$21.25</td>
+                        <td class="money">-119,987</td>
+                        <td class="money" style="font-weight: 600;">-$2,549,724</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Unity Software Inc.</span>
+                            <span class="ticker">U · Technology</span>
+                        </td>
+                        <td>
+                            <div class="insider">Yahes Jarrod</div>
+                            <div class="title">SVP, CFO</div>
+                        </td>
+                        <td class="type-Sell">Sell</td>
+                        <td class="money">$21.03</td>
+                        <td class="money">-6,205</td>
+                        <td class="money" style="font-weight: 600;">-$130,491</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Heartflow, Inc.</span>
+                            <span class="ticker">HTFL · Healthcare</span>
+                        </td>
+                        <td>
+                            <div class="insider">Cullivan Julie A</div>
+                            <div class="title">Dir</div>
+                        </td>
+                        <td class="type-Sell">Sell</td>
+                        <td class="money">$25.00</td>
+                        <td class="money">-9,122</td>
+                        <td class="money" style="font-weight: 600;">-$228,050</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Pbf Energy Inc.</span>
+                            <span class="ticker">PBF · Energy</span>
+                        </td>
+                        <td>
+                            <div class="insider">Davis Paul T</div>
+                            <div class="title">SVP</div>
+                        </td>
+                        <td class="type-Sell">Sell</td>
+                        <td class="money">$44.80</td>
+                        <td class="money">-50,000</td>
+                        <td class="money" style="font-weight: 600;">-$2,239,750</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Apogee Therapeutics, Inc.</span>
+                            <span class="ticker">APGE · Healthcare</span>
+                        </td>
+                        <td>
+                            <div class="insider">Dambkowski Carl</div>
+                            <div class="title">Chief Medical Officer</div>
+                        </td>
+                        <td class="type-Sell">Sell</td>
+                        <td class="money">$71.06</td>
+                        <td class="money">-5,500</td>
+                        <td class="money" style="font-weight: 600;">-$390,825</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Texas Roadhouse, Inc.</span>
+                            <span class="ticker">TXRH · Consumer Cyclical</span>
+                        </td>
+                        <td>
+                            <div class="insider">Moore Gregory N</div>
+                            <div class="title">Dir</div>
+                        </td>
+                        <td class="type-Sell">Sell</td>
+                        <td class="money">$171.59</td>
+                        <td class="money">-1,700</td>
+                        <td class="money" style="font-weight: 600;">-$291,703</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Texas Roadhouse, Inc.</span>
+                            <span class="ticker">TXRH · Consumer Cyclical</span>
+                        </td>
+                        <td>
+                            <div class="insider">Epps Donna E</div>
+                            <div class="title">Dir</div>
+                        </td>
+                        <td class="type-Sell">Sell</td>
+                        <td class="money">$172.45</td>
+                        <td class="money">-850</td>
+                        <td class="money" style="font-weight: 600;">-$146,583</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Nerdwallet, Inc.</span>
+                            <span class="ticker">NRDS · Communication Services</span>
+                        </td>
+                        <td>
+                            <div class="insider">Tatum Nicholas</div>
+                            <div class="title">Chief Accounting Officer</div>
+                        </td>
+                        <td class="type-Sell">Sell</td>
+                        <td class="money">$11.45</td>
+                        <td class="money">-11,044</td>
+                        <td class="money" style="font-weight: 600;">-$126,454</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Quantumscape Corp</span>
+                            <span class="ticker">QS · Consumer Cyclical</span>
+                        </td>
+                        <td>
+                            <div class="insider">McCarthy Michael O III</div>
+                            <div class="title">GC</div>
+                        </td>
+                        <td class="type-Sell">Sell</td>
+                        <td class="money">$6.80</td>
+                        <td class="money">-75,000</td>
+                        <td class="money" style="font-weight: 600;">-$510,003</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Quantumscape Corp</span>
+                            <span class="ticker">QS · Consumer Cyclical</span>
+                        </td>
+                        <td>
+                            <div class="insider">Holme Timothy</div>
+                            <div class="title">CTO</div>
+                        </td>
+                        <td class="type-Sell">Sell</td>
+                        <td class="money">$6.86</td>
+                        <td class="money">-161,331</td>
+                        <td class="money" style="font-weight: 600;">-$1,107,473</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Brightspring Health Services, Inc.</span>
+                            <span class="ticker">BTSG · Healthcare</span>
+                        </td>
+                        <td>
+                            <div class="insider">Nalley Lisa A</div>
+                            <div class="title">See Remarks</div>
+                        </td>
+                        <td class="type-Sell">Sell</td>
+                        <td class="money">$41.15</td>
+                        <td class="money">-30,000</td>
+                        <td class="money" style="font-weight: 600;">-$1,234,500</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Brightspring Health Services, Inc.</span>
+                            <span class="ticker">BTSG · Healthcare</span>
+                        </td>
+                        <td>
+                            <div class="insider">Rousseau Jon B</div>
+                            <div class="title">See Remarks</div>
+                        </td>
+                        <td class="type-Sell">Sell</td>
+                        <td class="money">$41.15</td>
+                        <td class="money">-220,000</td>
+                        <td class="money" style="font-weight: 600;">-$9,053,000</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Brightspring Health Services, Inc.</span>
+                            <span class="ticker">BTSG · Healthcare</span>
+                        </td>
+                        <td>
+                            <div class="insider">Phipps Jennifer A</div>
+                            <div class="title">CFO</div>
+                        </td>
+                        <td class="type-Sell">Sell</td>
+                        <td class="money">$41.15</td>
+                        <td class="money">-35,000</td>
+                        <td class="money" style="font-weight: 600;">-$1,440,250</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Lesaka Technologies Inc</span>
+                            <span class="ticker">LSAK · Technology</span>
+                        </td>
+                        <td>
+                            <div class="insider">International Finance Corp</div>
+                            <div class="title">10%</div>
+                        </td>
+                        <td class="type-Sell">Sell</td>
+                        <td class="money">$5.10</td>
+                        <td class="money">-2,628,658</td>
+                        <td class="money" style="font-weight: 600;">-$13,397,469</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Kratos Defense & Security Solutions, Inc.</span>
+                            <span class="ticker">KTOS · Industrials</span>
+                        </td>
+                        <td>
+                            <div class="insider">Rock Stacey G</div>
+                            <div class="title">Pres, KTT Division</div>
+                        </td>
+                        <td class="type-Sell">Sell</td>
+                        <td class="money">$87.99</td>
+                        <td class="money">-6,066</td>
+                        <td class="money" style="font-weight: 600;">-$533,739</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Trupanion, Inc.</span>
+                            <span class="ticker">TRUP · Financial Services</span>
+                        </td>
+                        <td>
+                            <div class="insider">Dreyer Emily</div>
+                            <div class="title">Chief Revenue Officer</div>
+                        </td>
+                        <td class="type-Sell">Sell</td>
+                        <td class="money">$28.15</td>
+                        <td class="money">-7,792</td>
+                        <td class="money" style="font-weight: 600;">-$219,320</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Standardaero, Inc.</span>
+                            <span class="ticker">SARO · Industrials</span>
+                        </td>
+                        <td>
+                            <div class="insider">Ford Russell Wayne</div>
+                            <div class="title">CEO</div>
+                        </td>
+                        <td class="type-Sell">Sell</td>
+                        <td class="money">$30.09</td>
+                        <td class="money">-40,000</td>
+                        <td class="money" style="font-weight: 600;">-$1,203,456</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Bicara Therapeutics Inc.</span>
+                            <span class="ticker">BCAX · Healthcare</span>
+                        </td>
+                        <td>
+                            <div class="insider">Mazumdar Claire</div>
+                            <div class="title">CEO</div>
+                        </td>
+                        <td class="type-Sell">Sell</td>
+                        <td class="money">$18.74</td>
+                        <td class="money">-8,234</td>
+                        <td class="money" style="font-weight: 600;">-$154,325</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Kratos Defense & Security Solutions, Inc.</span>
+                            <span class="ticker">KTOS · Industrials</span>
+                        </td>
+                        <td>
+                            <div class="insider">Carter David M</div>
+                            <div class="title">Pres, DRSS Division</div>
+                        </td>
+                        <td class="type-Sell">Sell</td>
+                        <td class="money">$85.36</td>
+                        <td class="money">-4,000</td>
+                        <td class="money" style="font-weight: 600;">-$341,422</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Madrigal Pharmaceuticals, Inc.</span>
+                            <span class="ticker">MDGL · Healthcare</span>
+                        </td>
+                        <td>
+                            <div class="insider">Dier Mardi</div>
+                            <div class="title">EVP, CFO</div>
+                        </td>
+                        <td class="type-Sell">Sell</td>
+                        <td class="money">$430.87</td>
+                        <td class="money">-1,982</td>
+                        <td class="money" style="font-weight: 600;">-$853,993</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Baker Hughes Co</span>
+                            <span class="ticker">BKR · Energy</span>
+                        </td>
+                        <td>
+                            <div class="insider">Simonelli Lorenzo</div>
+                            <div class="title">COB, Pres, CEO</div>
+                        </td>
+                        <td class="type-Sell">Sell</td>
+                        <td class="money">$61.13</td>
+                        <td class="money">-272,593</td>
+                        <td class="money" style="font-weight: 600;">-$16,663,610</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Echostar Corp</span>
+                            <span class="ticker">SATS · Communication Services</span>
+                        </td>
+                        <td>
+                            <div class="insider">Swieringa John</div>
+                            <div class="title">PRES, TECH, COO</div>
+                        </td>
+                        <td class="type-Sell">Sell</td>
+                        <td class="money">$113.59</td>
+                        <td class="money">-50,088</td>
+                        <td class="money" style="font-weight: 600;">-$5,689,228</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Nmi Holdings, Inc.</span>
+                            <span class="ticker">NMIH · Financial Services</span>
+                        </td>
+                        <td>
+                            <div class="insider">Shuster Bradley M</div>
+                            <div class="title">Exec COB</div>
+                        </td>
+                        <td class="type-Sell">Sell</td>
+                        <td class="money">$38.91</td>
+                        <td class="money">-19,430</td>
+                        <td class="money" style="font-weight: 600;">-$755,944</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Nextpower Inc.</span>
+                            <span class="ticker">NXT · Technology</span>
+                        </td>
+                        <td>
+                            <div class="insider">Shugar Daniel S</div>
+                            <div class="title">CEO</div>
+                        </td>
+                        <td class="type-Sell">Sell</td>
+                        <td class="money">$101.04</td>
+                        <td class="money">-39,892</td>
+                        <td class="money" style="font-weight: 600;">-$4,030,688</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Sionna Therapeutics, Inc.</span>
+                            <span class="ticker">SION · Healthcare</span>
+                        </td>
+                        <td>
+                            <div class="insider">Fitzpatrick Jennifer</div>
+                            <div class="title">GC</div>
+                        </td>
+                        <td class="type-Sell">Sell</td>
+                        <td class="money">$33.86</td>
+                        <td class="money">-10,250</td>
+                        <td class="money" style="font-weight: 600;">-$347,019</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Ligand Pharmaceuticals Inc</span>
+                            <span class="ticker">LGND · Healthcare</span>
+                        </td>
+                        <td>
+                            <div class="insider">Reardon Andrew</div>
+                            <div class="title">CLO, Secretary</div>
+                        </td>
+                        <td class="type-Sell">Sell</td>
+                        <td class="money">$206.35</td>
+                        <td class="money">-5,000</td>
+                        <td class="money" style="font-weight: 600;">-$1,031,770</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Ligand Pharmaceuticals Inc</span>
+                            <span class="ticker">LGND · Healthcare</span>
+                        </td>
+                        <td>
+                            <div class="insider">Espinoza Octavio</div>
+                            <div class="title">CFO</div>
+                        </td>
+                        <td class="type-Sell">Sell</td>
+                        <td class="money">$205.83</td>
+                        <td class="money">-13,423</td>
+                        <td class="money" style="font-weight: 600;">-$2,762,822</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Energy Recovery, Inc.</span>
+                            <span class="ticker">ERII · Industrials</span>
+                        </td>
+                        <td>
+                            <div class="insider">Clemente Rodney</div>
+                            <div class="title">SVP, Water</div>
+                        </td>
+                        <td class="type-Sell">Sell</td>
+                        <td class="money">$10.61</td>
+                        <td class="money">-20,568</td>
+                        <td class="money" style="font-weight: 600;">-$218,309</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Madrigal Pharmaceuticals, Inc.</span>
+                            <span class="ticker">MDGL · Healthcare</span>
+                        </td>
+                        <td>
+                            <div class="insider">Sibold William John</div>
+                            <div class="title">Pres, CEO</div>
+                        </td>
+                        <td class="type-Sell">Sell</td>
+                        <td class="money">$431.94</td>
+                        <td class="money">-1,663</td>
+                        <td class="money" style="font-weight: 600;">-$718,316</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Matson, Inc.</span>
+                            <span class="ticker">MATX · Industrials</span>
+                        </td>
+                        <td>
+                            <div class="insider">Lauer John P</div>
+                            <div class="title">EVP, Chief Commercial Officer</div>
+                        </td>
+                        <td class="type-Sell">Sell</td>
+                        <td class="money">$166.13</td>
+                        <td class="money">-8,603</td>
+                        <td class="money" style="font-weight: 600;">-$1,429,216</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Madrigal Pharmaceuticals, Inc.</span>
+                            <span class="ticker">MDGL · Healthcare</span>
+                        </td>
+                        <td>
+                            <div class="insider">Kelley Shannon T</div>
+                            <div class="title">GC</div>
+                        </td>
+                        <td class="type-Sell">Sell</td>
+                        <td class="money">$431.94</td>
+                        <td class="money">-360</td>
+                        <td class="money" style="font-weight: 600;">-$155,498</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Aleanna, Inc.</span>
+                            <span class="ticker">ANNA · Energy</span>
+                        </td>
+                        <td>
+                            <div class="insider">Wilder C John</div>
+                            <div class="title">10%</div>
+                        </td>
+                        <td class="type-Sell">Sell</td>
+                        <td class="money">$3.85</td>
+                        <td class="money">-179,011</td>
+                        <td class="money" style="font-weight: 600;">-$689,290</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Match Group, Inc.</span>
+                            <span class="ticker">MTCH · Communication Services</span>
+                        </td>
+                        <td>
+                            <div class="insider">Hosseini Hesam</div>
+                            <div class="title">COO</div>
+                        </td>
+                        <td class="type-Sell">Sell</td>
+                        <td class="money">$30.13</td>
+                        <td class="money">-59,013</td>
+                        <td class="money" style="font-weight: 600;">-$1,778,050</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Kinetik Holdings Inc.</span>
+                            <span class="ticker">KNTK · Energy</span>
+                        </td>
+                        <td>
+                            <div class="insider">Stellato Steven</div>
+                            <div class="title">See Remarks</div>
+                        </td>
+                        <td class="type-Sell">Sell</td>
+                        <td class="money">$46.92</td>
+                        <td class="money">-2,907</td>
+                        <td class="money" style="font-weight: 600;">-$136,396</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Kinetik Holdings Inc.</span>
+                            <span class="ticker">KNTK · Energy</span>
+                        </td>
+                        <td>
+                            <div class="insider">Wall Matthew</div>
+                            <div class="title">See Remarks</div>
+                        </td>
+                        <td class="type-Sell">Sell</td>
+                        <td class="money">$46.92</td>
+                        <td class="money">-3,222</td>
+                        <td class="money" style="font-weight: 600;">-$151,176</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Krystal Biotech, Inc.</span>
+                            <span class="ticker">KRYS · Healthcare</span>
+                        </td>
+                        <td>
+                            <div class="insider">Krishnan Suma</div>
+                            <div class="title">Pres, R, D, 10%</div>
+                        </td>
+                        <td class="type-Sell">Sell</td>
+                        <td class="money">$263.21</td>
+                        <td class="money">-25,000</td>
+                        <td class="money" style="font-weight: 600;">-$6,580,270</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Krystal Biotech, Inc.</span>
+                            <span class="ticker">KRYS · Healthcare</span>
+                        </td>
+                        <td>
+                            <div class="insider">Krishnan Krish S</div>
+                            <div class="title">Pres, CEO, 10%</div>
+                        </td>
+                        <td class="type-Sell">Sell</td>
+                        <td class="money">$263.17</td>
+                        <td class="money">-25,000</td>
+                        <td class="money" style="font-weight: 600;">-$6,579,164</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Maxlinear, Inc</span>
+                            <span class="ticker">MXL · Technology</span>
+                        </td>
+                        <td>
+                            <div class="insider">Litchfield Steven G</div>
+                            <div class="title">See remarks</div>
+                        </td>
+                        <td class="type-Sell">Sell</td>
+                        <td class="money">$16.61</td>
+                        <td class="money">-44,929</td>
+                        <td class="money" style="font-weight: 600;">-$746,427</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Blackbaud Inc</span>
+                            <span class="ticker">BLKB · Technology</span>
+                        </td>
+                        <td>
+                            <div class="insider">Gregoire Kevin P.</div>
+                            <div class="title">EVP, COO</div>
+                        </td>
+                        <td class="type-Sell">Sell</td>
+                        <td class="money">$50.02</td>
+                        <td class="money">-2,000</td>
+                        <td class="money" style="font-weight: 600;">-$100,040</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Northern Trust Corp</span>
+                            <span class="ticker">NTRS · Financial Services</span>
+                        </td>
+                        <td>
+                            <div class="insider">Gibson Guy</div>
+                            <div class="title">Co-Pres Asset Servicing</div>
+                        </td>
+                        <td class="type-Sell">Sell</td>
+                        <td class="money">$142.39</td>
+                        <td class="money">-3,009</td>
+                        <td class="money" style="font-weight: 600;">-$428,452</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Madrigal Pharmaceuticals, Inc.</span>
+                            <span class="ticker">MDGL · Healthcare</span>
+                        </td>
+                        <td>
+                            <div class="insider">Huntsman Carole</div>
+                            <div class="title">Chief Commercial Officer</div>
+                        </td>
+                        <td class="type-Sell">Sell</td>
+                        <td class="money">$431.94</td>
+                        <td class="money">-419</td>
+                        <td class="money" style="font-weight: 600;">-$180,983</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Transmedics Group, Inc.</span>
+                            <span class="ticker">TMDX · Healthcare</span>
+                        </td>
+                        <td>
+                            <div class="insider">Lovell Stephanie</div>
+                            <div class="title">Dir</div>
+                        </td>
+                        <td class="type-Sell">Sell</td>
+                        <td class="money">$149.62</td>
+                        <td class="money">-1,193</td>
+                        <td class="money" style="font-weight: 600;">-$178,497</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Formfactor Inc</span>
+                            <span class="ticker">FORM · Technology</span>
+                        </td>
+                        <td>
+                            <div class="insider">McKinnis Aric Brendan</div>
+                            <div class="title">CFO, SVP Global Finance</div>
+                        </td>
+                        <td class="type-Sell">Sell</td>
+                        <td class="money">$90.42</td>
+                        <td class="money">-3,462</td>
+                        <td class="money" style="font-weight: 600;">-$313,034</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Perimeter Solutions, Inc.</span>
+                            <span class="ticker">PRM · Basic Materials</span>
+                        </td>
+                        <td>
+                            <div class="insider">Thorndike William N Jr</div>
+                            <div class="title">Dir</div>
+                        </td>
+                        <td class="type-Sell">Sell</td>
+                        <td class="money">$24.00</td>
+                        <td class="money">-325,000</td>
+                        <td class="money" style="font-weight: 600;">-$7,801,500</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Transmedics Group, Inc.</span>
+                            <span class="ticker">TMDX · Healthcare</span>
+                        </td>
+                        <td>
+                            <div class="insider">Weill David</div>
+                            <div class="title">Dir</div>
+                        </td>
+                        <td class="type-Sell">Sell</td>
+                        <td class="money">$146.82</td>
+                        <td class="money">-3,571</td>
+                        <td class="money" style="font-weight: 600;">-$524,294</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Henry Schein Inc</span>
+                            <span class="ticker">HSIC · Healthcare</span>
+                        </td>
+                        <td>
+                            <div class="insider">Mlotek Mark E</div>
+                            <div class="title">EVP, Chief Strategic Officer</div>
+                        </td>
+                        <td class="type-Sell">Sell</td>
+                        <td class="money">$80.80</td>
+                        <td class="money">-5,925</td>
+                        <td class="money" style="font-weight: 600;">-$478,740</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Madrigal Pharmaceuticals, Inc.</span>
+                            <span class="ticker">MDGL · Healthcare</span>
+                        </td>
+                        <td>
+                            <div class="insider">Taub Rebecca</div>
+                            <div class="title">Dir</div>
+                        </td>
+                        <td class="type-Sell">Sell</td>
+                        <td class="money">$431.94</td>
+                        <td class="money">-491</td>
+                        <td class="money" style="font-weight: 600;">-$212,083</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Geo Group Inc</span>
+                            <span class="ticker">GEO · Industrials</span>
+                        </td>
+                        <td>
+                            <div class="insider">Kernan Scott Michael</div>
+                            <div class="title">Dir</div>
+                        </td>
+                        <td class="type-Sell">Sell</td>
+                        <td class="money">$15.24</td>
+                        <td class="money">-6,633</td>
+                        <td class="money" style="font-weight: 600;">-$101,087</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Tidewater Inc</span>
+                            <span class="ticker">TDW · Energy</span>
+                        </td>
+                        <td>
+                            <div class="insider">Rubio Samuel R</div>
+                            <div class="title">EVP, CFO, CAO</div>
+                        </td>
+                        <td class="type-Sell">Sell</td>
+                        <td class="money">$80.05</td>
+                        <td class="money">-22,461</td>
+                        <td class="money" style="font-weight: 600;">-$1,798,003</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Tidewater Inc</span>
+                            <span class="ticker">TDW · Energy</span>
+                        </td>
+                        <td>
+                            <div class="insider">Hudson Daniel A.</div>
+                            <div class="title">EVP, GC</div>
+                        </td>
+                        <td class="type-Sell">Sell</td>
+                        <td class="money">$80.56</td>
+                        <td class="money">-5,195</td>
+                        <td class="money" style="font-weight: 600;">-$418,509</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Universal Technical Institute Inc</span>
+                            <span class="ticker">UTI · Consumer Defensive</span>
+                        </td>
+                        <td>
+                            <div class="insider">Hitchcock Todd A</div>
+                            <div class="title">EVP, COO</div>
+                        </td>
+                        <td class="type-Sell">Sell</td>
+                        <td class="money">$37.33</td>
+                        <td class="money">-16,500</td>
+                        <td class="money" style="font-weight: 600;">-$615,945</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Universal Technical Institute Inc</span>
+                            <span class="ticker">UTI · Consumer Defensive</span>
+                        </td>
+                        <td>
+                            <div class="insider">Smith Sherrell</div>
+                            <div class="title">EVP, Chief Academic Officer</div>
+                        </td>
+                        <td class="type-Sell">Sell</td>
+                        <td class="money">$33.84</td>
+                        <td class="money">-50,000</td>
+                        <td class="money" style="font-weight: 600;">-$1,691,885</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Century Aluminum Co</span>
+                            <span class="ticker">CENX · Basic Materials</span>
+                        </td>
+                        <td>
+                            <div class="insider">Hoffman Robert F</div>
+                            <div class="title">SVP, IT, CAO</div>
+                        </td>
+                        <td class="type-Sell">Sell</td>
+                        <td class="money">$56.33</td>
+                        <td class="money">-10,000</td>
+                        <td class="money" style="font-weight: 600;">-$563,300</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Black Stone Minerals, L.P.</span>
+                            <span class="ticker">BSM · Energy</span>
+                        </td>
+                        <td>
+                            <div class="insider">Putman Luke Stevens</div>
+                            <div class="title">SVP, GC,, Sec</div>
+                        </td>
+                        <td class="type-Sell">Sell</td>
+                        <td class="money">$15.25</td>
+                        <td class="money">-30,276</td>
+                        <td class="money" style="font-weight: 600;">-$461,585</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Teradyne, Inc</span>
+                            <span class="ticker">TER · Technology</span>
+                        </td>
+                        <td>
+                            <div class="insider">Johnson Mercedes</div>
+                            <div class="title">Dir</div>
+                        </td>
+                        <td class="type-Sell">Sell</td>
+                        <td class="money">$299.20</td>
+                        <td class="money">-625</td>
+                        <td class="money" style="font-weight: 600;">-$187,000</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Dave Inc./De</span>
+                            <span class="ticker">DAVE · Technology</span>
+                        </td>
+                        <td>
+                            <div class="insider">Mitchell Andrea</div>
+                            <div class="title">Dir</div>
+                        </td>
+                        <td class="type-Sell">Sell</td>
+                        <td class="money">$213.03</td>
+                        <td class="money">-30,000</td>
+                        <td class="money" style="font-weight: 600;">-$6,390,901</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Cloudflare, Inc.</span>
+                            <span class="ticker">NET · Technology</span>
+                        </td>
+                        <td>
+                            <div class="insider">Riley Janel</div>
+                            <div class="title">Chief Accounting Officer</div>
+                        </td>
+                        <td class="type-Sell">Sell</td>
+                        <td class="money">$190.00</td>
+                        <td class="money">-23,332</td>
+                        <td class="money" style="font-weight: 600;">-$4,433,080</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Bank of America Corp /De/</span>
+                            <span class="ticker">BAC · Financial Services</span>
+                        </td>
+                        <td>
+                            <div class="insider">Scrivener Thomas M</div>
+                            <div class="title">Chief Operations Exec</div>
+                        </td>
+                        <td class="type-Sell">Sell</td>
+                        <td class="money">$49.82</td>
+                        <td class="money">-50,000</td>
+                        <td class="money" style="font-weight: 600;">-$2,491,000</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Alphabet Inc.</span>
+                            <span class="ticker">GOOGL · Communication Services</span>
+                        </td>
+                        <td>
+                            <div class="insider">Pichai Sundar</div>
+                            <div class="title">CEO</div>
+                        </td>
+                        <td class="type-Sell">Sell</td>
+                        <td class="money">$303.38</td>
+                        <td class="money">-32,500</td>
+                        <td class="money" style="font-weight: 600;">-$9,859,694</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Evercommerce Inc.</span>
+                            <span class="ticker">EVCM · Technology</span>
+                        </td>
+                        <td>
+                            <div class="insider">Feierstein Matthew David</div>
+                            <div class="title">Pres</div>
+                        </td>
+                        <td class="type-Sell">Sell</td>
+                        <td class="money">$12.08</td>
+                        <td class="money">-15,000</td>
+                        <td class="money" style="font-weight: 600;">-$181,169</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Foster L B Co</span>
+                            <span class="ticker">FSTR · Industrials</span>
+                        </td>
+                        <td>
+                            <div class="insider">English Aron R.</div>
+                            <div class="title">10%</div>
+                        </td>
+                        <td class="type-Sell">Sell</td>
+                        <td class="money">$31.99</td>
+                        <td class="money">-5,124</td>
+                        <td class="money" style="font-weight: 600;">-$163,907</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Bank of America Corp /De/</span>
+                            <span class="ticker">BAC · Financial Services</span>
+                        </td>
+                        <td>
+                            <div class="insider">Demare James P</div>
+                            <div class="title">Co-Pres</div>
+                        </td>
+                        <td class="type-Sell">Sell</td>
+                        <td class="money">$50.00</td>
+                        <td class="money">-83,832</td>
+                        <td class="money" style="font-weight: 600;">-$4,191,600</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Bank of America Corp /De/</span>
+                            <span class="ticker">BAC · Financial Services</span>
+                        </td>
+                        <td>
+                            <div class="insider">Bronstein Sheri B.</div>
+                            <div class="title">Chief People Officer</div>
+                        </td>
+                        <td class="type-Sell">Sell</td>
+                        <td class="money">$49.91</td>
+                        <td class="money">-60,000</td>
+                        <td class="money" style="font-weight: 600;">-$2,994,600</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Cra International, Inc.</span>
+                            <span class="ticker">CRAI · Industrials</span>
+                        </td>
+                        <td>
+                            <div class="insider">Avery Thomas Aiken</div>
+                            <div class="title">Dir</div>
+                        </td>
+                        <td class="type-Sell">Sell</td>
+                        <td class="money">$187.35</td>
+                        <td class="money">-1,026</td>
+                        <td class="money" style="font-weight: 600;">-$192,222</td>
+                    </tr>
+
+                    <tr>
+                        <td style="color: var(--text-muted); font-size: 0.8rem;">2026-03-06</td>
+                        <td>
+                            <span class="company-name">Roku, Inc</span>
+                            <span class="ticker">ROKU · Communication Services</span>
+                        </td>
+                        <td>
+                            <div class="insider">Collier Charles</div>
+                            <div class="title">Pres, Roku Media</div>
+                        </td>
+                        <td class="type-Sell">Sell</td>
+                        <td class="money">$100.00</td>
+                        <td class="money">-1,715</td>
+                        <td class="money" style="font-weight: 600;">-$171,500</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="faq">
+            <h2>Frequently Asked Questions</h2>
+
+            <h3>What does insider buying mean?</h3>
+            <p>Insider buying occurs when directors, officers, or key employees purchase shares in their own company. This is generally considered a strong bullish signal because, as the legendary investor Peter Lynch said, "Insiders might sell their shares for any number of reasons, but they buy them for only one: they think the price will go up."</p>
+
+            <h3>Is insider buying a good sign?</h3>
+            <p>Yes, significant open-market purchases by C-level executives (CEO, CFO) are historically one of the most reliable indicators of future stock outperformance. It demonstrates that the people with the most intimate knowledge of the company's prospects are willing to risk their own capital.</p>
+
+            <h3>Where can I track insider trading?</h3>
+            <p>All corporate insiders are required to file Form 4 with the Securities and Exchange Commission (SEC) within two business days of a transaction. You can track these via the SEC's EDGAR database, or through aggregators like OpenInsider and Finviz which we use as sources for this study.</p>
+
+            <h3>Which stock has the most insider buying?</h3>
+            <p>Based on our most recent 120 transaction sample for 2026, <strong>E.W. Scripps Co</strong> has shown the highest concentration of insider purchases.</p>
+
+            <h3>Is insider selling always bad?</h3>
+            <p>No. Insiders sell stock for many reasons: buying a house, tax obligations, diversification, or scheduled 10b5-1 trading plans. While heavy, coordinated selling across multiple executives can be a warning sign, isolated insider selling is generally not considered a strong bearish signal.</p>
+        </div>
+
+        <div class="methodology">
+            <h2>Methodology</h2>
+            <p>Data is aggregated from SEC Form 4 filings via OpenInsider. We focus on open-market purchases and sales, filtering out automatic option grants to provide a clearer picture of active executive sentiment. Sector categorization is provided by standard GICS definitions. All data corresponds to 2026 reporting periods.</p>
+        </div>
+
+        <div class="disclaimer">
+            <h2>Disclaimer</h2>
+            <p>This study provides data and analysis for informational purposes only. Insider trading patterns do not guarantee future performance and should not be used in isolation for investment decisions. Nothing here constitutes investment advice. Always conduct your own research.</p>
+        </div>
+
+        <footer>
+            © 2026 Westmount Research. All rights reserved.
+        </footer>
+    </div>
+</body>
+</html>
