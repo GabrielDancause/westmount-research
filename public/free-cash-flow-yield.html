@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Cash Flow Yield: Top 50 S&P 500 Companies 2026</title>
+    <meta name="description" content="Rankings of the top 50 S&P 500 companies by Free Cash Flow (FCF) Yield in 2026. Discover value stocks generating the most cash relative to their price.">
+    <style>
+        :root {
+            --bg: #060a12;
+            --card: #0a1020;
+            --border: #152040;
+            --accent: #4a8fe7;
+            --text-main: #c8d0de;
+            --text-muted: #5a6a80;
+            --positive: #22c55e;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); color: var(--text-main); line-height: 1.6; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+
+        /* Hero Section */
+        header { text-align: center; margin-bottom: 60px; padding: 60px 0; border-bottom: 1px solid var(--border); }
+        .tag { display: inline-block; background: rgba(74, 143, 231, 0.1); color: var(--accent); padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 700; letter-spacing: 1px; margin-bottom: 16px; }
+        h1 { font-size: 3rem; font-weight: 900; color: #fff; margin-bottom: 16px; letter-spacing: -1px; }
+        .subtitle { font-size: 1.2rem; color: var(--text-muted); max-width: 600px; margin: 0 auto; }
+
+        /* Hero Stats */
+        .hero-stats { display: flex; justify-content: center; gap: 40px; margin-top: 40px; }
+        .stat-box { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 24px; min-width: 200px; }
+        .stat-value { font-size: 2.5rem; font-weight: 900; color: var(--accent); display: block; }
+        .stat-label { font-size: 0.9rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
+
+        /* Chart */
+        .chart-section { margin-bottom: 60px; background: var(--card); padding: 40px; border-radius: 16px; border: 1px solid var(--border); }
+        h2 { font-size: 2rem; color: #fff; margin-bottom: 24px; }
+        .bar-container { margin-bottom: 16px; }
+        .bar-label { display: flex; justify-content: space-between; margin-bottom: 6px; font-size: 0.9rem; }
+        .bar-wrapper { background: var(--border); height: 24px; border-radius: 12px; overflow: hidden; }
+        .bar-fill { background: var(--accent); height: 100%; border-radius: 12px; transition: width 1s ease; }
+
+        /* Table */
+        .table-container { overflow-x: auto; margin-bottom: 60px; background: var(--card); border-radius: 16px; border: 1px solid var(--border); }
+        table { width: 100%; border-collapse: collapse; text-align: left; }
+        th { background: rgba(21, 32, 64, 0.5); padding: 16px 20px; font-size: 0.85rem; text-transform: uppercase; color: var(--text-muted); font-weight: 700; letter-spacing: 0.5px; border-bottom: 1px solid var(--border); cursor: pointer; white-space: nowrap; }
+        th:hover { color: #fff; }
+        td { padding: 16px 20px; border-bottom: 1px solid var(--border); font-family: 'JetBrains Mono', monospace; font-size: 0.95rem; }
+        tr:last-child td { border-bottom: none; }
+        tr:hover td { background: rgba(74, 143, 231, 0.05); }
+        .ticker { font-weight: 700; color: #fff; }
+        .company { font-family: 'Inter', sans-serif; }
+        .yield-col { color: var(--accent); font-weight: 700; }
+
+        /* FAQ */
+        .faq, .methodology { margin-bottom: 60px; max-width: 800px; }
+        .faq-item { margin-bottom: 24px; padding-bottom: 24px; border-bottom: 1px solid var(--border); }
+        .faq-q { font-size: 1.2rem; font-weight: 700; color: #fff; margin-bottom: 12px; }
+        .faq-a { color: var(--text-muted); line-height: 1.7; }
+
+        .methodology p { margin-bottom: 16px; color: var(--text-muted); }
+
+        footer { text-align: center; padding: 40px 0; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 0.9rem; }
+        footer a { color: var(--accent); text-decoration: none; }
+    </style>
+    <!-- JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Free Cash Flow Yield: Top 50 S&P 500 Companies 2026",
+      "description": "Rankings of the top 50 S&P 500 companies by Free Cash Flow (FCF) Yield in 2026. Discover value stocks generating the most cash relative to their price.",
+      "author": {
+        "@type": "Organization",
+        "name": "Westmount Fundamentals",
+        "url": "https://westmountfundamentals.com"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Westmount Fundamentals",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://westmountfundamentals.com/favicon.svg"
+        }
+      },
+      "datePublished": "2026-03-01",
+      "dateModified": "2026-03-01",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://westmountfundamentals.com/free-cash-flow-yield"
+      }
+    }
+    </script>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <span class="tag">ORIGINAL RESEARCH</span>
+            <h1>Top 50 S&P 500 Companies by FCF Yield</h1>
+            <p class="subtitle">Ranking the market's cash cows. Free Cash Flow Yield reveals how much actual cash a company generates relative to its valuation.</p>
+
+            <div class="hero-stats">
+                <div class="stat-box">
+                    <span class="stat-value">128.15%</span>
+                    <span class="stat-label">Highest FCF Yield</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-value">50</span>
+                    <span class="stat-label">Companies Tracked</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Sector Chart -->
+        <section class="chart-section">
+            <h2>Top Sectors by FCF Yield Representation</h2>
+            <div class="chart-container">
+
+                <div class="bar-container">
+                    <div class="bar-label">
+                        <span>Financial Services</span>
+                        <span>14 companies</span>
+                    </div>
+                    <div class="bar-wrapper">
+                        <div class="bar-fill" style="width: 100%"></div>
+                    </div>
+                </div>
+
+                <div class="bar-container">
+                    <div class="bar-label">
+                        <span>Healthcare</span>
+                        <span>8 companies</span>
+                    </div>
+                    <div class="bar-wrapper">
+                        <div class="bar-fill" style="width: 57.14285714285714%"></div>
+                    </div>
+                </div>
+
+                <div class="bar-container">
+                    <div class="bar-label">
+                        <span>Communication Services</span>
+                        <span>7 companies</span>
+                    </div>
+                    <div class="bar-wrapper">
+                        <div class="bar-fill" style="width: 50%"></div>
+                    </div>
+                </div>
+
+                <div class="bar-container">
+                    <div class="bar-label">
+                        <span>Technology</span>
+                        <span>7 companies</span>
+                    </div>
+                    <div class="bar-wrapper">
+                        <div class="bar-fill" style="width: 50%"></div>
+                    </div>
+                </div>
+
+                <div class="bar-container">
+                    <div class="bar-label">
+                        <span>Real Estate</span>
+                        <span>4 companies</span>
+                    </div>
+                    <div class="bar-wrapper">
+                        <div class="bar-fill" style="width: 28.57142857142857%"></div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Table -->
+        <section class="table-container">
+            <table id="fcfTable">
+                <thead>
+                    <tr>
+                        <th onclick="sortTable(0, 'str')">Ticker ↕</th>
+                        <th onclick="sortTable(1, 'str')">Company ↕</th>
+                        <th onclick="sortTable(2, 'str')">Sector ↕</th>
+                        <th onclick="sortTable(3, 'num')">Market Cap ↕</th>
+                        <th onclick="sortTable(4, 'num')">Free Cash Flow ↕</th>
+                        <th onclick="sortTable(5, 'num')">FCF Yield ↕</th>
+                        <th onclick="sortTable(6, 'num')">Revenue ↕</th>
+                        <th onclick="sortTable(7, 'num')">FCF Margin ↕</th>
+                        <th onclick="sortTable(8, 'num')">Div Yield ↕</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td class="ticker">PSKY</td>
+                        <td class="company">Paramount Skydance Corporation</td>
+                        <td>Communication Services</td>
+                        <td data-val="12360987648">$12.36B</td>
+                        <td data-val="15840124928">$15.84B</td>
+                        <td class="yield-col" data-val="1.281461108050126">128.15%</td>
+                        <td data-val="28891000832">$28.89B</td>
+                        <td data-val="0.5482719349222163">54.83%</td>
+                        <td data-val="0.0167">1.67%</td>
+                    </tr>
+
+                    <tr>
+                        <td class="ticker">DD</td>
+                        <td class="company">DuPont de Nemours, Inc.</td>
+                        <td>Basic Materials</td>
+                        <td data-val="18573176832">$18.57B</td>
+                        <td data-val="13435374592">$13.44B</td>
+                        <td class="yield-col" data-val="0.723375150817064">72.34%</td>
+                        <td data-val="6848999936">$6.85B</td>
+                        <td data-val="1.9616549448891687">196.17%</td>
+                        <td data-val="0.0177">1.77%</td>
+                    </tr>
+
+                    <tr>
+                        <td class="ticker">LEN</td>
+                        <td class="company">Lennar Corporation</td>
+                        <td>Consumer Cyclical</td>
+                        <td data-val="23995998208">$24.00B</td>
+                        <td data-val="12156003328">$12.16B</td>
+                        <td class="yield-col" data-val="0.5065846072595273">50.66%</td>
+                        <td data-val="34186934272">$34.19B</td>
+                        <td data-val="0.35557453708143955">35.56%</td>
+                        <td data-val="0.0198">1.98%</td>
+                    </tr>
+
+                    <tr>
+                        <td class="ticker">PRU</td>
+                        <td class="company">Prudential Financial, Inc.</td>
+                        <td>Financial Services</td>
+                        <td data-val="32892958720">$32.89B</td>
+                        <td data-val="12618874880">$12.62B</td>
+                        <td class="yield-col" data-val="0.3836345336829584">38.36%</td>
+                        <td data-val="61233000448">$61.23B</td>
+                        <td data-val="0.2060796431283184">20.61%</td>
+                        <td data-val="0.0561">5.61%</td>
+                    </tr>
+
+                    <tr>
+                        <td class="ticker">AIG</td>
+                        <td class="company">American International Group, I</td>
+                        <td>Financial Services</td>
+                        <td data-val="41547358208">$41.55B</td>
+                        <td data-val="11258125312">$11.26B</td>
+                        <td class="yield-col" data-val="0.2709709063964561">27.10%</td>
+                        <td data-val="26610999296">$26.61B</td>
+                        <td data-val="0.42306285407674454">42.31%</td>
+                        <td data-val="0.0229">2.29%</td>
+                    </tr>
+
+                    <tr>
+                        <td class="ticker">BAX</td>
+                        <td class="company">Baxter International Inc.</td>
+                        <td>Healthcare</td>
+                        <td data-val="8982995968">$8.98B</td>
+                        <td data-val="2432875008">$2.43B</td>
+                        <td class="yield-col" data-val="0.2708311365903532">27.08%</td>
+                        <td data-val="11244000256">$11.24B</td>
+                        <td data-val="0.21637094918258956">21.64%</td>
+                        <td data-val="0.020399999">2.04%</td>
+                    </tr>
+
+                    <tr>
+                        <td class="ticker">CINF</td>
+                        <td class="company">Cincinnati Financial Corporatio</td>
+                        <td>Financial Services</td>
+                        <td data-val="25248475136">$25.25B</td>
+                        <td data-val="6141499904">$6.14B</td>
+                        <td class="yield-col" data-val="0.24324240853829915">24.32%</td>
+                        <td data-val="12631000064">$12.63B</td>
+                        <td data-val="0.4862243585528969">48.62%</td>
+                        <td data-val="0.0215">2.15%</td>
+                    </tr>
+
+                    <tr>
+                        <td class="ticker">CNC</td>
+                        <td class="company">Centene Corporation</td>
+                        <td>Healthcare</td>
+                        <td data-val="21266636800">$21.27B</td>
+                        <td data-val="5053000192">$5.05B</td>
+                        <td class="yield-col" data-val="0.23760222359183752">23.76%</td>
+                        <td data-val="176151003136">$176.15B</td>
+                        <td data-val="0.028685616897104787">2.87%</td>
+                        <td data-val="0">N/A</td>
+                    </tr>
+
+                    <tr>
+                        <td class="ticker">WBD</td>
+                        <td class="company">Warner Bros. Discovery, Inc. - </td>
+                        <td>Communication Services</td>
+                        <td data-val="68984610816">$68.98B</td>
+                        <td data-val="16017750016">$16.02B</td>
+                        <td class="yield-col" data-val="0.23219309098841667">23.22%</td>
+                        <td data-val="37296001024">$37.30B</td>
+                        <td data-val="0.4294763399886376">42.95%</td>
+                        <td data-val="0">N/A</td>
+                    </tr>
+
+                    <tr>
+                        <td class="ticker">AIZ</td>
+                        <td class="company">Assurant, Inc.</td>
+                        <td>Financial Services</td>
+                        <td data-val="10933207040">$10.93B</td>
+                        <td data-val="2187599872">$2.19B</td>
+                        <td class="yield-col" data-val="0.20008766540288622">20.01%</td>
+                        <td data-val="12814300160">$12.81B</td>
+                        <td data-val="0.17071551662482673">17.07%</td>
+                        <td data-val="0.0150999995">1.51%</td>
+                    </tr>
+
+                    <tr>
+                        <td class="ticker">TRV</td>
+                        <td class="company">The Travelers Companies, Inc.</td>
+                        <td>Financial Services</td>
+                        <td data-val="67122016256">$67.12B</td>
+                        <td data-val="12100500480">$12.10B</td>
+                        <td class="yield-col" data-val="0.1802761769528689">18.03%</td>
+                        <td data-val="48827998208">$48.83B</td>
+                        <td data-val="0.24781889334176">24.78%</td>
+                        <td data-val="0.014400001">1.44%</td>
+                    </tr>
+
+                    <tr>
+                        <td class="ticker">OMC</td>
+                        <td class="company">Omnicom Group Inc.</td>
+                        <td>Communication Services</td>
+                        <td data-val="26324463616">$26.32B</td>
+                        <td data-val="4504287744">$4.50B</td>
+                        <td class="yield-col" data-val="0.17110653457958003">17.11%</td>
+                        <td data-val="17271900160">$17.27B</td>
+                        <td data-val="0.26078704151101345">26.08%</td>
+                        <td data-val="0.0377">3.77%</td>
+                    </tr>
+
+                    <tr>
+                        <td class="ticker">IFF</td>
+                        <td class="company">International Flavors &amp; Fragran</td>
+                        <td>Basic Materials</td>
+                        <td data-val="18569549824">$18.57B</td>
+                        <td data-val="3094874880">$3.09B</td>
+                        <td class="yield-col" data-val="0.16666396920403878">16.67%</td>
+                        <td data-val="10890000384">$10.89B</td>
+                        <td data-val="0.28419419383557665">28.42%</td>
+                        <td data-val="0.0217">2.17%</td>
+                    </tr>
+
+                    <tr>
+                        <td class="ticker">ALL</td>
+                        <td class="company">Allstate Corporation (The)</td>
+                        <td>Financial Services</td>
+                        <td data-val="53770633216">$53.77B</td>
+                        <td data-val="8924749824">$8.92B</td>
+                        <td class="yield-col" data-val="0.16597814253272267">16.60%</td>
+                        <td data-val="67684999168">$67.68B</td>
+                        <td data-val="0.13185713132459384">13.19%</td>
+                        <td data-val="0.020299999">2.03%</td>
+                    </tr>
+
+                    <tr>
+                        <td class="ticker">APA</td>
+                        <td class="company">APA Corporation</td>
+                        <td>Energy</td>
+                        <td data-val="11878510592">$11.88B</td>
+                        <td data-val="1960875008">$1.96B</td>
+                        <td class="yield-col" data-val="0.1650775147955519">16.51%</td>
+                        <td data-val="8684999680">$8.68B</td>
+                        <td data-val="0.22577721131245915">22.58%</td>
+                        <td data-val="0.0306">3.06%</td>
+                    </tr>
+
+                    <tr>
+                        <td class="ticker">HPQ</td>
+                        <td class="company">HP Inc.</td>
+                        <td>Technology</td>
+                        <td data-val="17271879680">$17.27B</td>
+                        <td data-val="2825374976">$2.83B</td>
+                        <td class="yield-col" data-val="0.1635823678919931">16.36%</td>
+                        <td data-val="56228999168">$56.23B</td>
+                        <td data-val="0.05024764832748303">5.02%</td>
+                        <td data-val="0.0617">6.17%</td>
+                    </tr>
+
+                    <tr>
+                        <td class="ticker">ARE</td>
+                        <td class="company">Alexandria Real Estate Equities</td>
+                        <td>Real Estate</td>
+                        <td data-val="8640756736">$8.64B</td>
+                        <td data-val="1345210624">$1.35B</td>
+                        <td class="yield-col" data-val="0.15568203863389032">15.57%</td>
+                        <td data-val="3016924928">$3.02B</td>
+                        <td data-val="0.44588800056479233">44.59%</td>
+                        <td data-val="0.0804">8.04%</td>
+                    </tr>
+
+                    <tr>
+                        <td class="ticker">HIG</td>
+                        <td class="company">The Hartford Insurance Group, I</td>
+                        <td>Financial Services</td>
+                        <td data-val="38146584576">$38.15B</td>
+                        <td data-val="5811999744">$5.81B</td>
+                        <td class="yield-col" data-val="0.15235963608801378">15.24%</td>
+                        <td data-val="28376000512">$28.38B</td>
+                        <td data-val="0.20482096275485154">20.48%</td>
+                        <td data-val="0.0172">1.72%</td>
+                    </tr>
+
+                    <tr>
+                        <td class="ticker">VTRS</td>
+                        <td class="company">Viatris Inc.</td>
+                        <td>Healthcare</td>
+                        <td data-val="16084466688">$16.08B</td>
+                        <td data-val="2431462400">$2.43B</td>
+                        <td class="yield-col" data-val="0.1511683568479159">15.12%</td>
+                        <td data-val="14299899904">$14.30B</td>
+                        <td data-val="0.1700335258514548">17.00%</td>
+                        <td data-val="0.0339">3.39%</td>
+                    </tr>
+
+                    <tr>
+                        <td class="ticker">CI</td>
+                        <td class="company">The Cigna Group</td>
+                        <td>Healthcare</td>
+                        <td data-val="71306567680">$71.31B</td>
+                        <td data-val="9769875456">$9.77B</td>
+                        <td class="yield-col" data-val="0.13701228054958317">13.70%</td>
+                        <td data-val="274899992576">$274.90B</td>
+                        <td data-val="0.03553974434284126">3.55%</td>
+                        <td data-val="0.023">2.30%</td>
+                    </tr>
+
+                    <tr>
+                        <td class="ticker">SWKS</td>
+                        <td class="company">Skyworks Solutions, Inc.</td>
+                        <td>Technology</td>
+                        <td data-val="8185588224">$8.19B</td>
+                        <td data-val="1099687552">$1.10B</td>
+                        <td class="yield-col" data-val="0.13434435277060913">13.43%</td>
+                        <td data-val="4053799936">$4.05B</td>
+                        <td data-val="0.27127326690055975">27.13%</td>
+                        <td data-val="0.051799998">5.18%</td>
+                    </tr>
+
+                    <tr>
+                        <td class="ticker">WRB</td>
+                        <td class="company">W.R. Berkley Corporation</td>
+                        <td>Financial Services</td>
+                        <td data-val="25727432704">$25.73B</td>
+                        <td data-val="3353142016">$3.35B</td>
+                        <td class="yield-col" data-val="0.13033333152898177">13.03%</td>
+                        <td data-val="14707856384">$14.71B</td>
+                        <td data-val="0.22798305398519725">22.80%</td>
+                        <td data-val="0.0050999997">0.51%</td>
+                    </tr>
+
+                    <tr>
+                        <td class="ticker">GM</td>
+                        <td class="company">General Motors Company</td>
+                        <td>Consumer Cyclical</td>
+                        <td data-val="68425375744">$68.43B</td>
+                        <td data-val="8559625216">$8.56B</td>
+                        <td class="yield-col" data-val="0.12509431074261315">12.51%</td>
+                        <td data-val="185019006976">$185.02B</td>
+                        <td data-val="0.04626349128071109">4.63%</td>
+                        <td data-val="0.0095999995">0.96%</td>
+                    </tr>
+
+                    <tr>
+                        <td class="ticker">NWSA</td>
+                        <td class="company">News Corporation</td>
+                        <td>Communication Services</td>
+                        <td data-val="13994606592">$13.99B</td>
+                        <td data-val="1718375040">$1.72B</td>
+                        <td class="yield-col" data-val="0.12278837770132867">12.28%</td>
+                        <td data-val="8624000000">$8.62B</td>
+                        <td data-val="0.19925499072356215">19.93%</td>
+                        <td data-val="0.0081">0.81%</td>
+                    </tr>
+
+                    <tr>
+                        <td class="ticker">MTCH</td>
+                        <td class="company">Match Group, Inc.</td>
+                        <td>Communication Services</td>
+                        <td data-val="7221387264">$7.22B</td>
+                        <td data-val="873889920">$873.89M</td>
+                        <td class="yield-col" data-val="0.1210141331647603">12.10%</td>
+                        <td data-val="3487196928">$3.49B</td>
+                        <td data-val="0.2505995325309027">25.06%</td>
+                        <td data-val="0.0253">2.53%</td>
+                    </tr>
+
+                    <tr>
+                        <td class="ticker">NWS</td>
+                        <td class="company">News Corporation</td>
+                        <td>Communication Services</td>
+                        <td data-val="15140994048">$15.14B</td>
+                        <td data-val="1718375040">$1.72B</td>
+                        <td class="yield-col" data-val="0.11349156036601066">11.35%</td>
+                        <td data-val="8624000000">$8.62B</td>
+                        <td data-val="0.19925499072356215">19.93%</td>
+                        <td data-val="0.0072000003">0.72%</td>
+                    </tr>
+
+                    <tr>
+                        <td class="ticker">GIS</td>
+                        <td class="company">General Mills, Inc.</td>
+                        <td>Consumer Defensive</td>
+                        <td data-val="23354888192">$23.35B</td>
+                        <td data-val="2478249984">$2.48B</td>
+                        <td class="yield-col" data-val="0.10611268885666948">10.61%</td>
+                        <td data-val="18776700928">$18.78B</td>
+                        <td data-val="0.13198537876823768">13.20%</td>
+                        <td data-val="0.0551">5.51%</td>
+                    </tr>
+
+                    <tr>
+                        <td class="ticker">CAH</td>
+                        <td class="company">Cardinal Health, Inc.</td>
+                        <td>Healthcare</td>
+                        <td data-val="51400077312">$51.40B</td>
+                        <td data-val="5443624960">$5.44B</td>
+                        <td class="yield-col" data-val="0.1059069410918788">10.59%</td>
+                        <td data-val="244673003520">$244.67B</td>
+                        <td data-val="0.0222485721010697">2.22%</td>
+                        <td data-val="0.0094">0.94%</td>
+                    </tr>
+
+                    <tr>
+                        <td class="ticker">BXP</td>
+                        <td class="company">BXP, Inc.</td>
+                        <td>Real Estate</td>
+                        <td data-val="9044070400">$9.04B</td>
+                        <td data-val="946378112">$946.38M</td>
+                        <td class="yield-col" data-val="0.10464072813940059">10.46%</td>
+                        <td data-val="3153085952">$3.15B</td>
+                        <td data-val="0.30014345514422563">30.01%</td>
+                        <td data-val="0.0529">5.29%</td>
+                    </tr>
+
+                    <tr>
+                        <td class="ticker">GDDY</td>
+                        <td class="company">GoDaddy Inc.</td>
+                        <td>Technology</td>
+                        <td data-val="12547222528">$12.55B</td>
+                        <td data-val="1307524992">$1.31B</td>
+                        <td class="yield-col" data-val="0.10420832093175737">10.42%</td>
+                        <td data-val="4951099904">$4.95B</td>
+                        <td data-val="0.2640877819782325">26.41%</td>
+                        <td data-val="0">N/A</td>
+                    </tr>
+
+                    <tr>
+                        <td class="ticker">DVA</td>
+                        <td class="company">DaVita Inc.</td>
+                        <td>Healthcare</td>
+                        <td data-val="10169069568">$10.17B</td>
+                        <td data-val="1053226368">$1.05B</td>
+                        <td class="yield-col" data-val="0.10357155696075576">10.36%</td>
+                        <td data-val="13643069440">$13.64B</td>
+                        <td data-val="0.0771986372005155">7.72%</td>
+                        <td data-val="0">N/A</td>
+                    </tr>
+
+                    <tr>
+                        <td class="ticker">TROW</td>
+                        <td class="company">T. Rowe Price Group, Inc.</td>
+                        <td>Financial Services</td>
+                        <td data-val="19368534016">$19.37B</td>
+                        <td data-val="1994375040">$1.99B</td>
+                        <td class="yield-col" data-val="0.10296984987880252">10.30%</td>
+                        <td data-val="7314800128">$7.31B</td>
+                        <td data-val="0.27264928707563996">27.26%</td>
+                        <td data-val="0.0575">5.75%</td>
+                    </tr>
+
+                    <tr>
+                        <td class="ticker">GL</td>
+                        <td class="company">Globe Life Inc.</td>
+                        <td>Financial Services</td>
+                        <td data-val="11140831232">$11.14B</td>
+                        <td data-val="1136790528">$1.14B</td>
+                        <td class="yield-col" data-val="0.10203821459342972">10.20%</td>
+                        <td data-val="5994317824">$5.99B</td>
+                        <td data-val="0.18964468708157708">18.96%</td>
+                        <td data-val="0.0093">0.93%</td>
+                    </tr>
+
+                    <tr>
+                        <td class="ticker">EXPE</td>
+                        <td class="company">Expedia Group, Inc.</td>
+                        <td>Consumer Cyclical</td>
+                        <td data-val="29109383168">$29.11B</td>
+                        <td data-val="2934000128">$2.93B</td>
+                        <td class="yield-col" data-val="0.10079224664661915">10.08%</td>
+                        <td data-val="14732999680">$14.73B</td>
+                        <td data-val="0.1991447900445485">19.91%</td>
+                        <td data-val="0.0067000003">0.67%</td>
+                    </tr>
+
+                    <tr>
+                        <td class="ticker">PGR</td>
+                        <td class="company">Progressive Corporation (The)</td>
+                        <td>Financial Services</td>
+                        <td data-val="120449327104">$120.45B</td>
+                        <td data-val="11832375296">$11.83B</td>
+                        <td class="yield-col" data-val="0.09823529595797184">9.82%</td>
+                        <td data-val="87637000192">$87.64B</td>
+                        <td data-val="0.13501574985539186">13.50%</td>
+                        <td data-val="0.066">6.60%</td>
+                    </tr>
+
+                    <tr>
+                        <td class="ticker">DOC</td>
+                        <td class="company">Healthpeak Properties, Inc.</td>
+                        <td>Real Estate</td>
+                        <td data-val="11930430464">$11.93B</td>
+                        <td data-val="1162534400">$1.16B</td>
+                        <td class="yield-col" data-val="0.09744278745917344">9.74%</td>
+                        <td data-val="2822512128">$2.82B</td>
+                        <td data-val="0.4118793285128446">41.19%</td>
+                        <td data-val="0.0706">7.06%</td>
+                    </tr>
+
+                    <tr>
+                        <td class="ticker">KHC</td>
+                        <td class="company">The Kraft Heinz Company</td>
+                        <td>Consumer Defensive</td>
+                        <td data-val="29043177472">$29.04B</td>
+                        <td data-val="2775500032">$2.78B</td>
+                        <td class="yield-col" data-val="0.095564613571494">9.56%</td>
+                        <td data-val="24942000128">$24.94B</td>
+                        <td data-val="0.11127816605550456">11.13%</td>
+                        <td data-val="0.0652">6.52%</td>
+                    </tr>
+
+                    <tr>
+                        <td class="ticker">CB</td>
+                        <td class="company">Chubb Limited</td>
+                        <td>Financial Services</td>
+                        <td data-val="127183831040">$127.18B</td>
+                        <td data-val="12136875008">$12.14B</td>
+                        <td class="yield-col" data-val="0.09542781428075466">9.54%</td>
+                        <td data-val="59625000960">$59.63B</td>
+                        <td data-val="0.2035534559763301">20.36%</td>
+                        <td data-val="0.0117999995">1.18%</td>
+                    </tr>
+
+                    <tr>
+                        <td class="ticker">GEN</td>
+                        <td class="company">Gen Digital Inc.</td>
+                        <td>Technology</td>
+                        <td data-val="13894614016">$13.89B</td>
+                        <td data-val="1316375040">$1.32B</td>
+                        <td class="yield-col" data-val="0.09473995020546529">9.47%</td>
+                        <td data-val="4727000064">$4.73B</td>
+                        <td data-val="0.27848001315364485">27.85%</td>
+                        <td data-val="0.0221">2.21%</td>
+                    </tr>
+
+                    <tr>
+                        <td class="ticker">LW</td>
+                        <td class="company">Lamb Weston Holdings, Inc.</td>
+                        <td>Consumer Defensive</td>
+                        <td data-val="6488251904">$6.49B</td>
+                        <td data-val="614587520">$614.59M</td>
+                        <td class="yield-col" data-val="0.0947231286783282">9.47%</td>
+                        <td data-val="6473600000">$6.47B</td>
+                        <td data-val="0.0949375185368265">9.49%</td>
+                        <td data-val="0.033">3.30%</td>
+                    </tr>
+
+                    <tr>
+                        <td class="ticker">CHTR</td>
+                        <td class="company">Charter Communications, Inc.</td>
+                        <td>Communication Services</td>
+                        <td data-val="29287929856">$29.29B</td>
+                        <td data-val="2734625024">$2.73B</td>
+                        <td class="yield-col" data-val="0.09337037603700002">9.34%</td>
+                        <td data-val="54774001664">$54.77B</td>
+                        <td data-val="0.04992560230992438">4.99%</td>
+                        <td data-val="0">N/A</td>
+                    </tr>
+
+                    <tr>
+                        <td class="ticker">AFL</td>
+                        <td class="company">AFLAC Incorporated</td>
+                        <td>Financial Services</td>
+                        <td data-val="56480489472">$56.48B</td>
+                        <td data-val="5175124992">$5.18B</td>
+                        <td class="yield-col" data-val="0.091626773074719">9.16%</td>
+                        <td data-val="17164000256">$17.16B</td>
+                        <td data-val="0.30151042384137333">30.15%</td>
+                        <td data-val="0.0219">2.19%</td>
+                    </tr>
+
+                    <tr>
+                        <td class="ticker">BMY</td>
+                        <td class="company">Bristol-Myers Squibb Company</td>
+                        <td>Healthcare</td>
+                        <td data-val="122463346688">$122.46B</td>
+                        <td data-val="11146874880">$11.15B</td>
+                        <td class="yield-col" data-val="0.0910221317762849">9.10%</td>
+                        <td data-val="48193998848">$48.19B</td>
+                        <td data-val="0.23129176134888388">23.13%</td>
+                        <td data-val="0.0418">4.18%</td>
+                    </tr>
+
+                    <tr>
+                        <td class="ticker">HST</td>
+                        <td class="company">Host Hotels &amp; Resorts, Inc.</td>
+                        <td>Real Estate</td>
+                        <td data-val="13038537728">$13.04B</td>
+                        <td data-val="1182749952">$1.18B</td>
+                        <td class="yield-col" data-val="0.09071185562933702">9.07%</td>
+                        <td data-val="6131999744">$6.13B</td>
+                        <td data-val="0.19288160492134554">19.29%</td>
+                        <td data-val="0.0416">4.16%</td>
+                    </tr>
+
+                    <tr>
+                        <td class="ticker">EPAM</td>
+                        <td class="company">EPAM Systems, Inc.</td>
+                        <td>Technology</td>
+                        <td data-val="8021228032">$8.02B</td>
+                        <td data-val="725305344">$725.31M</td>
+                        <td class="yield-col" data-val="0.09042322959856729">9.04%</td>
+                        <td data-val="5457055744">$5.46B</td>
+                        <td data-val="0.132911477915077">13.29%</td>
+                        <td data-val="0">N/A</td>
+                    </tr>
+
+                    <tr>
+                        <td class="ticker">PFE</td>
+                        <td class="company">Pfizer, Inc.</td>
+                        <td>Healthcare</td>
+                        <td data-val="151283138560">$151.28B</td>
+                        <td data-val="13430124544">$13.43B</td>
+                        <td class="yield-col" data-val="0.08877476149579958">8.88%</td>
+                        <td data-val="62578999296">$62.58B</td>
+                        <td data-val="0.21461072716224217">21.46%</td>
+                        <td data-val="0.0636">6.36%</td>
+                    </tr>
+
+                    <tr>
+                        <td class="ticker">CRM</td>
+                        <td class="company">Salesforce, Inc.</td>
+                        <td>Technology</td>
+                        <td data-val="186074152960">$186.07B</td>
+                        <td data-val="16366999552">$16.37B</td>
+                        <td class="yield-col" data-val="0.08795955425103229">8.80%</td>
+                        <td data-val="41524998144">$41.52B</td>
+                        <td data-val="0.3941481103802262">39.41%</td>
+                        <td data-val="0.0087">0.87%</td>
+                    </tr>
+
+                    <tr>
+                        <td class="ticker">CAG</td>
+                        <td class="company">ConAgra Brands, Inc.</td>
+                        <td>Consumer Defensive</td>
+                        <td data-val="8981386240">$8.98B</td>
+                        <td data-val="787687488">$787.69M</td>
+                        <td class="yield-col" data-val="0.0877022173361069">8.77%</td>
+                        <td data-val="11234499584">$11.23B</td>
+                        <td data-val="0.07011326869616981">7.01%</td>
+                        <td data-val="0.0736">7.36%</td>
+                    </tr>
+
+                    <tr>
+                        <td class="ticker">ACN</td>
+                        <td class="company">Accenture plc</td>
+                        <td>Technology</td>
+                        <td data-val="129658634240">$129.66B</td>
+                        <td data-val="11122880512">$11.12B</td>
+                        <td class="yield-col" data-val="0.08578588365670571">8.58%</td>
+                        <td data-val="70725558272">$70.73B</td>
+                        <td data-val="0.15726818965815798">15.73%</td>
+                        <td data-val="0.030299999">3.03%</td>
+                    </tr>
+
+                    <tr>
+                        <td class="ticker">AMP</td>
+                        <td class="company">Ameriprise Financial, Inc.</td>
+                        <td>Financial Services</td>
+                        <td data-val="42051448832">$42.05B</td>
+                        <td data-val="3568750080">$3.57B</td>
+                        <td class="yield-col" data-val="0.08486628116566293">8.49%</td>
+                        <td data-val="18911000576">$18.91B</td>
+                        <td data-val="0.18871291688971287">18.87%</td>
+                        <td data-val="0.0138">1.38%</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Methodology -->
+        <section class="methodology">
+            <h2>Methodology</h2>
+            <p>This study ranks companies currently in the S&P 500 index by their Free Cash Flow Yield.</p>
+            <p><strong>Free Cash Flow (FCF)</strong> is calculated as Operating Cash Flow minus Capital Expenditures. It represents the cash a company generates after maintaining or expanding its asset base.</p>
+            <p><strong>FCF Yield</strong> is calculated by dividing the trailing 12-month Free Cash Flow by the current Market Capitalization. We prioritize null over estimated or fake data when figures are unavailable.</p>
+        </section>
+
+        <!-- FAQ -->
+        <section class="faq">
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <div class="faq-q">What is Free Cash Flow Yield?</div>
+                <div class="faq-a">Free Cash Flow Yield is a financial solvency ratio that compares the free cash flow per share a company is expected to earn against its market value per share. It's calculated by taking the free cash flow and dividing it by the enterprise value or market cap.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">Why is FCF Yield better than Earnings Yield?</div>
+                <div class="faq-a">Earnings (Net Income) can be heavily influenced by accounting practices, depreciation, and non-cash items. Free Cash Flow represents actual, cold hard cash entering the business, making it much harder to manipulate and a purer measure of profitability.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">What is a "good" FCF Yield?</div>
+                <div class="faq-a">Generally, an FCF Yield above the risk-free rate (like the 10-year Treasury yield) plus an equity risk premium is considered good. Historically, a yield above 4-5% suggests a company might be undervalued, while anything above 8-10% is exceptionally high (though it may signal underlying risks).</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">What does a negative FCF Yield mean?</div>
+                <div class="faq-a">A negative FCF Yield means the company is burning more cash than it generates. This is common in fast-growing tech companies investing heavily in their future, but for mature companies, it can be a major red flag indicating financial distress.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">How does Warren Buffett use FCF?</div>
+                <div class="faq-a">Warren Buffett famously uses what he calls "Owner Earnings," which is closely related to Free Cash Flow. He looks for companies that generate consistent, growing cash flows that don't require massive ongoing capital expenditures to maintain their competitive position.</div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 <a href="/">westmount-research</a> · A GAB Ventures property</p>
+            <p style="font-size: 0.75rem; margin-top: 10px; color: #3a4a5a;">This site provides data and analysis for informational purposes only. Nothing here constitutes investment advice. Do your own research.</p>
+        </div>
+    </footer>
+
+    <!-- Sorting Script -->
+    <script>
+        let sortDirections = Array(9).fill(1);
+
+        function sortTable(columnIndex, type) {
+            const table = document.getElementById("fcfTable");
+            const tbody = table.tBodies[0];
+            const rows = Array.from(tbody.querySelectorAll("tr"));
+
+            const direction = sortDirections[columnIndex];
+            sortDirections[columnIndex] *= -1; // Toggle direction
+
+            rows.sort((a, b) => {
+                const aCell = a.cells[columnIndex];
+                const bCell = b.cells[columnIndex];
+
+                let aVal, bVal;
+
+                if (type === 'num') {
+                    aVal = parseFloat(aCell.getAttribute('data-val')) || 0;
+                    bVal = parseFloat(bCell.getAttribute('data-val')) || 0;
+                    return (aVal - bVal) * direction;
+                } else {
+                    aVal = aCell.textContent.trim().toLowerCase();
+                    bVal = bCell.textContent.trim().toLowerCase();
+                    if (aVal < bVal) return -1 * direction;
+                    if (aVal > bVal) return 1 * direction;
+                    return 0;
+                }
+            });
+
+            tbody.append(...rows);
+        }
+    </script>
+</body>
+</html>
