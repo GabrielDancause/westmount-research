@@ -2,7 +2,14 @@
 import BaseHead from '../layouts/BaseHead.astro';
 
 // Auto-categorize from public/ directory
-const tools = []; // westmount-research is studies only
+const tools = [
+  {
+    emoji: '📈',
+    name: 'Compound Interest Calculator',
+    slug: '/compound-interest-calculator.html',
+    desc: 'Calculate how your investments grow over time with compound interest.'
+  }
+];
 
 const studies = [
   {
@@ -304,6 +311,26 @@ const lists = []; // westmount-research is studies only
       <p>Data-driven market analysis. PEG ratios, dividend fundamentals, sector valuations, and broker comparisons — no fluff, no paywalls.</p>
     </div>
   </div>
+
+  <!-- Tools Section -->
+  {tools.length > 0 && (
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-tag">🛠️ TOOLS</span>
+        <h2 class="section-title">Interactive Tools</h2>
+        <p class="section-sub">Free calculators and interactive utilities.</p>
+      </div>
+      <div class="studies-grid">
+        {tools.map(tool => (
+          <a class="study-card" href={tool.slug}>
+            {tool.emoji && <span class="study-emoji">{tool.emoji}</span>}
+            <h3 class="study-name">{tool.name}</h3>
+            <p class="study-desc">{tool.desc}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  )}
 
   <!-- Studies Section -->
   {studies.length > 0 && (
