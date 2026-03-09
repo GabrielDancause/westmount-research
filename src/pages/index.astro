@@ -6,6 +6,15 @@ const tools = []; // westmount-research is studies only
 
 const studies = [
   {
+    title: "Revenue Per Employee: The Most Efficient Companies in the S&P 500 2026",
+    subtitle: "130 items · highest revenue per employee",
+    slug: "/revenue-per-employee",
+    stat: "$7.29M",
+    statLabel: "highest revenue per employee",
+    desc: "130 S&P 500 companies ranked by operational efficiency. Devon Energy Corporation leads with $7.29M per employee.",
+    tag: "ORIGINAL RESEARCH",
+  },
+  {
     emoji: "🏢",
     name: "S&P 500 Market Cap Concentration 2026",
     slug: "/market-concentration",
@@ -279,12 +288,14 @@ const lists = []; // westmount-research is studies only
       <div class="studies-grid">
         {studies.map(study => (
           <a class="study-card" href={study.slug}>
-            <span class="study-emoji">{study.emoji}</span>
+            {study.emoji && <span class="study-emoji">{study.emoji}</span>}
+            {study.tag && <span class="study-tag" style="display:inline-block; font-size:0.7rem; font-weight:800; color:#4a8fe7; background:rgba(74,143,231,0.1); padding:4px 8px; border-radius:4px; margin-bottom:12px;">{study.tag}</span>}
             <div class="study-stat">
               <span class="stat-number">{study.stat}</span>
               <span class="stat-label">{study.statLabel}</span>
             </div>
-            <h3 class="study-name">{study.name}</h3>
+            <h3 class="study-name">{study.title || study.name}</h3>
+            {study.subtitle && <p style="font-size:0.85rem; color:#4a8fe7; margin-bottom:8px;">{study.subtitle}</p>}
             <p class="study-desc">{study.desc}</p>
           </a>
         ))}
