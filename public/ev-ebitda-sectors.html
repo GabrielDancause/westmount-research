@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EV/EBITDA by Sector: Enterprise Value Multiples 2026</title>
+    <meta name="description" content="Compare enterprise value to EBITDA multiples across all GICS sectors. See sector medians, ranges, and which sectors are historically cheap or expensive.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: #060a12;
+            color: #c8d0de;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 24px;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #fff;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #fff;
+            margin: 40px 0 20px;
+            letter-spacing: -0.5px;
+        }
+        p {
+            color: #5a6a80;
+            font-size: 1.05rem;
+            margin-bottom: 20px;
+            max-width: 800px;
+        }
+        .tag {
+            display: inline-block;
+            background: rgba(74,143,231,0.1);
+            color: #4a8fe7;
+            font-size: 0.7rem;
+            font-weight: 800;
+            padding: 6px 16px;
+            border-radius: 20px;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        /* Chart */
+        .chart-container {
+            background: linear-gradient(135deg, #0a1020 0%, #0d1428 100%);
+            border: 1px solid #1a2332;
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 40px;
+        }
+        .chart-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        .chart-label {
+            width: 200px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            color: #e0e8f0;
+        }
+        .chart-bar-bg {
+            flex-grow: 1;
+            height: 24px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+        }
+        .chart-bar-fill {
+            height: 100%;
+            background: #4a8fe7;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 10px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        /* Table */
+        .table-container {
+            overflow-x: auto;
+            margin-bottom: 40px;
+            background: linear-gradient(135deg, #0a1020 0%, #0d1428 100%);
+            border: 1px solid #1a2332;
+            border-radius: 16px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+        th, td {
+            padding: 16px 20px;
+            border-bottom: 1px solid #152040;
+        }
+        th {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #5a6a80;
+            font-weight: 700;
+            background: rgba(0,0,0,0.2);
+        }
+        td {
+            font-size: 0.95rem;
+            color: #c8d0de;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        .numeric {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .highlight {
+            color: #4a8fe7;
+            font-weight: 600;
+        }
+
+        /* FAQ */
+        .faq-item {
+            background: #0a1020;
+            border: 1px solid #1a2332;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 16px;
+        }
+        .faq-q {
+            font-weight: 700;
+            color: #e0e8f0;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+        .faq-a {
+            color: #6a7a90;
+        }
+
+        /* Methodology */
+        .methodology {
+            background: rgba(74,143,231,0.05);
+            border-left: 4px solid #4a8fe7;
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 40px;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 50px 24px;
+            font-size: 0.85rem;
+            color: #3a4a5a;
+            border-top: 1px solid #151f2e;
+            background: #040810;
+            margin-top: 60px;
+        }
+        .footer a { color: #4a8fe7; text-decoration: none; }
+        .disclaimer {
+            max-width: 600px;
+            margin: 16px auto 0;
+            color: #2a3a4a;
+            font-size: 0.75rem;
+        }
+    </style>
+    <script type="application/ld+json">
+        {"@context":"https://schema.org","@type":"Article","headline":"EV/EBITDA by Sector: Enterprise Value Multiples 2026","description":"Compare enterprise value to EBITDA multiples across all GICS sectors. EV/EBITDA is a capital-structure-neutral valuation metric preferred by M&A analysts.","author":{"@type":"Organization","name":"Westmount Fundamentals"},"publisher":{"@type":"Organization","name":"Westmount Fundamentals","logo":{"@type":"ImageObject","url":"https://westmountfundamentals.com/logo.png"}},"datePublished":"2026-03-09","dateModified":"2026-03-09"}
+    </script>
+</head>
+<body>
+    <div class="container">
+        <span class="tag">VALUATION MULTIPLES</span>
+        <h1>EV/EBITDA by Sector: Enterprise Value Multiples 2026</h1>
+        <p>Compare enterprise value to EBITDA multiples across all GICS sectors. EV/EBITDA is a capital-structure-neutral valuation metric preferred by M&A analysts, as it accounts for debt while normalizing for differing taxation and depreciation schedules.</p>
+
+        <h2>Sector Medians (Bar Chart)</h2>
+        <div class="chart-container">
+
+                <div class="chart-row">
+                    <div class="chart-label">Energy</div>
+                    <div class="chart-bar-bg">
+                        <div class="chart-bar-fill" style="width: 53.00684839755655%">10.21x</div>
+                    </div>
+                </div>
+
+                <div class="chart-row">
+                    <div class="chart-label">Financial Services</div>
+                    <div class="chart-bar-bg">
+                        <div class="chart-bar-fill" style="width: 62.42464012962774%">12.03x</div>
+                    </div>
+                </div>
+
+                <div class="chart-row">
+                    <div class="chart-label">Communication Services</div>
+                    <div class="chart-bar-bg">
+                        <div class="chart-bar-fill" style="width: 69.45759462248883%">13.38x</div>
+                    </div>
+                </div>
+
+                <div class="chart-row">
+                    <div class="chart-label">Utilities</div>
+                    <div class="chart-bar-bg">
+                        <div class="chart-bar-fill" style="width: 71.7483525784481%">13.83x</div>
+                    </div>
+                </div>
+
+                <div class="chart-row">
+                    <div class="chart-label">Consumer Defensive</div>
+                    <div class="chart-bar-bg">
+                        <div class="chart-bar-fill" style="width: 71.89714969875014%">13.85x</div>
+                    </div>
+                </div>
+
+                <div class="chart-row">
+                    <div class="chart-label">Basic Materials</div>
+                    <div class="chart-bar-bg">
+                        <div class="chart-bar-fill" style="width: 75.03871462682983%">14.46x</div>
+                    </div>
+                </div>
+
+                <div class="chart-row">
+                    <div class="chart-label">Healthcare</div>
+                    <div class="chart-bar-bg">
+                        <div class="chart-bar-fill" style="width: 76.66944886130902%">14.77x</div>
+                    </div>
+                </div>
+
+                <div class="chart-row">
+                    <div class="chart-label">Consumer Cyclical</div>
+                    <div class="chart-bar-bg">
+                        <div class="chart-bar-fill" style="width: 80.04666997240084%">15.43x</div>
+                    </div>
+                </div>
+
+                <div class="chart-row">
+                    <div class="chart-label">Industrials</div>
+                    <div class="chart-bar-bg">
+                        <div class="chart-bar-fill" style="width: 90.5248662247811%">17.44x</div>
+                    </div>
+                </div>
+
+                <div class="chart-row">
+                    <div class="chart-label">Technology</div>
+                    <div class="chart-bar-bg">
+                        <div class="chart-bar-fill" style="width: 98.03332959532682%">18.89x</div>
+                    </div>
+                </div>
+
+                <div class="chart-row">
+                    <div class="chart-label">Real Estate</div>
+                    <div class="chart-bar-bg">
+                        <div class="chart-bar-fill" style="width: 100%">19.27x</div>
+                    </div>
+                </div>
+
+        </div>
+
+        <h2>Detailed Data Table</h2>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Sector</th>
+                        <th>Median EV/EBITDA</th>
+                        <th>Mean EV/EBITDA</th>
+                        <th>Min</th>
+                        <th>Max</th>
+                        <th># Companies</th>
+                        <th>Cheapest Company</th>
+                        <th>Most Expensive</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td>Energy</td>
+                        <td class="numeric highlight">10.21x</td>
+                        <td class="numeric">11.71x</td>
+                        <td class="numeric">3.25x</td>
+                        <td class="numeric">55.02x</td>
+                        <td class="numeric">22</td>
+                        <td>APA Corporation (APA)</td>
+                        <td>Texas Pacific Land Corporation (TPL)</td>
+                    </tr>
+
+                    <tr>
+                        <td>Financial Services</td>
+                        <td class="numeric highlight">12.03x</td>
+                        <td class="numeric">14.06x</td>
+                        <td class="numeric">4.74x</td>
+                        <td class="numeric">34.93x</td>
+                        <td class="numeric">38</td>
+                        <td>Allstate Corporation (The) (ALL)</td>
+                        <td>Ares Management Corporation (ARES)</td>
+                    </tr>
+
+                    <tr>
+                        <td>Communication Services</td>
+                        <td class="numeric highlight">13.38x</td>
+                        <td class="numeric">17.35x</td>
+                        <td class="numeric">5.72x</td>
+                        <td class="numeric">48.76x</td>
+                        <td class="numeric">24</td>
+                        <td>Comcast Corporation (CMCSA)</td>
+                        <td>Take-Two Interactive Software,  (TTWO)</td>
+                    </tr>
+
+                    <tr>
+                        <td>Utilities</td>
+                        <td class="numeric highlight">13.83x</td>
+                        <td class="numeric">14.25x</td>
+                        <td class="numeric">8.63x</td>
+                        <td class="numeric">21.61x</td>
+                        <td class="numeric">31</td>
+                        <td>Edison International (EIX)</td>
+                        <td>Constellation Energy Corporatio (CEG)</td>
+                    </tr>
+
+                    <tr>
+                        <td>Consumer Defensive</td>
+                        <td class="numeric highlight">13.85x</td>
+                        <td class="numeric">14.84x</td>
+                        <td class="numeric">6.18x</td>
+                        <td class="numeric">32.15x</td>
+                        <td class="numeric">35</td>
+                        <td>Molson Coors Beverage Company (TAP)</td>
+                        <td>Costco Wholesale Corporation (COST)</td>
+                    </tr>
+
+                    <tr>
+                        <td>Basic Materials</td>
+                        <td class="numeric highlight">14.46x</td>
+                        <td class="numeric">18.92x</td>
+                        <td class="numeric">5.98x</td>
+                        <td class="numeric">94.36x</td>
+                        <td class="numeric">20</td>
+                        <td>Mosaic Company (The) (MOS)</td>
+                        <td>Air Products and Chemicals, Inc (APD)</td>
+                    </tr>
+
+                    <tr>
+                        <td>Healthcare</td>
+                        <td class="numeric highlight">14.77x</td>
+                        <td class="numeric">15.77x</td>
+                        <td class="numeric">3.58x</td>
+                        <td class="numeric">47.34x</td>
+                        <td class="numeric">59</td>
+                        <td>Molina Healthcare Inc (MOH)</td>
+                        <td>Intuitive Surgical, Inc. (ISRG)</td>
+                    </tr>
+
+                    <tr>
+                        <td>Consumer Cyclical</td>
+                        <td class="numeric highlight">15.43x</td>
+                        <td class="numeric">18.97x</td>
+                        <td class="numeric">6.30x</td>
+                        <td class="numeric">139.02x</td>
+                        <td class="numeric">53</td>
+                        <td>Best Buy Co., Inc. (BBY)</td>
+                        <td>Tesla, Inc. (TSLA)</td>
+                    </tr>
+
+                    <tr>
+                        <td>Industrials</td>
+                        <td class="numeric highlight">17.44x</td>
+                        <td class="numeric">31.28x</td>
+                        <td class="numeric">6.26x</td>
+                        <td class="numeric">863.89x</td>
+                        <td class="numeric">71</td>
+                        <td>United Airlines Holdings, Inc. (UAL)</td>
+                        <td>Axon Enterprise, Inc. (AXON)</td>
+                    </tr>
+
+                    <tr>
+                        <td>Technology</td>
+                        <td class="numeric highlight">18.89x</td>
+                        <td class="numeric">95.50x</td>
+                        <td class="numeric">4.45x</td>
+                        <td class="numeric">5464.29x</td>
+                        <td class="numeric">79</td>
+                        <td>Broadcom Inc. (AVGO)</td>
+                        <td>Datadog, Inc. (DDOG)</td>
+                    </tr>
+
+                    <tr>
+                        <td>Real Estate</td>
+                        <td class="numeric highlight">19.27x</td>
+                        <td class="numeric">23.45x</td>
+                        <td class="numeric">11.11x</td>
+                        <td class="numeric">95.01x</td>
+                        <td class="numeric">31</td>
+                        <td>Host Hotels &amp; Resorts, Inc. (HST)</td>
+                        <td>CoStar Group, Inc. (CSGP)</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <h2>Methodology & Sources</h2>
+        <div class="methodology">
+            <p>Data was aggregated and computed in 2026. This study analyzes the Enterprise Value (EV) and trailing twelve-month Earnings Before Interest, Taxes, Depreciation, and Amortization (EBITDA) of companies in the S&P 500, categorized by their Global Industry Classification Standard (GICS) sector.</p>
+            <p><strong>Sources:</strong> Primary data was validated against finviz.com and stockanalysis.com, matching against market closing values as of early 2026. Only companies with positive EBITDA were included in the multiple calculations to prevent skewed medians from negative denominators. We rely on median values as the most robust measure of central tendency for valuation multiples.</p>
+        </div>
+
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <div class="faq-q">What is EV/EBITDA?</div>
+            <div class="faq-a">The Enterprise Value to EBITDA ratio compares a company's total value (including debt, excluding cash) to its core operational earnings before non-cash expenses. It's heavily used in M&A because it values the entire enterprise regardless of its capital structure.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">Why use EV/EBITDA instead of P/E?</div>
+            <div class="faq-a">P/E (Price-to-Earnings) only looks at the equity value and can be distorted by differing debt levels, tax rates, and depreciation methods. EV/EBITDA normalizes these factors, allowing for fairer comparisons between companies with different leverage.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">What is considered a "good" EV/EBITDA multiple?</div>
+            <div class="faq-a">A lower multiple generally indicates a company might be undervalued, while a higher multiple suggests overvaluation or high growth expectations. However, multiples vary significantly by sector. A multiple of 10x might be high for a utility company but cheap for a software firm.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">Why does the Technology sector typically have higher multiples?</div>
+            <div class="faq-a">Technology companies often benefit from high margins, recurring revenue models, and significant future growth expectations. Investors are willing to pay a premium (higher multiple) today for larger expected cash flows in the future.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">Can EV/EBITDA be negative?</div>
+            <div class="faq-a">Yes, if a company has negative EBITDA (it's losing money at an operational level), the multiple will be negative. In these cases, the multiple is generally considered meaningless and analysts will switch to other metrics like EV/Revenue.</div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        © 2026 <a href="/">westmount-research</a> · A <a href="https://gab.ae">GAB Ventures</a> property
+        <div class="disclaimer">This site provides data and analysis for informational purposes only. Nothing here constitutes investment advice. Do your own research.</div>
+    </div>
+</body>
+</html>
