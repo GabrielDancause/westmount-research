@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding Bond Ratings & Fixed Income (2026) | Westmount Fundamentals</title>
+    <meta name="description" content="A complete educational guide on how bonds work, different types of bonds, rating agencies compared, the yield curve, and how to build a bond ladder.">
+    <link rel="canonical" href="https://westmountfundamentals.com/guide-bond-ratings">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: #060a12;
+            color: #c8d0de;
+            line-height: 1.6;
+        }
+        header {
+            background: linear-gradient(180deg, #0a1628 0%, #060a12 100%);
+            padding: 60px 24px 40px;
+            text-align: center;
+            border-bottom: 1px solid #152040;
+        }
+        .tag {
+            color: #4a8fe7;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+            display: inline-block;
+            background: rgba(74, 143, 231, 0.1);
+            padding: 6px 12px;
+            border-radius: 4px;
+        }
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        .subtitle {
+            color: #5a6a80;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 24px;
+        }
+        .content-section {
+            margin-bottom: 50px;
+        }
+        h2 {
+            font-size: 2rem;
+            color: #fff;
+            margin: 40px 0 20px;
+            border-bottom: 1px solid #152040;
+            padding-bottom: 10px;
+        }
+        h3 {
+            font-size: 1.4rem;
+            color: #e0e8f0;
+            margin: 30px 0 15px;
+        }
+        p {
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+            color: #a0aec0;
+        }
+        ul {
+            margin-bottom: 20px;
+            padding-left: 20px;
+            color: #a0aec0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        strong {
+            color: #fff;
+        }
+        .accent-text {
+            color: #4a8fe7;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            margin: 30px 0;
+            background: #0a1020;
+            border-radius: 8px;
+            border: 1px solid #152040;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 14px 20px;
+            text-align: left;
+            border-bottom: 1px solid #152040;
+            font-size: 0.95rem;
+        }
+        th {
+            background: #0d1428;
+            color: #fff;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+        tr:last-child td { border-bottom: none; }
+
+        .card-box {
+            background: #0a1020;
+            border: 1px solid #152040;
+            border-radius: 8px;
+            padding: 24px;
+            margin: 30px 0;
+            border-left: 4px solid #4a8fe7;
+        }
+
+        .faq {
+            margin-bottom: 40px;
+        }
+        .faq-item {
+            margin-bottom: 24px;
+            background: #0a1020;
+            padding: 24px;
+            border-radius: 8px;
+            border: 1px solid #152040;
+        }
+        .faq-q {
+            font-weight: 600;
+            color: #fff;
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+        }
+        .faq-a {
+            color: #a0aec0;
+        }
+        .methodology {
+            background: #0a1020;
+            padding: 24px;
+            border-radius: 8px;
+            border: 1px solid #152040;
+            font-size: 0.9rem;
+            color: #5a6a80;
+            margin-bottom: 40px;
+        }
+        footer {
+            text-align: center;
+            padding: 40px 24px;
+            border-top: 1px solid #152040;
+            font-size: 0.85rem;
+            color: #5a6a80;
+        }
+        a { color: #4a8fe7; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Understanding Bond Ratings & Fixed Income",
+      "description": "A comprehensive guide on bonds, credit ratings, yield curves, and how to build a bond ladder.",
+      "author": {
+        "@type": "Organization",
+        "name": "Westmount Fundamentals"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Westmount Fundamentals",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://westmountfundamentals.com/favicon.ico"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://westmountfundamentals.com/guide-bond-ratings.html"
+      },
+      "datePublished": "2026-01-01"
+    }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="tag">Educational Guide 2026</div>
+        <h1>Understanding Bond Ratings & Fixed Income</h1>
+        <p class="subtitle">A complete guide to bonds, credit ratings, the yield curve, and building a fixed income portfolio.</p>
+    </header>
+
+    <div class="container">
+
+        <div class="content-section">
+            <h2>1. What are Bonds? How They Work</h2>
+            <p>A bond is essentially a loan made by an investor to a borrower (typically corporate or governmental). Instead of going to a bank, an organization raises money from investors who buy its bonds.</p>
+            <p>In exchange for the capital, the issuer promises to pay the investor a specified rate of interest (the <strong class="accent-text">coupon</strong>) over the life of the bond and to repay the principal (the face value) when it "matures," or comes due after a set period of time.</p>
+            <div class="card-box">
+                <p><strong>Key Bond Terms:</strong></p>
+                <ul>
+                    <li><strong>Face Value (Par Value):</strong> The amount the bond will be worth at maturity, and the reference amount the bond issuer uses to calculate interest payments.</li>
+                    <li><strong>Coupon Rate:</strong> The interest rate the bond issuer will pay on the face value of the bond, expressed as a percentage.</li>
+                    <li><strong>Maturity Date:</strong> The date on which the bond will mature and the bond issuer will pay the bondholder the face value of the bond.</li>
+                    <li><strong>Yield:</strong> The return an investor realizes on a bond. (More on this later when we cover Yield Curves).</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>2. Types of Bonds</h2>
+            <p>Bonds are categorized primarily by who is issuing them. Different issuers represent different levels of risk and tax implications.</p>
+
+            <h3>Treasury Bonds (U.S. Government)</h3>
+            <p>Issued by the U.S. Department of the Treasury, these are backed by the "full faith and credit" of the U.S. government. They are generally considered the safest investments in the world, carrying virtually zero default risk. Because they are so safe, they typically offer lower yields than other bonds. Interest is exempt from state and local taxes.</p>
+
+            <h3>Corporate Bonds</h3>
+            <p>Issued by companies to raise capital for expansion, acquisitions, or other business needs. Since companies can go bankrupt, corporate bonds carry default risk. To compensate for this risk, they offer higher yields than government bonds. The riskiness of a corporate bond depends entirely on the financial health of the issuing company.</p>
+
+            <h3>Municipal Bonds (Munis)</h3>
+            <p>Issued by states, cities, counties, and other governmental entities to fund public projects like schools, highways, or hospitals. The primary appeal of municipal bonds is tax advantage: the interest income is usually exempt from federal income taxes, and often from state and local taxes if you live in the state where the bond was issued.</p>
+
+            <h3>High-Yield (Junk) Bonds</h3>
+            <p>A sub-category of corporate bonds issued by companies with lower credit ratings. Because these companies have a higher risk of defaulting, they must offer significantly higher interest rates to attract investors. They can offer equity-like returns but come with substantial risk during economic downturns.</p>
+        </div>
+
+        <div class="content-section">
+            <h2>3. Rating Agencies: S&P, Moody's, Fitch</h2>
+            <p>To help investors understand the default risk of corporate and municipal bonds, independent credit rating agencies evaluate the financial health of the issuer. The "Big Three" agencies are Standard & Poor's (S&P), Moody's, and Fitch Ratings.</p>
+
+            <p>While they use slightly different lettering systems, their scales generally align. A rating of 'AAA' or 'Aaa' is the highest possible, indicating an extremely strong capacity to meet financial commitments.</p>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Credit Risk</th>
+                            <th>Moody's</th>
+                            <th>S&P</th>
+                            <th>Fitch</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Highest Quality</td>
+                            <td>Aaa</td>
+                            <td>AAA</td>
+                            <td>AAA</td>
+                        </tr>
+                        <tr>
+                            <td>High Quality</td>
+                            <td>Aa1, Aa2, Aa3</td>
+                            <td>AA+, AA, AA-</td>
+                            <td>AA+, AA, AA-</td>
+                        </tr>
+                        <tr>
+                            <td>Upper Medium Grade</td>
+                            <td>A1, A2, A3</td>
+                            <td>A+, A, A-</td>
+                            <td>A+, A, A-</td>
+                        </tr>
+                        <tr>
+                            <td>Lower Medium Grade</td>
+                            <td>Baa1, Baa2, Baa3</td>
+                            <td>BBB+, BBB, BBB-</td>
+                            <td>BBB+, BBB, BBB-</td>
+                        </tr>
+                        <tr style="background: rgba(244, 67, 54, 0.1);">
+                            <td colspan="4" style="text-align: center; font-weight: 600; color: #f44336; font-size: 0.8rem; letter-spacing: 1px;">DIVIDING LINE: INVESTMENT GRADE VS JUNK</td>
+                        </tr>
+                        <tr>
+                            <td>Non-Investment Grade (Speculative)</td>
+                            <td>Ba1, Ba2, Ba3</td>
+                            <td>BB+, BB, BB-</td>
+                            <td>BB+, BB, BB-</td>
+                        </tr>
+                        <tr>
+                            <td>Highly Speculative</td>
+                            <td>B1, B2, B3</td>
+                            <td>B+, B, B-</td>
+                            <td>B+, B, B-</td>
+                        </tr>
+                        <tr>
+                            <td>Substantial Risks</td>
+                            <td>Caa1, Caa2, Caa3</td>
+                            <td>CCC+, CCC, CCC-</td>
+                            <td>CCC+, CCC, CCC-</td>
+                        </tr>
+                        <tr>
+                            <td>In Default</td>
+                            <td>C</td>
+                            <td>D</td>
+                            <td>D</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>4. Investment Grade vs. Junk: What Ratings Mean for Default Risk</h2>
+            <p>The dividing line in the bond market is between <strong>Investment Grade</strong> and <strong>Non-Investment Grade</strong> (often called High-Yield or "Junk" bonds).</p>
+
+            <p><strong>Investment Grade (BBB- / Baa3 and above):</strong> These bonds are considered relatively safe. Many institutional investors, such as pension funds and insurance companies, are legally required by their charters to only hold investment-grade bonds. If a bond is downgraded from BBB- to BB+, it loses its investment-grade status. Such a bond is known as a "Fallen Angel," and often experiences a sharp drop in price because institutional investors are forced to sell it.</p>
+
+            <p><strong>Junk / High-Yield (BB+ / Ba1 and below):</strong> These bonds carry a materially higher risk of default. Historically, during severe economic recessions, default rates for junk bonds can spike into the double digits. Investors demand a "spread" (extra yield) over safe Treasury bonds to compensate for this risk. When the economy is strong, this spread narrows. When investors are fearful, the spread widens significantly.</p>
+        </div>
+
+        <div class="content-section">
+            <h2>5. The Yield Curve: Normal, Inverted, and Flat</h2>
+            <p>The yield curve is a line that plots yields (interest rates) of bonds having equal credit quality but differing maturity dates. The most watched yield curve is the U.S. Treasury yield curve, comparing the 2-year, 10-year, and 30-year Treasury rates.</p>
+
+            <div class="card-box">
+                <h3>Normal Yield Curve</h3>
+                <p>A normal yield curve slopes upward. Longer-term bonds have higher yields than short-term bonds. This is normal because investors demand more compensation for locking up their money for a longer period (taking on more inflation and interest rate risk). It generally signals a healthy, growing economy.</p>
+
+                <h3>Inverted Yield Curve</h3>
+                <p>An inverted yield curve slopes downward. Short-term rates are higher than long-term rates. This is highly unusual and implies that investors expect interest rates to fall in the future, usually because they anticipate an economic recession will force the central bank to cut rates. Historically, an inverted yield curve has been a reliable leading indicator of a coming recession.</p>
+
+                <h3>Flat Yield Curve</h3>
+                <p>A flat yield curve means short-term and long-term rates are roughly the same. This usually occurs during a transition period, either as the economy moves from expansion to slowdown (flattening towards inversion) or from recession to recovery.</p>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>6. Duration and Interest Rate Risk</h2>
+            <p>The most important concept for bond investors to understand is the inverse relationship between bond prices and interest rates: <strong>When interest rates rise, existing bond prices fall. When interest rates fall, existing bond prices rise.</strong></p>
+
+            <p>Why? If you own a bond paying 3% and new bonds are issued paying 5%, nobody will buy your 3% bond at face value. You must drop the price of your bond so its effective yield matches the new 5% market rate.</p>
+
+            <p><strong>Duration</strong> is a metric (measured in years) that estimates how sensitive a bond's price is to changes in interest rates. As a rule of thumb, for every 1% change in interest rates, a bond's price will move in the opposite direction by its duration percentage.</p>
+
+            <p><em>Example:</em> If a bond fund has a duration of 7 years, and interest rates rise by 1%, the value of that bond fund will fall by roughly 7%.</p>
+            <p>Long-term bonds have much higher durations than short-term bonds, meaning they are much more volatile and carry higher interest rate risk.</p>
+        </div>
+
+        <div class="content-section">
+            <h2>7. Building a Bond Ladder</h2>
+            <p>A bond ladder is a portfolio strategy where you buy bonds with different maturity dates. For example, instead of investing $50,000 in a single 5-year bond, you might invest $10,000 each in a 1-year, 2-year, 3-year, 4-year, and 5-year bond.</p>
+
+            <p><strong>Why build a bond ladder?</strong></p>
+            <ul>
+                <li><strong>Mitigates interest rate risk:</strong> If rates rise, you have a bond maturing soon (the 1-year bond) whose principal you can reinvest at the new, higher rates.</li>
+                <li><strong>Provides predictable cash flow:</strong> You have principal returning to you at regular intervals.</li>
+                <li><strong>Captures higher yields:</strong> You still get to own longer-term bonds (which typically yield more) without locking up all your cash for the long term.</li>
+            </ul>
+            <p>When the 1-year bond matures, you take the proceeds and buy a new 5-year bond at the "top" of the ladder. This process continues, maintaining your ladder over time.</p>
+        </div>
+
+        <div class="content-section">
+            <h2>8. When to Own Bonds in Your Portfolio</h2>
+            <p>Bonds play several crucial roles in a diversified portfolio:</p>
+            <ul>
+                <li><strong>Capital Preservation:</strong> If you are nearing retirement or need cash for a purchase in the next 1-3 years, short-term high-quality bonds protect your principal from the volatility of the stock market.</li>
+                <li><strong>Income Generation:</strong> Bonds provide reliable, scheduled interest payments, which is valuable for retirees living off their portfolios.</li>
+                <li><strong>Diversification (Shock Absorber):</strong> Historically, high-quality bonds have often been inversely correlated with stocks during crises. When the stock market crashes, investors rush to the safety of government bonds ("flight to quality"), pushing bond prices up, which helps offset equity losses.</li>
+            </ul>
+            <p>However, heavily overweighting bonds when you have a long time horizon exposes you to <strong>inflation risk</strong>—the risk that your safe 4% return doesn't keep up with the rising cost of living over decades.</p>
+        </div>
+
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq">
+            <div class="faq-item">
+                <div class="faq-q">What happens if I hold a bond to maturity?</div>
+                <div class="faq-a">If you buy an individual bond and hold it to maturity, day-to-day price fluctuations (due to interest rate changes) do not matter. As long as the issuer doesn't default, you will receive your full face value back at the maturity date, plus all scheduled interest payments along the way.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">Is a bond fund the same as an individual bond?</div>
+                <div class="faq-a">No. A bond fund holds many bonds and never "matures" because the fund manager is constantly buying and selling bonds to maintain a target duration. Therefore, if interest rates rise, a bond fund will lose value, and you cannot simply "wait until maturity" to get your principal back as you can with an individual bond.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">What is the difference between yield to maturity (YTM) and coupon rate?</div>
+                <div class="faq-a">The coupon rate is the fixed annual interest payment based on the bond's face value. The Yield to Maturity (YTM) is the total return you will get if you buy the bond at its <em>current market price</em> and hold it to maturity. If you buy a bond at a discount (less than face value), your YTM will be higher than the coupon rate.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">Are municipal bonds always better because they are tax-free?</div>
+                <div class="faq-a">Not always. Because they offer tax benefits, munis typically offer lower yields than corporate bonds. To determine which is better for you, you must calculate the "Tax-Equivalent Yield" based on your specific federal and state income tax brackets. Investors in low tax brackets often do better with corporate bonds.</div>
+            </div>
+        </div>
+
+        <div class="methodology">
+            <strong>Methodology & Sourcing:</strong> Educational definitions and rating scales are sourced from publicly available documentation provided by Standard & Poor's (S&P Global Ratings), Moody's Investors Service, and Fitch Ratings as of 2026. This guide is designed to explain fixed-income mechanics objectively and does not recommend specific bond allocations.
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 <a href="/">westmount-research</a></p>
+        <p style="margin-top: 10px; font-size: 0.75rem; max-width: 600px; margin-left: auto; margin-right: auto;">Disclaimer: This educational guide provides explanations of financial concepts for informational purposes only. Nothing here constitutes financial, tax, or investment advice. Do your own research or consult a certified financial planner.</p>
+    </footer>
+</body>
+</html>

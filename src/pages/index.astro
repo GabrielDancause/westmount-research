@@ -100,7 +100,17 @@ const studies = [
   }
 ];
 
-const guides = []; // westmount-research is studies only
+const guides = [
+  {
+    title: "Understanding Bond Ratings & Fixed Income 2026",
+    subtitle: "Bonds · Credit Ratings",
+    slug: "/guide-bond-ratings",
+    stat: "AAA to D",
+    statLabel: "credit rating scale",
+    desc: "A complete guide on how bonds work, different types of bonds, rating agencies compared, the yield curve, and how to build a bond ladder.",
+    tag: "EDUCATIONAL GUIDE",
+  }
+]; // westmount-research is studies only
 const lists = []; // westmount-research is studies only
 ---
 <html lang="en">
@@ -325,6 +335,32 @@ const lists = []; // westmount-research is studies only
             <h3 class="study-name">{study.title || study.name}</h3>
             {study.subtitle && <p style="font-size:0.85rem; color:#4a8fe7; margin-bottom:8px;">{study.subtitle}</p>}
             <p class="study-desc">{study.desc}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  )}
+
+  <!-- Guides Section -->
+  {guides.length > 0 && (
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-tag">📖 GUIDES</span>
+        <h2 class="section-title">Educational Guides</h2>
+        <p class="section-sub">In-depth explanations of financial concepts.</p>
+      </div>
+      <div class="studies-grid">
+        {guides.map(guide => (
+          <a class="study-card" href={guide.slug}>
+            {guide.emoji && <span class="study-emoji">{guide.emoji}</span>}
+            {guide.tag && <span class="study-tag" style="display:inline-block; font-size:0.7rem; font-weight:800; color:#4a8fe7; background:rgba(74,143,231,0.1); padding:4px 8px; border-radius:4px; margin-bottom:12px;">{guide.tag}</span>}
+            <div class="study-stat">
+              <span class="stat-number">{guide.stat}</span>
+              <span class="stat-label">{guide.statLabel}</span>
+            </div>
+            <h3 class="study-name">{guide.title || guide.name}</h3>
+            {guide.subtitle && <p style="font-size:0.85rem; color:#4a8fe7; margin-bottom:8px;">{guide.subtitle}</p>}
+            <p class="study-desc">{guide.desc}</p>
           </a>
         ))}
       </div>
