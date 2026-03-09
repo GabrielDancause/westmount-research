@@ -2,25 +2,9 @@
 import BaseHead from '../layouts/BaseHead.astro';
 
 // Auto-categorize from public/ directory
-const tools = [
-  {
-    emoji: '📈',
-    name: 'Compound Interest Calculator',
-    slug: '/compound-interest-calculator.html',
-    desc: 'Calculate how your investments grow over time with compound interest.'
-  }
-];
+const tools = []; // westmount-research is studies only
 
 const studies = [
-  {
-    title: "Beta & Volatility Rankings 2026",
-    subtitle: "500 items · risk analysis",
-    slug: "/beta-volatility.html",
-    stat: "1.00",
-    statLabel: "market baseline beta",
-    desc: "Rankings of S&P 500 stocks by beta (market sensitivity) and historical volatility. Find low-beta defensive stocks and high-beta aggressive names across all sectors.",
-    tag: "ORIGINAL RESEARCH",
-  },
   {
     title: "Insider Trading Tracker: Who Is Buying & Selling Their Own Stock? 2026",
     subtitle: "200 items · insider tracking",
@@ -118,13 +102,13 @@ const studies = [
 
 const guides = [
   {
-    title: "Understanding Bond Ratings & Fixed Income 2026",
-    subtitle: "Bonds · Credit Ratings",
-    slug: "/guide-bond-ratings",
-    stat: "AAA to D",
-    statLabel: "credit rating scale",
-    desc: "A complete guide on how bonds work, different types of bonds, rating agencies compared, the yield curve, and how to build a bond ladder.",
-    tag: "EDUCATIONAL GUIDE",
+    title: "The Complete Guide to ETF Investing",
+    subtitle: "Educational Guide · Asset Allocation",
+    slug: "guide-etf-investing",
+    stat: "15",
+    statLabel: "minute read",
+    desc: "A comprehensive educational guide on ETF investing. Learn what ETFs are, types, key metrics like expense ratios, tax efficiency, and how to build a portfolio.",
+    tag: "GUIDE"
   }
 ]; // westmount-research is studies only
 const lists = []; // westmount-research is studies only
@@ -331,26 +315,6 @@ const lists = []; // westmount-research is studies only
     </div>
   </div>
 
-  <!-- Tools Section -->
-  {tools.length > 0 && (
-    <div class="section-container">
-      <div class="section-header">
-        <span class="section-tag">🛠️ TOOLS</span>
-        <h2 class="section-title">Interactive Tools</h2>
-        <p class="section-sub">Free calculators and interactive utilities.</p>
-      </div>
-      <div class="studies-grid">
-        {tools.map(tool => (
-          <a class="study-card" href={tool.slug}>
-            {tool.emoji && <span class="study-emoji">{tool.emoji}</span>}
-            <h3 class="study-name">{tool.name}</h3>
-            <p class="study-desc">{tool.desc}</p>
-          </a>
-        ))}
-      </div>
-    </div>
-  )}
-
   <!-- Studies Section -->
   {studies.length > 0 && (
     <div class="section-container">
@@ -381,21 +345,21 @@ const lists = []; // westmount-research is studies only
   {guides.length > 0 && (
     <div class="section-container">
       <div class="section-header">
-        <span class="section-tag">📖 GUIDES</span>
-        <h2 class="section-title">Educational Guides</h2>
-        <p class="section-sub">In-depth explanations of financial concepts.</p>
+        <span class="section-tag" style="background:rgba(231,143,74,0.1); color:#e78f4a;">📚 EDUCATION</span>
+        <h2 class="section-title">Guides</h2>
+        <p class="section-sub">Comprehensive explainers and methodologies.</p>
       </div>
       <div class="studies-grid">
         {guides.map(guide => (
-          <a class="study-card" href={guide.slug}>
+          <a class="study-card" href={`/${guide.slug}.html`} style="border-top: 2px solid #e78f4a;">
             {guide.emoji && <span class="study-emoji">{guide.emoji}</span>}
-            {guide.tag && <span class="study-tag" style="display:inline-block; font-size:0.7rem; font-weight:800; color:#4a8fe7; background:rgba(74,143,231,0.1); padding:4px 8px; border-radius:4px; margin-bottom:12px;">{guide.tag}</span>}
+            {guide.tag && <span class="study-tag" style="display:inline-block; font-size:0.7rem; font-weight:800; color:#e78f4a; background:rgba(231,143,74,0.1); padding:4px 8px; border-radius:4px; margin-bottom:12px;">{guide.tag}</span>}
             <div class="study-stat">
-              <span class="stat-number">{guide.stat}</span>
+              <span class="stat-number" style="color:#e78f4a;">{guide.stat}</span>
               <span class="stat-label">{guide.statLabel}</span>
             </div>
             <h3 class="study-name">{guide.title || guide.name}</h3>
-            {guide.subtitle && <p style="font-size:0.85rem; color:#4a8fe7; margin-bottom:8px;">{guide.subtitle}</p>}
+            {guide.subtitle && <p style="font-size:0.85rem; color:#e78f4a; margin-bottom:8px;">{guide.subtitle}</p>}
             <p class="study-desc">{guide.desc}</p>
           </a>
         ))}
