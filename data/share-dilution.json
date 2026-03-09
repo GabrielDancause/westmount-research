@@ -1,0 +1,5002 @@
+[
+  {
+    "ticker": "WBD",
+    "company": "Warner Bros. Discovery, Inc.",
+    "sector": "Communication Services",
+    "shares_5yr_ago": 503000000,
+    "shares_current": 2481014551,
+    "change_pct": 393.2434495029821,
+    "market_cap": 68984610816,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "APO",
+    "company": "Apollo Global Management, Inc.",
+    "sector": "Financial Services",
+    "shares_5yr_ago": 236567691,
+    "shares_current": 578247338,
+    "change_pct": 144.43208434578668,
+    "market_cap": 61977522176,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "SW",
+    "company": "Smurfit Westrock Plc",
+    "sector": "Consumer Cyclical",
+    "shares_5yr_ago": 257000000,
+    "shares_current": 524253735,
+    "change_pct": 103.98978015564202,
+    "market_cap": 21536344064,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "EXE",
+    "company": "Expand Energy Corporation",
+    "sector": "Energy",
+    "shares_5yr_ago": 125785000,
+    "shares_current": 240398260,
+    "change_pct": 91.11838454505704,
+    "market_cap": 25839206400,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "EQT",
+    "company": "EQT Corporation",
+    "sector": "Energy",
+    "shares_5yr_ago": 370048000,
+    "shares_current": 624274000,
+    "change_pct": 68.70081719128329,
+    "market_cap": 38992150528,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "PSKY",
+    "company": "Paramount Skydance Corporation",
+    "sector": "Communication Services",
+    "shares_5yr_ago": 641000000,
+    "shares_current": 1071666977,
+    "change_pct": 67.18673588143525,
+    "market_cap": 12349955072,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "HBAN",
+    "company": "Huntington Bancshares Incorporated",
+    "sector": "Financial Services",
+    "shares_5yr_ago": 1262000000,
+    "shares_current": 2029792391,
+    "change_pct": 60.839333676703646,
+    "market_cap": 32131612672,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "TTWO",
+    "company": "Take-Two Interactive Software, Inc.",
+    "sector": "Communication Services",
+    "shares_5yr_ago": 115485000,
+    "shares_current": 185175456,
+    "change_pct": 60.34589427198337,
+    "market_cap": 39383113728,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "FANG",
+    "company": "Diamondback Energy, Inc.",
+    "sector": "Energy",
+    "shares_5yr_ago": 176539000,
+    "shares_current": 282078989,
+    "change_pct": 59.78281796090382,
+    "market_cap": 52068184064,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "WAT",
+    "company": "Waters Corporation",
+    "sector": "Healthcare",
+    "shares_5yr_ago": 61575000,
+    "shares_current": 98101871,
+    "change_pct": 59.32094356475842,
+    "market_cap": 29659138048,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "EXR",
+    "company": "Extra Space Storage Inc.",
+    "sector": "Real Estate",
+    "shares_5yr_ago": 134050815,
+    "shares_current": 211137672,
+    "change_pct": 57.505698119030455,
+    "market_cap": 31991730176,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "AMCR",
+    "company": "Amcor plc",
+    "sector": "Consumer Cyclical",
+    "shares_5yr_ago": 301800000,
+    "shares_current": 462045690,
+    "change_pct": 53.096650099403575,
+    "market_cap": 19392059392,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "O",
+    "company": "Realty Income Corporation",
+    "sector": "Real Estate",
+    "shares_5yr_ago": 611765815,
+    "shares_current": 932440218,
+    "change_pct": 52.41783622708635,
+    "market_cap": 60296658944,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "WELL",
+    "company": "Welltower Inc.",
+    "sector": "Real Estate",
+    "shares_5yr_ago": 462185000,
+    "shares_current": 697752530,
+    "change_pct": 50.968233499572676,
+    "market_cap": 144766205952,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "OMC",
+    "company": "Omnicom Group Inc.",
+    "sector": "Communication Services",
+    "shares_5yr_ago": 205600000,
+    "shares_current": 310336344,
+    "change_pct": 50.94180155642023,
+    "market_cap": 26327607296,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "IP",
+    "company": "International Paper Company",
+    "sector": "Consumer Cyclical",
+    "shares_5yr_ago": 363285024,
+    "shares_current": 528038317,
+    "change_pct": 45.350972959457856,
+    "market_cap": 19899123712,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "OKE",
+    "company": "ONEOK, Inc.",
+    "sector": "Energy",
+    "shares_5yr_ago": 447500000,
+    "shares_current": 629783634,
+    "change_pct": 40.73377296089385,
+    "market_cap": 54570749952,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "COF",
+    "company": "Capital One Financial Corporation",
+    "sector": "Financial Services",
+    "shares_5yr_ago": 442500000,
+    "shares_current": 621931593,
+    "change_pct": 40.54951254237288,
+    "market_cap": 112631816192,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "PANW",
+    "company": "Palo Alto Networks, Inc.",
+    "sector": "Technology",
+    "shares_5yr_ago": 591000000,
+    "shares_current": 816000000,
+    "change_pct": 38.07106598984771,
+    "market_cap": 134888873984,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "NEM",
+    "company": "Newmont Corporation",
+    "sector": "Basic Materials",
+    "shares_5yr_ago": 794000000,
+    "shares_current": 1087874212,
+    "change_pct": 37.01186549118388,
+    "market_cap": 123956559872,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "ARES",
+    "company": "Ares Management Corporation",
+    "sector": "Financial Services",
+    "shares_5yr_ago": 163703626,
+    "shares_current": 220902613,
+    "change_pct": 34.94057425459837,
+    "market_cap": 35666493440,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "XYL",
+    "company": "Xylem Inc.",
+    "sector": "Industrials",
+    "shares_5yr_ago": 180200000,
+    "shares_current": 243141405,
+    "change_pct": 34.92863762486127,
+    "market_cap": 29695920128,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "BA",
+    "company": "The Boeing Company",
+    "sector": "Industrials",
+    "shares_5yr_ago": 594578313,
+    "shares_current": 785347096,
+    "change_pct": 32.084719342933724,
+    "market_cap": 176294707200,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "FITB",
+    "company": "Fifth Third Bancorp",
+    "sector": "Financial Services",
+    "shares_5yr_ago": 688634000,
+    "shares_current": 901819022,
+    "change_pct": 30.95766720783464,
+    "market_cap": 41330368512,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "BG",
+    "company": "Bunge Global SA",
+    "sector": "Consumer Defensive",
+    "shares_5yr_ago": 149907932,
+    "shares_current": 193509080,
+    "change_pct": 29.085284159613384,
+    "market_cap": 22671525888,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "DOC",
+    "company": "Healthpeak Properties, Inc.",
+    "sector": "Real Estate",
+    "shares_5yr_ago": 538809000,
+    "shares_current": 695043997,
+    "change_pct": 28.996359934596487,
+    "market_cap": 11926953984,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "SNPS",
+    "company": "Synopsys, Inc.",
+    "sector": "Technology",
+    "shares_5yr_ago": 153002000,
+    "shares_current": 191562027,
+    "change_pct": 25.202302584279945,
+    "market_cap": 83438673920,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "NCLH",
+    "company": "Norwegian Cruise Line Holdings Ltd.",
+    "sector": "Consumer Cyclical",
+    "shares_5yr_ago": 365449967,
+    "shares_current": 455257489,
+    "change_pct": 24.57450543428288,
+    "market_cap": 9075558400,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "BRO",
+    "company": "Brown & Brown, Inc.",
+    "sector": "Financial Services",
+    "shares_5yr_ago": 277521000,
+    "shares_current": 340420023,
+    "change_pct": 22.664599435718376,
+    "market_cap": 24242583552,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "AJG",
+    "company": "Arthur J. Gallagher & Co.",
+    "sector": "Financial Services",
+    "shares_5yr_ago": 210331000,
+    "shares_current": 257100000,
+    "change_pct": 22.23590436027024,
+    "market_cap": 56456589312,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "VICI",
+    "company": "VICI Properties Inc.",
+    "sector": "Real Estate",
+    "shares_5yr_ago": 877508388,
+    "shares_current": 1068737299,
+    "change_pct": 21.79226017837222,
+    "market_cap": 31300141056,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "DASH",
+    "company": "DoorDash, Inc.",
+    "sector": "Consumer Cyclical",
+    "shares_5yr_ago": 336847000,
+    "shares_current": 409966858,
+    "change_pct": 21.707142411836827,
+    "market_cap": 75700969472,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "INTC",
+    "company": "Intel Corporation",
+    "sector": "Technology",
+    "shares_5yr_ago": 4108000000,
+    "shares_current": 4995000000,
+    "change_pct": 21.59201557935735,
+    "market_cap": 221885825024,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "NI",
+    "company": "NiSource Inc.",
+    "sector": "Utilities",
+    "shares_5yr_ago": 393600000,
+    "shares_current": 478533171,
+    "change_pct": 21.578549542682925,
+    "market_cap": 22351806464,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "AXON",
+    "company": "Axon Enterprise, Inc.",
+    "sector": "Industrials",
+    "shares_5yr_ago": 66191000,
+    "shares_current": 80397675,
+    "change_pct": 21.463152090163316,
+    "market_cap": 45038374912,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "ATO",
+    "company": "Atmos Energy Corporation",
+    "sector": "Utilities",
+    "shares_5yr_ago": 137830000,
+    "shares_current": 165438946,
+    "change_pct": 20.031158673728505,
+    "market_cap": 30566498304,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "DLR",
+    "company": "Digital Realty Trust, Inc.",
+    "sector": "Real Estate",
+    "shares_5yr_ago": 286333747,
+    "shares_current": 343615444,
+    "change_pct": 20.005220341701463,
+    "market_cap": 62044811264,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "BKR",
+    "company": "Baker Hughes Company",
+    "sector": "Energy",
+    "shares_5yr_ago": 824000000,
+    "shares_current": 988236510,
+    "change_pct": 19.931615291262137,
+    "market_cap": 58889011200,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "TSLA",
+    "company": "Tesla, Inc.",
+    "sector": "Consumer Cyclical",
+    "shares_5yr_ago": 3130000000,
+    "shares_current": 3752431984,
+    "change_pct": 19.886005878594247,
+    "market_cap": 1464163237888,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "KKR",
+    "company": "KKR & Co. Inc.",
+    "sector": "Financial Services",
+    "shares_5yr_ago": 749504970,
+    "shares_current": 891451844,
+    "change_pct": 18.938750199348245,
+    "market_cap": 82758451200,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "VTR",
+    "company": "Ventas, Inc.",
+    "sector": "Real Estate",
+    "shares_5yr_ago": 399549000,
+    "shares_current": 474965224,
+    "change_pct": 18.87533794353133,
+    "market_cap": 40609525760,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "PLD",
+    "company": "Prologis, Inc.",
+    "sector": "Real Estate",
+    "shares_5yr_ago": 785675000,
+    "shares_current": 929559000,
+    "change_pct": 18.3134247621472,
+    "market_cap": 122971348992,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "SMCI",
+    "company": "Super Micro Computer, Inc.",
+    "sector": "Technology",
+    "shares_5yr_ago": 514780000,
+    "shares_current": 598989428,
+    "change_pct": 16.35833326858075,
+    "market_cap": 18670501888,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "CVNA",
+    "company": "Carvana Co.",
+    "sector": "Consumer Cyclical",
+    "shares_5yr_ago": 100828000,
+    "shares_current": 116947000,
+    "change_pct": 15.986630697822033,
+    "market_cap": 68010930176,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "AVGO",
+    "company": "Broadcom Inc.",
+    "sector": "Technology",
+    "shares_5yr_ago": 4090000000,
+    "shares_current": 4741273799,
+    "change_pct": 15.923564767726162,
+    "market_cap": 1639180140544,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "KEY",
+    "company": "KeyCorp",
+    "sector": "Financial Services",
+    "shares_5yr_ago": 947065000,
+    "shares_current": 1089647432,
+    "change_pct": 15.055189664912122,
+    "market_cap": 20904886272,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "NDAQ",
+    "company": "Nasdaq, Inc.",
+    "sector": "Financial Services",
+    "shares_5yr_ago": 497700000,
+    "shares_current": 568443856,
+    "change_pct": 14.214156319067712,
+    "market_cap": 50107703296,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "XEL",
+    "company": "Xcel Energy Inc.",
+    "sector": "Utilities",
+    "shares_5yr_ago": 547000000,
+    "shares_current": 623876813,
+    "change_pct": 14.054261974405849,
+    "market_cap": 51107987456,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "PLTR",
+    "company": "Palantir Technologies Inc.",
+    "sector": "Technology",
+    "shares_5yr_ago": 2060785103,
+    "shares_current": 2291470751,
+    "change_pct": 11.19406616750956,
+    "market_cap": 369398382592,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "CRWD",
+    "company": "CrowdStrike Holdings, Inc.",
+    "sector": "Technology",
+    "shares_5yr_ago": 227142000,
+    "shares_current": 252098440,
+    "change_pct": 10.9871534106418,
+    "market_cap": 108830900224,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "ETR",
+    "company": "Entergy Corporation",
+    "sector": "Utilities",
+    "shares_5yr_ago": 408900708,
+    "shares_current": 452989837,
+    "change_pct": 10.78235574979733,
+    "market_cap": 47119998976,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "IBKR",
+    "company": "Interactive Brokers Group, Inc.",
+    "sector": "Financial Services",
+    "shares_5yr_ago": 402116402,
+    "shares_current": 445439458,
+    "change_pct": 10.773759982066089,
+    "market_cap": 110534860800,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "CEG",
+    "company": "Constellation Energy Corporation",
+    "sector": "Utilities",
+    "shares_5yr_ago": 327000000,
+    "shares_current": 361990335,
+    "change_pct": 10.700408256880733,
+    "market_cap": 114971746304,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "PCG",
+    "company": "PG&E Corporation",
+    "sector": "Utilities",
+    "shares_5yr_ago": 1987000000,
+    "shares_current": 2197967954,
+    "change_pct": 10.617410870659286,
+    "market_cap": 39783219200,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "GEHC",
+    "company": "GE HealthCare Technologies Inc.",
+    "sector": "Healthcare",
+    "shares_5yr_ago": 413822894,
+    "shares_current": 455749767,
+    "change_pct": 10.131598229072363,
+    "market_cap": 33939685376,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "KIM",
+    "company": "Kimco Realty Corporation",
+    "sector": "Real Estate",
+    "shares_5yr_ago": 615528000,
+    "shares_current": 674066654,
+    "change_pct": 9.510315371518436,
+    "market_cap": 15517901824,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "UDR",
+    "company": "UDR, Inc.",
+    "sector": "Real Estate",
+    "shares_5yr_ago": 300326000,
+    "shares_current": 328571965,
+    "change_pct": 9.40510145641736,
+    "market_cap": 13924448256,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "WDC",
+    "company": "Western Digital Corporation",
+    "sector": "Technology",
+    "shares_5yr_ago": 312000000,
+    "shares_current": 339037922,
+    "change_pct": 8.666000641025642,
+    "market_cap": 88127963136,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "D",
+    "company": "Dominion Energy, Inc.",
+    "sector": "Utilities",
+    "shares_5yr_ago": 810000000,
+    "shares_current": 878785631,
+    "change_pct": 8.492053209876543,
+    "market_cap": 55095463936,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "ES",
+    "company": "Eversource Energy",
+    "sector": "Utilities",
+    "shares_5yr_ago": 346783444,
+    "shares_current": 375496611,
+    "change_pct": 8.27985519400978,
+    "market_cap": 27632793600,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "LYV",
+    "company": "Live Nation Entertainment, Inc.",
+    "sector": "Communication Services",
+    "shares_5yr_ago": 217190862,
+    "shares_current": 234801922,
+    "change_pct": 8.108563978165897,
+    "market_cap": 38849150976,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "FRT",
+    "company": "Federal Realty Investment Trust",
+    "sector": "Real Estate",
+    "shares_5yr_ago": 79854000,
+    "shares_current": 86276033,
+    "change_pct": 8.04221829839457,
+    "market_cap": 9179654144,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "DTE",
+    "company": "DTE Energy Company",
+    "sector": "Utilities",
+    "shares_5yr_ago": 193000000,
+    "shares_current": 207803764,
+    "change_pct": 7.670344041450777,
+    "market_cap": 30836000768,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "EQIX",
+    "company": "Equinix, Inc.",
+    "sector": "Real Estate",
+    "shares_5yr_ago": 91569000,
+    "shares_current": 98254928,
+    "change_pct": 7.3015190730487385,
+    "market_cap": 91944509440,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "AWK",
+    "company": "American Water Works Company, Inc.",
+    "sector": "Utilities",
+    "shares_5yr_ago": 182000000,
+    "shares_current": 195208666,
+    "change_pct": 7.257508791208791,
+    "market_cap": 26978813952,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "ARE",
+    "company": "Alexandria Real Estate Equities, Inc.",
+    "sector": "Real Estate",
+    "shares_5yr_ago": 161659000,
+    "shares_current": 173300361,
+    "change_pct": 7.2011833550869415,
+    "market_cap": 8640756736,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "REG",
+    "company": "Regency Centers Corporation",
+    "sector": "Real Estate",
+    "shares_5yr_ago": 170659178,
+    "shares_current": 182906561,
+    "change_pct": 7.176515874229747,
+    "market_cap": 14506332160,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "MPWR",
+    "company": "Monolithic Power Systems, Inc.",
+    "sector": "Technology",
+    "shares_5yr_ago": 45851000,
+    "shares_current": 49118000,
+    "change_pct": 7.125253538636017,
+    "market_cap": 50580979712,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "CSGP",
+    "company": "CoStar Group, Inc.",
+    "sector": "Real Estate",
+    "shares_5yr_ago": 392210000,
+    "shares_current": 419793301,
+    "change_pct": 7.0327888121159585,
+    "market_cap": 20500307968,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "AEE",
+    "company": "Ameren Corporation",
+    "sector": "Utilities",
+    "shares_5yr_ago": 258400000,
+    "shares_current": 276424515,
+    "change_pct": 6.9754315015479875,
+    "market_cap": 30633363456,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "PNW",
+    "company": "Pinnacle West Capital Corporation",
+    "sector": "Utilities",
+    "shares_5yr_ago": 113196000,
+    "shares_current": 120905390,
+    "change_pct": 6.81065585356373,
+    "market_cap": 12248925184,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "BEN",
+    "company": "Franklin Resources, Inc.",
+    "sector": "Financial Services",
+    "shares_5yr_ago": 488700000,
+    "shares_current": 520763448,
+    "change_pct": 6.560967464702272,
+    "market_cap": 13053016064,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "OXY",
+    "company": "Occidental Petroleum Corporation",
+    "sector": "Energy",
+    "shares_5yr_ago": 926200000,
+    "shares_current": 986266656,
+    "change_pct": 6.485279205355216,
+    "market_cap": 54471503872,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "ORCL",
+    "company": "Oracle Corporation",
+    "sector": "Technology",
+    "shares_5yr_ago": 2700000000,
+    "shares_current": 2874091000,
+    "change_pct": 6.447814814814815,
+    "market_cap": 429590642688,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "PWR",
+    "company": "Quanta Services, Inc.",
+    "sector": "Industrials",
+    "shares_5yr_ago": 140824000,
+    "shares_current": 149619428,
+    "change_pct": 6.24568823495995,
+    "market_cap": 84195336192,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "AES",
+    "company": "The AES Corporation",
+    "sector": "Utilities",
+    "shares_5yr_ago": 670491803,
+    "shares_current": 712120944,
+    "change_pct": 6.2087471932897,
+    "market_cap": 10094314496,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "RCL",
+    "company": "Royal Caribbean Cruises Ltd.",
+    "sector": "Consumer Cyclical",
+    "shares_5yr_ago": 255011000,
+    "shares_current": 270528303,
+    "change_pct": 6.084954374517178,
+    "market_cap": 75353317376,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "AEP",
+    "company": "American Electric Power Company, Inc.",
+    "sector": "Utilities",
+    "shares_5yr_ago": 511841946,
+    "shares_current": 540861473,
+    "change_pct": 5.669626576482265,
+    "market_cap": 71036747776,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "SLB",
+    "company": "SLB N.V.",
+    "sector": "Energy",
+    "shares_5yr_ago": 1416000000,
+    "shares_current": 1495331485,
+    "change_pct": 5.6025060028248586,
+    "market_cap": 69061885952,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "SO",
+    "company": "The Southern Company",
+    "sector": "Utilities",
+    "shares_5yr_ago": 1061000000,
+    "shares_current": 1119391291,
+    "change_pct": 5.503420452403393,
+    "market_cap": 108592144384,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "INVH",
+    "company": "Invitation Homes Inc.",
+    "sector": "Real Estate",
+    "shares_5yr_ago": 577681070,
+    "shares_current": 609386093,
+    "change_pct": 5.48832645667271,
+    "market_cap": 15825127424,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "AMZN",
+    "company": "Amazon.com, Inc.",
+    "sector": "Consumer Cyclical",
+    "shares_5yr_ago": 10189000000,
+    "shares_current": 10734920870,
+    "change_pct": 5.357943566591422,
+    "market_cap": 2255782412288,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "CMS",
+    "company": "CMS Energy Corporation",
+    "sector": "Utilities",
+    "shares_5yr_ago": 291300000,
+    "shares_current": 306420901,
+    "change_pct": 5.190834534843804,
+    "market_cap": 23585216512,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "IFF",
+    "company": "International Flavors & Fragrances Inc.",
+    "sector": "Basic Materials",
+    "shares_5yr_ago": 243000000,
+    "shares_current": 255477487,
+    "change_pct": 5.134768312757202,
+    "market_cap": 18574669824,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "CCL",
+    "company": "Carnival Corporation & plc",
+    "sector": "Consumer Cyclical",
+    "shares_5yr_ago": 1180000000,
+    "shares_current": 1239000212,
+    "change_pct": 5.000017966101695,
+    "market_cap": 34767003648,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "NEE",
+    "company": "NextEra Energy, Inc.",
+    "sector": "Utilities",
+    "shares_5yr_ago": 1987000000,
+    "shares_current": 2083521964,
+    "change_pct": 4.857673074987418,
+    "market_cap": 190288068608,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "SRE",
+    "company": "Sempra",
+    "sector": "Utilities",
+    "shares_5yr_ago": 623510000,
+    "shares_current": 653284140,
+    "change_pct": 4.775246587865471,
+    "market_cap": 60435320832,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "SWK",
+    "company": "Stanley Black & Decker, Inc.",
+    "sector": "Industrials",
+    "shares_5yr_ago": 148170000,
+    "shares_current": 155079468,
+    "change_pct": 4.663203077546061,
+    "market_cap": 11247913984,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "AMD",
+    "company": "Advanced Micro Devices, Inc.",
+    "sector": "Technology",
+    "shares_5yr_ago": 1561000000,
+    "shares_current": 1630410843,
+    "change_pct": 4.446562652146061,
+    "market_cap": 321093107712,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "UBER",
+    "company": "Uber Technologies, Inc.",
+    "sector": "Technology",
+    "shares_5yr_ago": 1972131000,
+    "shares_current": 2058115983,
+    "change_pct": 4.360003620449149,
+    "market_cap": 153094537216,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "USB",
+    "company": "U.S. Bancorp",
+    "sector": "Financial Services",
+    "shares_5yr_ago": 1489000000,
+    "shares_current": 1553695799,
+    "change_pct": 4.3449159838817994,
+    "market_cap": 79203524608,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "BSX",
+    "company": "Boston Scientific Corporation",
+    "sector": "Healthcare",
+    "shares_5yr_ago": 1422300000,
+    "shares_current": 1483885456,
+    "change_pct": 4.32999057864023,
+    "market_cap": 106557808640,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "GEN",
+    "company": "Gen Digital Inc.",
+    "sector": "Technology",
+    "shares_5yr_ago": 581000000,
+    "shares_current": 605663774,
+    "change_pct": 4.245055765920826,
+    "market_cap": 13885362176,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "EG",
+    "company": "Everest Group, Ltd.",
+    "sector": "Financial Services",
+    "shares_5yr_ago": 38800000,
+    "shares_current": 40390151,
+    "change_pct": 4.098327319587629,
+    "market_cap": 13228986368,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "NOW",
+    "company": "ServiceNow, Inc.",
+    "sector": "Technology",
+    "shares_5yr_ago": 1005000000,
+    "shares_current": 1046000000,
+    "change_pct": 4.079601990049751,
+    "market_cap": 129808965632,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "DDOG",
+    "company": "Datadog, Inc.",
+    "sector": "Technology",
+    "shares_5yr_ago": 315410000,
+    "shares_current": 328274648,
+    "change_pct": 4.078706445578771,
+    "market_cap": 44801843200,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "BX",
+    "company": "Blackstone Inc.",
+    "sector": "Financial Services",
+    "shares_5yr_ago": 719766879,
+    "shares_current": 748688068,
+    "change_pct": 4.018132793242907,
+    "market_cap": 134805282816,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "PODD",
+    "company": "Insulet Corporation",
+    "sector": "Healthcare",
+    "shares_5yr_ago": 67698000,
+    "shares_current": 70395848,
+    "change_pct": 3.985122160181985,
+    "market_cap": 16639290368,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "IBM",
+    "company": "International Business Machines Corporation",
+    "sector": "Technology",
+    "shares_5yr_ago": 902700000,
+    "shares_current": 938034404,
+    "change_pct": 3.914301982940069,
+    "market_cap": 238035615744,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "CNP",
+    "company": "CenterPoint Energy, Inc.",
+    "sector": "Utilities",
+    "shares_5yr_ago": 629415000,
+    "shares_current": 652871584,
+    "change_pct": 3.7267278345765513,
+    "market_cap": 28347680768,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "ED",
+    "company": "Consolidated Edison, Inc.",
+    "sector": "Utilities",
+    "shares_5yr_ago": 348400000,
+    "shares_current": 361302689,
+    "change_pct": 3.703412456946039,
+    "market_cap": 40614035456,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "GLW",
+    "company": "Corning Incorporated",
+    "sector": "Technology",
+    "shares_5yr_ago": 828000000,
+    "shares_current": 857948109,
+    "change_pct": 3.6169213768115944,
+    "market_cap": 107342176256,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "TYL",
+    "company": "Tyler Technologies, Inc.",
+    "sector": "Technology",
+    "shares_5yr_ago": 41544000,
+    "shares_current": 42985340,
+    "change_pct": 3.469430001925669,
+    "market_cap": 15802700800,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "AMT",
+    "company": "American Tower Corporation",
+    "sector": "Real Estate",
+    "shares_5yr_ago": 451498003,
+    "shares_current": 466084820,
+    "change_pct": 3.2307600261966165,
+    "market_cap": 87257849856,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "WEC",
+    "company": "WEC Energy Group, Inc.",
+    "sector": "Utilities",
+    "shares_5yr_ago": 315400000,
+    "shares_current": 325531361,
+    "change_pct": 3.21222606214331,
+    "market_cap": 37598871552,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "BLK",
+    "company": "BlackRock, Inc.",
+    "sector": "Financial Services",
+    "shares_5yr_ago": 150921161,
+    "shares_current": 155541536,
+    "change_pct": 3.0614494146384152,
+    "market_cap": 147663863808,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "EXC",
+    "company": "Exelon Corporation",
+    "sector": "Utilities",
+    "shares_5yr_ago": 994000000,
+    "shares_current": 1022892585,
+    "change_pct": 2.9066986921529177,
+    "market_cap": 50208681984,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "APH",
+    "company": "Amphenol Corporation",
+    "sector": "Technology",
+    "shares_5yr_ago": 1195800000,
+    "shares_current": 1229214930,
+    "change_pct": 2.7943577521324636,
+    "market_cap": 165231067136,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "LNT",
+    "company": "Alliant Energy Corporation",
+    "sector": "Utilities",
+    "shares_5yr_ago": 250200000,
+    "shares_current": 257140829,
+    "change_pct": 2.7741123101518785,
+    "market_cap": 18331570176,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "CVX",
+    "company": "Chevron Corporation",
+    "sector": "Energy",
+    "shares_5yr_ago": 1931486000,
+    "shares_current": 1981217539,
+    "change_pct": 2.5747812306172553,
+    "market_cap": 380996812800,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "ANET",
+    "company": "Arista Networks, Inc.",
+    "sector": "Technology",
+    "shares_5yr_ago": 1225892000,
+    "shares_current": 1256537906,
+    "change_pct": 2.499886286883347,
+    "market_cap": 170041262080,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "DAL",
+    "company": "Delta Air Lines, Inc.",
+    "sector": "Industrials",
+    "shares_5yr_ago": 638000000,
+    "shares_current": 653130708,
+    "change_pct": 2.3715843260188088,
+    "market_cap": 38309380096,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "BAX",
+    "company": "Baxter International Inc.",
+    "sector": "Healthcare",
+    "shares_5yr_ago": 504000000,
+    "shares_current": 514490045,
+    "change_pct": 2.081358134920635,
+    "market_cap": 8977851392,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "PPL",
+    "company": "PPL Corporation",
+    "sector": "Utilities",
+    "shares_5yr_ago": 736027000,
+    "shares_current": 751306792,
+    "change_pct": 2.0759825386840425,
+    "market_cap": 28722458624,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "HPE",
+    "company": "Hewlett Packard Enterprise Company",
+    "sector": "Technology",
+    "shares_5yr_ago": 1303000000,
+    "shares_current": 1328808444,
+    "change_pct": 1.9806940905602457,
+    "market_cap": 28312121344,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "SNDK",
+    "company": "Sandisk Corporation",
+    "sector": "Technology",
+    "shares_5yr_ago": 145000000,
+    "shares_current": 147600972,
+    "change_pct": 1.7937737931034485,
+    "market_cap": 83798974464,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "ALB",
+    "company": "Albemarle Corporation",
+    "sector": "Basic Materials",
+    "shares_5yr_ago": 115841000,
+    "shares_current": 117847220,
+    "change_pct": 1.7318738615861398,
+    "market_cap": 19311622144,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "IRM",
+    "company": "Iron Mountain Incorporated",
+    "sector": "Real Estate",
+    "shares_5yr_ago": 290812000,
+    "shares_current": 295835206,
+    "change_pct": 1.7273035500598326,
+    "market_cap": 31231322112,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "CDNS",
+    "company": "Cadence Design Systems, Inc.",
+    "sector": "Technology",
+    "shares_5yr_ago": 271198000,
+    "shares_current": 275875473,
+    "change_pct": 1.7247446515092295,
+    "market_cap": 81188782080,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "GPN",
+    "company": "Global Payments Inc.",
+    "sector": "Industrials",
+    "shares_5yr_ago": 275191000,
+    "shares_current": 279901327,
+    "change_pct": 1.7116573579804573,
+    "market_cap": 20721094656,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "VZ",
+    "company": "Verizon Communications Inc.",
+    "sector": "Communication Services",
+    "shares_5yr_ago": 4148000000,
+    "shares_current": 4217684168,
+    "change_pct": 1.6799461909353905,
+    "market_cap": 214596190208,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "ICE",
+    "company": "Intercontinental Exchange, Inc.",
+    "sector": "Financial Services",
+    "shares_5yr_ago": 559000000,
+    "shares_current": 567896513,
+    "change_pct": 1.5915050089445437,
+    "market_cap": 94444380160,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "PTC",
+    "company": "PTC Inc.",
+    "sector": "Technology",
+    "shares_5yr_ago": 117194000,
+    "shares_current": 118996116,
+    "change_pct": 1.5377203611106371,
+    "market_cap": 19362451456,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "KVUE",
+    "company": "Kenvue Inc.",
+    "sector": "Consumer Defensive",
+    "shares_5yr_ago": 1888972560,
+    "shares_current": 1916732090,
+    "change_pct": 1.469557080278604,
+    "market_cap": 34865164288,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "CPRT",
+    "company": "Copart, Inc.",
+    "sector": "Industrials",
+    "shares_5yr_ago": 949676000,
+    "shares_current": 963308388,
+    "change_pct": 1.435477784002123,
+    "market_cap": 36160299008,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "HAS",
+    "company": "Hasbro, Inc.",
+    "sector": "Consumer Cyclical",
+    "shares_5yr_ago": 138700000,
+    "shares_current": 140685758,
+    "change_pct": 1.431692862292718,
+    "market_cap": 13185070080,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "PFE",
+    "company": "Pfizer Inc.",
+    "sector": "Healthcare",
+    "shares_5yr_ago": 5608000000,
+    "shares_current": 5686267431,
+    "change_pct": 1.3956389265335236,
+    "market_cap": 151226269696,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "VLTO",
+    "company": "Veralto Corporation",
+    "sector": "Industrials",
+    "shares_5yr_ago": 244500000,
+    "shares_current": 247843360,
+    "change_pct": 1.3674274028629858,
+    "market_cap": 23121448960,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "MAA",
+    "company": "Mid-America Apartment Communities, Inc.",
+    "sector": "Real Estate",
+    "shares_5yr_ago": 115344000,
+    "shares_current": 116901020,
+    "change_pct": 1.3498924954917464,
+    "market_cap": 15741692928,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "AON",
+    "company": "Aon plc",
+    "sector": "Financial Services",
+    "shares_5yr_ago": 211700000,
+    "shares_current": 214500000,
+    "change_pct": 1.3226263580538498,
+    "market_cap": 72104329216,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "BXP",
+    "company": "BXP, Inc.",
+    "sector": "Real Estate",
+    "shares_5yr_ago": 156724250,
+    "shares_current": 158629124,
+    "change_pct": 1.2154302859959452,
+    "market_cap": 9044070400,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "MU",
+    "company": "Micron Technology, Inc.",
+    "sector": "Technology",
+    "shares_5yr_ago": 1112000000,
+    "shares_current": 1125509261,
+    "change_pct": 1.2148616007194244,
+    "market_cap": 427271454720,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "FE",
+    "company": "FirstEnergy Corp.",
+    "sector": "Utilities",
+    "shares_5yr_ago": 571000000,
+    "shares_current": 577932879,
+    "change_pct": 1.2141644483362521,
+    "market_cap": 29364768768,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "SYK",
+    "company": "Stryker Corporation",
+    "sector": "Healthcare",
+    "shares_5yr_ago": 378200000,
+    "shares_current": 382688675,
+    "change_pct": 1.1868521946060286,
+    "market_cap": 138833707008,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "BIIB",
+    "company": "Biogen Inc.",
+    "sector": "Healthcare",
+    "shares_5yr_ago": 145300000,
+    "shares_current": 146758528,
+    "change_pct": 1.0038045423262216,
+    "market_cap": 27305156608,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "EIX",
+    "company": "Edison International",
+    "sector": "Utilities",
+    "shares_5yr_ago": 381000000,
+    "shares_current": 384790927,
+    "change_pct": 0.9949939632545932,
+    "market_cap": 26831470592,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "DUK",
+    "company": "Duke Energy Corporation",
+    "sector": "Utilities",
+    "shares_5yr_ago": 770000000,
+    "shares_current": 777661224,
+    "change_pct": 0.9949641558441559,
+    "market_cap": 102005825536,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "HRL",
+    "company": "Hormel Foods Corporation",
+    "sector": "Consumer Defensive",
+    "shares_5yr_ago": 544918000,
+    "shares_current": 550284207,
+    "change_pct": 0.9847733053413542,
+    "market_cap": 13116023808,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "PCAR",
+    "company": "PACCAR Inc",
+    "sector": "Industrials",
+    "shares_5yr_ago": 521700000,
+    "shares_current": 525894443,
+    "change_pct": 0.8039952079739313,
+    "market_cap": 62463111168,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "FSLR",
+    "company": "First Solar, Inc.",
+    "sector": "Technology",
+    "shares_5yr_ago": 106551000,
+    "shares_current": 107310994,
+    "change_pct": 0.7132678247975148,
+    "market_cap": 20676681728,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "CCI",
+    "company": "Crown Castle Inc.",
+    "sector": "Real Estate",
+    "shares_5yr_ago": 433000000,
+    "shares_current": 436070436,
+    "change_pct": 0.7091076212471131,
+    "market_cap": 38934548480,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "EVRG",
+    "company": "Evergy, Inc.",
+    "sector": "Utilities",
+    "shares_5yr_ago": 229000000,
+    "shares_current": 230281586,
+    "change_pct": 0.5596445414847161,
+    "market_cap": 19002834944,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "STE",
+    "company": "STERIS plc",
+    "sector": "Healthcare",
+    "shares_5yr_ago": 97535000,
+    "shares_current": 98075025,
+    "change_pct": 0.553673040447019,
+    "market_cap": 21947633664,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "FCX",
+    "company": "Freeport-McMoRan Inc.",
+    "sector": "Basic Materials",
+    "shares_5yr_ago": 1430000000,
+    "shares_current": 1437201606,
+    "change_pct": 0.5036088111888112,
+    "market_cap": 83673882624,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "SOLV",
+    "company": "Solventum Corporation",
+    "sector": "Healthcare",
+    "shares_5yr_ago": 172700000,
+    "shares_current": 173493005,
+    "change_pct": 0.45918066010422703,
+    "market_cap": 11752416256,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "EQR",
+    "company": "Equity Residential",
+    "sector": "Real Estate",
+    "shares_5yr_ago": 376209000,
+    "shares_current": 377547108,
+    "change_pct": 0.35568208097094967,
+    "market_cap": 24191027200,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "COIN",
+    "company": "Coinbase Global, Inc.",
+    "sector": "Financial Services",
+    "shares_5yr_ago": 222314000,
+    "shares_current": 223041278,
+    "change_pct": 0.3271399911836411,
+    "market_cap": 53220974592,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "CME",
+    "company": "CME Group Inc.",
+    "sector": "Financial Services",
+    "shares_5yr_ago": 358340000,
+    "shares_current": 359509289,
+    "change_pct": 0.3263071384718424,
+    "market_cap": 115068239872,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "APD",
+    "company": "Air Products and Chemicals, Inc.",
+    "sector": "Basic Materials",
+    "shares_5yr_ago": 222000000,
+    "shares_current": 222656008,
+    "change_pct": 0.2954990990990991,
+    "market_cap": 61150248960,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "AVB",
+    "company": "AvalonBay Communities, Inc.",
+    "sector": "Real Estate",
+    "shares_5yr_ago": 139681493,
+    "shares_current": 140083473,
+    "change_pct": 0.28778329280887627,
+    "market_cap": 24810266624,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "WMB",
+    "company": "The Williams Companies, Inc.",
+    "sector": "Energy",
+    "shares_5yr_ago": 1218362000,
+    "shares_current": 1221563111,
+    "change_pct": 0.2627389068273633,
+    "market_cap": 89479495680,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "PGR",
+    "company": "The Progressive Corporation",
+    "sector": "Financial Services",
+    "shares_5yr_ago": 584400000,
+    "shares_current": 585900000,
+    "change_pct": 0.25667351129363447,
+    "market_cap": 120425889792,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "RMD",
+    "company": "ResMed Inc.",
+    "sector": "Healthcare",
+    "shares_5yr_ago": 145313000,
+    "shares_current": 145678401,
+    "change_pct": 0.25145788745673137,
+    "market_cap": 36787150848,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "AMGN",
+    "company": "Amgen Inc.",
+    "sector": "Healthcare",
+    "shares_5yr_ago": 538000000,
+    "shares_current": 539067675,
+    "change_pct": 0.19845260223048328,
+    "market_cap": 201595125760,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "PEG",
+    "company": "Public Service Enterprise Group Incorporated",
+    "sector": "Utilities",
+    "shares_5yr_ago": 498000000,
+    "shares_current": 498739910,
+    "change_pct": 0.14857630522088353,
+    "market_cap": 41414807552,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "PSA",
+    "company": "Public Storage",
+    "sector": "Real Estate",
+    "shares_5yr_ago": 175257000,
+    "shares_current": 175506447,
+    "change_pct": 0.14233211797531625,
+    "market_cap": 53051211776,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "FAST",
+    "company": "Fastenal Company",
+    "sector": "Industrials",
+    "shares_5yr_ago": 1147600000,
+    "shares_current": 1148328513,
+    "change_pct": 0.06348143952596724,
+    "market_cap": 53328375808,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "COST",
+    "company": "Costco Wholesale Corporation",
+    "sector": "Consumer Defensive",
+    "shares_5yr_ago": 443651000,
+    "shares_current": 443869411,
+    "change_pct": 0.04923036350644989,
+    "market_cap": 444117516288,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "BR",
+    "company": "Broadridge Financial Solutions, Inc.",
+    "sector": "Technology",
+    "shares_5yr_ago": 116700000,
+    "shares_current": 116748715,
+    "change_pct": 0.041743787489288774,
+    "market_cap": 22124466176,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "Q",
+    "company": "Qnity Electronics, Inc.",
+    "sector": "Technology",
+    "shares_5yr_ago": 209600000,
+    "shares_current": 209658907,
+    "change_pct": 0.02810448473282443,
+    "market_cap": 23265869824,
+    "type": "Diluter"
+  },
+  {
+    "ticker": "ERIE",
+    "company": "Erie Indemnity Company",
+    "sector": "Financial Services",
+    "shares_5yr_ago": 46191348,
+    "shares_current": 46189068,
+    "change_pct": -0.004935989311245041,
+    "market_cap": 13093644288,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "ABT",
+    "company": "Abbott Laboratories",
+    "sector": "Healthcare",
+    "shares_5yr_ago": 1737795021,
+    "shares_current": 1737682887,
+    "change_pct": -0.006452659758195959,
+    "market_cap": 194133934080,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "GRMN",
+    "company": "Garmin Ltd.",
+    "sector": "Technology",
+    "shares_5yr_ago": 192544000,
+    "shares_current": 192480830,
+    "change_pct": -0.032808085424630214,
+    "market_cap": 46074134528,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "ABBV",
+    "company": "AbbVie Inc.",
+    "sector": "Healthcare",
+    "shares_5yr_ago": 1769181294,
+    "shares_current": 1768169012,
+    "change_pct": -0.05721753917662663,
+    "market_cap": 401091428352,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "PM",
+    "company": "Philip Morris International Inc.",
+    "sector": "Consumer Defensive",
+    "shares_5yr_ago": 1558000000,
+    "shares_current": 1556679579,
+    "change_pct": -0.084751026957638,
+    "market_cap": 267157340160,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "BDX",
+    "company": "Becton, Dickinson and Company",
+    "sector": "Healthcare",
+    "shares_5yr_ago": 285005000,
+    "shares_current": 284466650,
+    "change_pct": -0.18889142295749198,
+    "market_cap": 59392847872,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "TECH",
+    "company": "Bio-Techne Corporation",
+    "sector": "Healthcare",
+    "shares_5yr_ago": 156876000,
+    "shares_current": 156453292,
+    "change_pct": -0.26945358117239093,
+    "market_cap": 8409364480,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "ISRG",
+    "company": "Intuitive Surgical, Inc.",
+    "sector": "Healthcare",
+    "shares_5yr_ago": 356100000,
+    "shares_current": 355130237,
+    "change_pct": -0.2723288402134232,
+    "market_cap": 172875628544,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "CAG",
+    "company": "Conagra Brands, Inc.",
+    "sector": "Consumer Defensive",
+    "shares_5yr_ago": 480300000,
+    "shares_current": 478369475,
+    "change_pct": -0.4019414948990214,
+    "market_cap": 8981386240,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "PAYX",
+    "company": "Paychex, Inc.",
+    "sector": "Technology",
+    "shares_5yr_ago": 360600000,
+    "shares_current": 358967450,
+    "change_pct": -0.4527315585135885,
+    "market_cap": 35268550656,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "KO",
+    "company": "The Coca-Cola Company",
+    "sector": "Consumer Defensive",
+    "shares_5yr_ago": 4328000000,
+    "shares_current": 4300723069,
+    "change_pct": -0.6302433225508318,
+    "market_cap": 333030555648,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "SBUX",
+    "company": "Starbucks Corporation",
+    "sector": "Consumer Cyclical",
+    "shares_5yr_ago": 1147900000,
+    "shares_current": 1139300000,
+    "change_pct": -0.7491941806777593,
+    "market_cap": 112289398784,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "PEP",
+    "company": "PepsiCo, Inc.",
+    "sector": "Consumer Defensive",
+    "shares_5yr_ago": 1377000000,
+    "shares_current": 1366649053,
+    "change_pct": -0.7517027596223674,
+    "market_cap": 219540127744,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "TPL",
+    "company": "Texas Pacific Land Corporation",
+    "sector": "Energy",
+    "shares_5yr_ago": 69497613,
+    "shares_current": 68941554,
+    "change_pct": -0.8001123722047835,
+    "market_cap": 37280145408,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "VRTX",
+    "company": "Vertex Pharmaceuticals Incorporated",
+    "sector": "Healthcare",
+    "shares_5yr_ago": 256100000,
+    "shares_current": 254000000,
+    "change_pct": -0.8199921905505663,
+    "market_cap": 115242336256,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "SPG",
+    "company": "Simon Property Group, Inc.",
+    "sector": "Real Estate",
+    "shares_5yr_ago": 327817000,
+    "shares_current": 324945274,
+    "change_pct": -0.8760149717677851,
+    "market_cap": 61364174848,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "CARR",
+    "company": "Carrier Global Corporation",
+    "sector": "Industrials",
+    "shares_5yr_ago": 843400000,
+    "shares_current": 835843882,
+    "change_pct": -0.8959115484941901,
+    "market_cap": 48232374272,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "TXN",
+    "company": "Texas Instruments Incorporated",
+    "sector": "Technology",
+    "shares_5yr_ago": 916000000,
+    "shares_current": 907550774,
+    "change_pct": -0.9224045851528384,
+    "market_cap": 175246114816,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "ESS",
+    "company": "Essex Property Trust, Inc.",
+    "sector": "Real Estate",
+    "shares_5yr_ago": 65079764,
+    "shares_current": 64475506,
+    "change_pct": -0.9284883085931289,
+    "market_cap": 17455073280,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "GEV",
+    "company": "GE Vernova Inc.",
+    "sector": "Industrials",
+    "shares_5yr_ago": 272083576,
+    "shares_current": 269529464,
+    "change_pct": -0.9387233281585509,
+    "market_cap": 222844993536,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "MSFT",
+    "company": "Microsoft Corporation",
+    "sector": "Technology",
+    "shares_5yr_ago": 7496000000,
+    "shares_current": 7425629076,
+    "change_pct": -0.9387796691568837,
+    "market_cap": 3023268216832,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "CPB",
+    "company": "The Campbell's Company",
+    "sector": "Consumer Defensive",
+    "shares_5yr_ago": 301000000,
+    "shares_current": 298134245,
+    "change_pct": -0.9520780730897009,
+    "market_cap": 7584535040,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "JKHY",
+    "company": "Jack Henry & Associates, Inc.",
+    "sector": "Technology",
+    "shares_5yr_ago": 72878821,
+    "shares_current": 72167368,
+    "change_pct": -0.9762136519744193,
+    "market_cap": 12339939328,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "HUBB",
+    "company": "Hubbell Incorporated",
+    "sector": "Industrials",
+    "shares_5yr_ago": 53700000,
+    "shares_current": 53161602,
+    "change_pct": -1.0026033519553073,
+    "market_cap": 25349576704,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "COO",
+    "company": "The Cooper Companies, Inc.",
+    "sector": "Healthcare",
+    "shares_5yr_ago": 197200000,
+    "shares_current": 195114202,
+    "change_pct": -1.057706896551724,
+    "market_cap": 14563127296,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "UAL",
+    "company": "United Airlines Holdings, Inc.",
+    "sector": "Industrials",
+    "shares_5yr_ago": 326930321,
+    "shares_current": 323430419,
+    "change_pct": -1.070534537541411,
+    "market_cap": 29167984640,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "MSI",
+    "company": "Motorola Solutions, Inc.",
+    "sector": "Technology",
+    "shares_5yr_ago": 167500000,
+    "shares_current": 165658912,
+    "change_pct": -1.099157014925373,
+    "market_cap": 76273025024,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "AME",
+    "company": "AMETEK, Inc.",
+    "sector": "Industrials",
+    "shares_5yr_ago": 231536000,
+    "shares_current": 228977202,
+    "change_pct": -1.1051404533204339,
+    "market_cap": 50990157824,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "ECL",
+    "company": "Ecolab Inc.",
+    "sector": "Basic Materials",
+    "shares_5yr_ago": 285200000,
+    "shares_current": 281969448,
+    "change_pct": -1.1327321178120617,
+    "market_cap": 78820237312,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "GILD",
+    "company": "Gilead Sciences, Inc.",
+    "sector": "Healthcare",
+    "shares_5yr_ago": 1256000000,
+    "shares_current": 1241420528,
+    "change_pct": -1.1607859872611466,
+    "market_cap": 179832176640,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "DXCM",
+    "company": "DexCom, Inc.",
+    "sector": "Healthcare",
+    "shares_5yr_ago": 389400000,
+    "shares_current": 384864842,
+    "change_pct": -1.164652799178223,
+    "market_cap": 26415802368,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "TER",
+    "company": "Teradyne, Inc.",
+    "sector": "Technology",
+    "shares_5yr_ago": 158434000,
+    "shares_current": 156555950,
+    "change_pct": -1.185383187952081,
+    "market_cap": 44949561344,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "INTU",
+    "company": "Intuit Inc.",
+    "sector": "Technology",
+    "shares_5yr_ago": 280000000,
+    "shares_current": 276550000,
+    "change_pct": -1.2321428571428572,
+    "market_cap": 131705733120,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "TDY",
+    "company": "Teledyne Technologies Incorporated",
+    "sector": "Technology",
+    "shares_5yr_ago": 46912635,
+    "shares_current": 46305311,
+    "change_pct": -1.2945851368186843,
+    "market_cap": 30221412352,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "SJM",
+    "company": "The J. M. Smucker Company",
+    "sector": "Consumer Defensive",
+    "shares_5yr_ago": 108200000,
+    "shares_current": 106694327,
+    "change_pct": -1.3915646950092422,
+    "market_cap": 11732108288,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "KMI",
+    "company": "Kinder Morgan, Inc.",
+    "sector": "Energy",
+    "shares_5yr_ago": 2258000000,
+    "shares_current": 2224806397,
+    "change_pct": -1.4700444198405669,
+    "market_cap": 74275160064,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "LYB",
+    "company": "LyondellBasell Industries N.V.",
+    "sector": "Basic Materials",
+    "shares_5yr_ago": 327000000,
+    "shares_current": 322169978,
+    "change_pct": -1.4770709480122324,
+    "market_cap": 22163683328,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "PNR",
+    "company": "Pentair plc",
+    "sector": "Industrials",
+    "shares_5yr_ago": 165800000,
+    "shares_current": 163235706,
+    "change_pct": -1.5466188178528346,
+    "market_cap": 14870138880,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "KMB",
+    "company": "Kimberly-Clark Corporation",
+    "sector": "Consumer Defensive",
+    "shares_5yr_ago": 337521815,
+    "shares_current": 331922371,
+    "change_pct": -1.6589872864958375,
+    "market_cap": 34196301824,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "VMC",
+    "company": "Vulcan Materials Company",
+    "sector": "Basic Materials",
+    "shares_5yr_ago": 132800000,
+    "shares_current": 130580384,
+    "change_pct": -1.6713975903614458,
+    "market_cap": 35726876672,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "REGN",
+    "company": "Regeneron Pharmaceuticals, Inc.",
+    "sector": "Healthcare",
+    "shares_5yr_ago": 105700002,
+    "shares_current": 103902660,
+    "change_pct": -1.7004181324424197,
+    "market_cap": 81602478080,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "EFX",
+    "company": "Equifax Inc.",
+    "sector": "Industrials",
+    "shares_5yr_ago": 122400000,
+    "shares_current": 120269998,
+    "change_pct": -1.7401977124183006,
+    "market_cap": 24745625600,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "GD",
+    "company": "General Dynamics Corporation",
+    "sector": "Industrials",
+    "shares_5yr_ago": 275300000,
+    "shares_current": 270389759,
+    "change_pct": -1.7835964402470033,
+    "market_cap": 97445773312,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "IEX",
+    "company": "IDEX Corporation",
+    "sector": "Industrials",
+    "shares_5yr_ago": 75700000,
+    "shares_current": 74347824,
+    "change_pct": -1.7862298546895643,
+    "market_cap": 14472700928,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "PH",
+    "company": "Parker-Hannifin Corporation",
+    "sector": "Industrials",
+    "shares_5yr_ago": 128539387,
+    "shares_current": 126216529,
+    "change_pct": -1.807117689148463,
+    "market_cap": 115204136960,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "MRNA",
+    "company": "Moderna, Inc.",
+    "sector": "Healthcare",
+    "shares_5yr_ago": 403000000,
+    "shares_current": 394939424,
+    "change_pct": -2.0001429280397023,
+    "market_cap": 21212987392,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "CINF",
+    "company": "Cincinnati Financial Corporation",
+    "sector": "Financial Services",
+    "shares_5yr_ago": 158823529,
+    "shares_current": 155617576,
+    "change_pct": -2.0185630052333114,
+    "market_cap": 25245356032,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "MCHP",
+    "company": "Microchip Technology Incorporated",
+    "sector": "Technology",
+    "shares_5yr_ago": 552300000,
+    "shares_current": 541135458,
+    "change_pct": -2.0214633351439435,
+    "market_cap": 34215997440,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "PNC",
+    "company": "The PNC Financial Services Group, Inc.",
+    "sector": "Financial Services",
+    "shares_5yr_ago": 412000000,
+    "shares_current": 403370923,
+    "change_pct": -2.0944361650485437,
+    "market_cap": 80850649088,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "FIX",
+    "company": "Comfort Systems USA, Inc.",
+    "sector": "Industrials",
+    "shares_5yr_ago": 35932000,
+    "shares_current": 35174967,
+    "change_pct": -2.1068490482021596,
+    "market_cap": 46812581888,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "HII",
+    "company": "Huntington Ingalls Industries, Inc.",
+    "sector": "Industrials",
+    "shares_5yr_ago": 40100000,
+    "shares_current": 39242688,
+    "change_pct": -2.137935162094763,
+    "market_cap": 16767027200,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "ROL",
+    "company": "Rollins, Inc.",
+    "sector": "Consumer Cyclical",
+    "shares_5yr_ago": 492300000,
+    "shares_current": 481092221,
+    "change_pct": -2.2766156814950236,
+    "market_cap": 27689263104,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "WM",
+    "company": "Waste Management, Inc.",
+    "sector": "Industrials",
+    "shares_5yr_ago": 412800000,
+    "shares_current": 403335781,
+    "change_pct": -2.2926887112403103,
+    "market_cap": 99791314944,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "T",
+    "company": "AT&T Inc.",
+    "sector": "Communication Services",
+    "shares_5yr_ago": 7166000000,
+    "shares_current": 7000577201,
+    "change_pct": -2.308439840915434,
+    "market_cap": 197051252736,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "MRK",
+    "company": "Merck & Co., Inc.",
+    "sector": "Healthcare",
+    "shares_5yr_ago": 2532000000,
+    "shares_current": 2472392003,
+    "change_pct": -2.3541862954186414,
+    "market_cap": 287094145024,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "F",
+    "company": "Ford Motor Company",
+    "sector": "Consumer Cyclical",
+    "shares_5yr_ago": 4014000000,
+    "shares_current": 3918623149,
+    "change_pct": -2.376104907822621,
+    "market_cap": 48093126656,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "ROK",
+    "company": "Rockwell Automation, Inc.",
+    "sector": "Industrials",
+    "shares_5yr_ago": 115200000,
+    "shares_current": 112357908,
+    "change_pct": -2.46709375,
+    "market_cap": 41376538624,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "DHR",
+    "company": "Danaher Corporation",
+    "sector": "Healthcare",
+    "shares_5yr_ago": 725100000,
+    "shares_current": 707139356,
+    "change_pct": -2.4769885533029927,
+    "market_cap": 139051876352,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "FDS",
+    "company": "FactSet Research Systems Inc.",
+    "sector": "Financial Services",
+    "shares_5yr_ago": 38044756,
+    "shares_current": 37099259,
+    "change_pct": -2.4852229305925895,
+    "market_cap": 8334168064,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "LII",
+    "company": "Lennox International Inc.",
+    "sector": "Industrials",
+    "shares_5yr_ago": 35700000,
+    "shares_current": 34802911,
+    "change_pct": -2.5128543417366944,
+    "market_cap": 17787336704,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "XOM",
+    "company": "Exxon Mobil Corporation",
+    "sector": "Energy",
+    "shares_5yr_ago": 4274582560,
+    "shares_current": 4166763453,
+    "change_pct": -2.5223306717463423,
+    "market_cap": 631973019648,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "CHD",
+    "company": "Church & Dwight Co., Inc.",
+    "sector": "Consumer Defensive",
+    "shares_5yr_ago": 242900000,
+    "shares_current": 236694241,
+    "change_pct": -2.5548616714697405,
+    "market_cap": 24316172288,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "ETN",
+    "company": "Eaton Corporation plc",
+    "sector": "Industrials",
+    "shares_5yr_ago": 398700000,
+    "shares_current": 388400000,
+    "change_pct": -2.583396037120642,
+    "market_cap": 134670548992,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "MCD",
+    "company": "McDonald's Corporation",
+    "sector": "Consumer Cyclical",
+    "shares_5yr_ago": 731300000,
+    "shares_current": 712154350,
+    "change_pct": -2.618029536441953,
+    "market_cap": 234840080384,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "LHX",
+    "company": "L3Harris Technologies, Inc.",
+    "sector": "Industrials",
+    "shares_5yr_ago": 191800000,
+    "shares_current": 186776263,
+    "change_pct": -2.6192580813347237,
+    "market_cap": 69430272000,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "NVDA",
+    "company": "NVIDIA Corporation",
+    "sector": "Technology",
+    "shares_5yr_ago": 24960000000,
+    "shares_current": 24300000000,
+    "change_pct": -2.644230769230769,
+    "market_cap": 4376115281920,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "GPC",
+    "company": "Genuine Parts Company",
+    "sector": "Consumer Cyclical",
+    "shares_5yr_ago": 141468000,
+    "shares_current": 137622108,
+    "change_pct": -2.718559674272627,
+    "market_cap": 15482998784,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "ACN",
+    "company": "Accenture plc",
+    "sector": "Technology",
+    "shares_5yr_ago": 632762710,
+    "shares_current": 615435159,
+    "change_pct": -2.7383963571431065,
+    "market_cap": 129658634240,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "DIS",
+    "company": "The Walt Disney Company",
+    "sector": "Communication Services",
+    "shares_5yr_ago": 1822000000,
+    "shares_current": 1771519851,
+    "change_pct": -2.7705899560922065,
+    "market_cap": 177595842560,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "ROP",
+    "company": "Roper Technologies, Inc.",
+    "sector": "Technology",
+    "shares_5yr_ago": 105900000,
+    "shares_current": 102927515,
+    "change_pct": -2.806879131255902,
+    "market_cap": 38974435328,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "UNH",
+    "company": "UnitedHealth Group Incorporated",
+    "sector": "Healthcare",
+    "shares_5yr_ago": 934000000,
+    "shares_current": 907675839,
+    "change_pct": -2.8184326552462524,
+    "market_cap": 256763346944,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "WY",
+    "company": "Weyerhaeuser Company",
+    "sector": "Real Estate",
+    "shares_5yr_ago": 741904000,
+    "shares_current": 720665000,
+    "change_pct": -2.8627693070801614,
+    "market_cap": 17354729472,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "TDG",
+    "company": "TransDigm Group Incorporated",
+    "sector": "Industrials",
+    "shares_5yr_ago": 58200000,
+    "shares_current": 56473563,
+    "change_pct": -2.9663865979381443,
+    "market_cap": 71693754368,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "MRSH",
+    "company": "Marsh & McLennan Companies, Inc.",
+    "sector": "Financial Services",
+    "shares_5yr_ago": 499000000,
+    "shares_current": 484124253,
+    "change_pct": -2.981111623246493,
+    "market_cap": 88252334080,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "IVZ",
+    "company": "Invesco Ltd.",
+    "sector": "Financial Services",
+    "shares_5yr_ago": 457500000,
+    "shares_current": 443673777,
+    "change_pct": -3.0221252459016394,
+    "market_cap": 10288795648,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "CTAS",
+    "company": "Cintas Corporation",
+    "sector": "Industrials",
+    "shares_5yr_ago": 412688000,
+    "shares_current": 399889646,
+    "change_pct": -3.101217869189315,
+    "market_cap": 80594362368,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "CRL",
+    "company": "Charles River Laboratories International, Inc.",
+    "sector": "Healthcare",
+    "shares_5yr_ago": 50812000,
+    "shares_current": 49227800,
+    "change_pct": -3.117767456506337,
+    "market_cap": 8585328128,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "RSG",
+    "company": "Republic Services, Inc.",
+    "sector": "Industrials",
+    "shares_5yr_ago": 318800000,
+    "shares_current": 308804970,
+    "change_pct": -3.1352038895859478,
+    "market_cap": 71468941312,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "HST",
+    "company": "Host Hotels & Resorts, Inc.",
+    "sector": "Real Estate",
+    "shares_5yr_ago": 710300000,
+    "shares_current": 687802181,
+    "change_pct": -3.16736857665775,
+    "market_cap": 13031570432,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "MLM",
+    "company": "Martin Marietta Materials, Inc.",
+    "sector": "Basic Materials",
+    "shares_5yr_ago": 62300000,
+    "shares_current": 60312046,
+    "change_pct": -3.1909373996789725,
+    "market_cap": 36363943936,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "WST",
+    "company": "West Pharmaceutical Services, Inc.",
+    "sector": "Healthcare",
+    "shares_5yr_ago": 74400000,
+    "shares_current": 72021491,
+    "change_pct": -3.196920698924731,
+    "market_cap": 17625098240,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "NDSN",
+    "company": "Nordson Corporation",
+    "sector": "Industrials",
+    "shares_5yr_ago": 57629000,
+    "shares_current": 55783598,
+    "change_pct": -3.202210692533273,
+    "market_cap": 14949725184,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "TT",
+    "company": "Trane Technologies plc",
+    "sector": "Industrials",
+    "shares_5yr_ago": 228827395,
+    "shares_current": 221331905,
+    "change_pct": -3.2756086743897073,
+    "market_cap": 93123731456,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "YUM",
+    "company": "Yum! Brands, Inc.",
+    "sector": "Consumer Cyclical",
+    "shares_5yr_ago": 286000000,
+    "shares_current": 276430130,
+    "change_pct": -3.346108391608391,
+    "market_cap": 44230098944,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "CRM",
+    "company": "Salesforce, Inc.",
+    "sector": "Technology",
+    "shares_5yr_ago": 955000000,
+    "shares_current": 923000000,
+    "change_pct": -3.3507853403141366,
+    "market_cap": 185741508608,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "SBAC",
+    "company": "SBA Communications Corporation",
+    "sector": "Real Estate",
+    "shares_5yr_ago": 109328000,
+    "shares_current": 105654000,
+    "change_pct": -3.3605297819405826,
+    "market_cap": 20581926912,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "IR",
+    "company": "Ingersoll Rand Inc.",
+    "sector": "Industrials",
+    "shares_5yr_ago": 405300000,
+    "shares_current": 391617994,
+    "change_pct": -3.375772514187022,
+    "market_cap": 33605443584,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "KHC",
+    "company": "The Kraft Heinz Company",
+    "sector": "Consumer Defensive",
+    "shares_5yr_ago": 1226000000,
+    "shares_current": 1183744751,
+    "change_pct": -3.4465945350734093,
+    "market_cap": 29055014912,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "ACGL",
+    "company": "Arch Capital Group Ltd.",
+    "sector": "Financial Services",
+    "shares_5yr_ago": 368612197,
+    "shares_current": 355803320,
+    "change_pct": -3.4748923405809062,
+    "market_cap": 34737754112,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "DOW",
+    "company": "Dow Inc.",
+    "sector": "Basic Materials",
+    "shares_5yr_ago": 743600000,
+    "shares_current": 717534072,
+    "change_pct": -3.5053695535234,
+    "market_cap": 25400707072,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "TROW",
+    "company": "T. Rowe Price Group, Inc.",
+    "sector": "Financial Services",
+    "shares_5yr_ago": 226000000,
+    "shares_current": 218072901,
+    "change_pct": -3.50756592920354,
+    "market_cap": 19357620224,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "NXPI",
+    "company": "NXP Semiconductors N.V.",
+    "sector": "Technology",
+    "shares_5yr_ago": 261879000,
+    "shares_current": 252692845,
+    "change_pct": -3.5077860385903414,
+    "market_cap": 50672496640,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "CVS",
+    "company": "CVS Health Corporation",
+    "sector": "Healthcare",
+    "shares_5yr_ago": 1319000000,
+    "shares_current": 1272211063,
+    "change_pct": -3.547303790750569,
+    "market_cap": 98736300032,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "HWM",
+    "company": "Howmet Aerospace Inc.",
+    "sector": "Industrials",
+    "shares_5yr_ago": 416043332,
+    "shares_current": 400940063,
+    "change_pct": -3.6302153738159175,
+    "market_cap": 100689403904,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "SNA",
+    "company": "Snap-on Incorporated",
+    "sector": "Industrials",
+    "shares_5yr_ago": 53900000,
+    "shares_current": 51913121,
+    "change_pct": -3.6862319109461965,
+    "market_cap": 19155943424,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "CLX",
+    "company": "The Clorox Company",
+    "sector": "Consumer Defensive",
+    "shares_5yr_ago": 125570000,
+    "shares_current": 120911863,
+    "change_pct": -3.709593852034722,
+    "market_cap": 13657532416,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "ADP",
+    "company": "Automatic Data Processing, Inc.",
+    "sector": "Technology",
+    "shares_5yr_ago": 418800000,
+    "shares_current": 402644364,
+    "change_pct": -3.857601719197708,
+    "market_cap": 90307338240,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "CPT",
+    "company": "Camden Property Trust",
+    "sector": "Real Estate",
+    "shares_5yr_ago": 107605000,
+    "shares_current": 103408210,
+    "change_pct": -3.9001812183448727,
+    "market_cap": 11117779968,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "ADSK",
+    "company": "Autodesk, Inc.",
+    "sector": "Technology",
+    "shares_5yr_ago": 219700000,
+    "shares_current": 211000000,
+    "change_pct": -3.959945380063723,
+    "market_cap": 55081840640,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "SHW",
+    "company": "The Sherwin-Williams Company",
+    "sector": "Basic Materials",
+    "shares_5yr_ago": 258000000,
+    "shares_current": 247774767,
+    "change_pct": -3.9632686046511627,
+    "market_cap": 80308756480,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "PKG",
+    "company": "Packaging Corporation of America",
+    "sector": "Consumer Cyclical",
+    "shares_5yr_ago": 92942238,
+    "shares_current": 89213394,
+    "change_pct": -4.01200151862063,
+    "market_cap": 19703627776,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "KDP",
+    "company": "Keurig Dr Pepper Inc.",
+    "sector": "Consumer Defensive",
+    "shares_5yr_ago": 1415700000,
+    "shares_current": 1358666059,
+    "change_pct": -4.028674224765134,
+    "market_cap": 38022270976,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "COP",
+    "company": "ConocoPhillips",
+    "sector": "Energy",
+    "shares_5yr_ago": 1274028000,
+    "shares_current": 1222339152,
+    "change_pct": -4.057120251674218,
+    "market_cap": 144492707840,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "CL",
+    "company": "Colgate-Palmolive Company",
+    "sector": "Consumer Defensive",
+    "shares_5yr_ago": 836400000,
+    "shares_current": 801548028,
+    "change_pct": -4.1669024390243905,
+    "market_cap": 74559995904,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "ALLE",
+    "company": "Allegion plc",
+    "sector": "Industrials",
+    "shares_5yr_ago": 89900000,
+    "shares_current": 86145484,
+    "change_pct": -4.1763248053392665,
+    "market_cap": 12812849152,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "ALL",
+    "company": "The Allstate Corporation",
+    "sector": "Financial Services",
+    "shares_5yr_ago": 271200000,
+    "shares_current": 259535842,
+    "change_pct": -4.300943215339234,
+    "market_cap": 53770633216,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "GE",
+    "company": "GE Aerospace",
+    "sector": "Industrials",
+    "shares_5yr_ago": 1096000000,
+    "shares_current": 1048813612,
+    "change_pct": -4.305327372262774,
+    "market_cap": 333975158784,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "MDT",
+    "company": "Medtronic plc",
+    "sector": "Healthcare",
+    "shares_5yr_ago": 1342400000,
+    "shares_current": 1283884964,
+    "change_pct": -4.358986591179976,
+    "market_cap": 116287873024,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "BMY",
+    "company": "Bristol-Myers Squibb Company",
+    "sector": "Healthcare",
+    "shares_5yr_ago": 2130000000,
+    "shares_current": 2036473705,
+    "change_pct": -4.390905868544601,
+    "market_cap": 122428112896,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "CMI",
+    "company": "Cummins Inc.",
+    "sector": "Industrials",
+    "shares_5yr_ago": 144600000,
+    "shares_current": 138165463,
+    "change_pct": -4.449887275242046,
+    "market_cap": 74382753792,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "LW",
+    "company": "Lamb Weston Holdings, Inc.",
+    "sector": "Consumer Defensive",
+    "shares_5yr_ago": 145500000,
+    "shares_current": 138879884,
+    "change_pct": -4.549907903780069,
+    "market_cap": 6492431872,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "KEYS",
+    "company": "Keysight Technologies, Inc.",
+    "sector": "Technology",
+    "shares_5yr_ago": 180000000,
+    "shares_current": 171800000,
+    "change_pct": -4.555555555555555,
+    "market_cap": 47662473216,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "CDW",
+    "company": "CDW Corporation",
+    "sector": "Technology",
+    "shares_5yr_ago": 135200000,
+    "shares_current": 128993588,
+    "change_pct": -4.590541420118343,
+    "market_cap": 15547076608,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "HUM",
+    "company": "Humana Inc.",
+    "sector": "Healthcare",
+    "shares_5yr_ago": 126419000,
+    "shares_current": 120595967,
+    "change_pct": -4.606137526795814,
+    "market_cap": 21264687104,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "CTRA",
+    "company": "Coterra Energy Inc.",
+    "sector": "Energy",
+    "shares_5yr_ago": 796000000,
+    "shares_current": 759272715,
+    "change_pct": -4.613980527638191,
+    "market_cap": 23924682752,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "NFLX",
+    "company": "Netflix, Inc.",
+    "sector": "Communication Services",
+    "shares_5yr_ago": 4446980000,
+    "shares_current": 4237323340,
+    "change_pct": -4.714585179155292,
+    "market_cap": 414135648256,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "IDXX",
+    "company": "IDEXX Laboratories, Inc.",
+    "sector": "Healthcare",
+    "shares_5yr_ago": 83623000,
+    "shares_current": 79624034,
+    "change_pct": -4.782136493548426,
+    "market_cap": 48102440960,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "WMT",
+    "company": "Walmart Inc.",
+    "sector": "Consumer Defensive",
+    "shares_5yr_ago": 8376000000,
+    "shares_current": 7970166964,
+    "change_pct": -4.845189063992359,
+    "market_cap": 982972825600,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "MCO",
+    "company": "Moody's Corporation",
+    "sector": "Financial Services",
+    "shares_5yr_ago": 186400000,
+    "shares_current": 177300000,
+    "change_pct": -4.881974248927039,
+    "market_cap": 81250385920,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "PG",
+    "company": "The Procter & Gamble Company",
+    "sector": "Consumer Defensive",
+    "shares_5yr_ago": 2457000000,
+    "shares_current": 2336733549,
+    "change_pct": -4.89484945054945,
+    "market_cap": 363290132480,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "EMR",
+    "company": "Emerson Electric Co.",
+    "sector": "Industrials",
+    "shares_5yr_ago": 591400000,
+    "shares_current": 562000000,
+    "change_pct": -4.9712546499830905,
+    "market_cap": 77322158080,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "QCOM",
+    "company": "QUALCOMM Incorporated",
+    "sector": "Technology",
+    "shares_5yr_ago": 1123000000,
+    "shares_current": 1067000000,
+    "change_pct": -4.986642920747997,
+    "market_cap": 145857576960,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "VTRS",
+    "company": "Viatris Inc.",
+    "sector": "Healthcare",
+    "shares_5yr_ago": 1212100000,
+    "shares_current": 1151392922,
+    "change_pct": -5.008421582377691,
+    "market_cap": 16084466688,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "APA",
+    "company": "APA Corporation",
+    "sector": "Energy",
+    "shares_5yr_ago": 374000000,
+    "shares_current": 354669251,
+    "change_pct": -5.168649465240642,
+    "market_cap": 11860622336,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "TMO",
+    "company": "Thermo Fisher Scientific Inc.",
+    "sector": "Healthcare",
+    "shares_5yr_ago": 392000000,
+    "shares_current": 371484244,
+    "change_pct": -5.233611224489796,
+    "market_cap": 186117324800,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "CSCO",
+    "company": "Cisco Systems, Inc.",
+    "sector": "Technology",
+    "shares_5yr_ago": 4170000000,
+    "shares_current": 3949893042,
+    "change_pct": -5.278344316546763,
+    "market_cap": 301251198976,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "DGX",
+    "company": "Quest Diagnostics Incorporated",
+    "sector": "Healthcare",
+    "shares_5yr_ago": 116000000,
+    "shares_current": 109866320,
+    "change_pct": -5.2876551724137935,
+    "market_cap": 22153359360,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "PPG",
+    "company": "PPG Industries, Inc.",
+    "sector": "Basic Materials",
+    "shares_5yr_ago": 236100000,
+    "shares_current": 223494714,
+    "change_pct": -5.338960609911054,
+    "market_cap": 23453536256,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "TRGP",
+    "company": "Targa Resources Corp.",
+    "sector": "Energy",
+    "shares_5yr_ago": 227300000,
+    "shares_current": 214951798,
+    "change_pct": -5.43255697316322,
+    "market_cap": 50790957056,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "TSCO",
+    "company": "Tractor Supply Company",
+    "sector": "Consumer Cyclical",
+    "shares_5yr_ago": 556680000,
+    "shares_current": 526351286,
+    "change_pct": -5.448141481641159,
+    "market_cap": 26438625280,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "MKC",
+    "company": "McCormick & Company, Incorporated",
+    "sector": "Consumer Defensive",
+    "shares_5yr_ago": 268200000,
+    "shares_current": 253586510,
+    "change_pct": -5.448728560775541,
+    "market_cap": 17308899328,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "DOV",
+    "company": "Dover Corporation",
+    "sector": "Industrials",
+    "shares_5yr_ago": 142681000,
+    "shares_current": 134866626,
+    "change_pct": -5.476814712540563,
+    "market_cap": 28333111296,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "POOL",
+    "company": "Pool Corporation",
+    "sector": "Industrials",
+    "shares_5yr_ago": 39409000,
+    "shares_current": 37249484,
+    "change_pct": -5.4797533558324245,
+    "market_cap": 7725006848,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "EPAM",
+    "company": "EPAM Systems, Inc.",
+    "sector": "Technology",
+    "shares_5yr_ago": 57291000,
+    "shares_current": 54139969,
+    "change_pct": -5.500045382346267,
+    "market_cap": 8021228032,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "HD",
+    "company": "The Home Depot, Inc.",
+    "sector": "Consumer Cyclical",
+    "shares_5yr_ago": 1054000000,
+    "shares_current": 995511485,
+    "change_pct": -5.549194971537002,
+    "market_cap": 346602274816,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "DVN",
+    "company": "Devon Energy Corporation",
+    "sector": "Energy",
+    "shares_5yr_ago": 657250000,
+    "shares_current": 620264320,
+    "change_pct": -5.6273381513883605,
+    "market_cap": 28076263424,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "CHRW",
+    "company": "C.H. Robinson Worldwide, Inc.",
+    "sector": "Industrials",
+    "shares_5yr_ago": 125743000,
+    "shares_current": 118620833,
+    "change_pct": -5.664066389381516,
+    "market_cap": 21152466944,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "SPGI",
+    "company": "S&P Global Inc.",
+    "sector": "Financial Services",
+    "shares_5yr_ago": 316900000,
+    "shares_current": 298800000,
+    "change_pct": -5.711580940359735,
+    "market_cap": 134337216512,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "ZBRA",
+    "company": "Zebra Technologies Corporation",
+    "sector": "Technology",
+    "shares_5yr_ago": 52207903,
+    "shares_current": 49191704,
+    "change_pct": -5.777284331837653,
+    "market_cap": 10689310720,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "TRMB",
+    "company": "Trimble Inc.",
+    "sector": "Technology",
+    "shares_5yr_ago": 248600000,
+    "shares_current": 233929408,
+    "change_pct": -5.901283990345937,
+    "market_cap": 16554541056,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "TFC",
+    "company": "Truist Financial Corporation",
+    "sector": "Financial Services",
+    "shares_5yr_ago": 1328120000,
+    "shares_current": 1249168322,
+    "change_pct": -5.944619311507996,
+    "market_cap": 57024540672,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "ADI",
+    "company": "Analog Devices, Inc.",
+    "sector": "Technology",
+    "shares_5yr_ago": 519226000,
+    "shares_current": 488204157,
+    "change_pct": -5.974632048472149,
+    "market_cap": 153679347712,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "TJX",
+    "company": "The TJX Companies, Inc.",
+    "sector": "Consumer Cyclical",
+    "shares_5yr_ago": 1181188731,
+    "shares_current": 1110467095,
+    "change_pct": -5.987327354547882,
+    "market_cap": 175421407232,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "LLY",
+    "company": "Eli Lilly and Company",
+    "sector": "Healthcare",
+    "shares_5yr_ago": 950182000,
+    "shares_current": 892992420,
+    "change_pct": -6.018802713585397,
+    "market_cap": 894571249664,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "DG",
+    "company": "Dollar General Corporation",
+    "sector": "Consumer Defensive",
+    "shares_5yr_ago": 234261001,
+    "shares_current": 220118871,
+    "change_pct": -6.03691179480617,
+    "market_cap": 31907330048,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "MS",
+    "company": "Morgan Stanley",
+    "sector": "Financial Services",
+    "shares_5yr_ago": 1691000000,
+    "shares_current": 1587860206,
+    "change_pct": -6.099337315198108,
+    "market_cap": 250469072896,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "RJF",
+    "company": "Raymond James Financial, Inc.",
+    "sector": "Financial Services",
+    "shares_5yr_ago": 209900000,
+    "shares_current": 197091037,
+    "change_pct": -6.102412101000477,
+    "market_cap": 29379571712,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "EW",
+    "company": "Edwards Lifesciences Corporation",
+    "sector": "Healthcare",
+    "shares_5yr_ago": 619000000,
+    "shares_current": 580800000,
+    "change_pct": -6.17124394184168,
+    "market_cap": 48464855040,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "SYY",
+    "company": "Sysco Corporation",
+    "sector": "Consumer Defensive",
+    "shares_5yr_ago": 510630645,
+    "shares_current": 478930649,
+    "change_pct": -6.208008921987046,
+    "market_cap": 40146362368,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "FFIV",
+    "company": "F5, Inc.",
+    "sector": "Technology",
+    "shares_5yr_ago": 60274000,
+    "shares_current": 56519273,
+    "change_pct": -6.2294306002588185,
+    "market_cap": 16065608704,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "TKO",
+    "company": "TKO Group Holdings, Inc.",
+    "sector": "Communication Services",
+    "shares_5yr_ago": 83162446,
+    "shares_current": 77966338,
+    "change_pct": -6.248142340594455,
+    "market_cap": 15908774912,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "MOS",
+    "company": "The Mosaic Company",
+    "sector": "Basic Materials",
+    "shares_5yr_ago": 339071423,
+    "shares_current": 317505258,
+    "change_pct": -6.360360542681298,
+    "market_cap": 8525016064,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "WAB",
+    "company": "Westinghouse Air Brake Technologies Corporation",
+    "sector": "Industrials",
+    "shares_5yr_ago": 182200000,
+    "shares_current": 170517190,
+    "change_pct": -6.412080131723381,
+    "market_cap": 41520369664,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "CIEN",
+    "company": "Ciena Corporation",
+    "sector": "Technology",
+    "shares_5yr_ago": 151208000,
+    "shares_current": 141463456,
+    "change_pct": -6.444463255912386,
+    "market_cap": 43968258048,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "CMG",
+    "company": "Chipotle Mexican Grill, Inc.",
+    "sector": "Consumer Cyclical",
+    "shares_5yr_ago": 1392550000,
+    "shares_current": 1302423000,
+    "change_pct": -6.472083587662921,
+    "market_cap": 45605371904,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "NSC",
+    "company": "Norfolk Southern Corporation",
+    "sector": "Industrials",
+    "shares_5yr_ago": 240162790,
+    "shares_current": 224572025,
+    "change_pct": -6.491748784230896,
+    "market_cap": 67023523840,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "FTNT",
+    "company": "Fortinet, Inc.",
+    "sector": "Technology",
+    "shares_5yr_ago": 791400000,
+    "shares_current": 739923583,
+    "change_pct": -6.5044752337629514,
+    "market_cap": 61983072256,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "PRU",
+    "company": "Prudential Financial, Inc.",
+    "sector": "Financial Services",
+    "shares_5yr_ago": 372300000,
+    "shares_current": 348000000,
+    "change_pct": -6.52699435938759,
+    "market_cap": 32885999616,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "ZBH",
+    "company": "Zimmer Biomet Holdings, Inc.",
+    "sector": "Healthcare",
+    "shares_5yr_ago": 209600000,
+    "shares_current": 195652004,
+    "change_pct": -6.654578244274808,
+    "market_cap": 18360528896,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "COR",
+    "company": "Cencora, Inc.",
+    "sector": "Healthcare",
+    "shares_5yr_ago": 208472000,
+    "shares_current": 194530682,
+    "change_pct": -6.687381518861047,
+    "market_cap": 69725634560,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "CTVA",
+    "company": "Corteva, Inc.",
+    "sector": "Basic Materials",
+    "shares_5yr_ago": 720800000,
+    "shares_current": 672524000,
+    "change_pct": -6.697558268590455,
+    "market_cap": 52342198272,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "XYZ",
+    "company": "Block, Inc.",
+    "sector": "Technology",
+    "shares_5yr_ago": 578949000,
+    "shares_current": 539103000,
+    "change_pct": -6.882471513034827,
+    "market_cap": 39534686208,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "ITW",
+    "company": "Illinois Tool Works Inc.",
+    "sector": "Industrials",
+    "shares_5yr_ago": 309600000,
+    "shares_current": 288200000,
+    "change_pct": -6.912144702842377,
+    "market_cap": 78620958720,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "GWW",
+    "company": "W.W. Grainger, Inc.",
+    "sector": "Industrials",
+    "shares_5yr_ago": 50900000,
+    "shares_current": 47373024,
+    "change_pct": -6.929225933202357,
+    "market_cap": 52210597888,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "AVY",
+    "company": "Avery Dennison Corporation",
+    "sector": "Consumer Cyclical",
+    "shares_5yr_ago": 82605953,
+    "shares_current": 76877940,
+    "change_pct": -6.934140690804693,
+    "market_cap": 13549735936,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "MMM",
+    "company": "3M Company",
+    "sector": "Industrials",
+    "shares_5yr_ago": 566000000,
+    "shares_current": 526700000,
+    "change_pct": -6.943462897526502,
+    "market_cap": 78457233408,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "DPZ",
+    "company": "Domino's Pizza, Inc.",
+    "sector": "Consumer Cyclical",
+    "shares_5yr_ago": 36138273,
+    "shares_current": 33628897,
+    "change_pct": -6.943818261597615,
+    "market_cap": 13776750592,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "GNRC",
+    "company": "Generac Holdings Inc.",
+    "sector": "Industrials",
+    "shares_5yr_ago": 63117007,
+    "shares_current": 58675827,
+    "change_pct": -7.036423637768502,
+    "market_cap": 11847726080,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "A",
+    "company": "Agilent Technologies, Inc.",
+    "sector": "Healthcare",
+    "shares_5yr_ago": 304000000,
+    "shares_current": 282602317,
+    "change_pct": -7.038711513157894,
+    "market_cap": 32478476288,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "SCHW",
+    "company": "The Charles Schwab Corporation",
+    "sector": "Financial Services",
+    "shares_5yr_ago": 1885000000,
+    "shares_current": 1752210425,
+    "change_pct": -7.044539787798408,
+    "market_cap": 166090293248,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "MNST",
+    "company": "Monster Beverage Corporation",
+    "sector": "Consumer Defensive",
+    "shares_5yr_ago": 1053558000,
+    "shares_current": 978270734,
+    "change_pct": -7.1460010744543725,
+    "market_cap": 72636604416,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "TGT",
+    "company": "Target Corporation",
+    "sector": "Consumer Defensive",
+    "shares_5yr_ago": 488100000,
+    "shares_current": 452806418,
+    "change_pct": -7.23080967014956,
+    "market_cap": 53619097600,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "ODFL",
+    "company": "Old Dominion Freight Line, Inc.",
+    "sector": "Industrials",
+    "shares_5yr_ago": 224682000,
+    "shares_current": 208425619,
+    "change_pct": -7.235284090403325,
+    "market_cap": 39829069824,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "ELV",
+    "company": "Elevance Health, Inc.",
+    "sector": "Healthcare",
+    "shares_5yr_ago": 237958067,
+    "shares_current": 220704667,
+    "change_pct": -7.250605208521886,
+    "market_cap": 61481701376,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "MO",
+    "company": "Altria Group, Inc.",
+    "sector": "Consumer Defensive",
+    "shares_5yr_ago": 1804000000,
+    "shares_current": 1671898087,
+    "change_pct": -7.322722450110865,
+    "market_cap": 112126869504,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "HAL",
+    "company": "Halliburton Company",
+    "sector": "Energy",
+    "shares_5yr_ago": 904000000,
+    "shares_current": 837548345,
+    "change_pct": -7.350846792035398,
+    "market_cap": 28930914304,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "SWKS",
+    "company": "Skyworks Solutions, Inc.",
+    "sector": "Technology",
+    "shares_5yr_ago": 162400000,
+    "shares_current": 150373612,
+    "change_pct": -7.405411330049261,
+    "market_cap": 8166791168,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "STX",
+    "company": "Seagate Technology Holdings plc",
+    "sector": "Technology",
+    "shares_5yr_ago": 242000000,
+    "shares_current": 224025376,
+    "change_pct": -7.427530578512396,
+    "market_cap": 80923566080,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "OTIS",
+    "company": "Otis Worldwide Corporation",
+    "sector": "Industrials",
+    "shares_5yr_ago": 420000000,
+    "shares_current": 388720773,
+    "change_pct": -7.447435,
+    "market_cap": 33916968960,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "RF",
+    "company": "Regions Financial Corporation",
+    "sector": "Financial Services",
+    "shares_5yr_ago": 935000000,
+    "shares_current": 863506691,
+    "change_pct": -7.64634320855615,
+    "market_cap": 23053082624,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "LDOS",
+    "company": "Leidos Holdings, Inc.",
+    "sector": "Technology",
+    "shares_5yr_ago": 137000000,
+    "shares_current": 126392684,
+    "change_pct": -7.742566423357664,
+    "market_cap": 22726256640,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "JNJ",
+    "company": "Johnson & Johnson",
+    "sector": "Healthcare",
+    "shares_5yr_ago": 2613597000,
+    "shares_current": 2409898936,
+    "change_pct": -7.7937824385320305,
+    "market_cap": 584641544192,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "EOG",
+    "company": "EOG Resources, Inc.",
+    "sector": "Energy",
+    "shares_5yr_ago": 583000000,
+    "shares_current": 536491493,
+    "change_pct": -7.977445454545455,
+    "market_cap": 72461312000,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "ROST",
+    "company": "Ross Stores, Inc.",
+    "sector": "Consumer Cyclical",
+    "shares_5yr_ago": 351496000,
+    "shares_current": 323444928,
+    "change_pct": -7.980481143455402,
+    "market_cap": 68056846336,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "PAYC",
+    "company": "Paycom Software, Inc.",
+    "sector": "Technology",
+    "shares_5yr_ago": 57928000,
+    "shares_current": 53161058,
+    "change_pct": -8.229080928048612,
+    "market_cap": 7486175232,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "HON",
+    "company": "Honeywell International Inc.",
+    "sector": "Industrials",
+    "shares_5yr_ago": 692300000,
+    "shares_current": 634887208,
+    "change_pct": -8.29305098945544,
+    "market_cap": 158120165376,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "NOC",
+    "company": "Northrop Grumman Corporation",
+    "sector": "Industrials",
+    "shares_5yr_ago": 154900000,
+    "shares_current": 141921621,
+    "change_pct": -8.37855326016785,
+    "market_cap": 107821432832,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "WYNN",
+    "company": "Wynn Resorts, Limited",
+    "sector": "Consumer Cyclical",
+    "shares_5yr_ago": 113623000,
+    "shares_current": 103974479,
+    "change_pct": -8.49169710357938,
+    "market_cap": 10273400832,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "CB",
+    "company": "Chubb Limited",
+    "sector": "Financial Services",
+    "shares_5yr_ago": 426572612,
+    "shares_current": 390156552,
+    "change_pct": -8.536895941176834,
+    "market_cap": 127120867328,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "MA",
+    "company": "Mastercard Incorporated",
+    "sector": "Financial Services",
+    "shares_5yr_ago": 968000000,
+    "shares_current": 885216386,
+    "change_pct": -8.552026239669422,
+    "market_cap": 458355965952,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "CBRE",
+    "company": "CBRE Group, Inc.",
+    "sector": "Real Estate",
+    "shares_5yr_ago": 322813345,
+    "shares_current": 295158554,
+    "change_pct": -8.566805377887956,
+    "market_cap": 39651291136,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "AXP",
+    "company": "American Express Company",
+    "sector": "Financial Services",
+    "shares_5yr_ago": 751000000,
+    "shares_current": 686614005,
+    "change_pct": -8.573368175765646,
+    "market_cap": 205959741440,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "MDLZ",
+    "company": "Mondelez International, Inc.",
+    "sector": "Consumer Defensive",
+    "shares_5yr_ago": 1403000000,
+    "shares_current": 1281845669,
+    "change_pct": -8.635376407697791,
+    "market_cap": 75273060352,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "MTB",
+    "company": "M&T Bank Corporation",
+    "sector": "Financial Services",
+    "shares_5yr_ago": 163199310,
+    "shares_current": 149000252,
+    "change_pct": -8.700439971222917,
+    "market_cap": 31560402944,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "J",
+    "company": "Jacobs Solutions Inc.",
+    "sector": "Industrials",
+    "shares_5yr_ago": 128665000,
+    "shares_current": 117446713,
+    "change_pct": -8.71898884700579,
+    "market_cap": 15623084032,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "TRV",
+    "company": "The Travelers Companies, Inc.",
+    "sector": "Financial Services",
+    "shares_5yr_ago": 237000000,
+    "shares_current": 216237902,
+    "change_pct": -8.760378902953587,
+    "market_cap": 67122016256,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "ALGN",
+    "company": "Align Technology, Inc.",
+    "sector": "Healthcare",
+    "shares_5yr_ago": 78190000,
+    "shares_current": 71282132,
+    "change_pct": -8.834720552500318,
+    "market_cap": 12122162176,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "AMAT",
+    "company": "Applied Materials, Inc.",
+    "sector": "Technology",
+    "shares_5yr_ago": 871000000,
+    "shares_current": 793609867,
+    "change_pct": -8.885204707233067,
+    "market_cap": 261105582080,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "FICO",
+    "company": "Fair Isaac Corporation",
+    "sector": "Technology",
+    "shares_5yr_ago": 26042000,
+    "shares_current": 23722134,
+    "change_pct": -8.908171415405883,
+    "market_cap": 34101280768,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "AKAM",
+    "company": "Akamai Technologies, Inc.",
+    "sector": "Technology",
+    "shares_5yr_ago": 159089000,
+    "shares_current": 144888114,
+    "change_pct": -8.926378316539799,
+    "market_cap": 14829297664,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "PSX",
+    "company": "Phillips 66",
+    "sector": "Energy",
+    "shares_5yr_ago": 440028000,
+    "shares_current": 400744022,
+    "change_pct": -8.927608697628333,
+    "market_cap": 65822208000,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "MSCI",
+    "company": "MSCI Inc.",
+    "sector": "Financial Services",
+    "shares_5yr_ago": 80746000,
+    "shares_current": 73474042,
+    "change_pct": -9.005966859039457,
+    "market_cap": 42191601664,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "RTX",
+    "company": "RTX Corporation",
+    "sector": "Industrials",
+    "shares_5yr_ago": 1475500000,
+    "shares_current": 1342287676,
+    "change_pct": -9.028283564893256,
+    "market_cap": 281813286912,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "NRG",
+    "company": "NRG Energy, Inc.",
+    "sector": "Utilities",
+    "shares_5yr_ago": 236000000,
+    "shares_current": 214677543,
+    "change_pct": -9.034939406779662,
+    "market_cap": 32610590720,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "ON",
+    "company": "ON Semiconductor Corporation",
+    "sector": "Technology",
+    "shares_5yr_ago": 433200000,
+    "shares_current": 394020530,
+    "change_pct": -9.044198984302861,
+    "market_cap": 23076401152,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "STZ",
+    "company": "Constellation Brands, Inc.",
+    "sector": "Consumer Defensive",
+    "shares_5yr_ago": 190656000,
+    "shares_current": 173384625,
+    "change_pct": -9.05892025427996,
+    "market_cap": 25616173056,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "JPM",
+    "company": "JPMorgan Chase & Co.",
+    "sector": "Financial Services",
+    "shares_5yr_ago": 2965800000,
+    "shares_current": 2697032375,
+    "change_pct": -9.0622302582777,
+    "market_cap": 768411500544,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "TEL",
+    "company": "TE Connectivity plc",
+    "sector": "Technology",
+    "shares_5yr_ago": 323000000,
+    "shares_current": 293434273,
+    "change_pct": -9.153475851393189,
+    "market_cap": 59705114624,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "UNP",
+    "company": "Union Pacific Corporation",
+    "sector": "Industrials",
+    "shares_5yr_ago": 653800000,
+    "shares_current": 593391460,
+    "change_pct": -9.239605383909453,
+    "market_cap": 148686110720,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "CTSH",
+    "company": "Cognizant Technology Solutions Corporation",
+    "sector": "Technology",
+    "shares_5yr_ago": 527000000,
+    "shares_current": 478246920,
+    "change_pct": -9.251058823529412,
+    "market_cap": 31198267392,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "AAPL",
+    "company": "Apple Inc.",
+    "sector": "Technology",
+    "shares_5yr_ago": 16215963000,
+    "shares_current": 14681140000,
+    "change_pct": -9.464889627584869,
+    "market_cap": 3786185637888,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "IQV",
+    "company": "IQVIA Holdings Inc.",
+    "sector": "Healthcare",
+    "shares_5yr_ago": 187600000,
+    "shares_current": 169700000,
+    "change_pct": -9.541577825159916,
+    "market_cap": 30488809472,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "MAS",
+    "company": "Masco Corporation",
+    "sector": "Industrials",
+    "shares_5yr_ago": 225300000,
+    "shares_current": 203607085,
+    "change_pct": -9.628457612072792,
+    "market_cap": 12725442560,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "MTD",
+    "company": "Mettler-Toledo International Inc.",
+    "sector": "Healthcare",
+    "shares_5yr_ago": 22491790,
+    "shares_current": 20325250,
+    "change_pct": -9.632581488623181,
+    "market_cap": 24837718016,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "WRB",
+    "company": "W. R. Berkley Corporation",
+    "sector": "Financial Services",
+    "shares_5yr_ago": 415278000,
+    "shares_current": 374490856,
+    "change_pct": -9.821648148950823,
+    "market_cap": 25723635712,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "DRI",
+    "company": "Darden Restaurants, Inc.",
+    "sector": "Consumer Cyclical",
+    "shares_5yr_ago": 127800000,
+    "shares_current": 115139249,
+    "change_pct": -9.906690923317683,
+    "market_cap": 22902761472,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "ZTS",
+    "company": "Zoetis Inc.",
+    "sector": "Healthcare",
+    "shares_5yr_ago": 468900000,
+    "shares_current": 422127709,
+    "change_pct": -9.974896779697163,
+    "market_cap": 52823691264,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "JBHT",
+    "company": "J.B. Hunt Transport Services, Inc.",
+    "sector": "Industrials",
+    "shares_5yr_ago": 105093706,
+    "shares_current": 94604083,
+    "change_pct": -9.981209531234915,
+    "market_cap": 20171053056,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "CPAY",
+    "company": "Corpay, Inc.",
+    "sector": "Technology",
+    "shares_5yr_ago": 75598000,
+    "shares_current": 68050296,
+    "change_pct": -9.983999576708378,
+    "market_cap": 22740566016,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "CSX",
+    "company": "CSX Corporation",
+    "sector": "Industrials",
+    "shares_5yr_ago": 2066000000,
+    "shares_current": 1859556799,
+    "change_pct": -9.99241050338819,
+    "market_cap": 74410164224,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "HOOD",
+    "company": "Robinhood Markets, Inc.",
+    "sector": "Financial Services",
+    "shares_5yr_ago": 878630024,
+    "shares_current": 790054654,
+    "change_pct": -10.081077083703208,
+    "market_cap": 69837012992,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "C",
+    "company": "Citigroup Inc.",
+    "sector": "Financial Services",
+    "shares_5yr_ago": 1946700000,
+    "shares_current": 1749319009,
+    "change_pct": -10.139260851697744,
+    "market_cap": 181185708032,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "LIN",
+    "company": "Linde plc",
+    "sector": "Basic Materials",
+    "shares_5yr_ago": 516896000,
+    "shares_current": 463394156,
+    "change_pct": -10.350601281495697,
+    "market_cap": 223596937216,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "INCY",
+    "company": "Incyte Corporation",
+    "sector": "Healthcare",
+    "shares_5yr_ago": 222004000,
+    "shares_current": 199014486,
+    "change_pct": -10.355450352245905,
+    "market_cap": 19108374528,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "CFG",
+    "company": "Citizens Financial Group, Inc.",
+    "sector": "Financial Services",
+    "shares_5yr_ago": 475959815,
+    "shares_current": 424983657,
+    "change_pct": -10.71018106854252,
+    "market_cap": 24278855680,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "LRCX",
+    "company": "Lam Research Corporation",
+    "sector": "Technology",
+    "shares_5yr_ago": 1398990000,
+    "shares_current": 1248771000,
+    "change_pct": -10.737675036990971,
+    "market_cap": 256876969984,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "NTRS",
+    "company": "Northern Trust Corporation",
+    "sector": "Financial Services",
+    "shares_5yr_ago": 208309000,
+    "shares_current": 185827803,
+    "change_pct": -10.792235093058869,
+    "market_cap": 25319038976,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "EME",
+    "company": "EMCOR Group, Inc.",
+    "sector": "Industrials",
+    "shares_5yr_ago": 49931940,
+    "shares_current": 44532566,
+    "change_pct": -10.813467291677432,
+    "market_cap": 31526135808,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "URI",
+    "company": "United Rentals, Inc.",
+    "sector": "Industrials",
+    "shares_5yr_ago": 70700000,
+    "shares_current": 62998147,
+    "change_pct": -10.893710042432815,
+    "market_cap": 51369889792,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "TTD",
+    "company": "The Trade Desk, Inc.",
+    "sector": "Communication Services",
+    "shares_5yr_ago": 486937000,
+    "shares_current": 432868418,
+    "change_pct": -11.10381466185564,
+    "market_cap": 13527268352,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "JCI",
+    "company": "Johnson Controls International plc",
+    "sector": "Industrials",
+    "shares_5yr_ago": 688700000,
+    "shares_current": 612066206,
+    "change_pct": -11.12731145636707,
+    "market_cap": 80817217536,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "MOH",
+    "company": "Molina Healthcare, Inc.",
+    "sector": "Healthcare",
+    "shares_5yr_ago": 58000000,
+    "shares_current": 51500000,
+    "change_pct": -11.206896551724139,
+    "market_cap": 7542174720,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "HOLX",
+    "company": "Hologic, Inc.",
+    "sector": "Healthcare",
+    "shares_5yr_ago": 251527000,
+    "shares_current": 223244905,
+    "change_pct": -11.244158678789951,
+    "market_cap": 16871733248,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "DE",
+    "company": "Deere & Company",
+    "sector": "Industrials",
+    "shares_5yr_ago": 304500000,
+    "shares_current": 270107282,
+    "change_pct": -11.294817077175697,
+    "market_cap": 160157417472,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "RVTY",
+    "company": "Revvity, Inc.",
+    "sector": "Healthcare",
+    "shares_5yr_ago": 126300000,
+    "shares_current": 111799374,
+    "change_pct": -11.481097387173397,
+    "market_cap": 10347792384,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "NTAP",
+    "company": "NetApp, Inc.",
+    "sector": "Technology",
+    "shares_5yr_ago": 223000000,
+    "shares_current": 197330400,
+    "change_pct": -11.51103139013453,
+    "market_cap": 19486169088,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "BAC",
+    "company": "Bank of America Corporation",
+    "sector": "Financial Services",
+    "shares_5yr_ago": 8113700000,
+    "shares_current": 7176682170,
+    "change_pct": -11.548588560089724,
+    "market_cap": 344860360704,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "FDX",
+    "company": "FedEx Corporation",
+    "sector": "Industrials",
+    "shares_5yr_ago": 266000000,
+    "shares_current": 235122816,
+    "change_pct": -11.607963909774437,
+    "market_cap": 83463348224,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "CRH",
+    "company": "CRH plc",
+    "sector": "Basic Materials",
+    "shares_5yr_ago": 758300000,
+    "shares_current": 669948603,
+    "change_pct": -11.65124581300277,
+    "market_cap": 69470322688,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "CAT",
+    "company": "Caterpillar Inc.",
+    "sector": "Industrials",
+    "shares_5yr_ago": 526900000,
+    "shares_current": 465287332,
+    "change_pct": -11.693427215790472,
+    "market_cap": 323533012992,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "TMUS",
+    "company": "T-Mobile US, Inc.",
+    "sector": "Communication Services",
+    "shares_5yr_ago": 1249763934,
+    "shares_current": 1101862739,
+    "change_pct": -11.834330546459825,
+    "market_cap": 245260533760,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "EA",
+    "company": "Electronic Arts Inc.",
+    "sector": "Communication Services",
+    "shares_5yr_ago": 284000000,
+    "shares_current": 250253713,
+    "change_pct": -11.88249542253521,
+    "market_cap": 49735426048,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "HPQ",
+    "company": "HP Inc.",
+    "sector": "Technology",
+    "shares_5yr_ago": 1038000000,
+    "shares_current": 914550199,
+    "change_pct": -11.893044412331406,
+    "market_cap": 17239750656,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "ADM",
+    "company": "Archer-Daniels-Midland Company",
+    "sector": "Consumer Defensive",
+    "shares_5yr_ago": 547000000,
+    "shares_current": 481201844,
+    "change_pct": -12.028913345521024,
+    "market_cap": 32327141376,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "LVS",
+    "company": "Las Vegas Sands Corp.",
+    "sector": "Consumer Cyclical",
+    "shares_5yr_ago": 764000000,
+    "shares_current": 671910723,
+    "change_pct": -12.053570287958115,
+    "market_cap": 35909500928,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "GIS",
+    "company": "General Mills, Inc.",
+    "sector": "Consumer Defensive",
+    "shares_5yr_ago": 607500000,
+    "shares_current": 533582081,
+    "change_pct": -12.167558683127572,
+    "market_cap": 23362891776,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "VRSK",
+    "company": "Verisk Analytics, Inc.",
+    "sector": "Industrials",
+    "shares_5yr_ago": 157905718,
+    "shares_current": 137941888,
+    "change_pct": -12.64287972142972,
+    "market_cap": 29613883392,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "ADBE",
+    "company": "Adobe Inc.",
+    "sector": "Technology",
+    "shares_5yr_ago": 470000000,
+    "shares_current": 410500000,
+    "change_pct": -12.659574468085106,
+    "market_cap": 117798486016,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "DLTR",
+    "company": "Dollar Tree, Inc.",
+    "sector": "Consumer Defensive",
+    "shares_5yr_ago": 227900000,
+    "shares_current": 198853187,
+    "change_pct": -12.745420359806934,
+    "market_cap": 23130972160,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "LMT",
+    "company": "Lockheed Martin Corporation",
+    "sector": "Industrials",
+    "shares_5yr_ago": 263700000,
+    "shares_current": 230080240,
+    "change_pct": -12.749245354569586,
+    "market_cap": 155989884928,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "NUE",
+    "company": "Nucor Corporation",
+    "sector": "Basic Materials",
+    "shares_5yr_ago": 262348000,
+    "shares_current": 227774615,
+    "change_pct": -13.178444280116485,
+    "market_cap": 38175911936,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "AMP",
+    "company": "Ameriprise Financial, Inc.",
+    "sector": "Financial Services",
+    "shares_5yr_ago": 105278990,
+    "shares_current": 91178997,
+    "change_pct": -13.392978978996664,
+    "market_cap": 42051448832,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "LULU",
+    "company": "lululemon athletica inc.",
+    "sector": "Consumer Cyclical",
+    "shares_5yr_ago": 129768000,
+    "shares_current": 112190041,
+    "change_pct": -13.54568075334443,
+    "market_cap": 19939581952,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "FTV",
+    "company": "Fortive Corporation",
+    "sector": "Technology",
+    "shares_5yr_ago": 356400000,
+    "shares_current": 307859190,
+    "change_pct": -13.619755892255892,
+    "market_cap": 17818013696,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "WDAY",
+    "company": "Workday, Inc.",
+    "sector": "Technology",
+    "shares_5yr_ago": 247249000,
+    "shares_current": 213000000,
+    "change_pct": -13.852027712953339,
+    "market_cap": 39660179456,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "DECK",
+    "company": "Deckers Outdoor Corporation",
+    "sector": "Consumer Cyclical",
+    "shares_5yr_ago": 165048000,
+    "shares_current": 141949971,
+    "change_pct": -13.99473425912462,
+    "market_cap": 14879818752,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "UPS",
+    "company": "United Parcel Service, Inc.",
+    "sector": "Industrials",
+    "shares_5yr_ago": 871000000,
+    "shares_current": 743855831,
+    "change_pct": -14.597493570608497,
+    "market_cap": 83254427648,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "LH",
+    "company": "Labcorp Holdings Inc.",
+    "sector": "Healthcare",
+    "shares_5yr_ago": 96700000,
+    "shares_current": 82400000,
+    "change_pct": -14.788004136504654,
+    "market_cap": 22303416320,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "FIS",
+    "company": "Fidelity National Information Services, Inc.",
+    "sector": "Technology",
+    "shares_5yr_ago": 604000000,
+    "shares_current": 514403688,
+    "change_pct": -14.833826490066226,
+    "market_cap": 26332710912,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "KLAC",
+    "company": "KLA Corporation",
+    "sector": "Technology",
+    "shares_5yr_ago": 154086000,
+    "shares_current": 131076611,
+    "change_pct": -14.932822579598406,
+    "market_cap": 182941483008,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "KR",
+    "company": "The Kroger Co.",
+    "sector": "Consumer Defensive",
+    "shares_5yr_ago": 744000000,
+    "shares_current": 632849160,
+    "change_pct": -14.939629032258065,
+    "market_cap": 49389404160,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "CMCSA",
+    "company": "Comcast Corporation",
+    "sector": "Communication Services",
+    "shares_5yr_ago": 4220119392,
+    "shares_current": 3588401619,
+    "change_pct": -14.969191966405864,
+    "market_cap": 112377708544,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "NVR",
+    "company": "NVR, Inc.",
+    "sector": "Consumer Cyclical",
+    "shares_5yr_ago": 3286000,
+    "shares_current": 2793760,
+    "change_pct": -14.97991479001826,
+    "market_cap": 19201105920,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "VRSN",
+    "company": "VeriSign, Inc.",
+    "sector": "Technology",
+    "shares_5yr_ago": 107900000,
+    "shares_current": 91700000,
+    "change_pct": -15.013901760889715,
+    "market_cap": 22486239232,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "BBY",
+    "company": "Best Buy Co., Inc.",
+    "sector": "Consumer Cyclical",
+    "shares_5yr_ago": 246800000,
+    "shares_current": 209535103,
+    "change_pct": -15.099228930307943,
+    "market_cap": 13574642688,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "BK",
+    "company": "The Bank of New York Mellon Corporation",
+    "sector": "Financial Services",
+    "shares_5yr_ago": 811047000,
+    "shares_current": 688226982,
+    "change_pct": -15.143390950216201,
+    "market_cap": 79372279808,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "L",
+    "company": "Loews Corporation",
+    "sector": "Financial Services",
+    "shares_5yr_ago": 242830000,
+    "shares_current": 206052874,
+    "change_pct": -15.14521517110736,
+    "market_cap": 22294433792,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "CNC",
+    "company": "Centene Corporation",
+    "sector": "Healthcare",
+    "shares_5yr_ago": 582832000,
+    "shares_current": 491771000,
+    "change_pct": -15.623884755812995,
+    "market_cap": 21239588864,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "CAH",
+    "company": "Cardinal Health, Inc.",
+    "sector": "Healthcare",
+    "shares_5yr_ago": 279000000,
+    "shares_current": 235316016,
+    "change_pct": -15.65734193548387,
+    "market_cap": 51400077312,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "GS",
+    "company": "The Goldman Sachs Group, Inc.",
+    "sector": "Financial Services",
+    "shares_5yr_ago": 352100000,
+    "shares_current": 296752922,
+    "change_pct": -15.719136040897471,
+    "market_cap": 244069826560,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "CI",
+    "company": "The Cigna Group",
+    "sector": "Healthcare",
+    "shares_5yr_ago": 313065000,
+    "shares_current": 263528277,
+    "change_pct": -15.823143117244024,
+    "market_cap": 71307902976,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "AIZ",
+    "company": "Assurant, Inc.",
+    "sector": "Financial Services",
+    "shares_5yr_ago": 59140861,
+    "shares_current": 49699769,
+    "change_pct": -15.96373782924804,
+    "market_cap": 10933207040,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "GDDY",
+    "company": "GoDaddy Inc.",
+    "sector": "Technology",
+    "shares_5yr_ago": 158788000,
+    "shares_current": 133354117,
+    "change_pct": -16.017509509534726,
+    "market_cap": 12530329600,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "MET",
+    "company": "MetLife, Inc.",
+    "sector": "Financial Services",
+    "shares_5yr_ago": 779098414,
+    "shares_current": 652053867,
+    "change_pct": -16.30661091295714,
+    "market_cap": 45786378240,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "HLT",
+    "company": "Hilton Worldwide Holdings Inc.",
+    "sector": "Consumer Cyclical",
+    "shares_5yr_ago": 275000000,
+    "shares_current": 229291615,
+    "change_pct": -16.621230909090908,
+    "market_cap": 69446975488,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "IT",
+    "company": "Gartner, Inc.",
+    "sector": "Technology",
+    "shares_5yr_ago": 85026000,
+    "shares_current": 70450294,
+    "change_pct": -17.142645778938206,
+    "market_cap": 12006971392,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "PFG",
+    "company": "Principal Financial Group, Inc.",
+    "sector": "Financial Services",
+    "shares_5yr_ago": 261700000,
+    "shares_current": 216835141,
+    "change_pct": -17.143622086358427,
+    "market_cap": 19556046848,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "LUV",
+    "company": "Southwest Airlines Co.",
+    "sector": "Industrials",
+    "shares_5yr_ago": 593000000,
+    "shares_current": 491317990,
+    "change_pct": -17.147050590219223,
+    "market_cap": 21211115520,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "APP",
+    "company": "AppLovin Corporation",
+    "sector": "Communication Services",
+    "shares_5yr_ago": 371568011,
+    "shares_current": 307070000,
+    "change_pct": -17.3583325503228,
+    "market_cap": 171363467264,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "DHI",
+    "company": "D.R. Horton, Inc.",
+    "sector": "Consumer Cyclical",
+    "shares_5yr_ago": 351700000,
+    "shares_current": 290498069,
+    "change_pct": -17.401743247085584,
+    "market_cap": 41807716352,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "AZO",
+    "company": "AutoZone, Inc.",
+    "sector": "Consumer Cyclical",
+    "shares_5yr_ago": 20107000,
+    "shares_current": 16567821,
+    "change_pct": -17.60172576714577,
+    "market_cap": 61041463296,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "HIG",
+    "company": "The Hartford Insurance Group, Inc.",
+    "sector": "Financial Services",
+    "shares_5yr_ago": 334925984,
+    "shares_current": 275863220,
+    "change_pct": -17.634572061151278,
+    "market_cap": 38136827904,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "MTCH",
+    "company": "Match Group, Inc.",
+    "sector": "Communication Services",
+    "shares_5yr_ago": 282564000,
+    "shares_current": 232644477,
+    "change_pct": -17.666625260118064,
+    "market_cap": 7223748096,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "FISV",
+    "company": "Fiserv, Inc.",
+    "sector": "Unknown",
+    "shares_5yr_ago": 650000000,
+    "shares_current": 534777512,
+    "change_pct": -17.726536615384617,
+    "market_cap": 32921915392,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "EXPD",
+    "company": "Expeditors International of Washington, Inc.",
+    "sector": "Industrials",
+    "shares_5yr_ago": 163010000,
+    "shares_current": 133503678,
+    "change_pct": -18.100927550457026,
+    "market_cap": 19333189632,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "HSIC",
+    "company": "Henry Schein, Inc.",
+    "sector": "Healthcare",
+    "shares_5yr_ago": 140091000,
+    "shares_current": 114704121,
+    "change_pct": -18.121705891170738,
+    "market_cap": 9103070208,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "PHM",
+    "company": "PulteGroup, Inc.",
+    "sector": "Consumer Cyclical",
+    "shares_5yr_ago": 235010000,
+    "shares_current": 192141567,
+    "change_pct": -18.24111016552487,
+    "market_cap": 23792402432,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "MAR",
+    "company": "Marriott International, Inc.",
+    "sector": "Consumer Cyclical",
+    "shares_5yr_ago": 324400000,
+    "shares_current": 264984554,
+    "change_pct": -18.315488902589397,
+    "market_cap": 84765917184,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "BALL",
+    "company": "Ball Corporation",
+    "sector": "Consumer Cyclical",
+    "shares_5yr_ago": 325989000,
+    "shares_current": 266077175,
+    "change_pct": -18.37848056222756,
+    "market_cap": 16512032768,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "ULTA",
+    "company": "Ulta Beauty, Inc.",
+    "sector": "Consumer Cyclical",
+    "shares_5yr_ago": 54482000,
+    "shares_current": 44362172,
+    "change_pct": -18.57462648214089,
+    "market_cap": 28181221376,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "AFL",
+    "company": "Aflac Incorporated",
+    "sector": "Financial Services",
+    "shares_5yr_ago": 634816000,
+    "shares_current": 516369452,
+    "change_pct": -18.65840621534429,
+    "market_cap": 56480489472,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "V",
+    "company": "Visa Inc.",
+    "sector": "Financial Services",
+    "shares_5yr_ago": 2073000000,
+    "shares_current": 1681093942,
+    "change_pct": -18.905260877954653,
+    "market_cap": 605211590656,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "WFC",
+    "company": "Wells Fargo & Company",
+    "sector": "Financial Services",
+    "shares_5yr_ago": 3805200000,
+    "shares_current": 3085635641,
+    "change_pct": -18.910027304740883,
+    "market_cap": 242996543488,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "ORLY",
+    "company": "O'Reilly Automotive, Inc.",
+    "sector": "Consumer Cyclical",
+    "shares_5yr_ago": 1034505000,
+    "shares_current": 838487034,
+    "change_pct": -18.947995998086043,
+    "market_cap": 79421751296,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "TAP",
+    "company": "Molson Coors Beverage Company",
+    "sector": "Consumer Defensive",
+    "shares_5yr_ago": 216900000,
+    "shares_current": 175592622,
+    "change_pct": -19.044434301521438,
+    "market_cap": 9073785856,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "LOW",
+    "company": "Lowe's Companies, Inc.",
+    "sector": "Consumer Cyclical",
+    "shares_5yr_ago": 696000000,
+    "shares_current": 560951457,
+    "change_pct": -19.40352629310345,
+    "market_cap": 137923952640,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "MCK",
+    "company": "McKesson Corporation",
+    "sector": "Healthcare",
+    "shares_5yr_ago": 152300000,
+    "shares_current": 122487456,
+    "change_pct": -19.574881155613923,
+    "market_cap": 114362195968,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "WSM",
+    "company": "Williams-Sonoma, Inc.",
+    "sector": "Consumer Cyclical",
+    "shares_5yr_ago": 148544000,
+    "shares_current": 119380711,
+    "change_pct": -19.632761336708317,
+    "market_cap": 21717141504,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "TXT",
+    "company": "Textron Inc.",
+    "sector": "Industrials",
+    "shares_5yr_ago": 216900000,
+    "shares_current": 174162437,
+    "change_pct": -19.70380958967266,
+    "market_cap": 16287670272,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "EBAY",
+    "company": "eBay Inc.",
+    "sector": "Consumer Cyclical",
+    "shares_5yr_ago": 558000000,
+    "shares_current": 448000000,
+    "change_pct": -19.71326164874552,
+    "market_cap": 41683439616,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "GL",
+    "company": "Globe Life Inc.",
+    "sector": "Financial Services",
+    "shares_5yr_ago": 97974040,
+    "shares_current": 78637130,
+    "change_pct": -19.73676904616774,
+    "market_cap": 11139238912,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "PYPL",
+    "company": "PayPal Holdings, Inc.",
+    "sector": "Financial Services",
+    "shares_5yr_ago": 1154000000,
+    "shares_current": 920664542,
+    "change_pct": -20.21971039861352,
+    "market_cap": 42955780096,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "STLD",
+    "company": "Steel Dynamics, Inc.",
+    "sector": "Basic Materials",
+    "shares_5yr_ago": 183393000,
+    "shares_current": 144882401,
+    "change_pct": -20.998947069953598,
+    "market_cap": 25931939840,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "APTV",
+    "company": "Aptiv PLC",
+    "sector": "Consumer Cyclical",
+    "shares_5yr_ago": 270900000,
+    "shares_current": 212748401,
+    "change_pct": -21.466075673680322,
+    "market_cap": 15510179840,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "CHTR",
+    "company": "Charter Communications, Inc.",
+    "sector": "Communication Services",
+    "shares_5yr_ago": 161501355,
+    "shares_current": 126631549,
+    "change_pct": -21.591029994763822,
+    "market_cap": 29306046464,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "TSN",
+    "company": "Tyson Foods, Inc.",
+    "sector": "Consumer Defensive",
+    "shares_5yr_ago": 360000000,
+    "shares_current": 282069961,
+    "change_pct": -21.647233055555557,
+    "market_cap": 21464494080,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "META",
+    "company": "Meta Platforms, Inc.",
+    "sector": "Communication Services",
+    "shares_5yr_ago": 2815000000,
+    "shares_current": 2187177748,
+    "change_pct": -22.302744298401418,
+    "market_cap": 1607937163264,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "BKNG",
+    "company": "Booking Holdings Inc.",
+    "sector": "Consumer Cyclical",
+    "shares_5yr_ago": 41042000,
+    "shares_current": 31673346,
+    "change_pct": -22.82699186199503,
+    "market_cap": 141060816896,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "HCA",
+    "company": "HCA Healthcare, Inc.",
+    "sector": "Healthcare",
+    "shares_5yr_ago": 290348000,
+    "shares_current": 223622200,
+    "change_pct": -22.981318968961382,
+    "market_cap": 121051176960,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "TPR",
+    "company": "Tapestry, Inc.",
+    "sector": "Consumer Cyclical",
+    "shares_5yr_ago": 264300000,
+    "shares_current": 202464223,
+    "change_pct": -23.39605637533106,
+    "market_cap": 29016266752,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "STT",
+    "company": "State Street Corporation",
+    "sector": "Financial Services",
+    "shares_5yr_ago": 365214000,
+    "shares_current": 278728211,
+    "change_pct": -23.6808525960122,
+    "market_cap": 33084559360,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "VLO",
+    "company": "Valero Energy Corporation",
+    "sector": "Energy",
+    "shares_5yr_ago": 395000000,
+    "shares_current": 299026226,
+    "change_pct": -24.297157974683543,
+    "market_cap": 66321272832,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "CF",
+    "company": "CF Industries Holdings, Inc.",
+    "sector": "Basic Materials",
+    "shares_5yr_ago": 203300000,
+    "shares_current": 153668821,
+    "change_pct": -24.41277865223807,
+    "market_cap": 18239674368,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "NKE",
+    "company": "NIKE, Inc.",
+    "sector": "Consumer Cyclical",
+    "shares_5yr_ago": 1578800000,
+    "shares_current": 1191495650,
+    "change_pct": -24.531565112743856,
+    "market_cap": 82901467136,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "DD",
+    "company": "DuPont de Nemours, Inc.",
+    "sector": "Basic Materials",
+    "shares_5yr_ago": 542700000,
+    "shares_current": 408923857,
+    "change_pct": -24.650109268472452,
+    "market_cap": 18573176832,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "JBL",
+    "company": "Jabil Inc.",
+    "sector": "Technology",
+    "shares_5yr_ago": 141200000,
+    "shares_current": 105595267,
+    "change_pct": -25.21581657223796,
+    "market_cap": 25594781696,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "EXPE",
+    "company": "Expedia Group, Inc.",
+    "sector": "Consumer Cyclical",
+    "shares_5yr_ago": 156672000,
+    "shares_current": 117011421,
+    "change_pct": -25.314401424632354,
+    "market_cap": 29105094656,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "AOS",
+    "company": "A. O. Smith Corporation",
+    "sector": "Industrials",
+    "shares_5yr_ago": 151179079,
+    "shares_current": 112426758,
+    "change_pct": -25.633388730989687,
+    "market_cap": 9618064384,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "WTW",
+    "company": "Willis Towers Watson Public Limited Company",
+    "sector": "Financial Services",
+    "shares_5yr_ago": 128000000,
+    "shares_current": 94545903,
+    "change_pct": -26.136013281249998,
+    "market_cap": 27990192128,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "UHS",
+    "company": "Universal Health Services, Inc.",
+    "sector": "Healthcare",
+    "shares_5yr_ago": 73118000,
+    "shares_current": 53837855,
+    "change_pct": -26.368534423808093,
+    "market_cap": 11418008576,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "SYF",
+    "company": "Synchrony Financial",
+    "sector": "Financial Services",
+    "shares_5yr_ago": 480400000,
+    "shares_current": 347596279,
+    "change_pct": -27.644404870940882,
+    "market_cap": 23722668032,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "VST",
+    "company": "Vistra Corp.",
+    "sector": "Utilities",
+    "shares_5yr_ago": 469072597,
+    "shares_current": 338825490,
+    "change_pct": -27.766940092644127,
+    "market_cap": 54334058496,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "DVA",
+    "company": "DaVita Inc.",
+    "sector": "Healthcare",
+    "shares_5yr_ago": 92992000,
+    "shares_current": 66849000,
+    "change_pct": -28.113171025464556,
+    "market_cap": 10160713728,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "HSY",
+    "company": "The Hershey Company",
+    "sector": "Consumer Defensive",
+    "shares_5yr_ago": 206734000,
+    "shares_current": 148077438,
+    "change_pct": -28.372963324852225,
+    "market_cap": 45006131200,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "LEN",
+    "company": "Lennar Corporation",
+    "sector": "Consumer Cyclical",
+    "shares_5yr_ago": 306612000,
+    "shares_current": 215769742,
+    "change_pct": -29.62775690449167,
+    "market_cap": 23994763264,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "EL",
+    "company": "The Estée Lauder Companies Inc.",
+    "sector": "Consumer Defensive",
+    "shares_5yr_ago": 360000000,
+    "shares_current": 247219699,
+    "change_pct": -31.327861388888888,
+    "market_cap": 32369143808,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "ABNB",
+    "company": "Airbnb, Inc.",
+    "sector": "Consumer Cyclical",
+    "shares_5yr_ago": 637000000,
+    "shares_current": 423573275,
+    "change_pct": -33.50498037676609,
+    "market_cap": 78752153600,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "AIG",
+    "company": "American International Group, Inc.",
+    "sector": "Financial Services",
+    "shares_5yr_ago": 854320449,
+    "shares_current": 536559663,
+    "change_pct": -37.19456632133126,
+    "market_cap": 41547358208,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "GM",
+    "company": "General Motors Company",
+    "sector": "Consumer Cyclical",
+    "shares_5yr_ago": 1445000000,
+    "shares_current": 903967853,
+    "change_pct": -37.44167107266436,
+    "market_cap": 68420714496,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "NWSA",
+    "company": "News Corporation",
+    "sector": "Communication Services",
+    "shares_5yr_ago": 590000000,
+    "shares_current": 368350206,
+    "change_pct": -37.567761694915255,
+    "market_cap": 14006069248,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "MPC",
+    "company": "Marathon Petroleum Corporation",
+    "sector": "Energy",
+    "shares_5yr_ago": 512000000,
+    "shares_current": 294740164,
+    "change_pct": -42.43356171875,
+    "market_cap": 64990253056,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "BLDR",
+    "company": "Builders FirstSource, Inc.",
+    "sector": "Industrials",
+    "shares_5yr_ago": 201839000,
+    "shares_current": 110605069,
+    "change_pct": -45.20133918618305,
+    "market_cap": 10183408640,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "MGM",
+    "company": "MGM Resorts International",
+    "sector": "Consumer Cyclical",
+    "shares_5yr_ago": 481930000,
+    "shares_current": 255828519,
+    "change_pct": -46.91583445728632,
+    "market_cap": 9515288576,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "RL",
+    "company": "Ralph Lauren Corporation",
+    "sector": "Consumer Cyclical",
+    "shares_5yr_ago": 73000000,
+    "shares_current": 38655137,
+    "change_pct": -47.04775753424658,
+    "market_cap": 20636016640,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "GOOGL",
+    "company": "Alphabet Inc.",
+    "sector": "Communication Services",
+    "shares_5yr_ago": 13063000000,
+    "shares_current": 5822000000,
+    "change_pct": -55.43137104799817,
+    "market_cap": 3647608455168,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "DELL",
+    "company": "Dell Technologies Inc.",
+    "sector": "Technology",
+    "shares_5yr_ago": 762000000,
+    "shares_current": 333917807,
+    "change_pct": -56.178765485564305,
+    "market_cap": 96177078272,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "GOOG",
+    "company": "Alphabet Inc.",
+    "sector": "Communication Services",
+    "shares_5yr_ago": 13063000000,
+    "shares_current": 5438000000,
+    "change_pct": -58.370971446069056,
+    "market_cap": 3643495677952,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "FOX",
+    "company": "Fox Corporation",
+    "sector": "Communication Services",
+    "shares_5yr_ago": 570000000,
+    "shares_current": 224702222,
+    "change_pct": -60.578557543859645,
+    "market_cap": 25084061696,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "FOXA",
+    "company": "Fox Corporation",
+    "sector": "Communication Services",
+    "shares_5yr_ago": 570000000,
+    "shares_current": 200693856,
+    "change_pct": -64.79055157894736,
+    "market_cap": 25113255936,
+    "type": "Reducer"
+  },
+  {
+    "ticker": "NWS",
+    "company": "News Corporation",
+    "sector": "Communication Services",
+    "shares_5yr_ago": 590000000,
+    "shares_current": 184240809,
+    "change_pct": -68.77274423728814,
+    "market_cap": 15149284352,
+    "type": "Reducer"
+  }
+]

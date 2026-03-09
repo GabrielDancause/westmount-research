@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Share Dilution Rankings 2026: The Worst Diluters vs. Best Reducers</title>
+    <meta name="description" content="We tracked the 5-year share count changes for major US companies to find the worst stock diluters and the best share reducers in 2026.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: #060a12;
+            color: #c8d0de;
+            line-height: 1.6;
+        }
+
+        /* Layout */
+        .container { max-width: 1000px; margin: 0 auto; padding: 40px 24px; }
+        header { margin-bottom: 40px; text-align: center; }
+        h1 { font-size: 2.5rem; font-weight: 900; color: #fff; margin-bottom: 16px; letter-spacing: -1px; }
+        h2 { font-size: 1.8rem; font-weight: 800; color: #fff; margin: 40px 0 20px; border-bottom: 1px solid #152040; padding-bottom: 10px; }
+        p.subtitle { font-size: 1.1rem; color: #5a6a80; max-width: 700px; margin: 0 auto; }
+
+        /* Cards */
+        .card {
+            background: #0a1020;
+            border: 1px solid #152040;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 30px;
+        }
+
+        /* Table */
+        .table-wrapper { overflow-x: auto; margin-bottom: 40px; }
+        table { width: 100%; border-collapse: collapse; text-align: left; }
+        th, td { padding: 12px 16px; border-bottom: 1px solid #152040; }
+        th { font-size: 0.85rem; text-transform: uppercase; color: #5a6a80; font-weight: 700; letter-spacing: 0.5px; }
+        td { font-size: 0.95rem; }
+        tr:hover { background: rgba(74, 143, 231, 0.05); }
+        .ticker { color: #4a8fe7; font-weight: 700; font-family: 'JetBrains Mono', monospace; }
+        .diluter-value { color: #f87171; font-weight: 700; }
+        .reducer-value { color: #4ade80; font-weight: 700; }
+
+        /* Nav/Breadcrumb */
+        .breadcrumb { font-size: 0.85rem; margin-bottom: 20px; }
+        .breadcrumb a { color: #4a8fe7; text-decoration: none; }
+        .breadcrumb a:hover { text-decoration: underline; }
+
+        /* Histogram placeholder styling */
+        .histogram-container {
+            display: flex;
+            align-items: flex-end;
+            height: 200px;
+            gap: 4px;
+            margin: 20px 0;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #152040;
+            overflow-x: auto;
+        }
+        .bar-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1;
+            min-width: 30px;
+        }
+        .bar {
+            width: 100%;
+            border-radius: 2px 2px 0 0;
+            transition: height 0.3s;
+        }
+        .bar-label {
+            font-size: 0.7rem;
+            color: #5a6a80;
+            margin-top: 8px;
+            transform: rotate(-45deg);
+            white-space: nowrap;
+        }
+        .bar.dilute { background: #f87171; }
+        .bar.reduce { background: #4ade80; }
+
+        /* FAQ */
+        .faq-item { margin-bottom: 20px; }
+        .faq-q { font-weight: 700; color: #fff; margin-bottom: 8px; }
+        .faq-a { color: #c8d0de; font-size: 0.95rem; }
+
+        /* Footer */
+        footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid #152040; text-align: center; font-size: 0.85rem; color: #5a6a80; }
+        .disclaimer { margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="/">← Back to Home</a>
+        </div>
+
+        <header>
+            <h1>Share Dilution Rankings 2026</h1>
+            <p class="subtitle">Tracking the 5-year share count changes for S&P 500 companies. Which companies are diluting shareholders, and which are buying back stock?</p>
+        </header>
+
+        <div class="card">
+            <h2>The Dilution vs. Buyback Landscape</h2>
+            <p>Over the past 5 years, we analyzed the share counts of 500 major companies. Here is the distribution of companies by their 5-year share count change:</p>
+
+            <div class="histogram-container">
+                <!-- Simple static histogram -->
+                <div class="bar-group" title="Extreme Dilution (>50%)">
+                    <div class="bar dilute" style="height: 30px;"></div>
+                    <span class="bar-label">&gt;50%</span>
+                </div>
+                <div class="bar-group" title="High Dilution (20-50%)">
+                    <div class="bar dilute" style="height: 44px;"></div>
+                    <span class="bar-label">20-50%</span>
+                </div>
+                <div class="bar-group" title="Moderate Dilution (5-20%)">
+                    <div class="bar dilute" style="height: 96px;"></div>
+                    <span class="bar-label">5-20%</span>
+                </div>
+                <div class="bar-group" title="Low Dilution (0-5%)">
+                    <div class="bar dilute" style="height: 150px;"></div>
+                    <span class="bar-label">0-5%</span>
+                </div>
+                <div class="bar-group" title="Low Reduction (-5-0%)">
+                    <div class="bar reduce" style="height: 244px;"></div>
+                    <span class="bar-label">-5-0%</span>
+                </div>
+                <div class="bar-group" title="Moderate Reduction (-20--5%)">
+                    <div class="bar reduce" style="height: 358px;"></div>
+                    <span class="bar-label">-20 to -5%</span>
+                </div>
+                <div class="bar-group" title="High Reduction (<-20%)">
+                    <div class="bar reduce" style="height: 78px;"></div>
+                    <span class="bar-label">&lt; -20%</span>
+                </div>
+            </div>
+            <p style="font-size: 0.85rem; color: #5a6a80; text-align: center;">Distribution of 5-year share count change (%)</p>
+        </div>
+
+        <h2>Worst Share Diluters (5-Year Lookback)</h2>
+        <p style="margin-bottom: 20px;">These companies have significantly increased their share count over the last 5 years, diluting existing shareholders' ownership stake.</p>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Company</th>
+                        <th>Sector</th>
+                        <th>Shares 5 Yrs Ago</th>
+                        <th>Current Shares</th>
+                        <th>Change %</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td><span class="ticker">WBD</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">Warner Bros. Discovery, Inc.</span></td>
+                        <td>Communication Services</td>
+                        <td>503.00M</td>
+                        <td>2.48B</td>
+                        <td class="diluter-value">+393.24%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">APO</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">Apollo Global Management, Inc.</span></td>
+                        <td>Financial Services</td>
+                        <td>236.57M</td>
+                        <td>578.25M</td>
+                        <td class="diluter-value">+144.43%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">SW</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">Smurfit Westrock Plc</span></td>
+                        <td>Consumer Cyclical</td>
+                        <td>257.00M</td>
+                        <td>524.25M</td>
+                        <td class="diluter-value">+103.99%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">EXE</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">Expand Energy Corporation</span></td>
+                        <td>Energy</td>
+                        <td>125.78M</td>
+                        <td>240.40M</td>
+                        <td class="diluter-value">+91.12%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">EQT</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">EQT Corporation</span></td>
+                        <td>Energy</td>
+                        <td>370.05M</td>
+                        <td>624.27M</td>
+                        <td class="diluter-value">+68.70%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">PSKY</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">Paramount Skydance Corporation</span></td>
+                        <td>Communication Services</td>
+                        <td>641.00M</td>
+                        <td>1.07B</td>
+                        <td class="diluter-value">+67.19%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">HBAN</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">Huntington Bancshares Incorporated</span></td>
+                        <td>Financial Services</td>
+                        <td>1.26B</td>
+                        <td>2.03B</td>
+                        <td class="diluter-value">+60.84%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">TTWO</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">Take-Two Interactive Software, Inc.</span></td>
+                        <td>Communication Services</td>
+                        <td>115.48M</td>
+                        <td>185.18M</td>
+                        <td class="diluter-value">+60.35%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">FANG</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">Diamondback Energy, Inc.</span></td>
+                        <td>Energy</td>
+                        <td>176.54M</td>
+                        <td>282.08M</td>
+                        <td class="diluter-value">+59.78%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">WAT</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">Waters Corporation</span></td>
+                        <td>Healthcare</td>
+                        <td>61.58M</td>
+                        <td>98.10M</td>
+                        <td class="diluter-value">+59.32%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">EXR</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">Extra Space Storage Inc.</span></td>
+                        <td>Real Estate</td>
+                        <td>134.05M</td>
+                        <td>211.14M</td>
+                        <td class="diluter-value">+57.51%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">AMCR</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">Amcor plc</span></td>
+                        <td>Consumer Cyclical</td>
+                        <td>301.80M</td>
+                        <td>462.05M</td>
+                        <td class="diluter-value">+53.10%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">O</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">Realty Income Corporation</span></td>
+                        <td>Real Estate</td>
+                        <td>611.77M</td>
+                        <td>932.44M</td>
+                        <td class="diluter-value">+52.42%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">WELL</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">Welltower Inc.</span></td>
+                        <td>Real Estate</td>
+                        <td>462.19M</td>
+                        <td>697.75M</td>
+                        <td class="diluter-value">+50.97%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">OMC</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">Omnicom Group Inc.</span></td>
+                        <td>Communication Services</td>
+                        <td>205.60M</td>
+                        <td>310.34M</td>
+                        <td class="diluter-value">+50.94%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">IP</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">International Paper Company</span></td>
+                        <td>Consumer Cyclical</td>
+                        <td>363.29M</td>
+                        <td>528.04M</td>
+                        <td class="diluter-value">+45.35%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">OKE</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">ONEOK, Inc.</span></td>
+                        <td>Energy</td>
+                        <td>447.50M</td>
+                        <td>629.78M</td>
+                        <td class="diluter-value">+40.73%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">COF</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">Capital One Financial Corporation</span></td>
+                        <td>Financial Services</td>
+                        <td>442.50M</td>
+                        <td>621.93M</td>
+                        <td class="diluter-value">+40.55%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">PANW</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">Palo Alto Networks, Inc.</span></td>
+                        <td>Technology</td>
+                        <td>591.00M</td>
+                        <td>816.00M</td>
+                        <td class="diluter-value">+38.07%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">NEM</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">Newmont Corporation</span></td>
+                        <td>Basic Materials</td>
+                        <td>794.00M</td>
+                        <td>1.09B</td>
+                        <td class="diluter-value">+37.01%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">ARES</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">Ares Management Corporation</span></td>
+                        <td>Financial Services</td>
+                        <td>163.70M</td>
+                        <td>220.90M</td>
+                        <td class="diluter-value">+34.94%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">XYL</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">Xylem Inc.</span></td>
+                        <td>Industrials</td>
+                        <td>180.20M</td>
+                        <td>243.14M</td>
+                        <td class="diluter-value">+34.93%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">BA</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">The Boeing Company</span></td>
+                        <td>Industrials</td>
+                        <td>594.58M</td>
+                        <td>785.35M</td>
+                        <td class="diluter-value">+32.08%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">FITB</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">Fifth Third Bancorp</span></td>
+                        <td>Financial Services</td>
+                        <td>688.63M</td>
+                        <td>901.82M</td>
+                        <td class="diluter-value">+30.96%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">BG</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">Bunge Global SA</span></td>
+                        <td>Consumer Defensive</td>
+                        <td>149.91M</td>
+                        <td>193.51M</td>
+                        <td class="diluter-value">+29.09%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">DOC</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">Healthpeak Properties, Inc.</span></td>
+                        <td>Real Estate</td>
+                        <td>538.81M</td>
+                        <td>695.04M</td>
+                        <td class="diluter-value">+29.00%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">SNPS</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">Synopsys, Inc.</span></td>
+                        <td>Technology</td>
+                        <td>153.00M</td>
+                        <td>191.56M</td>
+                        <td class="diluter-value">+25.20%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">NCLH</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">Norwegian Cruise Line Holdings Ltd.</span></td>
+                        <td>Consumer Cyclical</td>
+                        <td>365.45M</td>
+                        <td>455.26M</td>
+                        <td class="diluter-value">+24.57%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">BRO</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">Brown &amp; Brown, Inc.</span></td>
+                        <td>Financial Services</td>
+                        <td>277.52M</td>
+                        <td>340.42M</td>
+                        <td class="diluter-value">+22.66%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">AJG</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">Arthur J. Gallagher &amp; Co.</span></td>
+                        <td>Financial Services</td>
+                        <td>210.33M</td>
+                        <td>257.10M</td>
+                        <td class="diluter-value">+22.24%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">VICI</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">VICI Properties Inc.</span></td>
+                        <td>Real Estate</td>
+                        <td>877.51M</td>
+                        <td>1.07B</td>
+                        <td class="diluter-value">+21.79%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">DASH</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">DoorDash, Inc.</span></td>
+                        <td>Consumer Cyclical</td>
+                        <td>336.85M</td>
+                        <td>409.97M</td>
+                        <td class="diluter-value">+21.71%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">INTC</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">Intel Corporation</span></td>
+                        <td>Technology</td>
+                        <td>4.11B</td>
+                        <td>5.00B</td>
+                        <td class="diluter-value">+21.59%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">NI</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">NiSource Inc.</span></td>
+                        <td>Utilities</td>
+                        <td>393.60M</td>
+                        <td>478.53M</td>
+                        <td class="diluter-value">+21.58%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">AXON</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">Axon Enterprise, Inc.</span></td>
+                        <td>Industrials</td>
+                        <td>66.19M</td>
+                        <td>80.40M</td>
+                        <td class="diluter-value">+21.46%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">ATO</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">Atmos Energy Corporation</span></td>
+                        <td>Utilities</td>
+                        <td>137.83M</td>
+                        <td>165.44M</td>
+                        <td class="diluter-value">+20.03%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">DLR</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">Digital Realty Trust, Inc.</span></td>
+                        <td>Real Estate</td>
+                        <td>286.33M</td>
+                        <td>343.62M</td>
+                        <td class="diluter-value">+20.01%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">BKR</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">Baker Hughes Company</span></td>
+                        <td>Energy</td>
+                        <td>824.00M</td>
+                        <td>988.24M</td>
+                        <td class="diluter-value">+19.93%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">TSLA</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">Tesla, Inc.</span></td>
+                        <td>Consumer Cyclical</td>
+                        <td>3.13B</td>
+                        <td>3.75B</td>
+                        <td class="diluter-value">+19.89%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">KKR</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">KKR &amp; Co. Inc.</span></td>
+                        <td>Financial Services</td>
+                        <td>749.50M</td>
+                        <td>891.45M</td>
+                        <td class="diluter-value">+18.94%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">VTR</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">Ventas, Inc.</span></td>
+                        <td>Real Estate</td>
+                        <td>399.55M</td>
+                        <td>474.97M</td>
+                        <td class="diluter-value">+18.88%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">PLD</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">Prologis, Inc.</span></td>
+                        <td>Real Estate</td>
+                        <td>785.67M</td>
+                        <td>929.56M</td>
+                        <td class="diluter-value">+18.31%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">SMCI</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">Super Micro Computer, Inc.</span></td>
+                        <td>Technology</td>
+                        <td>514.78M</td>
+                        <td>598.99M</td>
+                        <td class="diluter-value">+16.36%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">CVNA</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">Carvana Co.</span></td>
+                        <td>Consumer Cyclical</td>
+                        <td>100.83M</td>
+                        <td>116.95M</td>
+                        <td class="diluter-value">+15.99%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">AVGO</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">Broadcom Inc.</span></td>
+                        <td>Technology</td>
+                        <td>4.09B</td>
+                        <td>4.74B</td>
+                        <td class="diluter-value">+15.92%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">KEY</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">KeyCorp</span></td>
+                        <td>Financial Services</td>
+                        <td>947.07M</td>
+                        <td>1.09B</td>
+                        <td class="diluter-value">+15.06%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">NDAQ</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">Nasdaq, Inc.</span></td>
+                        <td>Financial Services</td>
+                        <td>497.70M</td>
+                        <td>568.44M</td>
+                        <td class="diluter-value">+14.21%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">XEL</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">Xcel Energy Inc.</span></td>
+                        <td>Utilities</td>
+                        <td>547.00M</td>
+                        <td>623.88M</td>
+                        <td class="diluter-value">+14.05%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">PLTR</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">Palantir Technologies Inc.</span></td>
+                        <td>Technology</td>
+                        <td>2.06B</td>
+                        <td>2.29B</td>
+                        <td class="diluter-value">+11.19%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">CRWD</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">CrowdStrike Holdings, Inc.</span></td>
+                        <td>Technology</td>
+                        <td>227.14M</td>
+                        <td>252.10M</td>
+                        <td class="diluter-value">+10.99%</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <h2>Best Share Reducers (5-Year Lookback)</h2>
+        <p style="margin-bottom: 20px;">Conversely, these companies have actively bought back shares over the last 5 years, increasing the ownership stake of remaining shareholders.</p>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Company</th>
+                        <th>Sector</th>
+                        <th>Shares 5 Yrs Ago</th>
+                        <th>Current Shares</th>
+                        <th>Change %</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td><span class="ticker">NWS</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">News Corporation</span></td>
+                        <td>Communication Services</td>
+                        <td>590.00M</td>
+                        <td>184.24M</td>
+                        <td class="reducer-value">-68.77%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">FOXA</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">Fox Corporation</span></td>
+                        <td>Communication Services</td>
+                        <td>570.00M</td>
+                        <td>200.69M</td>
+                        <td class="reducer-value">-64.79%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">FOX</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">Fox Corporation</span></td>
+                        <td>Communication Services</td>
+                        <td>570.00M</td>
+                        <td>224.70M</td>
+                        <td class="reducer-value">-60.58%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">GOOG</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">Alphabet Inc.</span></td>
+                        <td>Communication Services</td>
+                        <td>13.06B</td>
+                        <td>5.44B</td>
+                        <td class="reducer-value">-58.37%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">DELL</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">Dell Technologies Inc.</span></td>
+                        <td>Technology</td>
+                        <td>762.00M</td>
+                        <td>333.92M</td>
+                        <td class="reducer-value">-56.18%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">GOOGL</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">Alphabet Inc.</span></td>
+                        <td>Communication Services</td>
+                        <td>13.06B</td>
+                        <td>5.82B</td>
+                        <td class="reducer-value">-55.43%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">RL</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">Ralph Lauren Corporation</span></td>
+                        <td>Consumer Cyclical</td>
+                        <td>73.00M</td>
+                        <td>38.66M</td>
+                        <td class="reducer-value">-47.05%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">MGM</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">MGM Resorts International</span></td>
+                        <td>Consumer Cyclical</td>
+                        <td>481.93M</td>
+                        <td>255.83M</td>
+                        <td class="reducer-value">-46.92%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">BLDR</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">Builders FirstSource, Inc.</span></td>
+                        <td>Industrials</td>
+                        <td>201.84M</td>
+                        <td>110.61M</td>
+                        <td class="reducer-value">-45.20%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">MPC</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">Marathon Petroleum Corporation</span></td>
+                        <td>Energy</td>
+                        <td>512.00M</td>
+                        <td>294.74M</td>
+                        <td class="reducer-value">-42.43%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">NWSA</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">News Corporation</span></td>
+                        <td>Communication Services</td>
+                        <td>590.00M</td>
+                        <td>368.35M</td>
+                        <td class="reducer-value">-37.57%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">GM</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">General Motors Company</span></td>
+                        <td>Consumer Cyclical</td>
+                        <td>1.45B</td>
+                        <td>903.97M</td>
+                        <td class="reducer-value">-37.44%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">AIG</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">American International Group, Inc.</span></td>
+                        <td>Financial Services</td>
+                        <td>854.32M</td>
+                        <td>536.56M</td>
+                        <td class="reducer-value">-37.19%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">ABNB</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">Airbnb, Inc.</span></td>
+                        <td>Consumer Cyclical</td>
+                        <td>637.00M</td>
+                        <td>423.57M</td>
+                        <td class="reducer-value">-33.50%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">EL</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">The Estée Lauder Companies Inc.</span></td>
+                        <td>Consumer Defensive</td>
+                        <td>360.00M</td>
+                        <td>247.22M</td>
+                        <td class="reducer-value">-31.33%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">LEN</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">Lennar Corporation</span></td>
+                        <td>Consumer Cyclical</td>
+                        <td>306.61M</td>
+                        <td>215.77M</td>
+                        <td class="reducer-value">-29.63%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">HSY</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">The Hershey Company</span></td>
+                        <td>Consumer Defensive</td>
+                        <td>206.73M</td>
+                        <td>148.08M</td>
+                        <td class="reducer-value">-28.37%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">DVA</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">DaVita Inc.</span></td>
+                        <td>Healthcare</td>
+                        <td>92.99M</td>
+                        <td>66.85M</td>
+                        <td class="reducer-value">-28.11%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">VST</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">Vistra Corp.</span></td>
+                        <td>Utilities</td>
+                        <td>469.07M</td>
+                        <td>338.83M</td>
+                        <td class="reducer-value">-27.77%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">SYF</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">Synchrony Financial</span></td>
+                        <td>Financial Services</td>
+                        <td>480.40M</td>
+                        <td>347.60M</td>
+                        <td class="reducer-value">-27.64%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">UHS</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">Universal Health Services, Inc.</span></td>
+                        <td>Healthcare</td>
+                        <td>73.12M</td>
+                        <td>53.84M</td>
+                        <td class="reducer-value">-26.37%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">WTW</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">Willis Towers Watson Public Limited Company</span></td>
+                        <td>Financial Services</td>
+                        <td>128.00M</td>
+                        <td>94.55M</td>
+                        <td class="reducer-value">-26.14%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">AOS</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">A. O. Smith Corporation</span></td>
+                        <td>Industrials</td>
+                        <td>151.18M</td>
+                        <td>112.43M</td>
+                        <td class="reducer-value">-25.63%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">EXPE</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">Expedia Group, Inc.</span></td>
+                        <td>Consumer Cyclical</td>
+                        <td>156.67M</td>
+                        <td>117.01M</td>
+                        <td class="reducer-value">-25.31%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">JBL</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">Jabil Inc.</span></td>
+                        <td>Technology</td>
+                        <td>141.20M</td>
+                        <td>105.60M</td>
+                        <td class="reducer-value">-25.22%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">DD</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">DuPont de Nemours, Inc.</span></td>
+                        <td>Basic Materials</td>
+                        <td>542.70M</td>
+                        <td>408.92M</td>
+                        <td class="reducer-value">-24.65%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">NKE</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">NIKE, Inc.</span></td>
+                        <td>Consumer Cyclical</td>
+                        <td>1.58B</td>
+                        <td>1.19B</td>
+                        <td class="reducer-value">-24.53%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">CF</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">CF Industries Holdings, Inc.</span></td>
+                        <td>Basic Materials</td>
+                        <td>203.30M</td>
+                        <td>153.67M</td>
+                        <td class="reducer-value">-24.41%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">VLO</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">Valero Energy Corporation</span></td>
+                        <td>Energy</td>
+                        <td>395.00M</td>
+                        <td>299.03M</td>
+                        <td class="reducer-value">-24.30%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">STT</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">State Street Corporation</span></td>
+                        <td>Financial Services</td>
+                        <td>365.21M</td>
+                        <td>278.73M</td>
+                        <td class="reducer-value">-23.68%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">TPR</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">Tapestry, Inc.</span></td>
+                        <td>Consumer Cyclical</td>
+                        <td>264.30M</td>
+                        <td>202.46M</td>
+                        <td class="reducer-value">-23.40%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">HCA</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">HCA Healthcare, Inc.</span></td>
+                        <td>Healthcare</td>
+                        <td>290.35M</td>
+                        <td>223.62M</td>
+                        <td class="reducer-value">-22.98%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">BKNG</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">Booking Holdings Inc.</span></td>
+                        <td>Consumer Cyclical</td>
+                        <td>41.04M</td>
+                        <td>31.67M</td>
+                        <td class="reducer-value">-22.83%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">META</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">Meta Platforms, Inc.</span></td>
+                        <td>Communication Services</td>
+                        <td>2.81B</td>
+                        <td>2.19B</td>
+                        <td class="reducer-value">-22.30%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">TSN</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">Tyson Foods, Inc.</span></td>
+                        <td>Consumer Defensive</td>
+                        <td>360.00M</td>
+                        <td>282.07M</td>
+                        <td class="reducer-value">-21.65%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">CHTR</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">Charter Communications, Inc.</span></td>
+                        <td>Communication Services</td>
+                        <td>161.50M</td>
+                        <td>126.63M</td>
+                        <td class="reducer-value">-21.59%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">APTV</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">Aptiv PLC</span></td>
+                        <td>Consumer Cyclical</td>
+                        <td>270.90M</td>
+                        <td>212.75M</td>
+                        <td class="reducer-value">-21.47%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">STLD</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">Steel Dynamics, Inc.</span></td>
+                        <td>Basic Materials</td>
+                        <td>183.39M</td>
+                        <td>144.88M</td>
+                        <td class="reducer-value">-21.00%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">PYPL</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">PayPal Holdings, Inc.</span></td>
+                        <td>Financial Services</td>
+                        <td>1.15B</td>
+                        <td>920.66M</td>
+                        <td class="reducer-value">-20.22%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">GL</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">Globe Life Inc.</span></td>
+                        <td>Financial Services</td>
+                        <td>97.97M</td>
+                        <td>78.64M</td>
+                        <td class="reducer-value">-19.74%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">EBAY</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">eBay Inc.</span></td>
+                        <td>Consumer Cyclical</td>
+                        <td>558.00M</td>
+                        <td>448.00M</td>
+                        <td class="reducer-value">-19.71%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">TXT</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">Textron Inc.</span></td>
+                        <td>Industrials</td>
+                        <td>216.90M</td>
+                        <td>174.16M</td>
+                        <td class="reducer-value">-19.70%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">WSM</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">Williams-Sonoma, Inc.</span></td>
+                        <td>Consumer Cyclical</td>
+                        <td>148.54M</td>
+                        <td>119.38M</td>
+                        <td class="reducer-value">-19.63%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">MCK</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">McKesson Corporation</span></td>
+                        <td>Healthcare</td>
+                        <td>152.30M</td>
+                        <td>122.49M</td>
+                        <td class="reducer-value">-19.57%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">LOW</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">Lowe's Companies, Inc.</span></td>
+                        <td>Consumer Cyclical</td>
+                        <td>696.00M</td>
+                        <td>560.95M</td>
+                        <td class="reducer-value">-19.40%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">TAP</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">Molson Coors Beverage Company</span></td>
+                        <td>Consumer Defensive</td>
+                        <td>216.90M</td>
+                        <td>175.59M</td>
+                        <td class="reducer-value">-19.04%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">ORLY</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">O'Reilly Automotive, Inc.</span></td>
+                        <td>Consumer Cyclical</td>
+                        <td>1.03B</td>
+                        <td>838.49M</td>
+                        <td class="reducer-value">-18.95%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">WFC</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">Wells Fargo &amp; Company</span></td>
+                        <td>Financial Services</td>
+                        <td>3.81B</td>
+                        <td>3.09B</td>
+                        <td class="reducer-value">-18.91%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">V</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">Visa Inc.</span></td>
+                        <td>Financial Services</td>
+                        <td>2.07B</td>
+                        <td>1.68B</td>
+                        <td class="reducer-value">-18.91%</td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="ticker">AFL</span> <br> <span style="font-size:0.8rem; color:#5a6a80;">Aflac Incorporated</span></td>
+                        <td>Financial Services</td>
+                        <td>634.82M</td>
+                        <td>516.37M</td>
+                        <td class="reducer-value">-18.66%</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="card">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <div class="faq-q">What is share dilution?</div>
+                <div class="faq-a">Share dilution occurs when a company issues new shares of stock. This increases the total number of shares outstanding, which means each existing share represents a smaller percentage of ownership in the company.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">Why do companies dilute their shares?</div>
+                <div class="faq-a">Companies often issue new shares to raise capital for expansion, pay down debt, or fund acquisitions. They may also issue shares as stock-based compensation for employees and executives.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">Is share reduction always good?</div>
+                <div class="faq-a">Share reduction (via stock buybacks) increases the earnings per share and ownership percentage for remaining investors. However, if a company borrows heavily to fund buybacks instead of investing in growth, it could be a negative signal.</div>
+            </div>
+        </div>
+
+        <div class="card" style="background: transparent; border: 1px solid #152040;">
+            <h2>Methodology</h2>
+            <p style="font-size: 0.9rem; color: #6a7a90;">We analyzed 500 S&P 500 constituents. We retrieved current outstanding shares and compared them to the basic average outstanding shares reported annually from approximately 5 years ago (using available financial filings around 2020-2021). The change percentage is calculated as <code>(Current Shares - Historical Shares) / Historical Shares * 100</code>. Corporate actions such as stock splits and reverse splits have been adjusted for in the data provider's figures.</p>
+        </div>
+
+        <footer>
+            <div class="disclaimer">This information is for educational and informational purposes only and does not constitute financial advice. Data may not be fully complete or accurate due to reporting delays or calculation differences.</div>
+            <div>&copy; 2026 Westmount Research. All rights reserved.</div>
+        </footer>
+    </div>
+
+    <!-- JSON-LD for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Share Dilution Rankings 2026: The Worst Diluters vs. Best Reducers",
+      "description": "We tracked the 5-year share count changes for major US companies to find the worst stock diluters and the best share reducers in 2026.",
+      "author": {
+        "@type": "Organization",
+        "name": "Westmount Research"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Westmount Research"
+      },
+      "datePublished": "2026-03-09"
+    }
+    </script>
+</body>
+</html>
