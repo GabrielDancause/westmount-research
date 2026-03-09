@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dividend Reinvestment Calculator (DRIP) - Westmount Fundamentals</title>
+  <meta name="description" content="Calculate the power of compound interest and dividend reinvestment (DRIP) over time. Compare total returns, income, and shares accumulated with and without DRIP." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- JSON-LD for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Dividend Reinvestment Calculator",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "All",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "description": "Calculate the power of compound interest and dividend reinvestment (DRIP) over time. Compare total returns, income, and shares accumulated with and without DRIP.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Westmount Fundamentals"
+    }
+  }
+  </script>
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: #060a12;
+      color: #c8d0de;
+      line-height: 1.6;
+    }
+
+    /* Header & Navigation */
+    header {
+      padding: 20px 24px;
+      border-bottom: 1px solid #152040;
+      background: rgba(6, 10, 18, 0.9);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header a {
+      color: #c8d0de;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: -0.5px;
+    }
+    header a span { color: #4a8fe7; }
+
+    /* Main Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 24px;
+    }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 900;
+      color: #fff;
+      letter-spacing: -1px;
+      margin-bottom: 16px;
+    }
+    .hero p {
+      color: #5a6a80;
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Calculator Layout */
+    .calculator-layout {
+      display: grid;
+      grid-template-columns: 350px 1fr;
+      gap: 30px;
+      margin-bottom: 60px;
+    }
+
+    @media (max-width: 900px) {
+      .calculator-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Cards */
+    .card {
+      background: #0a1020;
+      border: 1px solid #152040;
+      border-radius: 16px;
+      padding: 24px;
+    }
+
+    /* Forms */
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #5a6a80;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .input-wrapper {
+      position: relative;
+    }
+    .input-prefix, .input-suffix {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #5a6a80;
+      font-size: 0.95rem;
+      font-family: 'JetBrains Mono', monospace;
+      pointer-events: none;
+    }
+    .input-prefix { left: 16px; }
+    .input-suffix { right: 16px; }
+
+    input[type="number"] {
+      width: 100%;
+      background: #060a12;
+      border: 1px solid #152040;
+      border-radius: 8px;
+      color: #fff;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1rem;
+      padding: 12px 16px;
+      transition: all 0.2s;
+    }
+    input[type="number"]:focus {
+      outline: none;
+      border-color: #4a8fe7;
+      box-shadow: 0 0 0 3px rgba(74, 143, 231, 0.1);
+    }
+
+    input.has-prefix { padding-left: 32px; }
+    input.has-suffix { padding-right: 32px; }
+
+    /* Results Dashboard */
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 30px;
+    }
+
+    @media (max-width: 600px) {
+      .results-grid { grid-template-columns: 1fr; }
+    }
+
+    .result-box {
+      background: #060a12;
+      border: 1px solid #152040;
+      border-radius: 12px;
+      padding: 20px;
+    }
+    .result-box.highlight {
+      border-color: rgba(74, 143, 231, 0.3);
+      background: linear-gradient(135deg, rgba(74,143,231,0.05) 0%, #060a12 100%);
+    }
+    .result-label {
+      font-size: 0.8rem;
+      color: #5a6a80;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      display: block;
+    }
+    .result-value {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: #fff;
+      font-family: 'JetBrains Mono', monospace;
+      letter-spacing: -1px;
+    }
+    .result-value.accent { color: #4a8fe7; }
+
+    .result-sub {
+      font-size: 0.85rem;
+      color: #6a7a90;
+      margin-top: 8px;
+      padding-top: 8px;
+      border-top: 1px solid #152040;
+    }
+
+    /* Chart Area */
+    .chart-container {
+      height: 400px;
+      width: 100%;
+      margin-top: 24px;
+    }
+
+    /* Table */
+    .table-container {
+      overflow-x: auto;
+      margin-top: 40px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.9rem;
+    }
+    th, td {
+      padding: 12px 16px;
+      text-align: right;
+      border-bottom: 1px solid #152040;
+    }
+    th:first-child, td:first-child { text-align: left; }
+    th {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #5a6a80;
+      background: #0a1020;
+    }
+    tr:hover td { background: rgba(74, 143, 231, 0.05); }
+
+    /* Content Sections (FAQ, Methodology) */
+    .content-section {
+      max-width: 800px;
+      margin: 60px auto;
+    }
+    .content-section h2 {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: #fff;
+      margin-bottom: 24px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #152040;
+    }
+    .content-section h3 {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #e0e8f0;
+      margin-top: 32px;
+      margin-bottom: 12px;
+    }
+    .content-section p {
+      margin-bottom: 16px;
+      color: #8a9ab0;
+    }
+
+    .faq-item { margin-bottom: 24px; }
+    .faq-item h3 { margin-top: 0; }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 50px 24px;
+      font-size: 0.85rem;
+      color: #3a4a5a;
+      border-top: 1px solid #152040;
+      background: #040810;
+      margin-top: 60px;
+    }
+    .footer a {
+      color: #4a8fe7;
+      text-decoration: none;
+    }
+    .footer a:hover { text-decoration: underline; }
+    .disclaimer {
+      max-width: 600px;
+      margin: 16px auto 0;
+      color: #2a3a4a;
+      font-size: 0.75rem;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="/">westmount<span>fundamentals</span></a>
+  </header>
+
+  <div class="container">
+    <div class="hero">
+      <h1>Dividend Reinvestment Calculator</h1>
+      <p>Simulate the compounding power of DRIP. Compare portfolio growth, accumulated shares, and dividend income over time.</p>
+    </div>
+
+    <div class="calculator-layout">
+      <!-- Input Column -->
+      <div class="card">
+        <h2 style="font-size:1.2rem; margin-bottom:24px; color:#fff;">Inputs</h2>
+
+        <div class="form-group">
+          <label for="initialShares">Initial Shares</label>
+          <input type="number" id="initialShares" value="100" min="1" step="any">
+        </div>
+
+        <div class="form-group">
+          <label for="sharePrice">Current Share Price</label>
+          <div class="input-wrapper">
+            <span class="input-prefix">$</span>
+            <input type="number" id="sharePrice" class="has-prefix" value="50" min="0.01" step="any">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="annualDividend">Annual Dividend per Share</label>
+          <div class="input-wrapper">
+            <span class="input-prefix">$</span>
+            <input type="number" id="annualDividend" class="has-prefix" value="2.00" min="0" step="any">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="dividendGrowth">Annual Dividend Growth</label>
+          <div class="input-wrapper">
+            <input type="number" id="dividendGrowth" class="has-suffix" value="5" min="0" step="any">
+            <span class="input-suffix">%</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="priceAppreciation">Annual Price Appreciation</label>
+          <div class="input-wrapper">
+            <input type="number" id="priceAppreciation" class="has-suffix" value="6" min="0" step="any">
+            <span class="input-suffix">%</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="years">Years to Simulate</label>
+          <input type="number" id="years" value="20" min="1" max="50" step="1">
+        </div>
+      </div>
+
+      <!-- Output Column -->
+      <div class="card">
+        <div class="results-grid">
+          <div class="result-box highlight">
+            <span class="result-label">Total Value (DRIP)</span>
+            <div class="result-value accent" id="resTotalDrip">$0</div>
+            <div class="result-sub">vs <span id="resTotalNoDrip">$0</span> without</div>
+          </div>
+
+          <div class="result-box">
+            <span class="result-label">Final Annual Income (DRIP)</span>
+            <div class="result-value" id="resIncomeDrip">$0</div>
+            <div class="result-sub">vs <span id="resIncomeNoDrip">$0</span> without</div>
+          </div>
+
+          <div class="result-box">
+            <span class="result-label">Total Shares (DRIP)</span>
+            <div class="result-value" id="resSharesDrip">0</div>
+            <div class="result-sub">vs <span id="resSharesNoDrip">0</span> without</div>
+          </div>
+        </div>
+
+        <div class="chart-container">
+          <canvas id="dripChart"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <!-- Table -->
+    <div class="card table-container">
+      <h2 style="font-size:1.2rem; margin-bottom:20px; color:#fff; font-family:'Inter', sans-serif;">Year-by-Year Breakdown</h2>
+      <table id="resultsTable">
+        <thead>
+          <tr>
+            <th>Year</th>
+            <th>Share Price</th>
+            <th>Div / Share</th>
+            <th>Shares (DRIP)</th>
+            <th>Total Value (DRIP)</th>
+            <th>Annual Income (DRIP)</th>
+            <th>Total Value (No DRIP)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Populated by JS -->
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Methodology & FAQ -->
+    <div class="content-section">
+      <h2>Methodology</h2>
+      <p>This calculator simulates the long-term impact of a Dividend Reinvestment Plan (DRIP). It projects the future value of an investment by accounting for both share price appreciation and the compounding effect of reinvested dividends.</p>
+      <p><strong>Assumptions:</strong></p>
+      <ul style="color:#8a9ab0; margin-left:24px; margin-bottom:16px;">
+        <li>Dividends are paid and reinvested annually at the end of each year.</li>
+        <li>Taxes on dividends are not factored in. In taxable accounts, dividends are usually taxed even if reinvested, which would reduce the actual reinvestable amount.</li>
+        <li>Fractional shares are permitted for reinvestment.</li>
+        <li>Price appreciation and dividend growth occur at a constant rate specified by the user.</li>
+      </ul>
+
+      <h2 style="margin-top:60px;">Frequently Asked Questions (FAQ)</h2>
+
+      <div class="faq-item">
+        <h3>What is a DRIP?</h3>
+        <p>A Dividend Reinvestment Plan (DRIP) allows investors to automatically reinvest cash dividends received from a stock into additional shares or fractional shares of the underlying company, rather than taking the dividend in cash.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Why is DRIP powerful?</h3>
+        <p>DRIP harnesses the power of compound interest. When you reinvest dividends, you buy more shares. Those new shares then generate their own dividends in the future, accelerating the growth of your share count and total income over time.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Should I use a DRIP?</h3>
+        <p>If you are in the accumulation phase of your investing journey and do not need the current income from your investments, using a DRIP is generally an excellent way to automatically build wealth over time without incurring transaction fees at most modern brokerages.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    © <span id="currentYear"></span> <a href="/">westmount-research</a> · A <a href="https://gab.ae">GAB Ventures</a> property
+    <div class="disclaimer">This calculator provides estimates for educational and informational purposes only. It does not account for taxes, fees, or varying market conditions. Nothing here constitutes financial or investment advice. Do your own research.</div>
+  </div>
+
+  <script>
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+    // Formatting utilities
+    const formatCurrency = (val) => new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(val);
+        const formatCurrencyDecimals = (val) => new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(val);
+    const formatNumber = (val) => new Intl.NumberFormat('en-US', { maximumFractionDigits: 2 }).format(val);
+
+    let chartInstance = null;
+
+    function calculate() {
+      const initialShares = parseFloat(document.getElementById('initialShares').value) || 0;
+      const initialPrice = parseFloat(document.getElementById('sharePrice').value) || 0;
+      const initialDividend = parseFloat(document.getElementById('annualDividend').value) || 0;
+      const dividendGrowth = (parseFloat(document.getElementById('dividendGrowth').value) || 0) / 100;
+      const priceAppreciation = (parseFloat(document.getElementById('priceAppreciation').value) || 0) / 100;
+      const years = parseInt(document.getElementById('years').value) || 0;
+
+      let currentPrice = initialPrice;
+      let currentDividendPerShare = initialDividend;
+
+      let sharesDrip = initialShares;
+      let sharesNoDrip = initialShares;
+
+      const chartLabels = [0];
+      const dataDrip = [initialShares * initialPrice];
+      const dataNoDrip = [initialShares * initialPrice];
+
+      const tbody = document.querySelector('#resultsTable tbody');
+      tbody.innerHTML = '';
+
+      // Year 0 row
+      tbody.innerHTML += `
+        <tr>
+          <td>0</td>
+          <td>${formatCurrencyDecimals(currentPrice)}</td>
+          <td>${formatCurrencyDecimals(currentDividendPerShare)}</td>
+          <td>${formatNumber(sharesDrip)}</td>
+          <td>${formatCurrency(sharesDrip * currentPrice)}</td>
+          <td>-</td>
+          <td>${formatCurrency(sharesNoDrip * currentPrice)}</td>
+        </tr>
+      `;
+
+      let lastIncomeDrip = 0;
+      let lastIncomeNoDrip = 0;
+      let cashAccumulatedNoDrip = 0;
+
+      for (let y = 1; y <= years; y++) {
+        // Appreciate price and dividend
+        currentPrice *= (1 + priceAppreciation);
+        currentDividendPerShare *= (1 + dividendGrowth);
+
+        // Calculate dividends received (paid at end of year based on current share count)
+        const dividendsReceivedDrip = sharesDrip * currentDividendPerShare;
+        const dividendsReceivedNoDrip = sharesNoDrip * currentDividendPerShare;
+
+        // Save income for reporting
+        lastIncomeDrip = dividendsReceivedDrip;
+        lastIncomeNoDrip = dividendsReceivedNoDrip;
+
+        // Reinvest (DRIP)
+        const newShares = dividendsReceivedDrip / currentPrice;
+        sharesDrip += newShares;
+
+        // No DRIP (accumulate cash)
+        cashAccumulatedNoDrip += dividendsReceivedNoDrip;
+
+        // Calculate totals
+        const totalValueDrip = sharesDrip * currentPrice;
+        const totalValueNoDrip = (sharesNoDrip * currentPrice) + cashAccumulatedNoDrip;
+
+        // Store chart data
+        chartLabels.push(y);
+        dataDrip.push(totalValueDrip);
+        dataNoDrip.push(totalValueNoDrip);
+
+        // Add table row
+        tbody.innerHTML += `
+          <tr>
+            <td>${y}</td>
+            <td>${formatCurrencyDecimals(currentPrice)}</td>
+            <td>${formatCurrencyDecimals(currentDividendPerShare)}</td>
+            <td>${formatNumber(sharesDrip)}</td>
+            <td>${formatCurrency(totalValueDrip)}</td>
+            <td>${formatCurrency(dividendsReceivedDrip)}</td>
+            <td>${formatCurrency(totalValueNoDrip)}</td>
+          </tr>
+        `;
+      }
+
+      // Update Dashboard
+      document.getElementById('resTotalDrip').textContent = formatCurrency(dataDrip[dataDrip.length - 1]);
+      document.getElementById('resTotalNoDrip').textContent = formatCurrency(dataNoDrip[dataNoDrip.length - 1]);
+
+      document.getElementById('resIncomeDrip').textContent = formatCurrency(lastIncomeDrip);
+      document.getElementById('resIncomeNoDrip').textContent = formatCurrency(lastIncomeNoDrip);
+
+      document.getElementById('resSharesDrip').textContent = formatNumber(sharesDrip);
+      document.getElementById('resSharesNoDrip').textContent = formatNumber(sharesNoDrip);
+
+      // Update Chart
+      updateChart(chartLabels, dataDrip, dataNoDrip);
+    }
+
+    function updateChart(labels, dataDrip, dataNoDrip) {
+      const ctx = document.getElementById('dripChart').getContext('2d');
+
+      if (chartInstance) {
+        chartInstance.destroy();
+      }
+
+      Chart.defaults.color = '#5a6a80';
+      Chart.defaults.font.family = "'Inter', sans-serif";
+
+      chartInstance = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: labels,
+          datasets: [
+            {
+              label: 'With DRIP Reinvestment',
+              data: dataDrip,
+              borderColor: '#4a8fe7',
+              backgroundColor: 'rgba(74, 143, 231, 0.1)',
+              borderWidth: 3,
+              tension: 0.4,
+              fill: true,
+              pointRadius: 0,
+              pointHoverRadius: 6
+            },
+            {
+              label: 'Without DRIP (Cash Accumulation)',
+              data: dataNoDrip,
+              borderColor: '#6a7a90',
+              borderWidth: 2,
+              borderDash: [5, 5],
+              tension: 0.4,
+              fill: false,
+              pointRadius: 0,
+              pointHoverRadius: 6
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          interaction: {
+            mode: 'index',
+            intersect: false,
+          },
+          plugins: {
+            legend: {
+              position: 'top',
+              labels: {
+                usePointStyle: true,
+                boxWidth: 8
+              }
+            },
+            tooltip: {
+              backgroundColor: 'rgba(6, 10, 18, 0.9)',
+              titleColor: '#fff',
+              bodyColor: '#c8d0de',
+              borderColor: '#152040',
+              borderWidth: 1,
+              padding: 12,
+              displayColors: true,
+              callbacks: {
+                label: function(context) {
+                  let label = context.dataset.label || '';
+                  if (label) {
+                    label += ': ';
+                  }
+                  if (context.parsed.y !== null) {
+                    label += new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(context.parsed.y);
+                  }
+                  return label;
+                }
+              }
+            }
+          },
+          scales: {
+            x: {
+              grid: {
+                color: '#152040',
+                drawBorder: false,
+              },
+              title: {
+                display: true,
+                text: 'Years'
+              }
+            },
+            y: {
+              grid: {
+                color: '#152040',
+                drawBorder: false,
+              },
+              ticks: {
+                callback: function(value) {
+                  return '$' + (value >= 1000 ? (value / 1000) + 'k' : value);
+                }
+              }
+            }
+          }
+        }
+      });
+    }
+
+    // Attach listeners
+    const inputs = document.querySelectorAll('input');
+    inputs.forEach(input => {
+      input.addEventListener('input', calculate);
+    });
+
+    // Initial calculation
+    calculate();
+  </script>
+</body>
+</html>
