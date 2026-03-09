@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Margin & Leverage Calculator | Westmount Fundamentals</title>
+    <meta name="description" content="Calculate margin requirements, buying power, margin call prices, and simulated leveraged returns with our interactive margin trading calculator.">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: #060a12;
+            color: #c8d0de;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            padding: 40px 24px;
+            background: linear-gradient(180deg, #0a1628 0%, #060a12 100%);
+            text-align: center;
+            border-bottom: 1px solid #152040;
+        }
+        .header-tag {
+            color: #4a8fe7;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            display: inline-block;
+            background: rgba(74,143,231,0.1);
+            padding: 4px 12px;
+            border-radius: 12px;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #fff;
+            margin-bottom: 16px;
+            letter-spacing: -1px;
+        }
+        .header-desc {
+            color: #5a6a80;
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 1.05rem;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 24px;
+        }
+
+        /* Calculator Grid */
+        .calc-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+        @media (max-width: 768px) {
+            .calc-grid { grid-template-columns: 1fr; }
+        }
+
+        .card {
+            background: #0a1020;
+            border: 1px solid #152040;
+            border-radius: 16px;
+            padding: 24px;
+        }
+        .card h2 {
+            font-size: 1.25rem;
+            color: #fff;
+            margin-bottom: 20px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Inputs */
+        .input-group {
+            margin-bottom: 16px;
+        }
+        .input-group label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #8a9bb3;
+            margin-bottom: 8px;
+        }
+        .input-wrapper {
+            position: relative;
+        }
+        .prefix, .suffix {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #5a6a80;
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .prefix { left: 12px; }
+        .suffix { right: 12px; }
+
+        input[type="number"] {
+            width: 100%;
+            background: #060a12;
+            border: 1px solid #152040;
+            color: #fff;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1rem;
+            padding: 10px 12px;
+            border-radius: 8px;
+            transition: all 0.2s;
+        }
+        input[type="number"]:focus {
+            outline: none;
+            border-color: #4a8fe7;
+            box-shadow: 0 0 0 2px rgba(74,143,231,0.2);
+        }
+        input.has-prefix { padding-left: 28px; }
+        input.has-suffix { padding-right: 28px; }
+
+        /* Range Slider */
+        .range-wrapper {
+            margin-top: 24px;
+            padding-top: 24px;
+            border-top: 1px solid #152040;
+        }
+        input[type="range"] {
+            width: 100%;
+            margin: 12px 0;
+            accent-color: #4a8fe7;
+        }
+        .range-labels {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            color: #5a6a80;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* Results */
+        .result-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #152040;
+        }
+        .result-row:last-child { border-bottom: none; }
+        .result-label {
+            font-size: 0.95rem;
+            color: #8a9bb3;
+        }
+        .result-value {
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #fff;
+        }
+        .result-value.accent { color: #4a8fe7; }
+        .result-value.danger { color: #ff5252; }
+        .result-value.success { color: #4caf50; }
+
+        .warning-box {
+            background: rgba(255, 152, 0, 0.1);
+            border: 1px solid rgba(255, 152, 0, 0.3);
+            color: #ffb74d;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            margin-bottom: 16px;
+            display: none;
+        }
+        .danger-box {
+            background: rgba(255, 82, 82, 0.1);
+            border: 1px solid rgba(255, 82, 82, 0.3);
+            color: #ff5252;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            margin-bottom: 16px;
+            display: none;
+        }
+
+        /* Content Sections */
+        .content-section {
+            background: #0a1020;
+            border: 1px solid #152040;
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 32px;
+        }
+        .content-section h2 {
+            font-size: 1.5rem;
+            color: #fff;
+            margin-bottom: 16px;
+            font-weight: 800;
+        }
+        .content-section p {
+            margin-bottom: 16px;
+            color: #8a9bb3;
+        }
+        .content-section h3 {
+            font-size: 1.1rem;
+            color: #e0e8f0;
+            margin: 24px 0 8px;
+        }
+
+        /* FAQ */
+        .faq-item { margin-bottom: 20px; }
+        .faq-item h4 {
+            font-size: 1.05rem;
+            color: #e0e8f0;
+            margin-bottom: 8px;
+        }
+        .faq-item p { color: #8a9bb3; font-size: 0.95rem; margin-bottom: 0; }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 40px 24px;
+            font-size: 0.85rem;
+            color: #3a4a5a;
+            border-top: 1px solid #152040;
+            background: #040810;
+            margin-top: 40px;
+        }
+        .footer a { color: #4a8fe7; text-decoration: none; }
+        .footer a:hover { text-decoration: underline; }
+        .disclaimer {
+            max-width: 600px;
+            margin: 16px auto 0;
+            color: #2a3a4a;
+            font-size: 0.75rem;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <span class="header-tag">Interactive Tool</span>
+        <h1>Margin & Leverage Calculator</h1>
+        <p class="header-desc">Calculate buying power, margin requirements, margin call prices, and simulate leveraged returns.</p>
+    </header>
+
+    <div class="container">
+
+        <div class="calc-grid">
+            <!-- Inputs -->
+            <div class="card">
+                <h2>Trade Setup</h2>
+
+                <div class="input-group">
+                    <label>Account Equity</label>
+                    <div class="input-wrapper">
+                        <span class="prefix">$</span>
+                        <input type="number" id="equity" class="has-prefix" value="10000" min="0" step="100">
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>Stock Price</label>
+                    <div class="input-wrapper">
+                        <span class="prefix">$</span>
+                        <input type="number" id="price" class="has-prefix" value="150" min="0.01" step="0.01">
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>Number of Shares</label>
+                    <input type="number" id="shares" value="100" min="1" step="1">
+                </div>
+
+                <div class="input-group">
+                    <label>Initial Margin Requirement</label>
+                    <div class="input-wrapper">
+                        <input type="number" id="imr" class="has-suffix" value="50" min="1" max="100" step="1">
+                        <span class="suffix">%</span>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>Maintenance Margin</label>
+                    <div class="input-wrapper">
+                        <input type="number" id="mmr" class="has-suffix" value="25" min="1" max="100" step="1">
+                        <span class="suffix">%</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results -->
+            <div class="card">
+                <h2>Margin Analysis</h2>
+
+                <div id="danger-box" class="danger-box">
+                    <strong>MARGIN CALL:</strong> Your account equity is below the maintenance margin requirement!
+                </div>
+                <div id="warning-box" class="warning-box">
+                    <strong>WARNING:</strong> You are within 10% of a margin call!
+                </div>
+
+                <div class="result-row">
+                    <span class="result-label">Position Value</span>
+                    <span class="result-value" id="res-position-value">$0.00</span>
+                </div>
+                <div class="result-row">
+                    <span class="result-label">Borrowed Amount (Margin Loan)</span>
+                    <span class="result-value" id="res-borrowed">$0.00</span>
+                </div>
+                <div class="result-row">
+                    <span class="result-label">Leverage Ratio</span>
+                    <span class="result-value" id="res-leverage">1.0x</span>
+                </div>
+                <div class="result-row">
+                    <span class="result-label">Max Buying Power</span>
+                    <span class="result-value accent" id="res-buying-power">$0.00</span>
+                </div>
+                <div class="result-row">
+                    <span class="result-label">Maintenance Margin Required</span>
+                    <span class="result-value" id="res-maint-req">$0.00</span>
+                </div>
+                <div class="result-row">
+                    <span class="result-label">Margin Call Price</span>
+                    <span class="result-value danger" id="res-call-price">$0.00</span>
+                </div>
+
+                <!-- Simulator -->
+                <div class="range-wrapper">
+                    <label style="color: #8a9bb3; font-weight: 600; font-size: 0.9rem;">Simulate Price Change: <span id="sim-percent-val" style="color: #fff; font-family: 'JetBrains Mono';">+0%</span></label>
+                    <input type="range" id="sim-range" min="-50" max="50" value="0" step="1">
+                    <div class="range-labels">
+                        <span>-50%</span>
+                        <span>0%</span>
+                        <span>+50%</span>
+                    </div>
+
+                    <div class="result-row" style="margin-top: 12px; border:none; padding-bottom:0;">
+                        <span class="result-label">Simulated Price</span>
+                        <span class="result-value" id="sim-price">$0.00</span>
+                    </div>
+                    <div class="result-row" style="border:none; padding-bottom:0;">
+                        <span class="result-label">New Equity</span>
+                        <span class="result-value" id="sim-equity">$0.00</span>
+                    </div>
+                    <div class="result-row" style="border:none; padding-bottom:0;">
+                        <span class="result-label">Return on Equity</span>
+                        <span class="result-value" id="sim-roe">0.00%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>Methodology</h2>
+            <p>This margin calculator computes the required values based on standard Regulation T (Reg T) and broker maintenance margin formulas for long positions. It assumes you are buying stock.</p>
+            <ul>
+                <li style="color: #8a9bb3; margin-left: 20px; margin-bottom: 8px;"><strong>Position Value:</strong> Stock Price × Number of Shares</li>
+                <li style="color: #8a9bb3; margin-left: 20px; margin-bottom: 8px;"><strong>Borrowed Amount:</strong> Position Value - Account Equity (Floored at $0)</li>
+                <li style="color: #8a9bb3; margin-left: 20px; margin-bottom: 8px;"><strong>Max Buying Power:</strong> Account Equity / (Initial Margin Requirement %)</li>
+                <li style="color: #8a9bb3; margin-left: 20px; margin-bottom: 8px;"><strong>Margin Call Price:</strong> Borrowed Amount / (Number of Shares × (1 - Maintenance Margin %))</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <h4>What is Initial Margin?</h4>
+                <p>The initial margin requirement is the percentage of the purchase price that you must pay with your own cash. Under Regulation T, the Federal Reserve Board sets this minimum at 50%, though some brokers may require more for volatile stocks.</p>
+            </div>
+
+            <div class="faq-item">
+                <h4>What is Maintenance Margin?</h4>
+                <p>Maintenance margin is the minimum equity you must keep in your margin account after the purchase has been made. FINRA requires a minimum of 25%, but many brokers require 30% to 40% depending on the asset's risk.</p>
+            </div>
+
+            <div class="faq-item">
+                <h4>What triggers a Margin Call?</h4>
+                <p>A margin call occurs when the value of your account equity falls below the broker's required maintenance margin. When this happens, you must either deposit more funds or sell off some of your assets to meet the minimum requirement.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        © 2026 <a href="/">westmount-research</a> · A <a href="https://gab.ae">GAB Ventures</a> property
+        <div class="disclaimer">This site provides data and analysis for informational purposes only. Nothing here constitutes investment advice. Margin trading involves high risk and is not suitable for all investors. You can lose more than your initial investment. Do your own research.</div>
+    </div>
+
+    <!-- JSON-LD SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Margin & Leverage Calculator",
+      "operatingSystem": "Web",
+      "applicationCategory": "FinanceApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "description": "Calculate margin requirements, buying power, margin call prices, and simulate leveraged returns.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Westmount Fundamentals"
+      }
+    }
+    </script>
+
+    <script>
+        const formatCurrency = (val) => new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(val);
+        const formatPercent = (val) => new Intl.NumberFormat('en-US', { style: 'percent', minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(val);
+
+        function calculate() {
+            // Inputs
+            const equity = parseFloat(document.getElementById('equity').value) || 0;
+            const price = parseFloat(document.getElementById('price').value) || 0;
+            const shares = parseFloat(document.getElementById('shares').value) || 0;
+            const imr = (parseFloat(document.getElementById('imr').value) || 50) / 100;
+            const mmr = (parseFloat(document.getElementById('mmr').value) || 25) / 100;
+
+            // Core calcs
+            const positionValue = price * shares;
+            let borrowed = positionValue - equity;
+            if (borrowed < 0) borrowed = 0;
+
+            const leverage = equity > 0 ? positionValue / equity : 0;
+            const maxBuyingPower = imr > 0 ? equity / imr : 0;
+
+            let callPrice = 0;
+            if (shares > 0 && mmr < 1) {
+                callPrice = borrowed / (shares * (1 - mmr));
+            }
+
+            const currentEquityPercent = positionValue > 0 ? (positionValue - borrowed) / positionValue : 1;
+            const maintReqDollar = positionValue * mmr;
+
+            // Update DOM
+            document.getElementById('res-position-value').textContent = formatCurrency(positionValue);
+            document.getElementById('res-borrowed').textContent = formatCurrency(borrowed);
+            document.getElementById('res-leverage').textContent = leverage.toFixed(2) + 'x';
+            document.getElementById('res-buying-power').textContent = formatCurrency(maxBuyingPower);
+            document.getElementById('res-maint-req').textContent = formatCurrency(maintReqDollar);
+            document.getElementById('res-call-price').textContent = formatCurrency(callPrice);
+
+            // Warnings
+            const warningBox = document.getElementById('warning-box');
+            const dangerBox = document.getElementById('danger-box');
+            warningBox.style.display = 'none';
+            dangerBox.style.display = 'none';
+
+            if (positionValue > 0 && borrowed > 0) {
+                if (price <= callPrice) {
+                    dangerBox.style.display = 'block';
+                } else if (price <= callPrice * 1.1) {
+                    warningBox.style.display = 'block';
+                }
+            }
+
+            // Simulator
+            const simRange = parseFloat(document.getElementById('sim-range').value) || 0;
+            const simPercentText = simRange > 0 ? '+' + simRange + '%' : simRange + '%';
+            document.getElementById('sim-percent-val').textContent = simPercentText;
+
+            const simPrice = price * (1 + (simRange / 100));
+            const simPositionValue = simPrice * shares;
+            const simEquity = simPositionValue - borrowed;
+
+            let simRoe = 0;
+            if (equity > 0) {
+                simRoe = (simEquity - equity) / equity;
+            }
+
+            const simRoeEl = document.getElementById('sim-roe');
+            document.getElementById('sim-price').textContent = formatCurrency(simPrice);
+            document.getElementById('sim-equity').textContent = formatCurrency(simEquity);
+            simRoeEl.textContent = formatPercent(simRoe);
+
+            if (simRoe > 0) {
+                simRoeEl.className = 'result-value success';
+                simRoeEl.textContent = '+' + formatPercent(simRoe);
+            } else if (simRoe < 0) {
+                simRoeEl.className = 'result-value danger';
+            } else {
+                simRoeEl.className = 'result-value';
+            }
+        }
+
+        // Event Listeners
+        const inputs = document.querySelectorAll('input');
+        inputs.forEach(input => {
+            input.addEventListener('input', calculate);
+        });
+
+        // Initial calculation
+        calculate();
+    </script>
+</body>
+</html>
