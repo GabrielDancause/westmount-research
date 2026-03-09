@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://westmountfundamentals.com/sitemap.xml
+Sitemap: https://westmountresearch.com/sitemap.xml
