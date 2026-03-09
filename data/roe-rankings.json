@@ -1,0 +1,4702 @@
+[
+  {
+    "ticker": "MAS",
+    "company": "Masco Corporation",
+    "sector": "Industrials",
+    "roe": 71.5,
+    "net_income": 810000000,
+    "equity": 11328671.328671329,
+    "market_cap": 12722388992,
+    "pe_ratio": 16.187824
+  },
+  {
+    "ticker": "ABBV",
+    "company": "AbbVie Inc.",
+    "sector": "Healthcare",
+    "roe": 62.25,
+    "net_income": 4185999872,
+    "equity": 67244977.86345382,
+    "market_cap": 400737796096,
+    "pe_ratio": 95.62869
+  },
+  {
+    "ticker": "CLX",
+    "company": "Clorox Company (The)",
+    "sector": "Consumer Defensive",
+    "roe": 9.87179,
+    "net_income": 755000000,
+    "equity": 76480557.22417109,
+    "market_cap": 13657532416,
+    "pe_ratio": 18.324877
+  },
+  {
+    "ticker": "CL",
+    "company": "Colgate-Palmolive Company",
+    "sector": "Consumer Defensive",
+    "roe": 4.9747,
+    "net_income": 2132000000,
+    "equity": 428568556.8979034,
+    "market_cap": 74551984128,
+    "pe_ratio": 35.365017
+  },
+  {
+    "ticker": "VRSK",
+    "company": "Verisk Analytics, Inc.",
+    "sector": "Industrials",
+    "roe": 4.3794603,
+    "net_income": 908300032,
+    "equity": 207399992.18625182,
+    "market_cap": 29606219776,
+    "pe_ratio": 32.731125
+  },
+  {
+    "ticker": "BA",
+    "company": "Boeing Company (The)",
+    "sector": "Industrials",
+    "roe": 2.90084,
+    "net_income": 1888999936,
+    "equity": 651190667.5307841,
+    "market_cap": 176271147008,
+    "pe_ratio": 90.870445
+  },
+  {
+    "ticker": "APP",
+    "company": "Applovin Corporation",
+    "sector": "Communication Services",
+    "roe": 2.12945,
+    "net_income": 3432717056,
+    "equity": 1612020501.068351,
+    "market_cap": 171468226560,
+    "pe_ratio": 50.53486
+  },
+  {
+    "ticker": "MA",
+    "company": "Mastercard Incorporated",
+    "sector": "Financial Services",
+    "roe": 2.09915,
+    "net_income": 14968000512,
+    "equity": 7130505448.39578,
+    "market_cap": 459257348096,
+    "pe_ratio": 31.169594
+  },
+  {
+    "ticker": "GDDY",
+    "company": "GoDaddy Inc.",
+    "sector": "Technology",
+    "roe": 1.92901,
+    "net_income": 875000000,
+    "equity": 453600551.57827073,
+    "market_cap": 12547222528,
+    "pe_ratio": 14.926849
+  },
+  {
+    "ticker": "AAPL",
+    "company": "Apple Inc.",
+    "sector": "Technology",
+    "roe": 1.5202099,
+    "net_income": 117776998400,
+    "equity": 77474168797.34831,
+    "market_cap": 3788023005184,
+    "pe_ratio": 32.623417
+  },
+  {
+    "ticker": "HD",
+    "company": "Home Depot, Inc. (The)",
+    "sector": "Consumer Cyclical",
+    "roe": 1.45541,
+    "net_income": 14156000256,
+    "equity": 9726469005.984568,
+    "market_cap": 346507706368,
+    "pe_ratio": 24.425966
+  },
+  {
+    "ticker": "FTNT",
+    "company": "Fortinet, Inc.",
+    "sector": "Technology",
+    "roe": 1.3571601,
+    "net_income": 1853400064,
+    "equity": 1365645854.162674,
+    "market_cap": 62325149696,
+    "pe_ratio": 34.63223
+  },
+  {
+    "ticker": "COR",
+    "company": "Cencora, Inc.",
+    "sector": "Healthcare",
+    "roe": 1.33467,
+    "net_income": 1625216000,
+    "equity": 1217691264.5073314,
+    "market_cap": 69725634560,
+    "pe_ratio": 43.08053
+  },
+  {
+    "ticker": "KMB",
+    "company": "Kimberly-Clark Corporation",
+    "sector": "Consumer Defensive",
+    "roe": 1.26603,
+    "net_income": 1620999936,
+    "equity": 1280380351.1765125,
+    "market_cap": 34231152640,
+    "pe_ratio": 21.220163
+  },
+  {
+    "ticker": "NTAP",
+    "company": "NetApp, Inc.",
+    "sector": "Technology",
+    "roe": 1.12587,
+    "net_income": 1212000000,
+    "equity": 1076500839.350902,
+    "market_cap": 19516866560,
+    "pe_ratio": 16.533558
+  },
+  {
+    "ticker": "AMGN",
+    "company": "Amgen Inc.",
+    "sector": "Healthcare",
+    "roe": 1.0610299,
+    "net_income": 7711000064,
+    "equity": 7267467263.646387,
+    "market_cap": 201557393408,
+    "pe_ratio": 26.275475
+  },
+  {
+    "ticker": "MSI",
+    "company": "Motorola Solutions, Inc.",
+    "sector": "Technology",
+    "roe": 1.04197,
+    "net_income": 2153999872,
+    "equity": 2067237897.4442642,
+    "market_cap": 76256370688,
+    "pe_ratio": 35.881268
+  },
+  {
+    "ticker": "SPG",
+    "company": "Simon Property Group, Inc.",
+    "sector": "Real Estate",
+    "roe": 1.04109,
+    "net_income": 4624274944,
+    "equity": 4441762906.184864,
+    "market_cap": 61369049088,
+    "pe_ratio": 13.337217
+  },
+  {
+    "ticker": "NVDA",
+    "company": "NVIDIA Corporation",
+    "sector": "Technology",
+    "roe": 1.01485,
+    "net_income": 120066998272,
+    "equity": 118310093385.22934,
+    "market_cap": 4376528420864,
+    "pe_ratio": 36.673523
+  },
+  {
+    "ticker": "LLY",
+    "company": "Eli Lilly and Company",
+    "sector": "Healthcare",
+    "roe": 1.01159,
+    "net_income": 20640000000,
+    "equity": 20403523166.500263,
+    "market_cap": 894284922880,
+    "pe_ratio": 43.480423
+  },
+  {
+    "ticker": "KLAC",
+    "company": "KLA Corporation",
+    "sector": "Technology",
+    "roe": 1.00726,
+    "net_income": 4557986816,
+    "equity": 4525134340.686615,
+    "market_cap": 183130701824,
+    "pe_ratio": 40.646545
+  },
+  {
+    "ticker": "ITW",
+    "company": "Illinois Tool Works Inc.",
+    "sector": "Industrials",
+    "roe": 0.93718004,
+    "net_income": 3065999872,
+    "equity": 3271516401.480339,
+    "market_cap": 78606548992,
+    "pe_ratio": 26.025764
+  },
+  {
+    "ticker": "IT",
+    "company": "Gartner, Inc.",
+    "sector": "Technology",
+    "roe": 0.86861,
+    "net_income": 729230976,
+    "equity": 839537854.7334247,
+    "market_cap": 12006610944,
+    "pe_ratio": 17.262177
+  },
+  {
+    "ticker": "SYY",
+    "company": "Sysco Corporation",
+    "sector": "Consumer Defensive",
+    "roe": 0.82345,
+    "net_income": 1798000000,
+    "equity": 2183496265.7113366,
+    "market_cap": 40120020992,
+    "pe_ratio": 22.579514
+  },
+  {
+    "ticker": "LMT",
+    "company": "Lockheed Martin Corporation",
+    "sector": "Industrials",
+    "roe": 0.76865,
+    "net_income": 5016999936,
+    "equity": 6527027822.806218,
+    "market_cap": 155988721664,
+    "pe_ratio": 31.354185
+  },
+  {
+    "ticker": "LII",
+    "company": "Lennox International, Inc.",
+    "sector": "Industrials",
+    "roe": 0.75833,
+    "net_income": 805800000,
+    "equity": 1062598077.3541863,
+    "market_cap": 17740691456,
+    "pe_ratio": 22.214537
+  },
+  {
+    "ticker": "MMM",
+    "company": "3M Company",
+    "sector": "Industrials",
+    "roe": 0.75501,
+    "net_income": 3249999872,
+    "equity": 4304578577.767182,
+    "market_cap": 78494097408,
+    "pe_ratio": 24.838333
+  },
+  {
+    "ticker": "ADP",
+    "company": "Automatic Data Processing, Inc.",
+    "sector": "Technology",
+    "roe": 0.73843,
+    "net_income": 4235300096,
+    "equity": 5735547168.993675,
+    "market_cap": 90418561024,
+    "pe_ratio": 21.475504
+  },
+  {
+    "ticker": "LVS",
+    "company": "Las Vegas Sands Corp.",
+    "sector": "Consumer Cyclical",
+    "roe": 0.73263,
+    "net_income": 1627000064,
+    "equity": 2220766367.7436085,
+    "market_cap": 35881779200,
+    "pe_ratio": 22.582554
+  },
+  {
+    "ticker": "ORCL",
+    "company": "Oracle Corporation",
+    "sector": "Technology",
+    "roe": 0.69026,
+    "net_income": 15425000448,
+    "equity": 22346652635.238895,
+    "market_cap": 431544762368,
+    "pe_ratio": 28.223682
+  },
+  {
+    "ticker": "CVNA",
+    "company": "Carvana Co.",
+    "sector": "Consumer Cyclical",
+    "roe": 0.67946,
+    "net_income": 1407000064,
+    "equity": 2070762169.9584966,
+    "market_cap": 67945209856,
+    "pe_ratio": 36.69232
+  },
+  {
+    "ticker": "IDXX",
+    "company": "IDEXX Laboratories, Inc.",
+    "sector": "Healthcare",
+    "roe": 0.66202,
+    "net_income": 1059464000,
+    "equity": 1600350442.584816,
+    "market_cap": 48126394368,
+    "pe_ratio": 46.077984
+  },
+  {
+    "ticker": "ZTS",
+    "company": "Zoetis Inc.",
+    "sector": "Healthcare",
+    "roe": 0.65992,
+    "net_income": 2672999936,
+    "equity": 4050490871.620803,
+    "market_cap": 52786233344,
+    "pe_ratio": 19.897009
+  },
+  {
+    "ticker": "LRCX",
+    "company": "Lam Research Corporation",
+    "sector": "Technology",
+    "roe": 0.65565,
+    "net_income": 6213408768,
+    "equity": 9476715881.949211,
+    "market_cap": 257486143488,
+    "pe_ratio": 42.18107
+  },
+  {
+    "ticker": "DVA",
+    "company": "DaVita Inc.",
+    "sector": "Healthcare",
+    "roe": 0.64848,
+    "net_income": 721803008,
+    "equity": 1113069035.282507,
+    "market_cap": 10169069568,
+    "pe_ratio": 15.995793
+  },
+  {
+    "ticker": "MCO",
+    "company": "Moody's Corporation",
+    "sector": "Financial Services",
+    "roe": 0.62078,
+    "net_income": 2459000064,
+    "equity": 3961145758.5618095,
+    "market_cap": 81347010560,
+    "pe_ratio": 33.514244
+  },
+  {
+    "ticker": "AMP",
+    "company": "Ameriprise Financial, Inc.",
+    "sector": "Financial Services",
+    "roe": 0.60508,
+    "net_income": 3563000064,
+    "equity": 5888477662.457857,
+    "market_cap": 42051448832,
+    "pe_ratio": 12.482764
+  },
+  {
+    "ticker": "SHW",
+    "company": "Sherwin-Williams Company (The)",
+    "sector": "Basic Materials",
+    "roe": 0.59391,
+    "net_income": 2568499968,
+    "equity": 4324729282.214477,
+    "market_cap": 80340967424,
+    "pe_ratio": 31.603313
+  },
+  {
+    "ticker": "TJX",
+    "company": "TJX Companies, Inc. (The)",
+    "sector": "Consumer Cyclical",
+    "roe": 0.59129,
+    "net_income": 5494000128,
+    "equity": 9291549202.590946,
+    "market_cap": 175310110720,
+    "pe_ratio": 32.27869
+  },
+  {
+    "ticker": "WSM",
+    "company": "Williams-Sonoma, Inc.",
+    "sector": "Consumer Cyclical",
+    "roe": 0.56918997,
+    "net_income": 1131134976,
+    "equity": 1987271448.2301927,
+    "market_cap": 21704607744,
+    "pe_ratio": 20.067327
+  },
+  {
+    "ticker": "ADBE",
+    "company": "Adobe Inc.",
+    "sector": "Technology",
+    "roe": 0.55426,
+    "net_income": 7129999872,
+    "equity": 12863998614.368708,
+    "market_cap": 117904973824,
+    "pe_ratio": 16.856075
+  },
+  {
+    "ticker": "TPR",
+    "company": "Tapestry, Inc.",
+    "sector": "Consumer Cyclical",
+    "roe": 0.55337,
+    "net_income": 522300000,
+    "equity": 943853118.1668684,
+    "market_cap": 29016266752,
+    "pe_ratio": 54.95543
+  },
+  {
+    "ticker": "DRI",
+    "company": "Darden Restaurants, Inc.",
+    "sector": "Consumer Cyclical",
+    "roe": 0.54104,
+    "net_income": 1123000064,
+    "equity": 2075632234.215585,
+    "market_cap": 22902761472,
+    "pe_ratio": 20.618324
+  },
+  {
+    "ticker": "V",
+    "company": "Visa Inc.",
+    "sector": "Financial Services",
+    "roe": 0.53954,
+    "net_income": 20592001024,
+    "equity": 38165846876.96927,
+    "market_cap": 605346594816,
+    "pe_ratio": 29.453096
+  },
+  {
+    "ticker": "TRGP",
+    "company": "Targa Resources, Inc.",
+    "sector": "Energy",
+    "roe": 0.51381,
+    "net_income": 1841400064,
+    "equity": 3583815153.461396,
+    "market_cap": 50740445184,
+    "pe_ratio": 27.803886
+  },
+  {
+    "ticker": "FIX",
+    "company": "Comfort Systems USA, Inc.",
+    "sector": "Industrials",
+    "roe": 0.49238998,
+    "net_income": 1022558016,
+    "equity": 2076723852.097884,
+    "market_cap": 46812581888,
+    "pe_ratio": 45.907642
+  },
+  {
+    "ticker": "EXPE",
+    "company": "Expedia Group, Inc.",
+    "sector": "Consumer Cyclical",
+    "roe": 0.48672,
+    "net_income": 1294000000,
+    "equity": 2658612754.766601,
+    "market_cap": 29090392064,
+    "pe_ratio": 24.200304
+  },
+  {
+    "ticker": "ULTA",
+    "company": "Ulta Beauty, Inc.",
+    "sector": "Consumer Cyclical",
+    "roe": 0.47967,
+    "net_income": 1190072064,
+    "equity": 2481022502.9707923,
+    "market_cap": 28172617728,
+    "pe_ratio": 24.11958
+  },
+  {
+    "ticker": "JBL",
+    "company": "Jabil Inc.",
+    "sector": "Technology",
+    "roe": 0.47823003,
+    "net_income": 703000000,
+    "equity": 1470003880.7684245,
+    "market_cap": 25594781696,
+    "pe_ratio": 37.49609
+  },
+  {
+    "ticker": "RCL",
+    "company": "Royal Caribbean Cruises Ltd.",
+    "sector": "Consumer Cyclical",
+    "roe": 0.47731,
+    "net_income": 4268000000,
+    "equity": 8941777880.203642,
+    "market_cap": 75276959744,
+    "pe_ratio": 17.694231
+  },
+  {
+    "ticker": "CMG",
+    "company": "Chipotle Mexican Grill, Inc.",
+    "sector": "Consumer Cyclical",
+    "roe": 0.47355,
+    "net_income": 1535761024,
+    "equity": 3243081034.73762,
+    "market_cap": 45605371904,
+    "pe_ratio": 30.254387
+  },
+  {
+    "ticker": "AON",
+    "company": "Aon plc",
+    "sector": "Financial Services",
+    "roe": 0.4694,
+    "net_income": 3695000064,
+    "equity": 7871751308.052834,
+    "market_cap": 72091435008,
+    "pe_ratio": 19.695244
+  },
+  {
+    "ticker": "GWW",
+    "company": "W.W. Grainger, Inc.",
+    "sector": "Industrials",
+    "roe": 0.46098998,
+    "net_income": 1706000000,
+    "equity": 3700731195.936189,
+    "market_cap": 52183490560,
+    "pe_ratio": 31.010454
+  },
+  {
+    "ticker": "TSCO",
+    "company": "Tractor Supply Company",
+    "sector": "Consumer Cyclical",
+    "roe": 0.45183998,
+    "net_income": 1096087040,
+    "equity": 2425830135.704238,
+    "market_cap": 26433361920,
+    "pe_ratio": 24.378641
+  },
+  {
+    "ticker": "GE",
+    "company": "GE Aerospace",
+    "sector": "Industrials",
+    "roe": 0.44692,
+    "net_income": 8600999936,
+    "equity": 19245054900.205853,
+    "market_cap": 333964607488,
+    "pe_ratio": 39.330433
+  },
+  {
+    "ticker": "CAT",
+    "company": "Caterpillar, Inc.",
+    "sector": "Industrials",
+    "roe": 0.43526,
+    "net_income": 8883999744,
+    "equity": 20410788365.5746,
+    "market_cap": 323533012992,
+    "pe_ratio": 36.792976
+  },
+  {
+    "ticker": "CTAS",
+    "company": "Cintas Corporation",
+    "sector": "Industrials",
+    "roe": 0.43396,
+    "net_income": 1891880960,
+    "equity": 4359574522.997511,
+    "market_cap": 80538107904,
+    "pe_ratio": 43.378788
+  },
+  {
+    "ticker": "KO",
+    "company": "Coca-Cola Company (The)",
+    "sector": "Consumer Defensive",
+    "roe": 0.43323,
+    "net_income": 13107000320,
+    "equity": 30254138263.739815,
+    "market_cap": 333009059840,
+    "pe_ratio": 25.465462
+  },
+  {
+    "ticker": "CDW",
+    "company": "CDW Corporation",
+    "sector": "Technology",
+    "roe": 0.43018,
+    "net_income": 1066600000,
+    "equity": 2479427216.5140176,
+    "market_cap": 15575067648,
+    "pe_ratio": 14.805693
+  },
+  {
+    "ticker": "PEP",
+    "company": "Pepsico, Inc.",
+    "sector": "Consumer Defensive",
+    "roe": 0.42848,
+    "net_income": 8240000000,
+    "equity": 19230769230.76923,
+    "market_cap": 219704213504,
+    "pe_ratio": 26.824707
+  },
+  {
+    "ticker": "NFLX",
+    "company": "Netflix, Inc.",
+    "sector": "Communication Services",
+    "roe": 0.42762002,
+    "net_income": 10981200896,
+    "equity": 25679810070.632336,
+    "market_cap": 413965975552,
+    "pe_ratio": 38.57312
+  },
+  {
+    "ticker": "GEV",
+    "company": "GE Vernova Inc.",
+    "sector": "Industrials",
+    "roe": 0.42641,
+    "net_income": 4883999744,
+    "equity": 11453764555.240261,
+    "market_cap": 222846337024,
+    "pe_ratio": 46.455883
+  },
+  {
+    "ticker": "BR",
+    "company": "Broadridge Financial Solutions,",
+    "sector": "Technology",
+    "roe": 0.41793,
+    "net_income": 1067299968,
+    "equity": 2553776871.72493,
+    "market_cap": 22124466176,
+    "pe_ratio": 20.962944
+  },
+  {
+    "ticker": "NRG",
+    "company": "NRG Energy, Inc.",
+    "sector": "Utilities",
+    "roe": 0.41548002,
+    "net_income": 797000000,
+    "equity": 1918263121.292812,
+    "market_cap": 32607371264,
+    "pe_ratio": 37.877804
+  },
+  {
+    "ticker": "WDC",
+    "company": "Western Digital Corporation",
+    "sector": "Technology",
+    "roe": 0.41126,
+    "net_income": 3945999872,
+    "equity": 9594903156.154257,
+    "market_cap": 88221057024,
+    "pe_ratio": 24.411758
+  },
+  {
+    "ticker": "LULU",
+    "company": "lululemon athletica inc.",
+    "sector": "Consumer Cyclical",
+    "roe": 0.41017,
+    "net_income": 1740715008,
+    "equity": 4243886700.6363215,
+    "market_cap": 19960928256,
+    "pe_ratio": 11.705147
+  },
+  {
+    "ticker": "PAYX",
+    "company": "Paychex, Inc.",
+    "sector": "Technology",
+    "roe": 0.40884998,
+    "net_income": 1595699968,
+    "equity": 3902898486.1390967,
+    "market_cap": 35291885568,
+    "pe_ratio": 22.243214
+  },
+  {
+    "ticker": "EBAY",
+    "company": "eBay Inc.",
+    "sector": "Consumer Cyclical",
+    "roe": 0.40847,
+    "net_income": 1996000000,
+    "equity": 4886527774.377555,
+    "market_cap": 41683439616,
+    "pe_ratio": 21.647886
+  },
+  {
+    "ticker": "GILD",
+    "company": "Gilead Sciences, Inc.",
+    "sector": "Healthcare",
+    "roe": 0.40655,
+    "net_income": 8510000128,
+    "equity": 20932234972.328125,
+    "market_cap": 179931496448,
+    "pe_ratio": 21.37758
+  },
+  {
+    "ticker": "PGR",
+    "company": "Progressive Corporation (The)",
+    "sector": "Financial Services",
+    "roe": 0.40448,
+    "net_income": 11308000256,
+    "equity": 27956883544.3038,
+    "market_cap": 120449327104,
+    "pe_ratio": 10.690588
+  },
+  {
+    "ticker": "BMY",
+    "company": "Bristol-Myers Squibb Company",
+    "sector": "Healthcare",
+    "roe": 0.40442002,
+    "net_income": 7054000128,
+    "equity": 17442262447.838264,
+    "market_cap": 122428112896,
+    "pe_ratio": 17.375057
+  },
+  {
+    "ticker": "UNP",
+    "company": "Union Pacific Corporation",
+    "sector": "Industrials",
+    "roe": 0.40377,
+    "net_income": 7137999872,
+    "equity": 17678380939.643856,
+    "market_cap": 148760281088,
+    "pe_ratio": 20.94361
+  },
+  {
+    "ticker": "UBER",
+    "company": "Uber Technologies, Inc.",
+    "sector": "Technology",
+    "roe": 0.39925998,
+    "net_income": 10053000192,
+    "equity": 25179083042.58293,
+    "market_cap": 153094537216,
+    "pe_ratio": 15.577167
+  },
+  {
+    "ticker": "DECK",
+    "company": "Deckers Outdoor Corporation",
+    "sector": "Consumer Cyclical",
+    "roe": 0.39688,
+    "net_income": 1039910976,
+    "equity": 2620215117.919774,
+    "market_cap": 14878360576,
+    "pe_ratio": 14.5007105
+  },
+  {
+    "ticker": "ADSK",
+    "company": "Autodesk, Inc.",
+    "sector": "Technology",
+    "roe": 0.39675,
+    "net_income": 1124000000,
+    "equity": 2833018273.4719596,
+    "market_cap": 55152013312,
+    "pe_ratio": 49.83736
+  },
+  {
+    "ticker": "ALL",
+    "company": "Allstate Corporation (The)",
+    "sector": "Financial Services",
+    "roe": 0.39518002,
+    "net_income": 10165000192,
+    "equity": 25722454773.90279,
+    "market_cap": 53770633216,
+    "pe_ratio": 5.44208
+  },
+  {
+    "ticker": "ROL",
+    "company": "Rollins, Inc.",
+    "sector": "Consumer Cyclical",
+    "roe": 0.38944,
+    "net_income": 526704992,
+    "equity": 1352467625.3081348,
+    "market_cap": 27722987520,
+    "pe_ratio": 52.86706
+  },
+  {
+    "ticker": "AMAT",
+    "company": "Applied Materials, Inc.",
+    "sector": "Technology",
+    "roe": 0.38863,
+    "net_income": 7839000064,
+    "equity": 20170856763.50256,
+    "market_cap": 261065883648,
+    "pe_ratio": 33.774128
+  },
+  {
+    "ticker": "SOLV",
+    "company": "Solventum Corporation",
+    "sector": "Healthcare",
+    "roe": 0.38861,
+    "net_income": 1556000000,
+    "equity": 4004014307.4033093,
+    "market_cap": 11752416256,
+    "pe_ratio": 7.628378
+  },
+  {
+    "ticker": "EME",
+    "company": "EMCOR Group, Inc.",
+    "sector": "Industrials",
+    "roe": 0.3849,
+    "net_income": 1272817024,
+    "equity": 3306877173.291764,
+    "market_cap": 31526135808,
+    "pe_ratio": 25.0087
+  },
+  {
+    "ticker": "TPL",
+    "company": "Texas Pacific Land Corporation",
+    "sector": "Energy",
+    "roe": 0.37152,
+    "net_income": 481376000,
+    "equity": 1295693367.786391,
+    "market_cap": 37283590144,
+    "pe_ratio": 77.47851
+  },
+  {
+    "ticker": "BBY",
+    "company": "Best Buy Co., Inc.",
+    "sector": "Consumer Cyclical",
+    "roe": 0.37041,
+    "net_income": 1069000000,
+    "equity": 2885991198.9417133,
+    "market_cap": 13574515712,
+    "pe_ratio": 21.323235
+  },
+  {
+    "ticker": "TT",
+    "company": "Trane Technologies plc",
+    "sector": "Industrials",
+    "roe": 0.36956,
+    "net_income": 2955599872,
+    "equity": 7997618443.554498,
+    "market_cap": 93179166720,
+    "pe_ratio": 31.931612
+  },
+  {
+    "ticker": "MRK",
+    "company": "Merck & Company, Inc.",
+    "sector": "Healthcare",
+    "roe": 0.36882,
+    "net_income": 18254000128,
+    "equity": 49492977951.30416,
+    "market_cap": 287019958272,
+    "pe_ratio": 15.946427
+  },
+  {
+    "ticker": "APH",
+    "company": "Amphenol Corporation",
+    "sector": "Technology",
+    "roe": 0.36851,
+    "net_income": 4270299904,
+    "equity": 11588016346.910532,
+    "market_cap": 165231067136,
+    "pe_ratio": 40.24551
+  },
+  {
+    "ticker": "LYV",
+    "company": "Live Nation Entertainment, Inc.",
+    "sector": "Communication Services",
+    "roe": 0.36701,
+    "net_income": -54829000,
+    "equity": -149393749.48911473,
+    "market_cap": 38768144384,
+    "pe_ratio": 72.7027
+  },
+  {
+    "ticker": "ROST",
+    "company": "Ross Stores, Inc.",
+    "sector": "Consumer Cyclical",
+    "roe": 0.36678,
+    "net_income": 2145043968,
+    "equity": 5848312252.576476,
+    "market_cap": 67959283712,
+    "pe_ratio": 32.701096
+  },
+  {
+    "ticker": "VLTO",
+    "company": "Veralto Corp",
+    "sector": "Industrials",
+    "roe": 0.36498,
+    "net_income": 940000000,
+    "equity": 2575483588.1418157,
+    "market_cap": 23126415360,
+    "pe_ratio": 24.771276
+  },
+  {
+    "ticker": "ALLE",
+    "company": "Allegion plc",
+    "sector": "Industrials",
+    "roe": 0.36084,
+    "net_income": 643800000,
+    "equity": 1784170269.3714666,
+    "market_cap": 12812849152,
+    "pe_ratio": 19.991262
+  },
+  {
+    "ticker": "GOOGL",
+    "company": "Alphabet Inc.",
+    "sector": "Communication Services",
+    "roe": 0.35705003,
+    "net_income": 132169998336,
+    "equity": 370172209020.6798,
+    "market_cap": 3648697139200,
+    "pe_ratio": 27.901941
+  },
+  {
+    "ticker": "GOOG",
+    "company": "Alphabet Inc.",
+    "sector": "Communication Services",
+    "roe": 0.35705003,
+    "net_income": 132169998336,
+    "equity": 370172209020.6798,
+    "market_cap": 3645068279808,
+    "pe_ratio": 27.9
+  },
+  {
+    "ticker": "EXPD",
+    "company": "Expeditors International of Was",
+    "sector": "Industrials",
+    "roe": 0.35431,
+    "net_income": 810332032,
+    "equity": 2287070734.667382,
+    "market_cap": 19317776384,
+    "pe_ratio": 24.22521
+  },
+  {
+    "ticker": "IBM",
+    "company": "International Business Machines",
+    "sector": "Technology",
+    "roe": 0.35158002,
+    "net_income": 10570999808,
+    "equity": 30067123291.022057,
+    "market_cap": 238448345088,
+    "pe_ratio": 22.839172
+  },
+  {
+    "ticker": "JNJ",
+    "company": "Johnson & Johnson",
+    "sector": "Healthcare",
+    "roe": 0.35029998,
+    "net_income": 26804000768,
+    "equity": 76517277471.7258,
+    "market_cap": 584521023488,
+    "pe_ratio": 21.990028
+  },
+  {
+    "ticker": "DXCM",
+    "company": "DexCom, Inc.",
+    "sector": "Healthcare",
+    "roe": 0.34497002,
+    "net_income": 836300032,
+    "equity": 2424268729.207251,
+    "market_cap": 26415802368,
+    "pe_ratio": 32.4067
+  },
+  {
+    "ticker": "MSFT",
+    "company": "Microsoft Corporation",
+    "sector": "Technology",
+    "roe": 0.34390998,
+    "net_income": 119262003200,
+    "equity": 346782617939.72943,
+    "market_cap": 3024160292864,
+    "pe_ratio": 25.446531
+  },
+  {
+    "ticker": "AXP",
+    "company": "American Express Company",
+    "sector": "Financial Services",
+    "roe": 0.33992,
+    "net_income": 10700999680,
+    "equity": 31480935749.58814,
+    "market_cap": 205887438848,
+    "pe_ratio": 19.433355
+  },
+  {
+    "ticker": "RL",
+    "company": "Ralph Lauren Corporation",
+    "sector": "Consumer Cyclical",
+    "roe": 0.33846,
+    "net_income": 918499968,
+    "equity": 2713762240.737458,
+    "market_cap": 20636016640,
+    "pe_ratio": 23.181198
+  },
+  {
+    "ticker": "UPS",
+    "company": "United Parcel Service, Inc.",
+    "sector": "Industrials",
+    "roe": 0.33772,
+    "net_income": 5571999744,
+    "equity": 16498874049.508467,
+    "market_cap": 83292717056,
+    "pe_ratio": 14.953522
+  },
+  {
+    "ticker": "AVGO",
+    "company": "Broadcom Inc.",
+    "sector": "Technology",
+    "roe": 0.33370999,
+    "net_income": 24971999232,
+    "equity": 74831440413.27621,
+    "market_cap": 1642116415488,
+    "pe_ratio": 72.76155
+  },
+  {
+    "ticker": "FAST",
+    "company": "Fastenal Company",
+    "sector": "Industrials",
+    "roe": 0.33291,
+    "net_income": 1258400000,
+    "equity": 3780000600.762969,
+    "market_cap": 53351346176,
+    "pe_ratio": 42.62385
+  },
+  {
+    "ticker": "NVR",
+    "company": "NVR, Inc.",
+    "sector": "Consumer Cyclical",
+    "roe": 0.33185002,
+    "net_income": 1339815936,
+    "equity": 4037414058.3146563,
+    "market_cap": 19201105920,
+    "pe_ratio": 15.498499
+  },
+  {
+    "ticker": "POOL",
+    "company": "Pool Corporation",
+    "sector": "Industrials",
+    "roe": 0.33058998,
+    "net_income": 404424000,
+    "equity": 1223340162.9414177,
+    "market_cap": 7728372736,
+    "pe_ratio": 19.087097
+  },
+  {
+    "ticker": "CHRW",
+    "company": "C.H. Robinson Worldwide, Inc.",
+    "sector": "Industrials",
+    "roe": 0.32911,
+    "net_income": 587081024,
+    "equity": 1783844380.2983804,
+    "market_cap": 21147721728,
+    "pe_ratio": 36.910973
+  },
+  {
+    "ticker": "PG",
+    "company": "Procter & Gamble Company (The)",
+    "sector": "Consumer Defensive",
+    "roe": 0.31562,
+    "net_income": 16161999872,
+    "equity": 51207147430.454346,
+    "market_cap": 363173117952,
+    "pe_ratio": 23.022255
+  },
+  {
+    "ticker": "ANET",
+    "company": "Arista Networks, Inc.",
+    "sector": "Technology",
+    "roe": 0.314,
+    "net_income": 3511399936,
+    "equity": 11182802343.949045,
+    "market_cap": 170154606592,
+    "pe_ratio": 49.134544
+  },
+  {
+    "ticker": "LDOS",
+    "company": "Leidos Holdings, Inc.",
+    "sector": "Technology",
+    "roe": 0.31034002,
+    "net_income": 1448000000,
+    "equity": 4665850056.979439,
+    "market_cap": 22726256640,
+    "pe_ratio": 15.956014
+  },
+  {
+    "ticker": "HWM",
+    "company": "Howmet Aerospace Inc.",
+    "sector": "Industrials",
+    "roe": 0.30443,
+    "net_income": 1506000000,
+    "equity": 4946950037.775516,
+    "market_cap": 100693426176,
+    "pe_ratio": 67.61351
+  },
+  {
+    "ticker": "META",
+    "company": "Meta Platforms, Inc.",
+    "sector": "Communication Services",
+    "roe": 0.30238,
+    "net_income": 60458000384,
+    "equity": 199940473523.3812,
+    "market_cap": 1607532544000,
+    "pe_ratio": 27.07712
+  },
+  {
+    "ticker": "ABNB",
+    "company": "Airbnb, Inc.",
+    "sector": "Consumer Cyclical",
+    "roe": 0.30233,
+    "net_income": 2511000064,
+    "equity": 8305494208.315417,
+    "market_cap": 78764146688,
+    "pe_ratio": 32.681595
+  },
+  {
+    "ticker": "AVY",
+    "company": "Avery Dennison Corporation",
+    "sector": "Consumer Cyclical",
+    "roe": 0.30212998,
+    "net_income": 688000000,
+    "equity": 2277165609.3182144,
+    "market_cap": 13549735936,
+    "pe_ratio": 20.074032
+  },
+  {
+    "ticker": "TXN",
+    "company": "Texas Instruments Incorporated",
+    "sector": "Technology",
+    "roe": 0.30148,
+    "net_income": 4973000192,
+    "equity": 16495290540.002651,
+    "market_cap": 175436939264,
+    "pe_ratio": 35.427525
+  },
+  {
+    "ticker": "INCY",
+    "company": "Incyte Corporation",
+    "sector": "Healthcare",
+    "roe": 0.2987,
+    "net_income": 1286649984,
+    "equity": 4307499109.474389,
+    "market_cap": 19108374528,
+    "pe_ratio": 14.978939
+  },
+  {
+    "ticker": "WM",
+    "company": "Waste Management, Inc.",
+    "sector": "Industrials",
+    "roe": 0.29696,
+    "net_income": 2708000000,
+    "equity": 9119073275.862068,
+    "market_cap": 99910303744,
+    "pe_ratio": 37.026905
+  },
+  {
+    "ticker": "COST",
+    "company": "Costco Wholesale Corporation",
+    "sector": "Consumer Defensive",
+    "roe": 0.29650998,
+    "net_income": 8549000192,
+    "equity": 28832082454.695118,
+    "market_cap": 445165240320,
+    "pe_ratio": 53.736332
+  },
+  {
+    "ticker": "MRSH",
+    "company": "Marsh",
+    "sector": "Financial Services",
+    "roe": 0.29352,
+    "net_income": 4160000000,
+    "equity": 14172799127.827745,
+    "market_cap": 88247435264,
+    "pe_ratio": 21.393112
+  },
+  {
+    "ticker": "WAT",
+    "company": "Waters Corporation",
+    "sector": "Healthcare",
+    "roe": 0.29279,
+    "net_income": 642628992,
+    "equity": 2194846108.132108,
+    "market_cap": 29620879360,
+    "pe_ratio": 28.035282
+  },
+  {
+    "ticker": "BX",
+    "company": "Blackstone Inc.",
+    "sector": "Financial Services",
+    "roe": 0.29228002,
+    "net_income": 3019214080,
+    "equity": 10329868185.995062,
+    "market_cap": 134805282816,
+    "pe_ratio": 28.255154
+  },
+  {
+    "ticker": "AOS",
+    "company": "A.O. Smith Corporation",
+    "sector": "Industrials",
+    "roe": 0.29197,
+    "net_income": 546200000,
+    "equity": 1870740144.5353975,
+    "market_cap": 9623595008,
+    "pe_ratio": 18.075325
+  },
+  {
+    "ticker": "CPAY",
+    "company": "Corpay, Inc.",
+    "sector": "Technology",
+    "roe": 0.29071,
+    "net_income": 1068345984,
+    "equity": 3674954366.8948436,
+    "market_cap": 22740566016,
+    "pe_ratio": 21.627413
+  },
+  {
+    "ticker": "FDS",
+    "company": "FactSet Research Systems Inc.",
+    "sector": "Financial Services",
+    "roe": 0.28831,
+    "net_income": 599598016,
+    "equity": 2079698990.669765,
+    "market_cap": 8340529664,
+    "pe_ratio": 14.178753
+  },
+  {
+    "ticker": "CHTR",
+    "company": "Charter Communications, Inc.",
+    "sector": "Communication Services",
+    "roe": 0.28667998,
+    "net_income": 4986999808,
+    "equity": 17395703069.324898,
+    "market_cap": 29298927616,
+    "pe_ratio": 6.252555
+  },
+  {
+    "ticker": "URI",
+    "company": "United Rentals, Inc.",
+    "sector": "Industrials",
+    "roe": 0.28357,
+    "net_income": 2494000128,
+    "equity": 8795006975.350002,
+    "market_cap": 51452293120,
+    "pe_ratio": 20.937727
+  },
+  {
+    "ticker": "DAL",
+    "company": "Delta Air Lines, Inc.",
+    "sector": "Industrials",
+    "roe": 0.27693,
+    "net_income": 5005000192,
+    "equity": 18073159975.445057,
+    "market_cap": 38286520320,
+    "pe_ratio": 7.6527414
+  },
+  {
+    "ticker": "PAYC",
+    "company": "Paycom Software, Inc.",
+    "sector": "Technology",
+    "roe": 0.27417,
+    "net_income": 453400000,
+    "equity": 1653718495.8237588,
+    "market_cap": 7495234048,
+    "pe_ratio": 16.915737
+  },
+  {
+    "ticker": "GIS",
+    "company": "General Mills, Inc.",
+    "sector": "Consumer Defensive",
+    "roe": 0.27173,
+    "net_income": 2526299904,
+    "equity": 9297096029.146578,
+    "market_cap": 23346884608,
+    "pe_ratio": 9.4096775
+  },
+  {
+    "ticker": "GEN",
+    "company": "Gen Digital Inc.",
+    "sector": "Technology",
+    "roe": 0.26902,
+    "net_income": 603000000,
+    "equity": 2241469035.7594233,
+    "market_cap": 13894614016,
+    "pe_ratio": 23.226805
+  },
+  {
+    "ticker": "MNST",
+    "company": "Monster Beverage Corporation",
+    "sector": "Consumer Defensive",
+    "roe": 0.26815,
+    "net_income": 1905432064,
+    "equity": 7105843982.845423,
+    "market_cap": 72675729408,
+    "pe_ratio": 38.293816
+  },
+  {
+    "ticker": "AMT",
+    "company": "American Tower Corporation (REI",
+    "sector": "Real Estate",
+    "roe": 0.2628,
+    "net_income": 2529499904,
+    "equity": 9625189893.4551,
+    "market_cap": 87267213312,
+    "pe_ratio": 34.584415
+  },
+  {
+    "ticker": "ERIE",
+    "company": "Erie Indemnity Company",
+    "sector": "Financial Services",
+    "roe": 0.26194,
+    "net_income": 559334976,
+    "equity": 2135355333.2824311,
+    "market_cap": 13115868160,
+    "pe_ratio": 23.463985
+  },
+  {
+    "ticker": "NOC",
+    "company": "Northrop Grumman Corporation",
+    "sector": "Industrials",
+    "roe": 0.26167,
+    "net_income": 4182000128,
+    "equity": 15981962502.388504,
+    "market_cap": 107859263488,
+    "pe_ratio": 25.961525
+  },
+  {
+    "ticker": "HON",
+    "company": "Honeywell International Inc.",
+    "sector": "Industrials",
+    "roe": 0.26136,
+    "net_income": 4424999936,
+    "equity": 16930670094.888277,
+    "market_cap": 158254923776,
+    "pe_ratio": 30.982191
+  },
+  {
+    "ticker": "PLTR",
+    "company": "Palantir Technologies Inc.",
+    "sector": "Technology",
+    "roe": 0.25983,
+    "net_income": 1625032960,
+    "equity": 6254216064.349767,
+    "market_cap": 368963813376,
+    "pe_ratio": 244.87303
+  },
+  {
+    "ticker": "PH",
+    "company": "Parker-Hannifin Corporation",
+    "sector": "Industrials",
+    "roe": 0.25781,
+    "net_income": 3536999936,
+    "equity": 13719405515.68985,
+    "market_cap": 115196559360,
+    "pe_ratio": 33.273422
+  },
+  {
+    "ticker": "PYPL",
+    "company": "PayPal Holdings, Inc.",
+    "sector": "Financial Services",
+    "roe": 0.25732002,
+    "net_income": 5232999936,
+    "equity": 20336544105.66267,
+    "market_cap": 42983849984,
+    "pe_ratio": 8.491682
+  },
+  {
+    "ticker": "RMD",
+    "company": "ResMed Inc.",
+    "sector": "Healthcare",
+    "roe": 0.25676,
+    "net_income": 1485874944,
+    "equity": 5787018787.973205,
+    "market_cap": 36787884032,
+    "pe_ratio": 24.928783
+  },
+  {
+    "ticker": "CCL",
+    "company": "Carnival Corporation",
+    "sector": "Consumer Cyclical",
+    "roe": 0.25632998,
+    "net_income": 2760000000,
+    "equity": 10767371026.986387,
+    "market_cap": 34764374016,
+    "pe_ratio": 12.424803
+  },
+  {
+    "ticker": "APA",
+    "company": "APA Corporation",
+    "sector": "Energy",
+    "roe": 0.2532,
+    "net_income": 1434000000,
+    "equity": 5663507109.00474,
+    "market_cap": 11880300544,
+    "pe_ratio": 7.943781
+  },
+  {
+    "ticker": "ACN",
+    "company": "Accenture plc",
+    "sector": "Technology",
+    "roe": 0.25016,
+    "net_income": 7611100160,
+    "equity": 30424928685.64119,
+    "market_cap": 129593524224,
+    "pe_ratio": 17.27066
+  },
+  {
+    "ticker": "HUBB",
+    "company": "Hubbell Inc",
+    "sector": "Industrials",
+    "roe": 0.24542,
+    "net_income": 885600000,
+    "equity": 3608507864.069758,
+    "market_cap": 25349576704,
+    "pe_ratio": 28.812086
+  },
+  {
+    "ticker": "JKHY",
+    "company": "Jack Henry & Associates, Inc.",
+    "sector": "Technology",
+    "roe": 0.24284,
+    "net_income": 507367008,
+    "equity": 2089305748.6410806,
+    "market_cap": 12338130944,
+    "pe_ratio": 24.422636
+  },
+  {
+    "ticker": "MPC",
+    "company": "Marathon Petroleum Corporation",
+    "sector": "Energy",
+    "roe": 0.24193001,
+    "net_income": 4043000064,
+    "equity": 16711445033.214357,
+    "market_cap": 65056382976,
+    "pe_ratio": 16.383043
+  },
+  {
+    "ticker": "EIX",
+    "company": "Edison International",
+    "sector": "Utilities",
+    "roe": 0.24103001,
+    "net_income": 4456999936,
+    "equity": 18491473057.649544,
+    "market_cap": 26819926016,
+    "pe_ratio": 6.0346317
+  },
+  {
+    "ticker": "TGT",
+    "company": "Target Corporation",
+    "sector": "Consumer Defensive",
+    "roe": 0.24034001,
+    "net_income": 3704999936,
+    "equity": 15415660239.008894,
+    "market_cap": 53582745600,
+    "pe_ratio": 14.293333
+  },
+  {
+    "ticker": "UAL",
+    "company": "United Airlines Holdings, Inc.",
+    "sector": "Industrials",
+    "roe": 0.23987,
+    "net_income": 3352999936,
+    "equity": 13978404702.547213,
+    "market_cap": 29157462016,
+    "pe_ratio": 8.829903
+  },
+  {
+    "ticker": "ODFL",
+    "company": "Old Dominion Freight Line, Inc.",
+    "sector": "Industrials",
+    "roe": 0.2393,
+    "net_income": 1023702976,
+    "equity": 4277906293.3556204,
+    "market_cap": 39720341504,
+    "pe_ratio": 39.16701
+  },
+  {
+    "ticker": "CMI",
+    "company": "Cummins Inc.",
+    "sector": "Industrials",
+    "roe": 0.23928,
+    "net_income": 2843000064,
+    "equity": 11881478034.102306,
+    "market_cap": 74382753792,
+    "pe_ratio": 26.27428
+  },
+  {
+    "ticker": "CSCO",
+    "company": "Cisco Systems, Inc.",
+    "sector": "Technology",
+    "roe": 0.23754999,
+    "net_income": 11075999744,
+    "equity": 46625974364.38537,
+    "market_cap": 301468516352,
+    "pe_ratio": 27.446045
+  },
+  {
+    "ticker": "ROK",
+    "company": "Rockwell Automation, Inc.",
+    "sector": "Industrials",
+    "roe": 0.23736,
+    "net_income": 988000000,
+    "equity": 4162453656.892484,
+    "market_cap": 41408016384,
+    "pe_ratio": 42.042236
+  },
+  {
+    "ticker": "IBKR",
+    "company": "Interactive Brokers Group, Inc.",
+    "sector": "Financial Services",
+    "roe": 0.23507999,
+    "net_income": 984000000,
+    "equity": 4185809264.3274317,
+    "market_cap": 110687870976,
+    "pe_ratio": 29.328829
+  },
+  {
+    "ticker": "INTU",
+    "company": "Intuit Inc.",
+    "sector": "Technology",
+    "roe": 0.23457001,
+    "net_income": 4339999744,
+    "equity": 18501937839.368298,
+    "market_cap": 131882434560,
+    "pe_ratio": 30.874918
+  },
+  {
+    "ticker": "CF",
+    "company": "CF Industries Holdings, Inc.",
+    "sector": "Basic Materials",
+    "roe": 0.23401,
+    "net_income": 1455000064,
+    "equity": 6217683278.4923725,
+    "market_cap": 18225637376,
+    "pe_ratio": 13.026755
+  },
+  {
+    "ticker": "NCLH",
+    "company": "Norwegian Cruise Line Holdings ",
+    "sector": "Consumer Cyclical",
+    "roe": 0.23285,
+    "net_income": 423246016,
+    "equity": 1817676684.5608761,
+    "market_cap": 9066454016,
+    "pe_ratio": 14.327339
+  },
+  {
+    "ticker": "LW",
+    "company": "Lamb Weston Holdings, Inc.",
+    "sector": "Consumer Defensive",
+    "roe": 0.23164,
+    "net_income": 392300000,
+    "equity": 1693576238.9915385,
+    "market_cap": 6484070912,
+    "pe_ratio": 16.858696
+  },
+  {
+    "ticker": "PTC",
+    "company": "PTC Inc.",
+    "sector": "Technology",
+    "roe": 0.23141001,
+    "net_income": 818283008,
+    "equity": 3536074381.570616,
+    "market_cap": 19382087680,
+    "pe_ratio": 23.988218
+  },
+  {
+    "ticker": "MU",
+    "company": "Micron Technology, Inc.",
+    "sector": "Technology",
+    "roe": 0.22554001,
+    "net_income": 11909000192,
+    "equity": 52802162206.16466,
+    "market_cap": 427344592896,
+    "pe_ratio": 36.092205
+  },
+  {
+    "ticker": "VRTX",
+    "company": "Vertex Pharmaceuticals Incorpor",
+    "sector": "Healthcare",
+    "roe": 0.22541,
+    "net_income": 3953200128,
+    "equity": 17537820540.348698,
+    "market_cap": 115310919680,
+    "pe_ratio": 29.671896
+  },
+  {
+    "ticker": "ECL",
+    "company": "Ecolab Inc.",
+    "sector": "Basic Materials",
+    "roe": 0.22516,
+    "net_income": 2075600000,
+    "equity": 9218333629.41908,
+    "market_cap": 78820237312,
+    "pe_ratio": 38.173527
+  },
+  {
+    "ticker": "CSX",
+    "company": "CSX Corporation",
+    "sector": "Industrials",
+    "roe": 0.22511,
+    "net_income": 2888999936,
+    "equity": 12833725449.780107,
+    "market_cap": 74391568384,
+    "pe_ratio": 25.977274
+  },
+  {
+    "ticker": "GEHC",
+    "company": "GE HealthCare Technologies Inc.",
+    "sector": "Healthcare",
+    "roe": 0.22378,
+    "net_income": 2084000000,
+    "equity": 9312717847.886316,
+    "market_cap": 33957914624,
+    "pe_ratio": 16.375824
+  },
+  {
+    "ticker": "NEM",
+    "company": "Newmont Corporation",
+    "sector": "Basic Materials",
+    "roe": 0.22343999,
+    "net_income": 7085000192,
+    "equity": 31708738404.436913,
+    "market_cap": 124022038528,
+    "pe_ratio": 17.81348
+  },
+  {
+    "ticker": "AMZN",
+    "company": "Amazon.com, Inc.",
+    "sector": "Consumer Cyclical",
+    "roe": 0.22286,
+    "net_income": 77669998592,
+    "equity": 348514756313.3806,
+    "market_cap": 2252615712768,
+    "pe_ratio": 29.307262
+  },
+  {
+    "ticker": "HOOD",
+    "company": "Robinhood Markets, Inc.",
+    "sector": "Financial Services",
+    "roe": 0.21993999,
+    "net_income": 1883000064,
+    "equity": 8561426523.662205,
+    "market_cap": 69817475072,
+    "pe_ratio": 37.828487
+  },
+  {
+    "ticker": "CDNS",
+    "company": "Cadence Design Systems, Inc.",
+    "sector": "Technology",
+    "roe": 0.21855,
+    "net_income": 1108888064,
+    "equity": 5073841519.10318,
+    "market_cap": 81259118592,
+    "pe_ratio": 72.371
+  },
+  {
+    "ticker": "WMT",
+    "company": "Walmart Inc.",
+    "sector": "Consumer Defensive",
+    "roe": 0.21847,
+    "net_income": 21892999168,
+    "equity": 100210551416.67049,
+    "market_cap": 983849828352,
+    "pe_ratio": 45.036495
+  },
+  {
+    "ticker": "HIG",
+    "company": "The Hartford Insurance Group, I",
+    "sector": "Financial Services",
+    "roe": 0.21656,
+    "net_income": 3815000064,
+    "equity": 17616365275.212414,
+    "market_cap": 38136827904,
+    "pe_ratio": 10.258065
+  },
+  {
+    "ticker": "ETN",
+    "company": "Eaton Corporation, PLC",
+    "sector": "Industrials",
+    "roe": 0.21525998,
+    "net_income": 4087000064,
+    "equity": 18986344159.281258,
+    "market_cap": 134643294208,
+    "pe_ratio": 33.03343
+  },
+  {
+    "ticker": "QCOM",
+    "company": "QUALCOMM Incorporated",
+    "sector": "Technology",
+    "roe": 0.2148,
+    "net_income": 5365000192,
+    "equity": 24976723426.443203,
+    "market_cap": 146215370752,
+    "pe_ratio": 27.54527
+  },
+  {
+    "ticker": "IQV",
+    "company": "IQVIA Holdings, Inc.",
+    "sector": "Healthcare",
+    "roe": 0.21438,
+    "net_income": 1360000000,
+    "equity": 6343875361.507604,
+    "market_cap": 30488809472,
+    "pe_ratio": 22.864624
+  },
+  {
+    "ticker": "CMCSA",
+    "company": "Comcast Corporation",
+    "sector": "Communication Services",
+    "roe": 0.2141,
+    "net_income": 19997999104,
+    "equity": 93404946772.5362,
+    "market_cap": 112450584576,
+    "pe_ratio": 5.7254176
+  },
+  {
+    "ticker": "UHS",
+    "company": "Universal Health Services, Inc.",
+    "sector": "Healthcare",
+    "roe": 0.21326,
+    "net_income": 1488796032,
+    "equity": 6981131163.837569,
+    "market_cap": 11418008576,
+    "pe_ratio": 8.091558
+  },
+  {
+    "ticker": "SYF",
+    "company": "Synchrony Financial",
+    "sector": "Financial Services",
+    "roe": 0.21304001,
+    "net_income": 3468999936,
+    "equity": 16283326009.982819,
+    "market_cap": 23728070656,
+    "pe_ratio": 7.099138
+  },
+  {
+    "ticker": "PPG",
+    "company": "PPG Industries, Inc.",
+    "sector": "Basic Materials",
+    "roe": 0.21077,
+    "net_income": 1571000064,
+    "equity": 7453622735.683446,
+    "market_cap": 23449065472,
+    "pe_ratio": 15.161849
+  },
+  {
+    "ticker": "FFIV",
+    "company": "F5, Inc.",
+    "sector": "Technology",
+    "roe": 0.20844,
+    "net_income": 705988992,
+    "equity": 3387013010.9384,
+    "market_cap": 16069868544,
+    "pe_ratio": 23.415976
+  },
+  {
+    "ticker": "TRV",
+    "company": "The Travelers Companies, Inc.",
+    "sector": "Financial Services",
+    "roe": 0.20698999,
+    "net_income": 6241999872,
+    "equity": 30156047024.30296,
+    "market_cap": 67140972544,
+    "pe_ratio": 10.981211
+  },
+  {
+    "ticker": "NXPI",
+    "company": "NXP Semiconductors N.V.",
+    "sector": "Technology",
+    "roe": 0.20698999,
+    "net_income": 2020999936,
+    "equity": 9763756865.73056,
+    "market_cap": 50797576192,
+    "pe_ratio": 25.286163
+  },
+  {
+    "ticker": "GL",
+    "company": "Globe Life Inc.",
+    "sector": "Financial Services",
+    "roe": 0.20589,
+    "net_income": 1161238016,
+    "equity": 5640089445.820584,
+    "market_cap": 11140831232,
+    "pe_ratio": 9.9396305
+  },
+  {
+    "ticker": "WTW",
+    "company": "Willis Towers Watson Public Lim",
+    "sector": "Financial Services",
+    "roe": 0.20076,
+    "net_income": 1604999936,
+    "equity": 7994620123.530584,
+    "market_cap": 28074450944,
+    "pe_ratio": 18.021511
+  },
+  {
+    "ticker": "DLTR",
+    "company": "Dollar Tree, Inc.",
+    "sector": "Consumer Defensive",
+    "roe": 0.20066999,
+    "net_income": 1113799936,
+    "equity": 5550406097.0950365,
+    "market_cap": 23119755264,
+    "pe_ratio": 21.467802
+  },
+  {
+    "ticker": "A",
+    "company": "Agilent Technologies, Inc.",
+    "sector": "Healthcare",
+    "roe": 0.19945998,
+    "net_income": 1290000000,
+    "equity": 6467462796.296279,
+    "market_cap": 32478476288,
+    "pe_ratio": 25.348785
+  },
+  {
+    "ticker": "GRMN",
+    "company": "Garmin Ltd.",
+    "sector": "Technology",
+    "roe": 0.19783,
+    "net_income": 1663886976,
+    "equity": 8410690876.00465,
+    "market_cap": 46074134528,
+    "pe_ratio": 27.866123
+  },
+  {
+    "ticker": "TER",
+    "company": "Teradyne, Inc.",
+    "sector": "Technology",
+    "roe": 0.19734,
+    "net_income": 554046976,
+    "equity": 2807575635.958245,
+    "market_cap": 45074026496,
+    "pe_ratio": 82.97118
+  },
+  {
+    "ticker": "WRB",
+    "company": "W.R. Berkley Corporation",
+    "sector": "Financial Services",
+    "roe": 0.19700001,
+    "net_income": 1779403008,
+    "equity": 9032502120.177557,
+    "market_cap": 25738835968,
+    "pe_ratio": 15.220226
+  },
+  {
+    "ticker": "DE",
+    "company": "Deere & Company",
+    "sector": "Industrials",
+    "roe": 0.19566,
+    "net_income": 4814000128,
+    "equity": 24603905386.895634,
+    "market_cap": 160102039552,
+    "pe_ratio": 33.39352
+  },
+  {
+    "ticker": "ACGL",
+    "company": "Arch Capital Group Ltd.",
+    "sector": "Financial Services",
+    "roe": 0.19540001,
+    "net_income": 4359000064,
+    "equity": 22308085163.352856,
+    "market_cap": 34726875136,
+    "pe_ratio": 8.255603
+  },
+  {
+    "ticker": "NSC",
+    "company": "Norfolk Southern Corporation",
+    "sector": "Industrials",
+    "roe": 0.19248,
+    "net_income": 2870000128,
+    "equity": 14910640731.50457,
+    "market_cap": 66980855808,
+    "pe_ratio": 23.392942
+  },
+  {
+    "ticker": "MPWR",
+    "company": "Monolithic Power Systems, Inc.",
+    "sector": "Technology",
+    "roe": 0.19173999,
+    "net_income": 621483008,
+    "equity": 3241280068.909986,
+    "market_cap": 50541191168,
+    "pe_ratio": 79.827385
+  },
+  {
+    "ticker": "HSY",
+    "company": "The Hershey Company",
+    "sector": "Consumer Defensive",
+    "roe": 0.1889,
+    "net_income": 883259008,
+    "equity": 4675802053.996823,
+    "market_cap": 45006131200,
+    "pe_ratio": 51.13825
+  },
+  {
+    "ticker": "T",
+    "company": "AT&T Inc.",
+    "sector": "Communication Services",
+    "roe": 0.18805,
+    "net_income": 21888999424,
+    "equity": 116399890582.29195,
+    "market_cap": 197051252736,
+    "pe_ratio": 9.143092
+  },
+  {
+    "ticker": "TROW",
+    "company": "T. Rowe Price Group, Inc.",
+    "sector": "Financial Services",
+    "roe": 0.18791,
+    "net_income": 2036499968,
+    "equity": 10837634867.75584,
+    "market_cap": 19359803392,
+    "pe_ratio": 9.60065
+  },
+  {
+    "ticker": "PSA",
+    "company": "Public Storage",
+    "sector": "Real Estate",
+    "roe": 0.18763,
+    "net_income": 1585585024,
+    "equity": 8450594382.561424,
+    "market_cap": 53078413312,
+    "pe_ratio": 33.603333
+  },
+  {
+    "ticker": "WMB",
+    "company": "Williams Companies, Inc. (The)",
+    "sector": "Energy",
+    "roe": 0.18555,
+    "net_income": 2615000064,
+    "equity": 14093236669.361359,
+    "market_cap": 89626091520,
+    "pe_ratio": 34.285046
+  },
+  {
+    "ticker": "SNA",
+    "company": "Snap-On Incorporated",
+    "sector": "Industrials",
+    "roe": 0.18327999,
+    "net_income": 1016899968,
+    "equity": 5548341463.789909,
+    "market_cap": 19155943424,
+    "pe_ratio": 19.183853
+  },
+  {
+    "ticker": "RSG",
+    "company": "Republic Services, Inc.",
+    "sector": "Industrials",
+    "roe": 0.18301001,
+    "net_income": 2139000064,
+    "equity": 11687885618.934177,
+    "market_cap": 71495254016,
+    "pe_ratio": 33.76535
+  },
+  {
+    "ticker": "TMUS",
+    "company": "T-Mobile US, Inc.",
+    "sector": "Communication Services",
+    "roe": 0.18177,
+    "net_income": 10992000000,
+    "equity": 60472025086.647964,
+    "market_cap": 245439496192,
+    "pe_ratio": 22.552416
+  },
+  {
+    "ticker": "PODD",
+    "company": "Insulet Corporation",
+    "sector": "Healthcare",
+    "roe": 0.18124,
+    "net_income": 247100000,
+    "equity": 1363385566.1001985,
+    "market_cap": 16616940544,
+    "pe_ratio": 67.83046
+  },
+  {
+    "ticker": "SCHW",
+    "company": "Charles Schwab Corporation (The",
+    "sector": "Financial Services",
+    "roe": 0.18101999,
+    "net_income": 8417500160,
+    "equity": 46500390150.2812,
+    "market_cap": 166090293248,
+    "pe_ratio": 20.101074
+  },
+  {
+    "ticker": "NKE",
+    "company": "Nike, Inc.",
+    "sector": "Consumer Cyclical",
+    "roe": 0.17950001,
+    "net_income": 2524000000,
+    "equity": 14061280553.689106,
+    "market_cap": 82916270080,
+    "pe_ratio": 32.754383
+  },
+  {
+    "ticker": "LIN",
+    "company": "Linde plc",
+    "sector": "Basic Materials",
+    "roe": 0.17817,
+    "net_income": 6897999872,
+    "equity": 38715832474.602905,
+    "market_cap": 223601573888,
+    "pe_ratio": 33.07265
+  },
+  {
+    "ticker": "DVN",
+    "company": "Devon Energy Corporation",
+    "sector": "Energy",
+    "roe": 0.17736,
+    "net_income": 2641999872,
+    "equity": 14896255480.378891,
+    "market_cap": 28066961408,
+    "pe_ratio": 10.851318
+  },
+  {
+    "ticker": "PHM",
+    "company": "PulteGroup, Inc.",
+    "sector": "Consumer Cyclical",
+    "roe": 0.17673999,
+    "net_income": 2218729984,
+    "equity": 12553638732.241638,
+    "market_cap": 23785189376,
+    "pe_ratio": 11.121403
+  },
+  {
+    "ticker": "GD",
+    "company": "General Dynamics Corporation",
+    "sector": "Industrials",
+    "roe": 0.17658001,
+    "net_income": 4209999872,
+    "equity": 23841882623.067017,
+    "market_cap": 97437646848,
+    "pe_ratio": 23.32427
+  },
+  {
+    "ticker": "VST",
+    "company": "Vistra Corp.",
+    "sector": "Utilities",
+    "roe": 0.17656,
+    "net_income": 752000000,
+    "equity": 4259175351.1554146,
+    "market_cap": 54374715392,
+    "pe_ratio": 57.726616
+  },
+  {
+    "ticker": "CHD",
+    "company": "Church & Dwight Company, Inc.",
+    "sector": "Consumer Defensive",
+    "roe": 0.1762,
+    "net_income": 736800000,
+    "equity": 4181611804.76731,
+    "market_cap": 24316172288,
+    "pe_ratio": 33.53063
+  },
+  {
+    "ticker": "PNR",
+    "company": "Pentair plc.",
+    "sector": "Industrials",
+    "roe": 0.17478001,
+    "net_income": 649500032,
+    "equity": 3716100210.7735314,
+    "market_cap": 14868502528,
+    "pe_ratio": 23.119593
+  },
+  {
+    "ticker": "NDSN",
+    "company": "Nordson Corporation",
+    "sector": "Industrials",
+    "roe": 0.17473,
+    "net_income": 523204000,
+    "equity": 2994357007.955131,
+    "market_cap": 14949725184,
+    "pe_ratio": 28.972431
+  },
+  {
+    "ticker": "FSLR",
+    "company": "First Solar, Inc.",
+    "sector": "Technology",
+    "roe": 0.1745,
+    "net_income": 1528228992,
+    "equity": 8757759266.475645,
+    "market_cap": 20656828416,
+    "pe_ratio": 13.546446
+  },
+  {
+    "ticker": "KEYS",
+    "company": "Keysight Technologies Inc.",
+    "sector": "Technology",
+    "roe": 0.17222999,
+    "net_income": 981000000,
+    "equity": 5695872130.051218,
+    "market_cap": 47662473216,
+    "pe_ratio": 48.92945
+  },
+  {
+    "ticker": "PKG",
+    "company": "Packaging Corporation of Americ",
+    "sector": "Consumer Cyclical",
+    "roe": 0.17198,
+    "net_income": 768899968,
+    "equity": 4470868519.595302,
+    "market_cap": 19680233472,
+    "pe_ratio": 25.462748
+  },
+  {
+    "ticker": "CPRT",
+    "company": "Copart, Inc.",
+    "sector": "Industrials",
+    "roe": 0.17129,
+    "net_income": 1557409024,
+    "equity": 9092235530.387062,
+    "market_cap": 36126416896,
+    "pe_ratio": 23.471697
+  },
+  {
+    "ticker": "RJF",
+    "company": "Raymond James Financial, Inc.",
+    "sector": "Financial Services",
+    "roe": 0.17124,
+    "net_income": 2090000000,
+    "equity": 12205092268.161644,
+    "market_cap": 29392408576,
+    "pe_ratio": 14.549854
+  },
+  {
+    "ticker": "VZ",
+    "company": "Verizon Communications Inc.",
+    "sector": "Communication Services",
+    "roe": 0.17069,
+    "net_income": 17173999616,
+    "equity": 100615148022.73126,
+    "market_cap": 214532521984,
+    "pe_ratio": 12.528326
+  },
+  {
+    "ticker": "WST",
+    "company": "West Pharmaceutical Services, I",
+    "sector": "Healthcare",
+    "roe": 0.16855,
+    "net_income": 493700000,
+    "equity": 2929101156.926728,
+    "market_cap": 17610694656,
+    "pe_ratio": 36.011784
+  },
+  {
+    "ticker": "EOG",
+    "company": "EOG Resources, Inc.",
+    "sector": "Energy",
+    "roe": 0.16829,
+    "net_income": 4979999744,
+    "equity": 29591774579.59475,
+    "market_cap": 72461312000,
+    "pe_ratio": 14.643092
+  },
+  {
+    "ticker": "FOXA",
+    "company": "Fox Corporation",
+    "sector": "Communication Services",
+    "roe": 0.16823,
+    "net_income": 1891000064,
+    "equity": 11240563894.668015,
+    "market_cap": 25115383808,
+    "pe_ratio": 14.158274
+  },
+  {
+    "ticker": "FOX",
+    "company": "Fox Corporation",
+    "sector": "Communication Services",
+    "roe": 0.16823,
+    "net_income": 1891000064,
+    "equity": 11240563894.668015,
+    "market_cap": 25088731136,
+    "pe_ratio": 12.88729
+  },
+  {
+    "ticker": "ISRG",
+    "company": "Intuitive Surgical, Inc.",
+    "sector": "Healthcare",
+    "roe": 0.16690001,
+    "net_income": 2856000000,
+    "equity": 17112042114.31743,
+    "market_cap": 172951977984,
+    "pe_ratio": 61.72497
+  },
+  {
+    "ticker": "DG",
+    "company": "Dollar General Corporation",
+    "sector": "Consumer Defensive",
+    "roe": 0.16450001,
+    "net_income": 1277228032,
+    "equity": 7764303673.902513,
+    "market_cap": 31907330048,
+    "pe_ratio": 25.035406
+  },
+  {
+    "ticker": "CEG",
+    "company": "Constellation Energy Corporatio",
+    "sector": "Utilities",
+    "roe": 0.16364,
+    "net_income": 2319000064,
+    "equity": 14171352138.841358,
+    "market_cap": 115087581184,
+    "pe_ratio": 42.963512
+  },
+  {
+    "ticker": "TTD",
+    "company": "The Trade Desk, Inc.",
+    "sector": "Communication Services",
+    "roe": 0.16317,
+    "net_income": 443304000,
+    "equity": 2716822945.394374,
+    "market_cap": 13512988672,
+    "pe_ratio": 31.544445
+  },
+  {
+    "ticker": "PANW",
+    "company": "Palo Alto Networks, Inc.",
+    "sector": "Technology",
+    "roe": 0.16259001,
+    "net_income": 1281900032,
+    "equity": 7884248435.681872,
+    "market_cap": 135276478464,
+    "pe_ratio": 92.1
+  },
+  {
+    "ticker": "JPM",
+    "company": "JP Morgan Chase & Co.",
+    "sector": "Financial Services",
+    "roe": 0.16134001,
+    "net_income": 55680999424,
+    "equity": 345115879340.7785,
+    "market_cap": 768667746304,
+    "pe_ratio": 14.228907
+  },
+  {
+    "ticker": "BALL",
+    "company": "Ball Corporation",
+    "sector": "Consumer Cyclical",
+    "roe": 0.16122,
+    "net_income": 912000000,
+    "equity": 5656866393.747674,
+    "market_cap": 16512032768,
+    "pe_ratio": 18.671213
+  },
+  {
+    "ticker": "TEL",
+    "company": "TE Connectivity plc",
+    "sector": "Technology",
+    "roe": 0.16097,
+    "net_income": 2066000000,
+    "equity": 12834689693.73175,
+    "market_cap": 59734470656,
+    "pe_ratio": 29.322767
+  },
+  {
+    "ticker": "CINF",
+    "company": "Cincinnati Financial Corporatio",
+    "sector": "Financial Services",
+    "roe": 0.16036,
+    "net_income": 2392999936,
+    "equity": 14922673584.43502,
+    "market_cap": 25248475136,
+    "pe_ratio": 10.674803
+  },
+  {
+    "ticker": "AIZ",
+    "company": "Assurant, Inc.",
+    "sector": "Financial Services",
+    "roe": 0.15899,
+    "net_income": 865000000,
+    "equity": 5440593748.034468,
+    "market_cap": 10931204096,
+    "pe_ratio": 12.900119
+  },
+  {
+    "ticker": "FDX",
+    "company": "FedEx Corporation",
+    "sector": "Industrials",
+    "roe": 0.15886,
+    "net_income": 4330999808,
+    "equity": 27262997658.3155,
+    "market_cap": 83460980736,
+    "pe_ratio": 19.585548
+  },
+  {
+    "ticker": "JBHT",
+    "company": "J.B. Hunt Transport Services, I",
+    "sector": "Industrials",
+    "roe": 0.15787,
+    "net_income": 598281984,
+    "equity": 3789712953.696079,
+    "market_cap": 20138680320,
+    "pe_ratio": 34.558823
+  },
+  {
+    "ticker": "CRH",
+    "company": "CRH PLC",
+    "sector": "Basic Materials",
+    "roe": 0.15684,
+    "net_income": 3729999872,
+    "equity": 23782197602.65238,
+    "market_cap": 69470322688,
+    "pe_ratio": 18.819418
+  },
+  {
+    "ticker": "MS",
+    "company": "Morgan Stanley",
+    "sector": "Financial Services",
+    "roe": 0.15614,
+    "net_income": 16248999936,
+    "equity": 104066862661.71385,
+    "market_cap": 250461126656,
+    "pe_ratio": 15.44907
+  },
+  {
+    "ticker": "OKE",
+    "company": "ONEOK, Inc.",
+    "sector": "Energy",
+    "roe": 0.15489,
+    "net_income": 3392999936,
+    "equity": 21905868267.802956,
+    "market_cap": 54621134848,
+    "pe_ratio": 16.001846
+  },
+  {
+    "ticker": "NOW",
+    "company": "ServiceNow, Inc.",
+    "sector": "Technology",
+    "roe": 0.15488,
+    "net_income": 1748000000,
+    "equity": 11286157024.793388,
+    "market_cap": 130130788352,
+    "pe_ratio": 73.8503
+  },
+  {
+    "ticker": "PSX",
+    "company": "Phillips 66",
+    "sector": "Energy",
+    "roe": 0.15427,
+    "net_income": 4393999872,
+    "equity": 28482529798.405396,
+    "market_cap": 65890332672,
+    "pe_ratio": 15.238183
+  },
+  {
+    "ticker": "DOV",
+    "company": "Dover Corporation",
+    "sector": "Industrials",
+    "roe": 0.15285,
+    "net_income": 1097428992,
+    "equity": 7179777507.360156,
+    "market_cap": 28333111296,
+    "pe_ratio": 25.952261
+  },
+  {
+    "ticker": "NDAQ",
+    "company": "Nasdaq, Inc.",
+    "sector": "Financial Services",
+    "roe": 0.15253,
+    "net_income": 1788000000,
+    "equity": 11722284140.824757,
+    "market_cap": 50076299264,
+    "pe_ratio": 28.381876
+  },
+  {
+    "ticker": "CTSH",
+    "company": "Cognizant Technology Solutions ",
+    "sector": "Technology",
+    "roe": 0.15158,
+    "net_income": 2230000128,
+    "equity": 14711704235.387255,
+    "market_cap": 31200679936,
+    "pe_ratio": 14.176535
+  },
+  {
+    "ticker": "CI",
+    "company": "The Cigna Group",
+    "sector": "Healthcare",
+    "roe": 0.1513,
+    "net_income": 5957000192,
+    "equity": 39372109662.92135,
+    "market_cap": 71307902976,
+    "pe_ratio": 12.029968
+  },
+  {
+    "ticker": "SYK",
+    "company": "Stryker Corporation",
+    "sector": "Healthcare",
+    "roe": 0.15079,
+    "net_income": 3246000128,
+    "equity": 21526627282.976322,
+    "market_cap": 138829873152,
+    "pe_ratio": 43.290573
+  },
+  {
+    "ticker": "GLW",
+    "company": "Corning Incorporated",
+    "sector": "Technology",
+    "roe": 0.14904,
+    "net_income": 1596000000,
+    "equity": 10708534621.5781,
+    "market_cap": 107312152576,
+    "pe_ratio": 68.72527
+  },
+  {
+    "ticker": "MGM",
+    "company": "MGM Resorts International",
+    "sector": "Consumer Cyclical",
+    "roe": 0.1489,
+    "net_income": 211090000,
+    "equity": 1417662860.9805238,
+    "market_cap": 9501614080,
+    "pe_ratio": 45.71053
+  },
+  {
+    "ticker": "REGN",
+    "company": "Regeneron Pharmaceuticals, Inc.",
+    "sector": "Healthcare",
+    "roe": 0.14864999,
+    "net_income": 4504900096,
+    "equity": 30305418089.8364,
+    "market_cap": 81642119168,
+    "pe_ratio": 18.612919
+  },
+  {
+    "ticker": "CPB",
+    "company": "The Campbell's Company",
+    "sector": "Consumer Defensive",
+    "roe": 0.14815,
+    "net_income": 578000000,
+    "equity": 3901451231.8596015,
+    "market_cap": 7586025472,
+    "pe_ratio": 13.115979
+  },
+  {
+    "ticker": "DGX",
+    "company": "Quest Diagnostics Incorporated",
+    "sector": "Healthcare",
+    "roe": 0.14751,
+    "net_income": 988000000,
+    "equity": 6697850993.153007,
+    "market_cap": 22143903744,
+    "pe_ratio": 22.749714
+  },
+  {
+    "ticker": "CME",
+    "company": "CME Group Inc.",
+    "sector": "Financial Services",
+    "roe": 0.1475,
+    "net_income": 4020999936,
+    "equity": 27261016515.25424,
+    "market_cap": 115065544704,
+    "pe_ratio": 28.679213
+  },
+  {
+    "ticker": "APO",
+    "company": "Apollo Global Management, Inc. ",
+    "sector": "Financial Services",
+    "roe": 0.14698,
+    "net_income": 3503000064,
+    "equity": 23833175017.009117,
+    "market_cap": 61994934272,
+    "pe_ratio": 19.279783
+  },
+  {
+    "ticker": "AME",
+    "company": "AMETEK, Inc.",
+    "sector": "Industrials",
+    "roe": 0.14594,
+    "net_income": 1480141952,
+    "equity": 10142126572.564068,
+    "market_cap": 51010875392,
+    "pe_ratio": 34.67762
+  },
+  {
+    "ticker": "BKR",
+    "company": "Baker Hughes Company",
+    "sector": "Energy",
+    "roe": 0.14552,
+    "net_income": 2588000000,
+    "equity": 17784496976.360638,
+    "market_cap": 58948308992,
+    "pe_ratio": 22.942308
+  },
+  {
+    "ticker": "STZ",
+    "company": "Constellation Brands, Inc.",
+    "sector": "Consumer Defensive",
+    "roe": 0.14454001,
+    "net_income": 1109600000,
+    "equity": 7676767145.650537,
+    "market_cap": 25616173056,
+    "pe_ratio": 23.098902
+  },
+  {
+    "ticker": "KR",
+    "company": "Kroger Company (The)",
+    "sector": "Consumer Defensive",
+    "roe": 0.14405,
+    "net_income": 1016000000,
+    "equity": 7053106560.222144,
+    "market_cap": 49382776832,
+    "pe_ratio": 65.9469
+  },
+  {
+    "ticker": "KVUE",
+    "company": "Kenvue Inc.",
+    "sector": "Consumer Defensive",
+    "roe": 0.14388,
+    "net_income": 1470000000,
+    "equity": 10216847372.810675,
+    "market_cap": 34865545216,
+    "pe_ratio": 23.934341
+  },
+  {
+    "ticker": "CB",
+    "company": "Chubb Limited",
+    "sector": "Financial Services",
+    "roe": 0.14337,
+    "net_income": 10309999616,
+    "equity": 71911833828.55548,
+    "market_cap": 127120867328,
+    "pe_ratio": 12.578271
+  },
+  {
+    "ticker": "MKC",
+    "company": "McCormick & Company, Incorporat",
+    "sector": "Consumer Defensive",
+    "roe": 0.14243001,
+    "net_income": 789400000,
+    "equity": 5542371302.22767,
+    "market_cap": 17299503104,
+    "pe_ratio": 21.99488
+  },
+  {
+    "ticker": "FCX",
+    "company": "Freeport-McMoRan, Inc.",
+    "sector": "Basic Materials",
+    "roe": 0.13946,
+    "net_income": 2196999936,
+    "equity": 15753620651.082748,
+    "market_cap": 83659505664,
+    "pe_ratio": 38.29605
+  },
+  {
+    "ticker": "SLB",
+    "company": "SLB Limited",
+    "sector": "Energy",
+    "roe": 0.13904001,
+    "net_income": 3374000128,
+    "equity": 24266397334.11987,
+    "market_cap": 69114224640,
+    "pe_ratio": 19.668087
+  },
+  {
+    "ticker": "GS",
+    "company": "Goldman Sachs Group, Inc. (The)",
+    "sector": "Financial Services",
+    "roe": 0.13861,
+    "net_income": 16243999744,
+    "equity": 117192119933.62671,
+    "market_cap": 244015841280,
+    "pe_ratio": 15.846903
+  },
+  {
+    "ticker": "EFX",
+    "company": "Equifax, Inc.",
+    "sector": "Industrials",
+    "roe": 0.13757,
+    "net_income": 660300032,
+    "equity": 4799738547.64847,
+    "market_cap": 24745625600,
+    "pe_ratio": 38.003757
+  },
+  {
+    "ticker": "CBRE",
+    "company": "CBRE Group Inc",
+    "sector": "Real Estate",
+    "roe": 0.13572,
+    "net_income": 1156999936,
+    "equity": 8524903743.000295,
+    "market_cap": 39651291136,
+    "pe_ratio": 34.697918
+  },
+  {
+    "ticker": "ARES",
+    "company": "Ares Management Corporation",
+    "sector": "Financial Services",
+    "roe": 0.13520001,
+    "net_income": 468681984,
+    "equity": 3466582465.4894624,
+    "market_cap": 35666493440,
+    "pe_ratio": 63.029236
+  },
+  {
+    "ticker": "NTRS",
+    "company": "Northern Trust Corporation",
+    "sector": "Financial Services",
+    "roe": 0.13492,
+    "net_income": 1679200000,
+    "equity": 12445893863.029943,
+    "market_cap": 25321826304,
+    "pe_ratio": 15.573143
+  },
+  {
+    "ticker": "DHI",
+    "company": "D.R. Horton, Inc.",
+    "sector": "Consumer Cyclical",
+    "roe": 0.13477,
+    "net_income": 3335099904,
+    "equity": 24746604615.270462,
+    "market_cap": 41807716352,
+    "pe_ratio": 13.068244
+  },
+  {
+    "ticker": "STLD",
+    "company": "Steel Dynamics, Inc.",
+    "sector": "Basic Materials",
+    "roe": 0.13284001,
+    "net_income": 1185595008,
+    "equity": 8924984332.657005,
+    "market_cap": 25943619584,
+    "pe_ratio": 22.240301
+  },
+  {
+    "ticker": "ELV",
+    "company": "Elevance Health, Inc.",
+    "sector": "Healthcare",
+    "roe": 0.1325,
+    "net_income": 5662000128,
+    "equity": 42732076437.73585,
+    "market_cap": 61481701376,
+    "pe_ratio": 11.054365
+  },
+  {
+    "ticker": "SMCI",
+    "company": "Super Micro Computer, Inc.",
+    "sector": "Technology",
+    "roe": 0.13193,
+    "net_income": 872780032,
+    "equity": 6615478147.502464,
+    "market_cap": 18730399744,
+    "pe_ratio": 22.824818
+  },
+  {
+    "ticker": "AFL",
+    "company": "AFLAC Incorporated",
+    "sector": "Financial Services",
+    "roe": 0.13118,
+    "net_income": 3646000128,
+    "equity": 27793871992.681812,
+    "market_cap": 56480489472,
+    "pe_ratio": 16.038122
+  },
+  {
+    "ticker": "SPGI",
+    "company": "S&P Global Inc.",
+    "sector": "Financial Services",
+    "roe": 0.13087,
+    "net_income": 4471000064,
+    "equity": 34163674363.872547,
+    "market_cap": 134473482240,
+    "pe_ratio": 30.293316
+  },
+  {
+    "ticker": "TMO",
+    "company": "Thermo Fisher Scientific Inc",
+    "sector": "Healthcare",
+    "roe": 0.13024001,
+    "net_income": 6704000000,
+    "equity": 51474197521.9443,
+    "market_cap": 186147045376,
+    "pe_ratio": 28.278217
+  },
+  {
+    "ticker": "VMC",
+    "company": "Vulcan Materials Company (Holdi",
+    "sector": "Basic Materials",
+    "roe": 0.12972,
+    "net_income": 1081200000,
+    "equity": 8334875115.633673,
+    "market_cap": 35700449280,
+    "pe_ratio": 33.192875
+  },
+  {
+    "ticker": "ABT",
+    "company": "Abbott Laboratories",
+    "sector": "Healthcare",
+    "roe": 0.12961,
+    "net_income": 6499999744,
+    "equity": 50150449378.905945,
+    "market_cap": 194012299264,
+    "pe_ratio": 29.932976
+  },
+  {
+    "ticker": "PCAR",
+    "company": "PACCAR Inc.",
+    "sector": "Industrials",
+    "roe": 0.12922,
+    "net_income": 2375800064,
+    "equity": 18385699303.51339,
+    "market_cap": 62518329344,
+    "pe_ratio": 26.417778
+  },
+  {
+    "ticker": "BK",
+    "company": "The Bank of New York Mellon Cor",
+    "sector": "Financial Services",
+    "roe": 0.12898,
+    "net_income": 5305999872,
+    "equity": 41138159962.78493,
+    "market_cap": 79372279808,
+    "pe_ratio": 15.381081
+  },
+  {
+    "ticker": "PEG",
+    "company": "Public Service Enterprise Group",
+    "sector": "Utilities",
+    "roe": 0.12757,
+    "net_income": 2111000064,
+    "equity": 16547778192.364977,
+    "market_cap": 41404821504,
+    "pe_ratio": 19.656399
+  },
+  {
+    "ticker": "PWR",
+    "company": "Quanta Services, Inc.",
+    "sector": "Industrials",
+    "roe": 0.12739,
+    "net_income": 1028377984,
+    "equity": 8072674338.645105,
+    "market_cap": 84196835328,
+    "pe_ratio": 82.63436
+  },
+  {
+    "ticker": "JCI",
+    "company": "Johnson Controls International ",
+    "sector": "Industrials",
+    "roe": 0.12640001,
+    "net_income": 1912999936,
+    "equity": 15134491967.207912,
+    "market_cap": 80777437184,
+    "pe_ratio": 44.286915
+  },
+  {
+    "ticker": "UNH",
+    "company": "UnitedHealth Group Incorporated",
+    "sector": "Healthcare",
+    "roe": 0.12538,
+    "net_income": 12056000512,
+    "equity": 96155690795.98022,
+    "market_cap": 256840482816,
+    "pe_ratio": 21.371979
+  },
+  {
+    "ticker": "AEP",
+    "company": "American Electric Power Company",
+    "sector": "Utilities",
+    "roe": 0.12486,
+    "net_income": 3580000000,
+    "equity": 28672112766.298256,
+    "market_cap": 71058391040,
+    "pe_ratio": 19.726728
+  },
+  {
+    "ticker": "BSX",
+    "company": "Boston Scientific Corporation",
+    "sector": "Healthcare",
+    "roe": 0.12445,
+    "net_income": 2897999872,
+    "equity": 23286459397.34833,
+    "market_cap": 106559291392,
+    "pe_ratio": 37.015976
+  },
+  {
+    "ticker": "HII",
+    "company": "Huntington Ingalls Industries, ",
+    "sector": "Industrials",
+    "roe": 0.124239996,
+    "net_income": 605000000,
+    "equity": 4869607368.628698,
+    "market_cap": 16767027200,
+    "pe_ratio": 27.726477
+  },
+  {
+    "ticker": "CRM",
+    "company": "Salesforce, Inc.",
+    "sector": "Technology",
+    "roe": 0.123959996,
+    "net_income": 7456999936,
+    "equity": 60156503522.31376,
+    "market_cap": 186088292352,
+    "pe_ratio": 25.46155
+  },
+  {
+    "ticker": "COP",
+    "company": "ConocoPhillips",
+    "sector": "Energy",
+    "roe": 0.12357,
+    "net_income": 7960999936,
+    "equity": 64425021736.66747,
+    "market_cap": 144511057920,
+    "pe_ratio": 18.61811
+  },
+  {
+    "ticker": "IEX",
+    "company": "IDEX Corporation",
+    "sector": "Industrials",
+    "roe": 0.1234,
+    "net_income": 483200000,
+    "equity": 3915721231.766613,
+    "market_cap": 14463157248,
+    "pe_ratio": 30.145086
+  },
+  {
+    "ticker": "CTRA",
+    "company": "Coterra Energy Inc.",
+    "sector": "Energy",
+    "roe": 0.12275,
+    "net_income": 1716000000,
+    "equity": 13979633401.221996,
+    "market_cap": 23924682752,
+    "pe_ratio": 14.066964
+  },
+  {
+    "ticker": "HAL",
+    "company": "Halliburton Company",
+    "sector": "Energy",
+    "roe": 0.12274,
+    "net_income": 1283000064,
+    "equity": 10452990581.717451,
+    "market_cap": 28926705664,
+    "pe_ratio": 22.913332
+  },
+  {
+    "ticker": "TXT",
+    "company": "Textron Inc.",
+    "sector": "Industrials",
+    "roe": 0.12242,
+    "net_income": 923000000,
+    "equity": 7539617709.524588,
+    "market_cap": 16298121216,
+    "pe_ratio": 18.277344
+  },
+  {
+    "ticker": "ESS",
+    "company": "Essex Property Trust, Inc.",
+    "sector": "Real Estate",
+    "roe": 0.12235,
+    "net_income": 669665984,
+    "equity": 5473363171.230078,
+    "market_cap": 17445046272,
+    "pe_ratio": 24.237753
+  },
+  {
+    "ticker": "FRT",
+    "company": "Federal Realty Investment Trust",
+    "sector": "Real Estate",
+    "roe": 0.12235,
+    "net_income": 401703008,
+    "equity": 3283228508.3776054,
+    "market_cap": 9179654144,
+    "pe_ratio": 22.596155
+  },
+  {
+    "ticker": "FITB",
+    "company": "Fifth Third Bancorp",
+    "sector": "Financial Services",
+    "roe": 0.121929996,
+    "net_income": 2376000000,
+    "equity": 19486591306.047447,
+    "market_cap": 41330368512,
+    "pe_ratio": 12.983004
+  },
+  {
+    "ticker": "USB",
+    "company": "U.S. Bancorp",
+    "sector": "Financial Services",
+    "roe": 0.12184,
+    "net_income": 7193999872,
+    "equity": 59044647669.074196,
+    "market_cap": 79176335360,
+    "pe_ratio": 11.030303
+  },
+  {
+    "ticker": "DTE",
+    "company": "DTE Energy Company",
+    "sector": "Utilities",
+    "roe": 0.12177,
+    "net_income": 1459000064,
+    "equity": 11981605190.112507,
+    "market_cap": 30836000768,
+    "pe_ratio": 21.108107
+  },
+  {
+    "ticker": "PNC",
+    "company": "PNC Financial Services Group, I",
+    "sector": "Financial Services",
+    "roe": 0.12158,
+    "net_income": 6576000000,
+    "equity": 54087843395.29528,
+    "market_cap": 80866820096,
+    "pe_ratio": 12.056057
+  },
+  {
+    "ticker": "DIS",
+    "company": "Walt Disney Company (The)",
+    "sector": "Communication Services",
+    "roe": 0.12024,
+    "net_income": 12252000256,
+    "equity": 101896209713.90552,
+    "market_cap": 177586978816,
+    "pe_ratio": 14.748159
+  },
+  {
+    "ticker": "MET",
+    "company": "MetLife, Inc.",
+    "sector": "Financial Services",
+    "roe": 0.12020001,
+    "net_income": 3172999936,
+    "equity": 26397667820.493526,
+    "market_cap": 45760024576,
+    "pe_ratio": 14.745222
+  },
+  {
+    "ticker": "ICE",
+    "company": "Intercontinental Exchange Inc.",
+    "sector": "Financial Services",
+    "roe": 0.11885,
+    "net_income": 3315000064,
+    "equity": 27892301758.519142,
+    "market_cap": 94478581760,
+    "pe_ratio": 28.717505
+  },
+  {
+    "ticker": "WFC",
+    "company": "Wells Fargo & Company",
+    "sector": "Financial Services",
+    "roe": 0.11732,
+    "net_income": 20284999680,
+    "equity": 172903168087.28265,
+    "market_cap": 243059310592,
+    "pe_ratio": 12.369009
+  },
+  {
+    "ticker": "ZBRA",
+    "company": "Zebra Technologies Corporation",
+    "sector": "Technology",
+    "roe": 0.116809994,
+    "net_income": 419000000,
+    "equity": 3587021843.3535748,
+    "market_cap": 10693363712,
+    "pe_ratio": 25.835985
+  },
+  {
+    "ticker": "RF",
+    "company": "Regions Financial Corporation",
+    "sector": "Financial Services",
+    "roe": 0.1165,
+    "net_income": 2060999936,
+    "equity": 17690986575.107296,
+    "market_cap": 23061850112,
+    "pe_ratio": 11.434783
+  },
+  {
+    "ticker": "WEC",
+    "company": "WEC Energy Group, Inc.",
+    "sector": "Utilities",
+    "roe": 0.11576,
+    "net_income": 1557500032,
+    "equity": 13454561437.456806,
+    "market_cap": 37615149056,
+    "pe_ratio": 24.072916
+  },
+  {
+    "ticker": "HST",
+    "company": "Host Hotels & Resorts, Inc.",
+    "sector": "Real Estate",
+    "roe": 0.11489,
+    "net_income": 765000000,
+    "equity": 6658542954.130037,
+    "market_cap": 13038537728,
+    "pe_ratio": 17.013636
+  },
+  {
+    "ticker": "PRU",
+    "company": "Prudential Financial, Inc.",
+    "sector": "Financial Services",
+    "roe": 0.11359999,
+    "net_income": 3535000064,
+    "equity": 31117961049.11629,
+    "market_cap": 32896440320,
+    "pe_ratio": 9.462462
+  },
+  {
+    "ticker": "AEE",
+    "company": "Ameren Corporation",
+    "sector": "Utilities",
+    "roe": 0.11337,
+    "net_income": 1456000000,
+    "equity": 12842903766.428509,
+    "market_cap": 30633363456,
+    "pe_ratio": 20.71402
+  },
+  {
+    "ticker": "LNT",
+    "company": "Alliant Energy Corporation",
+    "sector": "Utilities",
+    "roe": 0.11299,
+    "net_income": 810000000,
+    "equity": 7168775997.875918,
+    "market_cap": 18332854272,
+    "pe_ratio": 22.705412
+  },
+  {
+    "ticker": "BRO",
+    "company": "Brown & Brown, Inc.",
+    "sector": "Financial Services",
+    "roe": 0.11226,
+    "net_income": 1043000000,
+    "equity": 9290931765.544271,
+    "market_cap": 24227219456,
+    "pe_ratio": 22.455696
+  },
+  {
+    "ticker": "WAB",
+    "company": "Westinghouse Air Brake Technolo",
+    "sector": "Industrials",
+    "roe": 0.11096,
+    "net_income": 1167000064,
+    "equity": 10517304109.58904,
+    "market_cap": 41603284992,
+    "pe_ratio": 35.630306
+  },
+  {
+    "ticker": "XOM",
+    "company": "Exxon Mobil Corporation",
+    "sector": "Energy",
+    "roe": 0.110810004,
+    "net_income": 28843999232,
+    "equity": 260301400512.53854,
+    "market_cap": 631827595264,
+    "pe_ratio": 22.632105
+  },
+  {
+    "ticker": "STT",
+    "company": "State Street Corporation",
+    "sector": "Financial Services",
+    "roe": 0.11078,
+    "net_income": 2716999936,
+    "equity": 24526087163.747967,
+    "market_cap": 33123661824,
+    "pe_ratio": 12.615957
+  },
+  {
+    "ticker": "SO",
+    "company": "Southern Company (The)",
+    "sector": "Utilities",
+    "roe": 0.11043,
+    "net_income": 4341000192,
+    "equity": 39309971855.47405,
+    "market_cap": 108603334656,
+    "pe_ratio": 24.749998
+  },
+  {
+    "ticker": "MOH",
+    "company": "Molina Healthcare Inc",
+    "sector": "Healthcare",
+    "roe": 0.11022,
+    "net_income": 472000000,
+    "equity": 4282344402.1048813,
+    "market_cap": 7532905472,
+    "pe_ratio": 16.416388
+  },
+  {
+    "ticker": "RTX",
+    "company": "RTX Corporation",
+    "sector": "Industrials",
+    "roe": 0.109519996,
+    "net_income": 6732000256,
+    "equity": 61468229564.215836,
+    "market_cap": 281793134592,
+    "pe_ratio": 42.411114
+  },
+  {
+    "ticker": "CARR",
+    "company": "Carrier Global Corporation",
+    "sector": "Industrials",
+    "roe": 0.10925,
+    "net_income": 1455000064,
+    "equity": 13318078389.016018,
+    "market_cap": 48203116544,
+    "pe_ratio": 34.12426
+  },
+  {
+    "ticker": "CMS",
+    "company": "CMS Energy Corporation",
+    "sector": "Utilities",
+    "roe": 0.108559996,
+    "net_income": 1061000000,
+    "equity": 9773397559.81568,
+    "market_cap": 23585216512,
+    "pe_ratio": 21.804533
+  },
+  {
+    "ticker": "HOLX",
+    "company": "Hologic, Inc.",
+    "sector": "Healthcare",
+    "roe": 0.108559996,
+    "net_income": 543800000,
+    "equity": 5009211680.5162735,
+    "market_cap": 16871733248,
+    "pe_ratio": 31.35892
+  },
+  {
+    "ticker": "EG",
+    "company": "Everest Group, Ltd.",
+    "sector": "Financial Services",
+    "roe": 0.10847,
+    "net_income": 1572999936,
+    "equity": 14501704950.677607,
+    "market_cap": 13228986368,
+    "pe_ratio": 8.667108
+  },
+  {
+    "ticker": "ES",
+    "company": "Eversource Energy (D/B/A)",
+    "sector": "Utilities",
+    "roe": 0.10777,
+    "net_income": 1692371968,
+    "equity": 15703553567.783241,
+    "market_cap": 27623409664,
+    "pe_ratio": 16.132677
+  },
+  {
+    "ticker": "ETR",
+    "company": "Entergy Corporation",
+    "sector": "Utilities",
+    "roe": 0.10774,
+    "net_income": 1758272000,
+    "equity": 16319584184.14702,
+    "market_cap": 47106412544,
+    "pe_ratio": 26.595907
+  },
+  {
+    "ticker": "BLK",
+    "company": "BlackRock, Inc.",
+    "sector": "Financial Services",
+    "roe": 0.107159995,
+    "net_income": 5552999936,
+    "equity": 51819710667.21308,
+    "market_cap": 147685916672,
+    "pe_ratio": 26.85983
+  },
+  {
+    "ticker": "PFG",
+    "company": "Principal Financial Group Inc",
+    "sector": "Financial Services",
+    "roe": 0.10524,
+    "net_income": 1185100032,
+    "equity": 11260927708.095781,
+    "market_cap": 19554949120,
+    "pe_ratio": 16.954287
+  },
+  {
+    "ticker": "LH",
+    "company": "Labcorp Holdings Inc.",
+    "sector": "Healthcare",
+    "roe": 0.10509,
+    "net_income": 876499968,
+    "equity": 8340469768.769626,
+    "market_cap": 22288080896,
+    "pe_ratio": 25.703156
+  },
+  {
+    "ticker": "AWK",
+    "company": "American Water Works Company, I",
+    "sector": "Utilities",
+    "roe": 0.10496,
+    "net_income": 1111000064,
+    "equity": 10584985365.853659,
+    "market_cap": 26978813952,
+    "pe_ratio": 24.289104
+  },
+  {
+    "ticker": "STE",
+    "company": "STERIS plc (Ireland)",
+    "sector": "Healthcare",
+    "roe": 0.10468,
+    "net_income": 708524032,
+    "equity": 6768475659.151701,
+    "market_cap": 21947633664,
+    "pe_ratio": 31.188284
+  },
+  {
+    "ticker": "DASH",
+    "company": "DoorDash, Inc.",
+    "sector": "Consumer Cyclical",
+    "roe": 0.10439,
+    "net_income": 935000000,
+    "equity": 8956796628.029505,
+    "market_cap": 75607564288,
+    "pe_ratio": 81.708916
+  },
+  {
+    "ticker": "ALGN",
+    "company": "Align Technology, Inc.",
+    "sector": "Healthcare",
+    "roe": 0.103870004,
+    "net_income": 410351008,
+    "equity": 3950620893.4005623,
+    "market_cap": 12122162176,
+    "pe_ratio": 29.849823
+  },
+  {
+    "ticker": "EW",
+    "company": "Edwards Lifesciences Corporatio",
+    "sector": "Healthcare",
+    "roe": 0.10353,
+    "net_income": 1060099968,
+    "equity": 10239543784.410316,
+    "market_cap": 48464855040,
+    "pe_ratio": 46.10221
+  },
+  {
+    "ticker": "EPAM",
+    "company": "EPAM Systems, Inc.",
+    "sector": "Technology",
+    "roe": 0.10335,
+    "net_income": 377678016,
+    "equity": 3654359129.172714,
+    "market_cap": 8021228032,
+    "pe_ratio": 21.607143
+  },
+  {
+    "ticker": "BAC",
+    "company": "Bank of America Corporation",
+    "sector": "Financial Services",
+    "roe": 0.10217,
+    "net_income": 29055000576,
+    "equity": 284378981853.77313,
+    "market_cap": 344860360704,
+    "pe_ratio": 12.395013
+  },
+  {
+    "ticker": "VICI",
+    "company": "VICI Properties Inc.",
+    "sector": "Real Estate",
+    "roe": 0.10217,
+    "net_income": 2775493120,
+    "equity": 27165441127.532543,
+    "market_cap": 31300141056,
+    "pe_ratio": 11.220307
+  },
+  {
+    "ticker": "MLM",
+    "company": "Martin Marietta Materials, Inc.",
+    "sector": "Basic Materials",
+    "roe": 0.10159001,
+    "net_income": 990000000,
+    "equity": 9745052687.759357,
+    "market_cap": 36314185728,
+    "pe_ratio": 36.825993
+  },
+  {
+    "ticker": "HBAN",
+    "company": "Huntington Bancshares Incorpora",
+    "sector": "Financial Services",
+    "roe": 0.10095,
+    "net_income": 2087000064,
+    "equity": 20673601426.44874,
+    "market_cap": 32141762560,
+    "pe_ratio": 11.392086
+  },
+  {
+    "ticker": "EXE",
+    "company": "Expand Energy Corporation",
+    "sector": "Energy",
+    "roe": 0.100659996,
+    "net_income": 1819000064,
+    "equity": 18070734515.03018,
+    "market_cap": 25878872064,
+    "pe_ratio": 14.220608
+  },
+  {
+    "ticker": "BLDR",
+    "company": "Builders FirstSource, Inc.",
+    "sector": "Industrials",
+    "roe": 0.10064,
+    "net_income": 435199008,
+    "equity": 4324314467.408586,
+    "market_cap": 10183408640,
+    "pe_ratio": 23.668379
+  },
+  {
+    "ticker": "COIN",
+    "company": "Coinbase Global, Inc. - 3",
+    "sector": "Financial Services",
+    "roe": 0.10055,
+    "net_income": 1260327040,
+    "equity": 12534331576.330183,
+    "market_cap": 53254680576,
+    "pe_ratio": 44.28027
+  },
+  {
+    "ticker": "EA",
+    "company": "Electronic Arts Inc.",
+    "sector": "Communication Services",
+    "roe": 0.10027,
+    "net_income": 680000000,
+    "equity": 6781689438.516006,
+    "market_cap": 49730416640,
+    "pe_ratio": 74.42696
+  },
+  {
+    "ticker": "EQR",
+    "company": "Equity Residential",
+    "sector": "Real Estate",
+    "roe": 0.100200005,
+    "net_income": 1118667008,
+    "equity": 11164340840.102753,
+    "market_cap": 24179263488,
+    "pe_ratio": 20.972788
+  },
+  {
+    "ticker": "EXC",
+    "company": "Exelon Corporation",
+    "sector": "Utilities",
+    "roe": 0.09936,
+    "net_income": 2768000000,
+    "equity": 27858293075.68438,
+    "market_cap": 50208681984,
+    "pe_ratio": 17.979853
+  },
+  {
+    "ticker": "KMI",
+    "company": "Kinder Morgan, Inc.",
+    "sector": "Energy",
+    "roe": 0.09826,
+    "net_income": 3040000000,
+    "equity": 30938326887.848564,
+    "market_cap": 74330783744,
+    "pe_ratio": 24.386862
+  },
+  {
+    "ticker": "MTB",
+    "company": "M&T Bank Corporation",
+    "sector": "Financial Services",
+    "roe": 0.09797,
+    "net_income": 2699000064,
+    "equity": 27549250423.59906,
+    "market_cap": 31560402944,
+    "pe_ratio": 12.07231
+  },
+  {
+    "ticker": "D",
+    "company": "Dominion Energy, Inc.",
+    "sector": "Utilities",
+    "roe": 0.09741,
+    "net_income": 2968000000,
+    "equity": 30469151011.189816,
+    "market_cap": 55117434880,
+    "pe_ratio": 18.074928
+  },
+  {
+    "ticker": "J",
+    "company": "Jacobs Solutions Inc.",
+    "sector": "Industrials",
+    "roe": 0.09726,
+    "net_income": 459416992,
+    "equity": 4723596463.088629,
+    "market_cap": 15623084032,
+    "pe_ratio": 34.907654
+  },
+  {
+    "ticker": "DUK",
+    "company": "Duke Energy Corporation (Holdin",
+    "sector": "Utilities",
+    "roe": 0.09724,
+    "net_income": 4904999936,
+    "equity": 50442204195.8042,
+    "market_cap": 101990268928,
+    "pe_ratio": 20.784468
+  },
+  {
+    "ticker": "EQIX",
+    "company": "Equinix, Inc.",
+    "sector": "Real Estate",
+    "roe": 0.09722,
+    "net_income": 1350000000,
+    "equity": 13886031680.72413,
+    "market_cap": 91965628416,
+    "pe_ratio": 67.923805
+  },
+  {
+    "ticker": "EMR",
+    "company": "Emerson Electric Company",
+    "sector": "Industrials",
+    "roe": 0.09646,
+    "net_income": 2304999936,
+    "equity": 23895914741.86191,
+    "market_cap": 77322158080,
+    "pe_ratio": 33.70343
+  },
+  {
+    "ticker": "CNP",
+    "company": "CenterPoint Energy, Inc (Holdin",
+    "sector": "Utilities",
+    "roe": 0.096429996,
+    "net_income": 1052000000,
+    "equity": 10909468460.415573,
+    "market_cap": 28347680768,
+    "pe_ratio": 27.137499
+  },
+  {
+    "ticker": "KEY",
+    "company": "KeyCorp",
+    "sector": "Financial Services",
+    "roe": 0.09482,
+    "net_income": 1684999936,
+    "equity": 17770511875.13183,
+    "market_cap": 20904886272,
+    "pe_ratio": 12.621711
+  },
+  {
+    "ticker": "L",
+    "company": "Loews Corporation",
+    "sector": "Financial Services",
+    "roe": 0.09431,
+    "net_income": 1667000064,
+    "equity": 17675750864.17135,
+    "market_cap": 22294433792,
+    "pe_ratio": 13.535759
+  },
+  {
+    "ticker": "MDT",
+    "company": "Medtronic plc.",
+    "sector": "Healthcare",
+    "roe": 0.0939,
+    "net_income": 4613000192,
+    "equity": 49126732609.15868,
+    "market_cap": 116384169984,
+    "pe_ratio": 25.32123
+  },
+  {
+    "ticker": "UDR",
+    "company": "UDR, Inc.",
+    "sector": "Real Estate",
+    "roe": 0.09378,
+    "net_income": 372864992,
+    "equity": 3975954275.9650245,
+    "market_cap": 13926330368,
+    "pe_ratio": 32.734516
+  },
+  {
+    "ticker": "NUE",
+    "company": "Nucor Corporation",
+    "sector": "Basic Materials",
+    "roe": 0.09361,
+    "net_income": 1736999936,
+    "equity": 18555709176.370045,
+    "market_cap": 38171332608,
+    "pe_ratio": 22.150064
+  },
+  {
+    "ticker": "XEL",
+    "company": "Xcel Energy Inc.",
+    "sector": "Utilities",
+    "roe": 0.09358,
+    "net_income": 2018000000,
+    "equity": 21564436845.479805,
+    "market_cap": 51176611840,
+    "pe_ratio": 23.98538
+  },
+  {
+    "ticker": "MDLZ",
+    "company": "Mondelez International, Inc.",
+    "sector": "Consumer Defensive",
+    "roe": 0.09332,
+    "net_income": 2451000064,
+    "equity": 26264467038.148308,
+    "market_cap": 75324678144,
+    "pe_ratio": 30.886244
+  },
+  {
+    "ticker": "ATO",
+    "company": "Atmos Energy Corporation",
+    "sector": "Utilities",
+    "roe": 0.09237,
+    "net_income": 1249393024,
+    "equity": 13525961069.611347,
+    "market_cap": 30566498304,
+    "pe_ratio": 24.057291
+  },
+  {
+    "ticker": "FE",
+    "company": "FirstEnergy Corp.",
+    "sector": "Utilities",
+    "roe": 0.09195,
+    "net_income": 1020000000,
+    "equity": 11092985318.107666,
+    "market_cap": 29353209856,
+    "pe_ratio": 28.857956
+  },
+  {
+    "ticker": "AKAM",
+    "company": "Akamai Technologies, Inc.",
+    "sector": "Technology",
+    "roe": 0.091730006,
+    "net_income": 452031008,
+    "equity": 4927842346.374642,
+    "market_cap": 14841613312,
+    "pe_ratio": 33.36645
+  },
+  {
+    "ticker": "NI",
+    "company": "NiSource Inc",
+    "sector": "Utilities",
+    "roe": 0.0907,
+    "net_income": 926899968,
+    "equity": 10219404277.83903,
+    "market_cap": 22342713344,
+    "pe_ratio": 23.943588
+  },
+  {
+    "ticker": "PNW",
+    "company": "Pinnacle West Capital Corporati",
+    "sector": "Utilities",
+    "roe": 0.09059,
+    "net_income": 616531008,
+    "equity": 6805729197.483166,
+    "market_cap": 12240461824,
+    "pe_ratio": 20.047523
+  },
+  {
+    "ticker": "EQT",
+    "company": "EQT Corporation",
+    "sector": "Energy",
+    "roe": 0.09007,
+    "net_income": 2039246976,
+    "equity": 22640690307.53858,
+    "market_cap": 38982787072,
+    "pe_ratio": 18.865559
+  },
+  {
+    "ticker": "TDY",
+    "company": "Teledyne Technologies Incorpora",
+    "sector": "Technology",
+    "roe": 0.08926,
+    "net_income": 894800000,
+    "equity": 10024647098.364328,
+    "market_cap": 30217889792,
+    "pe_ratio": 34.035168
+  },
+  {
+    "ticker": "TYL",
+    "company": "Tyler Technologies, Inc.",
+    "sector": "Technology",
+    "roe": 0.08901,
+    "net_income": 315603008,
+    "equity": 3545702819.907875,
+    "market_cap": 15815166976,
+    "pe_ratio": 51.171074
+  },
+  {
+    "ticker": "AVB",
+    "company": "AvalonBay Communities, Inc.",
+    "sector": "Real Estate",
+    "roe": 0.088879995,
+    "net_income": 1049326976,
+    "equity": 11806109755.06918,
+    "market_cap": 24810266624,
+    "pe_ratio": 23.67838
+  },
+  {
+    "ticker": "PFE",
+    "company": "Pfizer, Inc.",
+    "sector": "Healthcare",
+    "roe": 0.08886,
+    "net_income": 7745999872,
+    "equity": 87170829079.45082,
+    "market_cap": 151340007424,
+    "pe_ratio": 19.569853
+  },
+  {
+    "ticker": "ED",
+    "company": "Consolidated Edison, Inc.",
+    "sector": "Utilities",
+    "roe": 0.08767,
+    "net_income": 2023000064,
+    "equity": 23075168974.563705,
+    "market_cap": 40614035456,
+    "pe_ratio": 19.930853
+  },
+  {
+    "ticker": "HSIC",
+    "company": "Henry Schein, Inc.",
+    "sector": "Healthcare",
+    "roe": 0.08701,
+    "net_income": 398000000,
+    "equity": 4574186875.071831,
+    "market_cap": 9095418880,
+    "pe_ratio": 23.626911
+  },
+  {
+    "ticker": "CPT",
+    "company": "Camden Property Trust",
+    "sector": "Real Estate",
+    "roe": 0.08598,
+    "net_income": 383638016,
+    "equity": 4461944824.377762,
+    "market_cap": 11117779968,
+    "pe_ratio": 29.518362
+  },
+  {
+    "ticker": "EVRG",
+    "company": "Evergy, Inc.",
+    "sector": "Utilities",
+    "roe": 0.08569,
+    "net_income": 855600000,
+    "equity": 9984829034.893219,
+    "market_cap": 18991323136,
+    "pe_ratio": 22.532787
+  },
+  {
+    "ticker": "KKR",
+    "company": "KKR & Co. Inc.",
+    "sector": "Financial Services",
+    "roe": 0.08558,
+    "net_income": 2238390016,
+    "equity": 26155527179.247486,
+    "market_cap": 82758451200,
+    "pe_ratio": 38.19231
+  },
+  {
+    "ticker": "LEN",
+    "company": "Lennar Corporation",
+    "sector": "Consumer Cyclical",
+    "roe": 0.08406,
+    "net_income": 2058082944,
+    "equity": 24483499214.84654,
+    "market_cap": 23994763264,
+    "pe_ratio": 12.174186
+  },
+  {
+    "ticker": "XYL",
+    "company": "Xylem Inc.",
+    "sector": "Industrials",
+    "roe": 0.08396,
+    "net_income": 957000000,
+    "equity": 11398284897.57027,
+    "market_cap": 29678878720,
+    "pe_ratio": 31.09694
+  },
+  {
+    "ticker": "NEE",
+    "company": "NextEra Energy, Inc.",
+    "sector": "Utilities",
+    "roe": 0.083739996,
+    "net_income": 6834999808,
+    "equity": 81621687777.48688,
+    "market_cap": 190225563648,
+    "pe_ratio": 27.666668
+  },
+  {
+    "ticker": "KDP",
+    "company": "Keurig Dr Pepper Inc.",
+    "sector": "Consumer Defensive",
+    "roe": 0.08356,
+    "net_income": 2079000064,
+    "equity": 24880326280.516994,
+    "market_cap": 38015475712,
+    "pe_ratio": 18.287582
+  },
+  {
+    "ticker": "VLO",
+    "company": "Valero Energy Corporation",
+    "sector": "Energy",
+    "roe": 0.08299,
+    "net_income": 2340999936,
+    "equity": 28208217086.395954,
+    "market_cap": 66260275200,
+    "pe_ratio": 28.69749
+  },
+  {
+    "ticker": "TFC",
+    "company": "Truist Financial Corporation",
+    "sector": "Financial Services",
+    "roe": 0.08236,
+    "net_income": 4974000128,
+    "equity": 60393396406.02234,
+    "market_cap": 57018290176,
+    "pe_ratio": 11.948954
+  },
+  {
+    "ticker": "WDAY",
+    "company": "Workday, Inc.",
+    "sector": "Technology",
+    "roe": 0.08231,
+    "net_income": 693000000,
+    "equity": 8419390110.557649,
+    "market_cap": 39589425152,
+    "pe_ratio": 57.47093
+  },
+  {
+    "ticker": "PCG",
+    "company": "Pacific Gas & Electric Co.",
+    "sector": "Utilities",
+    "roe": 0.08207,
+    "net_income": 2592999936,
+    "equity": 31594979115.3893,
+    "market_cap": 39772225536,
+    "pe_ratio": 15.334745
+  },
+  {
+    "ticker": "CIEN",
+    "company": "Ciena Corporation",
+    "sector": "Technology",
+    "roe": 0.08201,
+    "net_income": 229048992,
+    "equity": 2792939787.8307524,
+    "market_cap": 43968258048,
+    "pe_ratio": 365.6588
+  },
+  {
+    "ticker": "LHX",
+    "company": "L3Harris Technologies, Inc.",
+    "sector": "Industrials",
+    "roe": 0.08191,
+    "net_income": 1606000000,
+    "equity": 19606885606.153095,
+    "market_cap": 69415313408,
+    "pe_ratio": 43.454334
+  },
+  {
+    "ticker": "PPL",
+    "company": "PPL Corporation",
+    "sector": "Utilities",
+    "roe": 0.08157,
+    "net_income": 1179000064,
+    "equity": 14453844109.353928,
+    "market_cap": 28703678464,
+    "pe_ratio": 24.028303
+  },
+  {
+    "ticker": "Q",
+    "company": "Qnity Electronics, Inc.",
+    "sector": "Technology",
+    "roe": 0.079840004,
+    "net_income": 692000000,
+    "equity": 8667334235.103495,
+    "market_cap": 23324553216,
+    "pe_ratio": 33.71212
+  },
+  {
+    "ticker": "ROP",
+    "company": "Roper Technologies, Inc.",
+    "sector": "Technology",
+    "roe": 0.07929,
+    "net_income": 1536300032,
+    "equity": 19375709824.69416,
+    "market_cap": 38943219712,
+    "pe_ratio": 25.496828
+  },
+  {
+    "ticker": "ADI",
+    "company": "Analog Devices, Inc.",
+    "sector": "Technology",
+    "roe": 0.07862,
+    "net_income": 2706852096,
+    "equity": 34429561129.4836,
+    "market_cap": 153737936896,
+    "pe_ratio": 57.674908
+  },
+  {
+    "ticker": "AMCR",
+    "company": "Amcor plc",
+    "sector": "Consumer Cyclical",
+    "roe": 0.07734,
+    "net_income": 596000000,
+    "equity": 7706232221.360227,
+    "market_cap": 19385128960,
+    "pe_ratio": 31.545113
+  },
+  {
+    "ticker": "REG",
+    "company": "Regency Centers Corporation",
+    "sector": "Real Estate",
+    "roe": 0.07683,
+    "net_income": 513809984,
+    "equity": 6687621814.395419,
+    "market_cap": 14505399296,
+    "pe_ratio": 27.544329
+  },
+  {
+    "ticker": "MAA",
+    "company": "Mid-America Apartment Communiti",
+    "sector": "Real Estate",
+    "roe": 0.07645,
+    "net_income": 442984000,
+    "equity": 5794427730.542838,
+    "market_cap": 15741091840,
+    "pe_ratio": 34.695766
+  },
+  {
+    "ticker": "AIG",
+    "company": "American International Group, I",
+    "sector": "Financial Services",
+    "roe": 0.07399,
+    "net_income": 3096000000,
+    "equity": 41843492363.83295,
+    "market_cap": 41520377856,
+    "pe_ratio": 14.17127
+  },
+  {
+    "ticker": "BIIB",
+    "company": "Biogen Inc.",
+    "sector": "Healthcare",
+    "roe": 0.07394,
+    "net_income": 1292899968,
+    "equity": 17485798863.943737,
+    "market_cap": 27310292992,
+    "pe_ratio": 21.194761
+  },
+  {
+    "ticker": "TRMB",
+    "company": "Trimble Inc.",
+    "sector": "Technology",
+    "roe": 0.07322,
+    "net_income": 424000000,
+    "equity": 5790767549.849769,
+    "market_cap": 16568815616,
+    "pe_ratio": 39.56818
+  },
+  {
+    "ticker": "CFG",
+    "company": "Citizens Financial Group, Inc.",
+    "sector": "Financial Services",
+    "roe": 0.07241,
+    "net_income": 1688000000,
+    "equity": 23311697279.3813,
+    "market_cap": 24278855680,
+    "pe_ratio": 14.645078
+  },
+  {
+    "ticker": "CVX",
+    "company": "Chevron Corporation",
+    "sector": "Energy",
+    "roe": 0.07231,
+    "net_income": 12298999808,
+    "equity": 170087122223.75882,
+    "market_cap": 380996812800,
+    "pe_ratio": 28.74208
+  },
+  {
+    "ticker": "AMD",
+    "company": "Advanced Micro Devices, Inc.",
+    "sector": "Technology",
+    "roe": 0.07082,
+    "net_income": 4268999936,
+    "equity": 60279581135.27253,
+    "market_cap": 321402896384,
+    "pe_ratio": 75.24046
+  },
+  {
+    "ticker": "DHR",
+    "company": "Danaher Corporation",
+    "sector": "Healthcare",
+    "roe": 0.07053,
+    "net_income": 3600000000,
+    "equity": 51042109740.53594,
+    "market_cap": 139094310912,
+    "pe_ratio": 39.183266
+  },
+  {
+    "ticker": "HUM",
+    "company": "Humana Inc.",
+    "sector": "Healthcare",
+    "roe": 0.07039,
+    "net_income": 1188000000,
+    "equity": 16877397357.579203,
+    "market_cap": 21245390848,
+    "pe_ratio": 17.903456
+  },
+  {
+    "ticker": "EXR",
+    "company": "Extra Space Storage Inc",
+    "sector": "Real Estate",
+    "roe": 0.07008,
+    "net_income": 972259968,
+    "equity": 13873572602.739725,
+    "market_cap": 31991730176,
+    "pe_ratio": 31.453157
+  },
+  {
+    "ticker": "BDX",
+    "company": "Becton, Dickinson and Company",
+    "sector": "Healthcare",
+    "roe": 0.0696,
+    "net_income": 1756999936,
+    "equity": 25244251954.02299,
+    "market_cap": 59354808320,
+    "pe_ratio": 26.76961
+  },
+  {
+    "ticker": "AJG",
+    "company": "Arthur J. Gallagher & Co.",
+    "sector": "Financial Services",
+    "roe": 0.06906,
+    "net_income": 1494000000,
+    "equity": 21633362293.657692,
+    "market_cap": 56436019200,
+    "pe_ratio": 38.17565
+  },
+  {
+    "ticker": "C",
+    "company": "Citigroup, Inc.",
+    "sector": "Financial Services",
+    "roe": 0.06831,
+    "net_income": 13024000000,
+    "equity": 190660225442.83414,
+    "market_cap": 181185708032,
+    "pe_ratio": 14.817596
+  },
+  {
+    "ticker": "SWKS",
+    "company": "Skyworks Solutions, Inc.",
+    "sector": "Technology",
+    "roe": 0.06485,
+    "net_income": 394300000,
+    "equity": 6080185042.405551,
+    "market_cap": 8177317376,
+    "pe_ratio": 20.83525
+  },
+  {
+    "ticker": "FTV",
+    "company": "Fortive Corporation",
+    "sector": "Technology",
+    "roe": 0.06396,
+    "net_income": 532700000,
+    "equity": 8328642901.813633,
+    "market_cap": 17798957056,
+    "pe_ratio": 35.24528
+  },
+  {
+    "ticker": "NWSA",
+    "company": "News Corporation",
+    "sector": "Communication Services",
+    "roe": 0.06329,
+    "net_income": 439000000,
+    "equity": 6936324853.847369,
+    "market_cap": 13986008064,
+    "pe_ratio": 31.688313
+  },
+  {
+    "ticker": "NWS",
+    "company": "News Corporation",
+    "sector": "Communication Services",
+    "roe": 0.06329,
+    "net_income": 439000000,
+    "equity": 6936324853.847369,
+    "market_cap": 15135468544,
+    "pe_ratio": 35.57143
+  },
+  {
+    "ticker": "GNRC",
+    "company": "Generac Holdlings Inc.",
+    "sector": "Industrials",
+    "roe": 0.06283,
+    "net_income": 159554000,
+    "equity": 2539455674.0410633,
+    "market_cap": 11848606720,
+    "pe_ratio": 75.05762
+  },
+  {
+    "ticker": "PLD",
+    "company": "Prologis, Inc.",
+    "sector": "Real Estate",
+    "roe": 0.06127,
+    "net_income": 3322349056,
+    "equity": 54224727533.86649,
+    "market_cap": 123017830400,
+    "pe_ratio": 37.070026
+  },
+  {
+    "ticker": "HRL",
+    "company": "Hormel Foods Corporation",
+    "sector": "Consumer Defensive",
+    "roe": 0.061160002,
+    "net_income": 489423008,
+    "equity": 8002337998.6155,
+    "market_cap": 13116023808,
+    "pe_ratio": 26.7809
+  },
+  {
+    "ticker": "INVH",
+    "company": "Invitation Homes Inc.",
+    "sector": "Real Estate",
+    "roe": 0.060939997,
+    "net_income": 586963968,
+    "equity": 9631834540.457886,
+    "market_cap": 15812867072,
+    "pe_ratio": 26.869793
+  },
+  {
+    "ticker": "XYZ",
+    "company": "Block, Inc.",
+    "sector": "Technology",
+    "roe": 0.060100004,
+    "net_income": 1305635968,
+    "equity": 21724390700.539722,
+    "market_cap": 39552913408,
+    "pe_ratio": 30.995237
+  },
+  {
+    "ticker": "BG",
+    "company": "Bunge Limited",
+    "sector": "Consumer Defensive",
+    "roe": 0.05964,
+    "net_income": 819000000,
+    "equity": 13732394366.197184,
+    "market_cap": 22671525888,
+    "pe_ratio": 23.7166
+  },
+  {
+    "ticker": "OXY",
+    "company": "Occidental Petroleum Corporatio",
+    "sector": "Energy",
+    "roe": 0.05929,
+    "net_income": 1350000000,
+    "equity": 22769438353.85394,
+    "market_cap": 54575063040,
+    "pe_ratio": 40.988888
+  },
+  {
+    "ticker": "IR",
+    "company": "Ingersoll Rand Inc.",
+    "sector": "Industrials",
+    "roe": 0.057729997,
+    "net_income": 581400000,
+    "equity": 10071020790.110209,
+    "market_cap": 33560678400,
+    "pe_ratio": 58.57931
+  },
+  {
+    "ticker": "TKO",
+    "company": "TKO Group Holdings, Inc.",
+    "sector": "Communication Services",
+    "roe": 0.056339998,
+    "net_income": 195403008,
+    "equity": 3468282125.2496314,
+    "market_cap": 15906012160,
+    "pe_ratio": 88.78414
+  },
+  {
+    "ticker": "ZBH",
+    "company": "Zimmer Biomet Holdings, Inc.",
+    "sector": "Healthcare",
+    "roe": 0.05599,
+    "net_income": 705100032,
+    "equity": 12593320807.287016,
+    "market_cap": 18353594368,
+    "pe_ratio": 26.087324
+  },
+  {
+    "ticker": "SNPS",
+    "company": "Synopsys, Inc.",
+    "sector": "Technology",
+    "roe": 0.055430003,
+    "net_income": 1105394944,
+    "equity": 19942177235.675056,
+    "market_cap": 83336192000,
+    "pe_ratio": 66.72316
+  },
+  {
+    "ticker": "KIM",
+    "company": "Kimco Realty Corporation (HC)",
+    "sector": "Real Estate",
+    "roe": 0.055370003,
+    "net_income": 551172992,
+    "equity": 9954360883.81646,
+    "market_cap": 15517901824,
+    "pe_ratio": 27.945124
+  },
+  {
+    "ticker": "DLR",
+    "company": "Digital Realty Trust, Inc.",
+    "sector": "Real Estate",
+    "roe": 0.05469,
+    "net_income": 1267864960,
+    "equity": 23182756628.26842,
+    "market_cap": 62034321408,
+    "pe_ratio": 49.536312
+  },
+  {
+    "ticker": "SRE",
+    "company": "DBA Sempra",
+    "sector": "Utilities",
+    "roe": 0.051909998,
+    "net_income": 1796000000,
+    "equity": 34598344619.47003,
+    "market_cap": 60441849856,
+    "pe_ratio": 33.643635
+  },
+  {
+    "ticker": "CTVA",
+    "company": "Corteva, Inc.",
+    "sector": "Basic Materials",
+    "roe": 0.04974,
+    "net_income": 1192999936,
+    "equity": 23984719260.152794,
+    "market_cap": 52342198272,
+    "pe_ratio": 44.262856
+  },
+  {
+    "ticker": "TSLA",
+    "company": "Tesla, Inc.",
+    "sector": "Consumer Cyclical",
+    "roe": 0.049250003,
+    "net_income": 3793999872,
+    "equity": 77035525703.41975,
+    "market_cap": 1462735470592,
+    "pe_ratio": 364.30838
+  },
+  {
+    "ticker": "BXP",
+    "company": "BXP, Inc.",
+    "sector": "Real Estate",
+    "roe": 0.04916,
+    "net_income": 276800000,
+    "equity": 5630593978.844589,
+    "market_cap": 9044070400,
+    "pe_ratio": 29.356323
+  },
+  {
+    "ticker": "COO",
+    "company": "The Cooper Companies, Inc.",
+    "sector": "Healthcare",
+    "roe": 0.04868,
+    "net_income": 401400000,
+    "equity": 8245686113.393591,
+    "market_cap": 14566066176,
+    "pe_ratio": 39.745987
+  },
+  {
+    "ticker": "MOS",
+    "company": "Mosaic Company (The)",
+    "sector": "Basic Materials",
+    "roe": 0.048249997,
+    "net_income": 540700032,
+    "equity": 11206218976.552475,
+    "market_cap": 8550416384,
+    "pe_ratio": 15.841176
+  },
+  {
+    "ticker": "GPN",
+    "company": "Global Payments Inc.",
+    "sector": "Industrials",
+    "roe": 0.04824,
+    "net_income": 1072736000,
+    "equity": 22237479270.31509,
+    "market_cap": 20715497472,
+    "pe_ratio": 16.706547
+  },
+  {
+    "ticker": "LUV",
+    "company": "Southwest Airlines Company",
+    "sector": "Industrials",
+    "roe": 0.04812,
+    "net_income": 441000000,
+    "equity": 9164588528.678303,
+    "market_cap": 21182670848,
+    "pe_ratio": 51.8481
+  },
+  {
+    "ticker": "ADM",
+    "company": "Archer-Daniels-Midland Company",
+    "sector": "Consumer Defensive",
+    "roe": 0.04721,
+    "net_income": 1078000000,
+    "equity": 22834145308.197414,
+    "market_cap": 32317517824,
+    "pe_ratio": 30.116592
+  },
+  {
+    "ticker": "SWK",
+    "company": "Stanley Black & Decker, Inc.",
+    "sector": "Industrials",
+    "roe": 0.04522,
+    "net_income": 401900000,
+    "equity": 8887660327.288809,
+    "market_cap": 11241710592,
+    "pe_ratio": 27.354715
+  },
+  {
+    "ticker": "AXON",
+    "company": "Axon Enterprise, Inc.",
+    "sector": "Industrials",
+    "roe": 0.04476,
+    "net_income": 124656000,
+    "equity": 2784986595.1742625,
+    "market_cap": 45161381888,
+    "pe_ratio": 376.9966
+  },
+  {
+    "ticker": "BEN",
+    "company": "Franklin Resources, Inc.",
+    "sector": "Financial Services",
+    "roe": 0.04464,
+    "net_income": 562800000,
+    "equity": 12607526881.72043,
+    "market_cap": 13053016064,
+    "pe_ratio": 23.180555
+  },
+  {
+    "ticker": "GM",
+    "company": "General Motors Company",
+    "sector": "Consumer Cyclical",
+    "roe": 0.04318,
+    "net_income": 3180000000,
+    "equity": 73645206113.94164,
+    "market_cap": 68415111168,
+    "pe_ratio": 22.427828
+  },
+  {
+    "ticker": "TECH",
+    "company": "Bio-Techne Corp",
+    "sector": "Healthcare",
+    "roe": 0.03966,
+    "net_income": 81060000,
+    "equity": 2043872919.818457,
+    "market_cap": 8404671488,
+    "pe_ratio": 101.3585
+  },
+  {
+    "ticker": "SW",
+    "company": "Smurfit WestRock plc",
+    "sector": "Consumer Cyclical",
+    "roe": 0.03911,
+    "net_income": 699000000,
+    "equity": 17872666837.126057,
+    "market_cap": 21504888832,
+    "pe_ratio": 30.842104
+  },
+  {
+    "ticker": "FANG",
+    "company": "Diamondback Energy, Inc.",
+    "sector": "Energy",
+    "roe": 0.03735,
+    "net_income": 1656000000,
+    "equity": 44337349397.59036,
+    "market_cap": 52170612736,
+    "pe_ratio": 32.055946
+  },
+  {
+    "ticker": "WY",
+    "company": "Weyerhaeuser Company",
+    "sector": "Real Estate",
+    "roe": 0.03384,
+    "net_income": 324000000,
+    "equity": 9574468085.106382,
+    "market_cap": 17354729472,
+    "pe_ratio": 53.500004
+  },
+  {
+    "ticker": "DDOG",
+    "company": "Datadog, Inc.",
+    "sector": "Technology",
+    "roe": 0.03343,
+    "net_income": 107741000,
+    "equity": 3222883637.4513907,
+    "market_cap": 45297217536,
+    "pe_ratio": 414.4355
+  },
+  {
+    "ticker": "RVTY",
+    "company": "Revvity, Inc.",
+    "sector": "Healthcare",
+    "roe": 0.03216,
+    "net_income": 239883008,
+    "equity": 7459048756.218905,
+    "market_cap": 10334754816,
+    "pe_ratio": 44.25
+  },
+  {
+    "ticker": "O",
+    "company": "Realty Income Corporation",
+    "sector": "Real Estate",
+    "roe": 0.02702,
+    "net_income": 1058590016,
+    "equity": 39178016876.38786,
+    "market_cap": 60268584960,
+    "pe_ratio": 55.04701
+  },
+  {
+    "ticker": "FIS",
+    "company": "Fidelity National Information S",
+    "sector": "Technology",
+    "roe": 0.026010001,
+    "net_income": 382000000,
+    "equity": 14686658412.662113,
+    "market_cap": 26345656320,
+    "pe_ratio": 69.69178
+  },
+  {
+    "ticker": "WELL",
+    "company": "Welltower Inc.",
+    "sector": "Real Estate",
+    "roe": 0.025390001,
+    "net_income": 936844992,
+    "equity": 36898186494.75437,
+    "market_cap": 144713859072,
+    "pe_ratio": 145.03497
+  },
+  {
+    "ticker": "COF",
+    "company": "Capital One Financial Corporati",
+    "sector": "Financial Services",
+    "roe": 0.02394,
+    "net_income": 1816000000,
+    "equity": 75856307435.2548,
+    "market_cap": 112715767808,
+    "pe_ratio": 53.93899
+  },
+  {
+    "ticker": "CVS",
+    "company": "CVS Health Corporation",
+    "sector": "Healthcare",
+    "roe": 0.022869999,
+    "net_income": 1768000000,
+    "equity": 77306518465.52333,
+    "market_cap": 98749030400,
+    "pe_ratio": 55.84173
+  },
+  {
+    "ticker": "VTR",
+    "company": "Ventas, Inc.",
+    "sector": "Real Estate",
+    "roe": 0.0217,
+    "net_income": 251380992,
+    "equity": 11584377511.520737,
+    "market_cap": 40571527168,
+    "pe_ratio": 158.18518
+  },
+  {
+    "ticker": "WBD",
+    "company": "Warner Bros. Discovery, Inc. - ",
+    "sector": "Communication Services",
+    "roe": 0.02078,
+    "net_income": 728000000,
+    "equity": 35033686236.76612,
+    "market_cap": 68984610816,
+    "pe_ratio": 95.87931
+  },
+  {
+    "ticker": "AES",
+    "company": "The AES Corporation",
+    "sector": "Utilities",
+    "roe": 0.01954,
+    "net_income": 939000000,
+    "equity": 48055271238.48516,
+    "market_cap": 10094314496,
+    "pe_ratio": 9.325658
+  },
+  {
+    "ticker": "APTV",
+    "company": "Aptiv PLC",
+    "sector": "Consumer Cyclical",
+    "roe": 0.01948,
+    "net_income": 165000000,
+    "equity": 8470225872.689938,
+    "market_cap": 15503697920,
+    "pe_ratio": 95.666664
+  },
+  {
+    "ticker": "GPC",
+    "company": "Genuine Parts Company",
+    "sector": "Consumer Cyclical",
+    "roe": 0.015,
+    "net_income": 65945000,
+    "equity": 4396333333.333334,
+    "market_cap": 15482998784,
+    "pe_ratio": 236.80852
+  },
+  {
+    "ticker": "ON",
+    "company": "ON Semiconductor Corporation",
+    "sector": "Technology",
+    "roe": 0.01498,
+    "net_income": 121000000,
+    "equity": 8077436582.109479,
+    "market_cap": 23100542976,
+    "pe_ratio": 197.96552
+  },
+  {
+    "ticker": "TSN",
+    "company": "Tyson Foods, Inc.",
+    "sector": "Consumer Defensive",
+    "roe": 0.012560001,
+    "net_income": 200000000,
+    "equity": 15923565611.181082,
+    "market_cap": 21452171264,
+    "pe_ratio": 108.80357
+  },
+  {
+    "ticker": "DOC",
+    "company": "Healthpeak Properties, Inc.",
+    "sector": "Real Estate",
+    "roe": 0.01164,
+    "net_income": 70513000,
+    "equity": 6057817869.415808,
+    "market_cap": 11923479552,
+    "pe_ratio": 171.55
+  },
+  {
+    "ticker": "DD",
+    "company": "DuPont de Nemours, Inc.",
+    "sector": "Basic Materials",
+    "roe": 0.0051700003,
+    "net_income": 57000000,
+    "equity": 11025144427.94133,
+    "market_cap": 18573176832,
+    "pe_ratio": 211.09526
+  },
+  {
+    "ticker": "OMC",
+    "company": "Omnicom Group Inc.",
+    "sector": "Communication Services",
+    "roe": 0.00479,
+    "net_income": -54500000,
+    "equity": -11377870563.674322,
+    "market_cap": 26324463616,
+    "pe_ratio": 6.6355596
+  },
+  {
+    "ticker": "HPE",
+    "company": "Hewlett Packard Enterprise Comp",
+    "sector": "Technology",
+    "roe": 0.0023,
+    "net_income": -59000000,
+    "equity": -25652173913.04348,
+    "market_cap": 28312121344,
+    "pe_ratio": 7.771205
+  },
+  {
+    "ticker": "CSGP",
+    "company": "CoStar Group, Inc.",
+    "sector": "Real Estate",
+    "roe": 0.00088,
+    "net_income": 7000000,
+    "equity": 7954545454.545454,
+    "market_cap": 20483356672,
+    "pe_ratio": 2416.5002
+  },
+  {
+    "ticker": "INTC",
+    "company": "Intel Corporation",
+    "sector": "Technology",
+    "roe": 0.00022,
+    "net_income": -267000000,
+    "equity": -1213636363636.3635,
+    "market_cap": 222135599104,
+    "pe_ratio": 44.865715
+  },
+  {
+    "ticker": "PSKY",
+    "company": "Paramount Skydance Corporation",
+    "sector": "Communication Services",
+    "roe": -0.00863,
+    "net_income": -621000000,
+    "equity": 71958285052.14368,
+    "market_cap": 12360987648,
+    "pe_ratio": 373.5
+  },
+  {
+    "ticker": "MCHP",
+    "company": "Microchip Technology Incorporat",
+    "sector": "Technology",
+    "roe": -0.010930001,
+    "net_income": -154400000,
+    "equity": 14126256713.05977,
+    "market_cap": 34329634816,
+    "pe_ratio": 23.883654
+  },
+  {
+    "ticker": "CAG",
+    "company": "ConAgra Brands, Inc.",
+    "sector": "Consumer Defensive",
+    "roe": -0.0116,
+    "net_income": -98000000,
+    "equity": 8448275862.068966,
+    "market_cap": 8981386240,
+    "pe_ratio": 10.392967
+  },
+  {
+    "ticker": "IVZ",
+    "company": "Invesco Ltd",
+    "sector": "Financial Services",
+    "roe": -0.01219,
+    "net_income": -726300032,
+    "equity": 59581626907.30107,
+    "market_cap": 10293232640,
+    "pe_ratio": 7.6480827
+  },
+  {
+    "ticker": "APD",
+    "company": "Air Products and Chemicals, Inc",
+    "sector": "Basic Materials",
+    "roe": -0.01667,
+    "net_income": -325700000,
+    "equity": 19538092381.523693,
+    "market_cap": 61174734848,
+    "pe_ratio": 19.602835
+  },
+  {
+    "ticker": "IFF",
+    "company": "International Flavors & Fragran",
+    "sector": "Basic Materials",
+    "roe": -0.02559,
+    "net_income": -361000000,
+    "equity": 14107073075.420086,
+    "market_cap": 18568267776,
+    "pe_ratio": 15.090621
+  },
+  {
+    "ticker": "CRWD",
+    "company": "CrowdStrike Holdings, Inc.",
+    "sector": "Technology",
+    "roe": -0.04137,
+    "net_income": -162502000,
+    "equity": 3928015470.14745,
+    "market_cap": 110335926272,
+    "pe_ratio": 70.89278
+  },
+  {
+    "ticker": "CRL",
+    "company": "Charles River Laboratories Inte",
+    "sector": "Healthcare",
+    "roe": -0.04232,
+    "net_income": -144338000,
+    "equity": 3410633270.3213606,
+    "market_cap": 8585328128,
+    "pe_ratio": 14.180786
+  },
+  {
+    "ticker": "EL",
+    "company": "Estee Lauder Companies, Inc. (T",
+    "sector": "Consumer Defensive",
+    "roe": -0.04341,
+    "net_income": -178000000,
+    "equity": 4100437687.168855,
+    "market_cap": 32367337472,
+    "pe_ratio": 29.524338
+  },
+  {
+    "ticker": "ALB",
+    "company": "Albemarle Corporation",
+    "sector": "Basic Materials",
+    "roe": -0.04656,
+    "net_income": -677377984,
+    "equity": 14548496219.931273,
+    "market_cap": 19299250176,
+    "pe_ratio": 18.847935
+  },
+  {
+    "ticker": "ARE",
+    "company": "Alexandria Real Estate Equities",
+    "sector": "Real Estate",
+    "roe": -0.05856,
+    "net_income": -1437986944,
+    "equity": 24555787978.142075,
+    "market_cap": 8640756736,
+    "pe_ratio": -623.25
+  },
+  {
+    "ticker": "LYB",
+    "company": "LyondellBasell Industries NV",
+    "sector": "Basic Materials",
+    "roe": -0.06949,
+    "net_income": -799000000,
+    "equity": 11498057274.427977,
+    "market_cap": 22181402624,
+    "pe_ratio": 16.949194
+  },
+  {
+    "ticker": "SNDK",
+    "company": "Sandisk Corporation",
+    "sector": "Technology",
+    "roe": -0.09372,
+    "net_income": -1041000000,
+    "equity": 11107554417.413572,
+    "market_cap": 83902300160,
+    "pe_ratio": 6.6082854
+  },
+  {
+    "ticker": "KHC",
+    "company": "The Kraft Heinz Company",
+    "sector": "Consumer Defensive",
+    "roe": -0.12837,
+    "net_income": -5846000128,
+    "equity": 45540236254.57661,
+    "market_cap": 29060933632,
+    "pe_ratio": 11.435998
+  },
+  {
+    "ticker": "BAX",
+    "company": "Baxter International Inc.",
+    "sector": "Healthcare",
+    "roe": -0.13713,
+    "net_income": -900000000,
+    "equity": 6563115292.05863,
+    "market_cap": 8977851392,
+    "pe_ratio": 8.47178
+  },
+  {
+    "ticker": "DOW",
+    "company": "Dow Inc.",
+    "sector": "Basic Materials",
+    "roe": -0.13818,
+    "net_income": -2633999872,
+    "equity": 19062091995.947315,
+    "market_cap": 25389942784,
+    "pe_ratio": 55.556427
+  },
+  {
+    "ticker": "TAP",
+    "company": "Molson Coors Beverage Company",
+    "sector": "Consumer Defensive",
+    "roe": -0.18172,
+    "net_income": -2139600000,
+    "equity": 11774158045.344486,
+    "market_cap": 9065887744,
+    "pe_ratio": 9.103199
+  },
+  {
+    "ticker": "F",
+    "company": "Ford Motor Company",
+    "sector": "Consumer Cyclical",
+    "roe": -0.20193,
+    "net_income": -8182000128,
+    "equity": 40518992363.69039,
+    "market_cap": 48093126656,
+    "pe_ratio": 6.5652966
+  },
+  {
+    "ticker": "SJM",
+    "company": "The J.M. Smucker Company",
+    "sector": "Consumer Defensive",
+    "roe": -0.20683001,
+    "net_income": -1255699968,
+    "equity": 6071169111.290958,
+    "market_cap": 11724639232,
+    "pe_ratio": 10.954537
+  },
+  {
+    "ticker": "VTRS",
+    "company": "Viatris Inc.",
+    "sector": "Healthcare",
+    "roe": -0.21080999,
+    "net_income": -3514899968,
+    "equity": 16673308356.971128,
+    "market_cap": 16084466688,
+    "pe_ratio": 5.2492895
+  },
+  {
+    "ticker": "IP",
+    "company": "International Paper Company",
+    "sector": "Consumer Cyclical",
+    "roe": -0.24678,
+    "net_income": -2838000128,
+    "equity": 11500122084.447687,
+    "market_cap": 19883282432,
+    "pe_ratio": 12.947426
+  },
+  {
+    "ticker": "CNC",
+    "company": "Centene Corporation",
+    "sector": "Healthcare",
+    "roe": -0.28678,
+    "net_income": -6673999872,
+    "equity": 23272194267.382664,
+    "market_cap": 21239588864,
+    "pe_ratio": 10.493045
+  },
+  {
+    "ticker": "MRNA",
+    "company": "Moderna, Inc.",
+    "sector": "Healthcare",
+    "roe": -0.28868,
+    "net_income": -2822000128,
+    "equity": 9775530442.011917,
+    "market_cap": 21283284992,
+    "pe_ratio": -11.805658
+  },
+  {
+    "ticker": "HAS",
+    "company": "Hasbro, Inc.",
+    "sector": "Consumer Cyclical",
+    "roe": -0.36355,
+    "net_income": -322400000,
+    "equity": 886810617.5216614,
+    "market_cap": 13179442176,
+    "pe_ratio": 14.930773
+  },
+  {
+    "ticker": "TTWO",
+    "company": "Take-Two Interactive Software, ",
+    "sector": "Communication Services",
+    "roe": -0.86217004,
+    "net_income": -3964900096,
+    "equity": 4598744925.073017,
+    "market_cap": 39351635968,
+    "pe_ratio": 27.263256
+  }
+]
