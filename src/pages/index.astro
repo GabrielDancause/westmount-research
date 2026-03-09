@@ -2,7 +2,18 @@
 import BaseHead from '../layouts/BaseHead.astro';
 
 // Auto-categorize from public/ directory
-const tools = []; // westmount-research is studies only
+const tools = [
+  {
+    title: "Retirement Withdrawal Calculator",
+    subtitle: "Monte Carlo Simulation · 3%, 4%, 5% rules",
+    slug: "retirement-withdrawal",
+    stat: "10k",
+    statLabel: "simulations run instantly",
+    desc: "Interactive tool to calculate your retirement success probability and portfolio longevity. Stress test the 4% rule with customized inflation and expected returns.",
+    tag: "TOOL",
+    emoji: "🧮"
+  }
+]; // westmount-research is studies only
 
 const studies = [
   {
@@ -304,6 +315,32 @@ const lists = []; // westmount-research is studies only
       <p>Data-driven market analysis. PEG ratios, dividend fundamentals, sector valuations, and broker comparisons — no fluff, no paywalls.</p>
     </div>
   </div>
+
+  <!-- Tools Section -->
+  {tools.length > 0 && (
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-tag" style="background:rgba(231,74,74,0.1); color:#e74a4a;">🧮 TOOLS</span>
+        <h2 class="section-title">Calculators & Tools</h2>
+        <p class="section-sub">Interactive logic. Monte Carlo, projections, and comparisons.</p>
+      </div>
+      <div class="studies-grid">
+        {tools.map(tool => (
+          <a class="study-card" href={`/${tool.slug}.html`} style="border-top: 2px solid #e74a4a;">
+            {tool.emoji && <span class="study-emoji">{tool.emoji}</span>}
+            {tool.tag && <span class="study-tag" style="display:inline-block; font-size:0.7rem; font-weight:800; color:#e74a4a; background:rgba(231,74,74,0.1); padding:4px 8px; border-radius:4px; margin-bottom:12px;">{tool.tag}</span>}
+            <div class="study-stat">
+              <span class="stat-number" style="color:#e74a4a;">{tool.stat}</span>
+              <span class="stat-label">{tool.statLabel}</span>
+            </div>
+            <h3 class="study-name">{tool.title || tool.name}</h3>
+            {tool.subtitle && <p style="font-size:0.85rem; color:#e74a4a; margin-bottom:8px;">{tool.subtitle}</p>}
+            <p class="study-desc">{tool.desc}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  )}
 
   <!-- Studies Section -->
   {studies.length > 0 && (

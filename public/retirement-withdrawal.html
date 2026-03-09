@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Retirement Withdrawal Calculator & Monte Carlo Simulation</title>
+  <meta name="description" content="Free retirement withdrawal calculator with Monte Carlo simulation. See how long your money will last with 3%, 4%, and 5% withdrawal rates.">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <style>
+    :root {
+      --bg: #060a12;
+      --card-bg: #0a1020;
+      --border: #152040;
+      --accent: #4a8fe7;
+      --text-main: #c8d0de;
+      --text-muted: #5a6a80;
+      --font-sans: 'Inter', -apple-system, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    header {
+      margin-bottom: 40px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 20px;
+    }
+    .back-link {
+      display: inline-block;
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.9rem;
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+    .back-link:hover { text-decoration: underline; }
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: #fff;
+      margin-bottom: 12px;
+      letter-spacing: -0.5px;
+    }
+    .subtitle {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+    @media (max-width: 768px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+    }
+
+    /* Inputs */
+    .input-group {
+      margin-bottom: 20px;
+    }
+    .input-group label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #e0e8f0;
+      margin-bottom: 8px;
+    }
+    .input-wrapper {
+      position: relative;
+    }
+    .prefix, .suffix {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+      font-size: 0.95rem;
+    }
+    .prefix { left: 12px; }
+    .suffix { right: 12px; }
+    input[type="number"] {
+      width: 100%;
+      background: rgba(0,0,0,0.2);
+      border: 1px solid var(--border);
+      color: #fff;
+      font-family: var(--font-mono);
+      font-size: 1rem;
+      padding: 10px 12px;
+      border-radius: 6px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    input[type="number"]:focus {
+      border-color: var(--accent);
+    }
+    .has-prefix input { padding-left: 28px; }
+    .has-suffix input { padding-right: 28px; }
+
+    .radio-group {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    .radio-label {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+
+    button {
+      width: 100%;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      padding: 14px;
+      font-size: 1rem;
+      font-weight: 700;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    button:hover { background: #3a7bd5; }
+
+    /* Results */
+    h2 {
+      font-size: 1.5rem;
+      color: #fff;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+    .results-overview {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 30px;
+    }
+    @media (max-width: 600px) {
+      .results-overview { grid-template-columns: 1fr; }
+    }
+    .stat-box {
+      background: rgba(0,0,0,0.2);
+      border: 1px solid var(--border);
+      padding: 16px;
+      border-radius: 8px;
+      text-align: center;
+    }
+    .stat-value {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--accent);
+      font-family: var(--font-mono);
+      margin-bottom: 4px;
+    }
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* Chart */
+    .chart-container {
+      width: 100%;
+      height: 300px;
+      margin-bottom: 30px;
+      position: relative;
+    }
+    canvas {
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Comparison Table */
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: var(--font-mono);
+      font-size: 0.9rem;
+      margin-bottom: 30px;
+    }
+    .comparison-table th {
+      text-align: left;
+      padding: 12px;
+      background: rgba(74,143,231,0.1);
+      color: var(--accent);
+      font-family: var(--font-sans);
+      font-weight: 600;
+      border-bottom: 1px solid var(--border);
+    }
+    .comparison-table td {
+      padding: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* FAQ & Content */
+    .content-section {
+      margin-top: 60px;
+      border-top: 1px solid var(--border);
+      padding-top: 40px;
+    }
+    .content-section h2 { border: none; padding: 0; }
+    .faq-item {
+      margin-bottom: 24px;
+    }
+    .faq-q {
+      font-weight: 700;
+      color: #e0e8f0;
+      margin-bottom: 8px;
+    }
+    .faq-a { color: var(--text-muted); font-size: 0.95rem; }
+
+    footer {
+      margin-top: 60px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <a href="/" class="back-link">← Back to Westmount Fundamentals</a>
+      <h1>Retirement Withdrawal Calculator</h1>
+      <p class="subtitle">Monte Carlo simulation testing 3%, 4%, and 5% withdrawal rates.</p>
+    </header>
+
+    <div class="grid">
+      <!-- Inputs -->
+      <div class="card">
+        <h2>Parameters</h2>
+
+        <div class="input-group">
+          <label for="portfolio">Portfolio Value at Retirement</label>
+          <div class="input-wrapper has-prefix">
+            <span class="prefix">$</span>
+            <input type="number" id="portfolio" value="1000000" min="0" step="1000">
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label>Withdrawal Strategy</label>
+          <div class="radio-group">
+            <label class="radio-label">
+              <input type="radio" name="withdrawalType" value="rate" checked>
+              % Rate
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="withdrawalType" value="amount">
+              Fixed Amount
+            </label>
+          </div>
+          <div class="input-wrapper has-suffix" id="withdrawalRateWrapper">
+            <input type="number" id="withdrawalRate" value="4.0" min="0" max="100" step="0.1">
+            <span class="suffix">%</span>
+          </div>
+          <div class="input-wrapper has-prefix" id="withdrawalAmountWrapper" style="display:none;">
+            <span class="prefix">$</span>
+            <input type="number" id="withdrawalAmount" value="40000" min="0" step="1000">
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label for="expectedReturn">Expected Annual Return</label>
+          <div class="input-wrapper has-suffix">
+            <input type="number" id="expectedReturn" value="7.0" step="0.1">
+            <span class="suffix">%</span>
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label for="inflation">Expected Inflation Rate</label>
+          <div class="input-wrapper has-suffix">
+            <input type="number" id="inflation" value="2.5" step="0.1">
+            <span class="suffix">%</span>
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label for="years">Retirement Length</label>
+          <div class="input-wrapper has-suffix">
+            <input type="number" id="years" value="30" min="1" max="100" step="1">
+            <span class="suffix">Yrs</span>
+          </div>
+        </div>
+
+        <button id="calculateBtn">Calculate</button>
+      </div>
+
+      <!-- Results -->
+      <div class="card">
+        <h2>Results</h2>
+
+        <div class="results-overview">
+          <div class="stat-box">
+            <div class="stat-value" id="resSuccess">--%</div>
+            <div class="stat-label">Success Prob.</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-value" id="resYears">--</div>
+            <div class="stat-label">Years Lasted (Avg)</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-value" id="resBalance">$--</div>
+            <div class="stat-label">Ending Bal (Median)</div>
+          </div>
+        </div>
+
+        <h3>Portfolio Depletion Over Time</h3>
+        <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:12px;">Showing Median, 10th Percentile, and 90th Percentile outcomes from 10,000 simulations.</p>
+        <div class="chart-container">
+          <canvas id="depletionChart"></canvas>
+        </div>
+
+        <h3>Withdrawal Rate Comparison</h3>
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Rate</th>
+              <th>Initial Withdrawal</th>
+              <th>Success Probability</th>
+              <th>Median Ending Balance</th>
+            </tr>
+          </thead>
+          <tbody id="comparisonBody">
+            <!-- Populated via JS -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="content-section">
+      <h2>Methodology & FAQs</h2>
+
+      <div class="faq-item" style="margin-top:20px;">
+        <div class="faq-q">How does the Monte Carlo simulation work?</div>
+        <div class="faq-a">This tool runs 10,000 randomized simulations of your retirement span. For each year, it generates a random market return based on a normal distribution utilizing your expected annual return as the mean, and assuming an 18% standard deviation (roughly the historical volatility of the S&P 500). Withdrawals are adjusted for your specified inflation rate annually.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">What is the "4% Rule"?</div>
+        <div class="faq-a">The 4% rule is a rule of thumb created by William Bengen in 1994. It suggests that retirees can safely withdraw 4% of their initial retirement portfolio value, adjust that withdrawal amount for inflation each year, and have a very high probability of not running out of money over a 30-year period. This tool lets you stress-test that rule under your own assumptions.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">What does Success Probability mean?</div>
+        <div class="faq-a">Success probability is the percentage of the 10,000 simulated paths where your portfolio balance stays above $0 for the entire duration of your specified retirement length.</div>
+      </div>
+    </div>
+
+    <footer>
+      <p>This tool is for educational purposes only and does not constitute financial advice.</p>
+      <p>&copy; <span id="year"></span> Westmount Research. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // UI Event Listeners
+    const radioRate = document.querySelector('input[name="withdrawalType"][value="rate"]');
+    const radioAmount = document.querySelector('input[name="withdrawalType"][value="amount"]');
+    const wrapRate = document.getElementById('withdrawalRateWrapper');
+    const wrapAmount = document.getElementById('withdrawalAmountWrapper');
+    const btnCalculate = document.getElementById('calculateBtn');
+
+    radioRate.addEventListener('change', () => {
+      wrapRate.style.display = 'block';
+      wrapAmount.style.display = 'none';
+    });
+    radioAmount.addEventListener('change', () => {
+      wrapRate.style.display = 'none';
+      wrapAmount.style.display = 'block';
+    });
+
+    // Monte Carlo Logic
+    // Box-Muller transform for normal distribution
+    function randn_bm() {
+      let u = 0, v = 0;
+      while(u === 0) u = Math.random();
+      while(v === 0) v = Math.random();
+      return Math.sqrt(-2.0 * Math.log(u)) * Math.cos(2.0 * Math.PI * v);
+    }
+
+    const SIMULATION_COUNT = 10000;
+    const VOLATILITY = 0.18; // 18% standard deviation assumed for equity returns
+
+    function runSimulation(initialPortfolio, initialWithdrawal, expectedReturn, inflation, years) {
+      let successCount = 0;
+      let totalYearsLasted = 0;
+      let endingBalances = [];
+      let medianPath = [];
+      let p10Path = [];
+      let p90Path = [];
+
+      // We will store all paths to calculate percentiles per year for the chart
+      // For memory limits, we'll store aggregated stats per year instead of 10,000 arrays
+      let yearBalances = Array.from({length: years + 1}, () => []);
+
+      for (let i = 0; i < SIMULATION_COUNT; i++) {
+        let balance = initialPortfolio;
+        let withdrawal = initialWithdrawal;
+        let yearsLasted = 0;
+
+        yearBalances[0].push(balance);
+
+        for (let y = 1; y <= years; y++) {
+          if (balance <= 0) {
+            yearBalances[y].push(0);
+            continue;
+          }
+
+          yearsLasted++;
+          // Apply return
+          const randReturn = expectedReturn + (randn_bm() * VOLATILITY);
+          balance = balance * (1 + randReturn);
+
+          // Apply withdrawal
+          balance -= withdrawal;
+          if (balance < 0) balance = 0;
+
+          // Adjust withdrawal for inflation next year
+          withdrawal = withdrawal * (1 + inflation);
+
+          yearBalances[y].push(balance);
+        }
+
+        totalYearsLasted += yearsLasted;
+        endingBalances.push(balance);
+        if (balance > 0) successCount++;
+      }
+
+      // Calculate Percentiles
+      for(let y = 0; y <= years; y++) {
+        yearBalances[y].sort((a,b) => a - b);
+        p10Path.push(yearBalances[y][Math.floor(SIMULATION_COUNT * 0.10)]);
+        medianPath.push(yearBalances[y][Math.floor(SIMULATION_COUNT * 0.50)]);
+        p90Path.push(yearBalances[y][Math.floor(SIMULATION_COUNT * 0.90)]);
+      }
+
+      endingBalances.sort((a,b) => a - b);
+      const medianEndingBalance = endingBalances[Math.floor(SIMULATION_COUNT * 0.50)];
+
+      return {
+        successProb: (successCount / SIMULATION_COUNT) * 100,
+        avgYearsLasted: totalYearsLasted / SIMULATION_COUNT,
+        medianEndingBalance: medianEndingBalance,
+        medianPath,
+        p10Path,
+        p90Path
+      };
+    }
+
+    function formatCurrency(val) {
+      if(val >= 1000000) return '$' + (val/1000000).toFixed(2) + 'M';
+      if(val >= 1000) return '$' + (val/1000).toFixed(0) + 'K';
+      return '$' + Math.floor(val).toLocaleString();
+    }
+
+    function calculateAndRender() {
+      const portfolio = parseFloat(document.getElementById('portfolio').value) || 0;
+      const expectedReturn = (parseFloat(document.getElementById('expectedReturn').value) || 0) / 100;
+      const inflation = (parseFloat(document.getElementById('inflation').value) || 0) / 100;
+      const years = parseInt(document.getElementById('years').value) || 30;
+
+      let initialWithdrawal = 0;
+      if (radioRate.checked) {
+        const rate = (parseFloat(document.getElementById('withdrawalRate').value) || 0) / 100;
+        initialWithdrawal = portfolio * rate;
+      } else {
+        initialWithdrawal = parseFloat(document.getElementById('withdrawalAmount').value) || 0;
+      }
+
+      // Main calculation
+      const res = runSimulation(portfolio, initialWithdrawal, expectedReturn, inflation, years);
+
+      // Update Overview stats
+      document.getElementById('resSuccess').textContent = res.successProb.toFixed(1) + '%';
+      document.getElementById('resYears').textContent = res.avgYearsLasted.toFixed(1);
+      document.getElementById('resBalance').textContent = formatCurrency(res.medianEndingBalance);
+
+      // Comparison Table (3%, 4%, 5%)
+      const rates = [0.03, 0.04, 0.05];
+      const tbody = document.getElementById('comparisonBody');
+      tbody.innerHTML = '';
+
+      rates.forEach(rate => {
+        const wAmount = portfolio * rate;
+        const cRes = runSimulation(portfolio, wAmount, expectedReturn, inflation, years);
+
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td>${(rate*100).toFixed(0)}%</td>
+          <td>${formatCurrency(wAmount)}</td>
+          <td>${cRes.successProb.toFixed(1)}%</td>
+          <td>${formatCurrency(cRes.medianEndingBalance)}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+
+      // Draw Chart (will be implemented next)
+      drawChart(res.medianPath, res.p10Path, res.p90Path, years);
+    }
+
+    function drawChart(median, p10, p90, years) {
+      const canvas = document.getElementById('depletionChart');
+      const ctx = canvas.getContext('2d');
+
+      // Handle High DPI displays
+      const dpr = window.devicePixelRatio || 1;
+      const rect = canvas.parentNode.getBoundingClientRect();
+      canvas.width = rect.width * dpr;
+      canvas.height = rect.height * dpr;
+      ctx.scale(dpr, dpr);
+
+      const width = rect.width;
+      const height = rect.height;
+      const padding = { top: 20, right: 20, bottom: 30, left: 60 };
+      const chartW = width - padding.left - padding.right;
+      const chartH = height - padding.top - padding.bottom;
+
+      ctx.clearRect(0, 0, width, height);
+
+      // Determine Max Y value
+      const maxY = Math.max(...p90) * 1.1; // Add 10% headroom
+      if (maxY <= 0) return;
+
+      // Helper to map values to canvas coordinates
+      const getX = (val) => padding.left + (val / years) * chartW;
+      const getY = (val) => padding.top + chartH - (val / maxY) * chartH;
+
+      // Draw Grid & Axes
+      ctx.strokeStyle = '#152040';
+      ctx.lineWidth = 1;
+      ctx.fillStyle = '#5a6a80';
+      ctx.font = '12px "JetBrains Mono", monospace';
+      ctx.textAlign = 'right';
+      ctx.textBaseline = 'middle';
+
+      // Y-axis grid
+      const ySteps = 5;
+      for (let i = 0; i <= ySteps; i++) {
+        const val = (maxY / ySteps) * i;
+        const y = getY(val);
+
+        ctx.beginPath();
+        ctx.moveTo(padding.left, y);
+        ctx.lineTo(width - padding.right, y);
+        ctx.stroke();
+
+        ctx.fillText(formatCurrency(val), padding.left - 10, y);
+      }
+
+      // X-axis grid
+      const xSteps = Math.min(years, 10);
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'top';
+      for (let i = 0; i <= xSteps; i++) {
+        const year = Math.round((years / xSteps) * i);
+        const x = getX(year);
+
+        ctx.beginPath();
+        ctx.moveTo(x, padding.top + chartH);
+        ctx.lineTo(x, padding.top);
+        ctx.stroke();
+
+        ctx.fillText('Yr ' + year, x, padding.top + chartH + 10);
+      }
+
+      // Draw shaded area between P10 and P90
+      ctx.beginPath();
+      ctx.moveTo(getX(0), getY(p90[0]));
+      for (let i = 1; i <= years; i++) {
+        ctx.lineTo(getX(i), getY(p90[i]));
+      }
+      for (let i = years; i >= 0; i--) {
+        ctx.lineTo(getX(i), getY(p10[i]));
+      }
+      ctx.closePath();
+      ctx.fillStyle = 'rgba(74, 143, 231, 0.1)';
+      ctx.fill();
+
+      // Draw Lines
+      const drawLine = (data, color, width, dash = []) => {
+        ctx.beginPath();
+        ctx.strokeStyle = color;
+        ctx.lineWidth = width;
+        ctx.setLineDash(dash);
+        ctx.moveTo(getX(0), getY(data[0]));
+        for (let i = 1; i <= years; i++) {
+          ctx.lineTo(getX(i), getY(data[i]));
+        }
+        ctx.stroke();
+        ctx.setLineDash([]); // Reset
+      };
+
+      drawLine(p90, 'rgba(74, 143, 231, 0.4)', 2, [5, 5]); // 90th
+      drawLine(p10, 'rgba(231, 74, 74, 0.4)', 2, [5, 5]); // 10th
+      drawLine(median, '#4a8fe7', 3); // Median
+    }
+
+    // Handle Window Resize for Chart
+    window.addEventListener('resize', calculateAndRender);
+
+    btnCalculate.addEventListener('click', calculateAndRender);
+
+    // Initial run
+    calculateAndRender();
+
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Retirement Withdrawal Calculator",
+    "applicationCategory": "BusinessApplication",
+    "description": "Interactive Monte Carlo retirement withdrawal calculator estimating portfolio longevity and success probability.",
+    "operatingSystem": "All"
+  }
+  </script>
+</body>
+</html>
