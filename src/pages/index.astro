@@ -6,6 +6,15 @@ const tools = []; // westmount-research is studies only
 
 const studies = [
   {
+    title: "Insider Trading Tracker 2026",
+    subtitle: "160 items · Buys & Sells",
+    slug: "/insider-trading",
+    stat: "$14.7M",
+    statLabel: "top insider buying (PAR)",
+    desc: "Tracked 160 recent executive buys & sells across the market. Par Technology Corp leads with $14.7M in insider buying. Includes full breakdown of sector activity.",
+    tag: "ORIGINAL RESEARCH"
+  },
+  {
     emoji: "🏢",
     name: "S&P 500 Market Cap Concentration 2026",
     slug: "/market-concentration",
@@ -190,6 +199,15 @@ const lists = []; // westmount-research is studies only
       margin-bottom: 16px; 
       display: block; 
     }
+    .study-subtitle {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #4a8fe7;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 16px;
+      display: block;
+    }
     .study-stat { 
       margin-bottom: 16px; 
     }
@@ -279,12 +297,13 @@ const lists = []; // westmount-research is studies only
       <div class="studies-grid">
         {studies.map(study => (
           <a class="study-card" href={study.slug}>
-            <span class="study-emoji">{study.emoji}</span>
+            {study.emoji && <span class="study-emoji">{study.emoji}</span>}
+            {study.subtitle && <span class="study-subtitle">{study.subtitle}</span>}
             <div class="study-stat">
               <span class="stat-number">{study.stat}</span>
               <span class="stat-label">{study.statLabel}</span>
             </div>
-            <h3 class="study-name">{study.name}</h3>
+            <h3 class="study-name">{study.name || study.title}</h3>
             <p class="study-desc">{study.desc}</p>
           </a>
         ))}
