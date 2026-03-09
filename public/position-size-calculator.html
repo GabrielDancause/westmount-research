@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Position Size Calculator | Westmount Fundamentals</title>
+  <meta name="description" content="Calculate your optimal stock position size based on account risk and stop loss. Free risk management tool.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: #060a12;
+      color: #c8d0de;
+      line-height: 1.6;
+    }
+    a { color: #4a8fe7; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .header {
+      padding: 24px;
+      border-bottom: 1px solid #152040;
+      background: #0a1020;
+    }
+    .header-content {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .logo {
+      font-weight: 800;
+      color: #fff;
+      font-size: 1.2rem;
+    }
+    .back-link {
+      font-size: 0.9rem;
+      color: #5a6a80;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 60px auto;
+      padding: 0 24px;
+    }
+
+    .title-area {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .title-area h1 {
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: #fff;
+      margin-bottom: 12px;
+      letter-spacing: -1px;
+    }
+    .title-area p {
+      color: #5a6a80;
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .calculator-layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    .result-group {
+      margin-bottom: 24px;
+      background: #060a12;
+      border: 1px solid #152040;
+      padding: 24px;
+      border-radius: 12px;
+    }
+    .result-group.highlight {
+      border-color: #4a8fe7;
+      background: rgba(74, 143, 231, 0.05);
+    }
+    .result-label {
+      font-size: 0.85rem;
+      color: #a0b0c0;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 800;
+      margin-bottom: 8px;
+      display: block;
+    }
+    .result-val {
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: #fff;
+      font-family: 'JetBrains Mono', monospace;
+      line-height: 1;
+      letter-spacing: -1px;
+    }
+    .result-sub {
+      font-size: 0.9rem;
+      color: #5a6a80;
+      margin-top: 8px;
+    }
+
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .metric-box {
+      background: #060a12;
+      border: 1px solid #152040;
+      padding: 16px;
+      border-radius: 12px;
+    }
+    .metric-label {
+      font-size: 0.75rem;
+      color: #a0b0c0;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+    .metric-val {
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: #fff;
+      font-family: 'JetBrains Mono', monospace;
+      line-height: 1;
+    }
+
+    .visual-bar {
+      margin-top: 30px;
+      background: #060a12;
+      border: 1px solid #152040;
+      padding: 24px;
+      border-radius: 12px;
+    }
+    .visual-bar-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 12px;
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+    .risk-label { color: #f43f5e; }
+    .reward-label { color: #10b981; }
+    .bar-container {
+      height: 12px;
+      border-radius: 6px;
+      display: flex;
+      overflow: hidden;
+      background: #152040;
+    }
+    .bar-risk { background: #f43f5e; transition: width 0.3s ease; }
+    .bar-reward { background: #10b981; transition: width 0.3s ease; }
+
+    .ratio-val {
+      text-align: center;
+      margin-top: 12px;
+      font-weight: 800;
+      color: #e0e8f0;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    @media (min-width: 768px) {
+      .calculator-layout {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .card {
+      background: #0a1020;
+      border: 1px solid #152040;
+      border-radius: 16px;
+      padding: 32px;
+    }
+
+    .card-title {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #a0b0c0;
+      margin-bottom: 8px;
+    }
+    .input-wrapper {
+      position: relative;
+    }
+    .input-prefix, .input-suffix {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #5a6a80;
+      font-weight: 600;
+    }
+    .input-prefix { left: 16px; }
+    .input-suffix { right: 16px; }
+
+    input[type="number"] {
+      width: 100%;
+      background: #060a12;
+      border: 1px solid #152040;
+      color: #fff;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.1rem;
+      padding: 12px 16px;
+      border-radius: 8px;
+      transition: all 0.2s;
+    }
+    input[type="number"]:focus {
+      outline: none;
+      border-color: #4a8fe7;
+      box-shadow: 0 0 0 2px rgba(74, 143, 231, 0.2);
+    }
+    .has-prefix { padding-left: 36px !important; }
+    .has-suffix { padding-right: 36px !important; }
+
+    /* FAQ & Article Styles */
+    .article-container {
+      max-width: 800px;
+      margin: 60px auto;
+      padding: 0 24px;
+    }
+    .article-content h2 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #fff;
+      margin: 40px 0 20px;
+      letter-spacing: -0.5px;
+    }
+    .article-content p {
+      color: #a0b0c0;
+      margin-bottom: 20px;
+      line-height: 1.8;
+    }
+    .article-content ul {
+      margin-bottom: 20px;
+      padding-left: 20px;
+      color: #a0b0c0;
+    }
+    .article-content li {
+      margin-bottom: 10px;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 50px 24px;
+      font-size: 0.85rem;
+      color: #3a4a5a;
+      border-top: 1px solid #151f2e;
+      background: #040810;
+      margin-top: 60px;
+    }
+    .footer a {
+      color: #4a8fe7;
+      text-decoration: none;
+    }
+    .footer a:hover {
+      text-decoration: underline;
+    }
+    .disclaimer {
+      max-width: 600px;
+      margin: 16px auto 0;
+      color: #2a3a4a;
+      font-size: 0.75rem;
+      line-height: 1.5;
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Position Size Calculator",
+    "url": "https://westmountfundamentals.com/position-size-calculator.html",
+    "description": "A risk management tool to calculate optimal stock position sizes based on account size, risk percentage, and stop loss distance.",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "All",
+    "offers": {
+      "@type": "Offer",
+      "price": "0"
+    }
+  }
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="header-content">
+      <a href="/" class="logo">Westmount Fundamentals</a>
+      <a href="/" class="back-link">← Back to Research</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="title-area">
+      <h1>Position Size Calculator</h1>
+      <p>Calculate exact share sizes and manage risk effectively based on your account size and stop loss distance.</p>
+    </div>
+
+    <div class="calculator-layout">
+      <!-- Input Form -->
+      <div class="card">
+        <h2 class="card-title">⚙️ Trade Parameters</h2>
+        <form id="calc-form">
+          <div class="form-group">
+            <label for="account-size">Total Account Size</label>
+            <div class="input-wrapper">
+              <span class="input-prefix">$</span>
+              <input type="number" id="account-size" class="has-prefix" value="10000" step="100" min="0">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="risk-pct">Risk per Trade</label>
+            <div class="input-wrapper">
+              <input type="number" id="risk-pct" class="has-suffix" value="1.0" step="0.1" min="0" max="100">
+              <span class="input-suffix">%</span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="entry-price">Entry Price</label>
+            <div class="input-wrapper">
+              <span class="input-prefix">$</span>
+              <input type="number" id="entry-price" class="has-prefix" value="150.00" step="0.01" min="0">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="stop-loss">Stop Loss Price</label>
+            <div class="input-wrapper">
+              <span class="input-prefix">$</span>
+              <input type="number" id="stop-loss" class="has-prefix" value="142.50" step="0.01" min="0">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="take-profit">Target Price (Optional)</label>
+            <div class="input-wrapper">
+              <span class="input-prefix">$</span>
+              <input type="number" id="take-profit" class="has-prefix" placeholder="e.g. 175.00" step="0.01" min="0">
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <!-- Results Display -->
+      <div class="card">
+        <h2 class="card-title">📊 Position Sizing</h2>
+        <div id="results">
+          <div class="result-group highlight">
+            <span class="result-label">Position Size</span>
+            <div class="result-val" id="res-shares">0</div>
+            <div class="result-sub" id="res-total-val">Total Cost: $0.00</div>
+          </div>
+
+          <div class="metrics-grid">
+            <div class="metric-box">
+              <div class="metric-label">Max Risk</div>
+              <div class="metric-val" id="res-risk" style="color: #f43f5e;">$0.00</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-label">Potential Reward</div>
+              <div class="metric-val" id="res-reward" style="color: #10b981;">--</div>
+            </div>
+          </div>
+
+          <div class="visual-bar" id="visual-rr-container" style="display: none;">
+            <div class="visual-bar-header">
+              <span class="risk-label">Risk (1R)</span>
+              <span class="reward-label">Reward</span>
+            </div>
+            <div class="bar-container">
+              <div class="bar-risk" id="bar-risk" style="width: 50%;"></div>
+              <div class="bar-reward" id="bar-reward" style="width: 50%;"></div>
+            </div>
+            <div class="ratio-val" id="res-ratio">1 : 1.0</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <section class="article-container">
+    <div class="article-content">
+      <h2>Understanding Position Sizing & Risk Management</h2>
+      <p>Position sizing is a fundamental concept in trading and investing. It refers to determining the appropriate number of shares or contracts to purchase based on your total account value, your predefined risk tolerance, and the specific parameters of a trade (entry price and stop loss).</p>
+      <p>A common rule of thumb utilized by professional traders is to risk no more than 1% to 2% of total account capital on any single trade. This mathematical approach helps protect against a string of consecutive losses, preserving capital for future opportunities.</p>
+
+      <h2>Frequently Asked Questions (FAQ)</h2>
+
+      <h3>How does the Position Size Calculator work?</h3>
+      <p>The calculator determines your exact position size by taking your total dollar risk (Account Size × Risk %) and dividing it by the risk per share (Entry Price - Stop Loss Price). This ensures that if your stop loss is triggered, you will only lose the predefined dollar amount.</p>
+
+      <h3>What is Risk/Reward Ratio?</h3>
+      <p>The risk/reward ratio compares the potential profit of a trade to its potential loss. For example, a 1:2 risk/reward ratio means you are risking $1 to potentially make $2. Entering an optional Take Profit target in our calculator will automatically display your R/R ratio and visual metrics.</p>
+
+      <h3>Should I go long or short?</h3>
+      <p>The calculator automatically detects whether you are calculating a long or short position based on your entry and stop loss prices. If your entry is higher than your stop loss, it assumes a long position. If your entry is lower than your stop loss, it calculates for a short position.</p>
+
+      <h2>Methodology</h2>
+      <p>The mathematical formulas used in this calculator are:</p>
+      <ul>
+        <li><strong>Dollar Risk:</strong> Total Account Size × (Risk % / 100)</li>
+        <li><strong>Risk Per Share:</strong> Absolute Value of (Entry Price - Stop Loss Price)</li>
+        <li><strong>Position Size (Shares):</strong> Floor(Dollar Risk / Risk Per Share)</li>
+        <li><strong>Total Cost:</strong> Position Size × Entry Price</li>
+        <li><strong>Reward Ratio:</strong> (Take Profit - Entry Price) / Risk Per Share</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer class="footer">
+    © 2026 <a href="/">westmount-research</a> · A <a href="https://gab.ae">GAB Ventures</a> property
+    <div class="disclaimer">
+      <strong>Disclaimer:</strong> This position size calculator is provided for informational and educational purposes only. The results are based on user inputs and mathematical formulas. This does not constitute financial, investment, or trading advice. Trading securities carries a high degree of risk, and you may lose some or all of your investment. Always do your own research and consult with a licensed financial advisor before making any investment decisions.
+    </div>
+  </footer>
+
+  <script>
+    function formatCurrency(val) {
+      return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(val);
+    }
+
+    function calculate() {
+      const accountSize = parseFloat(document.getElementById('account-size').value) || 0;
+      const riskPct = parseFloat(document.getElementById('risk-pct').value) || 0;
+      const entryPrice = parseFloat(document.getElementById('entry-price').value) || 0;
+      const stopLoss = parseFloat(document.getElementById('stop-loss').value) || 0;
+      const takeProfit = parseFloat(document.getElementById('take-profit').value);
+
+      const resShares = document.getElementById('res-shares');
+      const resTotalVal = document.getElementById('res-total-val');
+      const resRisk = document.getElementById('res-risk');
+      const resReward = document.getElementById('res-reward');
+      const visualRrContainer = document.getElementById('visual-rr-container');
+      const barRisk = document.getElementById('bar-risk');
+      const barReward = document.getElementById('bar-reward');
+      const resRatio = document.getElementById('res-ratio');
+
+      // Validation
+      if (accountSize <= 0 || entryPrice <= 0 || stopLoss <= 0 || entryPrice === stopLoss) {
+        resShares.textContent = '0';
+        resTotalVal.textContent = 'Total Cost: $0.00';
+        resRisk.textContent = '$0.00';
+        resReward.textContent = '--';
+        visualRrContainer.style.display = 'none';
+        return;
+      }
+
+      // Calculations
+      const isLong = entryPrice > stopLoss;
+      const riskPerShare = isLong ? entryPrice - stopLoss : stopLoss - entryPrice;
+      const dollarRisk = accountSize * (riskPct / 100);
+
+      let shares = Math.floor(dollarRisk / riskPerShare);
+      if (shares < 0) shares = 0;
+
+      const totalCost = shares * entryPrice;
+      const actualRisk = shares * riskPerShare;
+
+      // Update UI (Basic)
+      resShares.textContent = new Intl.NumberFormat('en-US').format(shares) + ' Shares';
+      resTotalVal.textContent = `Total Cost: ${formatCurrency(totalCost)}`;
+      resRisk.textContent = formatCurrency(actualRisk);
+
+      // Reward calculations (Optional Target)
+      if (!isNaN(takeProfit) && takeProfit > 0 && ((isLong && takeProfit > entryPrice) || (!isLong && takeProfit < entryPrice))) {
+        const rewardPerShare = isLong ? takeProfit - entryPrice : entryPrice - takeProfit;
+        const totalReward = shares * rewardPerShare;
+        const rrRatio = rewardPerShare / riskPerShare;
+
+        resReward.textContent = formatCurrency(totalReward);
+        visualRrContainer.style.display = 'block';
+        resRatio.textContent = `1 : ${rrRatio.toFixed(2)}`;
+
+        // Visual bar math
+        const totalBar = 1 + rrRatio;
+        const riskWidth = (1 / totalBar) * 100;
+        const rewardWidth = (rrRatio / totalBar) * 100;
+
+        barRisk.style.width = `${riskWidth}%`;
+        barReward.style.width = `${rewardWidth}%`;
+      } else {
+        resReward.textContent = '--';
+        visualRrContainer.style.display = 'none';
+      }
+    }
+
+    // Event listeners
+    const inputs = document.querySelectorAll('input[type="number"]');
+    inputs.forEach(input => {
+      input.addEventListener('input', calculate);
+    });
+
+    // Initial calculation
+    calculate();
+  </script>
+</body>
+</html>
