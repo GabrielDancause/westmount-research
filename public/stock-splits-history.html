@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Split History & Post-Split Performance (2020-2026)</title>
+    <meta name="description" content="Track recent stock splits among major companies and their 1-year post-split returns. Do stocks outperform after splits?">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, sans-serif; background: #060a12; color: #c8d0de; line-height: 1.6; }
+        header { text-align: center; padding: 60px 20px 40px; border-bottom: 1px solid #152040; background: #0a1020; }
+        h1 { font-size: 2.5rem; color: #fff; margin-bottom: 16px; font-weight: 800; letter-spacing: -1px; }
+        .subtitle { color: #5a6a80; font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+
+        .stat-banner { display: flex; gap: 24px; margin-bottom: 40px; flex-wrap: wrap; }
+        .stat-card { flex: 1; min-width: 250px; background: #0a1020; border: 1px solid #152040; border-radius: 12px; padding: 24px; text-align: center; }
+        .stat-card .value { font-size: 2.5rem; color: #4a8fe7; font-weight: 900; line-height: 1; margin-bottom: 8px; font-family: 'JetBrains Mono', monospace; }
+        .stat-card .label { color: #5a6a80; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; }
+
+        .table-container { overflow-x: auto; background: #0a1020; border: 1px solid #152040; border-radius: 12px; margin-bottom: 40px; }
+        table { width: 100%; border-collapse: collapse; text-align: left; }
+        th, td { padding: 16px 20px; border-bottom: 1px solid #152040; }
+        th { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: #5a6a80; background: rgba(0,0,0,0.2); white-space: nowrap; font-weight: 700; }
+        td { font-size: 0.95rem; }
+        tr:last-child td { border-bottom: none; }
+        tr:hover { background: rgba(74,143,231,0.05); }
+        .ticker { font-family: 'JetBrains Mono', monospace; color: #4a8fe7; font-weight: 700; }
+        .company { color: #fff; font-weight: 600; }
+        .sector { font-size: 0.8rem; color: #5a6a80; }
+        .positive { color: #4ade80; font-weight: 600; }
+        .negative { color: #f87171; font-weight: 600; }
+        .neutral { color: #9ca3af; font-weight: 600; }
+        .ratio { font-weight: 600; background: rgba(74,143,231,0.1); padding: 4px 8px; border-radius: 4px; font-size: 0.8rem; color: #4a8fe7; display: inline-block; }
+
+        h2 { font-size: 1.8rem; color: #fff; margin-bottom: 24px; border-bottom: 1px solid #152040; padding-bottom: 12px; font-weight: 800; letter-spacing: -0.5px; }
+        .faq { margin-bottom: 40px; }
+        .faq-item { margin-bottom: 24px; }
+        .faq-item h3 { font-size: 1.1rem; color: #fff; margin-bottom: 8px; font-weight: 700; }
+        .faq-item p { color: #8a9bb0; }
+
+        .methodology, .disclaimer { margin-bottom: 40px; padding: 24px; background: rgba(0,0,0,0.2); border-radius: 8px; border-left: 4px solid #152040; }
+        .methodology p, .disclaimer p { font-size: 0.9rem; color: #6a7a90; margin-bottom: 12px; }
+        .methodology p:last-child, .disclaimer p:last-child { margin-bottom: 0; }
+
+        footer { text-align: center; padding: 40px 20px; border-top: 1px solid #152040; font-size: 0.85rem; color: #5a6a80; }
+        footer a { color: #4a8fe7; text-decoration: none; }
+        footer a:hover { text-decoration: underline; }
+    </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Stock Split History & Post-Split Performance",
+      "description": "Track recent stock splits among major companies and their 1-year post-split returns.",
+      "author": {
+        "@type": "Organization",
+        "name": "Westmount Fundamentals"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Westmount Fundamentals"
+      },
+      "datePublished": "2026-03-09"
+    }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Stock Split History &amp; Post-Split Performance</h1>
+        <p class="subtitle">Tracking major stock splits from 2020-2026 and analyzing their 1-year returns.</p>
+    </header>
+
+    <div class="container">
+        <div class="stat-banner">
+            <div class="stat-card">
+                <div class="value">12</div>
+                <div class="label">Major Splits Tracked</div>
+            </div>
+            <div class="stat-card">
+                <div class="value">60.0%</div>
+                <div class="label">Positive 1Yr Return</div>
+            </div>
+        </div>
+
+        <h2>Timeline &amp; Performance</h2>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Company</th>
+                        <th>Ratio</th>
+                        <th>Pre-Split Price</th>
+                        <th>Post-Split Price</th>
+                        <th>1-Year Return</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td style="white-space: nowrap">Dec 18, 2025</td>
+                        <td>
+                            <div class="company">ServiceNow Inc</div>
+                            <div class="ticker">NOW</div>
+                            <div class="sector">Technology</div>
+                        </td>
+                        <td><span class="ratio">3 to 1</span></td>
+                        <td>$469.43</td>
+                        <td>$153.38</td>
+                        <td class="neutral">
+                            Pending
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="white-space: nowrap">Nov 17, 2025</td>
+                        <td>
+                            <div class="company">Netflix Inc</div>
+                            <div class="ticker">NFLX</div>
+                            <div class="sector">Communication Services</div>
+                        </td>
+                        <td><span class="ratio">2 to 1</span></td>
+                        <td>$222.43</td>
+                        <td>$110.29</td>
+                        <td class="neutral">
+                            Pending
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="white-space: nowrap">Dec 11, 2024</td>
+                        <td>
+                            <div class="company">Super Micro Computer Inc</div>
+                            <div class="ticker">SMCI</div>
+                            <div class="sector">Technology</div>
+                        </td>
+                        <td><span class="ratio">10 to 1</span></td>
+                        <td>$405.40</td>
+                        <td>$38.29</td>
+                        <td class="negative">
+                            -11.15%
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="white-space: nowrap">Jun 26, 2024</td>
+                        <td>
+                            <div class="company">Chipotle Mexican Grill</div>
+                            <div class="ticker">CMG</div>
+                            <div class="sector">Consumer Cyclical</div>
+                        </td>
+                        <td><span class="ratio">50 to 1</span></td>
+                        <td>$3283.04</td>
+                        <td>$65.86</td>
+                        <td class="negative">
+                            -17.60%
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="white-space: nowrap">Jun 10, 2024</td>
+                        <td>
+                            <div class="company">NVIDIA Corp</div>
+                            <div class="ticker">NVDA</div>
+                            <div class="sector">Technology</div>
+                        </td>
+                        <td><span class="ratio">10 to 1</span></td>
+                        <td>$1208.88</td>
+                        <td>$121.79</td>
+                        <td class="positive">
+                            +18.20%
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="white-space: nowrap">Feb 19, 2024</td>
+                        <td>
+                            <div class="company">Walmart Inc</div>
+                            <div class="ticker">WMT</div>
+                            <div class="sector">Consumer Defensive</div>
+                        </td>
+                        <td><span class="ratio">3 to 1</span></td>
+                        <td>$170.36</td>
+                        <td>$58.62</td>
+                        <td class="positive">
+                            +77.41%
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="white-space: nowrap">Oct 2, 2023</td>
+                        <td>
+                            <div class="company">Celsius Holdings Inc</div>
+                            <div class="ticker">CELH</div>
+                            <div class="sector">Consumer Defensive</div>
+                        </td>
+                        <td><span class="ratio">3 to 1</span></td>
+                        <td>$171.60</td>
+                        <td>$58.00</td>
+                        <td class="negative">
+                            -47.50%
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="white-space: nowrap">Aug 25, 2022</td>
+                        <td>
+                            <div class="company">Tesla Inc</div>
+                            <div class="ticker">TSLA</div>
+                            <div class="sector">Consumer Cyclical</div>
+                        </td>
+                        <td><span class="ratio">3 to 1</span></td>
+                        <td>$891.29</td>
+                        <td>$296.07</td>
+                        <td class="negative">
+                            -19.41%
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="white-space: nowrap">Jul 18, 2022</td>
+                        <td>
+                            <div class="company">Alphabet Inc</div>
+                            <div class="ticker">GOOGL</div>
+                            <div class="sector">Communication Services</div>
+                        </td>
+                        <td><span class="ratio">20 to 1</span></td>
+                        <td>$2235.55</td>
+                        <td>$109.03</td>
+                        <td class="positive">
+                            +13.51%
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="white-space: nowrap">Jun 10, 2022</td>
+                        <td>
+                            <div class="company">Shopify Inc</div>
+                            <div class="ticker">SHOP</div>
+                            <div class="sector">Technology</div>
+                        </td>
+                        <td><span class="ratio">10 to 1</span></td>
+                        <td>$371.39</td>
+                        <td>$34.84</td>
+                        <td class="positive">
+                            +86.58%
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="white-space: nowrap">Jun 6, 2022</td>
+                        <td>
+                            <div class="company">Amazon.com Inc</div>
+                            <div class="ticker">AMZN</div>
+                            <div class="sector">Consumer Cyclical</div>
+                        </td>
+                        <td><span class="ratio">20 to 1</span></td>
+                        <td>$2447.00</td>
+                        <td>$124.79</td>
+                        <td class="positive">
+                            +1.46%
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="white-space: nowrap">Aug 31, 2020</td>
+                        <td>
+                            <div class="company">Apple Inc</div>
+                            <div class="ticker">AAPL</div>
+                            <div class="sector">Technology</div>
+                        </td>
+                        <td><span class="ratio">4 to 1</span></td>
+                        <td>$499.23</td>
+                        <td>$129.04</td>
+                        <td class="positive">
+                            +17.66%
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="faq">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <h3>Do stocks go up after a split?</h3>
+                <p>A stock split itself does not change the fundamental value of a company. However, studies show that historically, companies that announce splits tend to outperform the broader market in the 12 months following the split. This is often because a split signals management confidence and makes shares more accessible to retail investors.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What is a forward stock split?</h3>
+                <p>A forward stock split increases the number of shares outstanding while proportionally reducing the share price. For example, in a 10-for-1 split, a shareholder with 1 share priced at $1,000 will instead own 10 shares priced at $100 each. The total value remains exactly the same.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Why do companies split their stock?</h3>
+                <p>Companies typically split their stock when the share price has risen to a level that may be too expensive for retail investors. Lowering the nominal share price increases liquidity and psychological accessibility, even though fractional shares are now widely available at most brokerages.</p>
+            </div>
+        </div>
+
+        <div class="methodology">
+            <h2>Methodology</h2>
+            <p>Data includes prominent large-cap and mega-cap forward stock splits between 2020 and 2026. Pre-split prices represent the unadjusted closing price on the last trading day before the split took effect. Post-split prices represent the closing price on the first trading day after the split.</p>
+            <p>1-year returns are calculated using the unadjusted closing price exactly one year (or closest trading day) following the split date. Returns do not account for dividends. All financial data is sourced from historical trading records. For splits that occurred less than one year ago, the 1-year return is marked as "Pending".</p>
+        </div>
+
+        <div class="disclaimer">
+            <h2>Disclaimer</h2>
+            <p>This information is for educational purposes only and does not constitute investment advice. Past performance is not indicative of future results. Stock splits do not intrinsically change a company's valuation. Always conduct your own due diligence before making investment decisions.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 <a href="/">Westmount Fundamentals</a>. All rights reserved.</p>
+    </footer>
+</body>
+</html>
