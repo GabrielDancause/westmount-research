@@ -1,0 +1,4672 @@
+[
+  {
+    "ticker": "AOS",
+    "company": "A.O. Smith Corporation",
+    "sector": "Industrials",
+    "price": 69.61,
+    "book_value_per_share": 13.411,
+    "pb_ratio": 5.190515,
+    "market_cap": 9626361856,
+    "roe": 0.29197
+  },
+  {
+    "ticker": "MMM",
+    "company": "3M Company",
+    "sector": "Industrials",
+    "price": 149.33,
+    "book_value_per_share": 8.867,
+    "pb_ratio": 16.841097,
+    "market_cap": 78652112896,
+    "roe": 0.75501
+  },
+  {
+    "ticker": "ABT",
+    "company": "Abbott Laboratories",
+    "sector": "Healthcare",
+    "price": 111.485,
+    "book_value_per_share": 30.018,
+    "pb_ratio": 3.7139385,
+    "market_cap": 193725579264,
+    "roe": 0.12961
+  },
+  {
+    "ticker": "ACN",
+    "company": "Accenture plc",
+    "sector": "Technology",
+    "price": 208.93,
+    "book_value_per_share": 50.162,
+    "pb_ratio": 4.165105,
+    "market_cap": 129565614080,
+    "roe": 0.25016
+  },
+  {
+    "ticker": "AES",
+    "company": "The AES Corporation",
+    "sector": "Utilities",
+    "price": 14.175,
+    "book_value_per_share": 5.705,
+    "pb_ratio": 2.4846625,
+    "market_cap": 10094314496,
+    "roe": 0.01954
+  },
+  {
+    "ticker": "AFL",
+    "company": "AFLAC Incorporated",
+    "sector": "Financial Services",
+    "price": 109.51,
+    "book_value_per_share": 56.855,
+    "pb_ratio": 1.9261279,
+    "market_cap": 56547618816,
+    "roe": 0.13118
+  },
+  {
+    "ticker": "A",
+    "company": "Agilent Technologies, Inc.",
+    "sector": "Healthcare",
+    "price": 114.8,
+    "book_value_per_share": 24.436,
+    "pb_ratio": 4.6979866,
+    "market_cap": 32469993472,
+    "roe": 0.19945998
+  },
+  {
+    "ticker": "APD",
+    "company": "Air Products and Chemicals, Inc",
+    "sector": "Basic Materials",
+    "price": 274.64,
+    "book_value_per_share": 69.216,
+    "pb_ratio": 3.9678688,
+    "market_cap": 61150248960,
+    "roe": -0.01667
+  },
+  {
+    "ticker": "ALB",
+    "company": "Albemarle Corporation",
+    "sector": "Basic Materials",
+    "price": 164.28,
+    "book_value_per_share": 61.999,
+    "pb_ratio": 2.6497202,
+    "market_cap": 19359940608,
+    "roe": -0.04656
+  },
+  {
+    "ticker": "ALLE",
+    "company": "Allegion plc",
+    "sector": "Industrials",
+    "price": 148.74,
+    "book_value_per_share": 24.023,
+    "pb_ratio": 6.1915665,
+    "market_cap": 12813280256,
+    "roe": 0.36084
+  },
+  {
+    "ticker": "ALL",
+    "company": "Allstate Corporation (The)",
+    "sector": "Financial Services",
+    "price": 207.65,
+    "book_value_per_share": 110.035,
+    "pb_ratio": 1.8871267,
+    "market_cap": 53892616192,
+    "roe": 0.39518002
+  },
+  {
+    "ticker": "ARE",
+    "company": "Alexandria Real Estate Equities",
+    "sector": "Real Estate",
+    "price": 49.875,
+    "book_value_per_share": 90.713,
+    "pb_ratio": 0.54981095,
+    "market_cap": 8643355648,
+    "roe": -0.05856
+  },
+  {
+    "ticker": "AMCR",
+    "company": "Amcor plc",
+    "sector": "Consumer Cyclical",
+    "price": 41.915,
+    "book_value_per_share": 25.184,
+    "pb_ratio": 1.6643504,
+    "market_cap": 19366645760,
+    "roe": 0.07734
+  },
+  {
+    "ticker": "AEE",
+    "company": "Ameren Corporation",
+    "sector": "Utilities",
+    "price": 110.885,
+    "book_value_per_share": 48.484,
+    "pb_ratio": 2.287043,
+    "market_cap": 30651332608,
+    "roe": 0.11337
+  },
+  {
+    "ticker": "AXP",
+    "company": "American Express Company",
+    "sector": "Financial Services",
+    "price": 299.315,
+    "book_value_per_share": 48.796,
+    "pb_ratio": 6.134007,
+    "market_cap": 206183628800,
+    "roe": 0.33992
+  },
+  {
+    "ticker": "AMT",
+    "company": "American Tower Corporation (REI",
+    "sector": "Real Estate",
+    "price": 186.36,
+    "book_value_per_share": 7.833,
+    "pb_ratio": 23.79165,
+    "market_cap": 87243808768,
+    "roe": 0.2628
+  },
+  {
+    "ticker": "AIG",
+    "company": "American International Group, I",
+    "sector": "Financial Services",
+    "price": 77.08,
+    "book_value_per_share": 76.441,
+    "pb_ratio": 1.0083594,
+    "market_cap": 41590525952,
+    "roe": 0.07399
+  },
+  {
+    "ticker": "AWK",
+    "company": "American Water Works Company, I",
+    "sector": "Utilities",
+    "price": 138.37,
+    "book_value_per_share": 55.524,
+    "pb_ratio": 2.4920754,
+    "market_cap": 27011022848,
+    "roe": 0.10496
+  },
+  {
+    "ticker": "AON",
+    "company": "Aon plc",
+    "sector": "Financial Services",
+    "price": 335.53,
+    "book_value_per_share": 43.599,
+    "pb_ratio": 7.695819,
+    "market_cap": 72117231616,
+    "roe": 0.4694
+  },
+  {
+    "ticker": "APH",
+    "company": "Amphenol Corporation",
+    "sector": "Technology",
+    "price": 134.485,
+    "book_value_per_share": 10.935,
+    "pb_ratio": 12.298582,
+    "market_cap": 165310971904,
+    "roe": 0.36851
+  },
+  {
+    "ticker": "AMP",
+    "company": "Ameriprise Financial, Inc.",
+    "sector": "Financial Services",
+    "price": 453.54,
+    "book_value_per_share": 71.759,
+    "pb_ratio": 6.320322,
+    "market_cap": 42136457216,
+    "roe": 0.60508
+  },
+  {
+    "ticker": "AME",
+    "company": "AMETEK, Inc.",
+    "sector": "Industrials",
+    "price": 221.9,
+    "book_value_per_share": 46.406,
+    "pb_ratio": 4.781709,
+    "market_cap": 51082235904,
+    "roe": 0.14594
+  },
+  {
+    "ticker": "ADM",
+    "company": "Archer-Daniels-Midland Company",
+    "sector": "Consumer Defensive",
+    "price": 67.13,
+    "book_value_per_share": 47.36,
+    "pb_ratio": 1.4174408,
+    "market_cap": 32303079424,
+    "roe": 0.04721
+  },
+  {
+    "ticker": "APTV",
+    "company": "Aptiv PLC",
+    "sector": "Consumer Cyclical",
+    "price": 71.84,
+    "book_value_per_share": 43.277,
+    "pb_ratio": 1.660004,
+    "market_cap": 15523143680,
+    "roe": 0.01948
+  },
+  {
+    "ticker": "APO",
+    "company": "Apollo Global Management, Inc. ",
+    "sector": "Financial Services",
+    "price": 106.88,
+    "book_value_per_share": 37.899,
+    "pb_ratio": 2.8201272,
+    "market_cap": 62035566592,
+    "roe": 0.14698
+  },
+  {
+    "ticker": "ARES",
+    "company": "Ares Management Corporation",
+    "sector": "Financial Services",
+    "price": 107.96,
+    "book_value_per_share": 12.685,
+    "pb_ratio": 8.510839,
+    "market_cap": 35726057472,
+    "roe": 0.13520001
+  },
+  {
+    "ticker": "ANET",
+    "company": "Arista Networks, Inc.",
+    "sector": "Technology",
+    "price": 135.25,
+    "book_value_per_share": 9.845,
+    "pb_ratio": 13.737938,
+    "market_cap": 170318315520,
+    "roe": 0.314
+  },
+  {
+    "ticker": "AJG",
+    "company": "Arthur J. Gallagher & Co.",
+    "sector": "Financial Services",
+    "price": 220.02,
+    "book_value_per_share": 90.743,
+    "pb_ratio": 2.42465,
+    "market_cap": 56567144448,
+    "roe": 0.06906
+  },
+  {
+    "ticker": "T",
+    "company": "AT&T Inc.",
+    "sector": "Communication Services",
+    "price": 27.83,
+    "book_value_per_share": 15.706,
+    "pb_ratio": 1.7719343,
+    "market_cap": 197299372032,
+    "roe": 0.18805
+  },
+  {
+    "ticker": "ATO",
+    "company": "Atmos Energy Corporation",
+    "sector": "Utilities",
+    "price": 184.735,
+    "book_value_per_share": 86.336,
+    "pb_ratio": 2.1397216,
+    "market_cap": 30562363392,
+    "roe": 0.09237
+  },
+  {
+    "ticker": "AIZ",
+    "company": "Assurant, Inc.",
+    "sector": "Financial Services",
+    "price": 218.655,
+    "book_value_per_share": 117.92,
+    "pb_ratio": 1.8542656,
+    "market_cap": 10950484992,
+    "roe": 0.15899
+  },
+  {
+    "ticker": "AVY",
+    "company": "Avery Dennison Corporation",
+    "sector": "Consumer Cyclical",
+    "price": 175.89,
+    "book_value_per_share": 29.165,
+    "pb_ratio": 6.0308585,
+    "market_cap": 13522060288,
+    "roe": 0.30212998
+  },
+  {
+    "ticker": "BALL",
+    "company": "Ball Corporation",
+    "sector": "Consumer Cyclical",
+    "price": 61.595,
+    "book_value_per_share": 20.428,
+    "pb_ratio": 3.0152242,
+    "market_cap": 16506673152,
+    "roe": 0.16122
+  },
+  {
+    "ticker": "BAC",
+    "company": "Bank of America Corporation",
+    "sector": "Financial Services",
+    "price": 47.295,
+    "book_value_per_share": 38.441,
+    "pb_ratio": 1.2303269,
+    "market_cap": 345371508736,
+    "roe": 0.10217
+  },
+  {
+    "ticker": "BDX",
+    "company": "Becton, Dickinson and Company",
+    "sector": "Healthcare",
+    "price": 163.965,
+    "book_value_per_share": 88.789,
+    "pb_ratio": 1.8466814,
+    "market_cap": 59403714560,
+    "roe": 0.0696
+  },
+  {
+    "ticker": "BAX",
+    "company": "Baxter International Inc.",
+    "sector": "Healthcare",
+    "price": 17.49,
+    "book_value_per_share": 11.918,
+    "pb_ratio": 1.4675281,
+    "market_cap": 8998430720,
+    "roe": -0.13713
+  },
+  {
+    "ticker": "AVB",
+    "company": "AvalonBay Communities, Inc.",
+    "sector": "Real Estate",
+    "price": 175.16,
+    "book_value_per_share": 82.989,
+    "pb_ratio": 2.1106412,
+    "market_cap": 24801771520,
+    "roe": 0.088879995
+  },
+  {
+    "ticker": "BX",
+    "company": "Blackstone Inc.",
+    "sector": "Financial Services",
+    "price": 109.75,
+    "book_value_per_share": 11.064,
+    "pb_ratio": 9.919559,
+    "market_cap": 134952845312,
+    "roe": 0.29228002
+  },
+  {
+    "ticker": "XYZ",
+    "company": "Block, Inc.",
+    "sector": "Technology",
+    "price": 65.13,
+    "book_value_per_share": 36.879,
+    "pb_ratio": 1.7660456,
+    "market_cap": 39577223168,
+    "roe": 0.060100004
+  },
+  {
+    "ticker": "BLK",
+    "company": "BlackRock, Inc.",
+    "sector": "Financial Services",
+    "price": 949.425,
+    "book_value_per_share": 360.407,
+    "pb_ratio": 2.6343133,
+    "market_cap": 147675021312,
+    "roe": 0.107159995
+  },
+  {
+    "ticker": "BBY",
+    "company": "Best Buy Co., Inc.",
+    "sector": "Consumer Cyclical",
+    "price": 64.715,
+    "book_value_per_share": 14.121,
+    "pb_ratio": 4.5828905,
+    "market_cap": 13596702720,
+    "roe": 0.37041
+  },
+  {
+    "ticker": "BK",
+    "company": "The Bank of New York Mellon Cor",
+    "sector": "Financial Services",
+    "price": 114.015,
+    "book_value_per_share": 57.36,
+    "pb_ratio": 1.9877092,
+    "market_cap": 79508258816,
+    "roe": 0.12898
+  },
+  {
+    "ticker": "BSX",
+    "company": "Boston Scientific Corporation",
+    "sector": "Healthcare",
+    "price": 71.91,
+    "book_value_per_share": 16.341,
+    "pb_ratio": 4.400588,
+    "market_cap": 106706206720,
+    "roe": 0.12445
+  },
+  {
+    "ticker": "BA",
+    "company": "Boeing Company (The)",
+    "sector": "Industrials",
+    "price": 225,
+    "book_value_per_share": 6.943,
+    "pb_ratio": 32.406742,
+    "market_cap": 176703094784,
+    "roe": 2.90084
+  },
+  {
+    "ticker": "BMY",
+    "company": "Bristol-Myers Squibb Company",
+    "sector": "Healthcare",
+    "price": 60.19,
+    "book_value_per_share": 9.073,
+    "pb_ratio": 6.633969,
+    "market_cap": 122575347712,
+    "roe": 0.40442002
+  },
+  {
+    "ticker": "BR",
+    "company": "Broadridge Financial Solutions,",
+    "sector": "Technology",
+    "price": 189.76,
+    "book_value_per_share": 24.672,
+    "pb_ratio": 7.6913095,
+    "market_cap": 22154235904,
+    "roe": 0.41793
+  },
+  {
+    "ticker": "BRO",
+    "company": "Brown & Brown, Inc.",
+    "sector": "Financial Services",
+    "price": 71.17,
+    "book_value_per_share": 37.342,
+    "pb_ratio": 1.9058969,
+    "market_cap": 24298917888,
+    "roe": 0.11226
+  },
+  {
+    "ticker": "BG",
+    "company": "Bunge Limited",
+    "sector": "Consumer Defensive",
+    "price": 117.18,
+    "book_value_per_share": 82.23,
+    "pb_ratio": 1.4250273,
+    "market_cap": 22675394560,
+    "roe": 0.05964
+  },
+  {
+    "ticker": "BLDR",
+    "company": "Builders FirstSource, Inc.",
+    "sector": "Industrials",
+    "price": 92.075,
+    "book_value_per_share": 39.357,
+    "pb_ratio": 2.3394823,
+    "market_cap": 10183961600,
+    "roe": 0.10064
+  },
+  {
+    "ticker": "BXP",
+    "company": "BXP, Inc.",
+    "sector": "Real Estate",
+    "price": 51.14,
+    "book_value_per_share": 32.464,
+    "pb_ratio": 1.5752833,
+    "market_cap": 9054693376,
+    "roe": 0.04916
+  },
+  {
+    "ticker": "CPT",
+    "company": "Camden Property Trust",
+    "sector": "Real Estate",
+    "price": 104.49,
+    "book_value_per_share": 41.015,
+    "pb_ratio": 2.5476046,
+    "market_cap": 11117247488,
+    "roe": 0.08598
+  },
+  {
+    "ticker": "COF",
+    "company": "Capital One Financial Corporati",
+    "sector": "Financial Services",
+    "price": 181.57,
+    "book_value_per_share": 173.106,
+    "pb_ratio": 1.0488949,
+    "market_cap": 112924123136,
+    "roe": 0.02394
+  },
+  {
+    "ticker": "CPB",
+    "company": "The Campbell's Company",
+    "sector": "Consumer Defensive",
+    "price": 25.46,
+    "book_value_per_share": 13.279,
+    "pb_ratio": 1.917313,
+    "market_cap": 7590497280,
+    "roe": 0.14815
+  },
+  {
+    "ticker": "CCL",
+    "company": "Carnival Corporation",
+    "sector": "Consumer Cyclical",
+    "price": 25.165,
+    "book_value_per_share": 9.363,
+    "pb_ratio": 2.687707,
+    "market_cap": 34857037824,
+    "roe": 0.25632998
+  },
+  {
+    "ticker": "CVNA",
+    "company": "Carvana Co.",
+    "sector": "Consumer Cyclical",
+    "price": 312.12,
+    "book_value_per_share": 24.193,
+    "pb_ratio": 12.901252,
+    "market_cap": 68398809088,
+    "roe": 0.67946
+  },
+  {
+    "ticker": "CARR",
+    "company": "Carrier Global Corporation",
+    "sector": "Industrials",
+    "price": 57.76,
+    "book_value_per_share": 16.509,
+    "pb_ratio": 3.4986975,
+    "market_cap": 48278343680,
+    "roe": 0.10925
+  },
+  {
+    "ticker": "CAT",
+    "company": "Caterpillar, Inc.",
+    "sector": "Industrials",
+    "price": 691.785,
+    "book_value_per_share": 45.817,
+    "pb_ratio": 15.09887,
+    "market_cap": 323741253632,
+    "roe": 0.43526
+  },
+  {
+    "ticker": "CBRE",
+    "company": "CBRE Group Inc",
+    "sector": "Real Estate",
+    "price": 133.4,
+    "book_value_per_share": 30.494,
+    "pb_ratio": 4.374631,
+    "market_cap": 39698903040,
+    "roe": 0.13572
+  },
+  {
+    "ticker": "CNC",
+    "company": "Centene Corporation",
+    "sector": "Healthcare",
+    "price": 43.28,
+    "book_value_per_share": 40.575,
+    "pb_ratio": 1.0666666,
+    "market_cap": 21283848192,
+    "roe": -0.28678
+  },
+  {
+    "ticker": "COR",
+    "company": "Cencora, Inc.",
+    "sector": "Healthcare",
+    "price": 358.9049,
+    "book_value_per_share": 9.81,
+    "pb_ratio": 36.585617,
+    "market_cap": 69818015744,
+    "roe": 1.33467
+  },
+  {
+    "ticker": "CNP",
+    "company": "CenterPoint Energy, Inc (Holdin",
+    "sector": "Utilities",
+    "price": 43.451,
+    "book_value_per_share": 17.083,
+    "pb_ratio": 2.5435228,
+    "market_cap": 28367921152,
+    "roe": 0.096429996
+  },
+  {
+    "ticker": "CF",
+    "company": "CF Industries Holdings, Inc.",
+    "sector": "Basic Materials",
+    "price": 117.15,
+    "book_value_per_share": 31.507,
+    "pb_ratio": 3.7182214,
+    "market_cap": 18272430080,
+    "roe": 0.23401
+  },
+  {
+    "ticker": "CRL",
+    "company": "Charles River Laboratories Inte",
+    "sector": "Healthcare",
+    "price": 174.21,
+    "book_value_per_share": 64.3,
+    "pb_ratio": 2.7093313,
+    "market_cap": 8575975424,
+    "roe": -0.04232
+  },
+  {
+    "ticker": "CMG",
+    "company": "Chipotle Mexican Grill, Inc.",
+    "sector": "Consumer Cyclical",
+    "price": 34.6066,
+    "book_value_per_share": 2.17,
+    "pb_ratio": 15.947742,
+    "market_cap": 45759549440,
+    "roe": 0.47355
+  },
+  {
+    "ticker": "SCHW",
+    "company": "Charles Schwab Corporation (The",
+    "sector": "Financial Services",
+    "price": 93.54,
+    "book_value_per_share": 24.263,
+    "pb_ratio": 3.8552527,
+    "market_cap": 166214680576,
+    "roe": 0.18101999
+  },
+  {
+    "ticker": "CVX",
+    "company": "Chevron Corporation",
+    "sector": "Energy",
+    "price": 190.385,
+    "book_value_per_share": 94.155,
+    "pb_ratio": 2.022038,
+    "market_cap": 380646916096,
+    "roe": 0.07231
+  },
+  {
+    "ticker": "CI",
+    "company": "The Cigna Group",
+    "sector": "Healthcare",
+    "price": 267.3,
+    "book_value_per_share": 158.325,
+    "pb_ratio": 1.6882993,
+    "market_cap": 71402733568,
+    "roe": 0.1513
+  },
+  {
+    "ticker": "CHD",
+    "company": "Church & Dwight Company, Inc.",
+    "sector": "Consumer Defensive",
+    "price": 101.43,
+    "book_value_per_share": 16.919,
+    "pb_ratio": 5.995035,
+    "market_cap": 24356395008,
+    "roe": 0.1762
+  },
+  {
+    "ticker": "CIEN",
+    "company": "Ciena Corporation",
+    "sector": "Technology",
+    "price": 311.595,
+    "book_value_per_share": 19.741,
+    "pb_ratio": 15.784156,
+    "market_cap": 44079304704,
+    "roe": 0.08201
+  },
+  {
+    "ticker": "CB",
+    "company": "Chubb Limited",
+    "sector": "Financial Services",
+    "price": 323.46,
+    "book_value_per_share": 188.588,
+    "pb_ratio": 1.7151674,
+    "market_cap": 127297953792,
+    "roe": 0.14337
+  },
+  {
+    "ticker": "C",
+    "company": "Citigroup, Inc.",
+    "sector": "Financial Services",
+    "price": 103.75,
+    "book_value_per_share": 110.006,
+    "pb_ratio": 0.9431304,
+    "market_cap": 181491843072,
+    "roe": 0.06831
+  },
+  {
+    "ticker": "CFG",
+    "company": "Citizens Financial Group, Inc.",
+    "sector": "Financial Services",
+    "price": 56.66,
+    "book_value_per_share": 56.392,
+    "pb_ratio": 1.0047525,
+    "market_cap": 24334688256,
+    "roe": 0.07241
+  },
+  {
+    "ticker": "CMS",
+    "company": "CMS Energy Corporation",
+    "sector": "Utilities",
+    "price": 77.035,
+    "book_value_per_share": 29.111,
+    "pb_ratio": 2.6462507,
+    "market_cap": 23605135360,
+    "roe": 0.108559996
+  },
+  {
+    "ticker": "KO",
+    "company": "Coca-Cola Company (The)",
+    "sector": "Consumer Defensive",
+    "price": 77.455,
+    "book_value_per_share": 7.478,
+    "pb_ratio": 10.357716,
+    "market_cap": 333181124608,
+    "roe": 0.43323
+  },
+  {
+    "ticker": "CL",
+    "company": "Colgate-Palmolive Company",
+    "sector": "Consumer Defensive",
+    "price": 93.075,
+    "book_value_per_share": 0.067,
+    "pb_ratio": 1389.1791,
+    "market_cap": 74604077056,
+    "roe": 4.9747
+  },
+  {
+    "ticker": "CAG",
+    "company": "ConAgra Brands, Inc.",
+    "sector": "Consumer Defensive",
+    "price": 18.825,
+    "book_value_per_share": 16.913,
+    "pb_ratio": 1.1130491,
+    "market_cap": 9005305856,
+    "roe": -0.0116
+  },
+  {
+    "ticker": "FIX",
+    "company": "Comfort Systems USA, Inc.",
+    "sector": "Industrials",
+    "price": 1331.59,
+    "book_value_per_share": 69.727,
+    "pb_ratio": 19.097193,
+    "market_cap": 46967779328,
+    "roe": 0.49238998
+  },
+  {
+    "ticker": "ED",
+    "company": "Consolidated Edison, Inc.",
+    "sector": "Utilities",
+    "price": 112.51,
+    "book_value_per_share": 66.986,
+    "pb_ratio": 1.6796048,
+    "market_cap": 40650166272,
+    "roe": 0.08767
+  },
+  {
+    "ticker": "COP",
+    "company": "ConocoPhillips",
+    "sector": "Energy",
+    "price": 118.135,
+    "book_value_per_share": 52.635,
+    "pb_ratio": 2.2444193,
+    "market_cap": 144401039360,
+    "roe": 0.12357
+  },
+  {
+    "ticker": "GLW",
+    "company": "Corning Incorporated",
+    "sector": "Technology",
+    "price": 125.505,
+    "book_value_per_share": 13.777,
+    "pb_ratio": 9.109748,
+    "market_cap": 107676770304,
+    "roe": 0.14904
+  },
+  {
+    "ticker": "CPAY",
+    "company": "Corpay, Inc.",
+    "sector": "Technology",
+    "price": 325.02,
+    "book_value_per_share": 56.813,
+    "pb_ratio": 5.7208734,
+    "market_cap": 22737766400,
+    "roe": 0.29071
+  },
+  {
+    "ticker": "STZ",
+    "company": "Constellation Brands, Inc.",
+    "sector": "Consumer Defensive",
+    "price": 147.195,
+    "book_value_per_share": 44.472,
+    "pb_ratio": 3.3098357,
+    "market_cap": 25625749504,
+    "roe": 0.14454001
+  },
+  {
+    "ticker": "CTVA",
+    "company": "Corteva, Inc.",
+    "sector": "Basic Materials",
+    "price": 77.49,
+    "book_value_per_share": 35.92,
+    "pb_ratio": 2.157294,
+    "market_cap": 52362469376,
+    "roe": 0.04974
+  },
+  {
+    "ticker": "CTRA",
+    "company": "Coterra Energy Inc.",
+    "sector": "Energy",
+    "price": 31.49,
+    "book_value_per_share": 19.524,
+    "pb_ratio": 1.6128867,
+    "market_cap": 23909496832,
+    "roe": 0.12275
+  },
+  {
+    "ticker": "CRH",
+    "company": "CRH PLC",
+    "sector": "Basic Materials",
+    "price": 103.745,
+    "book_value_per_share": 35.899,
+    "pb_ratio": 2.8899136,
+    "market_cap": 69503819776,
+    "roe": 0.15684
+  },
+  {
+    "ticker": "DHR",
+    "company": "Danaher Corporation",
+    "sector": "Healthcare",
+    "price": 196.67,
+    "book_value_per_share": 74.316,
+    "pb_ratio": 2.6464016,
+    "market_cap": 139073093632,
+    "roe": 0.07053
+  },
+  {
+    "ticker": "CVS",
+    "company": "CVS Health Corporation",
+    "sector": "Healthcare",
+    "price": 77.69,
+    "book_value_per_share": 59.177,
+    "pb_ratio": 1.3128412,
+    "market_cap": 98838077440,
+    "roe": 0.022869999
+  },
+  {
+    "ticker": "CMI",
+    "company": "Cummins Inc.",
+    "sector": "Industrials",
+    "price": 538.82,
+    "book_value_per_share": 89.421,
+    "pb_ratio": 6.0256543,
+    "market_cap": 74446315520,
+    "roe": 0.23928
+  },
+  {
+    "ticker": "DRI",
+    "company": "Darden Restaurants, Inc.",
+    "sector": "Consumer Cyclical",
+    "price": 197.35,
+    "book_value_per_share": 18.043,
+    "pb_ratio": 10.93776,
+    "market_cap": 22954520576,
+    "roe": 0.54104
+  },
+  {
+    "ticker": "DECK",
+    "company": "Deckers Outdoor Corporation",
+    "sector": "Consumer Cyclical",
+    "price": 102.18,
+    "book_value_per_share": 18.334,
+    "pb_ratio": 5.573252,
+    "market_cap": 14892207104,
+    "roe": 0.39688
+  },
+  {
+    "ticker": "DE",
+    "company": "Deere & Company",
+    "sector": "Industrials",
+    "price": 593.83,
+    "book_value_per_share": 97.369,
+    "pb_ratio": 6.098758,
+    "market_cap": 160397819904,
+    "roe": 0.19566
+  },
+  {
+    "ticker": "DAL",
+    "company": "Delta Air Lines, Inc.",
+    "sector": "Industrials",
+    "price": 58.82,
+    "book_value_per_share": 32.1,
+    "pb_ratio": 1.8323988,
+    "market_cap": 38417145856,
+    "roe": 0.27693
+  },
+  {
+    "ticker": "DLR",
+    "company": "Digital Realty Trust, Inc.",
+    "sector": "Real Estate",
+    "price": 177.58,
+    "book_value_per_share": 64.6,
+    "pb_ratio": 2.7489164,
+    "market_cap": 62118273024,
+    "roe": 0.05469
+  },
+  {
+    "ticker": "DG",
+    "company": "Dollar General Corporation",
+    "sector": "Consumer Defensive",
+    "price": 145.21,
+    "book_value_per_share": 37.19,
+    "pb_ratio": 3.9045446,
+    "market_cap": 31963461632,
+    "roe": 0.16450001
+  },
+  {
+    "ticker": "DVN",
+    "company": "Devon Energy Corporation",
+    "sector": "Energy",
+    "price": 45.215,
+    "book_value_per_share": 24.965,
+    "pb_ratio": 1.8111355,
+    "market_cap": 28045250560,
+    "roe": 0.17736
+  },
+  {
+    "ticker": "D",
+    "company": "Dominion Energy, Inc.",
+    "sector": "Utilities",
+    "price": 62.744,
+    "book_value_per_share": 31.959,
+    "pb_ratio": 1.9632654,
+    "market_cap": 55138525184,
+    "roe": 0.09741
+  },
+  {
+    "ticker": "DOV",
+    "company": "Dover Corporation",
+    "sector": "Industrials",
+    "price": 206.72,
+    "book_value_per_share": 54.916,
+    "pb_ratio": 3.7642946,
+    "market_cap": 28352313344,
+    "roe": 0.15285
+  },
+  {
+    "ticker": "DHI",
+    "company": "D.R. Horton, Inc.",
+    "sector": "Consumer Cyclical",
+    "price": 143.62,
+    "book_value_per_share": 82.601,
+    "pb_ratio": 1.7387198,
+    "market_cap": 41807716352,
+    "roe": 0.13477
+  },
+  {
+    "ticker": "DOW",
+    "company": "Dow Inc.",
+    "sector": "Basic Materials",
+    "price": 35.44,
+    "book_value_per_share": 22.319,
+    "pb_ratio": 1.5878847,
+    "market_cap": 25429407744,
+    "roe": -0.13818
+  },
+  {
+    "ticker": "DTE",
+    "company": "DTE Energy Company",
+    "sector": "Utilities",
+    "price": 148.4525,
+    "book_value_per_share": 59.222,
+    "pb_ratio": 2.506712,
+    "market_cap": 30848987136,
+    "roe": 0.12177
+  },
+  {
+    "ticker": "DUK",
+    "company": "Duke Energy Corporation (Holdin",
+    "sector": "Utilities",
+    "price": 131.29,
+    "book_value_per_share": 65.384,
+    "pb_ratio": 2.0079834,
+    "market_cap": 102099140608,
+    "roe": 0.09724
+  },
+  {
+    "ticker": "DD",
+    "company": "DuPont de Nemours, Inc.",
+    "sector": "Basic Materials",
+    "price": 44.34,
+    "book_value_per_share": 34.016,
+    "pb_ratio": 1.3035042,
+    "market_cap": 18577367040,
+    "roe": 0.0051700003
+  },
+  {
+    "ticker": "EIX",
+    "company": "Edison International",
+    "sector": "Utilities",
+    "price": 69.75,
+    "book_value_per_share": 44.393,
+    "pb_ratio": 1.5711936,
+    "market_cap": 26839166976,
+    "roe": 0.24103001
+  },
+  {
+    "ticker": "ECL",
+    "company": "Ecolab Inc.",
+    "sector": "Basic Materials",
+    "price": 278.65,
+    "book_value_per_share": 23.458,
+    "pb_ratio": 11.878676,
+    "market_cap": 78923612160,
+    "roe": 0.22516
+  },
+  {
+    "ticker": "ETN",
+    "company": "Eaton Corporation, PLC",
+    "sector": "Industrials",
+    "price": 345.74,
+    "book_value_per_share": 50.077,
+    "pb_ratio": 6.9041677,
+    "market_cap": 134596575232,
+    "roe": 0.21525998
+  },
+  {
+    "ticker": "EW",
+    "company": "Edwards Lifesciences Corporatio",
+    "sector": "Healthcare",
+    "price": 83.47,
+    "book_value_per_share": 17.802,
+    "pb_ratio": 4.688799,
+    "market_cap": 48479375360,
+    "roe": 0.10353
+  },
+  {
+    "ticker": "ELV",
+    "company": "Elevance Health, Inc.",
+    "sector": "Healthcare",
+    "price": 278.97,
+    "book_value_per_share": 198.809,
+    "pb_ratio": 1.4032061,
+    "market_cap": 61569982464,
+    "roe": 0.1325
+  },
+  {
+    "ticker": "EME",
+    "company": "EMCOR Group, Inc.",
+    "sector": "Industrials",
+    "price": 707.02,
+    "book_value_per_share": 82.523,
+    "pb_ratio": 8.567551,
+    "market_cap": 31650361344,
+    "roe": 0.3849
+  },
+  {
+    "ticker": "EOG",
+    "company": "EOG Resources, Inc.",
+    "sector": "Energy",
+    "price": 133.5,
+    "book_value_per_share": 55.486,
+    "pb_ratio": 2.4060123,
+    "market_cap": 72436891648,
+    "roe": 0.16829
+  },
+  {
+    "ticker": "ETR",
+    "company": "Entergy Corporation",
+    "sector": "Utilities",
+    "price": 104,
+    "book_value_per_share": 37.412,
+    "pb_ratio": 2.779857,
+    "market_cap": 47110942720,
+    "roe": 0.10774
+  },
+  {
+    "ticker": "EMR",
+    "company": "Emerson Electric Company",
+    "sector": "Industrials",
+    "price": 137.81,
+    "book_value_per_share": 36.08,
+    "pb_ratio": 3.8195674,
+    "market_cap": 77490847744,
+    "roe": 0.09646
+  },
+  {
+    "ticker": "EPAM",
+    "company": "EPAM Systems, Inc.",
+    "sector": "Technology",
+    "price": 145.24,
+    "book_value_per_share": 67.753,
+    "pb_ratio": 2.1436691,
+    "market_cap": 8023438336,
+    "roe": 0.10335
+  },
+  {
+    "ticker": "EQR",
+    "company": "Equity Residential",
+    "sector": "Real Estate",
+    "price": 61.67,
+    "book_value_per_share": 29.18,
+    "pb_ratio": 2.1134338,
+    "market_cap": 24183183360,
+    "roe": 0.100200005
+  },
+  {
+    "ticker": "EFX",
+    "company": "Equifax, Inc.",
+    "sector": "Industrials",
+    "price": 202.39,
+    "book_value_per_share": 38.242,
+    "pb_ratio": 5.292349,
+    "market_cap": 24771330048,
+    "roe": 0.13757
+  },
+  {
+    "ticker": "EL",
+    "company": "Estee Lauder Companies, Inc. (T",
+    "sector": "Consumer Defensive",
+    "price": 89.63,
+    "book_value_per_share": 11.146,
+    "pb_ratio": 8.04145,
+    "market_cap": 32421593088,
+    "roe": -0.04341
+  },
+  {
+    "ticker": "ESS",
+    "company": "Essex Property Trust, Inc.",
+    "sector": "Real Estate",
+    "price": 252.22,
+    "book_value_per_share": 85.99,
+    "pb_ratio": 2.933132,
+    "market_cap": 17438478336,
+    "roe": 0.12235
+  },
+  {
+    "ticker": "EQT",
+    "company": "EQT Corporation",
+    "sector": "Energy",
+    "price": 62.435,
+    "book_value_per_share": 38.061,
+    "pb_ratio": 1.640393,
+    "market_cap": 38976548864,
+    "roe": 0.09007
+  },
+  {
+    "ticker": "EG",
+    "company": "Everest Group, Ltd.",
+    "sector": "Financial Services",
+    "price": 328.255,
+    "book_value_per_share": 379.877,
+    "pb_ratio": 0.8641086,
+    "market_cap": 13258269696,
+    "roe": 0.10847
+  },
+  {
+    "ticker": "EVRG",
+    "company": "Evergy, Inc.",
+    "sector": "Utilities",
+    "price": 82.53,
+    "book_value_per_share": 44.39,
+    "pb_ratio": 1.8592025,
+    "market_cap": 19005138944,
+    "roe": 0.08569
+  },
+  {
+    "ticker": "ES",
+    "company": "Eversource Energy (D/B/A)",
+    "sector": "Utilities",
+    "price": 73.6335,
+    "book_value_per_share": 43.145,
+    "pb_ratio": 1.7066519,
+    "market_cap": 27649128448,
+    "roe": 0.10777
+  },
+  {
+    "ticker": "EXR",
+    "company": "Extra Space Storage Inc",
+    "sector": "Real Estate",
+    "price": 144.4,
+    "book_value_per_share": 63.617,
+    "pb_ratio": 2.2698333,
+    "market_cap": 31998377984,
+    "roe": 0.07008
+  },
+  {
+    "ticker": "FRT",
+    "company": "Federal Realty Investment Trust",
+    "sector": "Real Estate",
+    "price": 105.77,
+    "book_value_per_share": 35.807,
+    "pb_ratio": 2.9538918,
+    "market_cap": 9181389824,
+    "roe": 0.12235
+  },
+  {
+    "ticker": "FDS",
+    "company": "FactSet Research Systems Inc.",
+    "sector": "Financial Services",
+    "price": 222.79,
+    "book_value_per_share": 58.208,
+    "pb_ratio": 3.8274806,
+    "market_cap": 8336787456,
+    "roe": 0.28831
+  },
+  {
+    "ticker": "XOM",
+    "company": "Exxon Mobil Corporation",
+    "sector": "Energy",
+    "price": 151.51,
+    "book_value_per_share": 62.069,
+    "pb_ratio": 2.440993,
+    "market_cap": 631306321920,
+    "roe": 0.110810004
+  },
+  {
+    "ticker": "FDX",
+    "company": "FedEx Corporation",
+    "sector": "Industrials",
+    "price": 354.28,
+    "book_value_per_share": 119.745,
+    "pb_ratio": 2.9586203,
+    "market_cap": 83594297344,
+    "roe": 0.15886
+  },
+  {
+    "ticker": "FE",
+    "company": "FirstEnergy Corp.",
+    "sector": "Utilities",
+    "price": 50.77,
+    "book_value_per_share": 21.649,
+    "pb_ratio": 2.345143,
+    "market_cap": 29341650944,
+    "roe": 0.09195
+  },
+  {
+    "ticker": "FIS",
+    "company": "Fidelity National Information S",
+    "sector": "Technology",
+    "price": 50.88,
+    "book_value_per_share": 27.041,
+    "pb_ratio": 1.8815873,
+    "market_cap": 26348247040,
+    "roe": 0.026010001
+  },
+  {
+    "ticker": "BEN",
+    "company": "Franklin Resources, Inc.",
+    "sector": "Financial Services",
+    "price": 25.055,
+    "book_value_per_share": 23.337,
+    "pb_ratio": 1.073617,
+    "market_cap": 13063443456,
+    "roe": 0.04464
+  },
+  {
+    "ticker": "F",
+    "company": "Ford Motor Company",
+    "sector": "Consumer Cyclical",
+    "price": 12.0647,
+    "book_value_per_share": 9.013,
+    "pb_ratio": 1.3385888,
+    "market_cap": 48131821568,
+    "roe": -0.20193
+  },
+  {
+    "ticker": "FTV",
+    "company": "Fortive Corporation",
+    "sector": "Technology",
+    "price": 56.04,
+    "book_value_per_share": 20.592,
+    "pb_ratio": 2.7214453,
+    "market_cap": 17798957056,
+    "roe": 0.06396
+  },
+  {
+    "ticker": "GE",
+    "company": "GE Aerospace",
+    "sector": "Industrials",
+    "price": 317.01,
+    "book_value_per_share": 17.809,
+    "pb_ratio": 17.80055,
+    "market_cap": 334386561024,
+    "roe": 0.44692
+  },
+  {
+    "ticker": "IT",
+    "company": "Gartner, Inc.",
+    "sector": "Technology",
+    "price": 166.745,
+    "book_value_per_share": 4.515,
+    "pb_ratio": 36.93134,
+    "market_cap": 12018502656,
+    "roe": 0.86861
+  },
+  {
+    "ticker": "FCX",
+    "company": "Freeport-McMoRan, Inc.",
+    "sector": "Basic Materials",
+    "price": 58.2,
+    "book_value_per_share": 13.161,
+    "pb_ratio": 4.4221563,
+    "market_cap": 83645136896,
+    "roe": 0.13946
+  },
+  {
+    "ticker": "GRMN",
+    "company": "Garmin Ltd.",
+    "sector": "Technology",
+    "price": 239.475,
+    "book_value_per_share": 46.582,
+    "pb_ratio": 5.1409345,
+    "market_cap": 46094348288,
+    "roe": 0.19783
+  },
+  {
+    "ticker": "GEV",
+    "company": "GE Vernova Inc.",
+    "sector": "Industrials",
+    "price": 822.24,
+    "book_value_per_share": 41.472,
+    "pb_ratio": 19.82639,
+    "market_cap": 223090524160,
+    "roe": 0.42641
+  },
+  {
+    "ticker": "GNRC",
+    "company": "Generac Holdlings Inc.",
+    "sector": "Industrials",
+    "price": 202.2,
+    "book_value_per_share": 44.863,
+    "pb_ratio": 4.507055,
+    "market_cap": 11865918464,
+    "roe": 0.06283
+  },
+  {
+    "ticker": "GIS",
+    "company": "General Mills, Inc.",
+    "sector": "Consumer Defensive",
+    "price": 43.78,
+    "book_value_per_share": 17.46,
+    "pb_ratio": 2.5074456,
+    "market_cap": 23360223232,
+    "roe": 0.27173
+  },
+  {
+    "ticker": "GD",
+    "company": "General Dynamics Corporation",
+    "sector": "Industrials",
+    "price": 360.535,
+    "book_value_per_share": 94.902,
+    "pb_ratio": 3.7990243,
+    "market_cap": 97484972032,
+    "roe": 0.17658001
+  },
+  {
+    "ticker": "GM",
+    "company": "General Motors Company",
+    "sector": "Consumer Cyclical",
+    "price": 73.4,
+    "book_value_per_share": 67.61,
+    "pb_ratio": 1.0856383,
+    "market_cap": 68472020992,
+    "roe": 0.04318
+  },
+  {
+    "ticker": "GPC",
+    "company": "Genuine Parts Company",
+    "sector": "Consumer Cyclical",
+    "price": 111.275,
+    "book_value_per_share": 32.14,
+    "pb_ratio": 3.4621968,
+    "market_cap": 15479520256,
+    "roe": 0.015
+  },
+  {
+    "ticker": "GS",
+    "company": "Goldman Sachs Group, Inc. (The)",
+    "sector": "Financial Services",
+    "price": 814.08,
+    "book_value_per_share": 356.473,
+    "pb_ratio": 2.2837074,
+    "market_cap": 244165804032,
+    "roe": 0.13861
+  },
+  {
+    "ticker": "GDDY",
+    "company": "GoDaddy Inc.",
+    "sector": "Technology",
+    "price": 92.82,
+    "book_value_per_share": 1.596,
+    "pb_ratio": 58.157898,
+    "market_cap": 12543843328,
+    "roe": 1.92901
+  },
+  {
+    "ticker": "GL",
+    "company": "Globe Life Inc.",
+    "sector": "Financial Services",
+    "price": 140.0317,
+    "book_value_per_share": 75.539,
+    "pb_ratio": 1.8537668,
+    "market_cap": 11147334656,
+    "roe": 0.20589
+  },
+  {
+    "ticker": "GPN",
+    "company": "Global Payments Inc.",
+    "sector": "Industrials",
+    "price": 73.96,
+    "book_value_per_share": 96.703,
+    "pb_ratio": 0.7648159,
+    "market_cap": 20701501440,
+    "roe": 0.04824
+  },
+  {
+    "ticker": "HAL",
+    "company": "Halliburton Company",
+    "sector": "Energy",
+    "price": 34.345,
+    "book_value_per_share": 12.528,
+    "pb_ratio": 2.7414594,
+    "market_cap": 28905666560,
+    "roe": 0.12274
+  },
+  {
+    "ticker": "HIG",
+    "company": "The Hartford Insurance Group, I",
+    "sector": "Financial Services",
+    "price": 137.055,
+    "book_value_per_share": 67.329,
+    "pb_ratio": 2.0356011,
+    "market_cap": 38224678912,
+    "roe": 0.21656
+  },
+  {
+    "ticker": "DOC",
+    "company": "Healthpeak Properties, Inc.",
+    "sector": "Real Estate",
+    "price": 17.165,
+    "book_value_per_share": 10.791,
+    "pb_ratio": 1.5906775,
+    "market_cap": 11930430464,
+    "roe": 0.01164
+  },
+  {
+    "ticker": "HPE",
+    "company": "Hewlett Packard Enterprise Comp",
+    "sector": "Technology",
+    "price": 21.225,
+    "book_value_per_share": 18.727,
+    "pb_ratio": 1.1333903,
+    "market_cap": 28325466112,
+    "roe": 0.0023
+  },
+  {
+    "ticker": "HSY",
+    "company": "The Hershey Company",
+    "sector": "Consumer Defensive",
+    "price": 222.17,
+    "book_value_per_share": 22.859,
+    "pb_ratio": 9.719148,
+    "market_cap": 45052768256,
+    "roe": 0.1889
+  },
+  {
+    "ticker": "HD",
+    "company": "Home Depot, Inc. (The)",
+    "sector": "Consumer Cyclical",
+    "price": 347.94,
+    "book_value_per_share": 12.903,
+    "pb_ratio": 26.965822,
+    "market_cap": 346378272768,
+    "roe": 1.45541
+  },
+  {
+    "ticker": "HWM",
+    "company": "Howmet Aerospace Inc.",
+    "sector": "Industrials",
+    "price": 250.725,
+    "book_value_per_share": 13.329,
+    "pb_ratio": 18.810488,
+    "market_cap": 100916813824,
+    "roe": 0.30443
+  },
+  {
+    "ticker": "HRL",
+    "company": "Hormel Foods Corporation",
+    "sector": "Consumer Defensive",
+    "price": 23.855,
+    "book_value_per_share": 14.428,
+    "pb_ratio": 1.6533822,
+    "market_cap": 13127029760,
+    "roe": 0.061160002
+  },
+  {
+    "ticker": "HUBB",
+    "company": "Hubbell Inc",
+    "sector": "Industrials",
+    "price": 477.255,
+    "book_value_per_share": 72.256,
+    "pb_ratio": 6.6050572,
+    "market_cap": 25371639808,
+    "roe": 0.24542
+  },
+  {
+    "ticker": "HII",
+    "company": "Huntington Ingalls Industries, ",
+    "sector": "Industrials",
+    "price": 427.5,
+    "book_value_per_share": 129.276,
+    "pb_ratio": 3.3068783,
+    "market_cap": 16776249344,
+    "roe": 0.124239996
+  },
+  {
+    "ticker": "IEX",
+    "company": "IDEX Corporation",
+    "sector": "Industrials",
+    "price": 193.29,
+    "book_value_per_share": 53.988,
+    "pb_ratio": 3.58024,
+    "market_cap": 14467647488,
+    "roe": 0.1234
+  },
+  {
+    "ticker": "IBM",
+    "company": "International Business Machines",
+    "sector": "Technology",
+    "price": 254.41,
+    "book_value_per_share": 34.845,
+    "pb_ratio": 7.301191,
+    "market_cap": 238645346304,
+    "roe": 0.35158002
+  },
+  {
+    "ticker": "HUM",
+    "company": "Humana Inc.",
+    "sector": "Healthcare",
+    "price": 176.335,
+    "book_value_per_share": 146.42,
+    "pb_ratio": 1.2043096,
+    "market_cap": 21265291264,
+    "roe": 0.07039
+  },
+  {
+    "ticker": "IR",
+    "company": "Ingersoll Rand Inc.",
+    "sector": "Industrials",
+    "price": 85.08,
+    "book_value_per_share": 25.797,
+    "pb_ratio": 3.2980578,
+    "market_cap": 33615992832,
+    "roe": 0.057729997
+  },
+  {
+    "ticker": "ITW",
+    "company": "Illinois Tool Works Inc.",
+    "sector": "Industrials",
+    "price": 272.85,
+    "book_value_per_share": 11.175,
+    "pb_ratio": 24.416107,
+    "market_cap": 78635368448,
+    "roe": 0.93718004
+  },
+  {
+    "ticker": "ICE",
+    "company": "Intercontinental Exchange Inc.",
+    "sector": "Financial Services",
+    "price": 165.84,
+    "book_value_per_share": 50.996,
+    "pb_ratio": 3.25202,
+    "market_cap": 94558412800,
+    "roe": 0.11885
+  },
+  {
+    "ticker": "IFF",
+    "company": "International Flavors & Fragran",
+    "sector": "Basic Materials",
+    "price": 72.575,
+    "book_value_per_share": 55.354,
+    "pb_ratio": 1.3111067,
+    "market_cap": 18586193920,
+    "roe": -0.02559
+  },
+  {
+    "ticker": "IVZ",
+    "company": "Invesco Ltd",
+    "sector": "Financial Services",
+    "price": 23.28,
+    "book_value_per_share": 21.893,
+    "pb_ratio": 1.0633537,
+    "market_cap": 10328726528,
+    "roe": -0.01219
+  },
+  {
+    "ticker": "IQV",
+    "company": "IQVIA Holdings, Inc.",
+    "sector": "Healthcare",
+    "price": 179.11,
+    "book_value_per_share": 38.343,
+    "pb_ratio": 4.671257,
+    "market_cap": 30502432768,
+    "roe": 0.21438
+  },
+  {
+    "ticker": "IP",
+    "company": "International Paper Company",
+    "sector": "Consumer Cyclical",
+    "price": 37.65,
+    "book_value_per_share": 28.079,
+    "pb_ratio": 1.3408598,
+    "market_cap": 19880642560,
+    "roe": -0.24678
+  },
+  {
+    "ticker": "INVH",
+    "company": "Invitation Homes Inc.",
+    "sector": "Real Estate",
+    "price": 25.815,
+    "book_value_per_share": 15.603,
+    "pb_ratio": 1.6544896,
+    "market_cap": 15825127424,
+    "roe": 0.060939997
+  },
+  {
+    "ticker": "JBL",
+    "company": "Jabil Inc.",
+    "sector": "Technology",
+    "price": 240.04,
+    "book_value_per_share": 12.582,
+    "pb_ratio": 19.078049,
+    "market_cap": 25641783296,
+    "roe": 0.47823003
+  },
+  {
+    "ticker": "JNJ",
+    "company": "Johnson & Johnson",
+    "sector": "Healthcare",
+    "price": 242.85,
+    "book_value_per_share": 33.865,
+    "pb_ratio": 7.1711206,
+    "market_cap": 585244016640,
+    "roe": 0.35029998
+  },
+  {
+    "ticker": "JPM",
+    "company": "JP Morgan Chase & Co.",
+    "sector": "Financial Services",
+    "price": 285.37,
+    "book_value_per_share": 126.988,
+    "pb_ratio": 2.2472203,
+    "market_cap": 769652162560,
+    "roe": 0.16134001
+  },
+  {
+    "ticker": "J",
+    "company": "Jacobs Solutions Inc.",
+    "sector": "Industrials",
+    "price": 132.355,
+    "book_value_per_share": 29.288,
+    "pb_ratio": 4.5190864,
+    "market_cap": 15629578240,
+    "roe": 0.09726
+  },
+  {
+    "ticker": "KEY",
+    "company": "KeyCorp",
+    "sector": "Financial Services",
+    "price": 19.225,
+    "book_value_per_share": 16.22,
+    "pb_ratio": 1.1852652,
+    "market_cap": 20948473856,
+    "roe": 0.09482
+  },
+  {
+    "ticker": "KVUE",
+    "company": "Kenvue Inc.",
+    "sector": "Consumer Defensive",
+    "price": 18.185,
+    "book_value_per_share": 5.618,
+    "pb_ratio": 3.236917,
+    "market_cap": 34855772160,
+    "roe": 0.14388
+  },
+  {
+    "ticker": "KEYS",
+    "company": "Keysight Technologies Inc.",
+    "sector": "Technology",
+    "price": 277.34,
+    "book_value_per_share": 36.181,
+    "pb_ratio": 7.665349,
+    "market_cap": 47647010816,
+    "roe": 0.17222999
+  },
+  {
+    "ticker": "JCI",
+    "company": "Johnson Controls International ",
+    "sector": "Industrials",
+    "price": 132.04,
+    "book_value_per_share": 21.575,
+    "pb_ratio": 6.1200457,
+    "market_cap": 80817217536,
+    "roe": 0.12640001
+  },
+  {
+    "ticker": "KMI",
+    "company": "Kinder Morgan, Inc.",
+    "sector": "Energy",
+    "price": 33.415,
+    "book_value_per_share": 14.007,
+    "pb_ratio": 2.385593,
+    "market_cap": 74341908480,
+    "roe": 0.09826
+  },
+  {
+    "ticker": "KKR",
+    "company": "KKR & Co. Inc.",
+    "sector": "Financial Services",
+    "price": 89.52,
+    "book_value_per_share": 31.812,
+    "pb_ratio": 2.8140323,
+    "market_cap": 82897346560,
+    "roe": 0.08558
+  },
+  {
+    "ticker": "KIM",
+    "company": "Kimco Realty Corporation (HC)",
+    "sector": "Real Estate",
+    "price": 22.925,
+    "book_value_per_share": 15.416,
+    "pb_ratio": 1.4870913,
+    "market_cap": 15524673536,
+    "roe": 0.055370003
+  },
+  {
+    "ticker": "KR",
+    "company": "Kroger Company (The)",
+    "sector": "Consumer Defensive",
+    "price": 74.685,
+    "book_value_per_share": 12.338,
+    "pb_ratio": 6.05325,
+    "market_cap": 49492119552,
+    "roe": 0.14405
+  },
+  {
+    "ticker": "LH",
+    "company": "Labcorp Holdings Inc.",
+    "sector": "Healthcare",
+    "price": 268.96,
+    "book_value_per_share": 104.864,
+    "pb_ratio": 2.5648458,
+    "market_cap": 22296782848,
+    "roe": 0.10509
+  },
+  {
+    "ticker": "LW",
+    "company": "Lamb Weston Holdings, Inc.",
+    "sector": "Consumer Defensive",
+    "price": 46.58,
+    "book_value_per_share": 12.633,
+    "pb_ratio": 3.6871686,
+    "market_cap": 6491038720,
+    "roe": 0.23164
+  },
+  {
+    "ticker": "LHX",
+    "company": "L3Harris Technologies, Inc.",
+    "sector": "Industrials",
+    "price": 371.56,
+    "book_value_per_share": 105.088,
+    "pb_ratio": 3.5357034,
+    "market_cap": 69501353984,
+    "roe": 0.08191
+  },
+  {
+    "ticker": "LVS",
+    "company": "Las Vegas Sands Corp.",
+    "sector": "Consumer Cyclical",
+    "price": 53.12,
+    "book_value_per_share": 2.356,
+    "pb_ratio": 22.54669,
+    "market_cap": 35916263424,
+    "roe": 0.73263
+  },
+  {
+    "ticker": "LDOS",
+    "company": "Leidos Holdings, Inc.",
+    "sector": "Technology",
+    "price": 178.025,
+    "book_value_per_share": 38.898,
+    "pb_ratio": 4.5767136,
+    "market_cap": 22761416704,
+    "roe": 0.31034002
+  },
+  {
+    "ticker": "LEN",
+    "company": "Lennar Corporation",
+    "sector": "Consumer Cyclical",
+    "price": 97.195,
+    "book_value_per_share": 88.907,
+    "pb_ratio": 1.0932211,
+    "market_cap": 24005877760,
+    "roe": 0.08406
+  },
+  {
+    "ticker": "LII",
+    "company": "Lennox International, Inc.",
+    "sector": "Industrials",
+    "price": 507.23,
+    "book_value_per_share": 33.426,
+    "pb_ratio": 15.174715,
+    "market_cap": 17789968384,
+    "roe": 0.75833
+  },
+  {
+    "ticker": "LLY",
+    "company": "Eli Lilly and Company",
+    "sector": "Healthcare",
+    "price": 1001.38,
+    "book_value_per_share": 29.655,
+    "pb_ratio": 33.767662,
+    "market_cap": 896253886464,
+    "roe": 1.01159
+  },
+  {
+    "ticker": "LYV",
+    "company": "Live Nation Entertainment, Inc.",
+    "sector": "Communication Services",
+    "price": 165.26,
+    "book_value_per_share": 1.158,
+    "pb_ratio": 142.71156,
+    "market_cap": 38803365888,
+    "roe": 0.36701
+  },
+  {
+    "ticker": "LMT",
+    "company": "Lockheed Martin Corporation",
+    "sector": "Industrials",
+    "price": 673.99,
+    "book_value_per_share": 29.349,
+    "pb_ratio": 22.964666,
+    "market_cap": 155959787520,
+    "roe": 0.76865
+  },
+  {
+    "ticker": "LYB",
+    "company": "LyondellBasell Industries NV",
+    "sector": "Basic Materials",
+    "price": 68.945,
+    "book_value_per_share": 31.302,
+    "pb_ratio": 2.202575,
+    "market_cap": 22212009984,
+    "roe": -0.06949
+  },
+  {
+    "ticker": "L",
+    "company": "Loews Corporation",
+    "sector": "Financial Services",
+    "price": 108.08,
+    "book_value_per_share": 90.707,
+    "pb_ratio": 1.1915288,
+    "market_cap": 22335766528,
+    "roe": 0.09431
+  },
+  {
+    "ticker": "MTB",
+    "company": "M&T Bank Corporation",
+    "sector": "Financial Services",
+    "price": 205.75,
+    "book_value_per_share": 173.501,
+    "pb_ratio": 1.1858721,
+    "market_cap": 31621879808,
+    "roe": 0.09797
+  },
+  {
+    "ticker": "MRSH",
+    "company": "Marsh",
+    "sector": "Financial Services",
+    "price": 180.405,
+    "book_value_per_share": 31.143,
+    "pb_ratio": 5.7927947,
+    "market_cap": 88382160896,
+    "roe": 0.29352
+  },
+  {
+    "ticker": "MPC",
+    "company": "Marathon Petroleum Corporation",
+    "sector": "Energy",
+    "price": 216.41,
+    "book_value_per_share": 58.692,
+    "pb_ratio": 3.6872146,
+    "market_cap": 65053380608,
+    "roe": 0.24193001
+  },
+  {
+    "ticker": "MLM",
+    "company": "Martin Marietta Materials, Inc.",
+    "sector": "Basic Materials",
+    "price": 601.95,
+    "book_value_per_share": 166.341,
+    "pb_ratio": 3.618771,
+    "market_cap": 36304838656,
+    "roe": 0.10159001
+  },
+  {
+    "ticker": "MA",
+    "company": "Mastercard Incorporated",
+    "sector": "Financial Services",
+    "price": 515.205,
+    "book_value_per_share": 8.654,
+    "pb_ratio": 59.53374,
+    "market_cap": 459788386304,
+    "roe": 2.09915
+  },
+  {
+    "ticker": "MKC",
+    "company": "McCormick & Company, Incorporat",
+    "sector": "Consumer Defensive",
+    "price": 64.49,
+    "book_value_per_share": 21.373,
+    "pb_ratio": 3.0173583,
+    "market_cap": 17311582208,
+    "roe": 0.14243001
+  },
+  {
+    "ticker": "MDT",
+    "company": "Medtronic plc.",
+    "sector": "Healthcare",
+    "price": 90.64,
+    "book_value_per_share": 38.169,
+    "pb_ratio": 2.374702,
+    "market_cap": 116371333120,
+    "roe": 0.0939
+  },
+  {
+    "ticker": "MRK",
+    "company": "Merck & Company, Inc.",
+    "sector": "Healthcare",
+    "price": 116.19,
+    "book_value_per_share": 21.258,
+    "pb_ratio": 5.4657073,
+    "market_cap": 287267225600,
+    "roe": 0.36882
+  },
+  {
+    "ticker": "MET",
+    "company": "MetLife, Inc.",
+    "sector": "Financial Services",
+    "price": 69.56,
+    "book_value_per_share": 43.334,
+    "pb_ratio": 1.605206,
+    "market_cap": 45832503296,
+    "roe": 0.12020001
+  },
+  {
+    "ticker": "MGM",
+    "company": "MGM Resorts International",
+    "sector": "Consumer Cyclical",
+    "price": 34.76,
+    "book_value_per_share": 9.407,
+    "pb_ratio": 3.6951206,
+    "market_cap": 9507083264,
+    "roe": 0.1489
+  },
+  {
+    "ticker": "MOH",
+    "company": "Molina Healthcare Inc",
+    "sector": "Healthcare",
+    "price": 146.74,
+    "book_value_per_share": 79.784,
+    "pb_ratio": 1.839216,
+    "market_cap": 7557110272,
+    "roe": 0.11022
+  },
+  {
+    "ticker": "MAA",
+    "company": "Mid-America Apartment Communiti",
+    "sector": "Real Estate",
+    "price": 131.03,
+    "book_value_per_share": 48.451,
+    "pb_ratio": 2.7043817,
+    "market_cap": 15726690304,
+    "roe": 0.07645
+  },
+  {
+    "ticker": "MOS",
+    "company": "Mosaic Company (The)",
+    "sector": "Basic Materials",
+    "price": 26.92,
+    "book_value_per_share": 38.074,
+    "pb_ratio": 0.7070442,
+    "market_cap": 8547241472,
+    "roe": 0.048249997
+  },
+  {
+    "ticker": "MS",
+    "company": "Morgan Stanley",
+    "sector": "Financial Services",
+    "price": 157.81,
+    "book_value_per_share": 64.367,
+    "pb_ratio": 2.4517221,
+    "market_cap": 250580221952,
+    "roe": 0.15614
+  },
+  {
+    "ticker": "MCO",
+    "company": "Moody's Corporation",
+    "sector": "Financial Services",
+    "price": 458.82,
+    "book_value_per_share": 22.834,
+    "pb_ratio": 20.093721,
+    "market_cap": 81348788224,
+    "roe": 0.62078
+  },
+  {
+    "ticker": "MSI",
+    "company": "Motorola Solutions, Inc.",
+    "sector": "Technology",
+    "price": 458.185,
+    "book_value_per_share": 14.544,
+    "pb_ratio": 31.50337,
+    "market_cap": 76313001984,
+    "roe": 1.04197
+  },
+  {
+    "ticker": "TAP",
+    "company": "Molson Coors Beverage Company",
+    "sector": "Consumer Defensive",
+    "price": 46,
+    "book_value_per_share": 53.618,
+    "pb_ratio": 0.8579208,
+    "market_cap": 9081682944,
+    "roe": -0.18172
+  },
+  {
+    "ticker": "NEM",
+    "company": "Newmont Corporation",
+    "sector": "Basic Materials",
+    "price": 113.639,
+    "book_value_per_share": 31.113,
+    "pb_ratio": 3.6524603,
+    "market_cap": 124010037248,
+    "roe": 0.22343999
+  },
+  {
+    "ticker": "NKE",
+    "company": "Nike, Inc.",
+    "sector": "Consumer Cyclical",
+    "price": 56.14,
+    "book_value_per_share": 9.518,
+    "pb_ratio": 5.8982983,
+    "market_cap": 83108724736,
+    "roe": 0.17950001
+  },
+  {
+    "ticker": "NI",
+    "company": "NiSource Inc",
+    "sector": "Utilities",
+    "price": 46.75,
+    "book_value_per_share": 19.752,
+    "pb_ratio": 2.366849,
+    "market_cap": 22371426304,
+    "roe": 0.0907
+  },
+  {
+    "ticker": "NEE",
+    "company": "NextEra Energy, Inc.",
+    "sector": "Utilities",
+    "price": 91.36,
+    "book_value_per_share": 26.216,
+    "pb_ratio": 3.4848948,
+    "market_cap": 190350557184,
+    "roe": 0.083739996
+  },
+  {
+    "ticker": "NCLH",
+    "company": "Norwegian Cruise Line Holdings ",
+    "sector": "Consumer Cyclical",
+    "price": 19.965,
+    "book_value_per_share": 4.854,
+    "pb_ratio": 4.1131024,
+    "market_cap": 9089216512,
+    "roe": 0.23285
+  },
+  {
+    "ticker": "NSC",
+    "company": "Norfolk Southern Corporation",
+    "sector": "Industrials",
+    "price": 298.79,
+    "book_value_per_share": 69.276,
+    "pb_ratio": 4.313038,
+    "market_cap": 67099877376,
+    "roe": 0.19248
+  },
+  {
+    "ticker": "NRG",
+    "company": "NRG Energy, Inc.",
+    "sector": "Utilities",
+    "price": 152.17,
+    "book_value_per_share": 5.416,
+    "pb_ratio": 28.096382,
+    "market_cap": 32667480064,
+    "roe": 0.41548002
+  },
+  {
+    "ticker": "NOC",
+    "company": "Northrop Grumman Corporation",
+    "sector": "Industrials",
+    "price": 755.69,
+    "book_value_per_share": 117.425,
+    "pb_ratio": 6.435512,
+    "market_cap": 107852128256,
+    "roe": 0.26167
+  },
+  {
+    "ticker": "NUE",
+    "company": "Nucor Corporation",
+    "sector": "Basic Materials",
+    "price": 166.85,
+    "book_value_per_share": 91.704,
+    "pb_ratio": 1.8194408,
+    "market_cap": 38185066496,
+    "roe": 0.09361
+  },
+  {
+    "ticker": "NVR",
+    "company": "NVR, Inc.",
+    "sector": "Consumer Cyclical",
+    "price": 6762.305,
+    "book_value_per_share": 1380.613,
+    "pb_ratio": 4.898045,
+    "market_cap": 19201105920,
+    "roe": 0.33185002
+  },
+  {
+    "ticker": "OXY",
+    "company": "Occidental Petroleum Corporatio",
+    "sector": "Energy",
+    "price": 55.285,
+    "book_value_per_share": 28.14,
+    "pb_ratio": 1.9646411,
+    "market_cap": 54525751296,
+    "roe": 0.05929
+  },
+  {
+    "ticker": "OMC",
+    "company": "Omnicom Group Inc.",
+    "sector": "Communication Services",
+    "price": 83.8,
+    "book_value_per_share": 38.473,
+    "pb_ratio": 2.1781511,
+    "market_cap": 26363789312,
+    "roe": 0.00479
+  },
+  {
+    "ticker": "OKE",
+    "company": "ONEOK, Inc.",
+    "sector": "Energy",
+    "price": 86.75,
+    "book_value_per_share": 35.707,
+    "pb_ratio": 2.4294956,
+    "market_cap": 54633730048,
+    "roe": 0.15489
+  },
+  {
+    "ticker": "ORCL",
+    "company": "Oracle Corporation",
+    "sector": "Technology",
+    "price": 150.15,
+    "book_value_per_share": 10.425,
+    "pb_ratio": 14.402877,
+    "market_cap": 431544762368,
+    "roe": 0.69026
+  },
+  {
+    "ticker": "PH",
+    "company": "Parker-Hannifin Corporation",
+    "sector": "Industrials",
+    "price": 913.83,
+    "book_value_per_share": 113.385,
+    "pb_ratio": 8.059531,
+    "market_cap": 115340451840,
+    "roe": 0.25781
+  },
+  {
+    "ticker": "PAYC",
+    "company": "Paycom Software, Inc.",
+    "sector": "Technology",
+    "price": 136.42,
+    "book_value_per_share": 32.364,
+    "pb_ratio": 4.2151775,
+    "market_cap": 7490292736,
+    "roe": 0.27417
+  },
+  {
+    "ticker": "PNR",
+    "company": "Pentair plc.",
+    "sector": "Industrials",
+    "price": 90.84,
+    "book_value_per_share": 23.703,
+    "pb_ratio": 3.8324263,
+    "market_cap": 14865228800,
+    "roe": 0.17478001
+  },
+  {
+    "ticker": "PFE",
+    "company": "Pfizer, Inc.",
+    "sector": "Healthcare",
+    "price": 26.65,
+    "book_value_per_share": 15.209,
+    "pb_ratio": 1.752252,
+    "market_cap": 151539023872,
+    "roe": 0.08886
+  },
+  {
+    "ticker": "PKG",
+    "company": "Packaging Corporation of Americ",
+    "sector": "Consumer Cyclical",
+    "price": 218.05,
+    "book_value_per_share": 51.888,
+    "pb_ratio": 4.2023206,
+    "market_cap": 19619500032,
+    "roe": 0.17198
+  },
+  {
+    "ticker": "PCG",
+    "company": "Pacific Gas & Electric Co.",
+    "sector": "Utilities",
+    "price": 18.105,
+    "book_value_per_share": 14.086,
+    "pb_ratio": 1.2853187,
+    "market_cap": 39794208768,
+    "roe": 0.08207
+  },
+  {
+    "ticker": "PSX",
+    "company": "Phillips 66",
+    "sector": "Energy",
+    "price": 164.205,
+    "book_value_per_share": 72.526,
+    "pb_ratio": 2.2640846,
+    "market_cap": 65804173312,
+    "roe": 0.15427
+  },
+  {
+    "ticker": "PNW",
+    "company": "Pinnacle West Capital Corporati",
+    "sector": "Utilities",
+    "price": 101.26,
+    "book_value_per_share": 58.281,
+    "pb_ratio": 1.7374445,
+    "market_cap": 12242880512,
+    "roe": 0.09059
+  },
+  {
+    "ticker": "PG",
+    "company": "Procter & Gamble Company (The)",
+    "sector": "Consumer Defensive",
+    "price": 155.33,
+    "book_value_per_share": 22.493,
+    "pb_ratio": 6.905704,
+    "market_cap": 363547590656,
+    "roe": 0.31562
+  },
+  {
+    "ticker": "PPL",
+    "company": "PPL Corporation",
+    "sector": "Utilities",
+    "price": 38.225,
+    "book_value_per_share": 19.814,
+    "pb_ratio": 1.9291915,
+    "market_cap": 28718702592,
+    "roe": 0.08157
+  },
+  {
+    "ticker": "PNC",
+    "company": "PNC Financial Services Group, I",
+    "sector": "Financial Services",
+    "price": 200.44,
+    "book_value_per_share": 140.433,
+    "pb_ratio": 1.4272999,
+    "market_cap": 81040678912,
+    "roe": 0.12158
+  },
+  {
+    "ticker": "PGR",
+    "company": "Progressive Corporation (The)",
+    "sector": "Financial Services",
+    "price": 205.93,
+    "book_value_per_share": 51.737,
+    "pb_ratio": 3.9803236,
+    "market_cap": 120654389248,
+    "roe": 0.40448
+  },
+  {
+    "ticker": "PLD",
+    "company": "Prologis, Inc.",
+    "sector": "Real Estate",
+    "price": 132.27,
+    "book_value_per_share": 57.18,
+    "pb_ratio": 2.3132215,
+    "market_cap": 122952769536,
+    "roe": 0.06127
+  },
+  {
+    "ticker": "PRU",
+    "company": "Prudential Financial, Inc.",
+    "sector": "Financial Services",
+    "price": 94.655,
+    "book_value_per_share": 93.228,
+    "pb_ratio": 1.0153066,
+    "market_cap": 32939939840,
+    "roe": 0.11359999
+  },
+  {
+    "ticker": "PPG",
+    "company": "PPG Industries, Inc.",
+    "sector": "Basic Materials",
+    "price": 104.89,
+    "book_value_per_share": 35.542,
+    "pb_ratio": 2.9511564,
+    "market_cap": 23442360320,
+    "roe": 0.21077
+  },
+  {
+    "ticker": "PEG",
+    "company": "Public Service Enterprise Group",
+    "sector": "Utilities",
+    "price": 83,
+    "book_value_per_share": 34.1,
+    "pb_ratio": 2.4340177,
+    "market_cap": 41429782528,
+    "roe": 0.12757
+  },
+  {
+    "ticker": "PSA",
+    "company": "Public Storage",
+    "sector": "Real Estate",
+    "price": 302.53,
+    "book_value_per_share": 27.91,
+    "pb_ratio": 10.839484,
+    "market_cap": 53095964672,
+    "roe": 0.18763
+  },
+  {
+    "ticker": "PHM",
+    "company": "PulteGroup, Inc.",
+    "sector": "Consumer Cyclical",
+    "price": 123.675,
+    "book_value_per_share": 67.378,
+    "pb_ratio": 1.8355399,
+    "market_cap": 23786151936,
+    "roe": 0.17673999
+  },
+  {
+    "ticker": "PWR",
+    "company": "Quanta Services, Inc.",
+    "sector": "Industrials",
+    "price": 563.46,
+    "book_value_per_share": 59.757,
+    "pb_ratio": 9.429189,
+    "market_cap": 84304560128,
+    "roe": 0.12739
+  },
+  {
+    "ticker": "RL",
+    "company": "Ralph Lauren Corporation",
+    "sector": "Consumer Cyclical",
+    "price": 340.1,
+    "book_value_per_share": 47.663,
+    "pb_ratio": 7.1355143,
+    "market_cap": 20623888384,
+    "roe": 0.33846
+  },
+  {
+    "ticker": "DGX",
+    "company": "Quest Diagnostics Incorporated",
+    "sector": "Healthcare",
+    "price": 199.09,
+    "book_value_per_share": 65.182,
+    "pb_ratio": 3.0543709,
+    "market_cap": 22147241984,
+    "roe": 0.14751
+  },
+  {
+    "ticker": "RTX",
+    "company": "RTX Corporation",
+    "sector": "Industrials",
+    "price": 209.875,
+    "book_value_per_share": 48.607,
+    "pb_ratio": 4.317794,
+    "market_cap": 281712623616,
+    "roe": 0.109519996
+  },
+  {
+    "ticker": "RJF",
+    "company": "Raymond James Financial, Inc.",
+    "sector": "Financial Services",
+    "price": 149,
+    "book_value_per_share": 63.396,
+    "pb_ratio": 2.350306,
+    "market_cap": 29423015936,
+    "roe": 0.17124
+  },
+  {
+    "ticker": "O",
+    "company": "Realty Income Corporation",
+    "sector": "Real Estate",
+    "price": 64.415,
+    "book_value_per_share": 42.227,
+    "pb_ratio": 1.5254458,
+    "market_cap": 60277944320,
+    "roe": 0.02702
+  },
+  {
+    "ticker": "RSG",
+    "company": "Republic Services, Inc.",
+    "sector": "Industrials",
+    "price": 231.135,
+    "book_value_per_share": 38.857,
+    "pb_ratio": 5.948349,
+    "market_cap": 71550976000,
+    "roe": 0.18301001
+  },
+  {
+    "ticker": "Q",
+    "company": "Qnity Electronics, Inc.",
+    "sector": "Technology",
+    "price": 111.215,
+    "book_value_per_share": 33.86,
+    "pb_ratio": 3.2845538,
+    "market_cap": 23317215232,
+    "roe": 0.079840004
+  },
+  {
+    "ticker": "RMD",
+    "company": "ResMed Inc.",
+    "sector": "Healthcare",
+    "price": 252.355,
+    "book_value_per_share": 43.394,
+    "pb_ratio": 5.815435,
+    "market_cap": 36835323904,
+    "roe": 0.25676
+  },
+  {
+    "ticker": "RF",
+    "company": "Regions Financial Corporation",
+    "sector": "Financial Services",
+    "price": 26.34,
+    "book_value_per_share": 20.385,
+    "pb_ratio": 1.2921265,
+    "market_cap": 23096926208,
+    "roe": 0.1165
+  },
+  {
+    "ticker": "RVTY",
+    "company": "Revvity, Inc.",
+    "sector": "Healthcare",
+    "price": 91.2875,
+    "book_value_per_share": 64.573,
+    "pb_ratio": 1.4137101,
+    "market_cap": 10349776896,
+    "roe": 0.03216
+  },
+  {
+    "ticker": "RCL",
+    "company": "Royal Caribbean Cruises Ltd.",
+    "sector": "Consumer Cyclical",
+    "price": 276.735,
+    "book_value_per_share": 37.116,
+    "pb_ratio": 7.4559484,
+    "market_cap": 75469217792,
+    "roe": 0.47731
+  },
+  {
+    "ticker": "ROL",
+    "company": "Rollins, Inc.",
+    "sector": "Consumer Cyclical",
+    "price": 57.645,
+    "book_value_per_share": 2.856,
+    "pb_ratio": 20.183825,
+    "market_cap": 27732561920,
+    "roe": 0.38944
+  },
+  {
+    "ticker": "SPGI",
+    "company": "S&P Global Inc.",
+    "sector": "Financial Services",
+    "price": 444.38,
+    "book_value_per_share": 104.173,
+    "pb_ratio": 4.265789,
+    "market_cap": 134558269440,
+    "roe": 0.13087
+  },
+  {
+    "ticker": "SLB",
+    "company": "SLB Limited",
+    "sector": "Energy",
+    "price": 46.23,
+    "book_value_per_share": 17.46,
+    "pb_ratio": 2.6477664,
+    "market_cap": 69129175040,
+    "roe": 0.13904001
+  },
+  {
+    "ticker": "CRM",
+    "company": "Salesforce, Inc.",
+    "sector": "Technology",
+    "price": 198.66,
+    "book_value_per_share": 63.662,
+    "pb_ratio": 3.120543,
+    "market_cap": 186144423936,
+    "roe": 0.123959996
+  },
+  {
+    "ticker": "SRE",
+    "company": "DBA Sempra",
+    "sector": "Utilities",
+    "price": 92.625,
+    "book_value_per_share": 48.403,
+    "pb_ratio": 1.9136211,
+    "market_cap": 60510445568,
+    "roe": 0.051909998
+  },
+  {
+    "ticker": "ROK",
+    "company": "Rockwell Automation, Inc.",
+    "sector": "Industrials",
+    "price": 368.36,
+    "book_value_per_share": 33.34,
+    "pb_ratio": 11.04859,
+    "market_cap": 41415884800,
+    "roe": 0.23736
+  },
+  {
+    "ticker": "SHW",
+    "company": "Sherwin-Williams Company (The)",
+    "sector": "Basic Materials",
+    "price": 324.4,
+    "book_value_per_share": 18.671,
+    "pb_ratio": 17.374538,
+    "market_cap": 80378134528,
+    "roe": 0.59391
+  },
+  {
+    "ticker": "NOW",
+    "company": "ServiceNow, Inc.",
+    "sector": "Technology",
+    "price": 123.61,
+    "book_value_per_share": 12.379,
+    "pb_ratio": 9.985459,
+    "market_cap": 130426224640,
+    "roe": 0.15488
+  },
+  {
+    "ticker": "SW",
+    "company": "Smurfit WestRock plc",
+    "sector": "Consumer Cyclical",
+    "price": 40.93,
+    "book_value_per_share": 35.186,
+    "pb_ratio": 1.1632468,
+    "market_cap": 21457704960,
+    "roe": 0.03911
+  },
+  {
+    "ticker": "SJM",
+    "company": "The J.M. Smucker Company",
+    "sector": "Consumer Defensive",
+    "price": 109.97,
+    "book_value_per_share": 49.074,
+    "pb_ratio": 2.2409015,
+    "market_cap": 11733175296,
+    "roe": -0.20683001
+  },
+  {
+    "ticker": "SNA",
+    "company": "Snap-On Incorporated",
+    "sector": "Industrials",
+    "price": 368.39,
+    "book_value_per_share": 114.365,
+    "pb_ratio": 3.221178,
+    "market_cap": 19159064576,
+    "roe": 0.18327999
+  },
+  {
+    "ticker": "SPG",
+    "company": "Simon Property Group, Inc.",
+    "sector": "Real Estate",
+    "price": 188.93,
+    "book_value_per_share": 15.89,
+    "pb_ratio": 11.889867,
+    "market_cap": 61393420288,
+    "roe": 1.04109
+  },
+  {
+    "ticker": "SO",
+    "company": "Southern Company (The)",
+    "sector": "Utilities",
+    "price": 97.055,
+    "book_value_per_share": 32.179,
+    "pb_ratio": 3.0160973,
+    "market_cap": 108642516992,
+    "roe": 0.11043
+  },
+  {
+    "ticker": "SOLV",
+    "company": "Solventum Corporation",
+    "sector": "Healthcare",
+    "price": 67.77,
+    "book_value_per_share": 29.102,
+    "pb_ratio": 2.3287058,
+    "market_cap": 11757620224,
+    "roe": 0.38861
+  },
+  {
+    "ticker": "SWK",
+    "company": "Stanley Black & Decker, Inc.",
+    "sector": "Industrials",
+    "price": 72.55,
+    "book_value_per_share": 58.403,
+    "pb_ratio": 1.2422308,
+    "market_cap": 11251015680,
+    "roe": 0.04522
+  },
+  {
+    "ticker": "LUV",
+    "company": "Southwest Airlines Company",
+    "sector": "Industrials",
+    "price": 41.06,
+    "book_value_per_share": 15.48,
+    "pb_ratio": 2.6524549,
+    "market_cap": 21234386944,
+    "roe": 0.04812
+  },
+  {
+    "ticker": "STE",
+    "company": "STERIS plc (Ireland)",
+    "sector": "Healthcare",
+    "price": 223.74,
+    "book_value_per_share": 72.931,
+    "pb_ratio": 3.0678313,
+    "market_cap": 21959411712,
+    "roe": 0.10468
+  },
+  {
+    "ticker": "STT",
+    "company": "State Street Corporation",
+    "sector": "Financial Services",
+    "price": 118.7,
+    "book_value_per_share": 87.008,
+    "pb_ratio": 1.3642423,
+    "market_cap": 33154385920,
+    "roe": 0.11078
+  },
+  {
+    "ticker": "SYK",
+    "company": "Stryker Corporation",
+    "sector": "Healthcare",
+    "price": 362.51,
+    "book_value_per_share": 58.614,
+    "pb_ratio": 6.1847,
+    "market_cap": 138728472576,
+    "roe": 0.15079
+  },
+  {
+    "ticker": "TPR",
+    "company": "Tapestry, Inc.",
+    "sector": "Consumer Cyclical",
+    "price": 142.0699,
+    "book_value_per_share": 2.719,
+    "pb_ratio": 52.25079,
+    "market_cap": 29074571264,
+    "roe": 0.55337
+  },
+  {
+    "ticker": "SYY",
+    "company": "Sysco Corporation",
+    "sector": "Consumer Defensive",
+    "price": 83.84,
+    "book_value_per_share": 4.767,
+    "pb_ratio": 17.58758,
+    "market_cap": 40153542656,
+    "roe": 0.82345
+  },
+  {
+    "ticker": "SYF",
+    "company": "Synchrony Financial",
+    "sector": "Financial Services",
+    "price": 66.03,
+    "book_value_per_share": 44.744,
+    "pb_ratio": 1.4757286,
+    "market_cap": 23782096896,
+    "roe": 0.21304001
+  },
+  {
+    "ticker": "TEL",
+    "company": "TE Connectivity plc",
+    "sector": "Technology",
+    "price": 203.86,
+    "book_value_per_share": 44.217,
+    "pb_ratio": 4.610444,
+    "market_cap": 59840143360,
+    "roe": 0.16097
+  },
+  {
+    "ticker": "TDY",
+    "company": "Teledyne Technologies Incorpora",
+    "sector": "Technology",
+    "price": 643.605,
+    "book_value_per_share": 227.645,
+    "pb_ratio": 2.827231,
+    "market_cap": 30217889792,
+    "roe": 0.08926
+  },
+  {
+    "ticker": "TGT",
+    "company": "Target Corporation",
+    "sector": "Consumer Defensive",
+    "price": 118.22,
+    "book_value_per_share": 35.697,
+    "pb_ratio": 3.311763,
+    "market_cap": 53719064576,
+    "roe": 0.24034001
+  },
+  {
+    "ticker": "TRGP",
+    "company": "Targa Resources, Inc.",
+    "sector": "Energy",
+    "price": 236.14,
+    "book_value_per_share": 14.292,
+    "pb_ratio": 16.52253,
+    "market_cap": 50758717440,
+    "roe": 0.51381
+  },
+  {
+    "ticker": "TXT",
+    "company": "Textron Inc.",
+    "sector": "Industrials",
+    "price": 93.64,
+    "book_value_per_share": 45.178,
+    "pb_ratio": 2.0726902,
+    "market_cap": 16308570112,
+    "roe": 0.12242
+  },
+  {
+    "ticker": "TPL",
+    "company": "Texas Pacific Land Corporation",
+    "sector": "Energy",
+    "price": 539.29,
+    "book_value_per_share": 21.163,
+    "pb_ratio": 25.482681,
+    "market_cap": 37179486208,
+    "roe": 0.37152
+  },
+  {
+    "ticker": "TKO",
+    "company": "TKO Group Holdings, Inc.",
+    "sector": "Communication Services",
+    "price": 201.91,
+    "book_value_per_share": 48.059,
+    "pb_ratio": 4.2012944,
+    "market_cap": 15935213568,
+    "roe": 0.056339998
+  },
+  {
+    "ticker": "TJX",
+    "company": "TJX Companies, Inc. (The)",
+    "sector": "Consumer Cyclical",
+    "price": 157.7,
+    "book_value_per_share": 9.058,
+    "pb_ratio": 17.410025,
+    "market_cap": 175510437888,
+    "roe": 0.59129
+  },
+  {
+    "ticker": "TT",
+    "company": "Trane Technologies plc",
+    "sector": "Industrials",
+    "price": 420.4,
+    "book_value_per_share": 38.737,
+    "pb_ratio": 10.852674,
+    "market_cap": 93219078144,
+    "roe": 0.36956
+  },
+  {
+    "ticker": "TMO",
+    "company": "Thermo Fisher Scientific Inc",
+    "sector": "Healthcare",
+    "price": 501.2437,
+    "book_value_per_share": 141.956,
+    "pb_ratio": 3.5309796,
+    "market_cap": 186204143616,
+    "roe": 0.13024001
+  },
+  {
+    "ticker": "TRV",
+    "company": "The Travelers Companies, Inc.",
+    "sector": "Financial Services",
+    "price": 301.515,
+    "book_value_per_share": 151.237,
+    "pb_ratio": 1.993659,
+    "market_cap": 67256971264,
+    "roe": 0.20698999
+  },
+  {
+    "ticker": "TFC",
+    "company": "Truist Financial Corporation",
+    "sector": "Financial Services",
+    "price": 45.735,
+    "book_value_per_share": 47.742,
+    "pb_ratio": 0.95796156,
+    "market_cap": 57130717184,
+    "roe": 0.08236
+  },
+  {
+    "ticker": "TSN",
+    "company": "Tyson Foods, Inc.",
+    "sector": "Consumer Defensive",
+    "price": 60.975,
+    "book_value_per_share": 51.19,
+    "pb_ratio": 1.1911507,
+    "market_cap": 21468014592,
+    "roe": 0.012560001
+  },
+  {
+    "ticker": "USB",
+    "company": "U.S. Bancorp",
+    "sector": "Financial Services",
+    "price": 51.065,
+    "book_value_per_share": 37.537,
+    "pb_ratio": 1.3603911,
+    "market_cap": 79339470848,
+    "roe": 0.12184
+  },
+  {
+    "ticker": "TYL",
+    "company": "Tyler Technologies, Inc.",
+    "sector": "Technology",
+    "price": 367.95,
+    "book_value_per_share": 85.87,
+    "pb_ratio": 4.2849655,
+    "market_cap": 15816456192,
+    "roe": 0.08901
+  },
+  {
+    "ticker": "UDR",
+    "company": "UDR, Inc.",
+    "sector": "Real Estate",
+    "price": 36.975,
+    "book_value_per_share": 9.886,
+    "pb_ratio": 3.7401376,
+    "market_cap": 13920681984,
+    "roe": 0.09378
+  },
+  {
+    "ticker": "UPS",
+    "company": "United Parcel Service, Inc.",
+    "sector": "Industrials",
+    "price": 98.1403,
+    "book_value_per_share": 19.113,
+    "pb_ratio": 5.1347404,
+    "market_cap": 83331096576,
+    "roe": 0.33772
+  },
+  {
+    "ticker": "UBER",
+    "company": "Uber Technologies, Inc.",
+    "sector": "Technology",
+    "price": 73.735,
+    "book_value_per_share": 13.077,
+    "pb_ratio": 5.638526,
+    "market_cap": 153208832000,
+    "roe": 0.39925998
+  },
+  {
+    "ticker": "UNP",
+    "company": "Union Pacific Corporation",
+    "sector": "Industrials",
+    "price": 251.09,
+    "book_value_per_share": 31.129,
+    "pb_ratio": 8.066112,
+    "market_cap": 148994670592,
+    "roe": 0.40377
+  },
+  {
+    "ticker": "UNH",
+    "company": "UnitedHealth Group Incorporated",
+    "sector": "Healthcare",
+    "price": 283.04,
+    "book_value_per_share": 103.874,
+    "pb_ratio": 2.7248397,
+    "market_cap": 256908574720,
+    "roe": 0.12538
+  },
+  {
+    "ticker": "URI",
+    "company": "United Rentals, Inc.",
+    "sector": "Industrials",
+    "price": 810.27,
+    "book_value_per_share": 142.133,
+    "pb_ratio": 5.7007875,
+    "market_cap": 51557601280,
+    "roe": 0.28357
+  },
+  {
+    "ticker": "UHS",
+    "company": "Universal Health Services, Inc.",
+    "sector": "Healthcare",
+    "price": 187.08,
+    "book_value_per_share": 119.15,
+    "pb_ratio": 1.5701216,
+    "market_cap": 11428088832,
+    "roe": 0.21326
+  },
+  {
+    "ticker": "VTR",
+    "company": "Ventas, Inc.",
+    "sector": "Real Estate",
+    "price": 85.4,
+    "book_value_per_share": 26.377,
+    "pb_ratio": 3.2376692,
+    "market_cap": 40562028544,
+    "roe": 0.0217
+  },
+  {
+    "ticker": "VLTO",
+    "company": "Veralto Corp",
+    "sector": "Industrials",
+    "price": 93.11,
+    "book_value_per_share": 12.5,
+    "pb_ratio": 7.4488,
+    "market_cap": 23118966784,
+    "roe": 0.36498
+  },
+  {
+    "ticker": "VLO",
+    "company": "Valero Energy Corporation",
+    "sector": "Energy",
+    "price": 217.6887,
+    "book_value_per_share": 79.364,
+    "pb_ratio": 2.7429152,
+    "market_cap": 66397130752,
+    "roe": 0.08299
+  },
+  {
+    "ticker": "VICI",
+    "company": "VICI Properties Inc.",
+    "sector": "Real Estate",
+    "price": 29.28,
+    "book_value_per_share": 26.008,
+    "pb_ratio": 1.1258075,
+    "market_cap": 31294797824,
+    "roe": 0.10217
+  },
+  {
+    "ticker": "V",
+    "company": "Visa Inc.",
+    "sector": "Financial Services",
+    "price": 314.29,
+    "book_value_per_share": 20.034,
+    "pb_ratio": 15.687831,
+    "market_cap": 605963550720,
+    "roe": 0.53954
+  },
+  {
+    "ticker": "VST",
+    "company": "Vistra Corp.",
+    "sector": "Utilities",
+    "price": 160.62,
+    "book_value_per_share": 7.753,
+    "pb_ratio": 20.717142,
+    "market_cap": 54422151168,
+    "roe": 0.17656
+  },
+  {
+    "ticker": "VZ",
+    "company": "Verizon Communications Inc.",
+    "sector": "Communication Services",
+    "price": 50.892,
+    "book_value_per_share": 24.77,
+    "pb_ratio": 2.054582,
+    "market_cap": 214646374400,
+    "roe": 0.17069
+  },
+  {
+    "ticker": "WRB",
+    "company": "W.R. Berkley Corporation",
+    "sector": "Financial Services",
+    "price": 67.79,
+    "book_value_per_share": 25.721,
+    "pb_ratio": 2.6355896,
+    "market_cap": 25761636352,
+    "roe": 0.19700001
+  },
+  {
+    "ticker": "VMC",
+    "company": "Vulcan Materials Company (Holdi",
+    "sector": "Basic Materials",
+    "price": 270.46,
+    "book_value_per_share": 65.276,
+    "pb_ratio": 4.1433296,
+    "market_cap": 35736121344,
+    "roe": 0.12972
+  },
+  {
+    "ticker": "GWW",
+    "company": "W.W. Grainger, Inc.",
+    "sector": "Industrials",
+    "price": 1098.77,
+    "book_value_per_share": 78.787,
+    "pb_ratio": 13.946082,
+    "market_cap": 52245786624,
+    "roe": 0.46098998
+  },
+  {
+    "ticker": "WAB",
+    "company": "Westinghouse Air Brake Technolo",
+    "sector": "Industrials",
+    "price": 243.355,
+    "book_value_per_share": 65.311,
+    "pb_ratio": 3.7260952,
+    "market_cap": 41603284992,
+    "roe": 0.11096
+  },
+  {
+    "ticker": "DIS",
+    "company": "Walt Disney Company (The)",
+    "sector": "Communication Services",
+    "price": 100.2168,
+    "book_value_per_share": 61.079,
+    "pb_ratio": 1.6407734,
+    "market_cap": 177723162624,
+    "roe": 0.12024
+  },
+  {
+    "ticker": "WM",
+    "company": "Waste Management, Inc.",
+    "sector": "Industrials",
+    "price": 247.905,
+    "book_value_per_share": 24.793,
+    "pb_ratio": 9.998992,
+    "market_cap": 99988955136,
+    "roe": 0.29696
+  },
+  {
+    "ticker": "WEC",
+    "company": "WEC Energy Group, Inc.",
+    "sector": "Utilities",
+    "price": 115.58,
+    "book_value_per_share": 41.829,
+    "pb_ratio": 2.763155,
+    "market_cap": 37624913920,
+    "roe": 0.11576
+  },
+  {
+    "ticker": "WAT",
+    "company": "Waters Corporation",
+    "sector": "Healthcare",
+    "price": 302.11,
+    "book_value_per_share": 43.011,
+    "pb_ratio": 7.0240164,
+    "market_cap": 29637554176,
+    "roe": 0.29279
+  },
+  {
+    "ticker": "WELL",
+    "company": "Welltower Inc.",
+    "sector": "Real Estate",
+    "price": 207.53,
+    "book_value_per_share": 60.487,
+    "pb_ratio": 3.4309852,
+    "market_cap": 144804577280,
+    "roe": 0.025390001
+  },
+  {
+    "ticker": "WFC",
+    "company": "Wells Fargo & Company",
+    "sector": "Financial Services",
+    "price": 77.59,
+    "book_value_per_share": 53.194,
+    "pb_ratio": 1.458623,
+    "market_cap": 243561562112,
+    "roe": 0.11732
+  },
+  {
+    "ticker": "WST",
+    "company": "West Pharmaceutical Services, I",
+    "sector": "Healthcare",
+    "price": 244.51,
+    "book_value_per_share": 44.111,
+    "pb_ratio": 5.5430617,
+    "market_cap": 17609973760,
+    "roe": 0.16855
+  },
+  {
+    "ticker": "WSM",
+    "company": "Williams-Sonoma, Inc.",
+    "sector": "Consumer Cyclical",
+    "price": 181.95,
+    "book_value_per_share": 17.176,
+    "pb_ratio": 10.593269,
+    "market_cap": 21721319424,
+    "roe": 0.56918997
+  },
+  {
+    "ticker": "WMB",
+    "company": "Williams Companies, Inc. (The)",
+    "sector": "Energy",
+    "price": 73.39,
+    "book_value_per_share": 10.452,
+    "pb_ratio": 7.0216227,
+    "market_cap": 89650520064,
+    "roe": 0.18555
+  },
+  {
+    "ticker": "XYL",
+    "company": "Xylem Inc.",
+    "sector": "Industrials",
+    "price": 122.005,
+    "book_value_per_share": 47.13,
+    "pb_ratio": 2.5886908,
+    "market_cap": 29704441856,
+    "roe": 0.08396
+  },
+  {
+    "ticker": "WY",
+    "company": "Weyerhaeuser Company",
+    "sector": "Real Estate",
+    "price": 24.085,
+    "book_value_per_share": 13.082,
+    "pb_ratio": 1.8410794,
+    "market_cap": 17361936384,
+    "roe": 0.03384
+  },
+  {
+    "ticker": "ZBH",
+    "company": "Zimmer Biomet Holdings, Inc.",
+    "sector": "Healthcare",
+    "price": 92.635,
+    "book_value_per_share": 64.95,
+    "pb_ratio": 1.426251,
+    "market_cap": 18358548480,
+    "roe": 0.05599
+  },
+  {
+    "ticker": "AMD",
+    "company": "Advanced Micro Devices, Inc.",
+    "sector": "Technology",
+    "price": 197.25,
+    "book_value_per_share": 38.65,
+    "pb_ratio": 5.1034927,
+    "market_cap": 321598554112,
+    "roe": 0.07082
+  },
+  {
+    "ticker": "ZTS",
+    "company": "Zoetis Inc.",
+    "sector": "Healthcare",
+    "price": 119.68,
+    "book_value_per_share": 7.839,
+    "pb_ratio": 15.267253,
+    "market_cap": 52742164480,
+    "roe": 0.65992
+  },
+  {
+    "ticker": "AKAM",
+    "company": "Akamai Technologies, Inc.",
+    "sector": "Technology",
+    "price": 102.465,
+    "book_value_per_share": 34.395,
+    "pb_ratio": 2.9790666,
+    "market_cap": 14845960192,
+    "roe": 0.091730006
+  },
+  {
+    "ticker": "ADBE",
+    "company": "Adobe Inc.",
+    "sector": "Technology",
+    "price": 281.885,
+    "book_value_per_share": 28.143,
+    "pb_ratio": 10.016168,
+    "market_cap": 117997068288,
+    "roe": 0.55426
+  },
+  {
+    "ticker": "ABNB",
+    "company": "Airbnb, Inc.",
+    "sector": "Consumer Cyclical",
+    "price": 131.55,
+    "book_value_per_share": 13.62,
+    "pb_ratio": 9.65859,
+    "market_cap": 78866063360,
+    "roe": 0.30233
+  },
+  {
+    "ticker": "ALGN",
+    "company": "Align Technology, Inc.",
+    "sector": "Healthcare",
+    "price": 169.135,
+    "book_value_per_share": 56.739,
+    "pb_ratio": 2.9809303,
+    "market_cap": 12135436288,
+    "roe": 0.103870004
+  },
+  {
+    "ticker": "LNT",
+    "company": "Alliant Energy Corporation",
+    "sector": "Utilities",
+    "price": 71.35,
+    "book_value_per_share": 28.522,
+    "pb_ratio": 2.5015776,
+    "market_cap": 18346997760,
+    "roe": 0.11299
+  },
+  {
+    "ticker": "GOOG",
+    "company": "Alphabet Inc.",
+    "sector": "Communication Services",
+    "price": 301.33,
+    "book_value_per_share": 34.353,
+    "pb_ratio": 8.771577,
+    "market_cap": 3645188866048,
+    "roe": 0.35705003
+  },
+  {
+    "ticker": "GOOGL",
+    "company": "Alphabet Inc.",
+    "sector": "Communication Services",
+    "price": 301.62,
+    "book_value_per_share": 34.353,
+    "pb_ratio": 8.780019,
+    "market_cap": 3648697139200,
+    "roe": 0.35705003
+  },
+  {
+    "ticker": "AMGN",
+    "company": "Amgen Inc.",
+    "sector": "Healthcare",
+    "price": 374.06,
+    "book_value_per_share": 16.069,
+    "pb_ratio": 23.278362,
+    "market_cap": 201643638784,
+    "roe": 1.0610299
+  },
+  {
+    "ticker": "AEP",
+    "company": "American Electric Power Company",
+    "sector": "Utilities",
+    "price": 131.48,
+    "book_value_per_share": 57.571,
+    "pb_ratio": 2.2837887,
+    "market_cap": 71112466432,
+    "roe": 0.12486
+  },
+  {
+    "ticker": "AMZN",
+    "company": "Amazon.com, Inc.",
+    "sector": "Consumer Cyclical",
+    "price": 209.96,
+    "book_value_per_share": 38.306,
+    "pb_ratio": 5.481126,
+    "market_cap": 2253904150528,
+    "roe": 0.22286
+  },
+  {
+    "ticker": "APA",
+    "company": "APA Corporation",
+    "sector": "Energy",
+    "price": 33.18,
+    "book_value_per_share": 17.262,
+    "pb_ratio": 1.9221412,
+    "market_cap": 11871354880,
+    "roe": 0.2532
+  },
+  {
+    "ticker": "ADI",
+    "company": "Analog Devices, Inc.",
+    "sector": "Technology",
+    "price": 315.11,
+    "book_value_per_share": 69.207,
+    "pb_ratio": 4.553152,
+    "market_cap": 153838010368,
+    "roe": 0.07862
+  },
+  {
+    "ticker": "AAPL",
+    "company": "Apple Inc.",
+    "sector": "Technology",
+    "price": 257.91,
+    "book_value_per_share": 5.998,
+    "pb_ratio": 42.999332,
+    "market_cap": 3790741962752,
+    "roe": 1.5202099
+  },
+  {
+    "ticker": "AMAT",
+    "company": "Applied Materials, Inc.",
+    "sector": "Technology",
+    "price": 329.175,
+    "book_value_per_share": 27.365,
+    "pb_ratio": 12.029052,
+    "market_cap": 261236506624,
+    "roe": 0.38863
+  },
+  {
+    "ticker": "ACGL",
+    "company": "Arch Capital Group Ltd.",
+    "sector": "Financial Services",
+    "price": 95.87,
+    "book_value_per_share": 65.371,
+    "pb_ratio": 1.4665525,
+    "market_cap": 34764951552,
+    "roe": 0.19540001
+  },
+  {
+    "ticker": "ADSK",
+    "company": "Autodesk, Inc.",
+    "sector": "Technology",
+    "price": 260.31,
+    "book_value_per_share": 14.363,
+    "pb_ratio": 18.123652,
+    "market_cap": 55185719296,
+    "roe": 0.39675
+  },
+  {
+    "ticker": "APP",
+    "company": "Applovin Corporation",
+    "sector": "Communication Services",
+    "price": 508.94,
+    "book_value_per_share": 6.31,
+    "pb_ratio": 80.656105,
+    "market_cap": 171998822400,
+    "roe": 2.12945
+  },
+  {
+    "ticker": "TECH",
+    "company": "Bio-Techne Corp",
+    "sector": "Healthcare",
+    "price": 53.76,
+    "book_value_per_share": 12.901,
+    "pb_ratio": 4.1671185,
+    "market_cap": 8410929152,
+    "roe": 0.03966
+  },
+  {
+    "ticker": "AXON",
+    "company": "Axon Enterprise, Inc.",
+    "sector": "Industrials",
+    "price": 561.885,
+    "book_value_per_share": 40.426,
+    "pb_ratio": 13.8991,
+    "market_cap": 45174247424,
+    "roe": 0.04476
+  },
+  {
+    "ticker": "BKR",
+    "company": "Baker Hughes Company",
+    "sector": "Energy",
+    "price": 59.625,
+    "book_value_per_share": 19.086,
+    "pb_ratio": 3.1240175,
+    "market_cap": 58923601920,
+    "roe": 0.14552
+  },
+  {
+    "ticker": "ADP",
+    "company": "Automatic Data Processing, Inc.",
+    "sector": "Technology",
+    "price": 223.46,
+    "book_value_per_share": 15.864,
+    "pb_ratio": 14.085981,
+    "market_cap": 90378117120,
+    "roe": 0.73843
+  },
+  {
+    "ticker": "AVGO",
+    "company": "Broadcom Inc.",
+    "sector": "Technology",
+    "price": 346.2,
+    "book_value_per_share": 59.221,
+    "pb_ratio": 5.8458996,
+    "market_cap": 1641428942848,
+    "roe": 0.33370999
+  },
+  {
+    "ticker": "CHRW",
+    "company": "C.H. Robinson Worldwide, Inc.",
+    "sector": "Industrials",
+    "price": 178.84,
+    "book_value_per_share": 15.584,
+    "pb_ratio": 11.475873,
+    "market_cap": 21214148608,
+    "roe": 0.32911
+  },
+  {
+    "ticker": "BIIB",
+    "company": "Biogen Inc.",
+    "sector": "Healthcare",
+    "price": 186.27,
+    "book_value_per_share": 124.365,
+    "pb_ratio": 1.4977688,
+    "market_cap": 27336712192,
+    "roe": 0.07394
+  },
+  {
+    "ticker": "CDW",
+    "company": "CDW Corporation",
+    "sector": "Technology",
+    "price": 119.73,
+    "book_value_per_share": 20.14,
+    "pb_ratio": 5.944886,
+    "market_cap": 15588087808,
+    "roe": 0.43018
+  },
+  {
+    "ticker": "CDNS",
+    "company": "Cadence Design Systems, Inc.",
+    "sector": "Technology",
+    "price": 294.99,
+    "book_value_per_share": 20.141,
+    "pb_ratio": 14.646243,
+    "market_cap": 81380507648,
+    "roe": 0.21855
+  },
+  {
+    "ticker": "CSCO",
+    "company": "Cisco Systems, Inc.",
+    "sector": "Technology",
+    "price": 76.34,
+    "book_value_per_share": 12.085,
+    "pb_ratio": 6.3169217,
+    "market_cap": 301626556416,
+    "roe": 0.23754999
+  },
+  {
+    "ticker": "CINF",
+    "company": "Cincinnati Financial Corporatio",
+    "sector": "Financial Services",
+    "price": 161.87,
+    "book_value_per_share": 102.387,
+    "pb_ratio": 1.5809624,
+    "market_cap": 25254715392,
+    "roe": 0.16036
+  },
+  {
+    "ticker": "CHTR",
+    "company": "Charter Communications, Inc.",
+    "sector": "Communication Services",
+    "price": 226.41,
+    "book_value_per_share": 126.777,
+    "pb_ratio": 1.7858918,
+    "market_cap": 29299574784,
+    "roe": 0.28667998
+  },
+  {
+    "ticker": "CTAS",
+    "company": "Cintas Corporation",
+    "sector": "Industrials",
+    "price": 200.77,
+    "book_value_per_share": 11.142,
+    "pb_ratio": 18.019207,
+    "market_cap": 80682778624,
+    "roe": 0.43396
+  },
+  {
+    "ticker": "CME",
+    "company": "CME Group Inc.",
+    "sector": "Financial Services",
+    "price": 319.925,
+    "book_value_per_share": 80.033,
+    "pb_ratio": 3.9974136,
+    "market_cap": 115017007104,
+    "roe": 0.1475
+  },
+  {
+    "ticker": "COIN",
+    "company": "Coinbase Global, Inc. - 3",
+    "sector": "Financial Services",
+    "price": 197.23,
+    "book_value_per_share": 55.232,
+    "pb_ratio": 3.5709372,
+    "market_cap": 53184565248,
+    "roe": 0.10055
+  },
+  {
+    "ticker": "CTSH",
+    "company": "Cognizant Technology Solutions ",
+    "sector": "Technology",
+    "price": 64.665,
+    "book_value_per_share": 31.347,
+    "pb_ratio": 2.062877,
+    "market_cap": 31210334208,
+    "roe": 0.15158
+  },
+  {
+    "ticker": "CMCSA",
+    "company": "Comcast Corporation",
+    "sector": "Communication Services",
+    "price": 30.925,
+    "book_value_per_share": 26.886,
+    "pb_ratio": 1.1502268,
+    "market_cap": 112687431680,
+    "roe": 0.2141
+  },
+  {
+    "ticker": "CEG",
+    "company": "Constellation Energy Corporatio",
+    "sector": "Utilities",
+    "price": 318.48,
+    "book_value_per_share": 46.476,
+    "pb_ratio": 6.852569,
+    "market_cap": 115286687744,
+    "roe": 0.16364
+  },
+  {
+    "ticker": "COO",
+    "company": "The Cooper Companies, Inc.",
+    "sector": "Healthcare",
+    "price": 74.435,
+    "book_value_per_share": 42.869,
+    "pb_ratio": 1.7363362,
+    "market_cap": 14587624448,
+    "roe": 0.04868
+  },
+  {
+    "ticker": "CRWD",
+    "company": "CrowdStrike Holdings, Inc.",
+    "sector": "Technology",
+    "price": 437.795,
+    "book_value_per_share": 17.478,
+    "pb_ratio": 25.048346,
+    "market_cap": 110367432704,
+    "roe": -0.04137
+  },
+  {
+    "ticker": "CSGP",
+    "company": "CoStar Group, Inc.",
+    "sector": "Real Estate",
+    "price": 48.325,
+    "book_value_per_share": 19.943,
+    "pb_ratio": 2.423156,
+    "market_cap": 20481236992,
+    "roe": 0.00088
+  },
+  {
+    "ticker": "CPRT",
+    "company": "Copart, Inc.",
+    "sector": "Industrials",
+    "price": 37.33,
+    "book_value_per_share": 10.162,
+    "pb_ratio": 3.6734898,
+    "market_cap": 36136099840,
+    "roe": 0.17129
+  },
+  {
+    "ticker": "COST",
+    "company": "Costco Wholesale Corporation",
+    "sector": "Consumer Defensive",
+    "price": 1003.98,
+    "book_value_per_share": 72.318,
+    "pb_ratio": 13.882851,
+    "market_cap": 445724622848,
+    "roe": 0.29650998
+  },
+  {
+    "ticker": "CSX",
+    "company": "CSX Corporation",
+    "sector": "Industrials",
+    "price": 40.045,
+    "book_value_per_share": 7.074,
+    "pb_ratio": 5.6608706,
+    "market_cap": 74465943552,
+    "roe": 0.22511
+  },
+  {
+    "ticker": "DDOG",
+    "company": "Datadog, Inc.",
+    "sector": "Technology",
+    "price": 128.575,
+    "book_value_per_share": 10.587,
+    "pb_ratio": 12.144611,
+    "market_cap": 45332471808,
+    "roe": 0.03343
+  },
+  {
+    "ticker": "FANG",
+    "company": "Diamondback Energy, Inc.",
+    "sector": "Energy",
+    "price": 183.04,
+    "book_value_per_share": 129.911,
+    "pb_ratio": 1.4089646,
+    "market_cap": 52079562752,
+    "roe": 0.03735
+  },
+  {
+    "ticker": "DXCM",
+    "company": "DexCom, Inc.",
+    "sector": "Healthcare",
+    "price": 67.798,
+    "book_value_per_share": 7.136,
+    "pb_ratio": 9.50084,
+    "market_cap": 26442319872,
+    "roe": 0.34497002
+  },
+  {
+    "ticker": "DASH",
+    "company": "DoorDash, Inc.",
+    "sector": "Consumer Cyclical",
+    "price": 174.41,
+    "book_value_per_share": 23.104,
+    "pb_ratio": 7.548909,
+    "market_cap": 75768307712,
+    "roe": 0.10439
+  },
+  {
+    "ticker": "DLTR",
+    "company": "Dollar Tree, Inc.",
+    "sector": "Consumer Defensive",
+    "price": 113.55,
+    "book_value_per_share": 17.264,
+    "pb_ratio": 6.577271,
+    "market_cap": 23160549376,
+    "roe": 0.20066999
+  },
+  {
+    "ticker": "EBAY",
+    "company": "eBay Inc.",
+    "sector": "Consumer Cyclical",
+    "price": 92.25,
+    "book_value_per_share": 10.278,
+    "pb_ratio": 8.975482,
+    "market_cap": 41697001472,
+    "roe": 0.40847
+  },
+  {
+    "ticker": "EQIX",
+    "company": "Equinix, Inc.",
+    "sector": "Real Estate",
+    "price": 936.37,
+    "book_value_per_share": 144.116,
+    "pb_ratio": 6.4973354,
+    "market_cap": 92002967552,
+    "roe": 0.09722
+  },
+  {
+    "ticker": "ERIE",
+    "company": "Erie Indemnity Company",
+    "sector": "Financial Services",
+    "price": 251,
+    "book_value_per_share": 43.668,
+    "pb_ratio": 5.747916,
+    "market_cap": 13124756480,
+    "roe": 0.26194
+  },
+  {
+    "ticker": "EA",
+    "company": "Electronic Arts Inc.",
+    "sector": "Communication Services",
+    "price": 198.69,
+    "book_value_per_share": 24.593,
+    "pb_ratio": 8.079128,
+    "market_cap": 49722908672,
+    "roe": 0.10027
+  },
+  {
+    "ticker": "EXC",
+    "company": "Exelon Corporation",
+    "sector": "Utilities",
+    "price": 49.11,
+    "book_value_per_share": 28.162,
+    "pb_ratio": 1.7438391,
+    "market_cap": 50234257408,
+    "roe": 0.09936
+  },
+  {
+    "ticker": "EXE",
+    "company": "Expand Energy Corporation",
+    "sector": "Energy",
+    "price": 107.545,
+    "book_value_per_share": 77.651,
+    "pb_ratio": 1.3849789,
+    "market_cap": 25853630464,
+    "roe": 0.100659996
+  },
+  {
+    "ticker": "EXPD",
+    "company": "Expeditors International of Was",
+    "sector": "Industrials",
+    "price": 144.2,
+    "book_value_per_share": 17.595,
+    "pb_ratio": 8.19551,
+    "market_cap": 19325816832,
+    "roe": 0.35431
+  },
+  {
+    "ticker": "EXPE",
+    "company": "Expedia Group, Inc.",
+    "sector": "Consumer Cyclical",
+    "price": 237.49,
+    "book_value_per_share": 10.482,
+    "pb_ratio": 22.656935,
+    "market_cap": 29100808192,
+    "roe": 0.48672
+  },
+  {
+    "ticker": "FFIV",
+    "company": "F5, Inc.",
+    "sector": "Technology",
+    "price": 283.325,
+    "book_value_per_share": 62.198,
+    "pb_ratio": 4.555211,
+    "market_cap": 16096003072,
+    "roe": 0.20844
+  },
+  {
+    "ticker": "FAST",
+    "company": "Fastenal Company",
+    "sector": "Industrials",
+    "price": 46.46,
+    "book_value_per_share": 3.435,
+    "pb_ratio": 13.525473,
+    "market_cap": 53351346176,
+    "roe": 0.33291
+  },
+  {
+    "ticker": "FITB",
+    "company": "Fifth Third Bancorp",
+    "sector": "Financial Services",
+    "price": 45.89,
+    "book_value_per_share": 30.179,
+    "pb_ratio": 1.5205938,
+    "market_cap": 41384472576,
+    "roe": 0.121929996
+  },
+  {
+    "ticker": "FTNT",
+    "company": "Fortinet, Inc.",
+    "sector": "Technology",
+    "price": 83.91,
+    "book_value_per_share": 1.666,
+    "pb_ratio": 50.36615,
+    "market_cap": 62399516672,
+    "roe": 1.3571601
+  },
+  {
+    "ticker": "FSLR",
+    "company": "First Solar, Inc.",
+    "sector": "Technology",
+    "price": 192.725,
+    "book_value_per_share": 88.883,
+    "pb_ratio": 2.1683,
+    "market_cap": 20681510912,
+    "roe": 0.1745
+  },
+  {
+    "ticker": "FOX",
+    "company": "Fox Corporation",
+    "sector": "Communication Services",
+    "price": 53.79,
+    "book_value_per_share": 25.697,
+    "pb_ratio": 2.0932405,
+    "market_cap": 25112072192,
+    "roe": 0.16823
+  },
+  {
+    "ticker": "FOXA",
+    "company": "Fox Corporation",
+    "sector": "Communication Services",
+    "price": 59.1,
+    "book_value_per_share": 25.697,
+    "pb_ratio": 2.2998793,
+    "market_cap": 25140905984,
+    "roe": 0.16823
+  },
+  {
+    "ticker": "GEN",
+    "company": "Gen Digital Inc.",
+    "sector": "Technology",
+    "price": 22.54,
+    "book_value_per_share": 3.848,
+    "pb_ratio": 5.8575883,
+    "market_cap": 13900781568,
+    "roe": 0.26902
+  },
+  {
+    "ticker": "GEHC",
+    "company": "GE HealthCare Technologies Inc.",
+    "sector": "Healthcare",
+    "price": 74.57,
+    "book_value_per_share": 22.774,
+    "pb_ratio": 3.274348,
+    "market_cap": 33985259520,
+    "roe": 0.22378
+  },
+  {
+    "ticker": "GILD",
+    "company": "Gilead Sciences, Inc.",
+    "sector": "Healthcare",
+    "price": 145.09,
+    "book_value_per_share": 18.293,
+    "pb_ratio": 7.9314494,
+    "market_cap": 180117700608,
+    "roe": 0.40655
+  },
+  {
+    "ticker": "HAS",
+    "company": "Hasbro, Inc.",
+    "sector": "Consumer Cyclical",
+    "price": 93.72,
+    "book_value_per_share": 3.836,
+    "pb_ratio": 24.4317,
+    "market_cap": 13185070080,
+    "roe": -0.36355
+  },
+  {
+    "ticker": "HOLX",
+    "company": "Hologic, Inc.",
+    "sector": "Healthcare",
+    "price": 75.6,
+    "book_value_per_share": 23.514,
+    "pb_ratio": 3.2151058,
+    "market_cap": 16877315072,
+    "roe": 0.108559996
+  },
+  {
+    "ticker": "HST",
+    "company": "Host Hotels & Resorts, Inc.",
+    "sector": "Real Estate",
+    "price": 18.745,
+    "book_value_per_share": 9.535,
+    "pb_ratio": 1.9659152,
+    "market_cap": 13059438592,
+    "roe": 0.11489
+  },
+  {
+    "ticker": "HSIC",
+    "company": "Henry Schein, Inc.",
+    "sector": "Healthcare",
+    "price": 77.4,
+    "book_value_per_share": 28.029,
+    "pb_ratio": 2.7614257,
+    "market_cap": 9111900160,
+    "roe": 0.08701
+  },
+  {
+    "ticker": "HON",
+    "company": "Honeywell International Inc.",
+    "sector": "Industrials",
+    "price": 234.89,
+    "book_value_per_share": 21.886,
+    "pb_ratio": 10.732431,
+    "market_cap": 158285250560,
+    "roe": 0.26136
+  },
+  {
+    "ticker": "IDXX",
+    "company": "IDEXX Laboratories, Inc.",
+    "sector": "Healthcare",
+    "price": 601.895,
+    "book_value_per_share": 20.14,
+    "pb_ratio": 29.885553,
+    "market_cap": 48062115840,
+    "roe": 0.66202
+  },
+  {
+    "ticker": "HBAN",
+    "company": "Huntington Bancshares Incorpora",
+    "sector": "Financial Services",
+    "price": 15.845,
+    "book_value_per_share": 13.785,
+    "pb_ratio": 1.1494378,
+    "market_cap": 32162060288,
+    "roe": 0.10095
+  },
+  {
+    "ticker": "PODD",
+    "company": "Insulet Corporation",
+    "sector": "Healthcare",
+    "price": 236.2,
+    "book_value_per_share": 21.526,
+    "pb_ratio": 10.972777,
+    "market_cap": 16627499008,
+    "roe": 0.18124
+  },
+  {
+    "ticker": "INCY",
+    "company": "Incyte Corporation",
+    "sector": "Healthcare",
+    "price": 96.1,
+    "book_value_per_share": 26.038,
+    "pb_ratio": 3.6907597,
+    "market_cap": 19125291008,
+    "roe": 0.2987
+  },
+  {
+    "ticker": "INTC",
+    "company": "Intel Corporation",
+    "sector": "Technology",
+    "price": 44.4,
+    "book_value_per_share": 22.884,
+    "pb_ratio": 1.9402202,
+    "market_cap": 221785931776,
+    "roe": 0.00022
+  },
+  {
+    "ticker": "IBKR",
+    "company": "Interactive Brokers Group, Inc.",
+    "sector": "Financial Services",
+    "price": 65.24,
+    "book_value_per_share": 12.04,
+    "pb_ratio": 5.4186044,
+    "market_cap": 110908866560,
+    "roe": 0.23507999
+  },
+  {
+    "ticker": "ISRG",
+    "company": "Intuitive Surgical, Inc.",
+    "sector": "Healthcare",
+    "price": 487.21,
+    "book_value_per_share": 50.194,
+    "pb_ratio": 9.706538,
+    "market_cap": 173023002624,
+    "roe": 0.16690001
+  },
+  {
+    "ticker": "INTU",
+    "company": "Intuit Inc.",
+    "sector": "Technology",
+    "price": 474.95,
+    "book_value_per_share": 68.669,
+    "pb_ratio": 6.916513,
+    "market_cap": 132166279168,
+    "roe": 0.23457001
+  },
+  {
+    "ticker": "JKHY",
+    "company": "Jack Henry & Associates, Inc.",
+    "sector": "Technology",
+    "price": 170.435,
+    "book_value_per_share": 30.527,
+    "pb_ratio": 5.5830903,
+    "market_cap": 12335596544,
+    "roe": 0.24284
+  },
+  {
+    "ticker": "JBHT",
+    "company": "J.B. Hunt Transport Services, I",
+    "sector": "Industrials",
+    "price": 211.77,
+    "book_value_per_share": 37.688,
+    "pb_ratio": 5.61903,
+    "market_cap": 20164388864,
+    "roe": 0.15787
+  },
+  {
+    "ticker": "KMB",
+    "company": "Kimberly-Clark Corporation",
+    "sector": "Consumer Defensive",
+    "price": 103.05,
+    "book_value_per_share": 4.525,
+    "pb_ratio": 22.773481,
+    "market_cap": 34204600320,
+    "roe": 1.26603
+  },
+  {
+    "ticker": "KDP",
+    "company": "Keurig Dr Pepper Inc.",
+    "sector": "Consumer Defensive",
+    "price": 27.915,
+    "book_value_per_share": 18.78,
+    "pb_ratio": 1.4864217,
+    "market_cap": 37927165952,
+    "roe": 0.08356
+  },
+  {
+    "ticker": "KHC",
+    "company": "The Kraft Heinz Company",
+    "sector": "Consumer Defensive",
+    "price": 24.545,
+    "book_value_per_share": 35.189,
+    "pb_ratio": 0.6975191,
+    "market_cap": 29055014912,
+    "roe": -0.12837
+  },
+  {
+    "ticker": "KLAC",
+    "company": "KLA Corporation",
+    "sector": "Technology",
+    "price": 1393.92,
+    "book_value_per_share": 41.678,
+    "pb_ratio": 33.444984,
+    "market_cap": 183150411776,
+    "roe": 1.00726
+  },
+  {
+    "ticker": "LRCX",
+    "company": "Lam Research Corporation",
+    "sector": "Technology",
+    "price": 205.13,
+    "book_value_per_share": 8.109,
+    "pb_ratio": 25.296583,
+    "market_cap": 257649426432,
+    "roe": 0.65565
+  },
+  {
+    "ticker": "LIN",
+    "company": "Linde plc",
+    "sector": "Basic Materials",
+    "price": 482.6,
+    "book_value_per_share": 82.481,
+    "pb_ratio": 5.851044,
+    "market_cap": 223634014208,
+    "roe": 0.17817
+  },
+  {
+    "ticker": "LULU",
+    "company": "lululemon athletica inc.",
+    "sector": "Consumer Cyclical",
+    "price": 168.395,
+    "book_value_per_share": 38.183,
+    "pb_ratio": 4.410209,
+    "market_cap": 19969822720,
+    "roe": 0.41017
+  },
+  {
+    "ticker": "META",
+    "company": "Meta Platforms, Inc.",
+    "sector": "Communication Services",
+    "price": 636.105,
+    "book_value_per_share": 85.867,
+    "pb_ratio": 7.408026,
+    "market_cap": 1609062809600,
+    "roe": 0.30238
+  },
+  {
+    "ticker": "MU",
+    "company": "Micron Technology, Inc.",
+    "sector": "Technology",
+    "price": 379.4988,
+    "book_value_per_share": 52.226,
+    "pb_ratio": 7.266473,
+    "market_cap": 427129405440,
+    "roe": 0.22554001
+  },
+  {
+    "ticker": "MCHP",
+    "company": "Microchip Technology Incorporat",
+    "sector": "Technology",
+    "price": 63.51,
+    "book_value_per_share": 12.123,
+    "pb_ratio": 5.238802,
+    "market_cap": 34367512576,
+    "roe": -0.010930001
+  },
+  {
+    "ticker": "MSFT",
+    "company": "Microsoft Corporation",
+    "sector": "Technology",
+    "price": 407.57,
+    "book_value_per_share": 52.615,
+    "pb_ratio": 7.74627,
+    "market_cap": 3029214167040,
+    "roe": 0.34390998
+  },
+  {
+    "ticker": "MRNA",
+    "company": "Moderna, Inc.",
+    "sector": "Healthcare",
+    "price": 54.09,
+    "book_value_per_share": 21.954,
+    "pb_ratio": 2.4637878,
+    "market_cap": 21362274304,
+    "roe": -0.28868
+  },
+  {
+    "ticker": "MDLZ",
+    "company": "Mondelez International, Inc.",
+    "sector": "Consumer Defensive",
+    "price": 58.385,
+    "book_value_per_share": 20.161,
+    "pb_ratio": 2.8959377,
+    "market_cap": 75337580544,
+    "roe": 0.09332
+  },
+  {
+    "ticker": "MPWR",
+    "company": "Monolithic Power Systems, Inc.",
+    "sector": "Technology",
+    "price": 1029.405,
+    "book_value_per_share": 72.502,
+    "pb_ratio": 14.198298,
+    "market_cap": 50562314240,
+    "roe": 0.19173999
+  },
+  {
+    "ticker": "MNST",
+    "company": "Monster Beverage Corporation",
+    "sector": "Consumer Defensive",
+    "price": 74.31,
+    "book_value_per_share": 8.439,
+    "pb_ratio": 8.805545,
+    "market_cap": 72695291904,
+    "roe": 0.26815
+  },
+  {
+    "ticker": "NFLX",
+    "company": "Netflix, Inc.",
+    "sector": "Communication Services",
+    "price": 97.6461,
+    "book_value_per_share": 6.304,
+    "pb_ratio": 15.489547,
+    "market_cap": 414203969536,
+    "roe": 0.42762002
+  },
+  {
+    "ticker": "NTAP",
+    "company": "NetApp, Inc.",
+    "sector": "Technology",
+    "price": 98.6,
+    "book_value_per_share": 5.848,
+    "pb_ratio": 16.860464,
+    "market_cap": 19528751104,
+    "roe": 1.12587
+  },
+  {
+    "ticker": "NDAQ",
+    "company": "Nasdaq, Inc.",
+    "sector": "Financial Services",
+    "price": 87.755,
+    "book_value_per_share": 21.455,
+    "pb_ratio": 4.0901885,
+    "market_cap": 50107703296,
+    "roe": 0.15253
+  },
+  {
+    "ticker": "NDSN",
+    "company": "Nordson Corporation",
+    "sector": "Industrials",
+    "price": 268.025,
+    "book_value_per_share": 55.789,
+    "pb_ratio": 4.804262,
+    "market_cap": 14951399424,
+    "roe": 0.17473
+  },
+  {
+    "ticker": "NWS",
+    "company": "News Corporation",
+    "sector": "Communication Services",
+    "price": 27.4,
+    "book_value_per_share": 15.767,
+    "pb_ratio": 1.7378068,
+    "market_cap": 15140994048,
+    "roe": 0.06329
+  },
+  {
+    "ticker": "NTRS",
+    "company": "Northern Trust Corporation",
+    "sector": "Financial Services",
+    "price": 136.42,
+    "book_value_per_share": 64.791,
+    "pb_ratio": 2.1055393,
+    "market_cap": 25350629376,
+    "roe": 0.13492
+  },
+  {
+    "ticker": "NVDA",
+    "company": "NVIDIA Corporation",
+    "sector": "Technology",
+    "price": 180.19,
+    "book_value_per_share": 6.472,
+    "pb_ratio": 27.84147,
+    "market_cap": 4379518173184,
+    "roe": 1.01485
+  },
+  {
+    "ticker": "NXPI",
+    "company": "NXP Semiconductors N.V.",
+    "sector": "Technology",
+    "price": 201.1225,
+    "book_value_per_share": 39.77,
+    "pb_ratio": 5.057141,
+    "market_cap": 50822217728,
+    "roe": 0.20698999
+  },
+  {
+    "ticker": "NWSA",
+    "company": "News Corporation",
+    "sector": "Communication Services",
+    "price": 24.4,
+    "book_value_per_share": 15.767,
+    "pb_ratio": 1.5475359,
+    "market_cap": 13986008064,
+    "roe": 0.06329
+  },
+  {
+    "ticker": "ODFL",
+    "company": "Old Dominion Freight Line, Inc.",
+    "sector": "Industrials",
+    "price": 190.255,
+    "book_value_per_share": 20.671,
+    "pb_ratio": 9.203958,
+    "market_cap": 39782023168,
+    "roe": 0.2393
+  },
+  {
+    "ticker": "PCAR",
+    "company": "PACCAR Inc.",
+    "sector": "Industrials",
+    "price": 118.84,
+    "book_value_per_share": 36.665,
+    "pb_ratio": 3.241238,
+    "market_cap": 62497292288,
+    "roe": 0.12922
+  },
+  {
+    "ticker": "ON",
+    "company": "ON Semiconductor Corporation",
+    "sector": "Technology",
+    "price": 57.43,
+    "book_value_per_share": 19.341,
+    "pb_ratio": 2.9693398,
+    "market_cap": 23108591616,
+    "roe": 0.01498
+  },
+  {
+    "ticker": "PANW",
+    "company": "Palo Alto Networks, Inc.",
+    "sector": "Technology",
+    "price": 166.56,
+    "book_value_per_share": 13.361,
+    "pb_ratio": 12.466132,
+    "market_cap": 135912955904,
+    "roe": 0.16259001
+  },
+  {
+    "ticker": "PLTR",
+    "company": "Palantir Technologies Inc.",
+    "sector": "Technology",
+    "price": 154.7801,
+    "book_value_per_share": 3.089,
+    "pb_ratio": 50.106865,
+    "market_cap": 370183798784,
+    "roe": 0.25983
+  },
+  {
+    "ticker": "PAYX",
+    "company": "Paychex, Inc.",
+    "sector": "Technology",
+    "price": 98.32,
+    "book_value_per_share": 10.809,
+    "pb_ratio": 9.096124,
+    "market_cap": 35293679616,
+    "roe": 0.40884998
+  },
+  {
+    "ticker": "PSKY",
+    "company": "Paramount Skydance Corporation",
+    "sector": "Communication Services",
+    "price": 11.2101,
+    "book_value_per_share": 10.403,
+    "pb_ratio": 1.0775834,
+    "market_cap": 12366613504,
+    "roe": -0.00863
+  },
+  {
+    "ticker": "PEP",
+    "company": "Pepsico, Inc.",
+    "sector": "Consumer Defensive",
+    "price": 160.68,
+    "book_value_per_share": 14.928,
+    "pb_ratio": 10.763665,
+    "market_cap": 219704213504,
+    "roe": 0.42848
+  },
+  {
+    "ticker": "PYPL",
+    "company": "PayPal Holdings, Inc.",
+    "sector": "Financial Services",
+    "price": 45.955,
+    "book_value_per_share": 22.017,
+    "pb_ratio": 2.0872507,
+    "market_cap": 42997886976,
+    "roe": 0.25732002
+  },
+  {
+    "ticker": "PFG",
+    "company": "Principal Financial Group Inc",
+    "sector": "Financial Services",
+    "price": 89.14,
+    "book_value_per_share": 54.669,
+    "pb_ratio": 1.6305401,
+    "market_cap": 19583508480,
+    "roe": 0.10524
+  },
+  {
+    "ticker": "POOL",
+    "company": "Pool Corporation",
+    "sector": "Industrials",
+    "price": 207.015,
+    "book_value_per_share": 32.403,
+    "pb_ratio": 6.38876,
+    "market_cap": 7725387264,
+    "roe": 0.33058998
+  },
+  {
+    "ticker": "PTC",
+    "company": "PTC Inc.",
+    "sector": "Technology",
+    "price": 162.95,
+    "book_value_per_share": 32.319,
+    "pb_ratio": 5.041926,
+    "market_cap": 19390416896,
+    "roe": 0.23141001
+  },
+  {
+    "ticker": "REG",
+    "company": "Regency Centers Corporation",
+    "sector": "Real Estate",
+    "price": 77.66,
+    "book_value_per_share": 36.632,
+    "pb_ratio": 2.1200044,
+    "market_cap": 14502597632,
+    "roe": 0.07683
+  },
+  {
+    "ticker": "QCOM",
+    "company": "QUALCOMM Incorporated",
+    "sector": "Technology",
+    "price": 137.28,
+    "book_value_per_share": 21.483,
+    "pb_ratio": 6.390169,
+    "market_cap": 146621235200,
+    "roe": 0.2148
+  },
+  {
+    "ticker": "REGN",
+    "company": "Regeneron Pharmaceuticals, Inc.",
+    "sector": "Healthcare",
+    "price": 773.46,
+    "book_value_per_share": 304.648,
+    "pb_ratio": 2.5388646,
+    "market_cap": 81770045440,
+    "roe": 0.14864999
+  },
+  {
+    "ticker": "HOOD",
+    "company": "Robinhood Markets, Inc.",
+    "sector": "Financial Services",
+    "price": 77.88,
+    "book_value_per_share": 10.141,
+    "pb_ratio": 7.679716,
+    "market_cap": 70116016128,
+    "roe": 0.21993999
+  },
+  {
+    "ticker": "ROP",
+    "company": "Roper Technologies, Inc.",
+    "sector": "Technology",
+    "price": 361.94,
+    "book_value_per_share": 186.506,
+    "pb_ratio": 1.9406346,
+    "market_cap": 38958292992,
+    "roe": 0.07929
+  },
+  {
+    "ticker": "SNDK",
+    "company": "Sandisk Corporation",
+    "sector": "Technology",
+    "price": 569.075,
+    "book_value_per_share": 69.007,
+    "pb_ratio": 8.246627,
+    "market_cap": 83996024832,
+    "roe": -0.09372
+  },
+  {
+    "ticker": "ROST",
+    "company": "Ross Stores, Inc.",
+    "sector": "Consumer Cyclical",
+    "price": 209.1475,
+    "book_value_per_share": 19.352,
+    "pb_ratio": 10.80754,
+    "market_cap": 68020264960,
+    "roe": 0.36678
+  },
+  {
+    "ticker": "SWKS",
+    "company": "Skyworks Solutions, Inc.",
+    "sector": "Technology",
+    "price": 54.44,
+    "book_value_per_share": 38.418,
+    "pb_ratio": 1.417044,
+    "market_cap": 8186339328,
+    "roe": 0.06485
+  },
+  {
+    "ticker": "STX",
+    "company": "Seagate Technology Holdings PLC",
+    "sector": "Technology",
+    "price": 361.98,
+    "book_value_per_share": 2.104,
+    "pb_ratio": 172.04372,
+    "market_cap": 81092706304,
+    "roe": null
+  },
+  {
+    "ticker": "SNPS",
+    "company": "Synopsys, Inc.",
+    "sector": "Technology",
+    "price": 435.85,
+    "book_value_per_share": 159.566,
+    "pb_ratio": 2.7314718,
+    "market_cap": 83492315136,
+    "roe": 0.055430003
+  },
+  {
+    "ticker": "TMUS",
+    "company": "T-Mobile US, Inc.",
+    "sector": "Communication Services",
+    "price": 219.35,
+    "book_value_per_share": 53.484,
+    "pb_ratio": 4.1012263,
+    "market_cap": 245344436224,
+    "roe": 0.18177
+  },
+  {
+    "ticker": "STLD",
+    "company": "Steel Dynamics, Inc.",
+    "sector": "Basic Materials",
+    "price": 177.56,
+    "book_value_per_share": 61.799,
+    "pb_ratio": 2.8731856,
+    "market_cap": 25923180544,
+    "roe": 0.13284001
+  },
+  {
+    "ticker": "SMCI",
+    "company": "Super Micro Computer, Inc.",
+    "sector": "Technology",
+    "price": 31.358,
+    "book_value_per_share": 11.674,
+    "pb_ratio": 2.68614,
+    "market_cap": 18783111168,
+    "roe": 0.13193
+  },
+  {
+    "ticker": "TROW",
+    "company": "T. Rowe Price Group, Inc.",
+    "sector": "Financial Services",
+    "price": 88.785,
+    "book_value_per_share": 49.688,
+    "pb_ratio": 1.78685,
+    "market_cap": 19376173056,
+    "roe": 0.18791
+  },
+  {
+    "ticker": "TTWO",
+    "company": "Take-Two Interactive Software, ",
+    "sector": "Communication Services",
+    "price": 212.75,
+    "book_value_per_share": 18.885,
+    "pb_ratio": 11.265554,
+    "market_cap": 39396077568,
+    "roe": -0.86217004
+  },
+  {
+    "ticker": "TXN",
+    "company": "Texas Instruments Incorporated",
+    "sector": "Technology",
+    "price": 193.011,
+    "book_value_per_share": 17.942,
+    "pb_ratio": 10.757497,
+    "market_cap": 175374237696,
+    "roe": 0.30148
+  },
+  {
+    "ticker": "TER",
+    "company": "Teradyne, Inc.",
+    "sector": "Technology",
+    "price": 287.895,
+    "book_value_per_share": 17.911,
+    "pb_ratio": 16.073643,
+    "market_cap": 45071675392,
+    "roe": 0.19734
+  },
+  {
+    "ticker": "TSLA",
+    "company": "Tesla, Inc.",
+    "sector": "Consumer Cyclical",
+    "price": 390.24,
+    "book_value_per_share": 21.897,
+    "pb_ratio": 17.821619,
+    "market_cap": 1464348966912,
+    "roe": 0.049250003
+  },
+  {
+    "ticker": "TTD",
+    "company": "The Trade Desk, Inc.",
+    "sector": "Communication Services",
+    "price": 28.484,
+    "book_value_per_share": 5.22,
+    "pb_ratio": 5.456705,
+    "market_cap": 13557730304,
+    "roe": 0.16317
+  },
+  {
+    "ticker": "ULTA",
+    "company": "Ulta Beauty, Inc.",
+    "sector": "Consumer Cyclical",
+    "price": 629.08,
+    "book_value_per_share": 59.166,
+    "pb_ratio": 10.632458,
+    "market_cap": 28206919680,
+    "roe": 0.47967
+  },
+  {
+    "ticker": "TRMB",
+    "company": "Trimble Inc.",
+    "sector": "Technology",
+    "price": 69.67,
+    "book_value_per_share": 24.73,
+    "pb_ratio": 2.817226,
+    "market_cap": 16575952896,
+    "roe": 0.07322
+  },
+  {
+    "ticker": "TSCO",
+    "company": "Tractor Supply Company",
+    "sector": "Consumer Cyclical",
+    "price": 50.31,
+    "book_value_per_share": 4.898,
+    "pb_ratio": 10.271541,
+    "market_cap": 26480734208,
+    "roe": 0.45183998
+  },
+  {
+    "ticker": "VRSK",
+    "company": "Verisk Analytics, Inc.",
+    "sector": "Industrials",
+    "price": 212.48,
+    "book_value_per_share": 2.233,
+    "pb_ratio": 95.154495,
+    "market_cap": 29613883392,
+    "roe": 4.3794603
+  },
+  {
+    "ticker": "UAL",
+    "company": "United Airlines Holdings, Inc.",
+    "sector": "Industrials",
+    "price": 90.22,
+    "book_value_per_share": 47.244,
+    "pb_ratio": 1.9096606,
+    "market_cap": 29207642112,
+    "roe": 0.23987
+  },
+  {
+    "ticker": "WBD",
+    "company": "Warner Bros. Discovery, Inc. - ",
+    "sector": "Communication Services",
+    "price": 27.815,
+    "book_value_per_share": 14.483,
+    "pb_ratio": 1.9205276,
+    "market_cap": 69009424384,
+    "roe": 0.02078
+  },
+  {
+    "ticker": "VTRS",
+    "company": "Viatris Inc.",
+    "sector": "Healthcare",
+    "price": 13.995,
+    "book_value_per_share": 12.779,
+    "pb_ratio": 1.0951561,
+    "market_cap": 16119018496,
+    "roe": -0.21080999
+  },
+  {
+    "ticker": "WMT",
+    "company": "Walmart Inc.",
+    "sector": "Consumer Defensive",
+    "price": 123.45,
+    "book_value_per_share": 12.497,
+    "pb_ratio": 9.878371,
+    "market_cap": 984248483840,
+    "roe": 0.21847
+  },
+  {
+    "ticker": "VRTX",
+    "company": "Vertex Pharmaceuticals Incorpor",
+    "sector": "Healthcare",
+    "price": 455.3525,
+    "book_value_per_share": 73.49,
+    "pb_ratio": 6.1961155,
+    "market_cap": 115659538432,
+    "roe": 0.22541
+  },
+  {
+    "ticker": "WDAY",
+    "company": "Workday, Inc.",
+    "sector": "Technology",
+    "price": 148.495,
+    "book_value_per_share": 30.12,
+    "pb_ratio": 4.9301124,
+    "market_cap": 39648161792,
+    "roe": 0.08231
+  },
+  {
+    "ticker": "WTW",
+    "company": "Willis Towers Watson Public Lim",
+    "sector": "Financial Services",
+    "price": 294.285,
+    "book_value_per_share": 83.887,
+    "pb_ratio": 3.5081122,
+    "market_cap": 28177381376,
+    "roe": 0.20076
+  },
+  {
+    "ticker": "WDC",
+    "company": "Western Digital Corporation",
+    "sector": "Technology",
+    "price": 257.98,
+    "book_value_per_share": 20.915,
+    "pb_ratio": 12.334688,
+    "market_cap": 88203182080,
+    "roe": 0.41126
+  },
+  {
+    "ticker": "ZBRA",
+    "company": "Zebra Technologies Corporation",
+    "sector": "Technology",
+    "price": 211.19,
+    "book_value_per_share": 72.349,
+    "pb_ratio": 2.9190452,
+    "market_cap": 10698936320,
+    "roe": 0.116809994
+  },
+  {
+    "ticker": "XEL",
+    "company": "Xcel Energy Inc.",
+    "sector": "Utilities",
+    "price": 82.075,
+    "book_value_per_share": 37.859,
+    "pb_ratio": 2.1679125,
+    "market_cap": 51204685824,
+    "roe": 0.09358
+  }
+]
