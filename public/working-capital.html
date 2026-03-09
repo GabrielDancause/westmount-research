@@ -1,0 +1,2010 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Working Capital Efficiency Rankings 2026</title>
+    <meta name="description" content="Ranking S&P 500 companies by Cash Conversion Cycle (CCC). Discover which companies manage inventory best and collect cash fastest.">
+    <link rel="canonical" href="https://westmountfundamentals.com/working-capital.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --bg-color: #060a12;
+            --card-bg: #0a1020;
+            --border-color: #152040;
+            --accent-color: #4a8fe7;
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+        .container { max-width: 1000px; margin: 0 auto; padding: 2rem; }
+        header { margin-bottom: 4rem; text-align: center; }
+        h1 { font-size: 2.5rem; font-weight: 800; margin-bottom: 1rem; color: #fff; }
+        .subtitle { font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 2rem; }
+        .tag { display: inline-block; background: rgba(74, 143, 231, 0.1); color: var(--accent-color); padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.875rem; font-weight: 600; margin-bottom: 1rem; }
+
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-bottom: 4rem; }
+        .stat-card { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 0.5rem; padding: 1.5rem; text-align: center; }
+        .stat-value { font-size: 2rem; font-weight: 700; color: var(--accent-color); font-family: 'JetBrains Mono', monospace; }
+        .stat-label { font-size: 0.875rem; color: var(--text-secondary); margin-top: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em; }
+
+        table { width: 100%; border-collapse: collapse; margin-bottom: 3rem; background: var(--card-bg); border-radius: 0.5rem; overflow: hidden; }
+        th, td { padding: 1rem; text-align: right; border-bottom: 1px solid var(--border-color); }
+        th:first-child, td:first-child { text-align: left; }
+        th:nth-child(2), td:nth-child(2) { text-align: left; }
+        th { background: rgba(255,255,255,0.02); font-weight: 600; color: var(--text-secondary); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; }
+        td { font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; }
+        .company-name { font-family: 'Inter', sans-serif; font-weight: 500; color: #fff; display: block; }
+        .ticker { font-size: 0.75rem; color: var(--text-muted); }
+        .sector { background: rgba(255,255,255,0.05); padding: 0.25rem 0.5rem; border-radius: 0.25rem; font-size: 0.75rem; font-family: 'Inter', sans-serif; }
+
+        .faq, .methodology, .disclaimer { margin-bottom: 3rem; background: var(--card-bg); border: 1px solid var(--border-color); padding: 2rem; border-radius: 0.5rem; }
+        h2 { font-size: 1.5rem; margin-bottom: 1.5rem; color: #fff; }
+        h3 { font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--accent-color); }
+        p { color: var(--text-secondary); margin-bottom: 1rem; }
+
+        footer { text-align: center; padding: 2rem; border-top: 1px solid var(--border-color); color: var(--text-muted); font-size: 0.875rem; }
+
+        .ccc-val { font-weight: bold; color: var(--accent-color); }
+    </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Working Capital Efficiency Rankings 2026",
+      "datePublished": "2026-01-01T08:00:00+08:00",
+      "dateModified": "2026-01-01T08:00:00+08:00",
+      "author": [{
+          "@type": "Organization",
+          "name": "Westmount Research",
+          "url": "https://westmountfundamentals.com"
+      }]
+    }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <span class="tag">ORIGINAL RESEARCH 2026</span>
+            <h1>Working Capital Efficiency Rankings</h1>
+            <p class="subtitle">Ranking 130 companies by Cash Conversion Cycle (CCC).</p>
+        </header>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-value">CPAY</div>
+                <div class="stat-label">Most Efficient</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">-390.4 days</div>
+                <div class="stat-label">Best CCC</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">DHI</div>
+                <div class="stat-label">Least Efficient</div>
+            </div>
+        </div>
+
+        <div class="chart-container" style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 0.5rem; padding: 2rem; margin-bottom: 3rem;">
+            <h2 style="margin-bottom: 1rem; text-align: center;">Top 10 Most Efficient Companies</h2>
+            <canvas id="cccChart" style="width: 100%; height: 400px;"></canvas>
+        </div>
+
+        <div style="overflow-x: auto;">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Company</th>
+                        <th>Sector</th>
+                        <th>Revenue</th>
+                        <th>Days Inventory</th>
+                        <th>Days Receivable</th>
+                        <th>Days Payable</th>
+                        <th>CCC (Days)</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">1</td>
+                        <td>
+                                <span class="company-name">Corpay, Inc.</span>
+                                <span class="ticker">CPAY</span>
+                        </td>
+                            <td><span class="sector">Technology</span></td>
+                            <td>$4.5B</td>
+                            <td>0</td>
+                            <td>298.5</td>
+                            <td>688.9</td>
+                            <td class="ccc-val">-390.4</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">2</td>
+                        <td>
+                                <span class="company-name">AT&amp;T Inc.</span>
+                                <span class="ticker">T</span>
+                        </td>
+                            <td><span class="sector">Communication Services</span></td>
+                            <td>$125.6B</td>
+                            <td>18.4</td>
+                            <td>26</td>
+                            <td>238.6</td>
+                            <td class="ccc-val">-194.2</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">3</td>
+                        <td>
+                                <span class="company-name">The Coca-Cola Company</span>
+                                <span class="ticker">KO</span>
+                        </td>
+                            <td><span class="sector">Consumer Defensive</span></td>
+                            <td>$47.9B</td>
+                            <td>96.3</td>
+                            <td>29</td>
+                            <td>282.1</td>
+                            <td class="ccc-val">-156.8</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">4</td>
+                        <td>
+                                <span class="company-name">Global Payments Inc.</span>
+                                <span class="ticker">GPN</span>
+                        </td>
+                            <td><span class="sector">Industrials</span></td>
+                            <td>$8.3B</td>
+                            <td>0</td>
+                            <td>40</td>
+                            <td>193.1</td>
+                            <td class="ccc-val">-153.2</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">5</td>
+                        <td>
+                                <span class="company-name">Eversource Energy</span>
+                                <span class="ticker">ES</span>
+                        </td>
+                            <td><span class="sector">Utilities</span></td>
+                            <td>$13.5B</td>
+                            <td>95.6</td>
+                            <td>47.7</td>
+                            <td>279.2</td>
+                            <td class="ccc-val">-135.8</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">6</td>
+                        <td>
+                                <span class="company-name">The Clorox Company</span>
+                                <span class="ticker">CLX</span>
+                        </td>
+                            <td><span class="sector">Consumer Defensive</span></td>
+                            <td>$6.8B</td>
+                            <td>56.7</td>
+                            <td>37.5</td>
+                            <td>163</td>
+                            <td class="ccc-val">-68.8</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">7</td>
+                        <td>
+                                <span class="company-name">IQVIA Holdings Inc.</span>
+                                <span class="ticker">IQV</span>
+                        </td>
+                            <td><span class="sector">Healthcare</span></td>
+                            <td>$16.3B</td>
+                            <td>0</td>
+                            <td>33.5</td>
+                            <td>94.7</td>
+                            <td class="ccc-val">-61.2</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">8</td>
+                        <td>
+                                <span class="company-name">FirstEnergy Corp.</span>
+                                <span class="ticker">FE</span>
+                        </td>
+                            <td><span class="sector">Utilities</span></td>
+                            <td>$15.1B</td>
+                            <td>40.4</td>
+                            <td>22.7</td>
+                            <td>121.7</td>
+                            <td class="ccc-val">-58.6</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">9</td>
+                        <td>
+                                <span class="company-name">EQT Corporation</span>
+                                <span class="ticker">EQT</span>
+                        </td>
+                            <td><span class="sector">Energy</span></td>
+                            <td>$8.4B</td>
+                            <td>0</td>
+                            <td>46.8</td>
+                            <td>97.7</td>
+                            <td class="ccc-val">-50.9</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">10</td>
+                        <td>
+                                <span class="company-name">HP Inc.</span>
+                                <span class="ticker">HPQ</span>
+                        </td>
+                            <td><span class="sector">Technology</span></td>
+                            <td>$56.2B</td>
+                            <td>68.7</td>
+                            <td>33.2</td>
+                            <td>139.3</td>
+                            <td class="ccc-val">-37.3</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">11</td>
+                        <td>
+                                <span class="company-name">Air Products and Chemicals, Inc.</span>
+                                <span class="ticker">APD</span>
+                        </td>
+                            <td><span class="sector">Basic Materials</span></td>
+                            <td>$12.2B</td>
+                            <td>34.2</td>
+                            <td>56.7</td>
+                            <td>123.1</td>
+                            <td class="ccc-val">-32.2</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">12</td>
+                        <td>
+                                <span class="company-name">AutoZone, Inc.</span>
+                                <span class="ticker">AZO</span>
+                        </td>
+                            <td><span class="sector">Consumer Cyclical</span></td>
+                            <td>$19.3B</td>
+                            <td>272.7</td>
+                            <td>11.8</td>
+                            <td>316</td>
+                            <td class="ccc-val">-31.5</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">13</td>
+                        <td>
+                                <span class="company-name">EOG Resources, Inc.</span>
+                                <span class="ticker">EOG</span>
+                        </td>
+                            <td><span class="sector">Energy</span></td>
+                            <td>$22.6B</td>
+                            <td>41.8</td>
+                            <td>42.4</td>
+                            <td>115.5</td>
+                            <td class="ccc-val">-31.3</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">14</td>
+                        <td>
+                                <span class="company-name">Edison International</span>
+                                <span class="ticker">EIX</span>
+                        </td>
+                            <td><span class="sector">Utilities</span></td>
+                            <td>$19.3B</td>
+                            <td>19.3</td>
+                            <td>35.5</td>
+                            <td>80.1</td>
+                            <td class="ccc-val">-25.3</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">15</td>
+                        <td>
+                                <span class="company-name">Ball Corporation</span>
+                                <span class="ticker">BALL</span>
+                        </td>
+                            <td><span class="sector">Consumer Cyclical</span></td>
+                            <td>$13.2B</td>
+                            <td>62.5</td>
+                            <td>44.3</td>
+                            <td>126.7</td>
+                            <td class="ccc-val">-20</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">16</td>
+                        <td>
+                                <span class="company-name">General Mills, Inc.</span>
+                                <span class="ticker">GIS</span>
+                        </td>
+                            <td><span class="sector">Consumer Defensive</span></td>
+                            <td>$18.8B</td>
+                            <td>57.4</td>
+                            <td>35.4</td>
+                            <td>112.8</td>
+                            <td class="ccc-val">-20</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">17</td>
+                        <td>
+                                <span class="company-name">The AES Corporation</span>
+                                <span class="ticker">AES</span>
+                        </td>
+                            <td><span class="sector">Utilities</span></td>
+                            <td>$12.1B</td>
+                            <td>22.4</td>
+                            <td>53</td>
+                            <td>92.3</td>
+                            <td class="ccc-val">-16.9</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">18</td>
+                        <td>
+                                <span class="company-name">Cencora, Inc.</span>
+                                <span class="ticker">COR</span>
+                        </td>
+                            <td><span class="sector">Healthcare</span></td>
+                            <td>$325.8B</td>
+                            <td>24.3</td>
+                            <td>27.9</td>
+                            <td>61.6</td>
+                            <td class="ccc-val">-9.4</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">19</td>
+                        <td>
+                                <span class="company-name">Cardinal Health, Inc.</span>
+                                <span class="ticker">CAH</span>
+                        </td>
+                            <td><span class="sector">Healthcare</span></td>
+                            <td>$244.7B</td>
+                            <td>27.4</td>
+                            <td>19.9</td>
+                            <td>55.5</td>
+                            <td class="ccc-val">-8.3</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">20</td>
+                        <td>
+                                <span class="company-name">Carnival Corporation &amp; plc</span>
+                                <span class="ticker">CCL</span>
+                        </td>
+                            <td><span class="sector">Consumer Cyclical</span></td>
+                            <td>$26.6B</td>
+                            <td>11.3</td>
+                            <td>8.4</td>
+                            <td>26.9</td>
+                            <td class="ccc-val">-7.3</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">21</td>
+                        <td>
+                                <span class="company-name">GoDaddy Inc.</span>
+                                <span class="ticker">GDDY</span>
+                        </td>
+                            <td><span class="sector">Technology</span></td>
+                            <td>$5.0B</td>
+                            <td>0</td>
+                            <td>7.5</td>
+                            <td>14.5</td>
+                            <td class="ccc-val">-7</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">22</td>
+                        <td>
+                                <span class="company-name">Delta Air Lines, Inc.</span>
+                                <span class="ticker">DAL</span>
+                        </td>
+                            <td><span class="sector">Industrials</span></td>
+                            <td>$63.4B</td>
+                            <td>11.7</td>
+                            <td>20</td>
+                            <td>38.2</td>
+                            <td class="ccc-val">-6.5</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">23</td>
+                        <td>
+                                <span class="company-name">American Water Works Company, Inc.</span>
+                                <span class="ticker">AWK</span>
+                        </td>
+                            <td><span class="sector">Utilities</span></td>
+                            <td>$5.1B</td>
+                            <td>19.8</td>
+                            <td>29.4</td>
+                            <td>55.4</td>
+                            <td class="ccc-val">-6.2</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">24</td>
+                        <td>
+                                <span class="company-name">Chipotle Mexican Grill, Inc.</span>
+                                <span class="ticker">CMG</span>
+                        </td>
+                            <td><span class="sector">Consumer Cyclical</span></td>
+                            <td>$11.9B</td>
+                            <td>1.8</td>
+                            <td>3.5</td>
+                            <td>9.3</td>
+                            <td class="ccc-val">-4</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">25</td>
+                        <td>
+                                <span class="company-name">Jacobs Solutions Inc.</span>
+                                <span class="ticker">J</span>
+                        </td>
+                            <td><span class="sector">Industrials</span></td>
+                            <td>$12.4B</td>
+                            <td>0</td>
+                            <td>42.2</td>
+                            <td>45.2</td>
+                            <td class="ccc-val">-3.1</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">26</td>
+                        <td>
+                                <span class="company-name">Huntington Ingalls Industries, Inc.</span>
+                                <span class="ticker">HII</span>
+                        </td>
+                            <td><span class="sector">Industrials</span></td>
+                            <td>$12.5B</td>
+                            <td>7.3</td>
+                            <td>10.8</td>
+                            <td>20.8</td>
+                            <td class="ccc-val">-2.8</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">27</td>
+                        <td>
+                                <span class="company-name">ConocoPhillips</span>
+                                <span class="ticker">COP</span>
+                        </td>
+                            <td><span class="sector">Energy</span></td>
+                            <td>$58.9B</td>
+                            <td>15.2</td>
+                            <td>36.6</td>
+                            <td>54.4</td>
+                            <td class="ccc-val">-2.6</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">28</td>
+                        <td>
+                                <span class="company-name">Darden Restaurants, Inc.</span>
+                                <span class="ticker">DRI</span>
+                        </td>
+                            <td><span class="sector">Consumer Cyclical</span></td>
+                            <td>$12.6B</td>
+                            <td>12</td>
+                            <td>2.4</td>
+                            <td>16.5</td>
+                            <td class="ccc-val">-2.1</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">29</td>
+                        <td>
+                                <span class="company-name">International Business Machines Corporation</span>
+                                <span class="ticker">IBM</span>
+                        </td>
+                            <td><span class="sector">Technology</span></td>
+                            <td>$67.5B</td>
+                            <td>17.1</td>
+                            <td>34.4</td>
+                            <td>52.3</td>
+                            <td class="ccc-val">-0.7</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">30</td>
+                        <td>
+                                <span class="company-name">Entergy Corporation</span>
+                                <span class="ticker">ETR</span>
+                        </td>
+                            <td><span class="sector">Utilities</span></td>
+                            <td>$12.9B</td>
+                            <td>96.4</td>
+                            <td>22.8</td>
+                            <td>117.2</td>
+                            <td class="ccc-val">2</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">31</td>
+                        <td>
+                                <span class="company-name">Consolidated Edison, Inc.</span>
+                                <span class="ticker">ED</span>
+                        </td>
+                            <td><span class="sector">Utilities</span></td>
+                            <td>$16.9B</td>
+                            <td>23.1</td>
+                            <td>54.3</td>
+                            <td>75.4</td>
+                            <td class="ccc-val">2.1</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">32</td>
+                        <td>
+                                <span class="company-name">Exxon Mobil Corporation</span>
+                                <span class="ticker">XOM</span>
+                        </td>
+                            <td><span class="sector">Energy</span></td>
+                            <td>$323.9B</td>
+                            <td>37.3</td>
+                            <td>47.6</td>
+                            <td>81.3</td>
+                            <td class="ccc-val">3.7</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">33</td>
+                        <td>
+                                <span class="company-name">CenterPoint Energy, Inc.</span>
+                                <span class="ticker">CNP</span>
+                        </td>
+                            <td><span class="sector">Utilities</span></td>
+                            <td>$9.4B</td>
+                            <td>50</td>
+                            <td>31.8</td>
+                            <td>74.8</td>
+                            <td class="ccc-val">7</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">34</td>
+                        <td>
+                                <span class="company-name">Chevron Corporation</span>
+                                <span class="ticker">CVX</span>
+                        </td>
+                            <td><span class="sector">Energy</span></td>
+                            <td>$184.4B</td>
+                            <td>27.1</td>
+                            <td>36.2</td>
+                            <td>55.3</td>
+                            <td class="ccc-val">8</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">35</td>
+                        <td>
+                                <span class="company-name">Jabil Inc.</span>
+                                <span class="ticker">JBL</span>
+                        </td>
+                            <td><span class="sector">Technology</span></td>
+                            <td>$31.1B</td>
+                            <td>59.8</td>
+                            <td>47.4</td>
+                            <td>98.6</td>
+                            <td class="ccc-val">8.7</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">36</td>
+                        <td>
+                                <span class="company-name">Centene Corporation</span>
+                                <span class="ticker">CNC</span>
+                        </td>
+                            <td><span class="sector">Healthcare</span></td>
+                            <td>$194.8B</td>
+                            <td>0</td>
+                            <td>39.9</td>
+                            <td>29.2</td>
+                            <td class="ccc-val">10.7</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">37</td>
+                        <td>
+                                <span class="company-name">Best Buy Co., Inc.</span>
+                                <span class="ticker">BBY</span>
+                        </td>
+                            <td><span class="sector">Consumer Cyclical</span></td>
+                            <td>$41.8B</td>
+                            <td>67.8</td>
+                            <td>8.1</td>
+                            <td>63.8</td>
+                            <td class="ccc-val">12.2</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">38</td>
+                        <td>
+                                <span class="company-name">CF Industries Holdings, Inc.</span>
+                                <span class="ticker">CF</span>
+                        </td>
+                            <td><span class="sector">Basic Materials</span></td>
+                            <td>$7.1B</td>
+                            <td>29.7</td>
+                            <td>28.5</td>
+                            <td>44.6</td>
+                            <td class="ccc-val">13.6</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">39</td>
+                        <td>
+                                <span class="company-name">CMS Energy Corporation</span>
+                                <span class="ticker">CMS</span>
+                        </td>
+                            <td><span class="sector">Utilities</span></td>
+                            <td>$8.5B</td>
+                            <td>55</td>
+                            <td>44.5</td>
+                            <td>84.4</td>
+                            <td class="ccc-val">15.2</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">40</td>
+                        <td>
+                                <span class="company-name">Domino&#39;s Pizza, Inc.</span>
+                                <span class="ticker">DPZ</span>
+                        </td>
+                            <td><span class="sector">Consumer Cyclical</span></td>
+                            <td>$4.9B</td>
+                            <td>9</td>
+                            <td>21.8</td>
+                            <td>15.5</td>
+                            <td class="ccc-val">15.4</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">41</td>
+                        <td>
+                                <span class="company-name">Ameren Corporation</span>
+                                <span class="ticker">AEE</span>
+                        </td>
+                            <td><span class="sector">Utilities</span></td>
+                            <td>$8.8B</td>
+                            <td>58.9</td>
+                            <td>27.9</td>
+                            <td>71</td>
+                            <td class="ccc-val">15.8</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">42</td>
+                        <td>
+                                <span class="company-name">CVS Health Corporation</span>
+                                <span class="ticker">CVS</span>
+                        </td>
+                            <td><span class="sector">Healthcare</span></td>
+                            <td>$402.1B</td>
+                            <td>19.2</td>
+                            <td>14.8</td>
+                            <td>18.2</td>
+                            <td class="ccc-val">15.9</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">43</td>
+                        <td>
+                                <span class="company-name">Hewlett Packard Enterprise Company</span>
+                                <span class="ticker">HPE</span>
+                        </td>
+                            <td><span class="sector">Technology</span></td>
+                            <td>$34.3B</td>
+                            <td>115.2</td>
+                            <td>44.9</td>
+                            <td>139.1</td>
+                            <td class="ccc-val">21</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">44</td>
+                        <td>
+                                <span class="company-name">Church &amp; Dwight Co., Inc.</span>
+                                <span class="ticker">CHD</span>
+                        </td>
+                            <td><span class="sector">Consumer Defensive</span></td>
+                            <td>$6.2B</td>
+                            <td>64.8</td>
+                            <td>35.4</td>
+                            <td>77.4</td>
+                            <td class="ccc-val">22.8</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">45</td>
+                        <td>
+                                <span class="company-name">Devon Energy Corporation</span>
+                                <span class="ticker">DVN</span>
+                        </td>
+                            <td><span class="sector">Energy</span></td>
+                            <td>$17.2B</td>
+                            <td>9.7</td>
+                            <td>39.9</td>
+                            <td>25.2</td>
+                            <td class="ccc-val">24.4</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">46</td>
+                        <td>
+                                <span class="company-name">The Campbell&#39;s Company</span>
+                                <span class="ticker">CPB</span>
+                        </td>
+                            <td><span class="sector">Consumer Defensive</span></td>
+                            <td>$10.2B</td>
+                            <td>70.7</td>
+                            <td>24.1</td>
+                            <td>69.9</td>
+                            <td class="ccc-val">24.9</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">47</td>
+                        <td>
+                                <span class="company-name">FedEx Corporation</span>
+                                <span class="ticker">FDX</span>
+                        </td>
+                            <td><span class="sector">Industrials</span></td>
+                            <td>$90.1B</td>
+                            <td>3.2</td>
+                            <td>45.9</td>
+                            <td>21</td>
+                            <td class="ccc-val">28</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">48</td>
+                        <td>
+                                <span class="company-name">HCA Healthcare, Inc.</span>
+                                <span class="ticker">HCA</span>
+                        </td>
+                            <td><span class="sector">Healthcare</span></td>
+                            <td>$75.6B</td>
+                            <td>14.4</td>
+                            <td>51.7</td>
+                            <td>37</td>
+                            <td class="ccc-val">29.1</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">49</td>
+                        <td>
+                                <span class="company-name">Bristol-Myers Squibb Company</span>
+                                <span class="ticker">BMY</span>
+                        </td>
+                            <td><span class="sector">Healthcare</span></td>
+                            <td>$48.2B</td>
+                            <td>71</td>
+                            <td>71.9</td>
+                            <td>113.2</td>
+                            <td class="ccc-val">29.8</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">50</td>
+                        <td>
+                                <span class="company-name">Altria Group, Inc.</span>
+                                <span class="ticker">MO</span>
+                        </td>
+                            <td><span class="sector">Consumer Defensive</span></td>
+                            <td>$20.1B</td>
+                            <td>68.7</td>
+                            <td>4.6</td>
+                            <td>41.3</td>
+                            <td class="ccc-val">32</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">51</td>
+                        <td>
+                                <span class="company-name">Dollar General Corporation</span>
+                                <span class="ticker">DG</span>
+                        </td>
+                            <td><span class="sector">Consumer Defensive</span></td>
+                            <td>$42.1B</td>
+                            <td>82.7</td>
+                            <td>0</td>
+                            <td>49.6</td>
+                            <td class="ccc-val">33.1</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">52</td>
+                        <td>
+                                <span class="company-name">Genuine Parts Company</span>
+                                <span class="ticker">GPC</span>
+                        </td>
+                            <td><span class="sector">Consumer Cyclical</span></td>
+                            <td>$24.3B</td>
+                            <td>138.7</td>
+                            <td>38</td>
+                            <td>143.5</td>
+                            <td class="ccc-val">33.2</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">53</td>
+                        <td>
+                                <span class="company-name">Fortive Corporation</span>
+                                <span class="ticker">FTV</span>
+                        </td>
+                            <td><span class="sector">Technology</span></td>
+                            <td>$5.1B</td>
+                            <td>80.9</td>
+                            <td>56</td>
+                            <td>101.5</td>
+                            <td class="ccc-val">35.5</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">54</td>
+                        <td>
+                                <span class="company-name">Equifax Inc.</span>
+                                <span class="ticker">EFX</span>
+                        </td>
+                            <td><span class="sector">Industrials</span></td>
+                            <td>$6.1B</td>
+                            <td>0</td>
+                            <td>61.4</td>
+                            <td>24.4</td>
+                            <td class="ccc-val">37</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">55</td>
+                        <td>
+                                <span class="company-name">Coterra Energy Inc.</span>
+                                <span class="ticker">CTRA</span>
+                        </td>
+                            <td><span class="sector">Energy</span></td>
+                            <td>$7.6B</td>
+                            <td>4.6</td>
+                            <td>41.8</td>
+                            <td>9.1</td>
+                            <td class="ccc-val">37.3</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">56</td>
+                        <td>
+                                <span class="company-name">Builders FirstSource, Inc.</span>
+                                <span class="ticker">BLDR</span>
+                        </td>
+                            <td><span class="sector">Industrials</span></td>
+                            <td>$15.2B</td>
+                            <td>42.5</td>
+                            <td>29.4</td>
+                            <td>32</td>
+                            <td class="ccc-val">40</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">57</td>
+                        <td>
+                                <span class="company-name">Broadridge Financial Solutions, Inc.</span>
+                                <span class="ticker">BR</span>
+                        </td>
+                            <td><span class="sector">Technology</span></td>
+                            <td>$7.2B</td>
+                            <td>0</td>
+                            <td>54.5</td>
+                            <td>14.3</td>
+                            <td class="ccc-val">40.2</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">58</td>
+                        <td>
+                                <span class="company-name">DTE Energy Company</span>
+                                <span class="ticker">DTE</span>
+                        </td>
+                            <td><span class="sector">Utilities</span></td>
+                            <td>$15.8B</td>
+                            <td>45.1</td>
+                            <td>42.6</td>
+                            <td>47.6</td>
+                            <td class="ccc-val">40.2</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">59</td>
+                        <td>
+                                <span class="company-name">Colgate-Palmolive Company</span>
+                                <span class="ticker">CL</span>
+                        </td>
+                            <td><span class="sector">Consumer Defensive</span></td>
+                            <td>$20.4B</td>
+                            <td>94.1</td>
+                            <td>31.2</td>
+                            <td>84.7</td>
+                            <td class="ccc-val">40.7</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">60</td>
+                        <td>
+                                <span class="company-name">DaVita Inc.</span>
+                                <span class="ticker">DVA</span>
+                        </td>
+                            <td><span class="sector">Healthcare</span></td>
+                            <td>$13.6B</td>
+                            <td>5.9</td>
+                            <td>63.6</td>
+                            <td>25.1</td>
+                            <td class="ccc-val">44.4</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">61</td>
+                        <td>
+                                <span class="company-name">Carrier Global Corporation</span>
+                                <span class="ticker">CARR</span>
+                        </td>
+                            <td><span class="sector">Industrials</span></td>
+                            <td>$21.7B</td>
+                            <td>62.4</td>
+                            <td>50.9</td>
+                            <td>67.3</td>
+                            <td class="ccc-val">45.9</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">62</td>
+                        <td>
+                                <span class="company-name">Deckers Outdoor Corporation</span>
+                                <span class="ticker">DECK</span>
+                        </td>
+                            <td><span class="sector">Consumer Cyclical</span></td>
+                            <td>$5.4B</td>
+                            <td>112.5</td>
+                            <td>27</td>
+                            <td>93.6</td>
+                            <td class="ccc-val">46</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">63</td>
+                        <td>
+                                <span class="company-name">Hilton Worldwide Holdings Inc.</span>
+                                <span class="ticker">HLT</span>
+                        </td>
+                            <td><span class="sector">Consumer Cyclical</span></td>
+                            <td>$12.0B</td>
+                            <td>0</td>
+                            <td>50</td>
+                            <td>4</td>
+                            <td class="ccc-val">46</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">64</td>
+                        <td>
+                                <span class="company-name">Duke Energy Corporation</span>
+                                <span class="ticker">DUK</span>
+                        </td>
+                            <td><span class="sector">Utilities</span></td>
+                            <td>$32.2B</td>
+                            <td>103.9</td>
+                            <td>47.9</td>
+                            <td>105.7</td>
+                            <td class="ccc-val">46.1</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">65</td>
+                        <td>
+                                <span class="company-name">Archer-Daniels-Midland Company</span>
+                                <span class="ticker">ADM</span>
+                        </td>
+                            <td><span class="sector">Consumer Defensive</span></td>
+                            <td>$80.3B</td>
+                            <td>48.9</td>
+                            <td>21.5</td>
+                            <td>24</td>
+                            <td class="ccc-val">46.4</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">66</td>
+                        <td>
+                                <span class="company-name">Atmos Energy Corporation</span>
+                                <span class="ticker">ATO</span>
+                        </td>
+                            <td><span class="sector">Utilities</span></td>
+                            <td>$4.9B</td>
+                            <td>26.1</td>
+                            <td>37.6</td>
+                            <td>16.9</td>
+                            <td class="ccc-val">46.8</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">67</td>
+                        <td>
+                                <span class="company-name">Carvana Co.</span>
+                                <span class="ticker">CVNA</span>
+                        </td>
+                            <td><span class="sector">Consumer Cyclical</span></td>
+                            <td>$20.3B</td>
+                            <td>46.7</td>
+                            <td>5.8</td>
+                            <td>5.6</td>
+                            <td class="ccc-val">46.9</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">68</td>
+                        <td>
+                                <span class="company-name">Accenture plc</span>
+                                <span class="ticker">ACN</span>
+                        </td>
+                            <td><span class="sector">Technology</span></td>
+                            <td>$70.7B</td>
+                            <td>0</td>
+                            <td>67.8</td>
+                            <td>20.8</td>
+                            <td class="ccc-val">47</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">69</td>
+                        <td>
+                                <span class="company-name">Avery Dennison Corporation</span>
+                                <span class="ticker">AVY</span>
+                        </td>
+                            <td><span class="sector">Consumer Cyclical</span></td>
+                            <td>$8.9B</td>
+                            <td>58.7</td>
+                            <td>64.7</td>
+                            <td>74.4</td>
+                            <td class="ccc-val">48.9</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">70</td>
+                        <td>
+                                <span class="company-name">Bunge Global SA</span>
+                                <span class="ticker">BG</span>
+                        </td>
+                            <td><span class="sector">Consumer Defensive</span></td>
+                            <td>$70.3B</td>
+                            <td>57.7</td>
+                            <td>15.5</td>
+                            <td>22.3</td>
+                            <td class="ccc-val">50.9</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">71</td>
+                        <td>
+                                <span class="company-name">Conagra Brands, Inc.</span>
+                                <span class="ticker">CAG</span>
+                        </td>
+                            <td><span class="sector">Consumer Defensive</span></td>
+                            <td>$11.2B</td>
+                            <td>91</td>
+                            <td>25.4</td>
+                            <td>65.3</td>
+                            <td class="ccc-val">51.2</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">72</td>
+                        <td>
+                                <span class="company-name">Evergy, Inc.</span>
+                                <span class="ticker">EVRG</span>
+                        </td>
+                            <td><span class="sector">Utilities</span></td>
+                            <td>$6.0B</td>
+                            <td>107.7</td>
+                            <td>0.6</td>
+                            <td>56.3</td>
+                            <td class="ccc-val">52.1</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">73</td>
+                        <td>
+                                <span class="company-name">Aptiv PLC</span>
+                                <span class="ticker">APTV</span>
+                        </td>
+                            <td><span class="sector">Consumer Cyclical</span></td>
+                            <td>$20.4B</td>
+                            <td>55.6</td>
+                            <td>64.7</td>
+                            <td>67.6</td>
+                            <td class="ccc-val">52.8</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">74</td>
+                        <td>
+                                <span class="company-name">Fidelity National Information Services, Inc.</span>
+                                <span class="ticker">FIS</span>
+                        </td>
+                            <td><span class="sector">Technology</span></td>
+                            <td>$10.7B</td>
+                            <td>0</td>
+                            <td>66.9</td>
+                            <td>12.1</td>
+                            <td class="ccc-val">54.8</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">75</td>
+                        <td>
+                                <span class="company-name">Ecolab Inc.</span>
+                                <span class="ticker">ECL</span>
+                        </td>
+                            <td><span class="sector">Basic Materials</span></td>
+                            <td>$16.1B</td>
+                            <td>62.8</td>
+                            <td>69.7</td>
+                            <td>77.5</td>
+                            <td class="ccc-val">54.9</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">76</td>
+                        <td>
+                                <span class="company-name">Block, Inc.</span>
+                                <span class="ticker">XYZ</span>
+                        </td>
+                            <td><span class="sector">Technology</span></td>
+                            <td>$24.2B</td>
+                            <td>3.8</td>
+                            <td>55.4</td>
+                            <td>3</td>
+                            <td class="ccc-val">56.2</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">77</td>
+                        <td>
+                                <span class="company-name">A. O. Smith Corporation</span>
+                                <span class="ticker">AOS</span>
+                        </td>
+                            <td><span class="sector">Industrials</span></td>
+                            <td>$3.8B</td>
+                            <td>79.4</td>
+                            <td>58.4</td>
+                            <td>81.3</td>
+                            <td class="ccc-val">56.5</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">78</td>
+                        <td>
+                                <span class="company-name">Fair Isaac Corporation</span>
+                                <span class="ticker">FICO</span>
+                        </td>
+                            <td><span class="sector">Technology</span></td>
+                            <td>$2.1B</td>
+                            <td>0</td>
+                            <td>87.2</td>
+                            <td>29</td>
+                            <td class="ccc-val">58.2</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">79</td>
+                        <td>
+                                <span class="company-name">Comfort Systems USA, Inc.</span>
+                                <span class="ticker">FIX</span>
+                        </td>
+                            <td><span class="sector">Industrials</span></td>
+                            <td>$9.1B</td>
+                            <td>3.9</td>
+                            <td>88.1</td>
+                            <td>33</td>
+                            <td class="ccc-val">59</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">80</td>
+                        <td>
+                                <span class="company-name">Hormel Foods Corporation</span>
+                                <span class="ticker">HRL</span>
+                        </td>
+                            <td><span class="sector">Consumer Defensive</span></td>
+                            <td>$12.1B</td>
+                            <td>61.8</td>
+                            <td>22.5</td>
+                            <td>25.1</td>
+                            <td class="ccc-val">59.1</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">81</td>
+                        <td>
+                                <span class="company-name">Amcor plc</span>
+                                <span class="ticker">AMCR</span>
+                        </td>
+                            <td><span class="sector">Consumer Cyclical</span></td>
+                            <td>$19.6B</td>
+                            <td>72.1</td>
+                            <td>55.8</td>
+                            <td>68.2</td>
+                            <td class="ccc-val">59.7</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">82</td>
+                        <td>
+                                <span class="company-name">EMCOR Group, Inc.</span>
+                                <span class="ticker">EME</span>
+                        </td>
+                            <td><span class="sector">Industrials</span></td>
+                            <td>$17.0B</td>
+                            <td>2.9</td>
+                            <td>87.4</td>
+                            <td>29.5</td>
+                            <td class="ccc-val">60.8</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">83</td>
+                        <td>
+                                <span class="company-name">Constellation Brands, Inc.</span>
+                                <span class="ticker">STZ</span>
+                        </td>
+                            <td><span class="sector">Consumer Defensive</span></td>
+                            <td>$9.4B</td>
+                            <td>114.7</td>
+                            <td>28.5</td>
+                            <td>79.3</td>
+                            <td class="ccc-val">63.9</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">84</td>
+                        <td>
+                                <span class="company-name">The Hershey Company</span>
+                                <span class="ticker">HSY</span>
+                        </td>
+                            <td><span class="sector">Consumer Defensive</span></td>
+                            <td>$11.7B</td>
+                            <td>75.7</td>
+                            <td>26.5</td>
+                            <td>37</td>
+                            <td class="ccc-val">65.3</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">85</td>
+                        <td>
+                                <span class="company-name">Dow Inc.</span>
+                                <span class="ticker">DOW</span>
+                        </td>
+                            <td><span class="sector">Basic Materials</span></td>
+                            <td>$40.0B</td>
+                            <td>65.2</td>
+                            <td>46</td>
+                            <td>45.2</td>
+                            <td class="ccc-val">65.9</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">86</td>
+                        <td>
+                                <span class="company-name">Charles River Laboratories International, Inc.</span>
+                                <span class="ticker">CRL</span>
+                        </td>
+                            <td><span class="sector">Healthcare</span></td>
+                            <td>$4.0B</td>
+                            <td>39.7</td>
+                            <td>49.5</td>
+                            <td>20.8</td>
+                            <td class="ccc-val">68.4</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">87</td>
+                        <td>
+                                <span class="company-name">EPAM Systems, Inc.</span>
+                                <span class="ticker">EPAM</span>
+                        </td>
+                            <td><span class="sector">Technology</span></td>
+                            <td>$5.5B</td>
+                            <td>0</td>
+                            <td>75</td>
+                            <td>4.4</td>
+                            <td class="ccc-val">70.6</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">88</td>
+                        <td>
+                                <span class="company-name">General Dynamics Corporation</span>
+                                <span class="ticker">GD</span>
+                        </td>
+                            <td><span class="sector">Industrials</span></td>
+                            <td>$52.5B</td>
+                            <td>79.3</td>
+                            <td>21.9</td>
+                            <td>25.7</td>
+                            <td class="ccc-val">75.5</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">89</td>
+                        <td>
+                                <span class="company-name">Gartner, Inc.</span>
+                                <span class="ticker">IT</span>
+                        </td>
+                            <td><span class="sector">Technology</span></td>
+                            <td>$6.5B</td>
+                            <td>0</td>
+                            <td>78.3</td>
+                            <td>2.2</td>
+                            <td class="ccc-val">76</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">90</td>
+                        <td>
+                                <span class="company-name">Freeport-McMoRan Inc.</span>
+                                <span class="ticker">FCX</span>
+                        </td>
+                            <td><span class="sector">Basic Materials</span></td>
+                            <td>$25.9B</td>
+                            <td>139.8</td>
+                            <td>12.6</td>
+                            <td>75.5</td>
+                            <td class="ccc-val">76.8</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">91</td>
+                        <td>
+                                <span class="company-name">CRH plc</span>
+                                <span class="ticker">CRH</span>
+                        </td>
+                            <td><span class="sector">Basic Materials</span></td>
+                            <td>$37.4B</td>
+                            <td>77.4</td>
+                            <td>47.5</td>
+                            <td>47.7</td>
+                            <td class="ccc-val">77.1</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">92</td>
+                        <td>
+                                <span class="company-name">3M Company</span>
+                                <span class="ticker">MMM</span>
+                        </td>
+                            <td><span class="sector">Industrials</span></td>
+                            <td>$24.9B</td>
+                            <td>94.3</td>
+                            <td>53.3</td>
+                            <td>67.2</td>
+                            <td class="ccc-val">80.5</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">93</td>
+                        <td>
+                                <span class="company-name">Allegion plc</span>
+                                <span class="ticker">ALLE</span>
+                        </td>
+                            <td><span class="sector">Industrials</span></td>
+                            <td>$4.1B</td>
+                            <td>80.5</td>
+                            <td>42.3</td>
+                            <td>42</td>
+                            <td class="ccc-val">80.8</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">94</td>
+                        <td>
+                                <span class="company-name">Halliburton Company</span>
+                                <span class="ticker">HAL</span>
+                        </td>
+                            <td><span class="sector">Energy</span></td>
+                            <td>$22.2B</td>
+                            <td>59.5</td>
+                            <td>83.4</td>
+                            <td>62</td>
+                            <td class="ccc-val">80.8</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">95</td>
+                        <td>
+                                <span class="company-name">Dominion Energy, Inc.</span>
+                                <span class="ticker">D</span>
+                        </td>
+                            <td><span class="sector">Utilities</span></td>
+                            <td>$16.5B</td>
+                            <td>80.7</td>
+                            <td>50.6</td>
+                            <td>47.2</td>
+                            <td class="ccc-val">84.1</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">96</td>
+                        <td>
+                                <span class="company-name">Danaher Corporation</span>
+                                <span class="ticker">DHR</span>
+                        </td>
+                            <td><span class="sector">Healthcare</span></td>
+                            <td>$24.6B</td>
+                            <td>94.3</td>
+                            <td>54.7</td>
+                            <td>63.5</td>
+                            <td class="ccc-val">85.6</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">97</td>
+                        <td>
+                                <span class="company-name">Amphenol Corporation</span>
+                                <span class="ticker">APH</span>
+                        </td>
+                            <td><span class="sector">Technology</span></td>
+                            <td>$23.1B</td>
+                            <td>79.9</td>
+                            <td>69</td>
+                            <td>60.3</td>
+                            <td class="ccc-val">88.5</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">98</td>
+                        <td>
+                                <span class="company-name">Cummins Inc.</span>
+                                <span class="ticker">CMI</span>
+                        </td>
+                            <td><span class="sector">Industrials</span></td>
+                            <td>$33.7B</td>
+                            <td>88.8</td>
+                            <td>62.4</td>
+                            <td>58.3</td>
+                            <td class="ccc-val">92.9</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">99</td>
+                        <td>
+                                <span class="company-name">AMETEK, Inc.</span>
+                                <span class="ticker">AME</span>
+                        </td>
+                            <td><span class="sector">Industrials</span></td>
+                            <td>$7.4B</td>
+                            <td>85.6</td>
+                            <td>52.7</td>
+                            <td>44</td>
+                            <td class="ccc-val">94.2</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">100</td>
+                        <td>
+                                <span class="company-name">Dover Corporation</span>
+                                <span class="ticker">DOV</span>
+                        </td>
+                            <td><span class="sector">Industrials</span></td>
+                            <td>$8.1B</td>
+                            <td>95.7</td>
+                            <td>64.1</td>
+                            <td>64.6</td>
+                            <td class="ccc-val">95.1</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">101</td>
+                        <td>
+                                <span class="company-name">General Motors Company</span>
+                                <span class="ticker">GM</span>
+                        </td>
+                            <td><span class="sector">Consumer Cyclical</span></td>
+                            <td>$185.0B</td>
+                            <td>31.8</td>
+                            <td>118.7</td>
+                            <td>55.4</td>
+                            <td class="ccc-val">95.1</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">102</td>
+                        <td>
+                                <span class="company-name">Ingersoll Rand Inc.</span>
+                                <span class="ticker">IR</span>
+                        </td>
+                            <td><span class="sector">Industrials</span></td>
+                            <td>$7.7B</td>
+                            <td>100.9</td>
+                            <td>67.8</td>
+                            <td>72.8</td>
+                            <td class="ccc-val">95.9</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">103</td>
+                        <td>
+                                <span class="company-name">Corning Incorporated</span>
+                                <span class="ticker">GLW</span>
+                        </td>
+                            <td><span class="sector">Technology</span></td>
+                            <td>$15.6B</td>
+                            <td>110.9</td>
+                            <td>56.2</td>
+                            <td>70</td>
+                            <td class="ccc-val">97.1</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">104</td>
+                        <td>
+                                <span class="company-name">Albemarle Corporation</span>
+                                <span class="ticker">ALB</span>
+                        </td>
+                            <td><span class="sector">Basic Materials</span></td>
+                            <td>$5.1B</td>
+                            <td>122.6</td>
+                            <td>49</td>
+                            <td>73.3</td>
+                            <td class="ccc-val">98.3</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">105</td>
+                        <td>
+                                <span class="company-name">Emerson Electric Co.</span>
+                                <span class="ticker">EMR</span>
+                        </td>
+                            <td><span class="sector">Industrials</span></td>
+                            <td>$18.2B</td>
+                            <td>96.3</td>
+                            <td>59.6</td>
+                            <td>56.7</td>
+                            <td class="ccc-val">99.3</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">106</td>
+                        <td>
+                                <span class="company-name">GE Vernova Inc.</span>
+                                <span class="ticker">GEV</span>
+                        </td>
+                            <td><span class="sector">Industrials</span></td>
+                            <td>$38.1B</td>
+                            <td>108.8</td>
+                            <td>58.3</td>
+                            <td>67.4</td>
+                            <td class="ccc-val">99.6</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">107</td>
+                        <td>
+                                <span class="company-name">Hubbell Incorporated</span>
+                                <span class="ticker">HUBB</span>
+                        </td>
+                            <td><span class="sector">Industrials</span></td>
+                            <td>$5.8B</td>
+                            <td>97.2</td>
+                            <td>56.1</td>
+                            <td>52.8</td>
+                            <td class="ccc-val">100.4</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">108</td>
+                        <td>
+                                <span class="company-name">IDEX Corporation</span>
+                                <span class="ticker">IEX</span>
+                        </td>
+                            <td><span class="sector">Industrials</span></td>
+                            <td>$3.5B</td>
+                            <td>91.7</td>
+                            <td>50.4</td>
+                            <td>40.2</td>
+                            <td class="ccc-val">101.9</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">109</td>
+                        <td>
+                                <span class="company-name">Howmet Aerospace Inc.</span>
+                                <span class="ticker">HWM</span>
+                        </td>
+                            <td><span class="sector">Industrials</span></td>
+                            <td>$8.3B</td>
+                            <td>129.2</td>
+                            <td>38</td>
+                            <td>64.2</td>
+                            <td class="ccc-val">103</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">110</td>
+                        <td>
+                                <span class="company-name">Ford Motor Company</span>
+                                <span class="ticker">F</span>
+                        </td>
+                            <td><span class="sector">Consumer Cyclical</span></td>
+                            <td>$187.3B</td>
+                            <td>32.9</td>
+                            <td>128.9</td>
+                            <td>53</td>
+                            <td class="ccc-val">108.8</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">111</td>
+                        <td>
+                                <span class="company-name">The Estée Lauder Companies Inc.</span>
+                                <span class="ticker">EL</span>
+                        </td>
+                            <td><span class="sector">Consumer Defensive</span></td>
+                            <td>$14.7B</td>
+                            <td>193.6</td>
+                            <td>42.7</td>
+                            <td>127.5</td>
+                            <td class="ccc-val">108.9</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">112</td>
+                        <td>
+                                <span class="company-name">Deere &amp; Company</span>
+                                <span class="ticker">DE</span>
+                        </td>
+                            <td><span class="sector">Industrials</span></td>
+                            <td>$45.7B</td>
+                            <td>96.7</td>
+                            <td>48.3</td>
+                            <td>35.4</td>
+                            <td class="ccc-val">109.7</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">113</td>
+                        <td>
+                                <span class="company-name">Abbott Laboratories</span>
+                                <span class="ticker">ABT</span>
+                        </td>
+                            <td><span class="sector">Healthcare</span></td>
+                            <td>$44.3B</td>
+                            <td>126.5</td>
+                            <td>64.6</td>
+                            <td>79.7</td>
+                            <td class="ccc-val">111.4</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">114</td>
+                        <td>
+                                <span class="company-name">Agilent Technologies, Inc.</span>
+                                <span class="ticker">A</span>
+                        </td>
+                            <td><span class="sector">Healthcare</span></td>
+                            <td>$7.1B</td>
+                            <td>110.6</td>
+                            <td>66.8</td>
+                            <td>60</td>
+                            <td class="ccc-val">117.4</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">115</td>
+                        <td>
+                                <span class="company-name">Illinois Tool Works Inc.</span>
+                                <span class="ticker">ITW</span>
+                        </td>
+                            <td><span class="sector">Industrials</span></td>
+                            <td>$16.0B</td>
+                            <td>68.7</td>
+                            <td>73.7</td>
+                            <td>23.8</td>
+                            <td class="ccc-val">118.7</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">116</td>
+                        <td>
+                                <span class="company-name">Baxter International Inc.</span>
+                                <span class="ticker">BAX</span>
+                        </td>
+                            <td><span class="sector">Healthcare</span></td>
+                            <td>$11.2B</td>
+                            <td>107.3</td>
+                            <td>57.3</td>
+                            <td>45.4</td>
+                            <td class="ccc-val">119.2</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">117</td>
+                        <td>
+                                <span class="company-name">GE Aerospace</span>
+                                <span class="ticker">GE</span>
+                        </td>
+                            <td><span class="sector">Industrials</span></td>
+                            <td>$45.9B</td>
+                            <td>142.8</td>
+                            <td>66.8</td>
+                            <td>85.8</td>
+                            <td class="ccc-val">123.8</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">118</td>
+                        <td>
+                                <span class="company-name">Ciena Corporation</span>
+                                <span class="ticker">CIEN</span>
+                        </td>
+                            <td><span class="sector">Technology</span></td>
+                            <td>$4.8B</td>
+                            <td>112.4</td>
+                            <td>74</td>
+                            <td>60.2</td>
+                            <td class="ccc-val">126.3</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">119</td>
+                        <td>
+                                <span class="company-name">DuPont de Nemours, Inc.</span>
+                                <span class="ticker">DD</span>
+                        </td>
+                            <td><span class="sector">Basic Materials</span></td>
+                            <td>$7.5B</td>
+                            <td>137.1</td>
+                            <td>98.4</td>
+                            <td>109.2</td>
+                            <td class="ccc-val">126.3</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">120</td>
+                        <td>
+                                <span class="company-name">Becton, Dickinson and Company</span>
+                                <span class="ticker">BDX</span>
+                        </td>
+                            <td><span class="sector">Healthcare</span></td>
+                            <td>$21.9B</td>
+                            <td>120.8</td>
+                            <td>47.8</td>
+                            <td>15.2</td>
+                            <td class="ccc-val">153.3</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">121</td>
+                        <td>
+                                <span class="company-name">Generac Holdings Inc.</span>
+                                <span class="ticker">GNRC</span>
+                        </td>
+                            <td><span class="sector">Industrials</span></td>
+                            <td>$4.2B</td>
+                            <td>173.1</td>
+                            <td>54.7</td>
+                            <td>73.5</td>
+                            <td class="ccc-val">154.2</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">122</td>
+                        <td>
+                                <span class="company-name">AbbVie Inc.</span>
+                                <span class="ticker">ABBV</span>
+                        </td>
+                            <td><span class="sector">Healthcare</span></td>
+                            <td>$61.2B</td>
+                            <td>97.1</td>
+                            <td>75.3</td>
+                            <td>18</td>
+                            <td class="ccc-val">154.4</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">123</td>
+                        <td>
+                                <span class="company-name">Boston Scientific Corporation</span>
+                                <span class="ticker">BSX</span>
+                        </td>
+                            <td><span class="sector">Healthcare</span></td>
+                            <td>$20.1B</td>
+                            <td>170</td>
+                            <td>51.2</td>
+                            <td>60.3</td>
+                            <td class="ccc-val">160.9</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">124</td>
+                        <td>
+                                <span class="company-name">Corteva, Inc.</span>
+                                <span class="ticker">CTVA</span>
+                        </td>
+                            <td><span class="sector">Basic Materials</span></td>
+                            <td>$17.4B</td>
+                            <td>203.2</td>
+                            <td>136.7</td>
+                            <td>163.8</td>
+                            <td class="ccc-val">176.1</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">125</td>
+                        <td>
+                                <span class="company-name">Caterpillar Inc.</span>
+                                <span class="ticker">CAT</span>
+                        </td>
+                            <td><span class="sector">Industrials</span></td>
+                            <td>$67.6B</td>
+                            <td>145.5</td>
+                            <td>108.9</td>
+                            <td>67.4</td>
+                            <td class="ccc-val">187</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">126</td>
+                        <td>
+                                <span class="company-name">Garmin Ltd.</span>
+                                <span class="ticker">GRMN</span>
+                        </td>
+                            <td><span class="sector">Technology</span></td>
+                            <td>$7.2B</td>
+                            <td>214.6</td>
+                            <td>50.5</td>
+                            <td>44.8</td>
+                            <td class="ccc-val">220.3</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">127</td>
+                        <td>
+                                <span class="company-name">Arista Networks, Inc.</span>
+                                <span class="ticker">ANET</span>
+                        </td>
+                            <td><span class="sector">Technology</span></td>
+                            <td>$9.0B</td>
+                            <td>237.3</td>
+                            <td>65.2</td>
+                            <td>58.2</td>
+                            <td class="ccc-val">244.3</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">128</td>
+                        <td>
+                                <span class="company-name">Edwards Lifesciences Corporation</span>
+                                <span class="ticker">EW</span>
+                        </td>
+                            <td><span class="sector">Healthcare</span></td>
+                            <td>$6.1B</td>
+                            <td>309.3</td>
+                            <td>40.9</td>
+                            <td>49.7</td>
+                            <td class="ccc-val">300.5</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">129</td>
+                        <td>
+                                <span class="company-name">The Boeing Company</span>
+                                <span class="ticker">BA</span>
+                        </td>
+                            <td><span class="sector">Industrials</span></td>
+                            <td>$89.5B</td>
+                            <td>368.6</td>
+                            <td>12.7</td>
+                            <td>50.5</td>
+                            <td class="ccc-val">330.8</td>
+                    </tr>
+
+                    <tr>
+                            <td style="font-family: 'Inter', sans-serif; color: var(--text-muted);">130</td>
+                        <td>
+                                <span class="company-name">D.R. Horton, Inc.</span>
+                                <span class="ticker">DHI</span>
+                        </td>
+                            <td><span class="sector">Consumer Cyclical</span></td>
+                            <td>$33.5B</td>
+                            <td>369.3</td>
+                            <td>0</td>
+                            <td>17.8</td>
+                            <td class="ccc-val">351.5</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="faq">
+            <h2>Frequently Asked Questions</h2>
+
+            <h3>What is the Cash Conversion Cycle (CCC)?</h3>
+            <p>The Cash Conversion Cycle (CCC) measures how long it takes a company to convert its investments in inventory and other resources into cash flows from sales. It is calculated as: <strong>Days Inventory Outstanding + Days Sales Outstanding - Days Payable Outstanding</strong>.</p>
+
+            <h3>What does a negative CCC mean?</h3>
+            <p>A negative CCC means a company is paid by its customers before it has to pay its suppliers. This is a highly efficient model, essentially using suppliers to finance operations. Companies like Amazon and Apple frequently maintain negative CCCs.</p>
+
+            <h3>Why are Financials and Real Estate excluded?</h3>
+            <p>The Cash Conversion Cycle relies on inventory and cost of goods sold (COGS). Financial institutions and real estate firms have entirely different business models where "inventory" and "payables" do not translate to traditional working capital metrics.</p>
+        </div>
+
+        <div class="methodology">
+            <h2>Methodology</h2>
+            <p>Data was collected based on trailing twelve months (TTM) financials using the latest quarterly statements available as of 2026. We calculated average inventory, accounts receivable, and accounts payable across the last four quarters to smooth out seasonal fluctuations. Companies with fewer than four valid quarters or missing revenue/COGS data were excluded.</p>
+        </div>
+
+        <div class="disclaimer">
+            <h2>Disclaimer</h2>
+            <p>This study provides data and analysis for informational purposes only. Metrics like the Cash Conversion Cycle do not guarantee future performance and do not represent a complete fundamental analysis. Nothing here constitutes investment advice. Always conduct your own research.</p>
+        </div>
+
+        <footer>
+            © 2026 Westmount Research. All rights reserved.
+        </footer>
+    </div>
+
+    <script>
+        const chartData = [{"ticker":"CPAY","ccc":-390.4},{"ticker":"T","ccc":-194.2},{"ticker":"KO","ccc":-156.8},{"ticker":"GPN","ccc":-153.2},{"ticker":"ES","ccc":-135.8},{"ticker":"CLX","ccc":-68.8},{"ticker":"IQV","ccc":-61.2},{"ticker":"FE","ccc":-58.6},{"ticker":"EQT","ccc":-50.9},{"ticker":"HPQ","ccc":-37.3}];
+
+        const ctx = document.getElementById('cccChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: chartData.map(d => d.ticker),
+                datasets: [{
+                    label: 'Cash Conversion Cycle (Days)',
+                    data: chartData.map(d => d.ccc),
+                    backgroundColor: 'rgba(74, 143, 231, 0.5)',
+                    borderColor: '#4a8fe7',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: { color: '#152040' },
+                        ticks: { color: '#94a3b8' }
+                    },
+                    x: {
+                        grid: { display: false },
+                        ticks: { color: '#f1f5f9' }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        labels: { color: '#f1f5f9' }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

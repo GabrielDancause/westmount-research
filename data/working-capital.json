@@ -1,0 +1,1302 @@
+[
+  {
+    "ticker": "CPAY",
+    "company": "Corpay, Inc.",
+    "sector": "Technology",
+    "revenue": 4528403000,
+    "days_inventory": 0,
+    "days_receivable": 298.5,
+    "days_payable": 688.9,
+    "cash_conversion_cycle": -390.4
+  },
+  {
+    "ticker": "T",
+    "company": "AT&amp;T Inc.",
+    "sector": "Communication Services",
+    "revenue": 125648000000,
+    "days_inventory": 18.4,
+    "days_receivable": 26,
+    "days_payable": 238.6,
+    "cash_conversion_cycle": -194.2
+  },
+  {
+    "ticker": "KO",
+    "company": "The Coca-Cola Company",
+    "sector": "Consumer Defensive",
+    "revenue": 47941000000,
+    "days_inventory": 96.3,
+    "days_receivable": 29,
+    "days_payable": 282.1,
+    "cash_conversion_cycle": -156.8
+  },
+  {
+    "ticker": "GPN",
+    "company": "Global Payments Inc.",
+    "sector": "Industrials",
+    "revenue": 8309289000,
+    "days_inventory": 0,
+    "days_receivable": 40,
+    "days_payable": 193.1,
+    "cash_conversion_cycle": -153.2
+  },
+  {
+    "ticker": "ES",
+    "company": "Eversource Energy",
+    "sector": "Utilities",
+    "revenue": 13547344000,
+    "days_inventory": 95.6,
+    "days_receivable": 47.7,
+    "days_payable": 279.2,
+    "cash_conversion_cycle": -135.8
+  },
+  {
+    "ticker": "CLX",
+    "company": "The Clorox Company",
+    "sector": "Consumer Defensive",
+    "revenue": 6758000000,
+    "days_inventory": 56.7,
+    "days_receivable": 37.5,
+    "days_payable": 163,
+    "cash_conversion_cycle": -68.8
+  },
+  {
+    "ticker": "IQV",
+    "company": "IQVIA Holdings Inc.",
+    "sector": "Healthcare",
+    "revenue": 16310000000,
+    "days_inventory": 0,
+    "days_receivable": 33.5,
+    "days_payable": 94.7,
+    "cash_conversion_cycle": -61.2
+  },
+  {
+    "ticker": "FE",
+    "company": "FirstEnergy Corp.",
+    "sector": "Utilities",
+    "revenue": 15090000000,
+    "days_inventory": 40.4,
+    "days_receivable": 22.7,
+    "days_payable": 121.7,
+    "cash_conversion_cycle": -58.6
+  },
+  {
+    "ticker": "EQT",
+    "company": "EQT Corporation",
+    "sector": "Energy",
+    "revenue": 8353217000,
+    "days_inventory": 0,
+    "days_receivable": 46.8,
+    "days_payable": 97.7,
+    "cash_conversion_cycle": -50.9
+  },
+  {
+    "ticker": "HPQ",
+    "company": "HP Inc.",
+    "sector": "Technology",
+    "revenue": 56229000000,
+    "days_inventory": 68.7,
+    "days_receivable": 33.2,
+    "days_payable": 139.3,
+    "cash_conversion_cycle": -37.3
+  },
+  {
+    "ticker": "APD",
+    "company": "Air Products and Chemicals, Inc.",
+    "sector": "Basic Materials",
+    "revenue": 12208300000,
+    "days_inventory": 34.2,
+    "days_receivable": 56.7,
+    "days_payable": 123.1,
+    "cash_conversion_cycle": -32.2
+  },
+  {
+    "ticker": "AZO",
+    "company": "AutoZone, Inc.",
+    "sector": "Consumer Cyclical",
+    "revenue": 19287707000,
+    "days_inventory": 272.7,
+    "days_receivable": 11.8,
+    "days_payable": 316,
+    "cash_conversion_cycle": -31.5
+  },
+  {
+    "ticker": "EOG",
+    "company": "EOG Resources, Inc.",
+    "sector": "Energy",
+    "revenue": 22582000000,
+    "days_inventory": 41.8,
+    "days_receivable": 42.4,
+    "days_payable": 115.5,
+    "cash_conversion_cycle": -31.3
+  },
+  {
+    "ticker": "EIX",
+    "company": "Edison International",
+    "sector": "Utilities",
+    "revenue": 19317000000,
+    "days_inventory": 19.3,
+    "days_receivable": 35.5,
+    "days_payable": 80.1,
+    "cash_conversion_cycle": -25.3
+  },
+  {
+    "ticker": "BALL",
+    "company": "Ball Corporation",
+    "sector": "Consumer Cyclical",
+    "revenue": 13161000000,
+    "days_inventory": 62.5,
+    "days_receivable": 44.3,
+    "days_payable": 126.7,
+    "cash_conversion_cycle": -20
+  },
+  {
+    "ticker": "GIS",
+    "company": "General Mills, Inc.",
+    "sector": "Consumer Defensive",
+    "revenue": 18776700000,
+    "days_inventory": 57.4,
+    "days_receivable": 35.4,
+    "days_payable": 112.8,
+    "cash_conversion_cycle": -20
+  },
+  {
+    "ticker": "AES",
+    "company": "The AES Corporation",
+    "sector": "Utilities",
+    "revenue": 12094000000,
+    "days_inventory": 22.4,
+    "days_receivable": 53,
+    "days_payable": 92.3,
+    "cash_conversion_cycle": -16.9
+  },
+  {
+    "ticker": "COR",
+    "company": "Cencora, Inc.",
+    "sector": "Healthcare",
+    "revenue": 325777775000,
+    "days_inventory": 24.3,
+    "days_receivable": 27.9,
+    "days_payable": 61.6,
+    "cash_conversion_cycle": -9.4
+  },
+  {
+    "ticker": "CAH",
+    "company": "Cardinal Health, Inc.",
+    "sector": "Healthcare",
+    "revenue": 244673000000,
+    "days_inventory": 27.4,
+    "days_receivable": 19.9,
+    "days_payable": 55.5,
+    "cash_conversion_cycle": -8.3
+  },
+  {
+    "ticker": "CCL",
+    "company": "Carnival Corporation &amp; plc",
+    "sector": "Consumer Cyclical",
+    "revenue": 26621000000,
+    "days_inventory": 11.3,
+    "days_receivable": 8.4,
+    "days_payable": 26.9,
+    "cash_conversion_cycle": -7.3
+  },
+  {
+    "ticker": "GDDY",
+    "company": "GoDaddy Inc.",
+    "sector": "Technology",
+    "revenue": 4951100000,
+    "days_inventory": 0,
+    "days_receivable": 7.5,
+    "days_payable": 14.5,
+    "cash_conversion_cycle": -7
+  },
+  {
+    "ticker": "DAL",
+    "company": "Delta Air Lines, Inc.",
+    "sector": "Industrials",
+    "revenue": 63364000000,
+    "days_inventory": 11.7,
+    "days_receivable": 20,
+    "days_payable": 38.2,
+    "cash_conversion_cycle": -6.5
+  },
+  {
+    "ticker": "AWK",
+    "company": "American Water Works Company, Inc.",
+    "sector": "Utilities",
+    "revenue": 5140000000,
+    "days_inventory": 19.8,
+    "days_receivable": 29.4,
+    "days_payable": 55.4,
+    "cash_conversion_cycle": -6.2
+  },
+  {
+    "ticker": "CMG",
+    "company": "Chipotle Mexican Grill, Inc.",
+    "sector": "Consumer Cyclical",
+    "revenue": 11925601000,
+    "days_inventory": 1.8,
+    "days_receivable": 3.5,
+    "days_payable": 9.3,
+    "cash_conversion_cycle": -4
+  },
+  {
+    "ticker": "J",
+    "company": "Jacobs Solutions Inc.",
+    "sector": "Industrials",
+    "revenue": 12390108000,
+    "days_inventory": 0,
+    "days_receivable": 42.2,
+    "days_payable": 45.2,
+    "cash_conversion_cycle": -3.1
+  },
+  {
+    "ticker": "HII",
+    "company": "Huntington Ingalls Industries, Inc.",
+    "sector": "Industrials",
+    "revenue": 12484000000,
+    "days_inventory": 7.3,
+    "days_receivable": 10.8,
+    "days_payable": 20.8,
+    "cash_conversion_cycle": -2.8
+  },
+  {
+    "ticker": "COP",
+    "company": "ConocoPhillips",
+    "sector": "Energy",
+    "revenue": 58944000000,
+    "days_inventory": 15.2,
+    "days_receivable": 36.6,
+    "days_payable": 54.4,
+    "cash_conversion_cycle": -2.6
+  },
+  {
+    "ticker": "DRI",
+    "company": "Darden Restaurants, Inc.",
+    "sector": "Consumer Cyclical",
+    "revenue": 12576500000,
+    "days_inventory": 12,
+    "days_receivable": 2.4,
+    "days_payable": 16.5,
+    "cash_conversion_cycle": -2.1
+  },
+  {
+    "ticker": "IBM",
+    "company": "International Business Machines Corporation",
+    "sector": "Technology",
+    "revenue": 67536000000,
+    "days_inventory": 17.1,
+    "days_receivable": 34.4,
+    "days_payable": 52.3,
+    "cash_conversion_cycle": -0.7
+  },
+  {
+    "ticker": "ETR",
+    "company": "Entergy Corporation",
+    "sector": "Utilities",
+    "revenue": 12946686000,
+    "days_inventory": 96.4,
+    "days_receivable": 22.8,
+    "days_payable": 117.2,
+    "cash_conversion_cycle": 2
+  },
+  {
+    "ticker": "ED",
+    "company": "Consolidated Edison, Inc.",
+    "sector": "Utilities",
+    "revenue": 16917000000,
+    "days_inventory": 23.1,
+    "days_receivable": 54.3,
+    "days_payable": 75.4,
+    "cash_conversion_cycle": 2.1
+  },
+  {
+    "ticker": "XOM",
+    "company": "Exxon Mobil Corporation",
+    "sector": "Energy",
+    "revenue": 323905000000,
+    "days_inventory": 37.3,
+    "days_receivable": 47.6,
+    "days_payable": 81.3,
+    "cash_conversion_cycle": 3.7
+  },
+  {
+    "ticker": "CNP",
+    "company": "CenterPoint Energy, Inc.",
+    "sector": "Utilities",
+    "revenue": 9357000000,
+    "days_inventory": 50,
+    "days_receivable": 31.8,
+    "days_payable": 74.8,
+    "cash_conversion_cycle": 7
+  },
+  {
+    "ticker": "CVX",
+    "company": "Chevron Corporation",
+    "sector": "Energy",
+    "revenue": 184432000000,
+    "days_inventory": 27.1,
+    "days_receivable": 36.2,
+    "days_payable": 55.3,
+    "cash_conversion_cycle": 8
+  },
+  {
+    "ticker": "JBL",
+    "company": "Jabil Inc.",
+    "sector": "Technology",
+    "revenue": 31113000000,
+    "days_inventory": 59.8,
+    "days_receivable": 47.4,
+    "days_payable": 98.6,
+    "cash_conversion_cycle": 8.7
+  },
+  {
+    "ticker": "CNC",
+    "company": "Centene Corporation",
+    "sector": "Healthcare",
+    "revenue": 194777000000,
+    "days_inventory": 0,
+    "days_receivable": 39.9,
+    "days_payable": 29.2,
+    "cash_conversion_cycle": 10.7
+  },
+  {
+    "ticker": "BBY",
+    "company": "Best Buy Co., Inc.",
+    "sector": "Consumer Cyclical",
+    "revenue": 41825000000,
+    "days_inventory": 67.8,
+    "days_receivable": 8.1,
+    "days_payable": 63.8,
+    "cash_conversion_cycle": 12.2
+  },
+  {
+    "ticker": "CF",
+    "company": "CF Industries Holdings, Inc.",
+    "sector": "Basic Materials",
+    "revenue": 7084000000,
+    "days_inventory": 29.7,
+    "days_receivable": 28.5,
+    "days_payable": 44.6,
+    "cash_conversion_cycle": 13.6
+  },
+  {
+    "ticker": "CMS",
+    "company": "CMS Energy Corporation",
+    "sector": "Utilities",
+    "revenue": 8539000000,
+    "days_inventory": 55,
+    "days_receivable": 44.5,
+    "days_payable": 84.4,
+    "cash_conversion_cycle": 15.2
+  },
+  {
+    "ticker": "DPZ",
+    "company": "Domino&#39;s Pizza, Inc.",
+    "sector": "Consumer Cyclical",
+    "revenue": 4939994000,
+    "days_inventory": 9,
+    "days_receivable": 21.8,
+    "days_payable": 15.5,
+    "cash_conversion_cycle": 15.4
+  },
+  {
+    "ticker": "AEE",
+    "company": "Ameren Corporation",
+    "sector": "Utilities",
+    "revenue": 8799000000,
+    "days_inventory": 58.9,
+    "days_receivable": 27.9,
+    "days_payable": 71,
+    "cash_conversion_cycle": 15.8
+  },
+  {
+    "ticker": "CVS",
+    "company": "CVS Health Corporation",
+    "sector": "Healthcare",
+    "revenue": 402067000000,
+    "days_inventory": 19.2,
+    "days_receivable": 14.8,
+    "days_payable": 18.2,
+    "cash_conversion_cycle": 15.9
+  },
+  {
+    "ticker": "HPE",
+    "company": "Hewlett Packard Enterprise Company",
+    "sector": "Technology",
+    "revenue": 34296000000,
+    "days_inventory": 115.2,
+    "days_receivable": 44.9,
+    "days_payable": 139.1,
+    "cash_conversion_cycle": 21
+  },
+  {
+    "ticker": "CHD",
+    "company": "Church &amp; Dwight Co., Inc.",
+    "sector": "Consumer Defensive",
+    "revenue": 6203200000,
+    "days_inventory": 64.8,
+    "days_receivable": 35.4,
+    "days_payable": 77.4,
+    "cash_conversion_cycle": 22.8
+  },
+  {
+    "ticker": "DVN",
+    "company": "Devon Energy Corporation",
+    "sector": "Energy",
+    "revenue": 17188000000,
+    "days_inventory": 9.7,
+    "days_receivable": 39.9,
+    "days_payable": 25.2,
+    "cash_conversion_cycle": 24.4
+  },
+  {
+    "ticker": "CPB",
+    "company": "The Campbell&#39;s Company",
+    "sector": "Consumer Defensive",
+    "revenue": 10158000000,
+    "days_inventory": 70.7,
+    "days_receivable": 24.1,
+    "days_payable": 69.9,
+    "cash_conversion_cycle": 24.9
+  },
+  {
+    "ticker": "FDX",
+    "company": "FedEx Corporation",
+    "sector": "Industrials",
+    "revenue": 90093000000,
+    "days_inventory": 3.2,
+    "days_receivable": 45.9,
+    "days_payable": 21,
+    "cash_conversion_cycle": 28
+  },
+  {
+    "ticker": "HCA",
+    "company": "HCA Healthcare, Inc.",
+    "sector": "Healthcare",
+    "revenue": 75600000000,
+    "days_inventory": 14.4,
+    "days_receivable": 51.7,
+    "days_payable": 37,
+    "cash_conversion_cycle": 29.1
+  },
+  {
+    "ticker": "BMY",
+    "company": "Bristol-Myers Squibb Company",
+    "sector": "Healthcare",
+    "revenue": 48195000000,
+    "days_inventory": 71,
+    "days_receivable": 71.9,
+    "days_payable": 113.2,
+    "cash_conversion_cycle": 29.8
+  },
+  {
+    "ticker": "MO",
+    "company": "Altria Group, Inc.",
+    "sector": "Consumer Defensive",
+    "revenue": 20139000000,
+    "days_inventory": 68.7,
+    "days_receivable": 4.6,
+    "days_payable": 41.3,
+    "cash_conversion_cycle": 32
+  },
+  {
+    "ticker": "DG",
+    "company": "Dollar General Corporation",
+    "sector": "Consumer Defensive",
+    "revenue": 42117664000,
+    "days_inventory": 82.7,
+    "days_receivable": 0,
+    "days_payable": 49.6,
+    "cash_conversion_cycle": 33.1
+  },
+  {
+    "ticker": "GPC",
+    "company": "Genuine Parts Company",
+    "sector": "Consumer Cyclical",
+    "revenue": 24300141000,
+    "days_inventory": 138.7,
+    "days_receivable": 38,
+    "days_payable": 143.5,
+    "cash_conversion_cycle": 33.2
+  },
+  {
+    "ticker": "FTV",
+    "company": "Fortive Corporation",
+    "sector": "Technology",
+    "revenue": 5142600000,
+    "days_inventory": 80.9,
+    "days_receivable": 56,
+    "days_payable": 101.5,
+    "cash_conversion_cycle": 35.5
+  },
+  {
+    "ticker": "EFX",
+    "company": "Equifax Inc.",
+    "sector": "Industrials",
+    "revenue": 6074500000,
+    "days_inventory": 0,
+    "days_receivable": 61.4,
+    "days_payable": 24.4,
+    "cash_conversion_cycle": 37
+  },
+  {
+    "ticker": "CTRA",
+    "company": "Coterra Energy Inc.",
+    "sector": "Energy",
+    "revenue": 7645000000,
+    "days_inventory": 4.6,
+    "days_receivable": 41.8,
+    "days_payable": 9.1,
+    "cash_conversion_cycle": 37.3
+  },
+  {
+    "ticker": "BLDR",
+    "company": "Builders FirstSource, Inc.",
+    "sector": "Industrials",
+    "revenue": 15190638000,
+    "days_inventory": 42.5,
+    "days_receivable": 29.4,
+    "days_payable": 32,
+    "cash_conversion_cycle": 40
+  },
+  {
+    "ticker": "BR",
+    "company": "Broadridge Financial Solutions, Inc.",
+    "sector": "Technology",
+    "revenue": 7180400000,
+    "days_inventory": 0,
+    "days_receivable": 54.5,
+    "days_payable": 14.3,
+    "cash_conversion_cycle": 40.2
+  },
+  {
+    "ticker": "DTE",
+    "company": "DTE Energy Company",
+    "sector": "Utilities",
+    "revenue": 15814000000,
+    "days_inventory": 45.1,
+    "days_receivable": 42.6,
+    "days_payable": 47.6,
+    "cash_conversion_cycle": 40.2
+  },
+  {
+    "ticker": "CL",
+    "company": "Colgate-Palmolive Company",
+    "sector": "Consumer Defensive",
+    "revenue": 20382000000,
+    "days_inventory": 94.1,
+    "days_receivable": 31.2,
+    "days_payable": 84.7,
+    "cash_conversion_cycle": 40.7
+  },
+  {
+    "ticker": "DVA",
+    "company": "DaVita Inc.",
+    "sector": "Healthcare",
+    "revenue": 13643069000,
+    "days_inventory": 5.9,
+    "days_receivable": 63.6,
+    "days_payable": 25.1,
+    "cash_conversion_cycle": 44.4
+  },
+  {
+    "ticker": "CARR",
+    "company": "Carrier Global Corporation",
+    "sector": "Industrials",
+    "revenue": 21747000000,
+    "days_inventory": 62.4,
+    "days_receivable": 50.9,
+    "days_payable": 67.3,
+    "cash_conversion_cycle": 45.9
+  },
+  {
+    "ticker": "DECK",
+    "company": "Deckers Outdoor Corporation",
+    "sector": "Consumer Cyclical",
+    "revenue": 5374707000,
+    "days_inventory": 112.5,
+    "days_receivable": 27,
+    "days_payable": 93.6,
+    "cash_conversion_cycle": 46
+  },
+  {
+    "ticker": "HLT",
+    "company": "Hilton Worldwide Holdings Inc.",
+    "sector": "Consumer Cyclical",
+    "revenue": 12039000000,
+    "days_inventory": 0,
+    "days_receivable": 50,
+    "days_payable": 4,
+    "cash_conversion_cycle": 46
+  },
+  {
+    "ticker": "DUK",
+    "company": "Duke Energy Corporation",
+    "sector": "Utilities",
+    "revenue": 32237000000,
+    "days_inventory": 103.9,
+    "days_receivable": 47.9,
+    "days_payable": 105.7,
+    "cash_conversion_cycle": 46.1
+  },
+  {
+    "ticker": "ADM",
+    "company": "Archer-Daniels-Midland Company",
+    "sector": "Consumer Defensive",
+    "revenue": 80269000000,
+    "days_inventory": 48.9,
+    "days_receivable": 21.5,
+    "days_payable": 24,
+    "cash_conversion_cycle": 46.4
+  },
+  {
+    "ticker": "ATO",
+    "company": "Atmos Energy Corporation",
+    "sector": "Utilities",
+    "revenue": 4869341000,
+    "days_inventory": 26.1,
+    "days_receivable": 37.6,
+    "days_payable": 16.9,
+    "cash_conversion_cycle": 46.8
+  },
+  {
+    "ticker": "CVNA",
+    "company": "Carvana Co.",
+    "sector": "Consumer Cyclical",
+    "revenue": 20322000000,
+    "days_inventory": 46.7,
+    "days_receivable": 5.8,
+    "days_payable": 5.6,
+    "cash_conversion_cycle": 46.9
+  },
+  {
+    "ticker": "ACN",
+    "company": "Accenture plc",
+    "sector": "Technology",
+    "revenue": 70725557000,
+    "days_inventory": 0,
+    "days_receivable": 67.8,
+    "days_payable": 20.8,
+    "cash_conversion_cycle": 47
+  },
+  {
+    "ticker": "AVY",
+    "company": "Avery Dennison Corporation",
+    "sector": "Consumer Cyclical",
+    "revenue": 8855500000,
+    "days_inventory": 58.7,
+    "days_receivable": 64.7,
+    "days_payable": 74.4,
+    "cash_conversion_cycle": 48.9
+  },
+  {
+    "ticker": "BG",
+    "company": "Bunge Global SA",
+    "sector": "Consumer Defensive",
+    "revenue": 70329000000,
+    "days_inventory": 57.7,
+    "days_receivable": 15.5,
+    "days_payable": 22.3,
+    "cash_conversion_cycle": 50.9
+  },
+  {
+    "ticker": "CAG",
+    "company": "Conagra Brands, Inc.",
+    "sector": "Consumer Defensive",
+    "revenue": 11234500000,
+    "days_inventory": 91,
+    "days_receivable": 25.4,
+    "days_payable": 65.3,
+    "cash_conversion_cycle": 51.2
+  },
+  {
+    "ticker": "EVRG",
+    "company": "Evergy, Inc.",
+    "sector": "Utilities",
+    "revenue": 5961600000,
+    "days_inventory": 107.7,
+    "days_receivable": 0.6,
+    "days_payable": 56.3,
+    "cash_conversion_cycle": 52.1
+  },
+  {
+    "ticker": "APTV",
+    "company": "Aptiv PLC",
+    "sector": "Consumer Cyclical",
+    "revenue": 20398000000,
+    "days_inventory": 55.6,
+    "days_receivable": 64.7,
+    "days_payable": 67.6,
+    "cash_conversion_cycle": 52.8
+  },
+  {
+    "ticker": "FIS",
+    "company": "Fidelity National Information Services, Inc.",
+    "sector": "Technology",
+    "revenue": 10677000000,
+    "days_inventory": 0,
+    "days_receivable": 66.9,
+    "days_payable": 12.1,
+    "cash_conversion_cycle": 54.8
+  },
+  {
+    "ticker": "ECL",
+    "company": "Ecolab Inc.",
+    "sector": "Basic Materials",
+    "revenue": 16081200000,
+    "days_inventory": 62.8,
+    "days_receivable": 69.7,
+    "days_payable": 77.5,
+    "cash_conversion_cycle": 54.9
+  },
+  {
+    "ticker": "XYZ",
+    "company": "Block, Inc.",
+    "sector": "Technology",
+    "revenue": 24193683000,
+    "days_inventory": 3.8,
+    "days_receivable": 55.4,
+    "days_payable": 3,
+    "cash_conversion_cycle": 56.2
+  },
+  {
+    "ticker": "AOS",
+    "company": "A. O. Smith Corporation",
+    "sector": "Industrials",
+    "revenue": 3830200000,
+    "days_inventory": 79.4,
+    "days_receivable": 58.4,
+    "days_payable": 81.3,
+    "cash_conversion_cycle": 56.5
+  },
+  {
+    "ticker": "FICO",
+    "company": "Fair Isaac Corporation",
+    "sector": "Technology",
+    "revenue": 2062860000,
+    "days_inventory": 0,
+    "days_receivable": 87.2,
+    "days_payable": 29,
+    "cash_conversion_cycle": 58.2
+  },
+  {
+    "ticker": "FIX",
+    "company": "Comfort Systems USA, Inc.",
+    "sector": "Industrials",
+    "revenue": 9101641000,
+    "days_inventory": 3.9,
+    "days_receivable": 88.1,
+    "days_payable": 33,
+    "cash_conversion_cycle": 59
+  },
+  {
+    "ticker": "HRL",
+    "company": "Hormel Foods Corporation",
+    "sector": "Consumer Defensive",
+    "revenue": 12144664000,
+    "days_inventory": 61.8,
+    "days_receivable": 22.5,
+    "days_payable": 25.1,
+    "cash_conversion_cycle": 59.1
+  },
+  {
+    "ticker": "AMCR",
+    "company": "Amcor plc",
+    "sector": "Consumer Cyclical",
+    "revenue": 19609000000,
+    "days_inventory": 72.1,
+    "days_receivable": 55.8,
+    "days_payable": 68.2,
+    "cash_conversion_cycle": 59.7
+  },
+  {
+    "ticker": "EME",
+    "company": "EMCOR Group, Inc.",
+    "sector": "Industrials",
+    "revenue": 16986422000,
+    "days_inventory": 2.9,
+    "days_receivable": 87.4,
+    "days_payable": 29.5,
+    "cash_conversion_cycle": 60.8
+  },
+  {
+    "ticker": "STZ",
+    "company": "Constellation Brands, Inc.",
+    "sector": "Consumer Defensive",
+    "revenue": 9383000000,
+    "days_inventory": 114.7,
+    "days_receivable": 28.5,
+    "days_payable": 79.3,
+    "cash_conversion_cycle": 63.9
+  },
+  {
+    "ticker": "HSY",
+    "company": "The Hershey Company",
+    "sector": "Consumer Defensive",
+    "revenue": 11692576000,
+    "days_inventory": 75.7,
+    "days_receivable": 26.5,
+    "days_payable": 37,
+    "cash_conversion_cycle": 65.3
+  },
+  {
+    "ticker": "DOW",
+    "company": "Dow Inc.",
+    "sector": "Basic Materials",
+    "revenue": 39968000000,
+    "days_inventory": 65.2,
+    "days_receivable": 46,
+    "days_payable": 45.2,
+    "cash_conversion_cycle": 65.9
+  },
+  {
+    "ticker": "CRL",
+    "company": "Charles River Laboratories International, Inc.",
+    "sector": "Healthcare",
+    "revenue": 4015382000,
+    "days_inventory": 39.7,
+    "days_receivable": 49.5,
+    "days_payable": 20.8,
+    "cash_conversion_cycle": 68.4
+  },
+  {
+    "ticker": "EPAM",
+    "company": "EPAM Systems, Inc.",
+    "sector": "Technology",
+    "revenue": 5457056000,
+    "days_inventory": 0,
+    "days_receivable": 75,
+    "days_payable": 4.4,
+    "cash_conversion_cycle": 70.6
+  },
+  {
+    "ticker": "GD",
+    "company": "General Dynamics Corporation",
+    "sector": "Industrials",
+    "revenue": 52550000000,
+    "days_inventory": 79.3,
+    "days_receivable": 21.9,
+    "days_payable": 25.7,
+    "cash_conversion_cycle": 75.5
+  },
+  {
+    "ticker": "IT",
+    "company": "Gartner, Inc.",
+    "sector": "Technology",
+    "revenue": 6497226000,
+    "days_inventory": 0,
+    "days_receivable": 78.3,
+    "days_payable": 2.2,
+    "cash_conversion_cycle": 76
+  },
+  {
+    "ticker": "FCX",
+    "company": "Freeport-McMoRan Inc.",
+    "sector": "Basic Materials",
+    "revenue": 25915000000,
+    "days_inventory": 139.8,
+    "days_receivable": 12.6,
+    "days_payable": 75.5,
+    "cash_conversion_cycle": 76.8
+  },
+  {
+    "ticker": "CRH",
+    "company": "CRH plc",
+    "sector": "Basic Materials",
+    "revenue": 37447000000,
+    "days_inventory": 77.4,
+    "days_receivable": 47.5,
+    "days_payable": 47.7,
+    "cash_conversion_cycle": 77.1
+  },
+  {
+    "ticker": "MMM",
+    "company": "3M Company",
+    "sector": "Industrials",
+    "revenue": 24948000000,
+    "days_inventory": 94.3,
+    "days_receivable": 53.3,
+    "days_payable": 67.2,
+    "cash_conversion_cycle": 80.5
+  },
+  {
+    "ticker": "ALLE",
+    "company": "Allegion plc",
+    "sector": "Industrials",
+    "revenue": 4067300000,
+    "days_inventory": 80.5,
+    "days_receivable": 42.3,
+    "days_payable": 42,
+    "cash_conversion_cycle": 80.8
+  },
+  {
+    "ticker": "HAL",
+    "company": "Halliburton Company",
+    "sector": "Energy",
+    "revenue": 22184000000,
+    "days_inventory": 59.5,
+    "days_receivable": 83.4,
+    "days_payable": 62,
+    "cash_conversion_cycle": 80.8
+  },
+  {
+    "ticker": "D",
+    "company": "Dominion Energy, Inc.",
+    "sector": "Utilities",
+    "revenue": 16506000000,
+    "days_inventory": 80.7,
+    "days_receivable": 50.6,
+    "days_payable": 47.2,
+    "cash_conversion_cycle": 84.1
+  },
+  {
+    "ticker": "DHR",
+    "company": "Danaher Corporation",
+    "sector": "Healthcare",
+    "revenue": 24568000000,
+    "days_inventory": 94.3,
+    "days_receivable": 54.7,
+    "days_payable": 63.5,
+    "cash_conversion_cycle": 85.6
+  },
+  {
+    "ticker": "APH",
+    "company": "Amphenol Corporation",
+    "sector": "Technology",
+    "revenue": 23094700000,
+    "days_inventory": 79.9,
+    "days_receivable": 69,
+    "days_payable": 60.3,
+    "cash_conversion_cycle": 88.5
+  },
+  {
+    "ticker": "CMI",
+    "company": "Cummins Inc.",
+    "sector": "Industrials",
+    "revenue": 33670000000,
+    "days_inventory": 88.8,
+    "days_receivable": 62.4,
+    "days_payable": 58.3,
+    "cash_conversion_cycle": 92.9
+  },
+  {
+    "ticker": "AME",
+    "company": "AMETEK, Inc.",
+    "sector": "Industrials",
+    "revenue": 7401116000,
+    "days_inventory": 85.6,
+    "days_receivable": 52.7,
+    "days_payable": 44,
+    "cash_conversion_cycle": 94.2
+  },
+  {
+    "ticker": "DOV",
+    "company": "Dover Corporation",
+    "sector": "Industrials",
+    "revenue": 8092571000,
+    "days_inventory": 95.7,
+    "days_receivable": 64.1,
+    "days_payable": 64.6,
+    "cash_conversion_cycle": 95.1
+  },
+  {
+    "ticker": "GM",
+    "company": "General Motors Company",
+    "sector": "Consumer Cyclical",
+    "revenue": 185019000000,
+    "days_inventory": 31.8,
+    "days_receivable": 118.7,
+    "days_payable": 55.4,
+    "cash_conversion_cycle": 95.1
+  },
+  {
+    "ticker": "IR",
+    "company": "Ingersoll Rand Inc.",
+    "sector": "Industrials",
+    "revenue": 7650900000,
+    "days_inventory": 100.9,
+    "days_receivable": 67.8,
+    "days_payable": 72.8,
+    "cash_conversion_cycle": 95.9
+  },
+  {
+    "ticker": "GLW",
+    "company": "Corning Incorporated",
+    "sector": "Technology",
+    "revenue": 15629000000,
+    "days_inventory": 110.9,
+    "days_receivable": 56.2,
+    "days_payable": 70,
+    "cash_conversion_cycle": 97.1
+  },
+  {
+    "ticker": "ALB",
+    "company": "Albemarle Corporation",
+    "sector": "Basic Materials",
+    "revenue": 5142733000,
+    "days_inventory": 122.6,
+    "days_receivable": 49,
+    "days_payable": 73.3,
+    "cash_conversion_cycle": 98.3
+  },
+  {
+    "ticker": "EMR",
+    "company": "Emerson Electric Co.",
+    "sector": "Industrials",
+    "revenue": 18186000000,
+    "days_inventory": 96.3,
+    "days_receivable": 59.6,
+    "days_payable": 56.7,
+    "cash_conversion_cycle": 99.3
+  },
+  {
+    "ticker": "GEV",
+    "company": "GE Vernova Inc.",
+    "sector": "Industrials",
+    "revenue": 38068000000,
+    "days_inventory": 108.8,
+    "days_receivable": 58.3,
+    "days_payable": 67.4,
+    "cash_conversion_cycle": 99.6
+  },
+  {
+    "ticker": "HUBB",
+    "company": "Hubbell Incorporated",
+    "sector": "Industrials",
+    "revenue": 5844600000,
+    "days_inventory": 97.2,
+    "days_receivable": 56.1,
+    "days_payable": 52.8,
+    "cash_conversion_cycle": 100.4
+  },
+  {
+    "ticker": "IEX",
+    "company": "IDEX Corporation",
+    "sector": "Industrials",
+    "revenue": 3457500000,
+    "days_inventory": 91.7,
+    "days_receivable": 50.4,
+    "days_payable": 40.2,
+    "cash_conversion_cycle": 101.9
+  },
+  {
+    "ticker": "HWM",
+    "company": "Howmet Aerospace Inc.",
+    "sector": "Industrials",
+    "revenue": 8252000000,
+    "days_inventory": 129.2,
+    "days_receivable": 38,
+    "days_payable": 64.2,
+    "cash_conversion_cycle": 103
+  },
+  {
+    "ticker": "F",
+    "company": "Ford Motor Company",
+    "sector": "Consumer Cyclical",
+    "revenue": 187267000000,
+    "days_inventory": 32.9,
+    "days_receivable": 128.9,
+    "days_payable": 53,
+    "cash_conversion_cycle": 108.8
+  },
+  {
+    "ticker": "EL",
+    "company": "The Estée Lauder Companies Inc.",
+    "sector": "Consumer Defensive",
+    "revenue": 14671000000,
+    "days_inventory": 193.6,
+    "days_receivable": 42.7,
+    "days_payable": 127.5,
+    "cash_conversion_cycle": 108.9
+  },
+  {
+    "ticker": "DE",
+    "company": "Deere &amp; Company",
+    "sector": "Industrials",
+    "revenue": 45746000000,
+    "days_inventory": 96.7,
+    "days_receivable": 48.3,
+    "days_payable": 35.4,
+    "cash_conversion_cycle": 109.7
+  },
+  {
+    "ticker": "ABT",
+    "company": "Abbott Laboratories",
+    "sector": "Healthcare",
+    "revenue": 44328000000,
+    "days_inventory": 126.5,
+    "days_receivable": 64.6,
+    "days_payable": 79.7,
+    "cash_conversion_cycle": 111.4
+  },
+  {
+    "ticker": "A",
+    "company": "Agilent Technologies, Inc.",
+    "sector": "Healthcare",
+    "revenue": 7065000000,
+    "days_inventory": 110.6,
+    "days_receivable": 66.8,
+    "days_payable": 60,
+    "cash_conversion_cycle": 117.4
+  },
+  {
+    "ticker": "ITW",
+    "company": "Illinois Tool Works Inc.",
+    "sector": "Industrials",
+    "revenue": 16044000000,
+    "days_inventory": 68.7,
+    "days_receivable": 73.7,
+    "days_payable": 23.8,
+    "cash_conversion_cycle": 118.7
+  },
+  {
+    "ticker": "BAX",
+    "company": "Baxter International Inc.",
+    "sector": "Healthcare",
+    "revenue": 11244000000,
+    "days_inventory": 107.3,
+    "days_receivable": 57.3,
+    "days_payable": 45.4,
+    "cash_conversion_cycle": 119.2
+  },
+  {
+    "ticker": "GE",
+    "company": "GE Aerospace",
+    "sector": "Industrials",
+    "revenue": 45854000000,
+    "days_inventory": 142.8,
+    "days_receivable": 66.8,
+    "days_payable": 85.8,
+    "cash_conversion_cycle": 123.8
+  },
+  {
+    "ticker": "CIEN",
+    "company": "Ciena Corporation",
+    "sector": "Technology",
+    "revenue": 4769507000,
+    "days_inventory": 112.4,
+    "days_receivable": 74,
+    "days_payable": 60.2,
+    "cash_conversion_cycle": 126.3
+  },
+  {
+    "ticker": "DD",
+    "company": "DuPont de Nemours, Inc.",
+    "sector": "Basic Materials",
+    "revenue": 7524000000,
+    "days_inventory": 137.1,
+    "days_receivable": 98.4,
+    "days_payable": 109.2,
+    "cash_conversion_cycle": 126.3
+  },
+  {
+    "ticker": "BDX",
+    "company": "Becton, Dickinson and Company",
+    "sector": "Healthcare",
+    "revenue": 21924000000,
+    "days_inventory": 120.8,
+    "days_receivable": 47.8,
+    "days_payable": 15.2,
+    "cash_conversion_cycle": 153.3
+  },
+  {
+    "ticker": "GNRC",
+    "company": "Generac Holdings Inc.",
+    "sector": "Industrials",
+    "revenue": 4209147000,
+    "days_inventory": 173.1,
+    "days_receivable": 54.7,
+    "days_payable": 73.5,
+    "cash_conversion_cycle": 154.2
+  },
+  {
+    "ticker": "ABBV",
+    "company": "AbbVie Inc.",
+    "sector": "Healthcare",
+    "revenue": 61160000000,
+    "days_inventory": 97.1,
+    "days_receivable": 75.3,
+    "days_payable": 18,
+    "cash_conversion_cycle": 154.4
+  },
+  {
+    "ticker": "BSX",
+    "company": "Boston Scientific Corporation",
+    "sector": "Healthcare",
+    "revenue": 20075000000,
+    "days_inventory": 170,
+    "days_receivable": 51.2,
+    "days_payable": 60.3,
+    "cash_conversion_cycle": 160.9
+  },
+  {
+    "ticker": "CTVA",
+    "company": "Corteva, Inc.",
+    "sector": "Basic Materials",
+    "revenue": 17401000000,
+    "days_inventory": 203.2,
+    "days_receivable": 136.7,
+    "days_payable": 163.8,
+    "cash_conversion_cycle": 176.1
+  },
+  {
+    "ticker": "CAT",
+    "company": "Caterpillar Inc.",
+    "sector": "Industrials",
+    "revenue": 67589000000,
+    "days_inventory": 145.5,
+    "days_receivable": 108.9,
+    "days_payable": 67.4,
+    "cash_conversion_cycle": 187
+  },
+  {
+    "ticker": "GRMN",
+    "company": "Garmin Ltd.",
+    "sector": "Technology",
+    "revenue": 7245519000,
+    "days_inventory": 214.6,
+    "days_receivable": 50.5,
+    "days_payable": 44.8,
+    "cash_conversion_cycle": 220.3
+  },
+  {
+    "ticker": "ANET",
+    "company": "Arista Networks, Inc.",
+    "sector": "Technology",
+    "revenue": 9005700000,
+    "days_inventory": 237.3,
+    "days_receivable": 65.2,
+    "days_payable": 58.2,
+    "cash_conversion_cycle": 244.3
+  },
+  {
+    "ticker": "EW",
+    "company": "Edwards Lifesciences Corporation",
+    "sector": "Healthcare",
+    "revenue": 6067600000,
+    "days_inventory": 309.3,
+    "days_receivable": 40.9,
+    "days_payable": 49.7,
+    "cash_conversion_cycle": 300.5
+  },
+  {
+    "ticker": "BA",
+    "company": "The Boeing Company",
+    "sector": "Industrials",
+    "revenue": 89463000000,
+    "days_inventory": 368.6,
+    "days_receivable": 12.7,
+    "days_payable": 50.5,
+    "cash_conversion_cycle": 330.8
+  },
+  {
+    "ticker": "DHI",
+    "company": "D.R. Horton, Inc.",
+    "sector": "Consumer Cyclical",
+    "revenue": 33524400000,
+    "days_inventory": 369.3,
+    "days_receivable": 0,
+    "days_payable": 17.8,
+    "cash_conversion_cycle": 351.5
+  }
+]
