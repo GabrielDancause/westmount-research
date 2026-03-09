@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S&P 500 PEG Ratio Rankings 2026 - Westmount Fundamentals</title>
+    <meta name="description" content="Rankings of S&P 500 companies by PEG ratio to identify potentially undervalued stocks relative to growth.">
+    <script type="application/ld+json">
+        {"@context":"https://schema.org","@graph":[{"@type":"Article","headline":"S&P 500 PEG Ratio Rankings 2026","description":"Rankings of S&P 500 companies by PEG ratio to identify potentially undervalued and overvalued stocks relative to growth.","author":{"@type":"Organization","name":"Westmount Fundamentals"},"publisher":{"@type":"Organization","name":"Westmount Fundamentals","logo":{"@type":"ImageObject","url":"https://westmountfundamentals.com/logo.png"}},"datePublished":"2026-03-09"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a PEG ratio?","acceptedAnswer":{"@type":"Answer","text":"The Price/Earnings-to-Growth (PEG) ratio is a valuation metric that determines the relative trade-off between the price of a stock, the earnings generated per share (EPS), and the company's expected growth. It is calculated by dividing a stock's P/E ratio by its expected earnings growth rate."}},{"@type":"Question","name":"What is considered a 'good' PEG ratio?","acceptedAnswer":{"@type":"Answer","text":"Traditionally, a PEG ratio of 1.0 is considered 'fairly valued'. A ratio below 1.0 suggests a stock may be undervalued relative to its growth prospects, while a ratio above 1.0 indicates it may be overvalued. However, this varies by industry and market conditions."}},{"@type":"Question","name":"How does the S&P 500 average PEG ratio compare historically?","acceptedAnswer":{"@type":"Answer","text":"Historically, the S&P 500 has traded at a PEG ratio closer to 1.0 to 1.5. In recent years, due to low interest rates and high growth expectations for tech companies, the market average PEG has expanded, often trading above 1.5."}},{"@type":"Question","name":"What are the limitations of the PEG ratio?","acceptedAnswer":{"@type":"Answer","text":"The PEG ratio relies heavily on future earnings growth estimates, which are notoriously difficult to predict accurately. Additionally, it may not be suitable for companies without earnings, companies with erratic earnings histories, or asset-heavy industries like real estate."}},{"@type":"Question","name":"Why do some tech companies have high PEG ratios?","acceptedAnswer":{"@type":"Answer","text":"Many tech companies trade at high PEG ratios because investors are willing to pay a premium for their strong market positions, high margins, and perceived safety, even if their near-term growth rates don't perfectly align with the traditional 1.0 PEG rule."}}]}]}
+    </script>
+    <style>
+        :root {
+            --bg-color: #060a12;
+            --card-bg: #0a1020;
+            --border-color: #152040;
+            --accent: #4a8fe7;
+            --text-main: #c8d0de;
+            --text-muted: #5a6a80;
+            --font-sans: 'Inter', -apple-system, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: var(--font-sans);
+            background: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+        header {
+            text-align: center;
+            padding: 60px 24px;
+            background: linear-gradient(180deg, #0a1628 0%, var(--bg-color) 100%);
+            border-bottom: 1px solid var(--border-color);
+        }
+        .tagline { color: var(--accent); font-size: 0.85rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 16px; }
+        h1 { font-size: 2.5rem; font-weight: 900; color: #fff; margin-bottom: 16px; letter-spacing: -1px; }
+        .hero-desc { color: var(--text-muted); max-width: 600px; margin: 0 auto; font-size: 1.05rem; }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            margin: -30px auto 40px;
+            padding: 0 24px;
+        }
+        .stat-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+        }
+        .stat-value { font-size: 2rem; font-weight: 900; color: var(--accent); margin-bottom: 8px; font-family: var(--font-mono); }
+        .stat-label { font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 24px; }
+        h2 { font-size: 1.8rem; color: #fff; margin-bottom: 24px; font-weight: 800; border-bottom: 1px solid var(--border-color); padding-bottom: 12px; }
+
+        .table-wrapper { overflow-x: auto; margin-bottom: 60px; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; }
+        table { width: 100%; border-collapse: collapse; text-align: left; }
+        th { background: rgba(74, 143, 231, 0.05); padding: 16px; font-size: 0.85rem; color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid var(--border-color); cursor: pointer; user-select: none; }
+        th:hover { background: rgba(74, 143, 231, 0.1); }
+        td { padding: 16px; font-size: 0.95rem; border-bottom: 1px solid var(--border-color); font-family: var(--font-mono); }
+        tr:last-child td { border-bottom: none; }
+        tr:hover td { background: rgba(255,255,255,0.02); }
+        td:nth-child(2), td:nth-child(3) { font-family: var(--font-sans); }
+
+        .chart-container { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 32px; margin-bottom: 60px; }
+        .chart-row { display: flex; align-items: center; margin-bottom: 16px; }
+        .chart-label { width: 200px; font-size: 0.9rem; font-weight: 600; padding-right: 16px; }
+        .chart-count { color: var(--text-muted); font-size: 0.8rem; font-weight: normal; }
+        .chart-bar-container { flex: 1; display: flex; align-items: center; }
+        .chart-bar { height: 24px; background: var(--accent); border-radius: 4px; min-width: 4px; opacity: 0.8; }
+        .chart-value { margin-left: 12px; font-family: var(--font-mono); font-size: 0.9rem; font-weight: bold; }
+
+        .faq-section { margin-bottom: 60px; }
+        .faq-item { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 24px; margin-bottom: 16px; }
+        .faq-q { font-size: 1.1rem; color: #fff; margin-bottom: 12px; }
+        .faq-a { color: var(--text-muted); font-size: 0.95rem; }
+
+        .methodology { background: rgba(74, 143, 231, 0.05); border-radius: 12px; padding: 32px; margin-bottom: 60px; }
+        .methodology p { margin-bottom: 16px; color: var(--text-muted); }
+
+        .footer { text-align: center; padding: 40px 24px; border-top: 1px solid var(--border-color); font-size: 0.85rem; color: var(--text-muted); }
+        .footer a { color: var(--accent); text-decoration: none; }
+        .disclaimer { max-width: 800px; margin: 16px auto 0; font-size: 0.75rem; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="tagline">Original Research</div>
+        <h1>S&P 500 PEG Ratio Rankings 2026</h1>
+        <p class="hero-desc">Analyzing S&P 500 companies by Price/Earnings-to-Growth (PEG) ratio to identify potentially undervalued equities in the current market environment.</p>
+    </header>
+
+    <div class="stats-grid">
+        <div class="stat-card">
+            <div class="stat-value">AON</div>
+            <div class="stat-label">Lowest PEG Ratio</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value">0.11</div>
+            <div class="stat-label">Aon plc PEG</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value">0.56</div>
+            <div class="stat-label">Median S&P 500 PEG</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value">51</div>
+            <div class="stat-label">Companies Analyzed</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>Sector Breakdown: Average PEG Ratios</h2>
+        <div class="chart-container">
+            <div class="chart-row">
+                <div class="chart-label">Real Estate <span class="chart-count">(1)</span></div>
+                <div class="chart-bar-container">
+                    <div class="chart-bar" style="width: 6.235598614072594%"></div>
+                    <div class="chart-value">0.21</div>
+                </div>
+            </div>
+
+            <div class="chart-row">
+                <div class="chart-label">Financial Services <span class="chart-count">(10)</span></div>
+                <div class="chart-bar-container">
+                    <div class="chart-bar" style="width: 12.456386947965564%"></div>
+                    <div class="chart-value">0.42</div>
+                </div>
+            </div>
+
+            <div class="chart-row">
+                <div class="chart-label">Energy <span class="chart-count">(1)</span></div>
+                <div class="chart-bar-container">
+                    <div class="chart-bar" style="width: 16.83258488852092%"></div>
+                    <div class="chart-value">0.56</div>
+                </div>
+            </div>
+
+            <div class="chart-row">
+                <div class="chart-label">Technology <span class="chart-count">(7)</span></div>
+                <div class="chart-bar-container">
+                    <div class="chart-bar" style="width: 18.50627554957019%"></div>
+                    <div class="chart-value">0.62</div>
+                </div>
+            </div>
+
+            <div class="chart-row">
+                <div class="chart-label">Healthcare <span class="chart-count">(8)</span></div>
+                <div class="chart-bar-container">
+                    <div class="chart-bar" style="width: 26.898462897153507%"></div>
+                    <div class="chart-value">0.90</div>
+                </div>
+            </div>
+
+            <div class="chart-row">
+                <div class="chart-label">Basic Materials <span class="chart-count">(3)</span></div>
+                <div class="chart-bar-container">
+                    <div class="chart-bar" style="width: 27.948994874815654%"></div>
+                    <div class="chart-value">0.93</div>
+                </div>
+            </div>
+
+            <div class="chart-row">
+                <div class="chart-label">Consumer Cyclical <span class="chart-count">(5)</span></div>
+                <div class="chart-bar-container">
+                    <div class="chart-bar" style="width: 59.46656986362441%"></div>
+                    <div class="chart-value">1.98</div>
+                </div>
+            </div>
+
+            <div class="chart-row">
+                <div class="chart-label">Industrials <span class="chart-count">(9)</span></div>
+                <div class="chart-bar-container">
+                    <div class="chart-bar" style="width: 63.25388895976184%"></div>
+                    <div class="chart-value">2.11</div>
+                </div>
+            </div>
+
+            <div class="chart-row">
+                <div class="chart-label">Utilities <span class="chart-count">(5)</span></div>
+                <div class="chart-bar-container">
+                    <div class="chart-bar" style="width: 64.22263049647788%"></div>
+                    <div class="chart-value">2.14</div>
+                </div>
+            </div>
+
+            <div class="chart-row">
+                <div class="chart-label">Consumer Defensive <span class="chart-count">(2)</span></div>
+                <div class="chart-bar-container">
+                    <div class="chart-bar" style="width: 100%"></div>
+                    <div class="chart-value">3.33</div>
+                </div>
+            </div>
+        </div>
+
+        <h2>Full Rankings: S&P 500 PEG Ratios</h2>
+        <div class="table-wrapper">
+            <table id="pegTable">
+                <thead>
+                    <tr>
+                        <th onclick="sortTable(0)">Ticker ↕</th>
+                        <th onclick="sortTable(1)">Company ↕</th>
+                        <th onclick="sortTable(2)">Sector ↕</th>
+                        <th onclick="sortTable(3)">Price ↕</th>
+                        <th onclick="sortTable(4)">P/E ↕</th>
+                        <th onclick="sortTable(5)">Fwd P/E ↕</th>
+                        <th onclick="sortTable(6)">Implied Grwth ↕</th>
+                        <th onclick="sortTable(7)">PEG ↕</th>
+                        <th onclick="sortTable(8)">Mkt Cap ↕</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+        <tr>
+            <td><strong>AON</strong></td>
+            <td>Aon plc</td>
+            <td>Financial Services</td>
+            <td>$335.04</td>
+            <td>19.67</td>
+            <td>15.56</td>
+            <td>138.30%</td>
+            <td style="font-weight: bold; color: #4ade80">0.11</td>
+            <td>$72.01B</td>
+        </tr>
+
+        <tr>
+            <td><strong>CVS</strong></td>
+            <td>CVS Health Corporation</td>
+            <td>Healthcare</td>
+            <td>$77.69</td>
+            <td>55.89</td>
+            <td>9.50</td>
+            <td>76.60%</td>
+            <td style="font-weight: bold; color: #4ade80">0.12</td>
+            <td>$98.83B</td>
+        </tr>
+
+        <tr>
+            <td><strong>DAL</strong></td>
+            <td>Delta Air Lines, Inc.</td>
+            <td>Industrials</td>
+            <td>$58.68</td>
+            <td>7.66</td>
+            <td>7.10</td>
+            <td>44.60%</td>
+            <td style="font-weight: bold; color: #4ade80">0.16</td>
+            <td>$38.33B</td>
+        </tr>
+
+        <tr>
+            <td><strong>CIEN</strong></td>
+            <td>Ciena Corporation</td>
+            <td>Technology</td>
+            <td>$310.11</td>
+            <td>364.84</td>
+            <td>38.33</td>
+            <td>232.30%</td>
+            <td style="font-weight: bold; color: #4ade80">0.16</td>
+            <td>$43.87B</td>
+        </tr>
+
+        <tr>
+            <td><strong>BR</strong></td>
+            <td>Broadridge Financial Solutions,</td>
+            <td>Technology</td>
+            <td>$189.33</td>
+            <td>20.94</td>
+            <td>18.29</td>
+            <td>101.70%</td>
+            <td style="font-weight: bold; color: #4ade80">0.18</td>
+            <td>$22.10B</td>
+        </tr>
+
+        <tr>
+            <td><strong>CPT</strong></td>
+            <td>Camden Property Trust</td>
+            <td>Real Estate</td>
+            <td>$104.29</td>
+            <td>29.46</td>
+            <td>59.75</td>
+            <td>287.60%</td>
+            <td style="font-weight: bold; color: #4ade80">0.21</td>
+            <td>$11.10B</td>
+        </tr>
+
+        <tr>
+            <td><strong>DELL</strong></td>
+            <td>Dell Technologies Inc.</td>
+            <td>Technology</td>
+            <td>$143.12</td>
+            <td>16.47</td>
+            <td>10.01</td>
+            <td>45.40%</td>
+            <td style="font-weight: bold; color: #4ade80">0.22</td>
+            <td>$95.92B</td>
+        </tr>
+
+        <tr>
+            <td><strong>FIX</strong></td>
+            <td>Comfort Systems USA, Inc.</td>
+            <td>Industrials</td>
+            <td>$1324.25</td>
+            <td>45.81</td>
+            <td>29.89</td>
+            <td>129.50%</td>
+            <td style="font-weight: bold; color: #4ade80">0.23</td>
+            <td>$46.71B</td>
+        </tr>
+
+        <tr>
+            <td><strong>CCL</strong></td>
+            <td>Carnival Corporation</td>
+            <td>Consumer Cyclical</td>
+            <td>$25.08</td>
+            <td>12.42</td>
+            <td>8.90</td>
+            <td>35.80%</td>
+            <td style="font-weight: bold; color: #4ade80">0.25</td>
+            <td>$34.74B</td>
+        </tr>
+
+        <tr>
+            <td><strong>CFG</strong></td>
+            <td>Citizens Financial Group, Inc.</td>
+            <td>Financial Services</td>
+            <td>$56.58</td>
+            <td>14.66</td>
+            <td>8.99</td>
+            <td>34.80%</td>
+            <td style="font-weight: bold; color: #4ade80">0.26</td>
+            <td>$24.30B</td>
+        </tr>
+
+        <tr>
+            <td><strong>ELV</strong></td>
+            <td>Elevance Health, Inc.</td>
+            <td>Healthcare</td>
+            <td>$278.95</td>
+            <td>11.07</td>
+            <td>9.44</td>
+            <td>36.30%</td>
+            <td style="font-weight: bold; color: #4ade80">0.26</td>
+            <td>$61.57B</td>
+        </tr>
+
+        <tr>
+            <td><strong>CRH</strong></td>
+            <td>CRH PLC</td>
+            <td>Basic Materials</td>
+            <td>$103.67</td>
+            <td>18.81</td>
+            <td>15.69</td>
+            <td>48.40%</td>
+            <td style="font-weight: bold; color: #4ade80">0.32</td>
+            <td>$69.45B</td>
+        </tr>
+
+        <tr>
+            <td><strong>BX</strong></td>
+            <td>Blackstone Inc.</td>
+            <td>Financial Services</td>
+            <td>$109.33</td>
+            <td>28.18</td>
+            <td>13.79</td>
+            <td>42.50%</td>
+            <td style="font-weight: bold; color: #4ade80">0.32</td>
+            <td>$134.44B</td>
+        </tr>
+
+        <tr>
+            <td><strong>COF</strong></td>
+            <td>Capital One Financial Corporati</td>
+            <td>Financial Services</td>
+            <td>$181.15</td>
+            <td>53.91</td>
+            <td>7.37</td>
+            <td>22.20%</td>
+            <td style="font-weight: bold; color: #4ade80">0.33</td>
+            <td>$112.66B</td>
+        </tr>
+
+        <tr>
+            <td><strong>SCHW</strong></td>
+            <td>Charles Schwab Corporation (The</td>
+            <td>Financial Services</td>
+            <td>$93.26</td>
+            <td>20.06</td>
+            <td>13.73</td>
+            <td>41.10%</td>
+            <td style="font-weight: bold; color: #4ade80">0.33</td>
+            <td>$165.72B</td>
+        </tr>
+
+        <tr>
+            <td><strong>CB</strong></td>
+            <td>Chubb Limited</td>
+            <td>Financial Services</td>
+            <td>$322.82</td>
+            <td>12.57</td>
+            <td>11.11</td>
+            <td>27.90%</td>
+            <td style="font-weight: bold; color: #4ade80">0.40</td>
+            <td>$127.05B</td>
+        </tr>
+
+        <tr>
+            <td><strong>BK</strong></td>
+            <td>The Bank of New York Mellon Cor</td>
+            <td>Financial Services</td>
+            <td>$113.72</td>
+            <td>15.37</td>
+            <td>12.16</td>
+            <td>30.50%</td>
+            <td style="font-weight: bold; color: #4ade80">0.40</td>
+            <td>$79.30B</td>
+        </tr>
+
+        <tr>
+            <td><strong>CMI</strong></td>
+            <td>Cummins Inc.</td>
+            <td>Industrials</td>
+            <td>$538.08</td>
+            <td>26.26</td>
+            <td>17.22</td>
+            <td>41.40%</td>
+            <td style="font-weight: bold; color: #4ade80">0.42</td>
+            <td>$74.34B</td>
+        </tr>
+
+        <tr>
+            <td><strong>GLW</strong></td>
+            <td>Corning Incorporated</td>
+            <td>Technology</td>
+            <td>$124.74</td>
+            <td>68.54</td>
+            <td>32.26</td>
+            <td>77.40%</td>
+            <td style="font-weight: bold; color: #4ade80">0.42</td>
+            <td>$107.02B</td>
+        </tr>
+
+        <tr>
+            <td><strong>EME</strong></td>
+            <td>EMCOR Group, Inc.</td>
+            <td>Industrials</td>
+            <td>$703.38</td>
+            <td>24.98</td>
+            <td>22.27</td>
+            <td>53.00%</td>
+            <td style="font-weight: bold; color: #4ade80">0.42</td>
+            <td>$31.49B</td>
+        </tr>
+
+        <tr>
+            <td><strong>BDX</strong></td>
+            <td>Becton, Dickinson and Company</td>
+            <td>Healthcare</td>
+            <td>$163.97</td>
+            <td>26.79</td>
+            <td>12.15</td>
+            <td>28.60%</td>
+            <td style="font-weight: bold; color: #4ade80">0.42</td>
+            <td>$59.41B</td>
+        </tr>
+
+        <tr>
+            <td><strong>BAC</strong></td>
+            <td>Bank of America Corporation</td>
+            <td>Financial Services</td>
+            <td>$47.14</td>
+            <td>12.37</td>
+            <td>9.51</td>
+            <td>21.20%</td>
+            <td style="font-weight: bold; color: #4ade80">0.45</td>
+            <td>$344.24B</td>
+        </tr>
+
+        <tr>
+            <td><strong>CF</strong></td>
+            <td>CF Industries Holdings, Inc.</td>
+            <td>Basic Materials</td>
+            <td>$116.31</td>
+            <td>12.97</td>
+            <td>16.67</td>
+            <td>37.10%</td>
+            <td style="font-weight: bold; color: #4ade80">0.45</td>
+            <td>$18.14B</td>
+        </tr>
+
+        <tr>
+            <td><strong>APH</strong></td>
+            <td>Amphenol Corporation</td>
+            <td>Technology</td>
+            <td>$133.94</td>
+            <td>40.10</td>
+            <td>26.03</td>
+            <td>57.60%</td>
+            <td style="font-weight: bold; color: #4ade80">0.45</td>
+            <td>$164.64B</td>
+        </tr>
+
+        <tr>
+            <td><strong>DG</strong></td>
+            <td>Dollar General Corporation</td>
+            <td>Consumer Defensive</td>
+            <td>$145.03</td>
+            <td>25.05</td>
+            <td>20.07</td>
+            <td>43.80%</td>
+            <td style="font-weight: bold; color: #4ade80">0.46</td>
+            <td>$31.92B</td>
+        </tr>
+
+        <tr>
+            <td><strong>CTRA</strong></td>
+            <td>Coterra Energy Inc.</td>
+            <td>Energy</td>
+            <td>$31.43</td>
+            <td>14.03</td>
+            <td>11.55</td>
+            <td>20.60%</td>
+            <td style="font-weight: bold; color: #4ade80">0.56</td>
+            <td>$23.87B</td>
+        </tr>
+
+        <tr>
+            <td><strong>DPZ</strong></td>
+            <td>Domino&#039;s Pizza Inc</td>
+            <td>Consumer Cyclical</td>
+            <td>$409.47</td>
+            <td>23.32</td>
+            <td>19.02</td>
+            <td>30.10%</td>
+            <td style="font-weight: bold; color: #4ade80">0.63</td>
+            <td>$13.77B</td>
+        </tr>
+
+        <tr>
+            <td><strong>AIZ</strong></td>
+            <td>Assurant, Inc.</td>
+            <td>Financial Services</td>
+            <td>$218.33</td>
+            <td>12.90</td>
+            <td>9.81</td>
+            <td>15.10%</td>
+            <td style="font-weight: bold; color: #4ade80">0.65</td>
+            <td>$10.93B</td>
+        </tr>
+
+        <tr>
+            <td><strong>DTE</strong></td>
+            <td>DTE Energy Company</td>
+            <td>Utilities</td>
+            <td>$148.34</td>
+            <td>21.10</td>
+            <td>17.90</td>
+            <td>25.50%</td>
+            <td style="font-weight: bold; color: #4ade80">0.70</td>
+            <td>$30.83B</td>
+        </tr>
+
+        <tr>
+            <td><strong>AOS</strong></td>
+            <td>A.O. Smith Corporation</td>
+            <td>Industrials</td>
+            <td>$69.56</td>
+            <td>18.07</td>
+            <td>16.01</td>
+            <td>19.10%</td>
+            <td style="font-weight: bold; color: #4ade80">0.84</td>
+            <td>$9.62B</td>
+        </tr>
+
+        <tr>
+            <td><strong>AXP</strong></td>
+            <td>American Express Company</td>
+            <td>Financial Services</td>
+            <td>$298.58</td>
+            <td>19.41</td>
+            <td>14.84</td>
+            <td>16.60%</td>
+            <td style="font-weight: bold; color: #4ade80">0.89</td>
+            <td>$205.68B</td>
+        </tr>
+
+        <tr>
+            <td><strong>CAH</strong></td>
+            <td>Cardinal Health, Inc.</td>
+            <td>Healthcare</td>
+            <td>$218.30</td>
+            <td>31.41</td>
+            <td>18.85</td>
+            <td>19.40%</td>
+            <td style="font-weight: bold; color: #4ade80">0.97</td>
+            <td>$51.37B</td>
+        </tr>
+
+        <tr>
+            <td><strong>AEE</strong></td>
+            <td>Ameren Corporation</td>
+            <td>Utilities</td>
+            <td>$110.69</td>
+            <td>20.69</td>
+            <td>19.11</td>
+            <td>19.50%</td>
+            <td style="font-weight: bold; color: #4ade80">0.98</td>
+            <td>$30.60B</td>
+        </tr>
+
+        <tr>
+            <td><strong>BSX</strong></td>
+            <td>Boston Scientific Corporation</td>
+            <td>Healthcare</td>
+            <td>$71.69</td>
+            <td>36.95</td>
+            <td>18.29</td>
+            <td>18.50%</td>
+            <td style="font-weight: bold; color: #4ade80">0.99</td>
+            <td>$106.37B</td>
+        </tr>
+
+        <tr>
+            <td><strong>ETN</strong></td>
+            <td>Eaton Corporation, PLC</td>
+            <td>Industrials</td>
+            <td>$344.67</td>
+            <td>32.92</td>
+            <td>22.44</td>
+            <td>18.90%</td>
+            <td style="font-weight: bold; color: #c8d0de">1.19</td>
+            <td>$134.18B</td>
+        </tr>
+
+        <tr>
+            <td><strong>CPAY</strong></td>
+            <td>Corpay, Inc.</td>
+            <td>Technology</td>
+            <td>$324.93</td>
+            <td>21.62</td>
+            <td>10.96</td>
+            <td>9.00%</td>
+            <td style="font-weight: bold; color: #c8d0de">1.22</td>
+            <td>$22.73B</td>
+        </tr>
+
+        <tr>
+            <td><strong>COR</strong></td>
+            <td>Cencora, Inc.</td>
+            <td>Healthcare</td>
+            <td>$358.58</td>
+            <td>43.10</td>
+            <td>18.27</td>
+            <td>14.80%</td>
+            <td style="font-weight: bold; color: #c8d0de">1.23</td>
+            <td>$69.75B</td>
+        </tr>
+
+        <tr>
+            <td><strong>DECK</strong></td>
+            <td>Deckers Outdoor Corporation</td>
+            <td>Consumer Cyclical</td>
+            <td>$102.12</td>
+            <td>14.51</td>
+            <td>13.95</td>
+            <td>11.00%</td>
+            <td style="font-weight: bold; color: #c8d0de">1.27</td>
+            <td>$14.88B</td>
+        </tr>
+
+        <tr>
+            <td><strong>DVA</strong></td>
+            <td>DaVita Inc.</td>
+            <td>Healthcare</td>
+            <td>$152.06</td>
+            <td>15.99</td>
+            <td>9.36</td>
+            <td>6.50%</td>
+            <td style="font-weight: bold; color: #c8d0de">1.44</td>
+            <td>$10.17B</td>
+        </tr>
+
+        <tr>
+            <td><strong>DRI</strong></td>
+            <td>Darden Restaurants, Inc.</td>
+            <td>Consumer Cyclical</td>
+            <td>$197.15</td>
+            <td>20.64</td>
+            <td>17.31</td>
+            <td>11.80%</td>
+            <td style="font-weight: bold; color: #c8d0de">1.47</td>
+            <td>$22.93B</td>
+        </tr>
+
+        <tr>
+            <td><strong>ANET</strong></td>
+            <td>Arista Networks, Inc.</td>
+            <td>Technology</td>
+            <td>$134.82</td>
+            <td>49.03</td>
+            <td>31.80</td>
+            <td>19.10%</td>
+            <td style="font-weight: bold; color: #c8d0de">1.66</td>
+            <td>$169.78B</td>
+        </tr>
+
+        <tr>
+            <td><strong>DHR</strong></td>
+            <td>Danaher Corporation</td>
+            <td>Healthcare</td>
+            <td>$196.59</td>
+            <td>39.16</td>
+            <td>21.57</td>
+            <td>12.50%</td>
+            <td style="font-weight: bold; color: #c8d0de">1.73</td>
+            <td>$139.01B</td>
+        </tr>
+
+        <tr>
+            <td><strong>APD</strong></td>
+            <td>Air Products and Chemicals, Inc</td>
+            <td>Basic Materials</td>
+            <td>$274.63</td>
+            <td>N/A</td>
+            <td>19.59</td>
+            <td>9.70%</td>
+            <td style="font-weight: bold; color: #f87171">2.02</td>
+            <td>$61.15B</td>
+        </tr>
+
+        <tr>
+            <td><strong>ATO</strong></td>
+            <td>Atmos Energy Corporation</td>
+            <td>Utilities</td>
+            <td>$184.43</td>
+            <td>24.01</td>
+            <td>20.91</td>
+            <td>9.40%</td>
+            <td style="font-weight: bold; color: #f87171">2.22</td>
+            <td>$30.51B</td>
+        </tr>
+
+        <tr>
+            <td><strong>CMS</strong></td>
+            <td>CMS Energy Corporation</td>
+            <td>Utilities</td>
+            <td>$76.95</td>
+            <td>21.80</td>
+            <td>18.44</td>
+            <td>6.60%</td>
+            <td style="font-weight: bold; color: #f87171">2.79</td>
+            <td>$23.58B</td>
+        </tr>
+
+        <tr>
+            <td><strong>EMR</strong></td>
+            <td>Emerson Electric Company</td>
+            <td>Industrials</td>
+            <td>$137.46</td>
+            <td>33.69</td>
+            <td>19.14</td>
+            <td>4.90%</td>
+            <td style="font-weight: bold; color: #f87171">3.91</td>
+            <td>$77.29B</td>
+        </tr>
+
+        <tr>
+            <td><strong>CNP</strong></td>
+            <td>CenterPoint Energy, Inc (Holdin</td>
+            <td>Utilities</td>
+            <td>$43.40</td>
+            <td>27.12</td>
+            <td>20.79</td>
+            <td>5.20%</td>
+            <td style="font-weight: bold; color: #f87171">4.00</td>
+            <td>$28.33B</td>
+        </tr>
+
+        <tr>
+            <td><strong>ALLE</strong></td>
+            <td>Allegion plc</td>
+            <td>Industrials</td>
+            <td>$148.74</td>
+            <td>19.99</td>
+            <td>15.69</td>
+            <td>3.30%</td>
+            <td style="font-weight: bold; color: #f87171">4.75</td>
+            <td>$12.81B</td>
+        </tr>
+
+        <tr>
+            <td><strong>KO</strong></td>
+            <td>Coca-Cola Company (The)</td>
+            <td>Consumer Defensive</td>
+            <td>$77.42</td>
+            <td>25.47</td>
+            <td>22.34</td>
+            <td>3.60%</td>
+            <td style="font-weight: bold; color: #f87171">6.21</td>
+            <td>$333.03B</td>
+        </tr>
+
+        <tr>
+            <td><strong>CMG</strong></td>
+            <td>Chipotle Mexican Grill, Inc.</td>
+            <td>Consumer Cyclical</td>
+            <td>$34.47</td>
+            <td>30.23</td>
+            <td>25.17</td>
+            <td>4.00%</td>
+            <td style="font-weight: bold; color: #f87171">6.29</td>
+            <td>$45.57B</td>
+        </tr>
+
+        <tr>
+            <td><strong>AME</strong></td>
+            <td>AMETEK, Inc.</td>
+            <td>Industrials</td>
+            <td>$221.51</td>
+            <td>34.67</td>
+            <td>25.41</td>
+            <td>3.60%</td>
+            <td style="font-weight: bold; color: #f87171">7.06</td>
+            <td>$50.99B</td>
+        </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+            <h3 class="faq-q">What is a PEG ratio?</h3>
+            <p class="faq-a">The Price/Earnings-to-Growth (PEG) ratio is a valuation metric that determines the relative trade-off between the price of a stock, the earnings generated per share (EPS), and the company&#039;s expected growth. It is calculated by dividing a stock&#039;s P/E ratio by its expected earnings growth rate.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3 class="faq-q">What is considered a &#039;good&#039; PEG ratio?</h3>
+            <p class="faq-a">Traditionally, a PEG ratio of 1.0 is considered &#039;fairly valued&#039;. A ratio below 1.0 suggests a stock may be undervalued relative to its growth prospects, while a ratio above 1.0 indicates it may be overvalued. However, this varies by industry and market conditions.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3 class="faq-q">How does the S&amp;P 500 average PEG ratio compare historically?</h3>
+            <p class="faq-a">Historically, the S&amp;P 500 has traded at a PEG ratio closer to 1.0 to 1.5. In recent years, due to low interest rates and high growth expectations for tech companies, the market average PEG has expanded, often trading above 1.5.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3 class="faq-q">What are the limitations of the PEG ratio?</h3>
+            <p class="faq-a">The PEG ratio relies heavily on future earnings growth estimates, which are notoriously difficult to predict accurately. Additionally, it may not be suitable for companies without earnings, companies with erratic earnings histories, or asset-heavy industries like real estate.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3 class="faq-q">Why do some tech companies have high PEG ratios?</h3>
+            <p class="faq-a">Many tech companies trade at high PEG ratios because investors are willing to pay a premium for their strong market positions, high margins, and perceived safety, even if their near-term growth rates don&#039;t perfectly align with the traditional 1.0 PEG rule.</p>
+        </div>
+
+        </div>
+
+        <div class="methodology">
+            <h2>Methodology & Data Sources</h2>
+            <p>This study analyzes companies currently listed in the S&P 500 index. Financial metrics, including current price, trailing P/E, forward P/E, and PEG ratios, were retrieved using public API endpoints (such as Yahoo Finance) as of the publication date in 2026.</p>
+            <p>The PEG ratio used in this study represents the standard 5-year expected PEG ratio, computed based on analysts' consensus estimates for future earnings growth. Companies with negative P/E ratios or incomplete forward growth estimates were excluded from the final rankings. Implied 5-year growth is estimated based on Forward P/E divided by the PEG ratio where direct growth metrics were unavailable.</p>
+            <p>Data validation ensures realistic boundaries; PEG ratios falling outside the standard 0.1 to 10 range were manually reviewed or excluded to prevent data anomalies from skewing sector averages.</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        © 2026 <a href="/">westmount-research</a> · A GAB Ventures property
+        <div class="disclaimer">
+            <strong>Disclaimer:</strong> This site provides data and analysis for informational purposes only. The PEG ratio and other financial metrics are subject to rapid change based on market conditions and analyst revisions. Nothing here constitutes investment advice. Always conduct your own due diligence or consult a licensed financial advisor before making investment decisions.
+        </div>
+    </div>
+
+    <script>
+        // Simple client-side sorting
+        function sortTable(n) {
+            var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+            table = document.getElementById("pegTable");
+            switching = true;
+            dir = "asc";
+            while (switching) {
+                switching = false;
+                rows = table.rows;
+                for (i = 1; i < (rows.length - 1); i++) {
+                    shouldSwitch = false;
+                    x = rows[i].getElementsByTagName("TD")[n];
+                    y = rows[i + 1].getElementsByTagName("TD")[n];
+
+                    // Parse values
+                    let valX = x.innerHTML.replace(/[^0-9.-]+/g, "");
+                    let valY = y.innerHTML.replace(/[^0-9.-]+/g, "");
+
+                    let isNumX = !isNaN(parseFloat(valX));
+                    let isNumY = !isNaN(parseFloat(valY));
+
+                    if (isNumX && isNumY) {
+                        valX = parseFloat(valX);
+                        valY = parseFloat(valY);
+                        if (dir == "asc") {
+                            if (valX > valY) { shouldSwitch = true; break; }
+                        } else {
+                            if (valX < valY) { shouldSwitch = true; break; }
+                        }
+                    } else {
+                        // Text sort
+                        if (dir == "asc") {
+                            if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) { shouldSwitch = true; break; }
+                        } else {
+                            if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) { shouldSwitch = true; break; }
+                        }
+                    }
+                }
+                if (shouldSwitch) {
+                    rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                    switching = true;
+                    switchcount ++;
+                } else {
+                    if (switchcount == 0 && dir == "asc") {
+                        dir = "desc";
+                        switching = true;
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>
