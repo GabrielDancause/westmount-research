@@ -1,0 +1,18 @@
+
+> westmount-research@0.0.1 dev
+> astro dev
+
+10:39:44 [types] Generated 1ms
+10:39:44 [content] Syncing content
+10:39:44 [content] Synced content
+10:39:44 [vite] Re-optimizing dependencies because vite config has changed
+
+ astro  v5.18.0 ready in 265 ms
+
+┃ Local    http://localhost:4321/
+┃ Network  use --host to expose
+
+10:39:44 watching for file changes...
+10:40:04 [200] / 23ms
+10:40:05 [404] /crypto-exchange-test 2ms
+10:41:17 [200] / 8ms
