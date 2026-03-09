@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Rebalancing Calculator | Westmount Fundamentals</title>
+    <meta name="description" content="Free portfolio rebalancing calculator. Auto-calculate current vs target allocations, optimize new cash to invest, and see exact buy/sell amounts.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #060a12;
+            --card-bg: #0a1020;
+            --border-color: #152040;
+            --accent-color: #4a8fe7;
+            --text-main: #c8d0de;
+            --text-muted: #5a6a80;
+            --success: #2e8b57;
+            --danger: #d9534f;
+            --danger-hover: #c9302c;
+            --input-bg: #0d1428;
+            --font-main: 'Inter', -apple-system, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 24px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .tagline {
+            color: var(--accent-color);
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #fff;
+            letter-spacing: -1px;
+            margin-bottom: 16px;
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 12px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 2fr 1.5fr 1fr auto;
+            gap: 12px;
+            align-items: end;
+            margin-bottom: 16px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-muted);
+        }
+
+        input {
+            background: var(--input-bg);
+            border: 1px solid var(--border-color);
+            color: #fff;
+            font-family: var(--font-mono);
+            padding: 10px 12px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            transition: border-color 0.2s;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: var(--accent-color);
+        }
+
+        button {
+            background: var(--accent-color);
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: opacity 0.2s;
+            font-family: var(--font-main);
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        .btn-danger {
+            background: var(--danger);
+            padding: 10px 14px;
+        }
+
+        .btn-danger:hover {
+            background: var(--danger-hover);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--text-main);
+        }
+
+        .actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 24px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .cash-input-group {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .cash-input-group label {
+            font-size: 0.95rem;
+            color: #fff;
+        }
+
+        .cash-input-group input {
+            width: 150px;
+        }
+
+        /* Results Area */
+        .results-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-top: 32px;
+            display: none; /* Hidden until calculated */
+        }
+
+        .chart-container {
+            position: relative;
+            height: 300px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        canvas {
+            max-width: 100%;
+        }
+
+        .chart-legend {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .legend-color {
+            width: 12px;
+            height: 12px;
+            border-radius: 3px;
+        }
+
+        .table-responsive {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: right;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            font-family: var(--font-main);
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.5px;
+        }
+
+        th:first-child, td:first-child {
+            text-align: left;
+        }
+
+        .buy { color: var(--success); }
+        .sell { color: var(--danger); }
+        .hold { color: var(--text-muted); }
+
+        .summary-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .stat-box {
+            background: var(--input-bg);
+            padding: 16px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .stat-value {
+            font-family: var(--font-mono);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 4px;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .error-message {
+            color: var(--danger);
+            background: rgba(217, 83, 79, 0.1);
+            padding: 12px;
+            border-radius: 6px;
+            margin-bottom: 16px;
+            border: 1px solid var(--danger);
+            display: none;
+            font-size: 0.9rem;
+        }
+
+        /* Content Sections */
+        .content-section {
+            margin-top: 60px;
+            border-top: 1px solid var(--border-color);
+            padding-top: 40px;
+        }
+
+        .content-section h3 {
+            font-size: 1.3rem;
+            color: #fff;
+            margin-bottom: 16px;
+        }
+
+        .content-section p {
+            color: var(--text-muted);
+            margin-bottom: 16px;
+            font-size: 0.95rem;
+        }
+
+        .faq-item {
+            margin-bottom: 24px;
+        }
+
+        .faq-item h4 {
+            color: #e0e8f0;
+            font-size: 1.05rem;
+            margin-bottom: 8px;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .disclaimer {
+            font-size: 0.75rem;
+            max-width: 800px;
+            margin: 16px auto 0;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 768px) {
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 16px;
+                background: var(--input-bg);
+                padding: 16px;
+                border-radius: 8px;
+                border: 1px solid var(--border-color);
+            }
+            .form-row button {
+                width: 100%;
+            }
+            .actions {
+                flex-direction: column;
+                gap: 16px;
+                align-items: stretch;
+            }
+            .cash-input-group {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .cash-input-group input {
+                width: 100%;
+            }
+            .results-container {
+                grid-template-columns: 1fr;
+            }
+            .summary-stats {
+                grid-template-columns: 1fr;
+            }
+            h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="tagline">Interactive Tool</div>
+            <h1>Portfolio Rebalancing Calculator</h1>
+            <p class="subtitle">Enter your current assets and target allocations. We'll tell you exactly what to buy and sell to restore balance, including optimal deployment of new cash.</p>
+        </header>
+
+        <div class="card">
+            <h2>Your Assets</h2>
+            <div id="error-box" class="error-message"></div>
+
+            <div id="assets-container">
+                <!-- Assets will be inserted here -->
+            </div>
+
+            <button id="add-asset-btn" class="btn-secondary" style="margin-top: 12px; width: 100%;">+ Add Another Asset</button>
+
+            <div class="actions">
+                <div class="cash-input-group">
+                    <label for="new-cash">New Cash to Invest ($)</label>
+                    <input type="number" id="new-cash" placeholder="0.00" min="0" step="0.01">
+                </div>
+                <button id="calculate-btn" style="padding: 12px 32px; font-size: 1.1rem;">Calculate Rebalance</button>
+            </div>
+        </div>
+
+        <div id="results-area" class="results-container">
+            <!-- Results will go here -->
+        </div>
+
+        <div class="content-section">
+            <h3>How to Use the Rebalancing Calculator</h3>
+            <p>Portfolio rebalancing is the process of realigning the weightings of your portfolio's assets. As markets move, your asset allocation will drift from its target, altering your risk profile.</p>
+            <p>This tool helps you restore balance. Simply enter your current holdings and your desired target allocation for each asset. The calculator will determine exactly how much to buy or sell to reach your target.</p>
+            <p><strong>Optimizing New Cash:</strong> If you have new money to invest, enter it in the "New Cash to Invest" field. The calculator will preferentially allocate the new cash to underweight assets first, minimizing the need to sell existing assets (which can trigger taxable events in non-registered accounts).</p>
+        </div>
+
+        <div class="content-section">
+            <h3>Frequently Asked Questions</h3>
+            <div class="faq-item">
+                <h4>Why should I rebalance my portfolio?</h4>
+                <p>Rebalancing forces you to sell high and buy low. By trimming assets that have outgrown their target allocation and adding to assets that have shrunk, you maintain your desired risk level over time.</p>
+            </div>
+            <div class="faq-item">
+                <h4>How often should I rebalance?</h4>
+                <p>Most experts recommend rebalancing either on a set schedule (e.g., annually or semi-annually) or based on tolerance bands (e.g., whenever an asset drifts more than 5% from its target).</p>
+            </div>
+        </div>
+
+        <footer>
+            <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "SoftwareApplication",
+                "name": "Portfolio Rebalancing Calculator",
+                "operatingSystem": "Any",
+                "applicationCategory": "FinanceApplication",
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "Westmount Fundamentals"
+                },
+                "offers": {
+                    "@type": "Offer",
+                    "price": "0",
+                    "priceCurrency": "USD"
+                }
+            }
+            </script>
+            <div>© <span id="current-year"></span> Westmount Fundamentals · A GAB Ventures property</div>
+            <div class="disclaimer">Methodology: Rebalancing calculations use exact proportional arithmetic to minimize tracking error from the target allocation. Buy/sell amounts do not account for trading fees, bid/ask spreads, or tax consequences. This tool provides data and analysis for informational purposes only. Nothing here constitutes investment advice. Do your own research.</div>
+        </footer>
+    </div>
+
+    <script>
+        const assetsContainer = document.getElementById('assets-container');
+        const addAssetBtn = document.getElementById('add-asset-btn');
+        const calculateBtn = document.getElementById('calculate-btn');
+        const errorBox = document.getElementById('error-box');
+        const resultsArea = document.getElementById('results-area');
+
+        let assetCount = 0;
+
+        const formatCurrency = (value) => {
+            return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(value);
+        };
+
+        const formatPercent = (value) => {
+            return new Intl.NumberFormat('en-US', { style: 'percent', minimumFractionDigits: 1, maximumFractionDigits: 1 }).format(value / 100);
+        };
+
+        const createAssetRow = (name = '', currentVal = '', targetPct = '') => {
+            assetCount++;
+            const rowId = `asset-${assetCount}`;
+
+            const row = document.createElement('div');
+            row.className = 'form-row';
+            row.id = rowId;
+
+            row.innerHTML = `
+                <div class="form-group">
+                    <label>Asset Name</label>
+                    <input type="text" class="asset-name" placeholder="e.g. VTI, AAPL, Bonds" value="${name}">
+                </div>
+                <div class="form-group">
+                    <label>Current Value ($)</label>
+                    <input type="number" class="current-val" placeholder="0.00" min="0" step="0.01" value="${currentVal}">
+                </div>
+                <div class="form-group">
+                    <label>Target (%)</label>
+                    <input type="number" class="target-pct" placeholder="0" min="0" max="100" step="1" value="${targetPct}">
+                </div>
+                <button class="btn-danger" onclick="removeAsset('${rowId}')" title="Remove Asset" ${assetCount <= 2 ? 'disabled' : ''}>×</button>
+            `;
+
+            assetsContainer.appendChild(row);
+            updateRemoveButtons();
+        };
+
+        window.removeAsset = (id) => {
+            if (document.querySelectorAll('.form-row').length > 2) {
+                document.getElementById(id).remove();
+                updateRemoveButtons();
+            }
+        };
+
+        const updateRemoveButtons = () => {
+            const rows = document.querySelectorAll('.form-row');
+            const btns = document.querySelectorAll('.btn-danger');
+            if (rows.length <= 2) {
+                btns.forEach(btn => btn.disabled = true);
+            } else {
+                btns.forEach(btn => btn.disabled = false);
+            }
+        };
+
+        const showError = (msg) => {
+            errorBox.textContent = msg;
+            errorBox.style.display = 'block';
+            resultsArea.style.display = 'none';
+        };
+
+        const hideError = () => {
+            errorBox.style.display = 'none';
+        };
+
+        // Initialize with default rows
+        createAssetRow('US Stocks (VTI)', '10000', '60');
+        createAssetRow('Intl Stocks (VXUS)', '4000', '30');
+        createAssetRow('Bonds (BND)', '2000', '10');
+
+        addAssetBtn.addEventListener('click', () => createAssetRow());
+
+        calculateBtn.addEventListener('click', () => {
+            hideError();
+
+            const rows = document.querySelectorAll('.form-row');
+            const assets = [];
+            let totalCurrent = 0;
+            let totalTargetPct = 0;
+
+            let hasError = false;
+
+            rows.forEach((row, index) => {
+                if (hasError) return;
+
+                const nameInput = row.querySelector('.asset-name');
+                const valInput = row.querySelector('.current-val');
+                const pctInput = row.querySelector('.target-pct');
+
+                let name = nameInput.value.trim() || `Asset ${index + 1}`;
+                let val = parseFloat(valInput.value) || 0;
+                let pct = parseFloat(pctInput.value) || 0;
+
+                if (val < 0 || pct < 0) {
+                    showError("Values and percentages cannot be negative.");
+                    hasError = true;
+                    return;
+                }
+
+                assets.push({ name, currentVal: val, targetPct: pct });
+                totalCurrent += val;
+                totalTargetPct += pct;
+            });
+
+            if (hasError) return;
+
+            // Handle potential floating point issues slightly off from 100
+            if (Math.abs(totalTargetPct - 100) > 0.01) {
+                showError(`Target allocations must add up to exactly 100%. Current total is ${totalTargetPct.toFixed(1)}%.`);
+                return;
+            }
+
+            const newCash = parseFloat(document.getElementById('new-cash').value) || 0;
+            const newTotal = totalCurrent + newCash;
+
+            // Calculate rebalancing
+            assets.forEach(asset => {
+                asset.currentPct = totalCurrent > 0 ? (asset.currentVal / totalCurrent) * 100 : 0;
+                asset.targetVal = newTotal * (asset.targetPct / 100);
+                asset.difference = asset.targetVal - asset.currentVal;
+                asset.action = asset.difference > 0.01 ? 'Buy' : asset.difference < -0.01 ? 'Sell' : 'Hold';
+            });
+
+            window.rebalanceResults = { assets, totalCurrent, newCash, newTotal };
+            if (window.renderResults) {
+                window.renderResults(assets, totalCurrent, newCash, newTotal);
+            }
+        });
+
+        // Setup the current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Colors for charts
+        const chartColors = [
+            '#4a8fe7', '#e74c3c', '#f1c40f', '#2ecc71', '#9b59b6',
+            '#e67e22', '#1abc9c', '#34495e', '#e84393', '#00cec9'
+        ];
+
+        window.renderResults = (assets, totalCurrent, newCash, newTotal) => {
+            resultsArea.innerHTML = `
+                <div class="card">
+                    <h2>Allocation Overview</h2>
+                    <div class="summary-stats">
+                        <div class="stat-box">
+                            <div class="stat-value">${formatCurrency(totalCurrent)}</div>
+                            <div class="stat-label">Current Total</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-value">${formatCurrency(newCash)}</div>
+                            <div class="stat-label">New Cash</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-value">${formatCurrency(newTotal)}</div>
+                            <div class="stat-label">New Total</div>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; justify-content: space-around; flex-wrap: wrap; margin-top: 32px;">
+                        <div style="width: 100%; max-width: 400px; text-align: center; margin-bottom: 24px;">
+                            <h3 style="font-size: 1rem; color: var(--text-muted); margin-bottom: 12px;">Current Allocation</h3>
+                            <div class="chart-container">
+                                <canvas id="current-chart" width="300" height="300"></canvas>
+                            </div>
+                        </div>
+                        <div style="width: 100%; max-width: 400px; text-align: center; margin-bottom: 24px;">
+                            <h3 style="font-size: 1rem; color: var(--text-muted); margin-bottom: 12px;">Target Allocation</h3>
+                            <div class="chart-container">
+                                <canvas id="target-chart" width="300" height="300"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="chart-legend" class="chart-legend"></div>
+                </div>
+
+                <div class="card">
+                    <h2>Action Plan</h2>
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Asset</th>
+                                    <th>Current</th>
+                                    <th>Target</th>
+                                    <th>Action</th>
+                                    <th>Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                ${assets.map((asset, i) => `
+                                    <tr>
+                                        <td><strong>${asset.name}</strong></td>
+                                        <td>${formatCurrency(asset.currentVal)} <br><span style="color:var(--text-muted); font-size:0.8rem">${formatPercent(asset.currentPct)}</span></td>
+                                        <td>${formatCurrency(asset.targetVal)} <br><span style="color:var(--text-muted); font-size:0.8rem">${formatPercent(asset.targetPct)}</span></td>
+                                        <td class="${asset.action.toLowerCase()}"><strong>${asset.action}</strong></td>
+                                        <td class="${asset.action.toLowerCase()}"><strong>${asset.action === 'Sell' ? '-' : (asset.action === 'Buy' ? '+' : '')}${formatCurrency(Math.abs(asset.difference))}</strong></td>
+                                    </tr>
+                                `).join('')}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            `;
+
+            resultsArea.style.display = 'grid';
+
+            // Draw Charts
+            const drawPieChart = (canvasId, dataKey) => {
+                const canvas = document.getElementById(canvasId);
+                const ctx = canvas.getContext('2d');
+                const x = canvas.width / 2;
+                const y = canvas.height / 2;
+                const radius = Math.min(x, y) - 10;
+
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                let startAngle = -0.5 * Math.PI;
+                let total = assets.reduce((sum, a) => sum + a[dataKey], 0);
+
+                if (total === 0) {
+                    ctx.beginPath();
+                    ctx.arc(x, y, radius, 0, 2 * Math.PI);
+                    ctx.fillStyle = 'rgba(255, 255, 255, 0.05)';
+                    ctx.fill();
+                    return;
+                }
+
+                assets.forEach((asset, index) => {
+                    const sliceAngle = (asset[dataKey] / total) * 2 * Math.PI;
+
+                    ctx.beginPath();
+                    ctx.moveTo(x, y);
+                    ctx.arc(x, y, radius, startAngle, startAngle + sliceAngle);
+                    ctx.closePath();
+
+                    ctx.fillStyle = chartColors[index % chartColors.length];
+                    ctx.fill();
+
+                    // Add thin stroke between slices
+                    ctx.lineWidth = 2;
+                    ctx.strokeStyle = '#0a1020';
+                    ctx.stroke();
+
+                    startAngle += sliceAngle;
+                });
+            };
+
+            drawPieChart('current-chart', 'currentVal');
+            drawPieChart('target-chart', 'targetVal');
+
+            // Draw Legend
+            const legendContainer = document.getElementById('chart-legend');
+            legendContainer.innerHTML = assets.map((asset, index) => `
+                <div class="legend-item">
+                    <div class="legend-color" style="background-color: ${chartColors[index % chartColors.length]}"></div>
+                    <span>${asset.name}</span>
+                </div>
+            `).join('');
+
+            // Scroll to results on mobile
+            if (window.innerWidth <= 768) {
+                resultsArea.scrollIntoView({ behavior: 'smooth' });
+            }
+        };
+    </script>
+</body>
+</html>
