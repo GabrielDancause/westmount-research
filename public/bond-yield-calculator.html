@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bond Yield Calculator (YTM, Duration, Price) | Westmount Fundamentals</title>
+  <meta name="description" content="Calculate bond Yield to Maturity (YTM), Current Yield, Macaulay Duration, and Modified Duration. Generate cash flow tables and compare multiple bonds side-by-side.">
+  <style>
+    :root {
+      --bg: #060a12;
+      --card-bg: #0a1020;
+      --border: #152040;
+      --accent: #4a8fe7;
+      --accent-hover: #3a75c4;
+      --text: #c8d0de;
+      --text-muted: #5a6a80;
+      --success: #2e8b57;
+      --danger: #d9534f;
+      --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+      --font-sans: 'Inter', -apple-system, sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: #fff;
+      margin-bottom: 10px;
+      letter-spacing: -1px;
+    }
+
+    .subtitle {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+    }
+
+    .layout-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+
+    @media (min-width: 900px) {
+      .layout-grid {
+        grid-template-columns: 350px 1fr;
+      }
+    }
+
+    .card {
+      background: linear-gradient(135deg, var(--card-bg) 0%, #0d1428 100%);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      color: #fff;
+      margin-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 10px;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: var(--text);
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px 12px;
+      background-color: #040810;
+      border: 1px solid var(--border);
+      color: #fff;
+      border-radius: 6px;
+      font-family: var(--font-mono);
+      font-size: 1rem;
+      transition: border-color 0.2s;
+    }
+
+    input:focus, select:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+
+    .input-group {
+      position: relative;
+    }
+
+    .input-prefix, .input-suffix {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      pointer-events: none;
+    }
+
+    .input-prefix { left: 12px; }
+    .input-suffix { right: 12px; }
+
+    .has-prefix input { padding-left: 28px; }
+    .has-suffix input { padding-right: 28px; }
+
+    .btn {
+      display: inline-block;
+      width: 100%;
+      padding: 12px;
+      background-color: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background-color 0.2s, transform 0.1s;
+      margin-top: 10px;
+    }
+
+    .btn:hover {
+      background-color: var(--accent-hover);
+    }
+
+    .btn:active {
+      transform: translateY(1px);
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+
+    .btn-secondary:hover {
+      background-color: rgba(255, 255, 255, 0.05);
+    }
+
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+      margin-bottom: 30px;
+    }
+
+    .result-box {
+      background-color: #040810;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px;
+      text-align: center;
+    }
+
+    .result-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+
+    .result-value {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: var(--accent);
+      font-family: var(--font-mono);
+    }
+
+    .tabs {
+      display: flex;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 20px;
+    }
+
+    .tab {
+      padding: 10px 20px;
+      cursor: pointer;
+      color: var(--text-muted);
+      font-weight: 600;
+      border-bottom: 2px solid transparent;
+      transition: all 0.2s;
+    }
+
+    .tab.active {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+
+    th, td {
+      padding: 12px;
+      text-align: right;
+      border-bottom: 1px solid var(--border);
+    }
+
+    th:first-child, td:first-child {
+      text-align: left;
+    }
+
+    th {
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 0.5px;
+    }
+
+    td {
+      font-family: var(--font-mono);
+    }
+
+    .table-container {
+      overflow-x: auto;
+    }
+
+    .chart-container {
+      width: 100%;
+      height: 300px;
+      position: relative;
+    }
+
+    canvas {
+      width: 100%;
+      height: 100%;
+    }
+
+    .comparison-table {
+      margin-top: 40px;
+    }
+
+    .delete-btn {
+      background: none;
+      border: none;
+      color: var(--danger);
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .delete-btn:hover {
+      text-decoration: underline;
+    }
+
+    .section-content {
+      margin-top: 60px;
+      padding-top: 40px;
+      border-top: 1px solid var(--border);
+    }
+
+    .section-content h2 {
+      border: none;
+      margin-bottom: 16px;
+    }
+
+    .section-content h3 {
+      font-size: 1.2rem;
+      color: #fff;
+      margin: 24px 0 12px;
+    }
+
+    .section-content p {
+      margin-bottom: 16px;
+      color: var(--text);
+    }
+
+    .faq-item {
+      margin-bottom: 24px;
+    }
+
+    .faq-q {
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 40px 20px;
+      margin-top: 60px;
+      border-top: 1px solid var(--border);
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    .disclaimer {
+      max-width: 600px;
+      margin: 16px auto 0;
+      font-size: 0.75rem;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 20px;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    .back-link:hover {
+      color: var(--accent);
+    }
+
+    .tooltip {
+      position: relative;
+      display: inline-block;
+      cursor: help;
+      border-bottom: 1px dotted var(--text-muted);
+    }
+
+    .tooltip .tooltiptext {
+      visibility: hidden;
+      width: 200px;
+      background-color: #040810;
+      color: #fff;
+      text-align: center;
+      border-radius: 6px;
+      padding: 8px;
+      position: absolute;
+      z-index: 1;
+      bottom: 125%;
+      left: 50%;
+      margin-left: -100px;
+      opacity: 0;
+      transition: opacity 0.3s;
+      border: 1px solid var(--border);
+      font-size: 0.8rem;
+      font-weight: normal;
+      font-family: var(--font-sans);
+    }
+
+    .tooltip:hover .tooltiptext {
+      visibility: visible;
+      opacity: 1;
+    }
+
+  </style>
+
+  <!-- JSON-LD SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Bond Yield Calculator",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "All",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "description": "Calculate bond Yield to Maturity (YTM), Current Yield, Macaulay Duration, and Modified Duration. Generate cash flow tables and price sensitivity charts.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Westmount Fundamentals"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <div class="container">
+    <a href="/" class="back-link">← Back to Westmount Fundamentals</a>
+
+    <header>
+      <h1>Bond Yield Calculator</h1>
+      <p class="subtitle">Calculate YTM, Duration, and Price Sensitivity</p>
+    </header>
+
+    <div class="layout-grid">
+      <!-- Input Panel -->
+      <div class="card">
+        <h2>Bond Parameters</h2>
+        <form id="bond-form">
+          <div class="form-group">
+            <label for="bond-name">Bond Name / Ticker (Optional)</label>
+            <input type="text" id="bond-name" placeholder="e.g. US Treasury 10Y">
+          </div>
+
+          <div class="form-group">
+            <label for="face-value">Face Value (Par)</label>
+            <div class="input-group has-prefix">
+              <span class="input-prefix">$</span>
+              <input type="number" id="face-value" value="1000" step="0.01" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="current-price">Current Price</label>
+            <div class="input-group has-prefix">
+              <span class="input-prefix">$</span>
+              <input type="number" id="current-price" value="950" step="0.01" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="coupon-rate">Annual Coupon Rate</label>
+            <div class="input-group has-suffix">
+              <input type="number" id="coupon-rate" value="4.5" step="0.001" required>
+              <span class="input-suffix">%</span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="years-maturity">Years to Maturity</label>
+            <input type="number" id="years-maturity" value="10" step="0.01" required>
+          </div>
+
+          <div class="form-group">
+            <label for="payment-freq">Payment Frequency</label>
+            <select id="payment-freq">
+              <option value="1">Annual (1x/year)</option>
+              <option value="2" selected>Semi-Annual (2x/year)</option>
+              <option value="4">Quarterly (4x/year)</option>
+              <option value="12">Monthly (12x/year)</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn">Calculate</button>
+          <button type="button" id="btn-save" class="btn btn-secondary">Save to Comparison</button>
+        </form>
+      </div>
+
+      <!-- Results Panel -->
+      <div class="card">
+        <h2>Results</h2>
+
+        <div class="results-grid">
+          <div class="result-box">
+            <div class="result-label tooltip">Yield to Maturity<span class="tooltiptext">The total expected return if the bond is held to maturity.</span></div>
+            <div class="result-value" id="res-ytm">--</div>
+          </div>
+          <div class="result-box">
+            <div class="result-label tooltip">Current Yield<span class="tooltiptext">Annual coupon payment divided by current price.</span></div>
+            <div class="result-value" id="res-cy">--</div>
+          </div>
+          <div class="result-box">
+            <div class="result-label tooltip">Macaulay Duration<span class="tooltiptext">Weighted average time to receive cash flows (in years).</span></div>
+            <div class="result-value" id="res-mac-dur">--</div>
+          </div>
+          <div class="result-box">
+            <div class="result-label tooltip">Modified Duration<span class="tooltiptext">Approximate % change in price for a 1% change in yield.</span></div>
+            <div class="result-value" id="res-mod-dur">--</div>
+          </div>
+        </div>
+
+        <div class="tabs">
+          <div class="tab active" data-target="cash-flows">Cash Flows</div>
+          <div class="tab" data-target="price-chart">Price Sensitivity</div>
+        </div>
+
+        <div id="cash-flows" class="tab-content active">
+          <div class="table-container">
+            <table id="cf-table">
+              <thead>
+                <tr>
+                  <th>Period</th>
+                  <th>Year</th>
+                  <th>Cash Flow</th>
+                  <th>PV of CF</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Populated by JS -->
+                <tr><td colspan="4" style="text-align:center;">Run calculation to see cash flows</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div id="price-chart" class="tab-content">
+          <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:10px; text-align:center;">
+            How the bond price changes as Yield to Maturity changes.
+          </p>
+          <div class="chart-container">
+            <canvas id="sensitivity-canvas"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Comparison Section -->
+    <div class="card comparison-table" id="comparison-section" style="display: none;">
+      <h2>Bond Comparison</h2>
+      <div class="table-container">
+        <table id="comp-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Price</th>
+              <th>Coupon</th>
+              <th>Maturity</th>
+              <th>Current Yield</th>
+              <th>YTM</th>
+              <th>Mod. Duration</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Populated by JS -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Content Sections (FAQ, Methodology) -->
+    <div class="section-content">
+      <h2>Methodology & Formulas</h2>
+      <p>This calculator computes standard bond metrics using standard financial mathematics. It assumes a flat yield curve and reinvestment of coupons at the calculated YTM.</p>
+
+      <h3>Yield to Maturity (YTM)</h3>
+      <p>YTM is the internal rate of return (IRR) of the bond's cash flows. Because the formula for YTM cannot be solved algebraically for bonds with more than one period, this calculator uses the <strong>Newton-Raphson numerical method</strong> to find the precise yield where the present value of future cash flows equals the current market price.</p>
+
+      <h3>Current Yield</h3>
+      <p>Calculated as the annual coupon payment divided by the current market price. It ignores the capital gain or loss realized at maturity.</p>
+
+      <h3>Duration Metrics</h3>
+      <p><strong>Macaulay Duration</strong> is the weighted average time until all cash flows are received, measured in years. The weights are the present values of each cash flow as a percentage of the total bond price.</p>
+      <p><strong>Modified Duration</strong> adjusts Macaulay duration to estimate price sensitivity. The formula is: <code>Modified Duration = Macaulay Duration / (1 + (YTM / Frequency))</code>. It estimates the percentage drop in bond price for a 1% increase in interest rates.</p>
+
+      <h2 style="margin-top: 40px;">Frequently Asked Questions (FAQ)</h2>
+
+      <div class="faq-item">
+        <div class="faq-q">What is the difference between Current Yield and Yield to Maturity?</div>
+        <div class="faq-a">Current yield only looks at the coupon payment relative to today's price. YTM factors in the coupon payments, the reinvestment of those payments, and any capital gain or loss if the bond was bought at a discount or premium to its par value, assuming it is held to maturity.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Why does the bond price go down when yield goes up?</div>
+        <div class="faq-a">Bond prices and yields have an inverse relationship. If newly issued bonds pay a higher yield, older bonds with lower coupon rates become less attractive. Their price must drop so their overall return (YTM) matches the new, higher market rates. You can visualize this in the "Price Sensitivity" tab.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">How is Modified Duration useful?</div>
+        <div class="faq-a">It acts as a risk measure. If a bond has a modified duration of 5.0, a 1% increase in interest rates will cause the bond's price to drop by roughly 5%. Higher duration means higher interest rate risk.</div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <script>document.write(new Date().getFullYear())</script> <a href="/">westmount-research</a> · A GAB Ventures property
+      <div class="disclaimer">
+        This calculator is provided for informational and educational purposes only. It is not financial advice.
+        Calculations assume idealized conditions (e.g., flat yield curve, exact reinvestment at YTM) that may not reflect real-world market conditions. Always consult a qualified financial professional before making investment decisions.
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    // --- State & Setup ---
+    let savedBonds = [];
+    let currentCalculation = null;
+
+    const DOM = {
+      form: document.getElementById('bond-form'),
+      btnSave: document.getElementById('btn-save'),
+      resYtm: document.getElementById('res-ytm'),
+      resCy: document.getElementById('res-cy'),
+      resMacDur: document.getElementById('res-mac-dur'),
+      resModDur: document.getElementById('res-mod-dur'),
+      cfTableBody: document.querySelector('#cf-table tbody'),
+      compSection: document.getElementById('comparison-section'),
+      compTableBody: document.querySelector('#comp-table tbody'),
+      tabs: document.querySelectorAll('.tab'),
+      tabContents: document.querySelectorAll('.tab-content'),
+      canvas: document.getElementById('sensitivity-canvas')
+    };
+
+    // Formatter
+    const fmtPct = (val) => (val * 100).toFixed(3) + '%';
+    const fmtCur = (val) => '$' + val.toFixed(2);
+    const fmtNum = (val) => val.toFixed(3);
+
+    // --- Math Engine ---
+
+    /**
+     * Calculate price of bond given a specific yield
+     */
+    function calculateBondPrice(faceValue, couponRate, years, freq, ytm) {
+      const periods = years * freq;
+      const couponPmt = (faceValue * couponRate) / freq;
+      const r = ytm / freq;
+
+      let price = 0;
+      for (let t = 1; t <= periods; t++) {
+        price += couponPmt / Math.pow(1 + r, t);
+      }
+      price += faceValue / Math.pow(1 + r, periods);
+      return price;
+    }
+
+    /**
+     * Calculate YTM using Newton-Raphson
+     */
+    function calculateYTM(faceValue, price, couponRate, years, freq) {
+      const periods = years * freq;
+      const couponPmt = (faceValue * couponRate) / freq;
+
+      // Initial guess (approximate YTM formula)
+      let r = ((couponPmt + (faceValue - price) / periods) / ((faceValue + price) / 2));
+
+      // Newton-Raphson iterations
+      let diff = 1;
+      let iterations = 0;
+      const maxIterations = 100;
+      const tolerance = 1e-7;
+
+      while (diff > tolerance && iterations < maxIterations) {
+        let currentPrice = 0;
+        let derivative = 0;
+
+        for (let t = 1; t <= periods; t++) {
+          const discountFactor = Math.pow(1 + r, t);
+          currentPrice += couponPmt / discountFactor;
+          derivative -= (t * couponPmt) / (discountFactor * (1 + r));
+        }
+
+        const principalDiscount = Math.pow(1 + r, periods);
+        currentPrice += faceValue / principalDiscount;
+        derivative -= (periods * faceValue) / (principalDiscount * (1 + r));
+
+        const nextR = r - (currentPrice - price) / derivative;
+        diff = Math.abs(nextR - r);
+        r = nextR;
+        iterations++;
+      }
+
+      return r * freq; // Annualize
+    }
+
+    /**
+     * Perform all bond calculations
+     */
+    function analyzeBond(name, faceValue, price, couponRateDecimal, years, freq) {
+      const ytm = calculateYTM(faceValue, price, couponRateDecimal, years, freq);
+      const currentYield = (faceValue * couponRateDecimal) / price;
+
+      const periods = years * freq;
+      const couponPmt = (faceValue * couponRateDecimal) / freq;
+      const r = ytm / freq;
+
+      let macaulayNumerator = 0;
+      let cashFlows = [];
+
+      for (let t = 1; t <= periods; t++) {
+        const isLastPeriod = (t === periods);
+        const cf = couponPmt + (isLastPeriod ? faceValue : 0);
+        const pv = cf / Math.pow(1 + r, t);
+        const timeInYears = t / freq;
+
+        macaulayNumerator += pv * timeInYears;
+
+        cashFlows.push({
+          period: t,
+          year: timeInYears,
+          cashFlow: cf,
+          pv: pv
+        });
+      }
+
+      const macaulayDuration = macaulayNumerator / price;
+      const modifiedDuration = macaulayDuration / (1 + r);
+
+      return {
+        name: name || `Bond ${savedBonds.length + 1}`,
+        faceValue, price, couponRate: couponRateDecimal, years, freq,
+        ytm, currentYield, macaulayDuration, modifiedDuration,
+        cashFlows
+      };
+    }
+
+    // --- UI Updates ---
+
+    function updateUI(data) {
+      currentCalculation = data;
+
+      DOM.resYtm.textContent = fmtPct(data.ytm);
+      DOM.resCy.textContent = fmtPct(data.currentYield);
+      DOM.resMacDur.textContent = fmtNum(data.macaulayDuration);
+      DOM.resModDur.textContent = fmtNum(data.modifiedDuration);
+
+      // Render Table
+      DOM.cfTableBody.innerHTML = '';
+      data.cashFlows.forEach(cf => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td>${cf.period}</td>
+          <td>${fmtNum(cf.year)}</td>
+          <td>${fmtCur(cf.cashFlow)}</td>
+          <td>${fmtCur(cf.pv)}</td>
+        `;
+        DOM.cfTableBody.appendChild(tr);
+      });
+
+      drawChart(data);
+    }
+
+    // --- Charting Engine (No external deps) ---
+    function drawChart(data) {
+      const ctx = DOM.canvas.getContext('2d');
+      const width = DOM.canvas.clientWidth;
+      const height = DOM.canvas.clientHeight;
+
+      // Handle high-DPI displays
+      const dpr = window.devicePixelRatio || 1;
+      DOM.canvas.width = width * dpr;
+      DOM.canvas.height = height * dpr;
+      ctx.scale(dpr, dpr);
+
+      ctx.clearRect(0, 0, width, height);
+
+      // Generate curve data (vary YTM from roughly -50% to +100% of current YTM)
+      const baseYield = data.ytm;
+      const minYield = Math.max(0.001, baseYield * 0.2); // Don't go below 0.1%
+      const maxYield = baseYield * 2.0;
+      const steps = 50;
+
+      const points = [];
+      let minPrice = Infinity;
+      let maxPrice = -Infinity;
+
+      for (let i = 0; i <= steps; i++) {
+        const y = minYield + (maxYield - minYield) * (i / steps);
+        const p = calculateBondPrice(data.faceValue, data.couponRate, data.years, data.freq, y);
+        points.push({ y, p });
+        if (p < minPrice) minPrice = p;
+        if (p > maxPrice) maxPrice = p;
+      }
+
+      // Padding
+      const padding = { top: 20, right: 20, bottom: 40, left: 60 };
+      const graphWidth = width - padding.left - padding.right;
+      const graphHeight = height - padding.top - padding.bottom;
+
+      // Scaling functions
+      const scaleX = (val) => padding.left + ((val - minYield) / (maxYield - minYield)) * graphWidth;
+      const scaleY = (val) => padding.top + graphHeight - ((val - minPrice) / (maxPrice - minPrice)) * graphHeight;
+
+      // Draw Grid & Axes
+      ctx.strokeStyle = '#152040';
+      ctx.lineWidth = 1;
+      ctx.fillStyle = '#5a6a80';
+      ctx.font = '10px "JetBrains Mono", monospace';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'top';
+
+      // X Axis (Yield)
+      for (let i = 0; i <= 5; i++) {
+        const y = minYield + (maxYield - minYield) * (i / 5);
+        const xPos = scaleX(y);
+        ctx.beginPath();
+        ctx.moveTo(xPos, padding.top);
+        ctx.lineTo(xPos, height - padding.bottom + 5);
+        ctx.stroke();
+        ctx.fillText((y * 100).toFixed(1) + '%', xPos, height - padding.bottom + 10);
+      }
+      ctx.fillText("Yield to Maturity", width / 2 + padding.left/2, height - 15);
+
+      // Y Axis (Price)
+      ctx.textAlign = 'right';
+      ctx.textBaseline = 'middle';
+      for (let i = 0; i <= 5; i++) {
+        const p = minPrice + (maxPrice - minPrice) * (i / 5);
+        const yPos = scaleY(p);
+        ctx.beginPath();
+        ctx.moveTo(padding.left - 5, yPos);
+        ctx.lineTo(width - padding.right, yPos);
+        ctx.stroke();
+        ctx.fillText('$' + Math.round(p), padding.left - 10, yPos);
+      }
+
+      // Draw Curve
+      ctx.beginPath();
+      ctx.moveTo(scaleX(points[0].y), scaleY(points[0].p));
+      for (let i = 1; i < points.length; i++) {
+        ctx.lineTo(scaleX(points[i].y), scaleY(points[i].p));
+      }
+      ctx.strokeStyle = '#4a8fe7';
+      ctx.lineWidth = 3;
+      ctx.stroke();
+
+      // Highlight Current Point
+      const currentX = scaleX(data.ytm);
+      const currentY = scaleY(data.price);
+
+      // Draw dashed lines to point
+      ctx.beginPath();
+      ctx.setLineDash([5, 5]);
+      ctx.strokeStyle = '#5a6a80';
+      ctx.lineWidth = 1;
+      ctx.moveTo(currentX, padding.top);
+      ctx.lineTo(currentX, height - padding.bottom);
+      ctx.moveTo(padding.left, currentY);
+      ctx.lineTo(width - padding.right, currentY);
+      ctx.stroke();
+      ctx.setLineDash([]);
+
+      // Draw dot
+      ctx.beginPath();
+      ctx.arc(currentX, currentY, 6, 0, Math.PI * 2);
+      ctx.fillStyle = '#4a8fe7';
+      ctx.fill();
+      ctx.strokeStyle = '#060a12';
+      ctx.lineWidth = 2;
+      ctx.stroke();
+
+      // Dot label
+      ctx.fillStyle = '#fff';
+      ctx.textAlign = 'left';
+      ctx.textBaseline = 'bottom';
+      ctx.fillText("Current", currentX + 10, currentY - 10);
+    }
+
+    // --- Comparison Logic ---
+    function renderComparisonTable() {
+      if (savedBonds.length === 0) {
+        DOM.compSection.style.display = 'none';
+        return;
+      }
+
+      DOM.compSection.style.display = 'block';
+      DOM.compTableBody.innerHTML = '';
+
+      savedBonds.forEach((bond, index) => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td><strong>${bond.name}</strong></td>
+          <td>${fmtCur(bond.price)}</td>
+          <td>${fmtPct(bond.couponRate)}</td>
+          <td>${bond.years}y</td>
+          <td>${fmtPct(bond.currentYield)}</td>
+          <td style="color:var(--accent); font-weight:700;">${fmtPct(bond.ytm)}</td>
+          <td>${fmtNum(bond.modifiedDuration)}</td>
+          <td><button class="delete-btn" onclick="removeBond(${index})">Remove</button></td>
+        `;
+        DOM.compTableBody.appendChild(tr);
+      });
+    }
+
+    window.removeBond = function(index) {
+      savedBonds.splice(index, 1);
+      renderComparisonTable();
+    };
+
+    // --- Event Listeners ---
+
+    DOM.form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const name = document.getElementById('bond-name').value;
+      const faceValue = parseFloat(document.getElementById('face-value').value);
+      const price = parseFloat(document.getElementById('current-price').value);
+      const couponRate = parseFloat(document.getElementById('coupon-rate').value) / 100;
+      const years = parseFloat(document.getElementById('years-maturity').value);
+      const freq = parseInt(document.getElementById('payment-freq').value);
+
+      const result = analyzeBond(name, faceValue, price, couponRate, years, freq);
+      updateUI(result);
+    });
+
+    DOM.btnSave.addEventListener('click', () => {
+      if (!currentCalculation) {
+        alert("Please calculate a bond first.");
+        return;
+      }
+      savedBonds.push(currentCalculation);
+      renderComparisonTable();
+      // Scroll to comparison
+      DOM.compSection.scrollIntoView({ behavior: 'smooth' });
+    });
+
+    // Tabs
+    DOM.tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        DOM.tabs.forEach(t => t.classList.remove('active'));
+        DOM.tabContents.forEach(c => c.classList.remove('active'));
+
+        tab.classList.add('active');
+        const targetId = tab.getAttribute('data-target');
+        document.getElementById(targetId).classList.add('active');
+
+        if (targetId === 'price-chart' && currentCalculation) {
+          // Re-draw chart because canvas dimensions might be 0 when hidden
+          setTimeout(() => drawChart(currentCalculation), 0);
+        }
+      });
+    });
+
+    // Initial calculation on load
+    window.addEventListener('DOMContentLoaded', () => {
+      // Trigger submit to populate initial data
+      DOM.form.dispatchEvent(new Event('submit'));
+    });
+
+    // Handle resize for canvas
+    window.addEventListener('resize', () => {
+      if (currentCalculation && document.getElementById('price-chart').classList.contains('active')) {
+        drawChart(currentCalculation);
+      }
+    });
+
+  </script>
+</body>
+</html>
