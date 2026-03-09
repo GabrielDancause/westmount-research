@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "astro": "^5.17.1",
+    "axios": "^1.13.6",
+    "cheerio": "^1.2.0",
     "yahoo-finance2": "^3.13.2"
   }
 }

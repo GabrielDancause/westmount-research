@@ -1,0 +1,18 @@
+
+> westmount-research@0.0.1 dev
+> astro dev
+
+07:04:15 [types] Generated 1ms
+07:04:15 [content] Syncing content
+07:04:15 [content] Synced content
+07:04:15 [vite] Re-optimizing dependencies because vite config has changed
+
+ astro  v5.18.0 ready in 262 ms
+
+┃ Local    http://localhost:4321/
+┃ Network  use --host to expose
+
+07:04:15 watching for file changes...
+07:04:47 [200] / 27ms
+07:09:08 [watch] public/dividend-yield-vs-growth.html
+07:09:51 [200] / 10ms
