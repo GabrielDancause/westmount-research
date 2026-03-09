@@ -1,0 +1,167 @@
+[
+  {
+    "company": "Minimed Group, Inc.",
+    "ticker": "MMED",
+    "ipo_date": "Mar 6, 2026",
+    "ipo_price": 20,
+    "first_day_close": 18.14,
+    "first_day_return": -7.55,
+    "current_price": 18.19,
+    "return_from_ipo": -9.049999999999994,
+    "sector": "Healthcare"
+  },
+  {
+    "company": "GalaxyEdge Acquisition Corporation",
+    "ticker": "GLED",
+    "ipo_date": "Mar 4, 2026",
+    "ipo_price": 10,
+    "first_day_close": 10,
+    "first_day_return": null,
+    "current_price": null,
+    "return_from_ipo": null,
+    "sector": null
+  },
+  {
+    "company": "Kensington Capital Acquisition Corp. VI",
+    "ticker": "KCAC",
+    "ipo_date": "Mar 4, 2026",
+    "ipo_price": 10,
+    "first_day_close": 10.01,
+    "first_day_return": 0.1,
+    "current_price": null,
+    "return_from_ipo": null,
+    "sector": null
+  },
+  {
+    "company": "Generate Biomedicines, Inc.",
+    "ticker": "GENB",
+    "ipo_date": "Feb 27, 2026",
+    "ipo_price": 16,
+    "first_day_close": 11.94,
+    "first_day_return": -24.94,
+    "current_price": 11.9485,
+    "return_from_ipo": -25.321875000000006,
+    "sector": null
+  },
+  {
+    "company": "Illumination Acquisition Corp I",
+    "ticker": "ILLU",
+    "ipo_date": "Feb 27, 2026",
+    "ipo_price": 10,
+    "first_day_close": 9.93,
+    "first_day_return": -0.6,
+    "current_price": null,
+    "return_from_ipo": null,
+    "sector": null
+  },
+  {
+    "company": "Fortress Value Acquisition Corp. V",
+    "ticker": "FVAV",
+    "ipo_date": "Feb 26, 2026",
+    "ipo_price": 10,
+    "first_day_close": 10.03,
+    "first_day_return": 0.3,
+    "current_price": 10.05,
+    "return_from_ipo": 0.5000000000000071,
+    "sector": null
+  },
+  {
+    "company": "Apex Tech Acquisition Inc.",
+    "ticker": "TRAD",
+    "ipo_date": "Feb 26, 2026",
+    "ipo_price": 10,
+    "first_day_close": 10,
+    "first_day_return": null,
+    "current_price": null,
+    "return_from_ipo": null,
+    "sector": null
+  },
+  {
+    "company": "TRG Latin America Acquisitions Corp.",
+    "ticker": "TRGS",
+    "ipo_date": "Feb 26, 2026",
+    "ipo_price": 10,
+    "first_day_close": 9.96,
+    "first_day_return": -0.4,
+    "current_price": null,
+    "return_from_ipo": null,
+    "sector": null
+  },
+  {
+    "company": "MOZAYYX Acquisition Corp.",
+    "ticker": "MZYX",
+    "ipo_date": "Feb 25, 2026",
+    "ipo_price": 10,
+    "first_day_close": 9.94,
+    "first_day_return": -0.6,
+    "current_price": null,
+    "return_from_ipo": null,
+    "sector": null
+  },
+  {
+    "company": "ClearThink 1 Acquisition Corp.",
+    "ticker": "CTAA",
+    "ipo_date": "Feb 24, 2026",
+    "ipo_price": 10,
+    "first_day_close": 9.99,
+    "first_day_return": -0.2,
+    "current_price": null,
+    "return_from_ipo": null,
+    "sector": null
+  },
+  {
+    "company": "Rank One Computing Corporation",
+    "ticker": "ROC",
+    "ipo_date": "Feb 20, 2026",
+    "ipo_price": 6,
+    "first_day_close": 6.56,
+    "first_day_return": 6,
+    "current_price": 6.54,
+    "return_from_ipo": 9.000000000000002,
+    "sector": null
+  },
+  {
+    "company": "Abony Acquisition Corp. I",
+    "ticker": "AACO",
+    "ipo_date": "Feb 19, 2026",
+    "ipo_price": 10,
+    "first_day_close": 9.95,
+    "first_day_return": -0.55,
+    "current_price": null,
+    "return_from_ipo": null,
+    "sector": null
+  },
+  {
+    "company": "Averin Capital Acquisition Corp.",
+    "ticker": "ACAA",
+    "ipo_date": "Feb 19, 2026",
+    "ipo_price": 10,
+    "first_day_close": 10.16,
+    "first_day_return": 1,
+    "current_price": null,
+    "return_from_ipo": null,
+    "sector": null
+  },
+  {
+    "company": "Paloma Acquisition Corp I",
+    "ticker": "PALO",
+    "ipo_date": "Feb 19, 2026",
+    "ipo_price": 10,
+    "first_day_close": 9.97,
+    "first_day_return": -0.3,
+    "current_price": null,
+    "return_from_ipo": null,
+    "sector": null
+  },
+  {
+    "company": "Armada Acquisition Corp. III",
+    "ticker": "AACI",
+    "ipo_date": "Feb 18, 2026",
+    "ipo_price": 10,
+    "first_day_close": 9.95,
+    "first_day_return": -0.4,
+    "current_price": 10.29,
+    "return_from_ipo": 2.8999999999999915,
+    "sector": null
+  }
+]
