@@ -1,164 +1,301 @@
 ---
 import BaseHead from '../layouts/BaseHead.astro';
 
+// Auto-categorize from public/ directory
+const tools = []; // westmount-research is studies only
+
 const studies = [
   {
-    title: "S&P 500 Market Cap Concentration 2026",
-    subtitle: "503 companies · Top 10 = 37.3% of the index",
+    emoji: "🏢",
+    name: "S&P 500 Market Cap Concentration 2026",
     slug: "/market-concentration",
+    desc: "Top 10 stocks control 37.3% of the index. Full weight rankings & concentration analysis.",
     stat: "37.3%",
-    statLabel: "of S&P 500 in just 10 stocks",
-    desc: "How top-heavy is the S&P 500? NVIDIA alone holds 7.1%. Technology is 32.4% of the index. The bottom 400 stocks share 52%. Full weight rankings, sector breakdown, and concentration analysis.",
-    tag: "ORIGINAL RESEARCH",
+    statLabel: "of S&P 500 in just 10 stocks"
   },
   {
-    title: "S&P 500 PEG Ratio Rankings 2026",
-    subtitle: "Coming Soon",
-    slug: "#",
-    stat: "500",
-    statLabel: "companies ranked by valuation",
-    desc: "Every S&P 500 company ranked by PEG ratio — the metric that adjusts P/E for growth. Find the most undervalued stocks in the index.",
-    tag: "UPCOMING",
-  },
-  {
-    title: "Dividend Aristocrats: Yield, Payout & Growth",
-    subtitle: "All 67 S&P 500 Dividend Aristocrats analyzed",
+    emoji: "👑",
+    name: "Dividend Aristocrats Analysis 2026",
     slug: "/dividend-aristocrats",
+    desc: "All 67 S&P 500 companies with 25+ year dividend streaks. Yield, P/E, growth analysis.",
     stat: "67",
-    statLabel: "companies with 25yr+ dividend streaks",
-    desc: "Complete analysis of every Dividend Aristocrat — current yield, P/E ratio, market cap, sector breakdown, and 25–71 year dividend growth streaks.",
-    tag: "ORIGINAL RESEARCH",
+    statLabel: "companies with 25yr+ dividend streaks"
   },
   {
-    title: "Online Broker Fee Comparison 2026",
-    subtitle: "22 Brokers · US & Canada",
+    emoji: "🏦",
+    name: "Online Broker Fee Comparison 2026",
     slug: "/broker-fees.html",
+    desc: "Compare commissions, options fees & margin rates across 22 US/Canada brokers.",
     stat: "22",
-    statLabel: "brokers compared",
-    desc: "Commissions, margin rates, options fees, and features across every major online broker. Sortable table, margin rate chart, key findings.",
-    tag: "ORIGINAL RESEARCH",
+    statLabel: "brokers compared"
   },
   {
-    title: "ETF Expense Ratio Index 2026",
-    subtitle: "86 ETFs · 12 Issuers · 7 Categories",
+    emoji: "📈",
+    name: "ETF Expense Ratio Index 2026",
     slug: "/etf-expense-ratios",
+    desc: "86 major ETFs ranked by true cost. VOO vs SPY vs IVV and 83 more compared.",
     stat: "86",
-    statLabel: "ETFs ranked by true cost",
-    desc: "VOO vs SPY vs IVV — and 83 more. Every major ETF's expense ratio, AUM, and dividend yield. Cheapest is SPLG at 0.02%. Median: 0.09%.",
-    tag: "ORIGINAL RESEARCH",
+    statLabel: "ETFs ranked by expense ratio"
   },
   {
-    title: "Sector P/E Ratios 2026",
-    subtitle: "All 11 GICS sectors · Current vs 10-year historical average",
+    emoji: "🏭",
+    name: "Sector P/E Ratios 2026",
     slug: "/sector-pe-ratios.html",
+    desc: "All 11 GICS sectors vs 10-year historical average. Which sectors are overvalued?",
     stat: "11",
-    statLabel: "GICS sectors analyzed",
-    desc: "Average P/E ratio by sector with historical comparison. Which sectors are overvalued? Only Real Estate trades below its 10-year average — Communication Services is 89% above.",
-    tag: "ORIGINAL RESEARCH",
+    statLabel: "GICS sectors analyzed"
   },
   {
-    title: "Most Shorted Stocks 2026: Short Interest Rankings",
-    subtitle: "76 Stocks · All with 20%+ Short Interest",
+    emoji: "📉",
+    name: "Most Shorted Stocks 2026",
     slug: "/short-interest.html",
+    desc: "76 stocks with 20%+ short interest ranked by % of float. Squeeze candidates & bearish bets.",
     stat: "76",
-    statLabel: "heavily shorted stocks ranked",
-    desc: "Every stock with 20%+ short interest ranked by % of float. Groupon leads at 46%. Biotech dominates. Squeeze candidates, bearish bets, and sector breakdowns.",
-    tag: "ORIGINAL RESEARCH",
+    statLabel: "heavily shorted stocks ranked"
   },
   {
-    title: "Stock Buyback Leaders 2026",
-    subtitle: "106 companies · $709.5B in buybacks tracked",
+    emoji: "💰",
+    name: "Stock Buyback Leaders 2026",
     slug: "/buyback-leaders",
+    desc: "106 companies ranked by share repurchase volume, buyback yield & count reduction.",
     stat: "$709.5B",
-    statLabel: "in annual buybacks tracked",
-    desc: "106 companies ranked by share repurchase volume, buyback yield, and share count reduction. Apple leads at $94B. Marathon Petroleum tops buyback yield at 15.38%.",
-    tag: "ORIGINAL RESEARCH",
-  },
+    statLabel: "in annual buybacks tracked"
+  }
 ];
+
+const guides = []; // westmount-research is studies only
+const lists = []; // westmount-research is studies only
 ---
 <html lang="en">
 <head>
   <BaseHead />
-  <title>Westmount Research — Equity Research & Market Data</title>
+  <title>Westmount Research — Independent Equity Research</title>
   <meta name="description" content="Independent equity research. PEG ratios, dividend analysis, broker comparisons, and sector valuations — data-driven, no fluff." />
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Inter', -apple-system, sans-serif; background: #060a12; color: #c8d0de; }
+    body { 
+      font-family: 'Inter', -apple-system, sans-serif; 
+      background: #060a12; 
+      color: #c8d0de; 
+      line-height: 1.6;
+    }
 
-    .hero { text-align: center; padding: 100px 24px 70px; background: linear-gradient(180deg, #0a1628 0%, #060a12 100%); position: relative; }
-    .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 50% 40%, rgba(13,71,161,0.08) 0%, transparent 60%); }
+    /* Hero */
+    .hero { 
+      text-align: center; 
+      padding: 100px 24px 70px; 
+      background: linear-gradient(180deg, #0a1628 0%, #060a12 100%); 
+      position: relative; 
+    }
+    .hero::before { 
+      content: ''; 
+      position: absolute; 
+      inset: 0; 
+      background: radial-gradient(circle at 50% 40%, rgba(74,143,231,0.08) 0%, transparent 60%); 
+    }
     .hero-content { position: relative; z-index: 1; }
-    .hero h1 { font-size: 3rem; font-weight: 900; letter-spacing: -1.5px; margin-bottom: 8px; color: #fff; }
-    .hero .tagline { color: #4a6fa5; font-size: 0.85rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 16px; }
-    .hero p { color: #5a6a80; font-size: 1.05rem; max-width: 520px; margin: 0 auto; line-height: 1.6; }
+    .hero .tagline { 
+      color: #4a8fe7; 
+      font-size: 0.85rem; 
+      font-weight: 700; 
+      letter-spacing: 3px; 
+      text-transform: uppercase; 
+      margin-bottom: 16px; 
+    }
+    .hero h1 { 
+      font-size: 3rem; 
+      font-weight: 900; 
+      letter-spacing: -1.5px; 
+      margin-bottom: 20px; 
+      color: #fff; 
+    }
+    .hero p { 
+      color: #5a6a80; 
+      font-size: 1.05rem; 
+      max-width: 520px; 
+      margin: 0 auto; 
+    }
 
     /* Sections */
-    .section-container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
-    .section-header { text-align: center; margin-bottom: 32px; padding-top: 20px; }
-    .section-tag { display: inline-block; background: #0d1a2e; color: #4a8fe7; font-size: 0.7rem; font-weight: 800; padding: 4px 14px; border-radius: 20px; letter-spacing: 1px; margin-bottom: 12px; }
-    .section-title { font-size: 1.8rem; font-weight: 900; color: #fff; margin-bottom: 6px; letter-spacing: -0.5px; }
-    .section-sub { color: #4a5568; font-size: 0.9rem; }
+    .section-container { 
+      max-width: 1200px; 
+      margin: 0 auto; 
+      padding: 60px 24px; 
+    }
+    .section-header { 
+      text-align: center; 
+      margin-bottom: 40px; 
+    }
+    .section-tag { 
+      display: inline-block; 
+      background: rgba(74,143,231,0.1); 
+      color: #4a8fe7; 
+      font-size: 0.7rem; 
+      font-weight: 800; 
+      padding: 6px 16px; 
+      border-radius: 20px; 
+      letter-spacing: 1px; 
+      margin-bottom: 12px; 
+    }
+    .section-title { 
+      font-size: 2.2rem; 
+      font-weight: 900; 
+      color: #fff; 
+      margin-bottom: 8px; 
+      letter-spacing: -0.8px; 
+    }
+    .section-sub { 
+      color: #5a6a80; 
+      font-size: 1rem; 
+    }
 
-    /* Studies */
-    .studies-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 18px; margin-bottom: 60px; }
-    .study-card { background: linear-gradient(135deg, #0a1020 0%, #0d1428 100%); border: 1px solid #152040; border-radius: 16px; padding: 28px 24px; text-decoration: none; color: inherit; display: block; transition: border-color 0.3s, transform 0.2s; position: relative; overflow: hidden; }
-    .study-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, #0D47A1, #1976D2); opacity: 0; transition: opacity 0.3s; }
-    .study-card:hover { border-color: #1976D2; transform: translateY(-2px); }
+    /* Studies Grid */
+    .studies-grid { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); 
+      gap: 24px; 
+    }
+    .study-card { 
+      background: linear-gradient(135deg, #0a1020 0%, #0d1428 100%); 
+      border: 1px solid #1a2332; 
+      border-radius: 16px; 
+      padding: 32px 28px; 
+      text-decoration: none; 
+      color: inherit; 
+      display: block; 
+      transition: all 0.3s ease; 
+      position: relative; 
+      overflow: hidden; 
+    }
+    .study-card::before { 
+      content: ''; 
+      position: absolute; 
+      top: 0; 
+      left: 0; 
+      right: 0; 
+      height: 2px; 
+      background: linear-gradient(90deg, #4a8fe7, #6ba3f0); 
+      opacity: 0; 
+      transition: opacity 0.3s; 
+    }
+    .study-card:hover { 
+      border-color: #4a8fe7; 
+      transform: translateY(-4px); 
+      box-shadow: 0 12px 40px rgba(74,143,231,0.15); 
+    }
     .study-card:hover::before { opacity: 1; }
-    .study-tag { display: inline-block; background: rgba(25,118,210,0.1); color: #4a8fe7; font-size: 0.58rem; font-weight: 800; padding: 3px 10px; border-radius: 12px; letter-spacing: 0.8px; margin-bottom: 14px; }
-    .study-stat { margin-bottom: 14px; }
-    .stat-number { display: block; font-size: 2.2rem; font-weight: 900; color: #4a8fe7; line-height: 1; letter-spacing: -1px; }
-    .stat-label { display: block; font-size: 0.78rem; color: #4a5568; margin-top: 4px; }
-    .study-title { font-size: 1.05rem; font-weight: 800; color: #e0e8f0; margin-bottom: 4px; }
-    .study-subtitle { font-size: 0.75rem; color: #4a8fe7; margin-bottom: 10px; font-weight: 600; }
-    .study-desc { font-size: 0.82rem; color: #5a6a80; line-height: 1.6; }
+    
+    .study-emoji { 
+      font-size: 1.8rem; 
+      margin-bottom: 16px; 
+      display: block; 
+    }
+    .study-stat { 
+      margin-bottom: 16px; 
+    }
+    .stat-number { 
+      display: block; 
+      font-size: 2.4rem; 
+      font-weight: 900; 
+      color: #4a8fe7; 
+      line-height: 1; 
+      letter-spacing: -1px; 
+    }
+    .stat-label { 
+      display: block; 
+      font-size: 0.8rem; 
+      color: #5a6a80; 
+      margin-top: 4px; 
+    }
+    .study-name { 
+      font-size: 1.1rem; 
+      font-weight: 800; 
+      color: #e0e8f0; 
+      margin-bottom: 12px; 
+      line-height: 1.3; 
+    }
+    .study-desc { 
+      font-size: 0.9rem; 
+      color: #6a7a90; 
+      line-height: 1.5; 
+    }
 
-    .footer { text-align: center; padding: 50px 24px; font-size: 0.75rem; color: #253040; border-top: 1px solid #101828; }
-    .footer a { color: #4a8fe7; text-decoration: none; }
-    .footer .disclaimer { max-width: 600px; margin: 12px auto 0; color: #1e2a3a; font-size: 0.68rem; line-height: 1.5; }
+    /* Footer */
+    .footer { 
+      text-align: center; 
+      padding: 50px 24px; 
+      font-size: 0.85rem; 
+      color: #3a4a5a; 
+      border-top: 1px solid #151f2e; 
+      background: #040810; 
+    }
+    .footer a { 
+      color: #4a8fe7; 
+      text-decoration: none; 
+    }
+    .footer a:hover { 
+      text-decoration: underline; 
+    }
+    .disclaimer { 
+      max-width: 600px; 
+      margin: 16px auto 0; 
+      color: #2a3a4a; 
+      font-size: 0.75rem; 
+      line-height: 1.5; 
+    }
 
-    @media (max-width: 600px) {
+    /* Responsive */
+    @media (max-width: 768px) {
       .hero h1 { font-size: 2.2rem; }
       .hero { padding: 70px 20px 50px; }
-      .studies-grid { grid-template-columns: 1fr; }
-      .stat-number { font-size: 1.8rem; }
+      .section-container { padding: 40px 20px; }
+      .studies-grid { 
+        grid-template-columns: 1fr; 
+        gap: 20px; 
+      }
+      .study-card { padding: 24px 20px; }
+      .stat-number { font-size: 2rem; }
     }
   </style>
 </head>
 <body>
-<div class="hero">
-  <div class="hero-content">
-    <div class="tagline">Independent Equity Research</div>
-    <h1>Westmount Research</h1>
-    <p>Data-driven market analysis. PEG ratios, dividend fundamentals, sector valuations, and broker comparisons — no fluff, no paywalls.</p>
+  <!-- Hero -->
+  <div class="hero">
+    <div class="hero-content">
+      <div class="tagline">Independent Equity Research</div>
+      <h1>Westmount Research</h1>
+      <p>Data-driven market analysis. PEG ratios, dividend fundamentals, sector valuations, and broker comparisons — no fluff, no paywalls.</p>
+    </div>
   </div>
-</div>
 
-<div class="section-container">
-  <div class="section-header">
-    <span class="section-tag">📊 RESEARCH</span>
-    <h2 class="section-title">Studies</h2>
-    <p class="section-sub">Original data. Crawled, compiled, ranked.</p>
-  </div>
-  <div class="studies-grid">
-    {studies.map(s => (
-      <a class="study-card" href={s.slug}>
-        <span class="study-tag">{s.tag}</span>
-        <div class="study-stat">
-          <span class="stat-number">{s.stat}</span>
-          <span class="stat-label">{s.statLabel}</span>
-        </div>
-        <h3 class="study-title">{s.title}</h3>
-        <p class="study-subtitle">{s.subtitle}</p>
-        <p class="study-desc">{s.desc}</p>
-      </a>
-    ))}
-  </div>
-</div>
+  <!-- Studies Section -->
+  {studies.length > 0 && (
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-tag">📊 RESEARCH</span>
+        <h2 class="section-title">Studies</h2>
+        <p class="section-sub">Original data. Crawled, compiled, ranked.</p>
+      </div>
+      <div class="studies-grid">
+        {studies.map(study => (
+          <a class="study-card" href={study.slug}>
+            <span class="study-emoji">{study.emoji}</span>
+            <div class="study-stat">
+              <span class="stat-number">{study.stat}</span>
+              <span class="stat-label">{study.statLabel}</span>
+            </div>
+            <h3 class="study-name">{study.name}</h3>
+            <p class="study-desc">{study.desc}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  )}
 
-<div class="footer">
-  © 2026 <a href="/">Westmount Research</a> · A <a href="https://gab.ae">GAB Ventures</a> property
-  <div class="disclaimer">This site provides data and analysis for informational purposes only. Nothing here constitutes investment advice. Do your own research.</div>
-</div>
+  <!-- Footer -->
+  <div class="footer">
+    © 2026 <a href="/">westmount-research</a> · A <a href="https://gab.ae">GAB Ventures</a> property
+    <div class="disclaimer">This site provides data and analysis for informational purposes only. Nothing here constitutes investment advice. Do your own research.</div>
+  </div>
 </body>
 </html>
