@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FIRE Calculator | Westmount Fundamentals</title>
+  <meta name="description" content="Calculate your Financial Independence / Retire Early (FIRE) number, projected portfolio, and years to retirement.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #060a12;
+      --card-bg: #0a1020;
+      --border: #152040;
+      --accent: #4a8fe7;
+      --text-main: #c8d0de;
+      --text-muted: #5a6a80;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 40px 24px;
+    }
+
+    header {
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: #fff;
+      letter-spacing: -1px;
+      margin-bottom: 12px;
+    }
+
+    p.subtitle {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .calculator-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      margin-bottom: 40px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      color: #fff;
+      margin-bottom: 24px;
+      font-weight: 700;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 12px;
+    }
+
+    .input-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #e0e8f0;
+      margin-bottom: 8px;
+    }
+
+    .input-wrapper {
+      position: relative;
+    }
+
+    .input-prefix, .input-suffix {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .input-prefix { left: 16px; }
+    .input-suffix { right: 16px; }
+
+    input {
+      width: 100%;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px 16px;
+      color: #fff;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1rem;
+      transition: all 0.2s;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 2px rgba(74, 143, 231, 0.2);
+    }
+
+    input.has-prefix { padding-left: 32px; }
+    input.has-suffix { padding-right: 32px; }
+
+    .help-text {
+      display: block;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 6px;
+    }
+
+    .sensitivity-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .sens-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      padding: 16px;
+      border-radius: 12px;
+    }
+
+    .sens-title {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    .sens-value {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .sens-diff {
+      font-size: 0.85rem;
+      margin-top: 4px;
+    }
+
+    .diff-pos { color: #22c55e; }
+    .diff-neg { color: #ef4444; }
+
+    .result-box {
+      margin-bottom: 24px;
+    }
+
+    .main-result {
+      background: rgba(74, 143, 231, 0.1);
+      border: 1px solid rgba(74, 143, 231, 0.3);
+      padding: 20px;
+      border-radius: 12px;
+      margin-bottom: 32px;
+    }
+
+    .result-label {
+      display: block;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 700;
+    }
+
+    .result-value {
+      display: block;
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: var(--accent);
+      font-family: 'JetBrains Mono', monospace;
+      line-height: 1.2;
+    }
+
+    /* Content sections */
+    .content-section {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 40px;
+      margin-bottom: 40px;
+    }
+
+    .content-section h3 {
+      font-size: 1.5rem;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+
+    .content-section p, .content-section li {
+      margin-bottom: 16px;
+      color: var(--text-main);
+    }
+
+    .faq-item {
+      margin-bottom: 24px;
+    }
+
+    .faq-item h4 {
+      font-size: 1.1rem;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 50px 24px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+      background: #040810;
+      margin-top: 60px;
+    }
+
+    .footer a { color: var(--accent); text-decoration: none; }
+    .footer a:hover { text-decoration: underline; }
+
+    .disclaimer {
+      max-width: 600px;
+      margin: 16px auto 0;
+      font-size: 0.75rem;
+      line-height: 1.5;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .calculator-grid { grid-template-columns: 1fr; }
+      h1 { font-size: 2rem; }
+      .card { padding: 24px; }
+      .content-section { padding: 24px; }
+    }
+  </style>
+
+  <!-- JSON-LD for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "FIRE Calculator",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "All",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "description": "Calculate your Financial Independence / Retire Early (FIRE) number, projected portfolio, and years to retirement."
+  }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>FIRE Calculator</h1>
+      <p class="subtitle">Plan your path to Financial Independence / Retire Early</p>
+    </header>
+
+    <div class="calculator-grid">
+      <!-- Inputs -->
+      <div class="card">
+        <h2>Your Numbers</h2>
+
+        <div class="input-group">
+          <label for="currentSavings">Current Savings / Net Worth</label>
+          <div class="input-wrapper">
+            <span class="input-prefix">$</span>
+            <input type="number" id="currentSavings" class="has-prefix" value="100000" step="1000" min="0">
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label for="annualIncome">Annual Income (After Tax)</label>
+          <div class="input-wrapper">
+            <span class="input-prefix">$</span>
+            <input type="number" id="annualIncome" class="has-prefix" value="80000" step="1000" min="0">
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label for="annualExpenses">Annual Expenses</label>
+          <div class="input-wrapper">
+            <span class="input-prefix">$</span>
+            <input type="number" id="annualExpenses" class="has-prefix" value="50000" step="1000" min="0">
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label for="savingsRate">Savings Rate</label>
+          <div class="input-wrapper">
+            <input type="number" id="savingsRate" class="has-suffix" value="37.5" step="0.1" min="0" max="100">
+            <span class="input-suffix">%</span>
+          </div>
+          <span class="help-text" id="savingsRateHelp">Auto-calculated from Income - Expenses. You can override this.</span>
+        </div>
+
+        <div class="input-group">
+          <label for="returnRate">Expected Annual Return</label>
+          <div class="input-wrapper">
+            <input type="number" id="returnRate" class="has-suffix" value="7" step="0.1">
+            <span class="input-suffix">%</span>
+          </div>
+          <span class="help-text">Real return, adjusted for inflation (historically ~7% for S&P 500).</span>
+        </div>
+
+        <div class="input-group">
+          <label for="swr">Safe Withdrawal Rate (SWR)</label>
+          <div class="input-wrapper">
+            <input type="number" id="swr" class="has-suffix" value="4" step="0.1" min="0.1" max="10">
+            <span class="input-suffix">%</span>
+          </div>
+          <span class="help-text">The "4% rule" is standard. Lower = safer.</span>
+        </div>
+      </div>
+
+      <!-- Results Container (placeholder for next step) -->
+      <div class="card" id="resultsCard">
+        <h2>Results</h2>
+        <div id="resultsContent">
+          <div class="result-box main-result">
+            <span class="result-label">Years to FIRE</span>
+            <span class="result-value" id="resYears">0.0</span>
+          </div>
+
+          <div class="result-box">
+            <span class="result-label">Your FIRE Number</span>
+            <span class="result-value" id="resFireNum">$0</span>
+          </div>
+
+          <div class="result-box">
+            <span class="result-label">Projected Portfolio</span>
+            <span class="result-value" id="resPortfolio">$0</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chart Container -->
+    <div class="card" id="chartCard" style="margin-bottom: 40px;">
+      <h2>Portfolio Growth Trajectory</h2>
+      <div style="position: relative; height: 350px; width: 100%;">
+        <svg id="chartContent" style="width: 100%; height: 100%; overflow: visible;"></svg>
+      </div>
+    </div>
+
+    <!-- Sensitivity Container -->
+    <div class="card" id="sensitivityCard" style="margin-bottom: 40px;">
+      <h2>Sensitivity Analysis</h2>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px;">See how slight changes to your assumptions affect your timeline.</p>
+      <div class="sensitivity-grid" id="sensitivityContent">
+        <!-- JS populated -->
+      </div>
+    </div>
+
+    <div class="content-section">
+      <h3>Methodology</h3>
+      <p>This calculator estimates the time required to achieve Financial Independence based on the principles of the FIRE movement. The core assumption is that you achieve financial independence when your investment portfolio can generate enough passive income to cover your living expenses indefinitely.</p>
+      <ul>
+        <li><strong>FIRE Number:</strong> Calculated as Annual Expenses / Safe Withdrawal Rate. For example, $50,000 / 0.04 = $1,250,000.</li>
+        <li><strong>Growth Calculation:</strong> Portfolio growth is compounded annually. Each year, your current savings grow by the Expected Annual Return, and your annual savings (Income - Expenses) are added to the portfolio.</li>
+        <li><strong>Inflation:</strong> By using a "real" (inflation-adjusted) return rate—typically 5-7% rather than the nominal 9-10%—the calculations account for inflation, meaning the final target number is in today's dollars.</li>
+      </ul>
+    </div>
+
+    <div class="content-section">
+      <h3>Frequently Asked Questions</h3>
+      <div class="faq-item">
+        <h4>What is the "4% Rule"?</h4>
+        <p>The 4% rule is a rule of thumb based on the Trinity Study, which found that a portfolio consisting of 50% stocks and 50% bonds could sustain a 4% inflation-adjusted withdrawal rate for 30 years with a very high success rate. Many in the FIRE community use it to determine their target portfolio size.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Should I use pre-tax or post-tax income?</h4>
+        <p>You should use post-tax (take-home) income. This represents the actual cash you have available to either spend or save.</p>
+      </div>
+      <div class="faq-item">
+        <h4>How do taxes in retirement factor in?</h4>
+        <p>Your "Annual Expenses" figure should include your estimated taxes in retirement. If you plan to spend $40,000 on living expenses but will owe $5,000 in taxes, your total Annual Expenses should be $45,000.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    © <span id="currentYear"></span> <a href="/">westmount-research</a> · A <a href="https://gab.ae">GAB Ventures</a> property
+    <div class="disclaimer">This calculator provides estimates for informational purposes only. It assumes constant returns and savings rates, which does not reflect reality. Nothing here constitutes financial or investment advice. Do your own research.</div>
+  </div>
+
+  <script>
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+    const inputs = {
+      savings: document.getElementById('currentSavings'),
+      income: document.getElementById('annualIncome'),
+      expenses: document.getElementById('annualExpenses'),
+      rate: document.getElementById('savingsRate'),
+      return: document.getElementById('returnRate'),
+      swr: document.getElementById('swr')
+    };
+
+    const results = {
+      years: document.getElementById('resYears'),
+      fireNum: document.getElementById('resFireNum'),
+      portfolio: document.getElementById('resPortfolio')
+    };
+
+    // Auto-calculate savings rate based on income and expenses unless modified by user
+    let autoRate = true;
+
+    function formatCurrency(num) {
+      if (num >= 1e9) return '$' + (num / 1e9).toFixed(2) + 'B';
+      if (num >= 1e6) return '$' + (num / 1e6).toFixed(2) + 'M';
+      return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(num);
+    }
+
+    function calculateFIRE() {
+      const currentSavings = parseFloat(inputs.savings.value) || 0;
+      const income = parseFloat(inputs.income.value) || 0;
+      const expenses = parseFloat(inputs.expenses.value) || 0;
+      const returnRate = (parseFloat(inputs.return.value) || 0) / 100;
+      const swr = (parseFloat(inputs.swr.value) || 0) / 100;
+
+      // Update savings rate if auto-mode
+      if (autoRate && income > 0) {
+        const rate = ((income - expenses) / income) * 100;
+        inputs.rate.value = Math.max(0, rate).toFixed(1);
+      }
+
+      const userSavingsRate = (parseFloat(inputs.rate.value) || 0) / 100;
+      const annualSavings = income * userSavingsRate;
+
+      const fireNumber = swr > 0 ? expenses / swr : 0;
+
+      let years = 0;
+      let portfolio = currentSavings;
+
+      if (portfolio >= fireNumber) {
+        years = 0;
+      } else if (annualSavings <= 0 && returnRate <= 0) {
+        years = Infinity; // Will never reach it
+      } else {
+        // Calculate years iteratively
+        const maxYears = 100;
+        let yearGain = 0;
+        for (let i = 1; i <= maxYears; i++) {
+          const prevPortfolio = portfolio;
+          portfolio = (portfolio + annualSavings) * (1 + returnRate);
+          if (portfolio >= fireNumber) {
+            yearGain = portfolio - prevPortfolio;
+            const diff = fireNumber - prevPortfolio;
+            years = (i - 1) + (diff / yearGain);
+            break;
+          }
+        }
+        if (portfolio < fireNumber) years = Infinity;
+      }
+
+      // Final portfolio projection at retirement
+      let finalPortfolio = currentSavings;
+      if (years < Infinity) {
+        for (let i = 0; i < Math.ceil(years); i++) {
+          finalPortfolio = (finalPortfolio + annualSavings) * (1 + returnRate);
+        }
+      }
+
+      // Render
+      results.fireNum.textContent = formatCurrency(fireNumber);
+
+      if (years === Infinity) {
+        results.years.textContent = "Never";
+        results.years.style.color = "#ef4444";
+        results.portfolio.textContent = "—";
+      } else if (years === 0) {
+        results.years.textContent = "0.0";
+        results.years.style.color = "#22c55e";
+        results.portfolio.textContent = formatCurrency(currentSavings);
+      } else {
+        results.years.textContent = years.toFixed(1);
+        results.years.style.color = "var(--accent)";
+        results.portfolio.textContent = formatCurrency(finalPortfolio);
+      }
+
+      if (typeof _calculateFIREWrapper === 'function') {
+        _calculateFIREWrapper(years);
+      }
+    }
+
+    // Event listeners
+    Object.keys(inputs).forEach(key => {
+      const el = inputs[key];
+      if (key !== 'rate') {
+        el.addEventListener('input', () => {
+          if (key === 'income' || key === 'expenses') autoRate = true;
+          calculateFIRE();
+        });
+      } else {
+        el.addEventListener('input', () => {
+          autoRate = false;
+          calculateFIRE();
+        });
+      }
+    });
+
+    function generateChartData(currentSavings, annualSavings, returnRate, fireNumber, years) {
+      if (years === Infinity) return [];
+
+      const maxYears = Math.min(Math.ceil(years) + 5, 50); // Show max 50 years
+      const data = [];
+      let portfolio = currentSavings;
+
+      for (let i = 0; i <= maxYears; i++) {
+        data.push({
+          year: i,
+          portfolio: portfolio,
+          fireNumber: fireNumber
+        });
+        portfolio = (portfolio + annualSavings) * (1 + returnRate);
+      }
+      return data;
+    }
+
+    function renderChart(data, targetYears) {
+      const svg = document.getElementById('chartContent');
+      svg.innerHTML = '';
+      if (!data || data.length === 0) return;
+
+      const rect = svg.getBoundingClientRect();
+      const w = rect.width;
+      const h = rect.height;
+      const pad = 40;
+
+      const maxYear = data[data.length - 1].year;
+      const maxPortfolio = Math.max(data[data.length - 1].portfolio, data[0].fireNumber) * 1.1;
+
+      const scaleX = (x) => pad + (x / maxYear) * (w - pad - 10);
+      const scaleY = (y) => h - pad - (y / maxPortfolio) * (h - pad - 10);
+
+      // Axes
+      const axes = document.createElementNS("http://www.w3.org/2000/svg", "g");
+      axes.innerHTML = `
+        <line x1="${pad}" y1="${h - pad}" x2="${w}" y2="${h - pad}" stroke="#152040" stroke-width="2" />
+        <line x1="${pad}" y1="0" x2="${pad}" y2="${h - pad}" stroke="#152040" stroke-width="2" />
+      `;
+      svg.appendChild(axes);
+
+      // FIRE Number Line (Target)
+      if (data[0].fireNumber > 0) {
+        const yTarget = scaleY(data[0].fireNumber);
+        const targetLine = document.createElementNS("http://www.w3.org/2000/svg", "line");
+        targetLine.setAttribute("x1", pad);
+        targetLine.setAttribute("y1", yTarget);
+        targetLine.setAttribute("x2", w);
+        targetLine.setAttribute("y2", yTarget);
+        targetLine.setAttribute("stroke", "#ef4444");
+        targetLine.setAttribute("stroke-width", "2");
+        targetLine.setAttribute("stroke-dasharray", "5,5");
+        svg.appendChild(targetLine);
+
+        const targetLabel = document.createElementNS("http://www.w3.org/2000/svg", "text");
+        targetLabel.setAttribute("x", w - 10);
+        targetLabel.setAttribute("y", yTarget - 8);
+        targetLabel.setAttribute("fill", "#ef4444");
+        targetLabel.setAttribute("font-size", "12");
+        targetLabel.setAttribute("text-anchor", "end");
+        targetLabel.textContent = "FIRE Target";
+        svg.appendChild(targetLabel);
+      }
+
+      // Portfolio Path
+      let d = `M ${scaleX(data[0].year)} ${scaleY(data[0].portfolio)} `;
+      data.forEach(pt => {
+        d += `L ${scaleX(pt.year)} ${scaleY(pt.portfolio)} `;
+      });
+
+      const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+      path.setAttribute("d", d);
+      path.setAttribute("fill", "none");
+      path.setAttribute("stroke", "#4a8fe7");
+      path.setAttribute("stroke-width", "3");
+      svg.appendChild(path);
+
+      // X Labels
+      for(let i=0; i<=maxYear; i+= (maxYear > 20 ? 5 : (maxYear > 10 ? 2 : 1))) {
+        const txt = document.createElementNS("http://www.w3.org/2000/svg", "text");
+        txt.setAttribute("x", scaleX(i));
+        txt.setAttribute("y", h - pad + 20);
+        txt.setAttribute("fill", "#5a6a80");
+        txt.setAttribute("font-size", "12");
+        txt.setAttribute("text-anchor", "middle");
+        txt.textContent = i === 0 ? "Now" : "Yr " + i;
+        svg.appendChild(txt);
+      }
+
+      // Y Labels
+      for(let i=0; i<=5; i++) {
+        const val = (maxPortfolio / 5) * i;
+        const txt = document.createElementNS("http://www.w3.org/2000/svg", "text");
+        txt.setAttribute("x", pad - 10);
+        txt.setAttribute("y", scaleY(val) + 4);
+        txt.setAttribute("fill", "#5a6a80");
+        txt.setAttribute("font-size", "12");
+        txt.setAttribute("text-anchor", "end");
+        txt.textContent = val >= 1000000 ? "$" + (val/1000000).toFixed(1) + "M" : "$" + (val/1000).toFixed(0) + "k";
+        svg.appendChild(txt);
+      }
+    }
+
+    function calculateAltYears(savings, income, userRate, currentReturn, expenses, swr) {
+      const annualSavings = income * userRate;
+      const fireNumber = swr > 0 ? expenses / swr : 0;
+      let portfolio = savings;
+      if (portfolio >= fireNumber) return 0;
+      if (annualSavings <= 0 && currentReturn <= 0) return Infinity;
+
+      for (let i = 1; i <= 100; i++) {
+        const prev = portfolio;
+        portfolio = (portfolio + annualSavings) * (1 + currentReturn);
+        if (portfolio >= fireNumber) {
+          const diff = fireNumber - prev;
+          const gain = portfolio - prev;
+          return (i - 1) + (diff / gain);
+        }
+      }
+      return Infinity;
+    }
+
+    function renderSensitivity(baseYears, inputsValues) {
+      const container = document.getElementById('sensitivityContent');
+      container.innerHTML = '';
+
+      if (baseYears === Infinity || baseYears === 0) {
+        container.innerHTML = '<div style="grid-column: 1/-1; color: var(--text-muted);">Not applicable for current scenario.</div>';
+        return;
+      }
+
+      const { savings, income, rate, ret, expenses, swr } = inputsValues;
+
+      // Scenario 1: Return rate - 2%
+      const altRet = Math.max(0, ret - 0.02);
+      const retYears = calculateAltYears(savings, income, rate, altRet, expenses, swr);
+      const retDiff = retYears - baseYears;
+
+      // Scenario 2: Save 5% more
+      const altRate = Math.min(1, rate + 0.05);
+      const saveYears = calculateAltYears(savings, income, altRate, ret, expenses, swr);
+      const saveDiff = saveYears - baseYears;
+
+      const scenarios = [
+        { title: `If returns are 2% lower (${(altRet*100).toFixed(1)}%)`, years: retYears, diff: retDiff },
+        { title: `If you save 5% more (${(altRate*100).toFixed(1)}%)`, years: saveYears, diff: saveDiff }
+      ];
+
+      scenarios.forEach(scen => {
+        let diffHtml = '';
+        if (scen.diff > 0) diffHtml = `<div class="sens-diff diff-neg">+${scen.diff.toFixed(1)} years longer</div>`;
+        else if (scen.diff < 0) diffHtml = `<div class="sens-diff diff-pos">${Math.abs(scen.diff).toFixed(1)} years faster</div>`;
+        else diffHtml = `<div class="sens-diff" style="color:var(--text-muted)">No change</div>`;
+
+        container.innerHTML += `
+          <div class="sens-card">
+            <div class="sens-title">${scen.title}</div>
+            <div class="sens-value">${scen.years === Infinity ? 'Never' : scen.years.toFixed(1) + ' yrs'}</div>
+            ${diffHtml}
+          </div>
+        `;
+      });
+    }
+
+    function _calculateFIREWrapper(calculatedYears) {
+      // Called inside calculateFIRE to trigger updates
+      const currentSavings = parseFloat(inputs.savings.value) || 0;
+      const income = parseFloat(inputs.income.value) || 0;
+      const expenses = parseFloat(inputs.expenses.value) || 0;
+      const returnRate = (parseFloat(inputs.return.value) || 0) / 100;
+      const swr = (parseFloat(inputs.swr.value) || 0) / 100;
+      const userSavingsRate = (parseFloat(inputs.rate.value) || 0) / 100;
+      const annualSavings = income * userSavingsRate;
+      const fireNumber = swr > 0 ? expenses / swr : 0;
+
+      let baseYears = calculatedYears;
+      if (baseYears === undefined) {
+        baseYears = parseFloat(results.years.textContent);
+        if (results.years.textContent === "Never") baseYears = Infinity;
+      }
+
+      const cData = generateChartData(currentSavings, annualSavings, returnRate, fireNumber, baseYears);
+      // use setTimeout to ensure layout is done before rendering SVG
+      setTimeout(() => renderChart(cData, baseYears), 0);
+
+      renderSensitivity(baseYears, {
+        savings: currentSavings, income: income, rate: userSavingsRate,
+        ret: returnRate, expenses: expenses, swr: swr
+      });
+    }
+
+    // Initial calculation
+    calculateFIRE();
+
+    // Attach resize listener to redraw chart
+    window.addEventListener('resize', () => {
+      _calculateFIREWrapper();
+    });
+  </script>
+</body>
+</html>
