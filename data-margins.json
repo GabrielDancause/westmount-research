@@ -1,0 +1,806 @@
+{
+  "industries": [
+    {
+      "industry": "REIT - Industrial",
+      "sector": "Real Estate",
+      "median_net_margin": 0.36205003,
+      "median_operating_margin": 0.44452,
+      "num_companies": 3,
+      "highest_margin_company": "Public Storage",
+      "lowest_margin_company": "Extra Space Storage Inc"
+    },
+    {
+      "industry": "Financial Data & Stock Exchanges",
+      "sector": "Financial Services",
+      "median_net_margin": 0.32620501,
+      "median_operating_margin": 0.44848,
+      "num_companies": 8,
+      "highest_margin_company": "CME Group Inc.",
+      "lowest_margin_company": "Coinbase Global, Inc. - 3"
+    },
+    {
+      "industry": "REIT - Retail",
+      "sector": "Real Estate",
+      "median_net_margin": 0.32092997,
+      "median_operating_margin": 0.38762,
+      "num_companies": 5,
+      "highest_margin_company": "Simon Property Group, Inc.",
+      "lowest_margin_company": "Realty Income Corporation"
+    },
+    {
+      "industry": "Internet Content & Information",
+      "sector": "Communication Services",
+      "median_net_margin": 0.314470015,
+      "median_operating_margin": 0.31568,
+      "num_companies": 4,
+      "highest_margin_company": "Alphabet Inc.",
+      "lowest_margin_company": "Match Group, Inc."
+    },
+    {
+      "industry": "Tobacco",
+      "sector": "Consumer Defensive",
+      "median_net_margin": 0.312065,
+      "median_operating_margin": 0.45008,
+      "num_companies": 2,
+      "highest_margin_company": "Altria Group, Inc.",
+      "lowest_margin_company": "Philip Morris International Inc"
+    },
+    {
+      "industry": "Capital Markets",
+      "sector": "Financial Services",
+      "median_net_margin": 0.28917998,
+      "median_operating_margin": 0.46532002,
+      "num_companies": 5,
+      "highest_margin_company": "Robinhood Markets, Inc.",
+      "lowest_margin_company": "Interactive Brokers Group, Inc."
+    },
+    {
+      "industry": "Banks - Regional",
+      "sector": "Financial Services",
+      "median_net_margin": 0.28803,
+      "median_operating_margin": 0.39334,
+      "num_companies": 9,
+      "highest_margin_company": "PNC Financial Services Group, I",
+      "lowest_margin_company": "Citizens Financial Group, Inc."
+    },
+    {
+      "industry": "Semiconductor Equipment & Materials",
+      "sector": "Technology",
+      "median_net_margin": 0.27784002,
+      "median_operating_margin": 0.3035,
+      "num_companies": 5,
+      "highest_margin_company": "KLA Corporation",
+      "lowest_margin_company": "Qnity Electronics, Inc."
+    },
+    {
+      "industry": "Banks - Diversified",
+      "sector": "Financial Services",
+      "median_net_margin": 0.27739,
+      "median_operating_margin": 0.37316,
+      "num_companies": 5,
+      "highest_margin_company": "JP Morgan Chase & Co.",
+      "lowest_margin_company": "Citigroup, Inc."
+    },
+    {
+      "industry": "Credit Services",
+      "sector": "Financial Services",
+      "median_net_margin": 0.26291499500000004,
+      "median_operating_margin": 0.35734001,
+      "num_companies": 6,
+      "highest_margin_company": "Visa Inc.",
+      "lowest_margin_company": "Capital One Financial Corporati"
+    },
+    {
+      "industry": "Biotechnology",
+      "sector": "Healthcare",
+      "median_net_margin": 0.25026,
+      "median_operating_margin": 0.23134,
+      "num_companies": 5,
+      "highest_margin_company": "Vertex Pharmaceuticals Incorpor",
+      "lowest_margin_company": "Moderna, Inc."
+    },
+    {
+      "industry": "REIT - Residential",
+      "sector": "Real Estate",
+      "median_net_margin": 0.24229,
+      "median_operating_margin": 0.28384,
+      "num_companies": 7,
+      "highest_margin_company": "Equity Residential",
+      "lowest_margin_company": "Mid-America Apartment Communiti"
+    },
+    {
+      "industry": "Railroads",
+      "sector": "Industrials",
+      "median_net_margin": 0.220444995,
+      "median_operating_margin": 0.319474985,
+      "num_companies": 4,
+      "highest_margin_company": "Union Pacific Corporation",
+      "lowest_margin_company": "Westinghouse Air Brake Technolo"
+    },
+    {
+      "industry": "Drug Manufacturers - General",
+      "sector": "Healthcare",
+      "median_net_margin": 0.20982,
+      "median_operating_margin": 0.30549,
+      "num_companies": 9,
+      "highest_margin_company": "Eli Lilly and Company",
+      "lowest_margin_company": "AbbVie Inc."
+    },
+    {
+      "industry": "Consulting Services",
+      "sector": "Industrials",
+      "median_net_margin": 0.20215,
+      "median_operating_margin": 0.310435,
+      "num_companies": 2,
+      "highest_margin_company": "Verisk Analytics, Inc.",
+      "lowest_margin_company": "Equifax, Inc."
+    },
+    {
+      "industry": "Utilities - Regulated Gas",
+      "sector": "Utilities",
+      "median_net_margin": 0.198309995,
+      "median_operating_margin": 0.329115,
+      "num_companies": 2,
+      "highest_margin_company": "Atmos Energy Corporation",
+      "lowest_margin_company": "NiSource Inc"
+    },
+    {
+      "industry": "Software - Application",
+      "sector": "Technology",
+      "median_net_margin": 0.197025,
+      "median_operating_margin": 0.26759500999999997,
+      "num_companies": 16,
+      "highest_margin_company": "Fair Isaac Corporation",
+      "lowest_margin_company": "Datadog, Inc."
+    },
+    {
+      "industry": "Lodging",
+      "sector": "Consumer Cyclical",
+      "median_net_margin": 0.196465,
+      "median_operating_margin": 0.25067500000000004,
+      "num_companies": 2,
+      "highest_margin_company": "Hilton Worldwide Holdings Inc.",
+      "lowest_margin_company": "Marriott International"
+    },
+    {
+      "industry": "Specialty Business Services",
+      "sector": "Industrials",
+      "median_net_margin": 0.18169,
+      "median_operating_margin": 0.27877,
+      "num_companies": 3,
+      "highest_margin_company": "Copart, Inc.",
+      "lowest_margin_company": "Cintas Corporation"
+    },
+    {
+      "industry": "Software - Infrastructure",
+      "sector": "Technology",
+      "median_net_margin": 0.18065001,
+      "median_operating_margin": 0.26037002,
+      "num_companies": 15,
+      "highest_margin_company": "VeriSign, Inc.",
+      "lowest_margin_company": "CrowdStrike Holdings, Inc."
+    },
+    {
+      "industry": "Beverages - Non-Alcoholic",
+      "sector": "Consumer Defensive",
+      "median_net_margin": 0.177475,
+      "median_operating_margin": 0.236419995,
+      "num_companies": 4,
+      "highest_margin_company": "Coca-Cola Company (The)",
+      "lowest_margin_company": "Pepsico, Inc."
+    },
+    {
+      "industry": "Oil & Gas E&P",
+      "sector": "Energy",
+      "median_net_margin": 0.16491999499999999,
+      "median_operating_margin": 0.250845,
+      "num_companies": 10,
+      "highest_margin_company": "Texas Pacific Land Corporation",
+      "lowest_margin_company": "Occidental Petroleum Corporatio"
+    },
+    {
+      "industry": "Semiconductors",
+      "sector": "Technology",
+      "median_net_margin": 0.16472,
+      "median_operating_margin": 0.26617,
+      "num_companies": 13,
+      "highest_margin_company": "NVIDIA Corporation",
+      "lowest_margin_company": "Microchip Technology Incorporat"
+    },
+    {
+      "industry": "Insurance Brokers",
+      "sector": "Financial Services",
+      "median_net_margin": 0.159755005,
+      "median_operating_margin": 0.24304500499999998,
+      "num_companies": 6,
+      "highest_margin_company": "Aon plc",
+      "lowest_margin_company": "Arthur J. Gallagher & Co."
+    },
+    {
+      "industry": "Advertising Agencies",
+      "sector": "Communication Services",
+      "median_net_margin": 0.15306,
+      "median_operating_margin": 0.30335,
+      "num_companies": 3,
+      "highest_margin_company": "Applovin Corporation",
+      "lowest_margin_company": "Omnicom Group Inc."
+    },
+    {
+      "industry": "Travel Services",
+      "sector": "Consumer Cyclical",
+      "median_net_margin": 0.15221999,
+      "median_operating_margin": 0.125664998,
+      "num_companies": 6,
+      "highest_margin_company": "Royal Caribbean Cruises Ltd.",
+      "lowest_margin_company": "Norwegian Cruise Line Holdings "
+    },
+    {
+      "industry": "Asset Management",
+      "sector": "Financial Services",
+      "median_net_margin": 0.14758,
+      "median_operating_margin": 0.28994,
+      "num_companies": 13,
+      "highest_margin_company": "T. Rowe Price Group, Inc.",
+      "lowest_margin_company": "Invesco Ltd"
+    },
+    {
+      "industry": "Diagnostics & Research",
+      "sector": "Healthcare",
+      "median_net_margin": 0.1471,
+      "median_operating_margin": 0.21170999,
+      "num_companies": 11,
+      "highest_margin_company": "IDEXX Laboratories, Inc.",
+      "lowest_margin_company": "Charles River Laboratories Inte"
+    },
+    {
+      "industry": "Oil & Gas Midstream",
+      "sector": "Energy",
+      "median_net_margin": 0.14668,
+      "median_operating_margin": 0.26439,
+      "num_companies": 4,
+      "highest_margin_company": "Williams Companies, Inc. (The)",
+      "lowest_margin_company": "ONEOK, Inc."
+    },
+    {
+      "industry": "Scientific & Technical Instruments",
+      "sector": "Technology",
+      "median_net_margin": 0.14632,
+      "median_operating_margin": 0.20604,
+      "num_companies": 5,
+      "highest_margin_company": "Garmin Ltd.",
+      "lowest_margin_company": "Trimble Inc."
+    },
+    {
+      "industry": "REIT - Specialty",
+      "sector": "Real Estate",
+      "median_net_margin": 0.14579001,
+      "median_operating_margin": 0.21956,
+      "num_companies": 7,
+      "highest_margin_company": "SBA Communications Corporation",
+      "lowest_margin_company": "Iron Mountain Incorporated (Del"
+    },
+    {
+      "industry": "Utilities - Regulated Electric",
+      "sector": "Utilities",
+      "median_net_margin": 0.13757,
+      "median_operating_margin": 0.21308,
+      "num_companies": 23,
+      "highest_margin_company": "NextEra Energy, Inc.",
+      "lowest_margin_company": "FirstEnergy Corp."
+    },
+    {
+      "industry": "Building Materials",
+      "sector": "Basic Materials",
+      "median_net_margin": 0.13559,
+      "median_operating_margin": 0.17536,
+      "num_companies": 3,
+      "highest_margin_company": "Martin Marietta Materials, Inc.",
+      "lowest_margin_company": "CRH PLC"
+    },
+    {
+      "industry": "Specialty Industrial Machinery",
+      "sector": "Industrials",
+      "median_net_margin": 0.13518,
+      "median_operating_margin": 0.19972,
+      "num_companies": 17,
+      "highest_margin_company": "AMETEK, Inc.",
+      "lowest_margin_company": "Generac Holdlings Inc."
+    },
+    {
+      "industry": "Insurance - Diversified",
+      "sector": "Financial Services",
+      "median_net_margin": 0.13518,
+      "median_operating_margin": 0.20019,
+      "num_companies": 3,
+      "highest_margin_company": "Arch Capital Group Ltd.",
+      "lowest_margin_company": "American International Group, I"
+    },
+    {
+      "industry": "Medical Instruments & Supplies",
+      "sector": "Healthcare",
+      "median_net_margin": 0.13178,
+      "median_operating_margin": 0.2164,
+      "num_companies": 9,
+      "highest_margin_company": "Intuitive Surgical, Inc.",
+      "lowest_margin_company": "Baxter International Inc."
+    },
+    {
+      "industry": "Medical Devices",
+      "sector": "Healthcare",
+      "median_net_margin": 0.129619995,
+      "median_operating_margin": 0.198505,
+      "num_companies": 10,
+      "highest_margin_company": "DexCom, Inc.",
+      "lowest_margin_company": "Zimmer Biomet Holdings, Inc."
+    },
+    {
+      "industry": "Insurance - Property & Casualty",
+      "sector": "Financial Services",
+      "median_net_margin": 0.128905,
+      "median_operating_margin": 0.2037,
+      "num_companies": 8,
+      "highest_margin_company": "Cincinnati Financial Corporatio",
+      "lowest_margin_company": "Assurant, Inc."
+    },
+    {
+      "industry": "Conglomerates",
+      "sector": "Industrials",
+      "median_net_margin": 0.12828499999999998,
+      "median_operating_margin": 0.13910499999999998,
+      "num_companies": 2,
+      "highest_margin_company": "3M Company",
+      "lowest_margin_company": "Honeywell International Inc."
+    },
+    {
+      "industry": "Insurance - Life",
+      "sector": "Financial Services",
+      "median_net_margin": 0.12606,
+      "median_operating_margin": 0.17326,
+      "num_companies": 4,
+      "highest_margin_company": "AFLAC Incorporated",
+      "lowest_margin_company": "MetLife, Inc."
+    },
+    {
+      "industry": "Restaurants",
+      "sector": "Consumer Cyclical",
+      "median_net_margin": 0.1252900025,
+      "median_operating_margin": 0.166385005,
+      "num_companies": 6,
+      "highest_margin_company": "McDonald's Corporation",
+      "lowest_margin_company": "Starbucks Corporation"
+    },
+    {
+      "industry": "Telecom Services",
+      "sector": "Communication Services",
+      "median_net_margin": 0.124469995,
+      "median_operating_margin": 0.18416001,
+      "num_companies": 5,
+      "highest_margin_company": "AT&T Inc.",
+      "lowest_margin_company": "Charter Communications, Inc."
+    },
+    {
+      "industry": "Footwear & Accessories",
+      "sector": "Consumer Cyclical",
+      "median_net_margin": 0.12387000000000001,
+      "median_operating_margin": 0.197395,
+      "num_companies": 2,
+      "highest_margin_company": "Deckers Outdoor Corporation",
+      "lowest_margin_company": "Nike, Inc."
+    },
+    {
+      "industry": "Building Products & Equipment",
+      "sector": "Industrials",
+      "median_net_margin": 0.12199499999999999,
+      "median_operating_margin": 0.147475,
+      "num_companies": 6,
+      "highest_margin_company": "Lennox International, Inc.",
+      "lowest_margin_company": "Builders FirstSource, Inc."
+    },
+    {
+      "industry": "Waste Management",
+      "sector": "Industrials",
+      "median_net_margin": 0.11818499999999998,
+      "median_operating_margin": 0.19765,
+      "num_companies": 2,
+      "highest_margin_company": "Republic Services, Inc.",
+      "lowest_margin_company": "Waste Management, Inc."
+    },
+    {
+      "industry": "Entertainment",
+      "sector": "Communication Services",
+      "median_net_margin": 0.11407,
+      "median_operating_margin": 0.11347,
+      "num_companies": 10,
+      "highest_margin_company": "Netflix, Inc.",
+      "lowest_margin_company": "Paramount Skydance Corporation"
+    },
+    {
+      "industry": "Residential Construction",
+      "sector": "Consumer Cyclical",
+      "median_net_margin": 0.11382,
+      "median_operating_margin": 0.1366450025,
+      "num_companies": 4,
+      "highest_margin_company": "NVR, Inc.",
+      "lowest_margin_company": "Lennar Corporation"
+    },
+    {
+      "industry": "Tools & Accessories",
+      "sector": "Industrials",
+      "median_net_margin": 0.11189,
+      "median_operating_margin": 0.17873999999999998,
+      "num_companies": 2,
+      "highest_margin_company": "Snap-On Incorporated",
+      "lowest_margin_company": "Stanley Black & Decker, Inc."
+    },
+    {
+      "industry": "Household & Personal Products",
+      "sector": "Consumer Defensive",
+      "median_net_margin": 0.111719996,
+      "median_operating_margin": 0.17830999,
+      "num_companies": 7,
+      "highest_margin_company": "Procter & Gamble Company (The)",
+      "lowest_margin_company": "Estee Lauder Companies, Inc. (T"
+    },
+    {
+      "industry": "Internet Retail",
+      "sector": "Consumer Cyclical",
+      "median_net_margin": 0.108339995,
+      "median_operating_margin": 0.10533,
+      "num_companies": 3,
+      "highest_margin_company": "eBay Inc.",
+      "lowest_margin_company": "DoorDash, Inc."
+    },
+    {
+      "industry": "Electronic Components",
+      "sector": "Technology",
+      "median_net_margin": 0.10808999999999999,
+      "median_operating_margin": 0.18731999500000002,
+      "num_companies": 4,
+      "highest_margin_company": "Amphenol Corporation",
+      "lowest_margin_company": "Jabil Inc."
+    },
+    {
+      "industry": "Information Technology Services",
+      "sector": "Technology",
+      "median_net_margin": 0.10662999249999999,
+      "median_operating_margin": 0.16484500000000002,
+      "num_companies": 10,
+      "highest_margin_company": "Jack Henry & Associates, Inc.",
+      "lowest_margin_company": "Fidelity National Information S"
+    },
+    {
+      "industry": "Utilities - Diversified",
+      "sector": "Utilities",
+      "median_net_margin": 0.10419500000000001,
+      "median_operating_margin": 0.221580005,
+      "num_companies": 2,
+      "highest_margin_company": "DBA Sempra",
+      "lowest_margin_company": "The AES Corporation"
+    },
+    {
+      "industry": "Farm & Heavy Construction Machinery",
+      "sector": "Industrials",
+      "median_net_margin": 0.10302,
+      "median_operating_margin": 0.092709996,
+      "num_companies": 3,
+      "highest_margin_company": "Caterpillar, Inc.",
+      "lowest_margin_company": "PACCAR Inc."
+    },
+    {
+      "industry": "Industrial Distribution",
+      "sector": "Industrials",
+      "median_net_margin": 0.09508,
+      "median_operating_margin": 0.14734,
+      "num_companies": 3,
+      "highest_margin_company": "Fastenal Company",
+      "lowest_margin_company": "Pool Corporation"
+    },
+    {
+      "industry": "Apparel Retail",
+      "sector": "Consumer Cyclical",
+      "median_net_margin": 0.094289996,
+      "median_operating_margin": 0.13267,
+      "num_companies": 3,
+      "highest_margin_company": "lululemon athletica inc.",
+      "lowest_margin_company": "TJX Companies, Inc. (The)"
+    },
+    {
+      "industry": "Oil & Gas Equipment & Services",
+      "sector": "Energy",
+      "median_net_margin": 0.09332,
+      "median_operating_margin": 0.14902,
+      "num_companies": 3,
+      "highest_margin_company": "SLB Limited",
+      "lowest_margin_company": "Halliburton Company"
+    },
+    {
+      "industry": "Medical Care Facilities",
+      "sector": "Healthcare",
+      "median_net_margin": 0.08574,
+      "median_operating_margin": 0.15228,
+      "num_companies": 3,
+      "highest_margin_company": "HCA Healthcare, Inc.",
+      "lowest_margin_company": "DaVita Inc."
+    },
+    {
+      "industry": "Specialty Retail",
+      "sector": "Consumer Cyclical",
+      "median_net_margin": 0.08496500000000001,
+      "median_operating_margin": 0.09232499999999999,
+      "num_companies": 4,
+      "highest_margin_company": "Williams-Sonoma, Inc.",
+      "lowest_margin_company": "Best Buy Co., Inc."
+    },
+    {
+      "industry": "Home Improvement Retail",
+      "sector": "Consumer Cyclical",
+      "median_net_margin": 0.08154,
+      "median_operating_margin": 0.0918700075,
+      "num_companies": 2,
+      "highest_margin_company": "Home Depot, Inc. (The)",
+      "lowest_margin_company": "Lowe's Companies, Inc."
+    },
+    {
+      "industry": "Oil & Gas Integrated",
+      "sector": "Energy",
+      "median_net_margin": 0.0778299975,
+      "median_operating_margin": 0.094945005,
+      "num_companies": 2,
+      "highest_margin_company": "Exxon Mobil Corporation",
+      "lowest_margin_company": "Chevron Corporation"
+    },
+    {
+      "industry": "Communication Equipment",
+      "sector": "Technology",
+      "median_net_margin": 0.077649996,
+      "median_operating_margin": 0.15051,
+      "num_companies": 5,
+      "highest_margin_company": "Cisco Systems, Inc.",
+      "lowest_margin_company": "Hewlett Packard Enterprise Comp"
+    },
+    {
+      "industry": "Aerospace & Defense",
+      "sector": "Industrials",
+      "median_net_margin": 0.074715,
+      "median_operating_margin": 0.10582000250000001,
+      "num_companies": 12,
+      "highest_margin_company": "Transdigm Group Incorporated",
+      "lowest_margin_company": "Boeing Company (The)"
+    },
+    {
+      "industry": "Confectioners",
+      "sector": "Consumer Defensive",
+      "median_net_margin": 0.06956999999999999,
+      "median_operating_margin": 0.121150005,
+      "num_companies": 2,
+      "highest_margin_company": "The Hershey Company",
+      "lowest_margin_company": "Mondelez International, Inc."
+    },
+    {
+      "industry": "Auto Parts",
+      "sector": "Consumer Cyclical",
+      "median_net_margin": 0.06638999849999999,
+      "median_operating_margin": 0.133234995,
+      "num_companies": 4,
+      "highest_margin_company": "O'Reilly Automotive, Inc.",
+      "lowest_margin_company": "Genuine Parts Company"
+    },
+    {
+      "industry": "Agricultural Inputs",
+      "sector": "Basic Materials",
+      "median_net_margin": 0.06287,
+      "median_operating_margin": 0.056009997,
+      "num_companies": 3,
+      "highest_margin_company": "CF Industries Holdings, Inc.",
+      "lowest_margin_company": "Mosaic Company (The)"
+    },
+    {
+      "industry": "Steel",
+      "sector": "Basic Materials",
+      "median_net_margin": 0.05945,
+      "median_operating_margin": 0.06948499999999999,
+      "num_companies": 2,
+      "highest_margin_company": "Steel Dynamics, Inc.",
+      "lowest_margin_company": "Nucor Corporation"
+    },
+    {
+      "industry": "Airlines",
+      "sector": "Industrials",
+      "median_net_margin": 0.056760002,
+      "median_operating_margin": 0.08930001,
+      "num_companies": 3,
+      "highest_margin_company": "Delta Air Lines, Inc.",
+      "lowest_margin_company": "Southwest Airlines Company"
+    },
+    {
+      "industry": "Engineering & Construction",
+      "sector": "Industrials",
+      "median_net_margin": 0.05552,
+      "median_operating_margin": 0.08476500000000001,
+      "num_companies": 4,
+      "highest_margin_company": "Comfort Systems USA, Inc.",
+      "lowest_margin_company": "Jacobs Solutions Inc."
+    },
+    {
+      "industry": "Utilities - Independent Power Producers",
+      "sector": "Utilities",
+      "median_net_margin": 0.05322,
+      "median_operating_margin": 0.095979996,
+      "num_companies": 3,
+      "highest_margin_company": "Constellation Energy Corporatio",
+      "lowest_margin_company": "NRG Energy, Inc."
+    },
+    {
+      "industry": "Computer Hardware",
+      "sector": "Technology",
+      "median_net_margin": 0.05228,
+      "median_operating_margin": 0.15403,
+      "num_companies": 7,
+      "highest_margin_company": "Arista Networks, Inc.",
+      "lowest_margin_company": "Sandisk Corporation"
+    },
+    {
+      "industry": "Integrated Freight & Logistics",
+      "sector": "Industrials",
+      "median_net_margin": 0.04986,
+      "median_operating_margin": 0.07959,
+      "num_companies": 5,
+      "highest_margin_company": "Expeditors International of Was",
+      "lowest_margin_company": "C.H. Robinson Worldwide, Inc."
+    },
+    {
+      "industry": "Packaging & Containers",
+      "sector": "Consumer Cyclical",
+      "median_net_margin": 0.049844998,
+      "median_operating_margin": 0.092115002,
+      "num_companies": 6,
+      "highest_margin_company": "Packaging Corporation of Americ",
+      "lowest_margin_company": "International Paper Company"
+    },
+    {
+      "industry": "Packaged Foods",
+      "sector": "Consumer Defensive",
+      "median_net_margin": 0.048600001000000004,
+      "median_operating_margin": 0.15706,
+      "num_companies": 8,
+      "highest_margin_company": "General Mills, Inc.",
+      "lowest_margin_company": "The Kraft Heinz Company"
+    },
+    {
+      "industry": "Resorts & Casinos",
+      "sector": "Consumer Cyclical",
+      "median_net_margin": 0.04586,
+      "median_operating_margin": 0.1567,
+      "num_companies": 3,
+      "highest_margin_company": "Las Vegas Sands Corp.",
+      "lowest_margin_company": "MGM Resorts International"
+    },
+    {
+      "industry": "REIT - Healthcare Facilities",
+      "sector": "Real Estate",
+      "median_net_margin": 0.04321,
+      "median_operating_margin": 0.20066999,
+      "num_companies": 3,
+      "highest_margin_company": "Welltower Inc.",
+      "lowest_margin_company": "Healthpeak Properties, Inc."
+    },
+    {
+      "industry": "Discount Stores",
+      "sector": "Consumer Defensive",
+      "median_net_margin": 0.03033,
+      "median_operating_margin": 0.04567,
+      "num_companies": 5,
+      "highest_margin_company": "Target Corporation",
+      "lowest_margin_company": "Dollar Tree, Inc."
+    },
+    {
+      "industry": "Oil & Gas Refining & Marketing",
+      "sector": "Energy",
+      "median_net_margin": 0.03033,
+      "median_operating_margin": 0.059299998,
+      "num_companies": 3,
+      "highest_margin_company": "Phillips 66",
+      "lowest_margin_company": "Valero Energy Corporation"
+    },
+    {
+      "industry": "Drug Manufacturers - Specialty & Generic",
+      "sector": "Healthcare",
+      "median_net_margin": 0.018275,
+      "median_operating_margin": 0.21235,
+      "num_companies": 2,
+      "highest_margin_company": "Zoetis Inc.",
+      "lowest_margin_company": "Viatris Inc."
+    },
+    {
+      "industry": "Real Estate Services",
+      "sector": "Real Estate",
+      "median_net_margin": 0.01534500005,
+      "median_operating_margin": 0.02810499995,
+      "num_companies": 2,
+      "highest_margin_company": "CBRE Group Inc",
+      "lowest_margin_company": "CoStar Group, Inc."
+    },
+    {
+      "industry": "Auto Manufacturers",
+      "sector": "Consumer Cyclical",
+      "median_net_margin": 0.014579999,
+      "median_operating_margin": 0.047030002,
+      "num_companies": 3,
+      "highest_margin_company": "Tesla, Inc.",
+      "lowest_margin_company": "Ford Motor Company"
+    },
+    {
+      "industry": "Farm Products",
+      "sector": "Consumer Defensive",
+      "median_net_margin": 0.0116,
+      "median_operating_margin": 0.01822,
+      "num_companies": 3,
+      "highest_margin_company": "Archer-Daniels-Midland Company",
+      "lowest_margin_company": "Tyson Foods, Inc."
+    },
+    {
+      "industry": "Healthcare Plans",
+      "sector": "Healthcare",
+      "median_net_margin": 0.010829999,
+      "median_operating_margin": 0.00336,
+      "num_companies": 7,
+      "highest_margin_company": "Elevance Health, Inc.",
+      "lowest_margin_company": "Centene Corporation"
+    },
+    {
+      "industry": "Medical Distribution",
+      "sector": "Healthcare",
+      "median_net_margin": 0.00885,
+      "median_operating_margin": 0.01389,
+      "num_companies": 4,
+      "highest_margin_company": "Henry Schein, Inc.",
+      "lowest_margin_company": "Cencora, Inc."
+    },
+    {
+      "industry": "Specialty Chemicals",
+      "sector": "Basic Materials",
+      "median_net_margin": -0.02471,
+      "median_operating_margin": 0.14162,
+      "num_companies": 9,
+      "highest_margin_company": "Linde plc",
+      "lowest_margin_company": "DuPont de Nemours, Inc."
+    },
+    {
+      "industry": "Beverages - Brewers",
+      "sector": "Consumer Defensive",
+      "median_net_margin": -0.036895,
+      "median_operating_margin": 0.23738,
+      "num_companies": 2,
+      "highest_margin_company": "Constellation Brands, Inc.",
+      "lowest_margin_company": "Molson Coors Beverage Company"
+    },
+    {
+      "industry": "REIT - Office",
+      "sector": "Real Estate",
+      "median_net_margin": -0.1930299875,
+      "median_operating_margin": 0.080755,
+      "num_companies": 2,
+      "highest_margin_company": "BXP, Inc.",
+      "lowest_margin_company": "Alexandria Real Estate Equities"
+    },
+    {
+      "industry": "Electronic Gaming & Multimedia",
+      "sector": "Communication Services",
+      "median_net_margin": -0.25571002,
+      "median_operating_margin": 0.0326299995,
+      "num_companies": 2,
+      "highest_margin_company": "Electronic Arts Inc.",
+      "lowest_margin_company": "Take-Two Interactive Software, "
+    }
+  ],
+  "overallCount": 499,
+  "topIndustry": {
+    "industry": "REIT - Industrial",
+    "sector": "Real Estate",
+    "median_net_margin": 0.36205003,
+    "median_operating_margin": 0.44452,
+    "num_companies": 3,
+    "highest_margin_company": "Public Storage",
+    "lowest_margin_company": "Extra Space Storage Inc"
+  }
+}

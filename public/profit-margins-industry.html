@@ -1,0 +1,1149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profit Margins by Industry 2026 | Westmount Fundamentals</title>
+    <meta name="description" content="Compare net profit margins and operating margins across industries. Which industries are most/least profitable? S&P 500 data by GICS sector and sub-industry.">
+
+    <script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Profit Margins by Industry 2026",
+  "description": "Compare net profit margins and operating margins across industries. Which industries are most/least profitable? Use S&P 500 data to show margins by GICS sector and sub-industry.",
+  "author": {
+    "@type": "Organization",
+    "name": "Westmount Fundamentals"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Westmount Fundamentals",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://westmountfundamentals.com/logo.png"
+    }
+  },
+  "datePublished": "2026-01-01",
+  "dateModified": "2026-03-09"
+}
+    </script>
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: #060a12;
+            color: #c8d0de;
+            line-height: 1.6;
+        }
+
+        header {
+            padding: 20px 24px;
+            border-bottom: 1px solid #152040;
+            display: flex;
+            align-items: center;
+        }
+
+        .back-link {
+            color: #5a6a80;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .back-link:hover {
+            color: #4a8fe7;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 24px;
+        }
+
+        .hero { text-align: center; margin-bottom: 60px; }
+        .tagline { color: #4a8fe7; font-size: 0.85rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 16px; }
+        h1 { font-size: 2.5rem; font-weight: 900; color: #fff; margin-bottom: 20px; letter-spacing: -1px; }
+        .hero p { color: #5a6a80; font-size: 1.1rem; max-width: 700px; margin: 0 auto; }
+
+        .chart-container {
+            background: #0a1020;
+            border: 1px solid #152040;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 60px;
+        }
+
+        .chart-wrapper {
+            position: relative;
+            height: 400px;
+            width: 100%;
+        }
+
+        .table-container {
+            background: #0a1020;
+            border: 1px solid #152040;
+            border-radius: 12px;
+            overflow-x: auto;
+            margin-bottom: 60px;
+        }
+
+        table { width: 100%; border-collapse: collapse; text-align: left; }
+        th {
+            background: #0d1428;
+            color: #fff;
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 16px;
+            border-bottom: 2px solid #152040;
+            white-space: nowrap;
+        }
+        td {
+            padding: 16px;
+            border-bottom: 1px solid #152040;
+            font-size: 0.95rem;
+        }
+        tr:last-child td { border-bottom: none; }
+        tr:hover { background: rgba(74, 143, 231, 0.05); }
+
+        .faq-section, .methodology-section {
+            background: #0a1020;
+            border: 1px solid #152040;
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 40px;
+        }
+
+        h2 { font-size: 1.8rem; color: #fff; margin-bottom: 24px; }
+        h3 { font-size: 1.2rem; color: #fff; margin-bottom: 12px; margin-top: 24px; }
+        p { margin-bottom: 16px; color: #a0aec0; }
+
+        .faq-item { margin-bottom: 24px; }
+        .faq-item:last-child { margin-bottom: 0; }
+
+        .footer {
+            text-align: center;
+            padding: 40px 24px;
+            font-size: 0.85rem;
+            color: #5a6a80;
+            border-top: 1px solid #152040;
+            background: #040810;
+            margin-top: 60px;
+        }
+
+        .footer a { color: #4a8fe7; text-decoration: none; }
+        .footer a:hover { text-decoration: underline; }
+
+        .disclaimer {
+            max-width: 600px;
+            margin: 16px auto 0;
+            font-size: 0.75rem;
+            line-height: 1.5;
+        }
+    </style>
+    <!-- Chart.js for visualization -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <a href="/" class="back-link">← Back to Westmount Fundamentals</a>
+    </header>
+
+    <div class="container">
+        <div class="hero">
+            <div class="tagline">Sector Analysis</div>
+            <h1>Profit Margins by Industry 2026</h1>
+            <p>An analysis of median net profit margins and operating margins across S&P 500 GICS sub-industries. Discover which sectors are the most and least profitable.</p>
+        </div>
+
+        <div class="chart-container">
+            <h2 style="margin-bottom: 16px; font-size: 1.4rem; text-align: center;">Top 15 Most Profitable Industries (Median Net Margin)</h2>
+            <div class="chart-wrapper">
+                <canvas id="marginChart"></canvas>
+            </div>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Industry / Sector</th>
+                        <th>Median Net Margin</th>
+                        <th>Median Operating Margin</th>
+                        <th>Companies Analysed</th>
+                        <th>Highest Margin Company</th>
+                        <th>Lowest Margin Company</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+          <tr>
+            <td>1</td>
+            <td><strong>REIT - Industrial</strong><br><small style="color:#5a6a80;">Real Estate</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">36.2%</td>
+            <td>44.5%</td>
+            <td>3</td>
+            <td><small>Public Storage</small></td>
+            <td><small>Extra Space Storage Inc</small></td>
+          </tr>
+
+          <tr>
+            <td>2</td>
+            <td><strong>Financial Data &amp; Stock Exchanges</strong><br><small style="color:#5a6a80;">Financial Services</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">32.6%</td>
+            <td>44.8%</td>
+            <td>8</td>
+            <td><small>CME Group Inc.</small></td>
+            <td><small>Coinbase Global, Inc. - 3</small></td>
+          </tr>
+
+          <tr>
+            <td>3</td>
+            <td><strong>REIT - Retail</strong><br><small style="color:#5a6a80;">Real Estate</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">32.1%</td>
+            <td>38.8%</td>
+            <td>5</td>
+            <td><small>Simon Property Group, Inc.</small></td>
+            <td><small>Realty Income Corporation</small></td>
+          </tr>
+
+          <tr>
+            <td>4</td>
+            <td><strong>Internet Content &amp; Information</strong><br><small style="color:#5a6a80;">Communication Services</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">31.4%</td>
+            <td>31.6%</td>
+            <td>4</td>
+            <td><small>Alphabet Inc.</small></td>
+            <td><small>Match Group, Inc.</small></td>
+          </tr>
+
+          <tr>
+            <td>5</td>
+            <td><strong>Tobacco</strong><br><small style="color:#5a6a80;">Consumer Defensive</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">31.2%</td>
+            <td>45.0%</td>
+            <td>2</td>
+            <td><small>Altria Group, Inc.</small></td>
+            <td><small>Philip Morris International Inc</small></td>
+          </tr>
+
+          <tr>
+            <td>6</td>
+            <td><strong>Capital Markets</strong><br><small style="color:#5a6a80;">Financial Services</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">28.9%</td>
+            <td>46.5%</td>
+            <td>5</td>
+            <td><small>Robinhood Markets, Inc.</small></td>
+            <td><small>Interactive Brokers Group, Inc.</small></td>
+          </tr>
+
+          <tr>
+            <td>7</td>
+            <td><strong>Banks - Regional</strong><br><small style="color:#5a6a80;">Financial Services</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">28.8%</td>
+            <td>39.3%</td>
+            <td>9</td>
+            <td><small>PNC Financial Services Group, I</small></td>
+            <td><small>Citizens Financial Group, Inc.</small></td>
+          </tr>
+
+          <tr>
+            <td>8</td>
+            <td><strong>Semiconductor Equipment &amp; Materials</strong><br><small style="color:#5a6a80;">Technology</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">27.8%</td>
+            <td>30.3%</td>
+            <td>5</td>
+            <td><small>KLA Corporation</small></td>
+            <td><small>Qnity Electronics, Inc.</small></td>
+          </tr>
+
+          <tr>
+            <td>9</td>
+            <td><strong>Banks - Diversified</strong><br><small style="color:#5a6a80;">Financial Services</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">27.7%</td>
+            <td>37.3%</td>
+            <td>5</td>
+            <td><small>JP Morgan Chase &amp; Co.</small></td>
+            <td><small>Citigroup, Inc.</small></td>
+          </tr>
+
+          <tr>
+            <td>10</td>
+            <td><strong>Credit Services</strong><br><small style="color:#5a6a80;">Financial Services</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">26.3%</td>
+            <td>35.7%</td>
+            <td>6</td>
+            <td><small>Visa Inc.</small></td>
+            <td><small>Capital One Financial Corporati</small></td>
+          </tr>
+
+          <tr>
+            <td>11</td>
+            <td><strong>Biotechnology</strong><br><small style="color:#5a6a80;">Healthcare</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">25.0%</td>
+            <td>23.1%</td>
+            <td>5</td>
+            <td><small>Vertex Pharmaceuticals Incorpor</small></td>
+            <td><small>Moderna, Inc.</small></td>
+          </tr>
+
+          <tr>
+            <td>12</td>
+            <td><strong>REIT - Residential</strong><br><small style="color:#5a6a80;">Real Estate</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">24.2%</td>
+            <td>28.4%</td>
+            <td>7</td>
+            <td><small>Equity Residential</small></td>
+            <td><small>Mid-America Apartment Communiti</small></td>
+          </tr>
+
+          <tr>
+            <td>13</td>
+            <td><strong>Railroads</strong><br><small style="color:#5a6a80;">Industrials</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">22.0%</td>
+            <td>31.9%</td>
+            <td>4</td>
+            <td><small>Union Pacific Corporation</small></td>
+            <td><small>Westinghouse Air Brake Technolo</small></td>
+          </tr>
+
+          <tr>
+            <td>14</td>
+            <td><strong>Drug Manufacturers - General</strong><br><small style="color:#5a6a80;">Healthcare</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">21.0%</td>
+            <td>30.5%</td>
+            <td>9</td>
+            <td><small>Eli Lilly and Company</small></td>
+            <td><small>AbbVie Inc.</small></td>
+          </tr>
+
+          <tr>
+            <td>15</td>
+            <td><strong>Consulting Services</strong><br><small style="color:#5a6a80;">Industrials</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">20.2%</td>
+            <td>31.0%</td>
+            <td>2</td>
+            <td><small>Verisk Analytics, Inc.</small></td>
+            <td><small>Equifax, Inc.</small></td>
+          </tr>
+
+          <tr>
+            <td>16</td>
+            <td><strong>Utilities - Regulated Gas</strong><br><small style="color:#5a6a80;">Utilities</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">19.8%</td>
+            <td>32.9%</td>
+            <td>2</td>
+            <td><small>Atmos Energy Corporation</small></td>
+            <td><small>NiSource Inc</small></td>
+          </tr>
+
+          <tr>
+            <td>17</td>
+            <td><strong>Software - Application</strong><br><small style="color:#5a6a80;">Technology</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">19.7%</td>
+            <td>26.8%</td>
+            <td>16</td>
+            <td><small>Fair Isaac Corporation</small></td>
+            <td><small>Datadog, Inc.</small></td>
+          </tr>
+
+          <tr>
+            <td>18</td>
+            <td><strong>Lodging</strong><br><small style="color:#5a6a80;">Consumer Cyclical</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">19.6%</td>
+            <td>25.1%</td>
+            <td>2</td>
+            <td><small>Hilton Worldwide Holdings Inc.</small></td>
+            <td><small>Marriott International</small></td>
+          </tr>
+
+          <tr>
+            <td>19</td>
+            <td><strong>Specialty Business Services</strong><br><small style="color:#5a6a80;">Industrials</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">18.2%</td>
+            <td>27.9%</td>
+            <td>3</td>
+            <td><small>Copart, Inc.</small></td>
+            <td><small>Cintas Corporation</small></td>
+          </tr>
+
+          <tr>
+            <td>20</td>
+            <td><strong>Software - Infrastructure</strong><br><small style="color:#5a6a80;">Technology</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">18.1%</td>
+            <td>26.0%</td>
+            <td>15</td>
+            <td><small>VeriSign, Inc.</small></td>
+            <td><small>CrowdStrike Holdings, Inc.</small></td>
+          </tr>
+
+          <tr>
+            <td>21</td>
+            <td><strong>Beverages - Non-Alcoholic</strong><br><small style="color:#5a6a80;">Consumer Defensive</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">17.7%</td>
+            <td>23.6%</td>
+            <td>4</td>
+            <td><small>Coca-Cola Company (The)</small></td>
+            <td><small>Pepsico, Inc.</small></td>
+          </tr>
+
+          <tr>
+            <td>22</td>
+            <td><strong>Oil &amp; Gas E&amp;P</strong><br><small style="color:#5a6a80;">Energy</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">16.5%</td>
+            <td>25.1%</td>
+            <td>10</td>
+            <td><small>Texas Pacific Land Corporation</small></td>
+            <td><small>Occidental Petroleum Corporatio</small></td>
+          </tr>
+
+          <tr>
+            <td>23</td>
+            <td><strong>Semiconductors</strong><br><small style="color:#5a6a80;">Technology</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">16.5%</td>
+            <td>26.6%</td>
+            <td>13</td>
+            <td><small>NVIDIA Corporation</small></td>
+            <td><small>Microchip Technology Incorporat</small></td>
+          </tr>
+
+          <tr>
+            <td>24</td>
+            <td><strong>Insurance Brokers</strong><br><small style="color:#5a6a80;">Financial Services</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">16.0%</td>
+            <td>24.3%</td>
+            <td>6</td>
+            <td><small>Aon plc</small></td>
+            <td><small>Arthur J. Gallagher &amp; Co.</small></td>
+          </tr>
+
+          <tr>
+            <td>25</td>
+            <td><strong>Advertising Agencies</strong><br><small style="color:#5a6a80;">Communication Services</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">15.3%</td>
+            <td>30.3%</td>
+            <td>3</td>
+            <td><small>Applovin Corporation</small></td>
+            <td><small>Omnicom Group Inc.</small></td>
+          </tr>
+
+          <tr>
+            <td>26</td>
+            <td><strong>Travel Services</strong><br><small style="color:#5a6a80;">Consumer Cyclical</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">15.2%</td>
+            <td>12.6%</td>
+            <td>6</td>
+            <td><small>Royal Caribbean Cruises Ltd.</small></td>
+            <td><small>Norwegian Cruise Line Holdings </small></td>
+          </tr>
+
+          <tr>
+            <td>27</td>
+            <td><strong>Asset Management</strong><br><small style="color:#5a6a80;">Financial Services</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">14.8%</td>
+            <td>29.0%</td>
+            <td>13</td>
+            <td><small>T. Rowe Price Group, Inc.</small></td>
+            <td><small>Invesco Ltd</small></td>
+          </tr>
+
+          <tr>
+            <td>28</td>
+            <td><strong>Diagnostics &amp; Research</strong><br><small style="color:#5a6a80;">Healthcare</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">14.7%</td>
+            <td>21.2%</td>
+            <td>11</td>
+            <td><small>IDEXX Laboratories, Inc.</small></td>
+            <td><small>Charles River Laboratories Inte</small></td>
+          </tr>
+
+          <tr>
+            <td>29</td>
+            <td><strong>Oil &amp; Gas Midstream</strong><br><small style="color:#5a6a80;">Energy</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">14.7%</td>
+            <td>26.4%</td>
+            <td>4</td>
+            <td><small>Williams Companies, Inc. (The)</small></td>
+            <td><small>ONEOK, Inc.</small></td>
+          </tr>
+
+          <tr>
+            <td>30</td>
+            <td><strong>Scientific &amp; Technical Instruments</strong><br><small style="color:#5a6a80;">Technology</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">14.6%</td>
+            <td>20.6%</td>
+            <td>5</td>
+            <td><small>Garmin Ltd.</small></td>
+            <td><small>Trimble Inc.</small></td>
+          </tr>
+
+          <tr>
+            <td>31</td>
+            <td><strong>REIT - Specialty</strong><br><small style="color:#5a6a80;">Real Estate</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">14.6%</td>
+            <td>22.0%</td>
+            <td>7</td>
+            <td><small>SBA Communications Corporation</small></td>
+            <td><small>Iron Mountain Incorporated (Del</small></td>
+          </tr>
+
+          <tr>
+            <td>32</td>
+            <td><strong>Utilities - Regulated Electric</strong><br><small style="color:#5a6a80;">Utilities</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">13.8%</td>
+            <td>21.3%</td>
+            <td>23</td>
+            <td><small>NextEra Energy, Inc.</small></td>
+            <td><small>FirstEnergy Corp.</small></td>
+          </tr>
+
+          <tr>
+            <td>33</td>
+            <td><strong>Building Materials</strong><br><small style="color:#5a6a80;">Basic Materials</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">13.6%</td>
+            <td>17.5%</td>
+            <td>3</td>
+            <td><small>Martin Marietta Materials, Inc.</small></td>
+            <td><small>CRH PLC</small></td>
+          </tr>
+
+          <tr>
+            <td>34</td>
+            <td><strong>Specialty Industrial Machinery</strong><br><small style="color:#5a6a80;">Industrials</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">13.5%</td>
+            <td>20.0%</td>
+            <td>17</td>
+            <td><small>AMETEK, Inc.</small></td>
+            <td><small>Generac Holdlings Inc.</small></td>
+          </tr>
+
+          <tr>
+            <td>35</td>
+            <td><strong>Insurance - Diversified</strong><br><small style="color:#5a6a80;">Financial Services</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">13.5%</td>
+            <td>20.0%</td>
+            <td>3</td>
+            <td><small>Arch Capital Group Ltd.</small></td>
+            <td><small>American International Group, I</small></td>
+          </tr>
+
+          <tr>
+            <td>36</td>
+            <td><strong>Medical Instruments &amp; Supplies</strong><br><small style="color:#5a6a80;">Healthcare</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">13.2%</td>
+            <td>21.6%</td>
+            <td>9</td>
+            <td><small>Intuitive Surgical, Inc.</small></td>
+            <td><small>Baxter International Inc.</small></td>
+          </tr>
+
+          <tr>
+            <td>37</td>
+            <td><strong>Medical Devices</strong><br><small style="color:#5a6a80;">Healthcare</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">13.0%</td>
+            <td>19.9%</td>
+            <td>10</td>
+            <td><small>DexCom, Inc.</small></td>
+            <td><small>Zimmer Biomet Holdings, Inc.</small></td>
+          </tr>
+
+          <tr>
+            <td>38</td>
+            <td><strong>Insurance - Property &amp; Casualty</strong><br><small style="color:#5a6a80;">Financial Services</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">12.9%</td>
+            <td>20.4%</td>
+            <td>8</td>
+            <td><small>Cincinnati Financial Corporatio</small></td>
+            <td><small>Assurant, Inc.</small></td>
+          </tr>
+
+          <tr>
+            <td>39</td>
+            <td><strong>Conglomerates</strong><br><small style="color:#5a6a80;">Industrials</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">12.8%</td>
+            <td>13.9%</td>
+            <td>2</td>
+            <td><small>3M Company</small></td>
+            <td><small>Honeywell International Inc.</small></td>
+          </tr>
+
+          <tr>
+            <td>40</td>
+            <td><strong>Insurance - Life</strong><br><small style="color:#5a6a80;">Financial Services</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">12.6%</td>
+            <td>17.3%</td>
+            <td>4</td>
+            <td><small>AFLAC Incorporated</small></td>
+            <td><small>MetLife, Inc.</small></td>
+          </tr>
+
+          <tr>
+            <td>41</td>
+            <td><strong>Restaurants</strong><br><small style="color:#5a6a80;">Consumer Cyclical</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">12.5%</td>
+            <td>16.6%</td>
+            <td>6</td>
+            <td><small>McDonald&#039;s Corporation</small></td>
+            <td><small>Starbucks Corporation</small></td>
+          </tr>
+
+          <tr>
+            <td>42</td>
+            <td><strong>Telecom Services</strong><br><small style="color:#5a6a80;">Communication Services</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">12.4%</td>
+            <td>18.4%</td>
+            <td>5</td>
+            <td><small>AT&amp;T Inc.</small></td>
+            <td><small>Charter Communications, Inc.</small></td>
+          </tr>
+
+          <tr>
+            <td>43</td>
+            <td><strong>Footwear &amp; Accessories</strong><br><small style="color:#5a6a80;">Consumer Cyclical</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">12.4%</td>
+            <td>19.7%</td>
+            <td>2</td>
+            <td><small>Deckers Outdoor Corporation</small></td>
+            <td><small>Nike, Inc.</small></td>
+          </tr>
+
+          <tr>
+            <td>44</td>
+            <td><strong>Building Products &amp; Equipment</strong><br><small style="color:#5a6a80;">Industrials</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">12.2%</td>
+            <td>14.7%</td>
+            <td>6</td>
+            <td><small>Lennox International, Inc.</small></td>
+            <td><small>Builders FirstSource, Inc.</small></td>
+          </tr>
+
+          <tr>
+            <td>45</td>
+            <td><strong>Waste Management</strong><br><small style="color:#5a6a80;">Industrials</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">11.8%</td>
+            <td>19.8%</td>
+            <td>2</td>
+            <td><small>Republic Services, Inc.</small></td>
+            <td><small>Waste Management, Inc.</small></td>
+          </tr>
+
+          <tr>
+            <td>46</td>
+            <td><strong>Entertainment</strong><br><small style="color:#5a6a80;">Communication Services</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">11.4%</td>
+            <td>11.3%</td>
+            <td>10</td>
+            <td><small>Netflix, Inc.</small></td>
+            <td><small>Paramount Skydance Corporation</small></td>
+          </tr>
+
+          <tr>
+            <td>47</td>
+            <td><strong>Residential Construction</strong><br><small style="color:#5a6a80;">Consumer Cyclical</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">11.4%</td>
+            <td>13.7%</td>
+            <td>4</td>
+            <td><small>NVR, Inc.</small></td>
+            <td><small>Lennar Corporation</small></td>
+          </tr>
+
+          <tr>
+            <td>48</td>
+            <td><strong>Tools &amp; Accessories</strong><br><small style="color:#5a6a80;">Industrials</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">11.2%</td>
+            <td>17.9%</td>
+            <td>2</td>
+            <td><small>Snap-On Incorporated</small></td>
+            <td><small>Stanley Black &amp; Decker, Inc.</small></td>
+          </tr>
+
+          <tr>
+            <td>49</td>
+            <td><strong>Household &amp; Personal Products</strong><br><small style="color:#5a6a80;">Consumer Defensive</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">11.2%</td>
+            <td>17.8%</td>
+            <td>7</td>
+            <td><small>Procter &amp; Gamble Company (The)</small></td>
+            <td><small>Estee Lauder Companies, Inc. (T</small></td>
+          </tr>
+
+          <tr>
+            <td>50</td>
+            <td><strong>Internet Retail</strong><br><small style="color:#5a6a80;">Consumer Cyclical</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">10.8%</td>
+            <td>10.5%</td>
+            <td>3</td>
+            <td><small>eBay Inc.</small></td>
+            <td><small>DoorDash, Inc.</small></td>
+          </tr>
+
+          <tr>
+            <td>51</td>
+            <td><strong>Electronic Components</strong><br><small style="color:#5a6a80;">Technology</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">10.8%</td>
+            <td>18.7%</td>
+            <td>4</td>
+            <td><small>Amphenol Corporation</small></td>
+            <td><small>Jabil Inc.</small></td>
+          </tr>
+
+          <tr>
+            <td>52</td>
+            <td><strong>Information Technology Services</strong><br><small style="color:#5a6a80;">Technology</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">10.7%</td>
+            <td>16.5%</td>
+            <td>10</td>
+            <td><small>Jack Henry &amp; Associates, Inc.</small></td>
+            <td><small>Fidelity National Information S</small></td>
+          </tr>
+
+          <tr>
+            <td>53</td>
+            <td><strong>Utilities - Diversified</strong><br><small style="color:#5a6a80;">Utilities</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">10.4%</td>
+            <td>22.2%</td>
+            <td>2</td>
+            <td><small>DBA Sempra</small></td>
+            <td><small>The AES Corporation</small></td>
+          </tr>
+
+          <tr>
+            <td>54</td>
+            <td><strong>Farm &amp; Heavy Construction Machinery</strong><br><small style="color:#5a6a80;">Industrials</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">10.3%</td>
+            <td>9.3%</td>
+            <td>3</td>
+            <td><small>Caterpillar, Inc.</small></td>
+            <td><small>PACCAR Inc.</small></td>
+          </tr>
+
+          <tr>
+            <td>55</td>
+            <td><strong>Industrial Distribution</strong><br><small style="color:#5a6a80;">Industrials</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">9.5%</td>
+            <td>14.7%</td>
+            <td>3</td>
+            <td><small>Fastenal Company</small></td>
+            <td><small>Pool Corporation</small></td>
+          </tr>
+
+          <tr>
+            <td>56</td>
+            <td><strong>Apparel Retail</strong><br><small style="color:#5a6a80;">Consumer Cyclical</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">9.4%</td>
+            <td>13.3%</td>
+            <td>3</td>
+            <td><small>lululemon athletica inc.</small></td>
+            <td><small>TJX Companies, Inc. (The)</small></td>
+          </tr>
+
+          <tr>
+            <td>57</td>
+            <td><strong>Oil &amp; Gas Equipment &amp; Services</strong><br><small style="color:#5a6a80;">Energy</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">9.3%</td>
+            <td>14.9%</td>
+            <td>3</td>
+            <td><small>SLB Limited</small></td>
+            <td><small>Halliburton Company</small></td>
+          </tr>
+
+          <tr>
+            <td>58</td>
+            <td><strong>Medical Care Facilities</strong><br><small style="color:#5a6a80;">Healthcare</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">8.6%</td>
+            <td>15.2%</td>
+            <td>3</td>
+            <td><small>HCA Healthcare, Inc.</small></td>
+            <td><small>DaVita Inc.</small></td>
+          </tr>
+
+          <tr>
+            <td>59</td>
+            <td><strong>Specialty Retail</strong><br><small style="color:#5a6a80;">Consumer Cyclical</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">8.5%</td>
+            <td>9.2%</td>
+            <td>4</td>
+            <td><small>Williams-Sonoma, Inc.</small></td>
+            <td><small>Best Buy Co., Inc.</small></td>
+          </tr>
+
+          <tr>
+            <td>60</td>
+            <td><strong>Home Improvement Retail</strong><br><small style="color:#5a6a80;">Consumer Cyclical</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">8.2%</td>
+            <td>9.2%</td>
+            <td>2</td>
+            <td><small>Home Depot, Inc. (The)</small></td>
+            <td><small>Lowe&#039;s Companies, Inc.</small></td>
+          </tr>
+
+          <tr>
+            <td>61</td>
+            <td><strong>Oil &amp; Gas Integrated</strong><br><small style="color:#5a6a80;">Energy</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">7.8%</td>
+            <td>9.5%</td>
+            <td>2</td>
+            <td><small>Exxon Mobil Corporation</small></td>
+            <td><small>Chevron Corporation</small></td>
+          </tr>
+
+          <tr>
+            <td>62</td>
+            <td><strong>Communication Equipment</strong><br><small style="color:#5a6a80;">Technology</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">7.8%</td>
+            <td>15.1%</td>
+            <td>5</td>
+            <td><small>Cisco Systems, Inc.</small></td>
+            <td><small>Hewlett Packard Enterprise Comp</small></td>
+          </tr>
+
+          <tr>
+            <td>63</td>
+            <td><strong>Aerospace &amp; Defense</strong><br><small style="color:#5a6a80;">Industrials</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">7.5%</td>
+            <td>10.6%</td>
+            <td>12</td>
+            <td><small>Transdigm Group Incorporated</small></td>
+            <td><small>Boeing Company (The)</small></td>
+          </tr>
+
+          <tr>
+            <td>64</td>
+            <td><strong>Confectioners</strong><br><small style="color:#5a6a80;">Consumer Defensive</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">7.0%</td>
+            <td>12.1%</td>
+            <td>2</td>
+            <td><small>The Hershey Company</small></td>
+            <td><small>Mondelez International, Inc.</small></td>
+          </tr>
+
+          <tr>
+            <td>65</td>
+            <td><strong>Auto Parts</strong><br><small style="color:#5a6a80;">Consumer Cyclical</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">6.6%</td>
+            <td>13.3%</td>
+            <td>4</td>
+            <td><small>O&#039;Reilly Automotive, Inc.</small></td>
+            <td><small>Genuine Parts Company</small></td>
+          </tr>
+
+          <tr>
+            <td>66</td>
+            <td><strong>Agricultural Inputs</strong><br><small style="color:#5a6a80;">Basic Materials</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">6.3%</td>
+            <td>5.6%</td>
+            <td>3</td>
+            <td><small>CF Industries Holdings, Inc.</small></td>
+            <td><small>Mosaic Company (The)</small></td>
+          </tr>
+
+          <tr>
+            <td>67</td>
+            <td><strong>Steel</strong><br><small style="color:#5a6a80;">Basic Materials</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">5.9%</td>
+            <td>6.9%</td>
+            <td>2</td>
+            <td><small>Steel Dynamics, Inc.</small></td>
+            <td><small>Nucor Corporation</small></td>
+          </tr>
+
+          <tr>
+            <td>68</td>
+            <td><strong>Airlines</strong><br><small style="color:#5a6a80;">Industrials</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">5.7%</td>
+            <td>8.9%</td>
+            <td>3</td>
+            <td><small>Delta Air Lines, Inc.</small></td>
+            <td><small>Southwest Airlines Company</small></td>
+          </tr>
+
+          <tr>
+            <td>69</td>
+            <td><strong>Engineering &amp; Construction</strong><br><small style="color:#5a6a80;">Industrials</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">5.6%</td>
+            <td>8.5%</td>
+            <td>4</td>
+            <td><small>Comfort Systems USA, Inc.</small></td>
+            <td><small>Jacobs Solutions Inc.</small></td>
+          </tr>
+
+          <tr>
+            <td>70</td>
+            <td><strong>Utilities - Independent Power Producers</strong><br><small style="color:#5a6a80;">Utilities</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">5.3%</td>
+            <td>9.6%</td>
+            <td>3</td>
+            <td><small>Constellation Energy Corporatio</small></td>
+            <td><small>NRG Energy, Inc.</small></td>
+          </tr>
+
+          <tr>
+            <td>71</td>
+            <td><strong>Computer Hardware</strong><br><small style="color:#5a6a80;">Technology</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">5.2%</td>
+            <td>15.4%</td>
+            <td>7</td>
+            <td><small>Arista Networks, Inc.</small></td>
+            <td><small>Sandisk Corporation</small></td>
+          </tr>
+
+          <tr>
+            <td>72</td>
+            <td><strong>Integrated Freight &amp; Logistics</strong><br><small style="color:#5a6a80;">Industrials</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">5.0%</td>
+            <td>8.0%</td>
+            <td>5</td>
+            <td><small>Expeditors International of Was</small></td>
+            <td><small>C.H. Robinson Worldwide, Inc.</small></td>
+          </tr>
+
+          <tr>
+            <td>73</td>
+            <td><strong>Packaging &amp; Containers</strong><br><small style="color:#5a6a80;">Consumer Cyclical</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">5.0%</td>
+            <td>9.2%</td>
+            <td>6</td>
+            <td><small>Packaging Corporation of Americ</small></td>
+            <td><small>International Paper Company</small></td>
+          </tr>
+
+          <tr>
+            <td>74</td>
+            <td><strong>Packaged Foods</strong><br><small style="color:#5a6a80;">Consumer Defensive</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">4.9%</td>
+            <td>15.7%</td>
+            <td>8</td>
+            <td><small>General Mills, Inc.</small></td>
+            <td><small>The Kraft Heinz Company</small></td>
+          </tr>
+
+          <tr>
+            <td>75</td>
+            <td><strong>Resorts &amp; Casinos</strong><br><small style="color:#5a6a80;">Consumer Cyclical</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">4.6%</td>
+            <td>15.7%</td>
+            <td>3</td>
+            <td><small>Las Vegas Sands Corp.</small></td>
+            <td><small>MGM Resorts International</small></td>
+          </tr>
+
+          <tr>
+            <td>76</td>
+            <td><strong>REIT - Healthcare Facilities</strong><br><small style="color:#5a6a80;">Real Estate</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">4.3%</td>
+            <td>20.1%</td>
+            <td>3</td>
+            <td><small>Welltower Inc.</small></td>
+            <td><small>Healthpeak Properties, Inc.</small></td>
+          </tr>
+
+          <tr>
+            <td>77</td>
+            <td><strong>Discount Stores</strong><br><small style="color:#5a6a80;">Consumer Defensive</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">3.0%</td>
+            <td>4.6%</td>
+            <td>5</td>
+            <td><small>Target Corporation</small></td>
+            <td><small>Dollar Tree, Inc.</small></td>
+          </tr>
+
+          <tr>
+            <td>78</td>
+            <td><strong>Oil &amp; Gas Refining &amp; Marketing</strong><br><small style="color:#5a6a80;">Energy</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">3.0%</td>
+            <td>5.9%</td>
+            <td>3</td>
+            <td><small>Phillips 66</small></td>
+            <td><small>Valero Energy Corporation</small></td>
+          </tr>
+
+          <tr>
+            <td>79</td>
+            <td><strong>Drug Manufacturers - Specialty &amp; Generic</strong><br><small style="color:#5a6a80;">Healthcare</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">1.8%</td>
+            <td>21.2%</td>
+            <td>2</td>
+            <td><small>Zoetis Inc.</small></td>
+            <td><small>Viatris Inc.</small></td>
+          </tr>
+
+          <tr>
+            <td>80</td>
+            <td><strong>Real Estate Services</strong><br><small style="color:#5a6a80;">Real Estate</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">1.5%</td>
+            <td>2.8%</td>
+            <td>2</td>
+            <td><small>CBRE Group Inc</small></td>
+            <td><small>CoStar Group, Inc.</small></td>
+          </tr>
+
+          <tr>
+            <td>81</td>
+            <td><strong>Auto Manufacturers</strong><br><small style="color:#5a6a80;">Consumer Cyclical</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">1.5%</td>
+            <td>4.7%</td>
+            <td>3</td>
+            <td><small>Tesla, Inc.</small></td>
+            <td><small>Ford Motor Company</small></td>
+          </tr>
+
+          <tr>
+            <td>82</td>
+            <td><strong>Farm Products</strong><br><small style="color:#5a6a80;">Consumer Defensive</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">1.2%</td>
+            <td>1.8%</td>
+            <td>3</td>
+            <td><small>Archer-Daniels-Midland Company</small></td>
+            <td><small>Tyson Foods, Inc.</small></td>
+          </tr>
+
+          <tr>
+            <td>83</td>
+            <td><strong>Healthcare Plans</strong><br><small style="color:#5a6a80;">Healthcare</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">1.1%</td>
+            <td>0.3%</td>
+            <td>7</td>
+            <td><small>Elevance Health, Inc.</small></td>
+            <td><small>Centene Corporation</small></td>
+          </tr>
+
+          <tr>
+            <td>84</td>
+            <td><strong>Medical Distribution</strong><br><small style="color:#5a6a80;">Healthcare</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">0.9%</td>
+            <td>1.4%</td>
+            <td>4</td>
+            <td><small>Henry Schein, Inc.</small></td>
+            <td><small>Cencora, Inc.</small></td>
+          </tr>
+
+          <tr>
+            <td>85</td>
+            <td><strong>Specialty Chemicals</strong><br><small style="color:#5a6a80;">Basic Materials</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">-2.5%</td>
+            <td>14.2%</td>
+            <td>9</td>
+            <td><small>Linde plc</small></td>
+            <td><small>DuPont de Nemours, Inc.</small></td>
+          </tr>
+
+          <tr>
+            <td>86</td>
+            <td><strong>Beverages - Brewers</strong><br><small style="color:#5a6a80;">Consumer Defensive</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">-3.7%</td>
+            <td>23.7%</td>
+            <td>2</td>
+            <td><small>Constellation Brands, Inc.</small></td>
+            <td><small>Molson Coors Beverage Company</small></td>
+          </tr>
+
+          <tr>
+            <td>87</td>
+            <td><strong>REIT - Office</strong><br><small style="color:#5a6a80;">Real Estate</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">-19.3%</td>
+            <td>8.1%</td>
+            <td>2</td>
+            <td><small>BXP, Inc.</small></td>
+            <td><small>Alexandria Real Estate Equities</small></td>
+          </tr>
+
+          <tr>
+            <td>88</td>
+            <td><strong>Electronic Gaming &amp; Multimedia</strong><br><small style="color:#5a6a80;">Communication Services</small></td>
+            <td style="color:#4a8fe7; font-weight:700;">-25.6%</td>
+            <td>3.3%</td>
+            <td>2</td>
+            <td><small>Electronic Arts Inc.</small></td>
+            <td><small>Take-Two Interactive Software, </small></td>
+          </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="methodology-section">
+            <h2>Methodology</h2>
+            <p>This study analyzes the profit margins of companies within the S&P 500 index. Financial data, including sector, industry, net profit margins, and operating margins, was sourced and cross-referenced using S&P 500 data from finviz.com, macrotrends.net, and stockanalysis.com, alongside Yahoo Finance API for constituents data.</p>
+            <p>For each GICS sub-industry, we calculated the median net profit margin and median operating margin to minimize the distortion caused by outliers. Industries are ranked primarily by their median net profit margin.</p>
+            <p><strong>Note:</strong> Data is fetched programmatically and represents the most recent trailing twelve months (TTM) financial data available as of the time of extraction.</p>
+        </div>
+
+        <div class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <h3>What is the difference between net margin and operating margin?</h3>
+                <p><strong>Operating margin</strong> measures the profit a company makes from its core operations, excluding interest and taxes, relative to its revenue. <strong>Net margin</strong> is the final percentage of profit after all expenses, including taxes, interest, and non-operating costs, have been deducted from revenue.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Why are medians used instead of averages?</h3>
+                <p>We use median values instead of arithmetic means (averages) to prevent extreme outliers—such as a company with abnormally high one-time profits or severe losses—from skewing the industry's baseline profitability.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Which industry typically has the highest profit margins?</h3>
+                <p>Typically, software, real estate investment trusts (REITs), and financial services exhibit the highest net margins due to their low variable costs and high operating leverage.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        © 2026 <a href="/">westmount-research</a> · A <a href="https://gab.ae">GAB Ventures</a> property
+        <div class="disclaimer">This site provides data and analysis for informational purposes only. Nothing here constitutes investment advice. Do your own research.</div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const ctx = document.getElementById('marginChart').getContext('2d');
+            const rawData = [{"label":"REIT - Industrial","data":36.205003000000005,"backgroundColor":"#4a8fe7"},{"label":"Financial Data & Stock Exchanges","data":32.620501000000004,"backgroundColor":"#4a8fe7"},{"label":"REIT - Retail","data":32.092997000000004,"backgroundColor":"#4a8fe7"},{"label":"Internet Content & Information","data":31.4470015,"backgroundColor":"#4a8fe7"},{"label":"Tobacco","data":31.2065,"backgroundColor":"#4a8fe7"},{"label":"Capital Markets","data":28.917998,"backgroundColor":"#4a8fe7"},{"label":"Banks - Regional","data":28.803,"backgroundColor":"#4a8fe7"},{"label":"Semiconductor Equipment & Materials","data":27.784002,"backgroundColor":"#4a8fe7"},{"label":"Banks - Diversified","data":27.739000000000004,"backgroundColor":"#4a8fe7"},{"label":"Credit Services","data":26.291499500000004,"backgroundColor":"#4a8fe7"},{"label":"Biotechnology","data":25.026,"backgroundColor":"#4a8fe7"},{"label":"REIT - Residential","data":24.229,"backgroundColor":"#4a8fe7"},{"label":"Railroads","data":22.0444995,"backgroundColor":"#4a8fe7"},{"label":"Drug Manufacturers - General","data":20.982,"backgroundColor":"#4a8fe7"},{"label":"Consulting Services","data":20.215,"backgroundColor":"#4a8fe7"}];
+
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: rawData.map(d => d.label),
+                    datasets: [{
+                        label: 'Median Net Margin (%)',
+                        data: rawData.map(d => d.data),
+                        backgroundColor: '#4a8fe7',
+                        borderRadius: 4,
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return context.parsed.y.toFixed(1) + '%';
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            grid: { color: '#152040' },
+                            ticks: {
+                                color: '#a0aec0',
+                                callback: function(value) { return value + '%'; }
+                            }
+                        },
+                        x: {
+                            grid: { display: false },
+                            ticks: {
+                                color: '#a0aec0',
+                                maxRotation: 45,
+                                minRotation: 45
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
