@@ -100,7 +100,18 @@ const studies = [
   }
 ];
 
-const guides = []; // westmount-research is studies only
+const guides = [
+  {
+    title: "Understanding P/E Ratios",
+    subtitle: "Educational Guide",
+    slug: "/guide-pe-ratios.html",
+    stat: "P/E",
+    statLabel: "valuation metric",
+    desc: "A deep-dive guide on P/E ratios — the most quoted valuation metric. Learn about trailing vs forward P/E, PEG ratios, Shiller CAPE, and how to use them.",
+    tag: "GUIDE",
+    emoji: "📚"
+  }
+]; // westmount-research is studies only
 const lists = []; // westmount-research is studies only
 ---
 <html lang="en">
@@ -304,6 +315,32 @@ const lists = []; // westmount-research is studies only
       <p>Data-driven market analysis. PEG ratios, dividend fundamentals, sector valuations, and broker comparisons — no fluff, no paywalls.</p>
     </div>
   </div>
+
+  <!-- Guides Section -->
+  {guides.length > 0 && (
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-tag">📚 EDUCATION</span>
+        <h2 class="section-title">Guides</h2>
+        <p class="section-sub">Deep-dives and foundational knowledge.</p>
+      </div>
+      <div class="studies-grid">
+        {guides.map(guide => (
+          <a class="study-card" href={guide.slug}>
+            {guide.emoji && <span class="study-emoji">{guide.emoji}</span>}
+            {guide.tag && <span class="study-tag" style="display:inline-block; font-size:0.7rem; font-weight:800; color:#4a8fe7; background:rgba(74,143,231,0.1); padding:4px 8px; border-radius:4px; margin-bottom:12px;">{guide.tag}</span>}
+            <div class="study-stat">
+              <span class="stat-number">{guide.stat}</span>
+              <span class="stat-label">{guide.statLabel}</span>
+            </div>
+            <h3 class="study-name">{guide.title || guide.name}</h3>
+            {guide.subtitle && <p style="font-size:0.85rem; color:#4a8fe7; margin-bottom:8px;">{guide.subtitle}</p>}
+            <p class="study-desc">{guide.desc}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  )}
 
   <!-- Studies Section -->
   {studies.length > 0 && (
