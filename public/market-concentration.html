@@ -212,7 +212,6 @@ tbody td { padding: 10px 14px; white-space: nowrap; }
             <th data-col="weightPct">Weight %</th>
             <th data-col="marketCapB">Mkt Cap ($B)</th>
             <th data-col="peRatio">P/E</th>
-            <th data-col="priceUSD">Price</th>
           </tr>
         </thead>
         <tbody id="table-body"></tbody>
@@ -373,7 +372,7 @@ function renderTable() {
       <td class="weight-cell">${fmt(r.weightPct, 3)}</td>
       <td class="num-cell">${r.marketCapB ? fmt(r.marketCapB, 1) : '—'}</td>
       <td class="num-cell">${r.peRatio ? fmt(r.peRatio, 1) : '—'}</td>
-      <td class="num-cell">${r.priceUSD ? '$' + fmt(r.priceUSD, 2) : '—'}</td>
+
     </tr>`
   ).join('');
 
