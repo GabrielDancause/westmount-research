@@ -1,0 +1,428 @@
+const fs = require('fs');
+const path = require('path');
+const axios = require('axios');
+const cheerio = require('cheerio');
+
+const HEADERS = {
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+};
+
+const URLS = {
+  earningsYield: 'https://www.multpl.com/s-p-500-earnings-yield',
+  pe: 'https://www.multpl.com/s-p-500-pe-ratio',
+  dividendYield: 'https://www.multpl.com/s-p-500-dividend-yield',
+  treasury10: 'https://www.multpl.com/10-year-treasury-rate',
+  treasury2: 'https://www.multpl.com/2-year-treasury-rate'
+};
+
+async function fetchCurrent(url) {
+  try {
+    const res = await axios.get(url, { headers: HEADERS });
+    const $ = cheerio.load(res.data);
+    const text = $('#current').text().trim().replace(/S&P 500/g, '').replace(/10 Year/g, '').replace(/2 Year/g, '');
+    const match = text.match(/([\d\.]+)/);
+    return match ? parseFloat(match[1]) : null;
+  } catch (err) {
+    console.error(`Error fetching ${url}: ${err.message}`);
+    return null;
+  }
+}
+
+async function fetchHistorical(url) {
+  try {
+    const tableUrl = url + '/table/by-year';
+    const res = await axios.get(tableUrl, { headers: HEADERS });
+    const $ = cheerio.load(res.data);
+
+    const historical = [];
+    $('table#datatable tr').each((i, el) => {
+      const tds = $(el).find('td');
+      if (tds.length === 2) {
+        let dateStr = tds.eq(0).text().trim().replace(/†/g, '').trim();
+        let valStr = tds.eq(1).text().trim().replace(/†|%/g, '').trim();
+        if (dateStr && valStr) {
+          historical.push({ year: new Date(dateStr).getFullYear(), date: dateStr, value: parseFloat(valStr) });
+        }
+      }
+    });
+    return historical;
+  } catch (err) {
+    console.error(`Error fetching history for ${url}: ${err.message}`);
+    return [];
+  }
+}
+
+async function run() {
+  console.log('Fetching current data...');
+  const sp500EarningsYield = await fetchCurrent(URLS.earningsYield);
+  const sp500Pe = await fetchCurrent(URLS.pe);
+  const sp500DividendYield = await fetchCurrent(URLS.dividendYield);
+  const treasury10yr = await fetchCurrent(URLS.treasury10);
+  const treasury2yr = await fetchCurrent(URLS.treasury2);
+
+  const equityRiskPremium = sp500EarningsYield !== null && treasury10yr !== null
+    ? parseFloat((sp500EarningsYield - treasury10yr).toFixed(2))
+    : null;
+
+  const yieldCurveSpread = treasury10yr !== null && treasury2yr !== null
+    ? parseFloat((treasury10yr - treasury2yr).toFixed(2))
+    : null;
+
+  const totalYield = sp500EarningsYield !== null && sp500DividendYield !== null
+    ? parseFloat((sp500EarningsYield + sp500DividendYield).toFixed(2))
+    : null;
+
+  console.log('Fetching historical data...');
+  const eyHistory = await fetchHistorical(URLS.earningsYield);
+  const t10History = await fetchHistorical(URLS.treasury10);
+
+  const historicalData = [];
+  // 10 data points across years: 2016-2026
+  for (let year = 2026; year >= 2016; year--) {
+    const eyPoint = eyHistory.find(h => h.year === year);
+    const t10Point = t10History.find(h => h.year === year);
+
+    if (eyPoint && t10Point) {
+      historicalData.push({
+        year,
+        earningsYield: eyPoint.value,
+        treasury10yr: t10Point.value,
+        equityRiskPremium: parseFloat((eyPoint.value - t10Point.value).toFixed(2))
+      });
+    }
+  }
+
+  const sectors = [
+    "Information Technology", "Health Care", "Financials", "Consumer Discretionary",
+    "Communication Services", "Industrials", "Consumer Staples", "Energy",
+    "Utilities", "Real Estate", "Materials"
+  ].map(name => ({
+    sector: name,
+    sectorEarningsYield: null,
+    sectorPe: null,
+    sectorVsBonds: null
+  }));
+
+  const data = {
+    current: {
+      sp500EarningsYield,
+      sp500Pe,
+      treasury10yr,
+      equityRiskPremium,
+      treasury2yr,
+      yieldCurveSpread,
+      sp500DividendYield,
+      totalYield
+    },
+    sectors,
+    historical: historicalData
+  };
+
+  const dataPath = path.join(__dirname, '../data/equity-risk-premium.json');
+  fs.writeFileSync(dataPath, JSON.stringify(data, null, 2));
+  console.log('Saved data to data/equity-risk-premium.json');
+
+  generateHtml(data);
+}
+
+function generateHtml(data) {
+  const current = data.current;
+
+  let historicalRows = '';
+  data.historical.forEach(h => {
+    historicalRows += `
+      <tr>
+        <td>${h.year}</td>
+        <td>${h.earningsYield}%</td>
+        <td>${h.treasury10yr}%</td>
+        <td class="${h.equityRiskPremium < 0 ? 'text-red' : 'text-green'}">${h.equityRiskPremium > 0 ? '+' : ''}${h.equityRiskPremium}%</td>
+      </tr>`;
+  });
+
+  let sectorRows = '';
+  data.sectors.forEach(s => {
+    sectorRows += `
+      <tr>
+        <td>${s.sector}</td>
+        <td>N/A</td>
+        <td>N/A</td>
+        <td>N/A</td>
+      </tr>`;
+  });
+
+  const html = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Earnings Yield vs Bond Yield: Is the Stock Market Fairly Valued?</title>
+  <meta name="description" content="Research study by Westmount Research comparing S&P 500 earnings yield to the 10-year Treasury yield to determine the equity risk premium.">
+  <link rel="canonical" href="https://westmountresearch.com/equity-risk-premium">
+  <style>
+    :root {
+      --bg-color: #060a12;
+      --accent-color: #4a8fe7;
+      --text-color: #e2e8f0;
+      --card-bg: #111827;
+      --border-color: #374151;
+      --green: #10b981;
+      --red: #ef4444;
+    }
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: var(--card-bg);
+      padding: 2rem 0;
+      border-bottom: 1px solid var(--border-color);
+      text-align: center;
+    }
+    h1 {
+      color: var(--accent-color);
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    h2 {
+      color: var(--text-color);
+      border-bottom: 2px solid var(--accent-color);
+      padding-bottom: 0.5rem;
+      margin-top: 2rem;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+    .card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 1.5rem;
+      text-align: center;
+    }
+    .card-title {
+      font-size: 0.9rem;
+      color: #9ca3af;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .card-value {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-top: 0.5rem;
+      color: var(--accent-color);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 2rem 0;
+      background-color: var(--card-bg);
+    }
+    th, td {
+      padding: 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border-color);
+    }
+    th {
+      background-color: rgba(74, 143, 231, 0.1);
+      color: var(--accent-color);
+    }
+    .text-green { color: var(--green); }
+    .text-red { color: var(--red); }
+    .faq {
+      margin: 2rem 0;
+    }
+    .faq-item {
+      margin-bottom: 1.5rem;
+    }
+    .faq-q {
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: var(--accent-color);
+      margin-bottom: 0.5rem;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      border-top: 1px solid var(--border-color);
+      margin-top: 3rem;
+      color: #9ca3af;
+      font-size: 0.9rem;
+    }
+  </style>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the equity risk premium?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The equity risk premium is the excess return that investing in the stock market provides over a risk-free rate, such as the 10-year Treasury yield. It represents the compensation investors require for taking on the higher risk of equities."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the stock market overvalued compared to bonds?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "When the equity risk premium is low or negative, bonds may be more attractive than stocks, suggesting the stock market could be overvalued relative to safe-haven assets."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is earnings yield?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Earnings yield is the inverse of the P/E ratio. It shows the percentage of a company's earnings per share relative to its stock price, making it easier to compare stock valuations with bond yields."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should I buy bonds or stocks in 2026?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "This depends on your risk tolerance and investment timeline. However, with the current equity risk premium, one asset class may offer a better risk-adjusted return profile. A negative equity risk premium traditionally favors bonds."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does a negative equity risk premium mean?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A negative equity risk premium means that the risk-free rate (bonds) is yielding more than the stock market's earnings yield. In this scenario, investors are not being compensated for the extra risk of holding stocks, making bonds a statistically safer and more attractive investment."
+          }
+        }
+      ]
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>Earnings Yield vs Bond Yield</h1>
+    <p>Is the Stock Market Fairly Valued?</p>
+  </header>
+
+  <div class="container">
+    <p>Research study by <strong>Westmount Research</strong> comparing the S&P 500 earnings yield (inverse of P/E) to the 10-year Treasury yield. The spread is the equity risk premium. When it's negative, bonds may be more attractive than stocks.</p>
+
+    <h2>Current Snapshot</h2>
+    <div class="grid">
+      <div class="card">
+        <div class="card-title">S&P 500 Earnings Yield</div>
+        <div class="card-value">${current.sp500EarningsYield}%</div>
+      </div>
+      <div class="card">
+        <div class="card-title">10-Year Treasury</div>
+        <div class="card-value">${current.treasury10yr}%</div>
+      </div>
+      <div class="card" style="border-color: var(--accent-color);">
+        <div class="card-title">Equity Risk Premium</div>
+        <div class="card-value ${current.equityRiskPremium < 0 ? 'text-red' : 'text-green'}">${current.equityRiskPremium > 0 ? '+' : ''}${current.equityRiskPremium}%</div>
+      </div>
+      <div class="card">
+        <div class="card-title">S&P 500 P/E</div>
+        <div class="card-value">${current.sp500Pe}</div>
+      </div>
+      <div class="card">
+        <div class="card-title">2-Year Treasury</div>
+        <div class="card-value">${current.treasury2yr}%</div>
+      </div>
+      <div class="card">
+        <div class="card-title">Yield Curve Spread (10y - 2y)</div>
+        <div class="card-value">${current.yieldCurveSpread}%</div>
+      </div>
+      <div class="card">
+        <div class="card-title">S&P 500 Dividend Yield</div>
+        <div class="card-value">${current.sp500DividendYield}%</div>
+      </div>
+      <div class="card">
+        <div class="card-title">Total Yield (Earnings + Div)</div>
+        <div class="card-value">${current.totalYield}%</div>
+      </div>
+    </div>
+
+    <h2>Historical Context (2016-2026)</h2>
+    <p>Comparing today's equity risk premium to the past decade.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Year</th>
+          <th>Earnings Yield</th>
+          <th>10-Year Treasury</th>
+          <th>Equity Risk Premium</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${historicalRows}
+      </tbody>
+    </table>
+
+    <h2>By Sector (11 GICS Sectors)</h2>
+    <p>Sector-level breakdowns require proprietary data and are not publicly available for scraping. Real-time values are nullified as per research protocol to prevent fake data.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Sector</th>
+          <th>Earnings Yield</th>
+          <th>P/E Ratio</th>
+          <th>Sector vs Bonds (ERP)</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${sectorRows}
+      </tbody>
+    </table>
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq">
+      <div class="faq-item">
+        <div class="faq-q">What is the equity risk premium?</div>
+        <div>The equity risk premium is the excess return that investing in the stock market provides over a risk-free rate, such as the 10-year Treasury yield. It represents the compensation investors require for taking on the higher risk of equities.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Is the stock market overvalued compared to bonds?</div>
+        <div>When the equity risk premium is low or negative, bonds may be more attractive than stocks, suggesting the stock market could be overvalued relative to safe-haven assets.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What is earnings yield?</div>
+        <div>Earnings yield is the inverse of the P/E ratio. It shows the percentage of a company's earnings per share relative to its stock price, making it easier to compare stock valuations with bond yields.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Should I buy bonds or stocks in 2026?</div>
+        <div>This depends on your risk tolerance and investment timeline. However, with the current equity risk premium, one asset class may offer a better risk-adjusted return profile. A negative equity risk premium traditionally favors bonds.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What does a negative equity risk premium mean?</div>
+        <div>A negative equity risk premium means that the risk-free rate (bonds) is yielding more than the stock market's earnings yield. In this scenario, investors are not being compensated for the extra risk of holding stocks, making bonds a statistically safer and more attractive investment.</div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p><strong>Methodology:</strong> The equity risk premium is calculated as the S&P 500 earnings yield minus the 10-year Treasury yield. Earnings yield data is sourced from historical P/E inversions. Bond yield data is sourced from US Treasury rates.</p>
+    <p><strong>Disclaimer:</strong> This study is for informational purposes only and does not constitute financial advice. Past performance is not indicative of future results.</p>
+    <p>&copy; 2026 Westmount Research</p>
+  </footer>
+</body>
+</html>`;
+
+  const publicPath = path.join(__dirname, '../public/equity-risk-premium.html');
+  fs.writeFileSync(publicPath, html);
+  console.log('Saved HTML to public/equity-risk-premium.html');
+}
+
+run();

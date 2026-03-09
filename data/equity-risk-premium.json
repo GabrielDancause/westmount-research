@@ -1,0 +1,148 @@
+{
+  "current": {
+    "sp500EarningsYield": 3.45,
+    "sp500Pe": 28.95,
+    "treasury10yr": 4.15,
+    "equityRiskPremium": -0.7,
+    "treasury2yr": 3.56,
+    "yieldCurveSpread": 0.59,
+    "sp500DividendYield": 1.16,
+    "totalYield": 4.61
+  },
+  "sectors": [
+    {
+      "sector": "Information Technology",
+      "sectorEarningsYield": null,
+      "sectorPe": null,
+      "sectorVsBonds": null
+    },
+    {
+      "sector": "Health Care",
+      "sectorEarningsYield": null,
+      "sectorPe": null,
+      "sectorVsBonds": null
+    },
+    {
+      "sector": "Financials",
+      "sectorEarningsYield": null,
+      "sectorPe": null,
+      "sectorVsBonds": null
+    },
+    {
+      "sector": "Consumer Discretionary",
+      "sectorEarningsYield": null,
+      "sectorPe": null,
+      "sectorVsBonds": null
+    },
+    {
+      "sector": "Communication Services",
+      "sectorEarningsYield": null,
+      "sectorPe": null,
+      "sectorVsBonds": null
+    },
+    {
+      "sector": "Industrials",
+      "sectorEarningsYield": null,
+      "sectorPe": null,
+      "sectorVsBonds": null
+    },
+    {
+      "sector": "Consumer Staples",
+      "sectorEarningsYield": null,
+      "sectorPe": null,
+      "sectorVsBonds": null
+    },
+    {
+      "sector": "Energy",
+      "sectorEarningsYield": null,
+      "sectorPe": null,
+      "sectorVsBonds": null
+    },
+    {
+      "sector": "Utilities",
+      "sectorEarningsYield": null,
+      "sectorPe": null,
+      "sectorVsBonds": null
+    },
+    {
+      "sector": "Real Estate",
+      "sectorEarningsYield": null,
+      "sectorPe": null,
+      "sectorVsBonds": null
+    },
+    {
+      "sector": "Materials",
+      "sectorEarningsYield": null,
+      "sectorPe": null,
+      "sectorVsBonds": null
+    }
+  ],
+  "historical": [
+    {
+      "year": 2026,
+      "earningsYield": 3.45,
+      "treasury10yr": 4.15,
+      "equityRiskPremium": -0.7
+    },
+    {
+      "year": 2025,
+      "earningsYield": 3.55,
+      "treasury10yr": 4.63,
+      "equityRiskPremium": -1.08
+    },
+    {
+      "year": 2024,
+      "earningsYield": 4,
+      "treasury10yr": 4.06,
+      "equityRiskPremium": -0.06
+    },
+    {
+      "year": 2023,
+      "earningsYield": 4.38,
+      "treasury10yr": 3.53,
+      "equityRiskPremium": 0.85
+    },
+    {
+      "year": 2022,
+      "earningsYield": 4.33,
+      "treasury10yr": 1.76,
+      "equityRiskPremium": 2.57
+    },
+    {
+      "year": 2021,
+      "earningsYield": 2.78,
+      "treasury10yr": 1.08,
+      "equityRiskPremium": 1.7
+    },
+    {
+      "year": 2020,
+      "earningsYield": 4.02,
+      "treasury10yr": 1.76,
+      "equityRiskPremium": 2.26
+    },
+    {
+      "year": 2019,
+      "earningsYield": 5.1,
+      "treasury10yr": 2.71,
+      "equityRiskPremium": 2.39
+    },
+    {
+      "year": 2018,
+      "earningsYield": 4.01,
+      "treasury10yr": 2.58,
+      "equityRiskPremium": 1.43
+    },
+    {
+      "year": 2017,
+      "earningsYield": 4.24,
+      "treasury10yr": 2.43,
+      "equityRiskPremium": 1.81
+    },
+    {
+      "year": 2016,
+      "earningsYield": 4.51,
+      "treasury10yr": 2.09,
+      "equityRiskPremium": 2.42
+    }
+  ]
+}
