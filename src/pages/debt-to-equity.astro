@@ -1,0 +1,386 @@
+---
+import BaseHead from '../layouts/BaseHead.astro';
+import fs from 'fs';
+import path from 'path';
+
+// Load data
+const dataPath = path.resolve('./data/debt-to-equity.json');
+const rawData = fs.readFileSync(dataPath, 'utf-8');
+let companies = JSON.parse(rawData);
+
+// Filter valid and sort by debt-to-equity ratio descending
+companies = companies.filter(c => c.debtToEquity !== null && !isNaN(c.debtToEquity));
+companies.sort((a, b) => b.debtToEquity - a.debtToEquity);
+
+// Summary stats
+const totalCompanies = companies.length;
+const negEquityCompanies = companies.filter(c => c.debtToEquity < 0).length;
+const totalDebt = companies.reduce((sum, c) => sum + (c.totalDebtB || 0), 0);
+const avgDebtToEquity = companies.reduce((sum, c) => sum + Math.max(0, c.debtToEquity), 0) / companies.filter(c => c.debtToEquity >= 0).length;
+
+const schemaData = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Debt-to-Equity Rankings: Most & Least Leveraged S&P 500 Companies",
+  "author": {
+    "@type": "Organization",
+    "name": "Westmount Research"
+  },
+  "datePublished": "2026-03-09",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Westmount Research",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://westmountresearch.com/logo.png"
+    }
+  }
+};
+---
+
+<html lang="en">
+<head>
+  <BaseHead />
+  <title>Debt-to-Equity Rankings: S&P 500 Companies (2026) | Westmount Research</title>
+  <meta name="description" content="Rank S&P 500 companies by debt-to-equity ratio. See which companies are the most leveraged and least exposed to elevated interest rates in 2026." />
+  <link rel="canonical" href="https://westmountresearch.com/debt-to-equity" />
+  <script type="application/ld+json" set:html={JSON.stringify(schemaData)}></script>
+
+  <style>
+    :root {
+      --bg: #060a12;
+      --card-bg: #0a1020;
+      --border: #152040;
+      --accent: #4a8fe7;
+      --text-main: #c8d0de;
+      --text-muted: #6b7a90;
+      --red: #ef4444;
+      --green: #10b981;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Header */
+    header {
+      padding: 60px 0 40px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 40px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: rgba(74, 143, 231, 0.1);
+      color: var(--accent);
+      padding: 4px 12px;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+      letter-spacing: 0.5px;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 24px;
+      color: #fff;
+      letter-spacing: -1px;
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      max-width: 800px;
+      margin-bottom: 32px;
+    }
+
+    /* Stats Row */
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+
+    .stat-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      padding: 24px;
+      border-radius: 8px;
+    }
+
+    .stat-value {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 8px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .stat-label {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    /* Table */
+    .table-container {
+      overflow-x: auto;
+      margin-bottom: 60px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    th {
+      background: rgba(10, 16, 32, 0.8);
+      padding: 16px 20px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border-bottom: 1px solid var(--border);
+      white-space: nowrap;
+    }
+
+    td {
+      padding: 16px 20px;
+      border-bottom: 1px solid rgba(21, 32, 64, 0.5);
+      font-size: 0.95rem;
+    }
+
+    tr:last-child td { border-bottom: none; }
+
+    .ticker {
+      font-weight: 700;
+      color: #fff;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .company-name {
+      color: var(--text-main);
+      font-weight: 500;
+    }
+
+    .sector-badge {
+      font-size: 0.8rem;
+      padding: 2px 8px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 4px;
+      color: #a0aec0;
+      white-space: nowrap;
+    }
+
+    .number {
+      font-family: 'JetBrains Mono', monospace;
+      text-align: right;
+    }
+
+    th.number { text-align: right; }
+
+    .high-debt { color: var(--red); font-weight: 600; }
+    .low-debt { color: var(--green); }
+    .negative-equity {
+      background: rgba(239, 68, 68, 0.1);
+      color: var(--red);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    /* FAQ Section */
+    .content-section {
+      max-width: 800px;
+      margin: 0 auto 60px;
+    }
+
+    h2 {
+      font-size: 2rem;
+      color: #fff;
+      margin-bottom: 24px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .faq-item {
+      margin-bottom: 24px;
+    }
+
+    .faq-item h3 {
+      font-size: 1.2rem;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+
+    .faq-item p {
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* Methodology & Disclaimer */
+    .meta-section {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 32px;
+      margin-bottom: 60px;
+    }
+
+    .meta-section h3 {
+      font-size: 1.1rem;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+
+    .meta-section p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+
+    .meta-section p:last-child { margin-bottom: 0; }
+
+    footer {
+      text-align: center;
+      padding: 40px 0;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <div class="tag">ORIGINAL RESEARCH</div>
+    <h1>Most & Least Leveraged S&P 500 Companies</h1>
+    <p class="subtitle">With interest rates elevated, heavily leveraged companies face increased pressure on earnings. We ranked S&P 500 companies by their Debt-to-Equity ratios to expose the hidden risks and identify conservative balance sheets.</p>
+
+    <div class="stats-row">
+      <div class="stat-card">
+        <div class="stat-value">{totalCompanies}</div>
+        <div class="stat-label">Companies Analyzed</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">${(totalDebt / 1000).toFixed(2)}T</div>
+        <div class="stat-label">Total Debt Tracked</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">{avgDebtToEquity.toFixed(2)}x</div>
+        <div class="stat-label">Average D/E Ratio</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">{negEquityCompanies}</div>
+        <div class="stat-label">Negative Equity Flagged</div>
+      </div>
+    </div>
+  </header>
+
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Ticker</th>
+          <th>Company</th>
+          <th>Sector</th>
+          <th class="number">D/E Ratio</th>
+          <th class="number">Total Debt</th>
+          <th class="number">Net Debt</th>
+          <th class="number">Interest Cov.</th>
+        </tr>
+      </thead>
+      <tbody>
+        {companies.map((company) => (
+          <tr>
+            <td><span class="ticker">{company.ticker}</span></td>
+            <td><span class="company-name">{company.company}</span></td>
+            <td><span class="sector-badge">{company.sector}</span></td>
+            <td class="number">
+              {company.debtToEquity < 0 ? (
+                <span class="negative-equity" title="More debt than assets (Negative Equity)">FLAG</span>
+              ) : (
+                <span class={company.debtToEquity > 3 ? 'high-debt' : company.debtToEquity < 0.5 ? 'low-debt' : ''}>
+                  {company.debtToEquity.toFixed(2)}
+                </span>
+              )}
+            </td>
+            <td class="number">{company.totalDebtB !== null ? `$${company.totalDebtB.toFixed(1)}B` : '—'}</td>
+            <td class="number">{company.netDebtB !== null ? `$${company.netDebtB.toFixed(1)}B` : '—'}</td>
+            <td class="number">
+              {company.interestCoverageRatio !== null
+                ? (company.interestCoverageRatio > 100 ? '>100x' : `${company.interestCoverageRatio.toFixed(1)}x`)
+                : '—'}
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+
+  <div class="content-section">
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <h3>What is a good debt-to-equity ratio?</h3>
+      <p>A "good" debt-to-equity (D/E) ratio depends heavily on the industry. Generally, a ratio below 1.0 is considered conservative, meaning the company relies more on equity than debt for financing. Ratios between 1.0 and 2.0 are typical for many established companies. Capital-intensive industries like utilities or telecom often safely maintain ratios above 2.0 because of their stable, predictable cash flows.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Which companies have the most debt?</h3>
+      <p>In absolute terms, large banks, telecommunications giants (like AT&T and Verizon), and major utility companies hold the largest amounts of nominal debt. However, when looking at the <em>ratio</em> of debt compared to equity, companies that have bought back massive amounts of stock or suffered significant losses often appear the most heavily leveraged on paper.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Is high debt-to-equity always bad?</h3>
+      <p>Not always. High leverage can amplify returns for shareholders when a company earns more on its borrowed money than the interest it pays. This is common in real estate and utilities. However, elevated debt becomes dangerous during economic downturns or when interest rates rise, as higher servicing costs can quickly erode profits and threaten solvency.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>What sector has the highest leverage?</h3>
+      <p>Utilities, Real Estate (REITs), and Telecommunications typically operate with the highest debt-to-equity ratios. These sectors require massive upfront capital expenditures but benefit from long-term, predictable revenue streams that allow them to comfortably service higher debt loads.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>How does debt-to-equity affect stock price?</h3>
+      <p>Companies with low D/E ratios are often viewed as safer investments, which can lead to more stable stock prices during market volatility. Conversely, highly leveraged companies can experience greater stock price volatility. If interest rates rise, the stock prices of highly leveraged firms often face downward pressure due to anticipated increases in debt servicing costs.</p>
+    </div>
+  </div>
+
+  <div class="meta-section">
+    <h3>Methodology</h3>
+    <p>Data was collected directly from public financial filings and parsed via Yahoo Finance APIs for S&P 500 components. "Total Debt" includes both short-term and long-term liabilities. The Debt-to-Equity ratio is calculated as Total Debt divided by Total Shareholders' Equity. Companies exhibiting negative equity (liabilities exceed assets) have their D/E ratio flagged, as standard calculations lose meaning in these scenarios. "Net Debt" subtracts cash and cash equivalents from Total Debt.</p>
+
+    <h3>Disclaimer</h3>
+    <p>This data is provided for informational and educational purposes only. It does not constitute financial or investment advice. Corporate balance sheets are dynamic and data may be delayed. Always consult with a licensed financial professional or conduct your own due diligence before making investment decisions. Data is accurate as of compilation in 2026.</p>
+  </div>
+
+  <footer>
+    <p>© 2026 Westmount Research. All rights reserved.</p>
+  </footer>
+</div>
+
+</body>
+</html>

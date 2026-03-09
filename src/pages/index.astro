@@ -6,6 +6,16 @@ const tools = []; // westmount-research is studies only
 
 const studies = [
   {
+    title: "Debt-to-Equity Rankings: Most & Least Leveraged S&P 500 Companies 2026",
+    subtitle: "130 items · S&P 500 Leverage",
+    slug: "/debt-to-equity",
+    stat: "130",
+    statLabel: "companies ranked by leverage",
+    desc: "Analyzed 130 S&P 500 companies to reveal the most and least leveraged. Ford Motor Company leads with $165.7B in debt, while 4 companies flag negative equity.",
+    tag: "ORIGINAL RESEARCH",
+    emoji: "⚖️"
+  },
+  {
     emoji: "🏢",
     name: "S&P 500 Market Cap Concentration 2026",
     slug: "/market-concentration",
@@ -284,7 +294,8 @@ const lists = []; // westmount-research is studies only
               <span class="stat-number">{study.stat}</span>
               <span class="stat-label">{study.statLabel}</span>
             </div>
-            <h3 class="study-name">{study.name}</h3>
+            <h3 class="study-name">{study.title || study.name}</h3>
+            {study.subtitle && <p style="color: #4a8fe7; font-size: 0.8rem; margin-bottom: 8px;">{study.subtitle}</p>}
             <p class="study-desc">{study.desc}</p>
           </a>
         ))}
