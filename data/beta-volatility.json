@@ -1,0 +1,5002 @@
+[
+  {
+    "ticker": "AOS",
+    "company": "A.O. Smith Corporation",
+    "sector": "Industrials",
+    "beta": 1.304,
+    "volatility_52wk": 0.2554812713717752,
+    "avg_volume": 1272490,
+    "market_cap": 9620829184,
+    "ytd_return": 0.039373572210510986
+  },
+  {
+    "ticker": "ABBV",
+    "company": "AbbVie Inc.",
+    "sector": "Healthcare",
+    "beta": 0.334,
+    "volatility_52wk": 0.26832669313883456,
+    "avg_volume": 6408230,
+    "market_cap": 400481419264,
+    "ytd_return": 0.0034887403962986572
+  },
+  {
+    "ticker": "AES",
+    "company": "The AES Corporation",
+    "sector": "Utilities",
+    "beta": 0.941,
+    "volatility_52wk": 0.5082663228592467,
+    "avg_volume": 25206190,
+    "market_cap": 10094314496,
+    "ytd_return": -0.04520918286711829
+  },
+  {
+    "ticker": "ABT",
+    "company": "Abbott Laboratories",
+    "sector": "Healthcare",
+    "beta": 0.744,
+    "volatility_52wk": 0.23488937944502392,
+    "avg_volume": 8390070,
+    "market_cap": 193803780096,
+    "ytd_return": -0.11780340281187322
+  },
+  {
+    "ticker": "MMM",
+    "company": "3M Company",
+    "sector": "Industrials",
+    "beta": 1.131,
+    "volatility_52wk": 0.30945385220947896,
+    "avg_volume": 3859630,
+    "market_cap": 78399299584,
+    "ytd_return": -0.05197134644333126
+  },
+  {
+    "ticker": "A",
+    "company": "Agilent Technologies, Inc.",
+    "sector": "Healthcare",
+    "beta": 1.312,
+    "volatility_52wk": 0.31760905356128344,
+    "avg_volume": 3221820,
+    "market_cap": 32491204608,
+    "ytd_return": -0.16585717839488154
+  },
+  {
+    "ticker": "APD",
+    "company": "Air Products and Chemicals, Inc",
+    "sector": "Basic Materials",
+    "beta": 0.864,
+    "volatility_52wk": 0.2780469951506114,
+    "avg_volume": 1548640,
+    "market_cap": 61148016640,
+    "ytd_return": 0.08667701261337175
+  },
+  {
+    "ticker": "ACN",
+    "company": "Accenture plc",
+    "sector": "Technology",
+    "beta": 1.251,
+    "volatility_52wk": 0.3363992567727794,
+    "avg_volume": 8661000,
+    "market_cap": 129460191232,
+    "ytd_return": -0.1729179076599998
+  },
+  {
+    "ticker": "AFL",
+    "company": "AFLAC Incorporated",
+    "sector": "Financial Services",
+    "beta": 0.65,
+    "volatility_52wk": 0.20550834251326508,
+    "avg_volume": 2243140,
+    "market_cap": 56454672384,
+    "ytd_return": 0.009524701307191307
+  },
+  {
+    "ticker": "ALB",
+    "company": "Albemarle Corporation",
+    "sector": "Basic Materials",
+    "beta": 1.476,
+    "volatility_52wk": 0.6453491431707786,
+    "avg_volume": 2625470,
+    "market_cap": 19237967872,
+    "ytd_return": 0.12756202004199055
+  },
+  {
+    "ticker": "ARE",
+    "company": "Alexandria Real Estate Equities",
+    "sector": "Real Estate",
+    "beta": 1.319,
+    "volatility_52wk": 0.41330435475357524,
+    "avg_volume": 2928550,
+    "market_cap": 8649421824,
+    "ytd_return": 0.03594033648480135
+  },
+  {
+    "ticker": "ALL",
+    "company": "Allstate Corporation (The)",
+    "sector": "Financial Services",
+    "beta": 0.206,
+    "volatility_52wk": 0.26042441131725097,
+    "avg_volume": 1477400,
+    "market_cap": 53736894464,
+    "ytd_return": 0.04170346234204062
+  },
+  {
+    "ticker": "ALLE",
+    "company": "Allegion plc",
+    "sector": "Industrials",
+    "beta": 1.008,
+    "volatility_52wk": 0.26746643629909056,
+    "avg_volume": 930020,
+    "market_cap": 12812849152,
+    "ytd_return": -0.06550250640137054
+  },
+  {
+    "ticker": "AMCR",
+    "company": "Amcor plc",
+    "sector": "Consumer Cyclical",
+    "beta": 0.635,
+    "volatility_52wk": 0.2847344041572848,
+    "avg_volume": 4739280,
+    "market_cap": 19362023424,
+    "ytd_return": 0.029250881440023295
+  },
+  {
+    "ticker": "AXP",
+    "company": "American Express Company",
+    "sector": "Financial Services",
+    "beta": 1.152,
+    "volatility_52wk": 0.33178548482657927,
+    "avg_volume": 5800450,
+    "market_cap": 205677314048,
+    "ytd_return": -0.1924449571326823
+  },
+  {
+    "ticker": "MO",
+    "company": "Altria Group, Inc.",
+    "sector": "Consumer Defensive",
+    "beta": 0.434,
+    "volatility_52wk": 0.2139598166818477,
+    "avg_volume": 8691420,
+    "market_cap": 112101687296,
+    "ytd_return": 0.1605304579041078
+  },
+  {
+    "ticker": "AEE",
+    "company": "Ameren Corporation",
+    "sector": "Utilities",
+    "beta": 0.531,
+    "volatility_52wk": 0.1627668265945124,
+    "avg_volume": 1933370,
+    "market_cap": 30597429248,
+    "ytd_return": 0.10569101693640855
+  },
+  {
+    "ticker": "AIG",
+    "company": "American International Group, I",
+    "sector": "Financial Services",
+    "beta": 0.58,
+    "volatility_52wk": 0.2570763357388645,
+    "avg_volume": 4151360,
+    "market_cap": 41536565248,
+    "ytd_return": -0.06585968486353233
+  },
+  {
+    "ticker": "AWK",
+    "company": "American Water Works Company, I",
+    "sector": "Utilities",
+    "beta": 0.759,
+    "volatility_52wk": 0.23116010865198225,
+    "avg_volume": 1835690,
+    "market_cap": 26965149696,
+    "ytd_return": 0.055018399063678045
+  },
+  {
+    "ticker": "AMT",
+    "company": "American Tower Corporation (REI",
+    "sector": "Real Estate",
+    "beta": 0.907,
+    "volatility_52wk": 0.24467256812379995,
+    "avg_volume": 3217660,
+    "market_cap": 87220396032,
+    "ytd_return": 0.07889012039690659
+  },
+  {
+    "ticker": "AMP",
+    "company": "Ameriprise Financial, Inc.",
+    "sector": "Financial Services",
+    "beta": 1.271,
+    "volatility_52wk": 0.2981152503075717,
+    "avg_volume": 656950,
+    "market_cap": 42007318528,
+    "ytd_return": -0.05848871946009405
+  },
+  {
+    "ticker": "APO",
+    "company": "Apollo Global Management, Inc. ",
+    "sector": "Financial Services",
+    "beta": 1.638,
+    "volatility_52wk": 0.43689709678705857,
+    "avg_volume": 7735750,
+    "market_cap": 62070394880,
+    "ytd_return": -0.25857720144796653
+  },
+  {
+    "ticker": "AON",
+    "company": "Aon plc",
+    "sector": "Financial Services",
+    "beta": 0.828,
+    "volatility_52wk": 0.24476009624858228,
+    "avg_volume": 1494880,
+    "market_cap": 72010833920,
+    "ytd_return": -0.010660188303577357
+  },
+  {
+    "ticker": "APH",
+    "company": "Amphenol Corporation",
+    "sector": "Technology",
+    "beta": 1.214,
+    "volatility_52wk": 0.40228216630230523,
+    "avg_volume": 10073180,
+    "market_cap": 164653334528,
+    "ytd_return": -0.05611632109313693
+  },
+  {
+    "ticker": "AME",
+    "company": "AMETEK, Inc.",
+    "sector": "Industrials",
+    "beta": 1.013,
+    "volatility_52wk": 0.23301821606840037,
+    "avg_volume": 1576110,
+    "market_cap": 50992459776,
+    "ytd_return": 0.06139426401148852
+  },
+  {
+    "ticker": "ADM",
+    "company": "Archer-Daniels-Midland Company",
+    "sector": "Consumer Defensive",
+    "beta": 0.683,
+    "volatility_52wk": 0.28027229348371424,
+    "avg_volume": 2972750,
+    "market_cap": 32334358528,
+    "ytd_return": 0.1420830366256809
+  },
+  {
+    "ticker": "APTV",
+    "company": "Aptiv PLC",
+    "sector": "Consumer Cyclical",
+    "beta": 1.534,
+    "volatility_52wk": 0.37997263377260915,
+    "avg_volume": 2200580,
+    "market_cap": 15527465984,
+    "ytd_return": -0.07317701828798104
+  },
+  {
+    "ticker": "ANET",
+    "company": "Arista Networks, Inc.",
+    "sector": "Technology",
+    "beta": 1.46,
+    "volatility_52wk": 0.5303149585145123,
+    "avg_volume": 7539960,
+    "market_cap": 169852387328,
+    "ytd_return": -0.0053144212681926215
+  },
+  {
+    "ticker": "ARES",
+    "company": "Ares Management Corporation",
+    "sector": "Financial Services",
+    "beta": 1.565,
+    "volatility_52wk": 0.45542652942437856,
+    "avg_volume": 4250140,
+    "market_cap": 35537432576,
+    "ytd_return": -0.3386039744773752
+  },
+  {
+    "ticker": "AJG",
+    "company": "Arthur J. Gallagher & Co.",
+    "sector": "Financial Services",
+    "beta": 0.672,
+    "volatility_52wk": 0.27658085015616873,
+    "avg_volume": 2448620,
+    "market_cap": 56342179840,
+    "ytd_return": -0.10886716842651367
+  },
+  {
+    "ticker": "AVB",
+    "company": "AvalonBay Communities, Inc.",
+    "sector": "Real Estate",
+    "beta": 0.745,
+    "volatility_52wk": 0.22773018783313886,
+    "avg_volume": 1028490,
+    "market_cap": 24792567808,
+    "ytd_return": -0.014350600616151406
+  },
+  {
+    "ticker": "ATO",
+    "company": "Atmos Energy Corporation",
+    "sector": "Utilities",
+    "beta": 0.698,
+    "volatility_52wk": 0.1611123274248575,
+    "avg_volume": 1261790,
+    "market_cap": 30498670592,
+    "ytd_return": 0.09258380148365955
+  },
+  {
+    "ticker": "AZO",
+    "company": "AutoZone, Inc.",
+    "sector": "Consumer Cyclical",
+    "beta": 0.355,
+    "volatility_52wk": 0.25342407979797216,
+    "avg_volume": 171400,
+    "market_cap": 61027074048,
+    "ytd_return": 0.10214538434918681
+  },
+  {
+    "ticker": "BALL",
+    "company": "Ball Corporation",
+    "sector": "Consumer Cyclical",
+    "beta": 1.115,
+    "volatility_52wk": 0.2658927589758796,
+    "avg_volume": 1938480,
+    "market_cap": 16513372160,
+    "ytd_return": 0.1720712383830488
+  },
+  {
+    "ticker": "T",
+    "company": "AT&T Inc.",
+    "sector": "Communication Services",
+    "beta": 0.576,
+    "volatility_52wk": 0.22649867273794774,
+    "avg_volume": 42160420,
+    "market_cap": 196551442432,
+    "ytd_return": 0.16612377900756206
+  },
+  {
+    "ticker": "AIZ",
+    "company": "Assurant, Inc.",
+    "sector": "Financial Services",
+    "beta": 0.547,
+    "volatility_52wk": 0.27972628334458605,
+    "avg_volume": 402980,
+    "market_cap": 10934209536,
+    "ytd_return": -0.06230017450169835
+  },
+  {
+    "ticker": "AVY",
+    "company": "Avery Dennison Corporation",
+    "sector": "Consumer Cyclical",
+    "beta": 0.97,
+    "volatility_52wk": 0.24781484545314028,
+    "avg_volume": 585930,
+    "market_cap": 13494383616,
+    "ytd_return": -0.015347528032713558
+  },
+  {
+    "ticker": "BDX",
+    "company": "Becton, Dickinson and Company",
+    "sector": "Healthcare",
+    "beta": 0.307,
+    "volatility_52wk": 0.31262457424091233,
+    "avg_volume": 2858570,
+    "market_cap": 59405529088,
+    "ytd_return": 0.09047212775450006
+  },
+  {
+    "ticker": "BAC",
+    "company": "Bank of America Corporation",
+    "sector": "Financial Services",
+    "beta": 1.263,
+    "volatility_52wk": 0.2678166645493362,
+    "avg_volume": 48730930,
+    "market_cap": 344166629376,
+    "ytd_return": -0.13065239094926098
+  },
+  {
+    "ticker": "BAX",
+    "company": "Baxter International Inc.",
+    "sector": "Healthcare",
+    "beta": 0.553,
+    "volatility_52wk": 0.47080241266680645,
+    "avg_volume": 10998610,
+    "market_cap": 8964988928,
+    "ytd_return": -0.0928204854329427
+  },
+  {
+    "ticker": "XYZ",
+    "company": "Block, Inc.",
+    "sector": "Technology",
+    "beta": 2.675,
+    "volatility_52wk": 0.5401910668958368,
+    "avg_volume": 15331780,
+    "market_cap": 39534686208,
+    "ytd_return": 0.018112053377421045
+  },
+  {
+    "ticker": "BX",
+    "company": "Blackstone Inc.",
+    "sector": "Financial Services",
+    "beta": 1.794,
+    "volatility_52wk": 0.39598060064774143,
+    "avg_volume": 10829920,
+    "market_cap": 134467141632,
+    "ytd_return": -0.30478589795809924
+  },
+  {
+    "ticker": "BBY",
+    "company": "Best Buy Co., Inc.",
+    "sector": "Consumer Cyclical",
+    "beta": 1.444,
+    "volatility_52wk": 0.4280381101004958,
+    "avg_volume": 6369220,
+    "market_cap": 13590400000,
+    "ytd_return": -0.03613761186718237
+  },
+  {
+    "ticker": "BK",
+    "company": "The Bank of New York Mellon Cor",
+    "sector": "Financial Services",
+    "beta": 1.076,
+    "volatility_52wk": 0.24146710088677084,
+    "avg_volume": 3498660,
+    "market_cap": 79303376896,
+    "ytd_return": -0.015464777378975765
+  },
+  {
+    "ticker": "BR",
+    "company": "Broadridge Financial Solutions,",
+    "sector": "Technology",
+    "beta": 0.977,
+    "volatility_52wk": 0.24849093301807634,
+    "avg_volume": 1249190,
+    "market_cap": 22104033280,
+    "ytd_return": -0.10699866742539582
+  },
+  {
+    "ticker": "BLK",
+    "company": "BlackRock, Inc.",
+    "sector": "Financial Services",
+    "beta": 1.487,
+    "volatility_52wk": 0.28879824525763936,
+    "avg_volume": 875790,
+    "market_cap": 147453378560,
+    "ytd_return": -0.1194496519894897
+  },
+  {
+    "ticker": "BSX",
+    "company": "Boston Scientific Corporation",
+    "sector": "Healthcare",
+    "beta": 0.7,
+    "volatility_52wk": 0.300215838462772,
+    "avg_volume": 14069950,
+    "market_cap": 106372325376,
+    "ytd_return": -0.24664767011048727
+  },
+  {
+    "ticker": "BMY",
+    "company": "Bristol-Myers Squibb Company",
+    "sector": "Healthcare",
+    "beta": 0.266,
+    "volatility_52wk": 0.29037595596906746,
+    "avg_volume": 14047310,
+    "market_cap": 122402250752,
+    "ytd_return": 0.1277591086423802
+  },
+  {
+    "ticker": "BA",
+    "company": "Boeing Company (The)",
+    "sector": "Industrials",
+    "beta": 1.096,
+    "volatility_52wk": 0.3669737446786085,
+    "avg_volume": 5897970,
+    "market_cap": 176176906240,
+    "ytd_return": 0.01466389900004254
+  },
+  {
+    "ticker": "BRO",
+    "company": "Brown & Brown, Inc.",
+    "sector": "Financial Services",
+    "beta": 0.798,
+    "volatility_52wk": 0.2739777510281087,
+    "avg_volume": 3030710,
+    "market_cap": 24210149376,
+    "ytd_return": -0.053079136830659984
+  },
+  {
+    "ticker": "CPT",
+    "company": "Camden Property Trust",
+    "sector": "Real Estate",
+    "beta": 0.821,
+    "volatility_52wk": 0.2165054860029397,
+    "avg_volume": 937660,
+    "market_cap": 11095968768,
+    "ytd_return": -0.03303984251743847
+  },
+  {
+    "ticker": "BG",
+    "company": "Bunge Limited",
+    "sector": "Consumer Defensive",
+    "beta": 0.743,
+    "volatility_52wk": 0.32271518584252495,
+    "avg_volume": 1599540,
+    "market_cap": 22657978368,
+    "ytd_return": 0.2593911802419763
+  },
+  {
+    "ticker": "BXP",
+    "company": "BXP, Inc.",
+    "sector": "Real Estate",
+    "beta": 1.032,
+    "volatility_52wk": 0.31729192836459963,
+    "avg_volume": 4306100,
+    "market_cap": 9018397696,
+    "ytd_return": -0.21940432225113712
+  },
+  {
+    "ticker": "COF",
+    "company": "Capital One Financial Corporati",
+    "sector": "Financial Services",
+    "beta": 1.139,
+    "volatility_52wk": 0.3874937764353046,
+    "avg_volume": 6352460,
+    "market_cap": 112687783936,
+    "ytd_return": -0.24289108918203337
+  },
+  {
+    "ticker": "CAH",
+    "company": "Cardinal Health, Inc.",
+    "sector": "Healthcare",
+    "beta": 0.616,
+    "volatility_52wk": 0.29814521857062504,
+    "avg_volume": 1768680,
+    "market_cap": 51369488384,
+    "ytd_return": 0.05862335935753467
+  },
+  {
+    "ticker": "CARR",
+    "company": "Carrier Global Corporation",
+    "sector": "Industrials",
+    "beta": 1.289,
+    "volatility_52wk": 0.3428830759275168,
+    "avg_volume": 5399360,
+    "market_cap": 48261627904,
+    "ytd_return": 0.09024659893583348
+  },
+  {
+    "ticker": "BLDR",
+    "company": "Builders FirstSource, Inc.",
+    "sector": "Industrials",
+    "beta": 1.564,
+    "volatility_52wk": 0.4867167052541627,
+    "avg_volume": 2570620,
+    "market_cap": 10216590336,
+    "ytd_return": -0.11000664062867438
+  },
+  {
+    "ticker": "CCL",
+    "company": "Carnival Corporation",
+    "sector": "Consumer Cyclical",
+    "beta": 2.459,
+    "volatility_52wk": 0.49113628984135216,
+    "avg_volume": 25008580,
+    "market_cap": 34753150976,
+    "ytd_return": -0.16591200349639457
+  },
+  {
+    "ticker": "CVNA",
+    "company": "Carvana Co.",
+    "sector": "Consumer Cyclical",
+    "beta": 3.673,
+    "volatility_52wk": 0.7136462327385718,
+    "avg_volume": 3186510,
+    "market_cap": 67932033024,
+    "ytd_return": -0.20624606569136478
+  },
+  {
+    "ticker": "CPB",
+    "company": "The Campbell's Company",
+    "sector": "Consumer Defensive",
+    "beta": -0.064,
+    "volatility_52wk": 0.28152835166513107,
+    "avg_volume": 8414400,
+    "market_cap": 7597831680,
+    "ytd_return": -0.0689281815416003
+  },
+  {
+    "ticker": "CNC",
+    "company": "Centene Corporation",
+    "sector": "Healthcare",
+    "beta": 0.459,
+    "volatility_52wk": 0.5996453734790631,
+    "avg_volume": 4330830,
+    "market_cap": 21278930944,
+    "ytd_return": 0.044758324586372855
+  },
+  {
+    "ticker": "COR",
+    "company": "Cencora, Inc.",
+    "sector": "Healthcare",
+    "beta": 0.646,
+    "volatility_52wk": 0.24812663671435634,
+    "avg_volume": 1078580,
+    "market_cap": 69730492416,
+    "ytd_return": 0.05780976958764391
+  },
+  {
+    "ticker": "CBRE",
+    "company": "CBRE Group Inc",
+    "sector": "Real Estate",
+    "beta": 1.341,
+    "volatility_52wk": 0.325366091164745,
+    "avg_volume": 2480320,
+    "market_cap": 39594749952,
+    "ytd_return": -0.14582683222628767
+  },
+  {
+    "ticker": "CRL",
+    "company": "Charles River Laboratories Inte",
+    "sector": "Healthcare",
+    "beta": 1.652,
+    "volatility_52wk": 0.5547573556891959,
+    "avg_volume": 1067350,
+    "market_cap": 8578929152,
+    "ytd_return": -0.13812860245034655
+  },
+  {
+    "ticker": "CF",
+    "company": "CF Industries Holdings, Inc.",
+    "sector": "Basic Materials",
+    "beta": 0.689,
+    "volatility_52wk": 0.3237539547462829,
+    "avg_volume": 4292320,
+    "market_cap": 18141409280,
+    "ytd_return": 0.4449020684866958
+  },
+  {
+    "ticker": "CMG",
+    "company": "Chipotle Mexican Grill, Inc.",
+    "sector": "Consumer Cyclical",
+    "beta": 1.019,
+    "volatility_52wk": 0.39488737176768446,
+    "avg_volume": 14507260,
+    "market_cap": 45592145920,
+    "ytd_return": -0.05654848364009813
+  },
+  {
+    "ticker": "CAT",
+    "company": "Caterpillar, Inc.",
+    "sector": "Industrials",
+    "beta": 1.531,
+    "volatility_52wk": 0.33824169783700747,
+    "avg_volume": 3020660,
+    "market_cap": 323233513472,
+    "ytd_return": 0.13784872407132795
+  },
+  {
+    "ticker": "SCHW",
+    "company": "Charles Schwab Corporation (The",
+    "sector": "Financial Services",
+    "beta": 0.919,
+    "volatility_52wk": 0.25161231983622884,
+    "avg_volume": 10640280,
+    "market_cap": 165788205056,
+    "ytd_return": -0.062419970039772454
+  },
+  {
+    "ticker": "CNP",
+    "company": "CenterPoint Energy, Inc (Holdin",
+    "sector": "Utilities",
+    "beta": 0.539,
+    "volatility_52wk": 0.15927447834159555,
+    "avg_volume": 6433650,
+    "market_cap": 28331362304,
+    "ytd_return": 0.12600054546330253
+  },
+  {
+    "ticker": "CVX",
+    "company": "Chevron Corporation",
+    "sector": "Energy",
+    "beta": 0.658,
+    "volatility_52wk": 0.251144154738428,
+    "avg_volume": 11060370,
+    "market_cap": 380736897024,
+    "ytd_return": 0.21834515636686946
+  },
+  {
+    "ticker": "CIEN",
+    "company": "Ciena Corporation",
+    "sector": "Technology",
+    "beta": 1.09,
+    "volatility_52wk": 0.6144937354010649,
+    "avg_volume": 3253110,
+    "market_cap": 43869229056,
+    "ytd_return": 0.19552148397337235
+  },
+  {
+    "ticker": "CI",
+    "company": "The Cigna Group",
+    "sector": "Healthcare",
+    "beta": 0.234,
+    "volatility_52wk": 0.3287167897973292,
+    "avg_volume": 1821890,
+    "market_cap": 71333281792,
+    "ytd_return": -0.026834301968335715
+  },
+  {
+    "ticker": "CFG",
+    "company": "Citizens Financial Group, Inc.",
+    "sector": "Financial Services",
+    "beta": 1.085,
+    "volatility_52wk": 0.327659906834378,
+    "avg_volume": 5830220,
+    "market_cap": 24296034304,
+    "ytd_return": -0.022731074052787344
+  },
+  {
+    "ticker": "CHD",
+    "company": "Church & Dwight Company, Inc.",
+    "sector": "Consumer Defensive",
+    "beta": 0.426,
+    "volatility_52wk": 0.22742327656675224,
+    "avg_volume": 1731090,
+    "market_cap": 24327577600,
+    "ytd_return": 0.21853821021271647
+  },
+  {
+    "ticker": "CB",
+    "company": "Chubb Limited",
+    "sector": "Financial Services",
+    "beta": 0.489,
+    "volatility_52wk": 0.199301568610516,
+    "avg_volume": 1870100,
+    "market_cap": 127048056832,
+    "ytd_return": 0.05785977740651962
+  },
+  {
+    "ticker": "C",
+    "company": "Citigroup, Inc.",
+    "sector": "Financial Services",
+    "beta": 1.131,
+    "volatility_52wk": 0.3239800789238714,
+    "avg_volume": 17045650,
+    "market_cap": 181045772288,
+    "ytd_return": -0.10252736715951143
+  },
+  {
+    "ticker": "KO",
+    "company": "Coca-Cola Company (The)",
+    "sector": "Consumer Defensive",
+    "beta": 0.332,
+    "volatility_52wk": 0.16994180087554284,
+    "avg_volume": 19139550,
+    "market_cap": 333052084224,
+    "ytd_return": 0.11458330228924875
+  },
+  {
+    "ticker": "CMS",
+    "company": "CMS Energy Corporation",
+    "sector": "Utilities",
+    "beta": 0.432,
+    "volatility_52wk": 0.16569872890742912,
+    "avg_volume": 3392680,
+    "market_cap": 23580620800,
+    "ytd_return": 0.09571152610646266
+  },
+  {
+    "ticker": "CLX",
+    "company": "Clorox Company (The)",
+    "sector": "Consumer Defensive",
+    "beta": 0.568,
+    "volatility_52wk": 0.232882012295519,
+    "avg_volume": 1953580,
+    "market_cap": 13671561216,
+    "ytd_return": 0.13693609714364088
+  },
+  {
+    "ticker": "CL",
+    "company": "Colgate-Palmolive Company",
+    "sector": "Consumer Defensive",
+    "beta": 0.264,
+    "volatility_52wk": 0.21390089396386097,
+    "avg_volume": 6174500,
+    "market_cap": 74519920640,
+    "ytd_return": 0.20427332499000292
+  },
+  {
+    "ticker": "CAG",
+    "company": "ConAgra Brands, Inc.",
+    "sector": "Consumer Defensive",
+    "beta": -0.061,
+    "volatility_52wk": 0.25925859981920024,
+    "avg_volume": 11456790,
+    "market_cap": 8993345536,
+    "ytd_return": 0.09942204026335966
+  },
+  {
+    "ticker": "CPAY",
+    "company": "Corpay, Inc.",
+    "sector": "Technology",
+    "beta": 0.819,
+    "volatility_52wk": 0.41114253040764903,
+    "avg_volume": 717730,
+    "market_cap": 22731470848,
+    "ytd_return": 0.04594297124602261
+  },
+  {
+    "ticker": "COP",
+    "company": "ConocoPhillips",
+    "sector": "Energy",
+    "beta": 0.279,
+    "volatility_52wk": 0.3440521268491868,
+    "avg_volume": 10175820,
+    "market_cap": 144370483200,
+    "ytd_return": 0.21065153453401755
+  },
+  {
+    "ticker": "FIX",
+    "company": "Comfort Systems USA, Inc.",
+    "sector": "Industrials",
+    "beta": 1.602,
+    "volatility_52wk": 0.5496400832278155,
+    "avg_volume": 509710,
+    "market_cap": 46708883456,
+    "ytd_return": 0.2744211469505714
+  },
+  {
+    "ticker": "CTVA",
+    "company": "Corteva, Inc.",
+    "sector": "Basic Materials",
+    "beta": 0.721,
+    "volatility_52wk": 0.2567814726240889,
+    "avg_volume": 4216260,
+    "market_cap": 52267868160,
+    "ytd_return": 0.13577326827330571
+  },
+  {
+    "ticker": "GLW",
+    "company": "Corning Incorporated",
+    "sector": "Technology",
+    "beta": 1.022,
+    "volatility_52wk": 0.4430391001911185,
+    "avg_volume": 16394640,
+    "market_cap": 107054759936,
+    "ytd_return": 0.35976622262417185
+  },
+  {
+    "ticker": "ED",
+    "company": "Consolidated Edison, Inc.",
+    "sector": "Utilities",
+    "beta": 0.345,
+    "volatility_52wk": 0.18722568668076178,
+    "avg_volume": 3297530,
+    "market_cap": 40585494528,
+    "ytd_return": 0.12291230301126463
+  },
+  {
+    "ticker": "CTRA",
+    "company": "Coterra Energy Inc.",
+    "sector": "Energy",
+    "beta": 0.353,
+    "volatility_52wk": 0.30968050685799636,
+    "avg_volume": 7161870,
+    "market_cap": 23886718976,
+    "ytd_return": 0.16654136246786816
+  },
+  {
+    "ticker": "STZ",
+    "company": "Constellation Brands, Inc.",
+    "sector": "Consumer Defensive",
+    "beta": 0.422,
+    "volatility_52wk": 0.29103905649041717,
+    "avg_volume": 1843560,
+    "market_cap": 25637062656,
+    "ytd_return": 0.03754340950982396
+  },
+  {
+    "ticker": "CRH",
+    "company": "CRH PLC",
+    "sector": "Basic Materials",
+    "beta": 1.203,
+    "volatility_52wk": 0.33800941141035457,
+    "avg_volume": 5776240,
+    "market_cap": 69470322688,
+    "ytd_return": -0.15841504581257032
+  },
+  {
+    "ticker": "DECK",
+    "company": "Deckers Outdoor Corporation",
+    "sector": "Consumer Cyclical",
+    "beta": 1.161,
+    "volatility_52wk": 0.543001157140175,
+    "avg_volume": 2261940,
+    "market_cap": 14883462144,
+    "ytd_return": -0.023785006964617657
+  },
+  {
+    "ticker": "CCI",
+    "company": "Crown Castle Inc.",
+    "sector": "Real Estate",
+    "beta": 0.951,
+    "volatility_52wk": 0.27553901116636376,
+    "avg_volume": 3469940,
+    "market_cap": 38893121536,
+    "ytd_return": 0.019503984401973287
+  },
+  {
+    "ticker": "DHR",
+    "company": "Danaher Corporation",
+    "sector": "Healthcare",
+    "beta": 0.964,
+    "volatility_52wk": 0.31863270574326025,
+    "avg_volume": 3625350,
+    "market_cap": 139012997120,
+    "ytd_return": -0.15147567196622616
+  },
+  {
+    "ticker": "CVS",
+    "company": "CVS Health Corporation",
+    "sector": "Healthcare",
+    "beta": 0.464,
+    "volatility_52wk": 0.30620050280582306,
+    "avg_volume": 9142080,
+    "market_cap": 98838077440,
+    "ytd_return": -0.027580171723747163
+  },
+  {
+    "ticker": "DRI",
+    "company": "Darden Restaurants, Inc.",
+    "sector": "Consumer Cyclical",
+    "beta": 0.599,
+    "volatility_52wk": 0.2647595284622415,
+    "avg_volume": 1163190,
+    "market_cap": 22931257344,
+    "ytd_return": 0.08530519410921596
+  },
+  {
+    "ticker": "DVA",
+    "company": "DaVita Inc.",
+    "sector": "Healthcare",
+    "beta": 0.931,
+    "volatility_52wk": 0.3666278260593123,
+    "avg_volume": 792740,
+    "market_cap": 10166061056,
+    "ytd_return": 0.3165661662243226
+  },
+  {
+    "ticker": "DAL",
+    "company": "Delta Air Lines, Inc.",
+    "sector": "Industrials",
+    "beta": 1.35,
+    "volatility_52wk": 0.508284638337926,
+    "avg_volume": 11807050,
+    "market_cap": 38358364160,
+    "ytd_return": -0.14552562398418353
+  },
+  {
+    "ticker": "CMI",
+    "company": "Cummins Inc.",
+    "sector": "Industrials",
+    "beta": 1.127,
+    "volatility_52wk": 0.3391610152016232,
+    "avg_volume": 969060,
+    "market_cap": 74343383040,
+    "ytd_return": 0.03294820260635524
+  },
+  {
+    "ticker": "DE",
+    "company": "Deere & Company",
+    "sector": "Industrials",
+    "beta": 0.961,
+    "volatility_52wk": 0.3022021450523453,
+    "avg_volume": 1520770,
+    "market_cap": 160233046016,
+    "ytd_return": 0.26343195148672516
+  },
+  {
+    "ticker": "DELL",
+    "company": "Dell Technologies Inc.",
+    "sector": "Technology",
+    "beta": 1.036,
+    "volatility_52wk": 0.5521577306979055,
+    "avg_volume": 11845440,
+    "market_cap": 95949209600,
+    "ytd_return": 0.1461658233937289
+  },
+  {
+    "ticker": "DG",
+    "company": "Dollar General Corporation",
+    "sector": "Consumer Defensive",
+    "beta": 0.22,
+    "volatility_52wk": 0.3775489446530779,
+    "avg_volume": 2845060,
+    "market_cap": 31924940800,
+    "ytd_return": 0.06936112941352811
+  },
+  {
+    "ticker": "DVN",
+    "company": "Devon Energy Corporation",
+    "sector": "Energy",
+    "beta": 0.619,
+    "volatility_52wk": 0.4156988325337431,
+    "avg_volume": 11882410,
+    "market_cap": 28017338368,
+    "ytd_return": 0.1745445153626939
+  },
+  {
+    "ticker": "D",
+    "company": "Dominion Energy, Inc.",
+    "sector": "Utilities",
+    "beta": 0.67,
+    "volatility_52wk": 0.20854560527438437,
+    "avg_volume": 6884960,
+    "market_cap": 55047131136,
+    "ytd_return": 0.06752194271888354
+  },
+  {
+    "ticker": "DPZ",
+    "company": "Domino's Pizza Inc",
+    "sector": "Consumer Cyclical",
+    "beta": 1.162,
+    "volatility_52wk": 0.25103847499209514,
+    "avg_volume": 1081320,
+    "market_cap": 13770023936,
+    "ytd_return": -0.03966797207865481
+  },
+  {
+    "ticker": "DOV",
+    "company": "Dover Corporation",
+    "sector": "Industrials",
+    "beta": 1.249,
+    "volatility_52wk": 0.2763583629176517,
+    "avg_volume": 1327000,
+    "market_cap": 28321452032,
+    "ytd_return": 0.06472540571619573
+  },
+  {
+    "ticker": "DLR",
+    "company": "Digital Realty Trust, Inc.",
+    "sector": "Real Estate",
+    "beta": 1.133,
+    "volatility_52wk": 0.24830411593635096,
+    "avg_volume": 2084720,
+    "market_cap": 61892648960,
+    "ytd_return": 0.13648973636536685
+  },
+  {
+    "ticker": "DHI",
+    "company": "D.R. Horton, Inc.",
+    "sector": "Consumer Cyclical",
+    "beta": 1.407,
+    "volatility_52wk": 0.3876203843946449,
+    "avg_volume": 2397800,
+    "market_cap": 41787342848,
+    "ytd_return": 0.010568166848972126
+  },
+  {
+    "ticker": "DOW",
+    "company": "Dow Inc.",
+    "sector": "Basic Materials",
+    "beta": 0.71,
+    "volatility_52wk": 0.5165817257485925,
+    "avg_volume": 13760160,
+    "market_cap": 25325363200,
+    "ytd_return": 0.37124013809612505
+  },
+  {
+    "ticker": "DUK",
+    "company": "Duke Energy Corporation (Holdin",
+    "sector": "Utilities",
+    "beta": 0.466,
+    "volatility_52wk": 0.16047385661846492,
+    "avg_volume": 4362250,
+    "market_cap": 101966938112,
+    "ytd_return": 0.12823567136851483
+  },
+  {
+    "ticker": "DTE",
+    "company": "DTE Energy Company",
+    "sector": "Utilities",
+    "beta": 0.434,
+    "volatility_52wk": 0.16860888208846458,
+    "avg_volume": 1599210,
+    "market_cap": 30823532544,
+    "ytd_return": 0.1516569820489173
+  },
+  {
+    "ticker": "EIX",
+    "company": "Edison International",
+    "sector": "Utilities",
+    "beta": 0.777,
+    "volatility_52wk": 0.2953696405908421,
+    "avg_volume": 3589200,
+    "market_cap": 26777597952,
+    "ytd_return": 0.1777449823865292
+  },
+  {
+    "ticker": "ECL",
+    "company": "Ecolab Inc.",
+    "sector": "Basic Materials",
+    "beta": 0.979,
+    "volatility_52wk": 0.20681576022556925,
+    "avg_volume": 1420420,
+    "market_cap": 78849974272,
+    "ytd_return": 0.07634018685160027
+  },
+  {
+    "ticker": "DD",
+    "company": "DuPont de Nemours, Inc.",
+    "sector": "Basic Materials",
+    "beta": 1.115,
+    "volatility_52wk": 0.3662170925955247,
+    "avg_volume": 3763230,
+    "market_cap": 18568986624,
+    "ytd_return": 0.107413738790768
+  },
+  {
+    "ticker": "EW",
+    "company": "Edwards Lifesciences Corporatio",
+    "sector": "Healthcare",
+    "beta": 0.934,
+    "volatility_52wk": 0.23356149848103633,
+    "avg_volume": 4946470,
+    "market_cap": 48479375360,
+    "ytd_return": -0.043243904397331494
+  },
+  {
+    "ticker": "EME",
+    "company": "EMCOR Group, Inc.",
+    "sector": "Industrials",
+    "beta": 1.14,
+    "volatility_52wk": 0.40447153915881234,
+    "avg_volume": 496370,
+    "market_cap": 31511138304,
+    "ytd_return": 0.10512792773300157
+  },
+  {
+    "ticker": "ETN",
+    "company": "Eaton Corporation, PLC",
+    "sector": "Industrials",
+    "beta": 1.167,
+    "volatility_52wk": 0.343174529461582,
+    "avg_volume": 2550810,
+    "market_cap": 134168354816,
+    "ytd_return": 0.062448451296533224
+  },
+  {
+    "ticker": "ELV",
+    "company": "Elevance Health, Inc.",
+    "sector": "Healthcare",
+    "beta": 0.468,
+    "volatility_52wk": 0.40373959921515523,
+    "avg_volume": 2803200,
+    "market_cap": 61554532352,
+    "ytd_return": -0.18238527975035285
+  },
+  {
+    "ticker": "EOG",
+    "company": "EOG Resources, Inc.",
+    "sector": "Energy",
+    "beta": 0.427,
+    "volatility_52wk": 0.2950650316508041,
+    "avg_volume": 6532760,
+    "market_cap": 72388059136,
+    "ytd_return": 0.22503969212721422
+  },
+  {
+    "ticker": "ETR",
+    "company": "Entergy Corporation",
+    "sector": "Utilities",
+    "beta": 0.602,
+    "volatility_52wk": 0.19560739663541704,
+    "avg_volume": 2569920,
+    "market_cap": 47079231488,
+    "ytd_return": 0.1154911172746691
+  },
+  {
+    "ticker": "EMR",
+    "company": "Emerson Electric Company",
+    "sector": "Industrials",
+    "beta": 1.243,
+    "volatility_52wk": 0.3210082333526507,
+    "avg_volume": 2740480,
+    "market_cap": 77294051328,
+    "ytd_return": 0.018701171765287437
+  },
+  {
+    "ticker": "EQT",
+    "company": "EQT Corporation",
+    "sector": "Energy",
+    "beta": 0.722,
+    "volatility_52wk": 0.3589790861055062,
+    "avg_volume": 8861360,
+    "market_cap": 38917238784,
+    "ytd_return": 0.15899738394250754
+  },
+  {
+    "ticker": "EPAM",
+    "company": "EPAM Systems, Inc.",
+    "sector": "Technology",
+    "beta": 1.768,
+    "volatility_52wk": 0.47092315954702224,
+    "avg_volume": 1419510,
+    "market_cap": 8022333440,
+    "ytd_return": -0.27232370432173253
+  },
+  {
+    "ticker": "EFX",
+    "company": "Equifax, Inc.",
+    "sector": "Industrials",
+    "beta": 1.532,
+    "volatility_52wk": 0.38808624047285983,
+    "avg_volume": 1352650,
+    "market_cap": 24716253184,
+    "ytd_return": -0.028967887602688307
+  },
+  {
+    "ticker": "ESS",
+    "company": "Essex Property Trust, Inc.",
+    "sector": "Real Estate",
+    "beta": 0.722,
+    "volatility_52wk": 0.24606879555766661,
+    "avg_volume": 467210,
+    "market_cap": 17431910400,
+    "ytd_return": -0.006851219063666728
+  },
+  {
+    "ticker": "EQR",
+    "company": "Equity Residential",
+    "sector": "Real Estate",
+    "beta": 0.735,
+    "volatility_52wk": 0.2330799363436834,
+    "avg_volume": 2406810,
+    "market_cap": 24155734016,
+    "ytd_return": 0.011123689424229767
+  },
+  {
+    "ticker": "EL",
+    "company": "Estee Lauder Companies, Inc. (T",
+    "sector": "Consumer Defensive",
+    "beta": 1.112,
+    "volatility_52wk": 0.49557241074835834,
+    "avg_volume": 4188000,
+    "market_cap": 32267862016,
+    "ytd_return": -0.13150993475638642
+  },
+  {
+    "ticker": "EG",
+    "company": "Everest Group, Ltd.",
+    "sector": "Financial Services",
+    "beta": 0.326,
+    "volatility_52wk": 0.2575792648580315,
+    "avg_volume": 375710,
+    "market_cap": 13226967040,
+    "ytd_return": -0.0011062712945819348
+  },
+  {
+    "ticker": "EXR",
+    "company": "Extra Space Storage Inc",
+    "sector": "Real Estate",
+    "beta": 1.242,
+    "volatility_52wk": 0.26738940080640355,
+    "avg_volume": 1151940,
+    "market_cap": 31958493184,
+    "ytd_return": 0.11949296595112574
+  },
+  {
+    "ticker": "EVRG",
+    "company": "Evergy, Inc.",
+    "sector": "Utilities",
+    "beta": 0.604,
+    "volatility_52wk": 0.16766051306747906,
+    "avg_volume": 2397690,
+    "market_cap": 18977505280,
+    "ytd_return": 0.1406677411292631
+  },
+  {
+    "ticker": "ES",
+    "company": "Eversource Energy (D/B/A)",
+    "sector": "Utilities",
+    "beta": 0.753,
+    "volatility_52wk": 0.26127256975773494,
+    "avg_volume": 2390940,
+    "market_cap": 27604633600,
+    "ytd_return": 0.09374089203162063
+  },
+  {
+    "ticker": "FICO",
+    "company": "Fair Isaac Corporation",
+    "sector": "Technology",
+    "beta": 1.277,
+    "volatility_52wk": 0.4868419956557361,
+    "avg_volume": 287240,
+    "market_cap": 34063677440,
+    "ytd_return": -0.10179095190878278
+  },
+  {
+    "ticker": "FRT",
+    "company": "Federal Realty Investment Trust",
+    "sector": "Real Estate",
+    "beta": 1.011,
+    "volatility_52wk": 0.22331334684971463,
+    "avg_volume": 830010,
+    "market_cap": 9176181760,
+    "ytd_return": 0.08603457919300836
+  },
+  {
+    "ticker": "FDS",
+    "company": "FactSet Research Systems Inc.",
+    "sector": "Financial Services",
+    "beta": 0.751,
+    "volatility_52wk": 0.3556546277019916,
+    "avg_volume": 1052760,
+    "market_cap": 8380194304,
+    "ytd_return": -0.20719550734965914
+  },
+  {
+    "ticker": "FE",
+    "company": "FirstEnergy Corp.",
+    "sector": "Utilities",
+    "beta": 0.601,
+    "volatility_52wk": 0.1619670793070759,
+    "avg_volume": 4035500,
+    "market_cap": 29350320128,
+    "ytd_return": 0.12328771626135718
+  },
+  {
+    "ticker": "XOM",
+    "company": "Exxon Mobil Corporation",
+    "sector": "Energy",
+    "beta": 0.348,
+    "volatility_52wk": 0.24734641181530959,
+    "avg_volume": 20892340,
+    "market_cap": 631056302080,
+    "ytd_return": 0.2328577646365718
+  },
+  {
+    "ticker": "F",
+    "company": "Ford Motor Company",
+    "sector": "Consumer Cyclical",
+    "beta": 1.665,
+    "volatility_52wk": 0.3299653761300859,
+    "avg_volume": 74469130,
+    "market_cap": 48152965120,
+    "ytd_return": -0.08920543631528845
+  },
+  {
+    "ticker": "FTV",
+    "company": "Fortive Corporation",
+    "sector": "Technology",
+    "beta": 0.998,
+    "volatility_52wk": 0.29885496335519157,
+    "avg_volume": 3380940,
+    "market_cap": 17789427712,
+    "ytd_return": 0.03610760104781243
+  },
+  {
+    "ticker": "FIS",
+    "company": "Fidelity National Information S",
+    "sector": "Technology",
+    "beta": 0.909,
+    "volatility_52wk": 0.3038099046933195,
+    "avg_volume": 6085150,
+    "market_cap": 26265391104,
+    "ytd_return": -0.21533069912666572
+  },
+  {
+    "ticker": "FDX",
+    "company": "FedEx Corporation",
+    "sector": "Industrials",
+    "beta": 1.281,
+    "volatility_52wk": 0.3218602363994493,
+    "avg_volume": 1817120,
+    "market_cap": 83610820608,
+    "ytd_return": 0.22505373084231553
+  },
+  {
+    "ticker": "BEN",
+    "company": "Franklin Resources, Inc.",
+    "sector": "Financial Services",
+    "beta": 1.461,
+    "volatility_52wk": 0.2954538868487914,
+    "avg_volume": 5358770,
+    "market_cap": 13058230272,
+    "ytd_return": 0.10252103412919995
+  },
+  {
+    "ticker": "GNRC",
+    "company": "Generac Holdlings Inc.",
+    "sector": "Industrials",
+    "beta": 1.769,
+    "volatility_52wk": 0.5149419904564767,
+    "avg_volume": 1015860,
+    "market_cap": 11835402240,
+    "ytd_return": 0.4459248437082641
+  },
+  {
+    "ticker": "FCX",
+    "company": "Freeport-McMoRan, Inc.",
+    "sector": "Basic Materials",
+    "beta": 1.438,
+    "volatility_52wk": 0.49958473462305447,
+    "avg_volume": 19709050,
+    "market_cap": 83695435776,
+    "ytd_return": 0.14307722436957593
+  },
+  {
+    "ticker": "GM",
+    "company": "General Motors Company",
+    "sector": "Consumer Cyclical",
+    "beta": 1.356,
+    "volatility_52wk": 0.35680101488600485,
+    "avg_volume": 8593280,
+    "market_cap": 68472020992,
+    "ytd_return": -0.07125221083319334
+  },
+  {
+    "ticker": "GRMN",
+    "company": "Garmin Ltd.",
+    "sector": "Technology",
+    "beta": 0.949,
+    "volatility_52wk": 0.35733517507672574,
+    "avg_volume": 1044760,
+    "market_cap": 46107820032,
+    "ytd_return": 0.20272669823747572
+  },
+  {
+    "ticker": "GEV",
+    "company": "GE Vernova Inc.",
+    "sector": "Industrials",
+    "beta": null,
+    "volatility_52wk": 0.5156635467386825,
+    "avg_volume": 2496400,
+    "market_cap": 222275207168,
+    "ytd_return": 0.16140091920536725
+  },
+  {
+    "ticker": "GE",
+    "company": "GE Aerospace",
+    "sector": "Industrials",
+    "beta": 1.369,
+    "volatility_52wk": 0.31575134701265933,
+    "avg_volume": 5131750,
+    "market_cap": 333943537664,
+    "ytd_return": 0.007357709591777085
+  },
+  {
+    "ticker": "IT",
+    "company": "Gartner, Inc.",
+    "sector": "Technology",
+    "beta": 1.083,
+    "volatility_52wk": 0.4931332935317798,
+    "avg_volume": 1681790,
+    "market_cap": 12026791936,
+    "ytd_return": -0.28701007943994844
+  },
+  {
+    "ticker": "GPC",
+    "company": "Genuine Parts Company",
+    "sector": "Consumer Cyclical",
+    "beta": 0.734,
+    "volatility_52wk": 0.2977840364700675,
+    "avg_volume": 1472000,
+    "market_cap": 15452394496,
+    "ytd_return": -0.06838712384623866
+  },
+  {
+    "ticker": "GIS",
+    "company": "General Mills, Inc.",
+    "sector": "Consumer Defensive",
+    "beta": -0.095,
+    "volatility_52wk": 0.23656886737384833,
+    "avg_volume": 6868140,
+    "market_cap": 23352219648,
+    "ytd_return": -0.03127734617225343
+  },
+  {
+    "ticker": "GD",
+    "company": "General Dynamics Corporation",
+    "sector": "Industrials",
+    "beta": 0.372,
+    "volatility_52wk": 0.21797448782437104,
+    "avg_volume": 1225190,
+    "market_cap": 97393041408,
+    "ytd_return": 0.058503193637058186
+  },
+  {
+    "ticker": "GDDY",
+    "company": "GoDaddy Inc.",
+    "sector": "Technology",
+    "beta": 0.979,
+    "volatility_52wk": 0.357400155632951,
+    "avg_volume": 3685560,
+    "market_cap": 12533031936,
+    "ytd_return": -0.20730678696202612
+  },
+  {
+    "ticker": "GS",
+    "company": "Goldman Sachs Group, Inc. (The)",
+    "sector": "Financial Services",
+    "beta": 1.336,
+    "volatility_52wk": 0.3193012209112418,
+    "avg_volume": 2834650,
+    "market_cap": 243859881984,
+    "ytd_return": -0.10162526108025294
+  },
+  {
+    "ticker": "GPN",
+    "company": "Global Payments Inc.",
+    "sector": "Industrials",
+    "beta": 0.732,
+    "volatility_52wk": 0.45027066316500447,
+    "avg_volume": 4368170,
+    "market_cap": 20716896256,
+    "ytd_return": 0.011518638430330587
+  },
+  {
+    "ticker": "HPE",
+    "company": "Hewlett Packard Enterprise Comp",
+    "sector": "Technology",
+    "beta": 1.311,
+    "volatility_52wk": 0.43697756087408,
+    "avg_volume": 16170440,
+    "market_cap": 28265412608,
+    "ytd_return": -0.1257757925499136
+  },
+  {
+    "ticker": "HCA",
+    "company": "HCA Healthcare, Inc.",
+    "sector": "Healthcare",
+    "beta": 1.342,
+    "volatility_52wk": 0.2671057772420627,
+    "avg_volume": 1145650,
+    "market_cap": 121121619968,
+    "ytd_return": 0.13269835873707483
+  },
+  {
+    "ticker": "GL",
+    "company": "Globe Life Inc.",
+    "sector": "Financial Services",
+    "beta": 0.455,
+    "volatility_52wk": 0.2518315050645922,
+    "avg_volume": 497430,
+    "market_cap": 11138443264,
+    "ytd_return": 0.02716366534152647
+  },
+  {
+    "ticker": "HIG",
+    "company": "The Hartford Insurance Group, I",
+    "sector": "Financial Services",
+    "beta": 0.516,
+    "volatility_52wk": 0.20964449360622942,
+    "avg_volume": 1717730,
+    "market_cap": 38139613184,
+    "ytd_return": 0.015607901539801112
+  },
+  {
+    "ticker": "HSY",
+    "company": "The Hershey Company",
+    "sector": "Consumer Defensive",
+    "beta": 0.112,
+    "volatility_52wk": 0.2757575025451614,
+    "avg_volume": 1541080,
+    "market_cap": 45042630656,
+    "ytd_return": 0.2334301901003662
+  },
+  {
+    "ticker": "HAL",
+    "company": "Halliburton Company",
+    "sector": "Energy",
+    "beta": 0.753,
+    "volatility_52wk": 0.43930928649319023,
+    "avg_volume": 13847010,
+    "market_cap": 28905666560,
+    "ytd_return": 0.15033779723788857
+  },
+  {
+    "ticker": "DOC",
+    "company": "Healthpeak Properties, Inc.",
+    "sector": "Real Estate",
+    "beta": 1.081,
+    "volatility_52wk": 0.2409598481424418,
+    "avg_volume": 7142190,
+    "market_cap": 11926953984,
+    "ytd_return": 0.06666665881749571
+  },
+  {
+    "ticker": "HWM",
+    "company": "Howmet Aerospace Inc.",
+    "sector": "Industrials",
+    "beta": 1.188,
+    "volatility_52wk": 0.33729506710527296,
+    "avg_volume": 2216460,
+    "market_cap": 100673298432,
+    "ytd_return": 0.18147464432737542
+  },
+  {
+    "ticker": "HLT",
+    "company": "Hilton Worldwide Holdings Inc.",
+    "sector": "Consumer Cyclical",
+    "beta": 1.123,
+    "volatility_52wk": 0.2614740985757911,
+    "avg_volume": 1940540,
+    "market_cap": 69374926848,
+    "ytd_return": 0.0193187366027285
+  },
+  {
+    "ticker": "HD",
+    "company": "Home Depot, Inc. (The)",
+    "sector": "Consumer Cyclical",
+    "beta": 1.044,
+    "volatility_52wk": 0.234949012395695,
+    "avg_volume": 4566360,
+    "market_cap": 346796359680,
+    "ytd_return": 0.03498931770067147
+  },
+  {
+    "ticker": "HRL",
+    "company": "Hormel Foods Corporation",
+    "sector": "Consumer Defensive",
+    "beta": 0.312,
+    "volatility_52wk": 0.2684545519247338,
+    "avg_volume": 4720190,
+    "market_cap": 13129782272,
+    "ytd_return": 0.044035943288709474
+  },
+  {
+    "ticker": "HII",
+    "company": "Huntington Ingalls Industries, ",
+    "sector": "Industrials",
+    "beta": 0.28,
+    "volatility_52wk": 0.33556122922145987,
+    "avg_volume": 457420,
+    "market_cap": 16751133696,
+    "ytd_return": 0.2269048902117584
+  },
+  {
+    "ticker": "HPQ",
+    "company": "HP Inc.",
+    "sector": "Technology",
+    "beta": 1.178,
+    "volatility_52wk": 0.3868746252349016,
+    "avg_volume": 22072460,
+    "market_cap": 17216798720,
+    "ytd_return": -0.12025323932369834
+  },
+  {
+    "ticker": "HUM",
+    "company": "Humana Inc.",
+    "sector": "Healthcare",
+    "beta": 0.415,
+    "volatility_52wk": 0.4927722745087424,
+    "avg_volume": 1677270,
+    "market_cap": 21273731072,
+    "ytd_return": -0.32263314256386183
+  },
+  {
+    "ticker": "HUBB",
+    "company": "Hubbell Inc",
+    "sector": "Industrials",
+    "beta": 0.997,
+    "volatility_52wk": 0.3069372831516609,
+    "avg_volume": 280422,
+    "market_cap": 25330970624,
+    "ytd_return": 0.018378959868821144
+  },
+  {
+    "ticker": "IBM",
+    "company": "International Business Machines",
+    "sector": "Technology",
+    "beta": 0.706,
+    "volatility_52wk": 0.337489980943973,
+    "avg_volume": 9085110,
+    "market_cap": 237707313152,
+    "ytd_return": -0.11200684012516081
+  },
+  {
+    "ticker": "IEX",
+    "company": "IDEX Corporation",
+    "sector": "Industrials",
+    "beta": 0.96,
+    "volatility_52wk": 0.2828762914178245,
+    "avg_volume": 570290,
+    "market_cap": 14469894144,
+    "ytd_return": 0.10521610965467382
+  },
+  {
+    "ticker": "IR",
+    "company": "Ingersoll Rand Inc.",
+    "sector": "Industrials",
+    "beta": 1.289,
+    "volatility_52wk": 0.34139254698625865,
+    "avg_volume": 3033120,
+    "market_cap": 33554315264,
+    "ytd_return": 0.08362585243607346
+  },
+  {
+    "ticker": "ICE",
+    "company": "Intercontinental Exchange Inc.",
+    "sector": "Financial Services",
+    "beta": 1.051,
+    "volatility_52wk": 0.21749780107418484,
+    "avg_volume": 4065490,
+    "market_cap": 94301831168,
+    "ytd_return": 0.03875240162115687
+  },
+  {
+    "ticker": "ITW",
+    "company": "Illinois Tool Works Inc.",
+    "sector": "Industrials",
+    "beta": 1.123,
+    "volatility_52wk": 0.23407401223094904,
+    "avg_volume": 1492500,
+    "market_cap": 78633926656,
+    "ytd_return": 0.11086173812468687
+  },
+  {
+    "ticker": "IFF",
+    "company": "International Flavors & Fragran",
+    "sector": "Basic Materials",
+    "beta": 1.005,
+    "volatility_52wk": 0.2961537760370216,
+    "avg_volume": 1676950,
+    "market_cap": 18554181632,
+    "ytd_return": 0.08437451075651566
+  },
+  {
+    "ticker": "IVZ",
+    "company": "Invesco Ltd",
+    "sector": "Financial Services",
+    "beta": 1.645,
+    "volatility_52wk": 0.40308092374583765,
+    "avg_volume": 5436730,
+    "market_cap": 10284358656,
+    "ytd_return": -0.1213808609108871
+  },
+  {
+    "ticker": "IQV",
+    "company": "IQVIA Holdings, Inc.",
+    "sector": "Healthcare",
+    "beta": 1.411,
+    "volatility_52wk": 0.4289869585659161,
+    "avg_volume": 2683080,
+    "market_cap": 30443679744,
+    "ytd_return": -0.22576203898645403
+  },
+  {
+    "ticker": "INVH",
+    "company": "Invitation Homes Inc.",
+    "sector": "Real Estate",
+    "beta": 0.814,
+    "volatility_52wk": 0.2170220439448855,
+    "avg_volume": 7002010,
+    "market_cap": 15800605696,
+    "ytd_return": -0.05447331407957043
+  },
+  {
+    "ticker": "JBL",
+    "company": "Jabil Inc.",
+    "sector": "Technology",
+    "beta": 1.183,
+    "volatility_52wk": 0.4174673727578165,
+    "avg_volume": 1171430,
+    "market_cap": 25589440512,
+    "ytd_return": 0.0029119220850263475
+  },
+  {
+    "ticker": "IRM",
+    "company": "Iron Mountain Incorporated (Del",
+    "sector": "Real Estate",
+    "beta": 1.148,
+    "volatility_52wk": 0.3234334748735012,
+    "avg_volume": 1747190,
+    "market_cap": 31192123392,
+    "ytd_return": 0.26357524032272595
+  },
+  {
+    "ticker": "IP",
+    "company": "International Paper Company",
+    "sector": "Consumer Cyclical",
+    "beta": 1.038,
+    "volatility_52wk": 0.4078838893520541,
+    "avg_volume": 5948280,
+    "market_cap": 19885922304,
+    "ytd_return": -0.017888229085791924
+  },
+  {
+    "ticker": "J",
+    "company": "Jacobs Solutions Inc.",
+    "sector": "Industrials",
+    "beta": 0.734,
+    "volatility_52wk": 0.3067187873518366,
+    "avg_volume": 806440,
+    "market_cap": 15621902336,
+    "ytd_return": 0.010638988678847092
+  },
+  {
+    "ticker": "KEYS",
+    "company": "Keysight Technologies Inc.",
+    "sector": "Technology",
+    "beta": 1.137,
+    "volatility_52wk": 0.407533972647595,
+    "avg_volume": 2752090,
+    "market_cap": 47665913856,
+    "ytd_return": 0.3186988600851963
+  },
+  {
+    "ticker": "JPM",
+    "company": "JP Morgan Chase & Co.",
+    "sector": "Financial Services",
+    "beta": 1.059,
+    "volatility_52wk": 0.25516959056235183,
+    "avg_volume": 11330010,
+    "market_cap": 768303628288,
+    "ytd_return": -0.1106058706674684
+  },
+  {
+    "ticker": "JCI",
+    "company": "Johnson Controls International ",
+    "sector": "Industrials",
+    "beta": 1.389,
+    "volatility_52wk": 0.29341841065348184,
+    "avg_volume": 4851650,
+    "market_cap": 80710107136,
+    "ytd_return": 0.08249527053630197
+  },
+  {
+    "ticker": "KVUE",
+    "company": "Kenvue Inc.",
+    "sector": "Consumer Defensive",
+    "beta": 0.473,
+    "volatility_52wk": 0.341420782521988,
+    "avg_volume": 32105600,
+    "market_cap": 34836602880,
+    "ytd_return": 0.06177827446174665
+  },
+  {
+    "ticker": "KEY",
+    "company": "KeyCorp",
+    "sector": "Financial Services",
+    "beta": 1.086,
+    "volatility_52wk": 0.3086556050616941,
+    "avg_volume": 17044600,
+    "market_cap": 20904886272,
+    "ytd_return": -0.05338412565882169
+  },
+  {
+    "ticker": "KKR",
+    "company": "KKR & Co. Inc.",
+    "sector": "Financial Services",
+    "beta": 2.013,
+    "volatility_52wk": 0.46200567230929124,
+    "avg_volume": 12123980,
+    "market_cap": 82591760384,
+    "ytd_return": -0.2914662051543695
+  },
+  {
+    "ticker": "KIM",
+    "company": "Kimco Realty Corporation (HC)",
+    "sector": "Real Estate",
+    "beta": 1.058,
+    "volatility_52wk": 0.22814778943626854,
+    "avg_volume": 7690590,
+    "market_cap": 15517901824,
+    "ytd_return": 0.16051850979208662
+  },
+  {
+    "ticker": "KMI",
+    "company": "Kinder Morgan, Inc.",
+    "sector": "Energy",
+    "beta": 0.648,
+    "volatility_52wk": 0.23180232119929578,
+    "avg_volume": 13313220,
+    "market_cap": 74212859904,
+    "ytd_return": 0.2118369881098732
+  },
+  {
+    "ticker": "JNJ",
+    "company": "Johnson & Johnson",
+    "sector": "Healthcare",
+    "beta": 0.326,
+    "volatility_52wk": 0.19143485425314877,
+    "avg_volume": 8571170,
+    "market_cap": 584689713152,
+    "ytd_return": 0.15939226824266
+  },
+  {
+    "ticker": "LW",
+    "company": "Lamb Weston Holdings, Inc.",
+    "sector": "Consumer Defensive",
+    "beta": 0.428,
+    "volatility_52wk": 0.45067329544789575,
+    "avg_volume": 1976190,
+    "market_cap": 6498702848,
+    "ytd_return": 0.08843693030983929
+  },
+  {
+    "ticker": "LVS",
+    "company": "Las Vegas Sands Corp.",
+    "sector": "Consumer Cyclical",
+    "beta": 0.888,
+    "volatility_52wk": 0.40650281327191745,
+    "avg_volume": 4645790,
+    "market_cap": 35889217536,
+    "ytd_return": -0.17804018974623867
+  },
+  {
+    "ticker": "LH",
+    "company": "Labcorp Holdings Inc.",
+    "sector": "Healthcare",
+    "beta": 0.974,
+    "volatility_52wk": 0.2518025332587482,
+    "avg_volume": 546470,
+    "market_cap": 22290982912,
+    "ytd_return": 0.07156484742726973
+  },
+  {
+    "ticker": "LHX",
+    "company": "L3Harris Technologies, Inc.",
+    "sector": "Industrials",
+    "beta": 0.606,
+    "volatility_52wk": 0.24409434574457978,
+    "avg_volume": 1545110,
+    "market_cap": 69404090368,
+    "ytd_return": 0.2040527197958626
+  },
+  {
+    "ticker": "LDOS",
+    "company": "Leidos Holdings, Inc.",
+    "sector": "Technology",
+    "beta": 0.617,
+    "volatility_52wk": 0.2933283744817266,
+    "avg_volume": 1373890,
+    "market_cap": 22724978688,
+    "ytd_return": -0.03041370138948377
+  },
+  {
+    "ticker": "KR",
+    "company": "Kroger Company (The)",
+    "sector": "Consumer Defensive",
+    "beta": 0.59,
+    "volatility_52wk": 0.2732488513178034,
+    "avg_volume": 7412090,
+    "market_cap": 49435791360,
+    "ytd_return": 0.1770965960612402
+  },
+  {
+    "ticker": "LYV",
+    "company": "Live Nation Entertainment, Inc.",
+    "sector": "Communication Services",
+    "beta": 1.145,
+    "volatility_52wk": 0.3213331813954593,
+    "avg_volume": 3308730,
+    "market_cap": 38727053312,
+    "ytd_return": 0.07446154776690962
+  },
+  {
+    "ticker": "LEN",
+    "company": "Lennar Corporation",
+    "sector": "Consumer Cyclical",
+    "beta": 1.403,
+    "volatility_52wk": 0.3703476245267896,
+    "avg_volume": 2253410,
+    "market_cap": 24020695040,
+    "ytd_return": -0.029265045250756863
+  },
+  {
+    "ticker": "LII",
+    "company": "Lennox International, Inc.",
+    "sector": "Industrials",
+    "beta": 1.142,
+    "volatility_52wk": 0.3525486247799757,
+    "avg_volume": 450790,
+    "market_cap": 17756649472,
+    "ytd_return": 0.03720103205945236
+  },
+  {
+    "ticker": "LLY",
+    "company": "Eli Lilly and Company",
+    "sector": "Healthcare",
+    "beta": 0.434,
+    "volatility_52wk": 0.42107730334264537,
+    "avg_volume": 3134640,
+    "market_cap": 893036265472,
+    "ytd_return": -0.08333330508573203
+  },
+  {
+    "ticker": "LYB",
+    "company": "LyondellBasell Industries NV",
+    "sector": "Basic Materials",
+    "beta": 0.674,
+    "volatility_52wk": 0.4672755419503936,
+    "avg_volume": 9017900,
+    "market_cap": 22226505728,
+    "ytd_return": 0.5118270225973767
+  },
+  {
+    "ticker": "L",
+    "company": "Loews Corporation",
+    "sector": "Financial Services",
+    "beta": 0.588,
+    "volatility_52wk": 0.1866544548649347,
+    "avg_volume": 722360,
+    "market_cap": 22300635136,
+    "ytd_return": 0.047773741878915844
+  },
+  {
+    "ticker": "MTB",
+    "company": "M&T Bank Corporation",
+    "sector": "Financial Services",
+    "beta": 0.588,
+    "volatility_52wk": 0.2623447271342682,
+    "avg_volume": 1355910,
+    "market_cap": 31545802752,
+    "ytd_return": 0.03146448558607504
+  },
+  {
+    "ticker": "LMT",
+    "company": "Lockheed Martin Corporation",
+    "sector": "Industrials",
+    "beta": 0.197,
+    "volatility_52wk": 0.2717494545375288,
+    "avg_volume": 1873350,
+    "market_cap": 155890384896,
+    "ytd_return": 0.3514595723597571
+  },
+  {
+    "ticker": "MPC",
+    "company": "Marathon Petroleum Corporation",
+    "sector": "Energy",
+    "beta": 0.708,
+    "volatility_52wk": 0.34817563752365555,
+    "avg_volume": 2992170,
+    "market_cap": 65167605760,
+    "ytd_return": 0.339953976003027
+  },
+  {
+    "ticker": "LOW",
+    "company": "Lowe's Companies, Inc.",
+    "sector": "Consumer Cyclical",
+    "beta": 0.935,
+    "volatility_52wk": 0.25457755338820426,
+    "avg_volume": 3194340,
+    "market_cap": 137923952640,
+    "ytd_return": 0.02025193410976872
+  },
+  {
+    "ticker": "MLM",
+    "company": "Martin Marietta Materials, Inc.",
+    "sector": "Basic Materials",
+    "beta": 1.149,
+    "volatility_52wk": 0.24834978833076238,
+    "avg_volume": 597430,
+    "market_cap": 36366958592,
+    "ytd_return": -0.03853794230020881
+  },
+  {
+    "ticker": "MA",
+    "company": "Mastercard Incorporated",
+    "sector": "Financial Services",
+    "beta": 0.836,
+    "volatility_52wk": 0.23854154928300822,
+    "avg_volume": 4364260,
+    "market_cap": 458048110592,
+    "ytd_return": -0.07243438934821482
+  },
+  {
+    "ticker": "MAS",
+    "company": "Masco Corporation",
+    "sector": "Industrials",
+    "beta": 1.246,
+    "volatility_52wk": 0.33910815614228657,
+    "avg_volume": 2329740,
+    "market_cap": 12752929792,
+    "ytd_return": -0.012564004311371123
+  },
+  {
+    "ticker": "MRSH",
+    "company": "Marsh",
+    "sector": "Financial Services",
+    "beta": 0.731,
+    "volatility_52wk": 0.22777828503548747,
+    "avg_volume": 2835420,
+    "market_cap": 88215592960,
+    "ytd_return": 0.003343018612762258
+  },
+  {
+    "ticker": "MCK",
+    "company": "McKesson Corporation",
+    "sector": "Healthcare",
+    "beta": 0.354,
+    "volatility_52wk": 0.288020343495961,
+    "avg_volume": 740390,
+    "market_cap": 114476982272,
+    "ytd_return": 0.11636549966011281
+  },
+  {
+    "ticker": "MDT",
+    "company": "Medtronic plc.",
+    "sector": "Healthcare",
+    "beta": 0.729,
+    "volatility_52wk": 0.2068767691220954,
+    "avg_volume": 7611780,
+    "market_cap": 116130603008,
+    "ytd_return": -0.053617921522644406
+  },
+  {
+    "ticker": "MTD",
+    "company": "Mettler-Toledo International, I",
+    "sector": "Healthcare",
+    "beta": 1.438,
+    "volatility_52wk": 0.3368494271159176,
+    "avg_volume": 183080,
+    "market_cap": 24817698816,
+    "ytd_return": -0.14293709615384118
+  },
+  {
+    "ticker": "MGM",
+    "company": "MGM Resorts International",
+    "sector": "Consumer Cyclical",
+    "beta": 1.396,
+    "volatility_52wk": 0.4184543655565532,
+    "avg_volume": 5131130,
+    "market_cap": 9494775808,
+    "ytd_return": -0.02521244015687406
+  },
+  {
+    "ticker": "MCD",
+    "company": "McDonald's Corporation",
+    "sector": "Consumer Cyclical",
+    "beta": 0.496,
+    "volatility_52wk": 0.17615942877556368,
+    "avg_volume": 3364560,
+    "market_cap": 234954260480,
+    "ytd_return": 0.08177796938058356
+  },
+  {
+    "ticker": "MKC",
+    "company": "McCormick & Company, Incorporat",
+    "sector": "Consumer Defensive",
+    "beta": 0.574,
+    "volatility_52wk": 0.25954046242915635,
+    "avg_volume": 2475760,
+    "market_cap": 17319634944,
+    "ytd_return": -0.03611772219477999
+  },
+  {
+    "ticker": "MOH",
+    "company": "Molina Healthcare Inc",
+    "sector": "Healthcare",
+    "beta": 0.5,
+    "volatility_52wk": 0.5814340440327466,
+    "avg_volume": 1431230,
+    "market_cap": 7577710080,
+    "ytd_return": -0.19046287243315943
+  },
+  {
+    "ticker": "MET",
+    "company": "MetLife, Inc.",
+    "sector": "Financial Services",
+    "beta": 0.745,
+    "volatility_52wk": 0.29016927602990583,
+    "avg_volume": 4936130,
+    "market_cap": 45753438208,
+    "ytd_return": -0.10570216504018018
+  },
+  {
+    "ticker": "MAA",
+    "company": "Mid-America Apartment Communiti",
+    "sector": "Real Estate",
+    "beta": 0.768,
+    "volatility_52wk": 0.20690324025382545,
+    "avg_volume": 915500,
+    "market_cap": 15727290368,
+    "ytd_return": -0.04556897415492655
+  },
+  {
+    "ticker": "MRK",
+    "company": "Merck & Company, Inc.",
+    "sector": "Healthcare",
+    "beta": 0.264,
+    "volatility_52wk": 0.29621398736010146,
+    "avg_volume": 11209140,
+    "market_cap": 286896357376,
+    "ytd_return": 0.08774076312868685
+  },
+  {
+    "ticker": "MCO",
+    "company": "Moody's Corporation",
+    "sector": "Financial Services",
+    "beta": 1.442,
+    "volatility_52wk": 0.29960493979473213,
+    "avg_volume": 1669190,
+    "market_cap": 81185669120,
+    "ytd_return": -0.05413044444853536
+  },
+  {
+    "ticker": "MS",
+    "company": "Morgan Stanley",
+    "sector": "Financial Services",
+    "beta": 1.207,
+    "volatility_52wk": 0.3084968668293039,
+    "avg_volume": 7894590,
+    "market_cap": 250310279168,
+    "ytd_return": -0.11891143677735706
+  },
+  {
+    "ticker": "MSCI",
+    "company": "MSCI Inc.",
+    "sector": "Financial Services",
+    "beta": 1.301,
+    "volatility_52wk": 0.29870609961101474,
+    "avg_volume": 661850,
+    "market_cap": 42174320640,
+    "ytd_return": 0.0070588062527642634
+  },
+  {
+    "ticker": "MOS",
+    "company": "Mosaic Company (The)",
+    "sector": "Basic Materials",
+    "beta": 0.946,
+    "volatility_52wk": 0.3902864439504379,
+    "avg_volume": 8938830,
+    "market_cap": 8496440320,
+    "ytd_return": 0.051558712413149695
+  },
+  {
+    "ticker": "TAP",
+    "company": "Molson Coors Beverage Company",
+    "sector": "Consumer Defensive",
+    "beta": 0.449,
+    "volatility_52wk": 0.2533341503637042,
+    "avg_volume": 2984180,
+    "market_cap": 9077734400,
+    "ytd_return": -0.016033799826262275
+  },
+  {
+    "ticker": "NEM",
+    "company": "Newmont Corporation",
+    "sector": "Basic Materials",
+    "beta": 0.389,
+    "volatility_52wk": 0.44855678376687286,
+    "avg_volume": 10084050,
+    "market_cap": 123907448832,
+    "ytd_return": 0.14888361502748
+  },
+  {
+    "ticker": "MSI",
+    "company": "Motorola Solutions, Inc.",
+    "sector": "Technology",
+    "beta": 0.96,
+    "volatility_52wk": 0.22992132930215275,
+    "avg_volume": 996780,
+    "market_cap": 76202237952,
+    "ytd_return": 0.2092804132359887
+  },
+  {
+    "ticker": "NI",
+    "company": "NiSource Inc",
+    "sector": "Utilities",
+    "beta": 0.616,
+    "volatility_52wk": 0.19421151194783076,
+    "avg_volume": 4354220,
+    "market_cap": 22342713344,
+    "ytd_return": 0.10199239214002255
+  },
+  {
+    "ticker": "NKE",
+    "company": "Nike, Inc.",
+    "sector": "Consumer Cyclical",
+    "beta": 1.286,
+    "volatility_52wk": 0.4172397999950765,
+    "avg_volume": 15694570,
+    "market_cap": 82901467136,
+    "ytd_return": -0.09908344783051748
+  },
+  {
+    "ticker": "NEE",
+    "company": "NextEra Energy, Inc.",
+    "sector": "Utilities",
+    "beta": 0.749,
+    "volatility_52wk": 0.26090632196337243,
+    "avg_volume": 12687510,
+    "market_cap": 190079713280,
+    "ytd_return": 0.12467559989920489
+  },
+  {
+    "ticker": "NCLH",
+    "company": "Norwegian Cruise Line Holdings ",
+    "sector": "Consumer Cyclical",
+    "beta": 2.044,
+    "volatility_52wk": 0.5623941910938455,
+    "avg_volume": 25033940,
+    "market_cap": 9084663808,
+    "ytd_return": -0.11984202665917347
+  },
+  {
+    "ticker": "NSC",
+    "company": "Norfolk Southern Corporation",
+    "sector": "Industrials",
+    "beta": 1.303,
+    "volatility_52wk": 0.22660926734311682,
+    "avg_volume": 1573480,
+    "market_cap": 67052716032,
+    "ytd_return": 0.05218535415000669
+  },
+  {
+    "ticker": "NOC",
+    "company": "Northrop Grumman Corporation",
+    "sector": "Industrials",
+    "beta": 0.007,
+    "volatility_52wk": 0.2905699223155021,
+    "avg_volume": 1009610,
+    "market_cap": 107898511360,
+    "ytd_return": 0.29107338653005754
+  },
+  {
+    "ticker": "NRG",
+    "company": "NRG Energy, Inc.",
+    "sector": "Utilities",
+    "beta": 1.265,
+    "volatility_52wk": 0.5273936163102733,
+    "avg_volume": 4451180,
+    "market_cap": 32523646976,
+    "ytd_return": -0.07125659651505281
+  },
+  {
+    "ticker": "OXY",
+    "company": "Occidental Petroleum Corporatio",
+    "sector": "Energy",
+    "beta": 0.351,
+    "volatility_52wk": 0.38030372438403776,
+    "avg_volume": 17633540,
+    "market_cap": 54353154048,
+    "ytd_return": 0.2786691189462723
+  },
+  {
+    "ticker": "NVR",
+    "company": "NVR, Inc.",
+    "sector": "Consumer Cyclical",
+    "beta": 1.036,
+    "volatility_52wk": 0.27801614955089543,
+    "avg_volume": 24010,
+    "market_cap": 19201105920,
+    "ytd_return": -0.043968367879898516
+  },
+  {
+    "ticker": "ORCL",
+    "company": "Oracle Corporation",
+    "sector": "Technology",
+    "beta": 1.648,
+    "volatility_52wk": 0.611742964268269,
+    "avg_volume": 25960390,
+    "market_cap": 429561675776,
+    "ytd_return": -0.2184354326986537
+  },
+  {
+    "ticker": "NUE",
+    "company": "Nucor Corporation",
+    "sector": "Basic Materials",
+    "beta": 1.768,
+    "volatility_52wk": 0.3617898190413052,
+    "avg_volume": 1645050,
+    "market_cap": 38146158592,
+    "ytd_return": -0.0038370361269408795
+  },
+  {
+    "ticker": "OKE",
+    "company": "ONEOK, Inc.",
+    "sector": "Energy",
+    "beta": 0.88,
+    "volatility_52wk": 0.31503032796392855,
+    "avg_volume": 5917660,
+    "market_cap": 54529814528,
+    "ytd_return": 0.169357070049627
+  },
+  {
+    "ticker": "OMC",
+    "company": "Omnicom Group Inc.",
+    "sector": "Communication Services",
+    "beta": 0.71,
+    "volatility_52wk": 0.37358951524881817,
+    "avg_volume": 5135110,
+    "market_cap": 26370080768,
+    "ytd_return": 0.04439253103663413
+  },
+  {
+    "ticker": "PAYC",
+    "company": "Paycom Software, Inc.",
+    "sector": "Technology",
+    "beta": 0.812,
+    "volatility_52wk": 0.37764176686773376,
+    "avg_volume": 2612230,
+    "market_cap": 7491939840,
+    "ytd_return": -0.09442257195510552
+  },
+  {
+    "ticker": "PKG",
+    "company": "Packaging Corporation of Americ",
+    "sector": "Consumer Cyclical",
+    "beta": 0.896,
+    "volatility_52wk": 0.27334195592222743,
+    "avg_volume": 943550,
+    "market_cap": 19689230336,
+    "ytd_return": 0.053997771025646214
+  },
+  {
+    "ticker": "OTIS",
+    "company": "Otis Worldwide Corporation",
+    "sector": "Industrials",
+    "beta": 0.986,
+    "volatility_52wk": 0.2479890035140951,
+    "avg_volume": 3643660,
+    "market_cap": 33940350976,
+    "ytd_return": 0.009961568024596464
+  },
+  {
+    "ticker": "PH",
+    "company": "Parker-Hannifin Corporation",
+    "sector": "Industrials",
+    "beta": 1.218,
+    "volatility_52wk": 0.30927883837426234,
+    "avg_volume": 777000,
+    "market_cap": 115157434368,
+    "ytd_return": 0.033266953269782525
+  },
+  {
+    "ticker": "PFE",
+    "company": "Pfizer, Inc.",
+    "sector": "Healthcare",
+    "beta": 0.412,
+    "volatility_52wk": 0.2690777358386247,
+    "avg_volume": 37964710,
+    "market_cap": 151311581184,
+    "ytd_return": 0.07426524659336024
+  },
+  {
+    "ticker": "PM",
+    "company": "Philip Morris International Inc",
+    "sector": "Consumer Defensive",
+    "beta": 0.395,
+    "volatility_52wk": 0.25311834119814375,
+    "avg_volume": 5413670,
+    "market_cap": 267025039360,
+    "ytd_return": 0.06038672795692814
+  },
+  {
+    "ticker": "PNW",
+    "company": "Pinnacle West Capital Corporati",
+    "sector": "Utilities",
+    "beta": 0.492,
+    "volatility_52wk": 0.16646792289008325,
+    "avg_volume": 1670380,
+    "market_cap": 12230790144,
+    "ytd_return": 0.16224192365307946
+  },
+  {
+    "ticker": "PSX",
+    "company": "Phillips 66",
+    "sector": "Energy",
+    "beta": 0.871,
+    "volatility_52wk": 0.3621833008766897,
+    "avg_volume": 3071380,
+    "market_cap": 65940426752,
+    "ytd_return": 0.2710423328825542
+  },
+  {
+    "ticker": "PCG",
+    "company": "Pacific Gas & Electric Co.",
+    "sector": "Utilities",
+    "beta": 0.308,
+    "volatility_52wk": 0.2818885803136513,
+    "avg_volume": 20375180,
+    "market_cap": 39750246400,
+    "ytd_return": 0.11739396396271773
+  },
+  {
+    "ticker": "PNR",
+    "company": "Pentair plc.",
+    "sector": "Industrials",
+    "beta": 1.212,
+    "volatility_52wk": 0.30198081633469437,
+    "avg_volume": 1633590,
+    "market_cap": 14873411584,
+    "ytd_return": -0.12610223663434547
+  },
+  {
+    "ticker": "PPL",
+    "company": "PPL Corporation",
+    "sector": "Utilities",
+    "beta": 0.689,
+    "volatility_52wk": 0.17824228490087649,
+    "avg_volume": 13675710,
+    "market_cap": 28696164352,
+    "ytd_return": 0.09797774328989221
+  },
+  {
+    "ticker": "PPG",
+    "company": "PPG Industries, Inc.",
+    "sector": "Basic Materials",
+    "beta": 1.123,
+    "volatility_52wk": 0.3005961166280159,
+    "avg_volume": 2022480,
+    "market_cap": 23446831104,
+    "ytd_return": 0.02252034986568683
+  },
+  {
+    "ticker": "PGR",
+    "company": "Progressive Corporation (The)",
+    "sector": "Financial Services",
+    "beta": 0.29,
+    "volatility_52wk": 0.26037320508567063,
+    "avg_volume": 3021620,
+    "market_cap": 120507916288,
+    "ytd_return": -0.007165703604849435
+  },
+  {
+    "ticker": "PG",
+    "company": "Procter & Gamble Company (The)",
+    "sector": "Consumer Defensive",
+    "beta": 0.34,
+    "volatility_52wk": 0.18990500176170103,
+    "avg_volume": 10052350,
+    "market_cap": 362950754304,
+    "ytd_return": 0.08350385892738209
+  },
+  {
+    "ticker": "PNC",
+    "company": "PNC Financial Services Group, I",
+    "sector": "Financial Services",
+    "beta": 0.974,
+    "volatility_52wk": 0.2594752940785715,
+    "avg_volume": 2808850,
+    "market_cap": 80876929024,
+    "ytd_return": -0.025253056971219223
+  },
+  {
+    "ticker": "PLD",
+    "company": "Prologis, Inc.",
+    "sector": "Real Estate",
+    "beta": 1.416,
+    "volatility_52wk": 0.27332772338084993,
+    "avg_volume": 3610420,
+    "market_cap": 123003887616,
+    "ytd_return": 0.04254157384384672
+  },
+  {
+    "ticker": "PHM",
+    "company": "PulteGroup, Inc.",
+    "sector": "Consumer Cyclical",
+    "beta": 1.298,
+    "volatility_52wk": 0.3553521103751944,
+    "avg_volume": 1493260,
+    "market_cap": 23822694400,
+    "ytd_return": 0.0736541250150656
+  },
+  {
+    "ticker": "PEG",
+    "company": "Public Service Enterprise Group",
+    "sector": "Utilities",
+    "beta": 0.582,
+    "volatility_52wk": 0.19917847347649098,
+    "avg_volume": 3061160,
+    "market_cap": 41387352064,
+    "ytd_return": 0.029139408230646428
+  },
+  {
+    "ticker": "PRU",
+    "company": "Prudential Financial, Inc.",
+    "sector": "Financial Services",
+    "beta": 0.966,
+    "volatility_52wk": 0.27463196970425763,
+    "avg_volume": 2465850,
+    "market_cap": 32892958720,
+    "ytd_return": -0.14709756385338082
+  },
+  {
+    "ticker": "PSA",
+    "company": "Public Storage",
+    "sector": "Real Estate",
+    "beta": 0.965,
+    "volatility_52wk": 0.23150346165439792,
+    "avg_volume": 1070540,
+    "market_cap": 53041557504,
+    "ytd_return": 0.1922690062374226
+  },
+  {
+    "ticker": "Q",
+    "company": "Qnity Electronics, Inc.",
+    "sector": "Technology",
+    "beta": null,
+    "volatility_52wk": 0.538684140046136,
+    "avg_volume": 3436330,
+    "market_cap": 23232303104,
+    "ytd_return": 0.2960696050697675
+  },
+  {
+    "ticker": "PWR",
+    "company": "Quanta Services, Inc.",
+    "sector": "Industrials",
+    "beta": 1.109,
+    "volatility_52wk": 0.3564271918132567,
+    "avg_volume": 1107560,
+    "market_cap": 83923779584,
+    "ytd_return": 0.2285980973433576
+  },
+  {
+    "ticker": "RL",
+    "company": "Ralph Lauren Corporation",
+    "sector": "Consumer Cyclical",
+    "beta": 1.488,
+    "volatility_52wk": 0.38154065958755806,
+    "avg_volume": 672890,
+    "market_cap": 20642080768,
+    "ytd_return": -0.0666703817866635
+  },
+  {
+    "ticker": "RJF",
+    "company": "Raymond James Financial, Inc.",
+    "sector": "Financial Services",
+    "beta": 1.007,
+    "volatility_52wk": 0.2797442861652496,
+    "avg_volume": 1314980,
+    "market_cap": 29342052352,
+    "ytd_return": -0.07059903802478901
+  },
+  {
+    "ticker": "DGX",
+    "company": "Quest Diagnostics Incorporated",
+    "sector": "Healthcare",
+    "beta": 0.63,
+    "volatility_52wk": 0.23968017975854364,
+    "avg_volume": 817590,
+    "market_cap": 22138898432,
+    "ytd_return": 0.14626856786789869
+  },
+  {
+    "ticker": "RF",
+    "company": "Regions Financial Corporation",
+    "sector": "Financial Services",
+    "beta": 1.041,
+    "volatility_52wk": 0.2990480705197023,
+    "avg_volume": 14601860,
+    "market_cap": 23061850112,
+    "ytd_return": -0.01886787229650109
+  },
+  {
+    "ticker": "RTX",
+    "company": "RTX Corporation",
+    "sector": "Industrials",
+    "beta": 0.406,
+    "volatility_52wk": 0.2781908133684947,
+    "avg_volume": 8033170,
+    "market_cap": 281679069184,
+    "ytd_return": 0.12021358882155374
+  },
+  {
+    "ticker": "O",
+    "company": "Realty Income Corporation",
+    "sector": "Real Estate",
+    "beta": 0.774,
+    "volatility_52wk": 0.17205637877128951,
+    "avg_volume": 7249950,
+    "market_cap": 60338774016,
+    "ytd_return": 0.13418248896243898
+  },
+  {
+    "ticker": "RSG",
+    "company": "Republic Services, Inc.",
+    "sector": "Industrials",
+    "beta": 0.521,
+    "volatility_52wk": 0.18537904264822141,
+    "avg_volume": 1208130,
+    "market_cap": 71478231040,
+    "ytd_return": 0.09919127690876964
+  },
+  {
+    "ticker": "RMD",
+    "company": "ResMed Inc.",
+    "sector": "Healthcare",
+    "beta": 0.887,
+    "volatility_52wk": 0.25771918672186,
+    "avg_volume": 919960,
+    "market_cap": 36752850944,
+    "ytd_return": 0.032923482043108306
+  },
+  {
+    "ticker": "RVTY",
+    "company": "Revvity, Inc.",
+    "sector": "Healthcare",
+    "beta": 1.107,
+    "volatility_52wk": 0.3979276275343354,
+    "avg_volume": 1146270,
+    "market_cap": 10343258112,
+    "ytd_return": -0.06938364831499985
+  },
+  {
+    "ticker": "ROL",
+    "company": "Rollins, Inc.",
+    "sector": "Consumer Cyclical",
+    "beta": 0.796,
+    "volatility_52wk": 0.2428006725568025,
+    "avg_volume": 3009820,
+    "market_cap": 27696478208,
+    "ytd_return": -0.012370777207257532
+  },
+  {
+    "ticker": "RCL",
+    "company": "Royal Caribbean Cruises Ltd.",
+    "sector": "Consumer Cyclical",
+    "beta": 1.926,
+    "volatility_52wk": 0.48178809776004805,
+    "avg_volume": 2984730,
+    "market_cap": 75399684096,
+    "ytd_return": -0.01828716731897817
+  },
+  {
+    "ticker": "NOW",
+    "company": "ServiceNow, Inc.",
+    "sector": "Technology",
+    "beta": 1.019,
+    "volatility_52wk": 0.4243280399629141,
+    "avg_volume": 20614160,
+    "market_cap": 129624309760,
+    "ytd_return": -0.15673110266976553
+  },
+  {
+    "ticker": "CRM",
+    "company": "Salesforce, Inc.",
+    "sector": "Technology",
+    "beta": 1.307,
+    "volatility_52wk": 0.34925065910902897,
+    "avg_volume": 15620480,
+    "market_cap": 185371394048,
+    "ytd_return": -0.20309910692583708
+  },
+  {
+    "ticker": "SRE",
+    "company": "DBA Sempra",
+    "sector": "Utilities",
+    "beta": 0.7,
+    "volatility_52wk": 0.22292584017655448,
+    "avg_volume": 3612730,
+    "market_cap": 60415721472,
+    "ytd_return": 0.03254930552608507
+  },
+  {
+    "ticker": "SLB",
+    "company": "SLB Limited",
+    "sector": "Energy",
+    "beta": 0.709,
+    "volatility_52wk": 0.37860625419839744,
+    "avg_volume": 16140880,
+    "market_cap": 69069357056,
+    "ytd_return": 0.16666668248216082
+  },
+  {
+    "ticker": "ROK",
+    "company": "Rockwell Automation, Inc.",
+    "sector": "Industrials",
+    "beta": 1.522,
+    "volatility_52wk": 0.3240706327557647,
+    "avg_volume": 1184550,
+    "market_cap": 41383845888,
+    "ytd_return": -0.0720612271994901
+  },
+  {
+    "ticker": "SPGI",
+    "company": "S&P Global Inc.",
+    "sector": "Financial Services",
+    "beta": 1.221,
+    "volatility_52wk": 0.2891628540140699,
+    "avg_volume": 2742310,
+    "market_cap": 134369017856,
+    "ytd_return": -0.117621797978694
+  },
+  {
+    "ticker": "SHW",
+    "company": "Sherwin-Williams Company (The)",
+    "sector": "Basic Materials",
+    "beta": 1.244,
+    "volatility_52wk": 0.24839154083736353,
+    "avg_volume": 1642420,
+    "market_cap": 80244334592,
+    "ytd_return": 0.006222573718001527
+  },
+  {
+    "ticker": "SW",
+    "company": "Smurfit WestRock plc",
+    "sector": "Consumer Cyclical",
+    "beta": 1.004,
+    "volatility_52wk": 0.40918041951330275,
+    "avg_volume": 5673650,
+    "market_cap": 21531101184,
+    "ytd_return": 0.08207071023307994
+  },
+  {
+    "ticker": "SJM",
+    "company": "The J.M. Smucker Company",
+    "sector": "Consumer Defensive",
+    "beta": 0.176,
+    "volatility_52wk": 0.30181068119865173,
+    "avg_volume": 3788240,
+    "market_cap": 11739043840,
+    "ytd_return": 0.15088484161722324
+  },
+  {
+    "ticker": "SOLV",
+    "company": "Solventum Corporation",
+    "sector": "Healthcare",
+    "beta": null,
+    "volatility_52wk": 0.31669258687470514,
+    "avg_volume": 1328720,
+    "market_cap": 11735933952,
+    "ytd_return": -0.12161469740837123
+  },
+  {
+    "ticker": "SPG",
+    "company": "Simon Property Group, Inc.",
+    "sector": "Real Estate",
+    "beta": 1.397,
+    "volatility_52wk": 0.2531182791894169,
+    "avg_volume": 1430440,
+    "market_cap": 61357682688,
+    "ytd_return": 0.05903136673529265
+  },
+  {
+    "ticker": "SNA",
+    "company": "Snap-On Incorporated",
+    "sector": "Industrials",
+    "beta": 0.749,
+    "volatility_52wk": 0.24362306712884346,
+    "avg_volume": 352450,
+    "market_cap": 19168165888,
+    "ytd_return": 0.06037897621985525
+  },
+  {
+    "ticker": "SWK",
+    "company": "Stanley Black & Decker, Inc.",
+    "sector": "Industrials",
+    "beta": 1.149,
+    "volatility_52wk": 0.46330924413168817,
+    "avg_volume": 1826890,
+    "market_cap": 11263421440,
+    "ytd_return": -0.005100031168076546
+  },
+  {
+    "ticker": "SO",
+    "company": "Southern Company (The)",
+    "sector": "Utilities",
+    "beta": 0.41,
+    "volatility_52wk": 0.16857086820285389,
+    "avg_volume": 5902840,
+    "market_cap": 108547366912,
+    "ytd_return": 0.11814639843659547
+  },
+  {
+    "ticker": "LUV",
+    "company": "Southwest Airlines Company",
+    "sector": "Industrials",
+    "beta": 1.094,
+    "volatility_52wk": 0.4832103663016128,
+    "avg_volume": 10878440,
+    "market_cap": 21203357696,
+    "ytd_return": 0.006295451356743752
+  },
+  {
+    "ticker": "STE",
+    "company": "STERIS plc (Ireland)",
+    "sector": "Healthcare",
+    "beta": 1.036,
+    "volatility_52wk": 0.25277412684229006,
+    "avg_volume": 921950,
+    "market_cap": 21915244544,
+    "ytd_return": -0.07810750001479866
+  },
+  {
+    "ticker": "STT",
+    "company": "State Street Corporation",
+    "sector": "Financial Services",
+    "beta": 1.416,
+    "volatility_52wk": 0.286763326853697,
+    "avg_volume": 2181150,
+    "market_cap": 33098524672,
+    "ytd_return": -0.06221434843898589
+  },
+  {
+    "ticker": "SYK",
+    "company": "Stryker Corporation",
+    "sector": "Healthcare",
+    "beta": 0.869,
+    "volatility_52wk": 0.21875391254529858,
+    "avg_volume": 1543570,
+    "market_cap": 138680631296,
+    "ytd_return": 0.04704464710028659
+  },
+  {
+    "ticker": "SYF",
+    "company": "Synchrony Financial",
+    "sector": "Financial Services",
+    "beta": 1.412,
+    "volatility_52wk": 0.39227925361998006,
+    "avg_volume": 4692140,
+    "market_cap": 23720869888,
+    "ytd_return": -0.21240405236657686
+  },
+  {
+    "ticker": "TDY",
+    "company": "Teledyne Technologies Incorpora",
+    "sector": "Technology",
+    "beta": 0.975,
+    "volatility_52wk": 0.2536690280765984,
+    "avg_volume": 291520,
+    "market_cap": 30196293632,
+    "ytd_return": 0.2484145001934225
+  },
+  {
+    "ticker": "TPR",
+    "company": "Tapestry, Inc.",
+    "sector": "Consumer Cyclical",
+    "beta": 1.597,
+    "volatility_52wk": 0.4243114199939848,
+    "avg_volume": 2322530,
+    "market_cap": 29021382656,
+    "ytd_return": 0.11683571485655297
+  },
+  {
+    "ticker": "SYY",
+    "company": "Sysco Corporation",
+    "sector": "Consumer Defensive",
+    "beta": 0.595,
+    "volatility_52wk": 0.23470878556374764,
+    "avg_volume": 3459900,
+    "market_cap": 40196648960,
+    "ytd_return": 0.17364362618321535
+  },
+  {
+    "ticker": "TEL",
+    "company": "TE Connectivity plc",
+    "sector": "Technology",
+    "beta": 1.245,
+    "volatility_52wk": 0.33536398149684543,
+    "avg_volume": 2725600,
+    "market_cap": 59687505920,
+    "ytd_return": -0.11735698042161678
+  },
+  {
+    "ticker": "TRGP",
+    "company": "Targa Resources, Inc.",
+    "sector": "Energy",
+    "beta": 0.853,
+    "volatility_52wk": 0.34949021526239255,
+    "avg_volume": 1719170,
+    "market_cap": 50787733504,
+    "ytd_return": 0.27001119838394255
+  },
+  {
+    "ticker": "TPL",
+    "company": "Texas Pacific Land Corporation",
+    "sector": "Energy",
+    "beta": 0.731,
+    "volatility_52wk": 0.49437368427512857,
+    "avg_volume": 712970,
+    "market_cap": 37230510080,
+    "ytd_return": 0.7620231135549481
+  },
+  {
+    "ticker": "TGT",
+    "company": "Target Corporation",
+    "sector": "Consumer Defensive",
+    "beta": 1.105,
+    "volatility_52wk": 0.3526956945516816,
+    "avg_volume": 7436780,
+    "market_cap": 53887193088,
+    "ytd_return": 0.20177095162936642
+  },
+  {
+    "ticker": "TXT",
+    "company": "Textron Inc.",
+    "sector": "Industrials",
+    "beta": 0.935,
+    "volatility_52wk": 0.28928609243532505,
+    "avg_volume": 1328270,
+    "market_cap": 16293766144,
+    "ytd_return": 0.09086726887317571
+  },
+  {
+    "ticker": "TKO",
+    "company": "TKO Group Holdings, Inc.",
+    "sector": "Communication Services",
+    "beta": 0.167,
+    "volatility_52wk": 0.33248039982657435,
+    "avg_volume": 1109610,
+    "market_cap": 15908774912,
+    "ytd_return": -0.020585723955575938
+  },
+  {
+    "ticker": "TJX",
+    "company": "TJX Companies, Inc. (The)",
+    "sector": "Consumer Cyclical",
+    "beta": 0.736,
+    "volatility_52wk": 0.1826059072056245,
+    "avg_volume": 5930160,
+    "market_cap": 175449227264,
+    "ytd_return": 0.03273271384310823
+  },
+  {
+    "ticker": "TMO",
+    "company": "Thermo Fisher Scientific Inc",
+    "sector": "Healthcare",
+    "beta": 0.971,
+    "volatility_52wk": 0.32391355392844534,
+    "avg_volume": 1885780,
+    "market_cap": 186180468736,
+    "ytd_return": -0.15280755945496372
+  },
+  {
+    "ticker": "TDG",
+    "company": "Transdigm Group Incorporated",
+    "sector": "Industrials",
+    "beta": 0.918,
+    "volatility_52wk": 0.28749269023412166,
+    "avg_volume": 323270,
+    "market_cap": 71581089792,
+    "ytd_return": -0.04712378435117145
+  },
+  {
+    "ticker": "TT",
+    "company": "Trane Technologies plc",
+    "sector": "Industrials",
+    "beta": 1.188,
+    "volatility_52wk": 0.29201724081620367,
+    "avg_volume": 1328420,
+    "market_cap": 93090471936,
+    "ytd_return": 0.06314071578596106
+  },
+  {
+    "ticker": "TYL",
+    "company": "Tyler Technologies, Inc.",
+    "sector": "Technology",
+    "beta": 0.934,
+    "volatility_52wk": 0.35211062227397405,
+    "avg_volume": 778780,
+    "market_cap": 15774329856,
+    "ytd_return": -0.1405134848935428
+  },
+  {
+    "ticker": "TSN",
+    "company": "Tyson Foods, Inc.",
+    "sector": "Consumer Defensive",
+    "beta": 0.441,
+    "volatility_52wk": 0.2328824560751909,
+    "avg_volume": 3283530,
+    "market_cap": 21455691776,
+    "ytd_return": 0.058407983049178706
+  },
+  {
+    "ticker": "TRV",
+    "company": "The Travelers Companies, Inc.",
+    "sector": "Financial Services",
+    "beta": 0.502,
+    "volatility_52wk": 0.2138969812064789,
+    "avg_volume": 1518880,
+    "market_cap": 67070709760,
+    "ytd_return": 0.07405587480762658
+  },
+  {
+    "ticker": "TFC",
+    "company": "Truist Financial Corporation",
+    "sector": "Financial Services",
+    "beta": 0.861,
+    "volatility_52wk": 0.28448285643707855,
+    "avg_volume": 8460790,
+    "market_cap": 57012043776,
+    "ytd_return": -0.06533976458241605
+  },
+  {
+    "ticker": "USB",
+    "company": "U.S. Bancorp",
+    "sector": "Financial Services",
+    "beta": 1.041,
+    "volatility_52wk": 0.2695958318490538,
+    "avg_volume": 10184600,
+    "market_cap": 79160803328,
+    "ytd_return": -0.028926411356635925
+  },
+  {
+    "ticker": "UDR",
+    "company": "UDR, Inc.",
+    "sector": "Real Estate",
+    "beta": 0.691,
+    "volatility_52wk": 0.23348097905280843,
+    "avg_volume": 3153330,
+    "market_cap": 13903740928,
+    "ytd_return": 0.015263052446215002
+  },
+  {
+    "ticker": "UBER",
+    "company": "Uber Technologies, Inc.",
+    "sector": "Technology",
+    "beta": 1.215,
+    "volatility_52wk": 0.35547956067488296,
+    "avg_volume": 20534770,
+    "market_cap": 153094537216,
+    "ytd_return": -0.09328992638177579
+  },
+  {
+    "ticker": "URI",
+    "company": "United Rentals, Inc.",
+    "sector": "Industrials",
+    "beta": 1.654,
+    "volatility_52wk": 0.3872978495561121,
+    "avg_volume": 635780,
+    "market_cap": 51327258624,
+    "ytd_return": -0.04196154364790834
+  },
+  {
+    "ticker": "UHS",
+    "company": "Universal Health Services, Inc.",
+    "sector": "Healthcare",
+    "beta": 1.261,
+    "volatility_52wk": 0.3495197003042734,
+    "avg_volume": 959510,
+    "market_cap": 11465351168,
+    "ytd_return": -0.12384032372948446
+  },
+  {
+    "ticker": "UNH",
+    "company": "UnitedHealth Group Incorporated",
+    "sector": "Healthcare",
+    "beta": 0.38,
+    "volatility_52wk": 0.5102106801126374,
+    "avg_volume": 8344240,
+    "market_cap": 256704348160,
+    "ytd_return": -0.14839472002344156
+  },
+  {
+    "ticker": "UNP",
+    "company": "Union Pacific Corporation",
+    "sector": "Industrials",
+    "beta": 0.952,
+    "volatility_52wk": 0.23001800479976217,
+    "avg_volume": 3172390,
+    "market_cap": 148816642048,
+    "ytd_return": 0.09572677589444295
+  },
+  {
+    "ticker": "VTR",
+    "company": "Ventas, Inc.",
+    "sector": "Real Estate",
+    "beta": 0.76,
+    "volatility_52wk": 0.19516065715440925,
+    "avg_volume": 2688890,
+    "market_cap": 40557281280,
+    "ytd_return": 0.09750421229783782
+  },
+  {
+    "ticker": "VLTO",
+    "company": "Veralto Corp",
+    "sector": "Industrials",
+    "beta": 1.106,
+    "volatility_52wk": 0.22727936975542307,
+    "avg_volume": 1960340,
+    "market_cap": 23136346112,
+    "ytd_return": -0.04233500679132297
+  },
+  {
+    "ticker": "VLO",
+    "company": "Valero Energy Corporation",
+    "sector": "Energy",
+    "beta": 0.734,
+    "volatility_52wk": 0.38056647621637874,
+    "avg_volume": 3708680,
+    "market_cap": 66418876416,
+    "ytd_return": 0.35884101506439686
+  },
+  {
+    "ticker": "UPS",
+    "company": "United Parcel Service, Inc.",
+    "sector": "Industrials",
+    "beta": 1.054,
+    "volatility_52wk": 0.3109757271168985,
+    "avg_volume": 6576000,
+    "market_cap": 83343572992,
+    "ytd_return": 0.013264739772460966
+  },
+  {
+    "ticker": "V",
+    "company": "Visa Inc.",
+    "sector": "Financial Services",
+    "beta": 0.791,
+    "volatility_52wk": 0.2384456168986222,
+    "avg_volume": 8304380,
+    "market_cap": 604401827840,
+    "ytd_return": -0.0840453264587165
+  },
+  {
+    "ticker": "VST",
+    "company": "Vistra Corp.",
+    "sector": "Utilities",
+    "beta": 1.45,
+    "volatility_52wk": 0.552643328945311,
+    "avg_volume": 5359230,
+    "market_cap": 54181588992,
+    "ytd_return": -0.039823288756267824
+  },
+  {
+    "ticker": "VMC",
+    "company": "Vulcan Materials Company (Holdi",
+    "sector": "Basic Materials",
+    "beta": 1.059,
+    "volatility_52wk": 0.25726239944348667,
+    "avg_volume": 1351040,
+    "market_cap": 35683270656,
+    "ytd_return": -0.06034513593175074
+  },
+  {
+    "ticker": "VZ",
+    "company": "Verizon Communications Inc.",
+    "sector": "Communication Services",
+    "beta": 0.281,
+    "volatility_52wk": 0.24209356521485556,
+    "avg_volume": 26319760,
+    "market_cap": 214384902144,
+    "ytd_return": 0.2615991696537635
+  },
+  {
+    "ticker": "VICI",
+    "company": "VICI Properties Inc.",
+    "sector": "Real Estate",
+    "beta": 0.699,
+    "volatility_52wk": 0.17363894374709243,
+    "avg_volume": 9647980,
+    "market_cap": 31294797824,
+    "ytd_return": 0.05399646459544186
+  },
+  {
+    "ticker": "WRB",
+    "company": "W.R. Berkley Corporation",
+    "sector": "Financial Services",
+    "beta": 0.336,
+    "volatility_52wk": 0.23266583354396647,
+    "avg_volume": 2150560,
+    "market_cap": 25738835968,
+    "ytd_return": 0.008073782492299657
+  },
+  {
+    "ticker": "GWW",
+    "company": "W.W. Grainger, Inc.",
+    "sector": "Industrials",
+    "beta": 1.092,
+    "volatility_52wk": 0.2534972019495979,
+    "avg_volume": 268240,
+    "market_cap": 52224147456,
+    "ytd_return": 0.10856640377059498
+  },
+  {
+    "ticker": "DIS",
+    "company": "Walt Disney Company (The)",
+    "sector": "Communication Services",
+    "beta": 1.443,
+    "volatility_52wk": 0.3149386077690028,
+    "avg_volume": 11596750,
+    "market_cap": 177527209984,
+    "ytd_return": -0.09217700222838349
+  },
+  {
+    "ticker": "WM",
+    "company": "Waste Management, Inc.",
+    "sector": "Industrials",
+    "beta": 0.533,
+    "volatility_52wk": 0.1852152873105324,
+    "avg_volume": 2649070,
+    "market_cap": 99793338368,
+    "ytd_return": 0.1266026095604141
+  },
+  {
+    "ticker": "WAB",
+    "company": "Westinghouse Air Brake Technolo",
+    "sector": "Industrials",
+    "beta": 0.979,
+    "volatility_52wk": 0.2633264572287643,
+    "avg_volume": 907720,
+    "market_cap": 41522933760,
+    "ytd_return": 0.13131123569805997
+  },
+  {
+    "ticker": "WAT",
+    "company": "Waters Corporation",
+    "sector": "Healthcare",
+    "beta": 1.203,
+    "volatility_52wk": 0.3853711169986688,
+    "avg_volume": 1330810,
+    "market_cap": 29678759936,
+    "ytd_return": -0.20792749158781135
+  },
+  {
+    "ticker": "WSM",
+    "company": "Williams-Sonoma, Inc.",
+    "sector": "Consumer Cyclical",
+    "beta": 1.558,
+    "volatility_52wk": 0.4194935782985018,
+    "avg_volume": 1015530,
+    "market_cap": 21749972992,
+    "ytd_return": -0.007080126632105531
+  },
+  {
+    "ticker": "WST",
+    "company": "West Pharmaceutical Services, I",
+    "sector": "Healthcare",
+    "beta": 1.179,
+    "volatility_52wk": 0.41212533762864734,
+    "avg_volume": 791010,
+    "market_cap": 17621137408,
+    "ytd_return": -0.11049201867048689
+  },
+  {
+    "ticker": "WEC",
+    "company": "WEC Energy Group, Inc.",
+    "sector": "Utilities",
+    "beta": 0.534,
+    "volatility_52wk": 0.15432367113463294,
+    "avg_volume": 2102430,
+    "market_cap": 37615149056,
+    "ytd_return": 0.08734850489092409
+  },
+  {
+    "ticker": "WFC",
+    "company": "Wells Fargo & Company",
+    "sector": "Financial Services",
+    "beta": 1.071,
+    "volatility_52wk": 0.29298598203334186,
+    "avg_volume": 20061050,
+    "market_cap": 242786222080,
+    "ytd_return": -0.1552520929946288
+  },
+  {
+    "ticker": "WMB",
+    "company": "Williams Companies, Inc. (The)",
+    "sector": "Energy",
+    "beta": 0.649,
+    "volatility_52wk": 0.24959037339498502,
+    "avg_volume": 6727330,
+    "market_cap": 89369567232,
+    "ytd_return": 0.22004929704875956
+  },
+  {
+    "ticker": "YUM",
+    "company": "Yum! Brands, Inc.",
+    "sector": "Consumer Cyclical",
+    "beta": 0.639,
+    "volatility_52wk": 0.22801493052836488,
+    "avg_volume": 1909930,
+    "market_cap": 44223152128,
+    "ytd_return": 0.0631935288703802
+  },
+  {
+    "ticker": "WELL",
+    "company": "Welltower Inc.",
+    "sector": "Real Estate",
+    "beta": 0.813,
+    "volatility_52wk": 0.2096168940176538,
+    "avg_volume": 3149050,
+    "market_cap": 144773185536,
+    "ytd_return": 0.09281047725547494
+  },
+  {
+    "ticker": "XYL",
+    "company": "Xylem Inc.",
+    "sector": "Industrials",
+    "beta": 1.169,
+    "volatility_52wk": 0.26268021776196315,
+    "avg_volume": 1988540,
+    "market_cap": 29676443648,
+    "ytd_return": -0.10181605296717285
+  },
+  {
+    "ticker": "WY",
+    "company": "Weyerhaeuser Company",
+    "sector": "Real Estate",
+    "beta": 1.032,
+    "volatility_52wk": 0.2782756072838638,
+    "avg_volume": 6452890,
+    "market_cap": 17351122944,
+    "ytd_return": 0.029411797704994705
+  },
+  {
+    "ticker": "ADBE",
+    "company": "Adobe Inc.",
+    "sector": "Technology",
+    "beta": 1.532,
+    "volatility_52wk": 0.3315535750606538,
+    "avg_volume": 5418870,
+    "market_cap": 117685207040,
+    "ytd_return": -0.1490548889747943
+  },
+  {
+    "ticker": "ZTS",
+    "company": "Zoetis Inc.",
+    "sector": "Healthcare",
+    "beta": 0.954,
+    "volatility_52wk": 0.2869176419948782,
+    "avg_volume": 3954390,
+    "market_cap": 52795047936,
+    "ytd_return": -0.03565754390931102
+  },
+  {
+    "ticker": "AMD",
+    "company": "Advanced Micro Devices, Inc.",
+    "sector": "Technology",
+    "beta": 2.022,
+    "volatility_52wk": 0.645007963888994,
+    "avg_volume": 40310900,
+    "market_cap": 320734429184,
+    "ytd_return": -0.13890011355155535
+  },
+  {
+    "ticker": "ALGN",
+    "company": "Align Technology, Inc.",
+    "sector": "Healthcare",
+    "beta": 1.823,
+    "volatility_52wk": 0.5364896054135163,
+    "avg_volume": 1195010,
+    "market_cap": 12129337344,
+    "ytd_return": 0.11517016830924635
+  },
+  {
+    "ticker": "ABNB",
+    "company": "Airbnb, Inc.",
+    "sector": "Consumer Cyclical",
+    "beta": 1.163,
+    "volatility_52wk": 0.35130711922344815,
+    "avg_volume": 5499680,
+    "market_cap": 78746165248,
+    "ytd_return": 0.0016540202224564276
+  },
+  {
+    "ticker": "ZBH",
+    "company": "Zimmer Biomet Holdings, Inc.",
+    "sector": "Healthcare",
+    "beta": 0.591,
+    "volatility_52wk": 0.31166374459490137,
+    "avg_volume": 1845710,
+    "market_cap": 18363502592,
+    "ytd_return": 0.04543439368812929
+  },
+  {
+    "ticker": "AKAM",
+    "company": "Akamai Technologies, Inc.",
+    "sector": "Technology",
+    "beta": 0.704,
+    "volatility_52wk": 0.4164872756682931,
+    "avg_volume": 4210030,
+    "market_cap": 14819880960,
+    "ytd_return": 0.17379554853958057
+  },
+  {
+    "ticker": "GOOGL",
+    "company": "Alphabet Inc.",
+    "sector": "Communication Services",
+    "beta": 1.112,
+    "volatility_52wk": 0.30564865156431853,
+    "avg_volume": 32919590,
+    "market_cap": 3647245647872,
+    "ytd_return": -0.05276853944117438
+  },
+  {
+    "ticker": "LNT",
+    "company": "Alliant Energy Corporation",
+    "sector": "Utilities",
+    "beta": 0.611,
+    "volatility_52wk": 0.16883292512652898,
+    "avg_volume": 3606180,
+    "market_cap": 18330286080,
+    "ytd_return": 0.09086761772578658
+  },
+  {
+    "ticker": "GOOG",
+    "company": "Alphabet Inc.",
+    "sector": "Communication Services",
+    "beta": 1.112,
+    "volatility_52wk": 0.30228081610470003,
+    "avg_volume": 21111010,
+    "market_cap": 3643374567424,
+    "ytd_return": -0.053976973030289366
+  },
+  {
+    "ticker": "AMGN",
+    "company": "Amgen Inc.",
+    "sector": "Healthcare",
+    "beta": 0.425,
+    "volatility_52wk": 0.28961756289188884,
+    "avg_volume": 2678400,
+    "market_cap": 201363341312,
+    "ytd_return": 0.12785368776096515
+  },
+  {
+    "ticker": "APA",
+    "company": "APA Corporation",
+    "sector": "Energy",
+    "beta": 0.708,
+    "volatility_52wk": 0.5435266466803502,
+    "avg_volume": 9155650,
+    "market_cap": 11871354880,
+    "ytd_return": 0.288643514142358
+  },
+  {
+    "ticker": "AMZN",
+    "company": "Amazon.com, Inc.",
+    "sector": "Consumer Cyclical",
+    "beta": 1.42,
+    "volatility_52wk": 0.35042346459296364,
+    "avg_volume": 49719540,
+    "market_cap": 2257124327424,
+    "ytd_return": -0.058675467046943985
+  },
+  {
+    "ticker": "AMAT",
+    "company": "Applied Materials, Inc.",
+    "sector": "Technology",
+    "beta": 1.634,
+    "volatility_52wk": 0.47856851723355326,
+    "avg_volume": 7260640,
+    "market_cap": 260601643008,
+    "ytd_return": 0.2077955745595058
+  },
+  {
+    "ticker": "ADI",
+    "company": "Analog Devices, Inc.",
+    "sector": "Technology",
+    "beta": 1.021,
+    "volatility_52wk": 0.38347290364299474,
+    "avg_volume": 4461620,
+    "market_cap": 153476743168,
+    "ytd_return": 0.15368601163534268
+  },
+  {
+    "ticker": "ADSK",
+    "company": "Autodesk, Inc.",
+    "sector": "Technology",
+    "beta": 1.467,
+    "volatility_52wk": 0.30958288302852677,
+    "avg_volume": 2753910,
+    "market_cap": 54972657664,
+    "ytd_return": -0.08977093351131794
+  },
+  {
+    "ticker": "APP",
+    "company": "Applovin Corporation",
+    "sector": "Communication Services",
+    "beta": 2.505,
+    "volatility_52wk": 0.7950048800214577,
+    "avg_volume": 5957820,
+    "market_cap": 171170824192,
+    "ytd_return": -0.1878962208881942
+  },
+  {
+    "ticker": "AAPL",
+    "company": "Apple Inc.",
+    "sector": "Technology",
+    "beta": 1.116,
+    "volatility_52wk": 0.3203057601496573,
+    "avg_volume": 43370120,
+    "market_cap": 3783099416576,
+    "ytd_return": -0.049998220812084423
+  },
+  {
+    "ticker": "ACGL",
+    "company": "Arch Capital Group Ltd.",
+    "sector": "Financial Services",
+    "beta": 0.365,
+    "volatility_52wk": 0.24242054267991983,
+    "avg_volume": 1496930,
+    "market_cap": 34717806592,
+    "ytd_return": 0.03569143886998474
+  },
+  {
+    "ticker": "AEP",
+    "company": "American Electric Power Company",
+    "sector": "Utilities",
+    "beta": 0.573,
+    "volatility_52wk": 0.18645111985400964,
+    "avg_volume": 3896350,
+    "market_cap": 71115177984,
+    "ytd_return": 0.13867539847298796
+  },
+  {
+    "ticker": "TECH",
+    "company": "Bio-Techne Corp",
+    "sector": "Healthcare",
+    "beta": 1.475,
+    "volatility_52wk": 0.44441313088634893,
+    "avg_volume": 2413290,
+    "market_cap": 8403106304,
+    "ytd_return": -0.09656331917663935
+  },
+  {
+    "ticker": "AXON",
+    "company": "Axon Enterprise, Inc.",
+    "sector": "Industrials",
+    "beta": 1.524,
+    "volatility_52wk": 0.5248272468891187,
+    "avg_volume": 1513550,
+    "market_cap": 44861902848,
+    "ytd_return": 0.01874167597801673
+  },
+  {
+    "ticker": "BKNG",
+    "company": "Booking Holdings Inc. Common St",
+    "sector": "Consumer Cyclical",
+    "beta": 1.227,
+    "volatility_52wk": 0.32184508838545345,
+    "avg_volume": 660230,
+    "market_cap": 141099810816,
+    "ytd_return": -0.1451701967195852
+  },
+  {
+    "ticker": "ADP",
+    "company": "Automatic Data Processing, Inc.",
+    "sector": "Technology",
+    "beta": 0.854,
+    "volatility_52wk": 0.22356144654617918,
+    "avg_volume": 4489480,
+    "market_cap": 90260824064,
+    "ytd_return": -0.10534640491640974
+  },
+  {
+    "ticker": "CDW",
+    "company": "CDW Corporation",
+    "sector": "Technology",
+    "beta": 1.046,
+    "volatility_52wk": 0.34190246691346904,
+    "avg_volume": 1711000,
+    "market_cap": 15554887680,
+    "ytd_return": -0.07314512785595227
+  },
+  {
+    "ticker": "CHRW",
+    "company": "C.H. Robinson Worldwide, Inc.",
+    "sector": "Industrials",
+    "beta": 0.903,
+    "volatility_52wk": 0.4111230186156992,
+    "avg_volume": 1986690,
+    "market_cap": 21177970688,
+    "ytd_return": 0.09723917694994591
+  },
+  {
+    "ticker": "CDNS",
+    "company": "Cadence Design Systems, Inc.",
+    "sector": "Technology",
+    "beta": 1.025,
+    "volatility_52wk": 0.396150869740564,
+    "avg_volume": 3009090,
+    "market_cap": 81125326848,
+    "ytd_return": -0.04336337538578339
+  },
+  {
+    "ticker": "BKR",
+    "company": "Baker Hughes Company",
+    "sector": "Energy",
+    "beta": 0.879,
+    "volatility_52wk": 0.36370419772262763,
+    "avg_volume": 9092590,
+    "market_cap": 58839601152,
+    "ytd_return": 0.26877391064253614
+  },
+  {
+    "ticker": "AVGO",
+    "company": "Broadcom Inc.",
+    "sector": "Technology",
+    "beta": 1.257,
+    "volatility_52wk": 0.481367525055045,
+    "avg_volume": 29376810,
+    "market_cap": 1637584601088,
+    "ytd_return": -0.0493066692699344
+  },
+  {
+    "ticker": "BIIB",
+    "company": "Biogen Inc.",
+    "sector": "Healthcare",
+    "beta": 0.145,
+    "volatility_52wk": 0.3455610601882809,
+    "avg_volume": 928820,
+    "market_cap": 27300022272,
+    "ytd_return": 0.039646763595698915
+  },
+  {
+    "ticker": "CSCO",
+    "company": "Cisco Systems, Inc.",
+    "sector": "Technology",
+    "beta": 0.829,
+    "volatility_52wk": 0.27636866468645466,
+    "avg_volume": 21771360,
+    "market_cap": 301389479936,
+    "ytd_return": 0.03419250976876533
+  },
+  {
+    "ticker": "CHTR",
+    "company": "Charter Communications, Inc.",
+    "sector": "Communication Services",
+    "beta": 1.023,
+    "volatility_52wk": 0.4102814253377934,
+    "avg_volume": 1450610,
+    "market_cap": 29352634368,
+    "ytd_return": 0.10970951284303293
+  },
+  {
+    "ticker": "CINF",
+    "company": "Cincinnati Financial Corporatio",
+    "sector": "Financial Services",
+    "beta": 0.636,
+    "volatility_52wk": 0.2335323367604267,
+    "avg_volume": 854860,
+    "market_cap": 25250035712,
+    "ytd_return": 0.024150063557025907
+  },
+  {
+    "ticker": "CTSH",
+    "company": "Cognizant Technology Solutions ",
+    "sector": "Technology",
+    "beta": 0.983,
+    "volatility_52wk": 0.3122491237955408,
+    "avg_volume": 8619310,
+    "market_cap": 31198267392,
+    "ytd_return": -0.1847932685610744
+  },
+  {
+    "ticker": "COIN",
+    "company": "Coinbase Global, Inc. - 3",
+    "sector": "Financial Services",
+    "beta": 3.709,
+    "volatility_52wk": 0.7546837784233145,
+    "avg_volume": 14994230,
+    "market_cap": 53071310848,
+    "ytd_return": -0.16619455359348903
+  },
+  {
+    "ticker": "CME",
+    "company": "CME Group Inc.",
+    "sector": "Financial Services",
+    "beta": 0.26,
+    "volatility_52wk": 0.19106153257376282,
+    "avg_volume": 2630590,
+    "market_cap": 115098796032,
+    "ytd_return": 0.17583808482501845
+  },
+  {
+    "ticker": "CMCSA",
+    "company": "Comcast Corporation",
+    "sector": "Communication Services",
+    "beta": 0.78,
+    "volatility_52wk": 0.2531591359749718,
+    "avg_volume": 25845530,
+    "market_cap": 112505241600,
+    "ytd_return": 0.15260560394048486
+  },
+  {
+    "ticker": "CTAS",
+    "company": "Cintas Corporation",
+    "sector": "Industrials",
+    "beta": 0.944,
+    "volatility_52wk": 0.21317593829754536,
+    "avg_volume": 2071080,
+    "market_cap": 80706887680,
+    "ytd_return": 0.10130893137638763
+  },
+  {
+    "ticker": "COO",
+    "company": "The Cooper Companies, Inc.",
+    "sector": "Healthcare",
+    "beta": 1.03,
+    "volatility_52wk": 0.35210673923354535,
+    "avg_volume": 2287810,
+    "market_cap": 14561168384,
+    "ytd_return": -0.05621991769547325
+  },
+  {
+    "ticker": "CEG",
+    "company": "Constellation Energy Corporatio",
+    "sector": "Utilities",
+    "beta": 1.107,
+    "volatility_52wk": 0.5076544875082317,
+    "avg_volume": 3697690,
+    "market_cap": 114852290560,
+    "ytd_return": -0.1288464230482082
+  },
+  {
+    "ticker": "CRWD",
+    "company": "CrowdStrike Holdings, Inc.",
+    "sector": "Technology",
+    "beta": 1.124,
+    "volatility_52wk": 0.46252197651864224,
+    "avg_volume": 6961810,
+    "market_cap": 109028786176,
+    "ytd_return": -0.05421314225902883
+  },
+  {
+    "ticker": "COST",
+    "company": "Costco Wholesale Corporation",
+    "sector": "Consumer Defensive",
+    "beta": 0.993,
+    "volatility_52wk": 0.20810623532898517,
+    "avg_volume": 2166820,
+    "market_cap": 445052059648,
+    "ytd_return": 0.1680514635294763
+  },
+  {
+    "ticker": "CSGP",
+    "company": "CoStar Group, Inc.",
+    "sector": "Real Estate",
+    "beta": 0.902,
+    "volatility_52wk": 0.3968055265316051,
+    "avg_volume": 6623590,
+    "market_cap": 20513024000,
+    "ytd_return": -0.26351043887890063
+  },
+  {
+    "ticker": "CSX",
+    "company": "CSX Corporation",
+    "sector": "Industrials",
+    "beta": 1.263,
+    "volatility_52wk": 0.23893987376637038,
+    "avg_volume": 12636830,
+    "market_cap": 74391568384,
+    "ytd_return": 0.10146126988504267
+  },
+  {
+    "ticker": "DXCM",
+    "company": "DexCom, Inc.",
+    "sector": "Healthcare",
+    "beta": 1.526,
+    "volatility_52wk": 0.43991524659164816,
+    "avg_volume": 4003420,
+    "market_cap": 26372900864,
+    "ytd_return": 0.023444507621425643
+  },
+  {
+    "ticker": "DLTR",
+    "company": "Dollar Tree, Inc.",
+    "sector": "Consumer Defensive",
+    "beta": 0.692,
+    "volatility_52wk": 0.4280363694406682,
+    "avg_volume": 2468620,
+    "market_cap": 23154427904,
+    "ytd_return": -0.09326543709740305
+  },
+  {
+    "ticker": "CPRT",
+    "company": "Copart, Inc.",
+    "sector": "Industrials",
+    "beta": 1.106,
+    "volatility_52wk": 0.2648640633689742,
+    "avg_volume": 10950500,
+    "market_cap": 36189339648,
+    "ytd_return": -0.0007942488465262571
+  },
+  {
+    "ticker": "DDOG",
+    "company": "Datadog, Inc.",
+    "sector": "Technology",
+    "beta": 1.36,
+    "volatility_52wk": 0.5485650659256068,
+    "avg_volume": 6361580,
+    "market_cap": 44932296704,
+    "ytd_return": -0.059953681814391674
+  },
+  {
+    "ticker": "DASH",
+    "company": "DoorDash, Inc.",
+    "sector": "Consumer Cyclical",
+    "beta": 1.902,
+    "volatility_52wk": 0.4644376283170006,
+    "avg_volume": 5104960,
+    "market_cap": 75646664704,
+    "ytd_return": -0.18481275926109386
+  },
+  {
+    "ticker": "FANG",
+    "company": "Diamondback Energy, Inc.",
+    "sector": "Energy",
+    "beta": 0.569,
+    "volatility_52wk": 0.39074913005775413,
+    "avg_volume": 3737200,
+    "market_cap": 52152119296,
+    "ytd_return": 0.18511223333427487
+  },
+  {
+    "ticker": "ERIE",
+    "company": "Erie Indemnity Company",
+    "sector": "Financial Services",
+    "beta": 0.411,
+    "volatility_52wk": 0.320007686420593,
+    "avg_volume": 247790,
+    "market_cap": 13108285440,
+    "ytd_return": -0.06464847058389296
+  },
+  {
+    "ticker": "EA",
+    "company": "Electronic Arts Inc.",
+    "sector": "Communication Services",
+    "beta": 0.754,
+    "volatility_52wk": 0.25092289432152937,
+    "avg_volume": 2385130,
+    "market_cap": 49727918080,
+    "ytd_return": -0.03135856145624428
+  },
+  {
+    "ticker": "EXE",
+    "company": "Expand Energy Corporation",
+    "sector": "Energy",
+    "beta": 0.473,
+    "volatility_52wk": 0.3305642262323967,
+    "avg_volume": 3436980,
+    "market_cap": 25888489472,
+    "ytd_return": -0.026692178143205344
+  },
+  {
+    "ticker": "EBAY",
+    "company": "eBay Inc.",
+    "sector": "Consumer Cyclical",
+    "beta": 1.371,
+    "volatility_52wk": 0.3771897079027496,
+    "avg_volume": 5386520,
+    "market_cap": 41681178624,
+    "ytd_return": 0.06489779099840086
+  },
+  {
+    "ticker": "EXPE",
+    "company": "Expedia Group, Inc.",
+    "sector": "Consumer Cyclical",
+    "beta": 1.41,
+    "volatility_52wk": 0.5111533839047286,
+    "avg_volume": 3864520,
+    "market_cap": 29107546112,
+    "ytd_return": -0.11776350829402059
+  },
+  {
+    "ticker": "EXPD",
+    "company": "Expeditors International of Was",
+    "sector": "Industrials",
+    "beta": 1.107,
+    "volatility_52wk": 0.32784722325310445,
+    "avg_volume": 1831130,
+    "market_cap": 19388807168,
+    "ytd_return": -0.032925062425287345
+  },
+  {
+    "ticker": "EQIX",
+    "company": "Equinix, Inc.",
+    "sector": "Real Estate",
+    "beta": 1.031,
+    "volatility_52wk": 0.2868557674711785,
+    "avg_volume": 680860,
+    "market_cap": 92073713664,
+    "ytd_return": 0.22652501625905472
+  },
+  {
+    "ticker": "EXC",
+    "company": "Exelon Corporation",
+    "sector": "Utilities",
+    "beta": 0.515,
+    "volatility_52wk": 0.19397494548318,
+    "avg_volume": 10412730,
+    "market_cap": 50208681984,
+    "ytd_return": 0.12386162723596683
+  },
+  {
+    "ticker": "FFIV",
+    "company": "F5, Inc.",
+    "sector": "Technology",
+    "beta": 0.994,
+    "volatility_52wk": 0.3349150559702085,
+    "avg_volume": 742770,
+    "market_cap": 16065040384,
+    "ytd_return": 0.11530216956276254
+  },
+  {
+    "ticker": "FAST",
+    "company": "Fastenal Company",
+    "sector": "Industrials",
+    "beta": 0.862,
+    "volatility_52wk": 0.2608637734868307,
+    "avg_volume": 7762020,
+    "market_cap": 53385797632,
+    "ytd_return": 0.14886252873875483
+  },
+  {
+    "ticker": "FISV",
+    "company": "Fiserv, Inc.",
+    "sector": null,
+    "beta": null,
+    "volatility_52wk": 0.6082619907449299,
+    "avg_volume": 6941410,
+    "market_cap": 32927293440,
+    "ytd_return": -0.03796307368187924
+  },
+  {
+    "ticker": "FTNT",
+    "company": "Fortinet, Inc.",
+    "sector": "Technology",
+    "beta": 1.04,
+    "volatility_52wk": 0.42449505198104587,
+    "avg_volume": 6752460,
+    "market_cap": 62109491200,
+    "ytd_return": 0.0743451607565797
+  },
+  {
+    "ticker": "FOX",
+    "company": "Fox Corporation",
+    "sector": "Communication Services",
+    "beta": 0.537,
+    "volatility_52wk": 0.3117012791474974,
+    "avg_volume": 1825840,
+    "market_cap": 25093398528,
+    "ytd_return": -0.17662216302128655
+  },
+  {
+    "ticker": "FSLR",
+    "company": "First Solar, Inc.",
+    "sector": "Technology",
+    "beta": 1.648,
+    "volatility_52wk": 0.6373460192488587,
+    "avg_volume": 3319510,
+    "market_cap": 20633757696,
+    "ytd_return": -0.3103083427878054
+  },
+  {
+    "ticker": "GEHC",
+    "company": "GE HealthCare Technologies Inc.",
+    "sector": "Healthcare",
+    "beta": 1.181,
+    "volatility_52wk": 0.36824779903867066,
+    "avg_volume": 2961650,
+    "market_cap": 33962471424,
+    "ytd_return": -0.10323597057791513
+  },
+  {
+    "ticker": "FITB",
+    "company": "Fifth Third Bancorp",
+    "sector": "Financial Services",
+    "beta": 0.967,
+    "volatility_52wk": 0.29577927479269384,
+    "avg_volume": 9669810,
+    "market_cap": 41316835328,
+    "ytd_return": -0.008593583216930828
+  },
+  {
+    "ticker": "HAS",
+    "company": "Hasbro, Inc.",
+    "sector": "Consumer Cyclical",
+    "beta": 0.526,
+    "volatility_52wk": 0.3435878210375008,
+    "avg_volume": 1568230,
+    "market_cap": 13186477056,
+    "ytd_return": 0.13884532329248506
+  },
+  {
+    "ticker": "FOXA",
+    "company": "Fox Corporation",
+    "sector": "Communication Services",
+    "beta": 0.537,
+    "volatility_52wk": 0.3118499625495235,
+    "avg_volume": 4157860,
+    "market_cap": 25109854208,
+    "ytd_return": -0.18953366258196866
+  },
+  {
+    "ticker": "GEN",
+    "company": "Gen Digital Inc.",
+    "sector": "Technology",
+    "beta": 1.095,
+    "volatility_52wk": 0.30273083632261755,
+    "avg_volume": 5900010,
+    "market_cap": 13888446464,
+    "ytd_return": -0.13271956750960698
+  },
+  {
+    "ticker": "GILD",
+    "company": "Gilead Sciences, Inc.",
+    "sector": "Healthcare",
+    "beta": 0.374,
+    "volatility_52wk": 0.2911890092669318,
+    "avg_volume": 7243050,
+    "market_cap": 179850805248,
+    "ytd_return": 0.18363482304165016
+  },
+  {
+    "ticker": "HSIC",
+    "company": "Henry Schein, Inc.",
+    "sector": "Healthcare",
+    "beta": 0.852,
+    "volatility_52wk": 0.28848818520743186,
+    "avg_volume": 2039230,
+    "market_cap": 9116609536,
+    "ytd_return": 0.010153589981717063
+  },
+  {
+    "ticker": "HOLX",
+    "company": "Hologic, Inc.",
+    "sector": "Healthcare",
+    "beta": 0.728,
+    "volatility_52wk": 0.2585418563890613,
+    "avg_volume": 2538490,
+    "market_cap": 16875081728,
+    "ytd_return": 0.015826184868749035
+  },
+  {
+    "ticker": "PODD",
+    "company": "Insulet Corporation",
+    "sector": "Healthcare",
+    "beta": 1.435,
+    "volatility_52wk": 0.39123721343696743,
+    "avg_volume": 1109350,
+    "market_cap": 16648970240,
+    "ytd_return": -0.1622720795346814
+  },
+  {
+    "ticker": "INCY",
+    "company": "Incyte Corporation",
+    "sector": "Healthcare",
+    "beta": 0.844,
+    "volatility_52wk": 0.3509722332537633,
+    "avg_volume": 1663290,
+    "market_cap": 19120316416,
+    "ytd_return": -0.05403269400981937
+  },
+  {
+    "ticker": "HON",
+    "company": "Honeywell International Inc.",
+    "sector": "Industrials",
+    "beta": 0.904,
+    "volatility_52wk": 0.25187932937555974,
+    "avg_volume": 3830990,
+    "market_cap": 158366105600,
+    "ytd_return": 0.20119454472598058
+  },
+  {
+    "ticker": "IDXX",
+    "company": "IDEXX Laboratories, Inc.",
+    "sector": "Healthcare",
+    "beta": 1.696,
+    "volatility_52wk": 0.4377591086885043,
+    "avg_volume": 578090,
+    "market_cap": 48088465408,
+    "ytd_return": -0.09191184642669349
+  },
+  {
+    "ticker": "HST",
+    "company": "Host Hotels & Resorts, Inc.",
+    "sector": "Real Estate",
+    "beta": 1.154,
+    "volatility_52wk": 0.30685548426307063,
+    "avg_volume": 9529200,
+    "market_cap": 13038537728,
+    "ytd_return": 0.0589206885360574
+  },
+  {
+    "ticker": "INTC",
+    "company": "Intel Corporation",
+    "sector": "Technology",
+    "beta": 1.375,
+    "volatility_52wk": 0.6701749682073713,
+    "avg_volume": 77643390,
+    "market_cap": 222185537536,
+    "ytd_return": 0.1025900708799406
+  },
+  {
+    "ticker": "IBKR",
+    "company": "Interactive Brokers Group, Inc.",
+    "sector": "Financial Services",
+    "beta": 1.251,
+    "volatility_52wk": 0.432127181777022,
+    "avg_volume": 4687950,
+    "market_cap": 110500864000,
+    "ytd_return": -0.007883480324662894
+  },
+  {
+    "ticker": "HBAN",
+    "company": "Huntington Bancshares Incorpora",
+    "sector": "Financial Services",
+    "beta": 0.967,
+    "volatility_52wk": 0.3163138221897424,
+    "avg_volume": 25311450,
+    "market_cap": 32098934784,
+    "ytd_return": -0.06693364456142656
+  },
+  {
+    "ticker": "JBHT",
+    "company": "J.B. Hunt Transport Services, I",
+    "sector": "Industrials",
+    "beta": 1.207,
+    "volatility_52wk": 0.41751949549994766,
+    "avg_volume": 840270,
+    "market_cap": 20195811328,
+    "ytd_return": 0.08440898827822887
+  },
+  {
+    "ticker": "KHC",
+    "company": "The Kraft Heinz Company",
+    "sector": "Consumer Defensive",
+    "beta": 0.01,
+    "volatility_52wk": 0.25224200622230125,
+    "avg_volume": 15325170,
+    "market_cap": 29101064192,
+    "ytd_return": 0.006150124216180573
+  },
+  {
+    "ticker": "INTU",
+    "company": "Intuit Inc.",
+    "sector": "Technology",
+    "beta": 1.282,
+    "volatility_52wk": 0.35155936563546497,
+    "avg_volume": 6403320,
+    "market_cap": 131676512256,
+    "ytd_return": -0.23558288591576923
+  },
+  {
+    "ticker": "ISRG",
+    "company": "Intuitive Surgical, Inc.",
+    "sector": "Healthcare",
+    "beta": 1.68,
+    "volatility_52wk": 0.34268794184418633,
+    "avg_volume": 1715040,
+    "market_cap": 172721143808,
+    "ytd_return": -0.12779810545339224
+  },
+  {
+    "ticker": "KLAC",
+    "company": "KLA Corporation",
+    "sector": "Technology",
+    "beta": 1.448,
+    "volatility_52wk": 0.48364584666564836,
+    "avg_volume": 970310,
+    "market_cap": 182878420992,
+    "ytd_return": 0.05498762602177031
+  },
+  {
+    "ticker": "KDP",
+    "company": "Keurig Dr Pepper Inc.",
+    "sector": "Consumer Defensive",
+    "beta": 0.303,
+    "volatility_52wk": 0.26798301601673674,
+    "avg_volume": 12249330,
+    "market_cap": 38001889280,
+    "ytd_return": 0.018752270694113962
+  },
+  {
+    "ticker": "KMB",
+    "company": "Kimberly-Clark Corporation",
+    "sector": "Consumer Defensive",
+    "beta": 0.234,
+    "volatility_52wk": 0.24947502198296517,
+    "avg_volume": 5049430,
+    "market_cap": 34192982016,
+    "ytd_return": 0.03136094928326203
+  },
+  {
+    "ticker": "LRCX",
+    "company": "Lam Research Corporation",
+    "sector": "Technology",
+    "beta": 1.787,
+    "volatility_52wk": 0.5203191361810767,
+    "avg_volume": 10728030,
+    "market_cap": 256456179712,
+    "ytd_return": 0.07711015054964952
+  },
+  {
+    "ticker": "JKHY",
+    "company": "Jack Henry & Associates, Inc.",
+    "sector": "Technology",
+    "beta": 0.726,
+    "volatility_52wk": 0.2518154100246414,
+    "avg_volume": 1093800,
+    "market_cap": 12341749760,
+    "ytd_return": -0.036557353794968085
+  },
+  {
+    "ticker": "LIN",
+    "company": "Linde plc",
+    "sector": "Basic Materials",
+    "beta": 0.797,
+    "volatility_52wk": 0.19616037701330544,
+    "avg_volume": 2936400,
+    "market_cap": 223606210560,
+    "ytd_return": 0.1296404343451383
+  },
+  {
+    "ticker": "MTCH",
+    "company": "Match Group, Inc.",
+    "sector": "Communication Services",
+    "beta": 1.341,
+    "volatility_52wk": 0.33944733333714155,
+    "avg_volume": 3785300,
+    "market_cap": 7227289088,
+    "ytd_return": -0.04001261710528775
+  },
+  {
+    "ticker": "MAR",
+    "company": "Marriott International",
+    "sector": "Consumer Cyclical",
+    "beta": 1.101,
+    "volatility_52wk": 0.30358338714273947,
+    "avg_volume": 1788590,
+    "market_cap": 84801683456,
+    "ytd_return": 0.03315141191874949
+  },
+  {
+    "ticker": "META",
+    "company": "Meta Platforms, Inc.",
+    "sector": "Communication Services",
+    "beta": 1.279,
+    "volatility_52wk": 0.3910504265077278,
+    "avg_volume": 11577280,
+    "market_cap": 1608114241536,
+    "ytd_return": -0.008533060718820583
+  },
+  {
+    "ticker": "LULU",
+    "company": "lululemon athletica inc.",
+    "sector": "Consumer Cyclical",
+    "beta": 1.013,
+    "volatility_52wk": 0.5098128437377007,
+    "avg_volume": 2177000,
+    "market_cap": 19951204352,
+    "ytd_return": -0.1929699404530111
+  },
+  {
+    "ticker": "MSFT",
+    "company": "Microsoft Corporation",
+    "sector": "Technology",
+    "beta": 1.108,
+    "volatility_52wk": 0.2629839628375648,
+    "avg_volume": 38609000,
+    "market_cap": 3024160292864,
+    "ytd_return": -0.1352814535798434
+  },
+  {
+    "ticker": "MCHP",
+    "company": "Microchip Technology Incorporat",
+    "sector": "Technology",
+    "beta": 1.447,
+    "volatility_52wk": 0.5873632562986604,
+    "avg_volume": 8219440,
+    "market_cap": 34237642752,
+    "ytd_return": -0.003998187622805918
+  },
+  {
+    "ticker": "MPWR",
+    "company": "Monolithic Power Systems, Inc.",
+    "sector": "Technology",
+    "beta": 1.49,
+    "volatility_52wk": 0.5629126073715046,
+    "avg_volume": 609830,
+    "market_cap": 50511478784,
+    "ytd_return": 0.0927577146590304
+  },
+  {
+    "ticker": "MU",
+    "company": "Micron Technology, Inc.",
+    "sector": "Technology",
+    "beta": 1.542,
+    "volatility_52wk": 0.6383684408907587,
+    "avg_volume": 31615410,
+    "market_cap": 426967564288,
+    "ytd_return": 0.17399014656312506
+  },
+  {
+    "ticker": "MRNA",
+    "company": "Moderna, Inc.",
+    "sector": "Healthcare",
+    "beta": 1.352,
+    "volatility_52wk": 0.6706266729318232,
+    "avg_volume": 10942100,
+    "market_cap": 21174677504,
+    "ytd_return": 0.7018794367796143
+  },
+  {
+    "ticker": "MDLZ",
+    "company": "Mondelez International, Inc.",
+    "sector": "Consumer Defensive",
+    "beta": 0.366,
+    "volatility_52wk": 0.22291535608399576,
+    "avg_volume": 9767900,
+    "market_cap": 75280416768,
+    "ytd_return": 0.08853681015663652
+  },
+  {
+    "ticker": "MNST",
+    "company": "Monster Beverage Corporation",
+    "sector": "Consumer Defensive",
+    "beta": 0.437,
+    "volatility_52wk": 0.22792621640009525,
+    "avg_volume": 7515000,
+    "market_cap": 72626814976,
+    "ytd_return": -0.007221678378561402
+  },
+  {
+    "ticker": "NDAQ",
+    "company": "Nasdaq, Inc.",
+    "sector": "Financial Services",
+    "beta": 1.035,
+    "volatility_52wk": 0.2656478411388465,
+    "avg_volume": 4734620,
+    "market_cap": 50030624768,
+    "ytd_return": -0.08514383452439023
+  },
+  {
+    "ticker": "NTAP",
+    "company": "NetApp, Inc.",
+    "sector": "Technology",
+    "beta": 1.349,
+    "volatility_52wk": 0.346275949008994,
+    "avg_volume": 2769210,
+    "market_cap": 19471312896,
+    "ytd_return": -0.050812469240935805
+  },
+  {
+    "ticker": "NWS",
+    "company": "News Corporation",
+    "sector": "Communication Services",
+    "beta": 0.969,
+    "volatility_52wk": 0.26880528404201304,
+    "avg_volume": 1427640,
+    "market_cap": 15146520576,
+    "ytd_return": -0.06953307568003032
+  },
+  {
+    "ticker": "NWSA",
+    "company": "News Corporation",
+    "sector": "Communication Services",
+    "beta": 0.969,
+    "volatility_52wk": 0.2637107356952086,
+    "avg_volume": 3642500,
+    "market_cap": 14003204096,
+    "ytd_return": -0.05994653160783952
+  },
+  {
+    "ticker": "NFLX",
+    "company": "Netflix, Inc.",
+    "sector": "Communication Services",
+    "beta": 1.714,
+    "volatility_52wk": 0.3506916707955643,
+    "avg_volume": 71335370,
+    "market_cap": 414178508800,
+    "ytd_return": 0.0882514448601198
+  },
+  {
+    "ticker": "NXPI",
+    "company": "NXP Semiconductors N.V.",
+    "sector": "Technology",
+    "beta": 1.44,
+    "volatility_52wk": 0.4689986480399368,
+    "avg_volume": 2492040,
+    "market_cap": 50728087552,
+    "ytd_return": -0.08830438084746134
+  },
+  {
+    "ticker": "NTRS",
+    "company": "Northern Trust Corporation",
+    "sector": "Financial Services",
+    "beta": 1.266,
+    "volatility_52wk": 0.30214097708079435,
+    "avg_volume": 1183480,
+    "market_cap": 25304172544,
+    "ytd_return": -0.00495406696908167
+  },
+  {
+    "ticker": "NDSN",
+    "company": "Nordson Corporation",
+    "sector": "Industrials",
+    "beta": 0.99,
+    "volatility_52wk": 0.27530743425420023,
+    "avg_volume": 385460,
+    "market_cap": 14948889600,
+    "ytd_return": 0.13197526332695667
+  },
+  {
+    "ticker": "NVDA",
+    "company": "NVIDIA Corporation",
+    "sector": "Technology",
+    "beta": 2.375,
+    "volatility_52wk": 0.4217246597161198,
+    "avg_volume": 222196790,
+    "market_cap": 4373198667776,
+    "ytd_return": -0.0584061340895638
+  },
+  {
+    "ticker": "ON",
+    "company": "ON Semiconductor Corporation",
+    "sector": "Technology",
+    "beta": 1.53,
+    "volatility_52wk": 0.5800692955719094,
+    "avg_volume": 7535790,
+    "market_cap": 23072376832,
+    "ytd_return": 0.0029982039974931988
+  },
+  {
+    "ticker": "ORLY",
+    "company": "O'Reilly Automotive, Inc.",
+    "sector": "Consumer Cyclical",
+    "beta": 0.599,
+    "volatility_52wk": 0.21964721512007654,
+    "avg_volume": 6683130,
+    "market_cap": 79480840192,
+    "ytd_return": 0.04715521705687438
+  },
+  {
+    "ticker": "PANW",
+    "company": "Palo Alto Networks, Inc.",
+    "sector": "Technology",
+    "beta": 0.822,
+    "volatility_52wk": 0.3634817300451248,
+    "avg_volume": 12182900,
+    "market_cap": 134774636544,
+    "ytd_return": -0.07983493591597653
+  },
+  {
+    "ticker": "ODFL",
+    "company": "Old Dominion Freight Line, Inc.",
+    "sector": "Industrials",
+    "beta": 1.219,
+    "volatility_52wk": 0.42580054043083243,
+    "avg_volume": 2280960,
+    "market_cap": 39856250880,
+    "ytd_return": 0.21848104934917945
+  },
+  {
+    "ticker": "PLTR",
+    "company": "Palantir Technologies Inc.",
+    "sector": "Technology",
+    "beta": 1.739,
+    "volatility_52wk": 0.5863675883976557,
+    "avg_volume": 58296930,
+    "market_cap": 368498638848,
+    "ytd_return": -0.06374357744153578
+  },
+  {
+    "ticker": "PCAR",
+    "company": "PACCAR Inc.",
+    "sector": "Industrials",
+    "beta": 1.046,
+    "volatility_52wk": 0.2910661876802442,
+    "avg_volume": 3610460,
+    "market_cap": 62457851904,
+    "ytd_return": 0.07950881087034187
+  },
+  {
+    "ticker": "PAYX",
+    "company": "Paychex, Inc.",
+    "sector": "Technology",
+    "beta": 0.889,
+    "volatility_52wk": 0.26440192858123746,
+    "avg_volume": 4388800,
+    "market_cap": 35279323136,
+    "ytd_return": -0.07136280026603123
+  },
+  {
+    "ticker": "PYPL",
+    "company": "PayPal Holdings, Inc.",
+    "sector": "Financial Services",
+    "beta": 1.459,
+    "volatility_52wk": 0.4123622133267852,
+    "avg_volume": 33728310,
+    "market_cap": 42969817088,
+    "ytd_return": -0.19212243354330133
+  },
+  {
+    "ticker": "PEP",
+    "company": "Pepsico, Inc.",
+    "sector": "Consumer Defensive",
+    "beta": 0.375,
+    "volatility_52wk": 0.22718651085693614,
+    "avg_volume": 7166770,
+    "market_cap": 219758919680,
+    "ytd_return": 0.12093086876829502
+  },
+  {
+    "ticker": "PSKY",
+    "company": "Paramount Skydance Corporation",
+    "sector": "Communication Services",
+    "beta": 1.259,
+    "volatility_52wk": 0.6490074195524226,
+    "avg_volume": 23071290,
+    "market_cap": 12344330240,
+    "ytd_return": -0.09028835405946875
+  },
+  {
+    "ticker": "PTC",
+    "company": "PTC Inc.",
+    "sector": "Technology",
+    "beta": 1.042,
+    "volatility_52wk": 0.3451523301708078,
+    "avg_volume": 1177750,
+    "market_cap": 19362451456,
+    "ytd_return": -0.04344502718683736
+  },
+  {
+    "ticker": "POOL",
+    "company": "Pool Corporation",
+    "sector": "Industrials",
+    "beta": 1.247,
+    "volatility_52wk": 0.350154922165434,
+    "avg_volume": 820140,
+    "market_cap": 7735900160,
+    "ytd_return": -0.0698707177861438
+  },
+  {
+    "ticker": "REGN",
+    "company": "Regeneron Pharmaceuticals, Inc.",
+    "sector": "Healthcare",
+    "beta": 0.397,
+    "volatility_52wk": 0.4090291528182511,
+    "avg_volume": 668030,
+    "market_cap": 81733042176,
+    "ytd_return": -0.021190004326576573
+  },
+  {
+    "ticker": "QCOM",
+    "company": "QUALCOMM Incorporated",
+    "sector": "Technology",
+    "beta": 1.267,
+    "volatility_52wk": 0.38777851476028175,
+    "avg_volume": 9460810,
+    "market_cap": 145820205056,
+    "ytd_return": -0.21557402131555323
+  },
+  {
+    "ticker": "HOOD",
+    "company": "Robinhood Markets, Inc.",
+    "sector": "Financial Services",
+    "beta": 2.479,
+    "volatility_52wk": 0.7316045764724487,
+    "avg_volume": 29337030,
+    "market_cap": 69728886784,
+    "ytd_return": -0.3308740825406328
+  },
+  {
+    "ticker": "SNDK",
+    "company": "Sandisk Corporation",
+    "sector": "Technology",
+    "beta": null,
+    "volatility_52wk": 0.9827896421865323,
+    "avg_volume": 19453190,
+    "market_cap": 83525918720,
+    "ytd_return": 0.9158917155926601
+  },
+  {
+    "ticker": "PFG",
+    "company": "Principal Financial Group Inc",
+    "sector": "Financial Services",
+    "beta": 0.876,
+    "volatility_52wk": 0.28597009650632477,
+    "avg_volume": 1934640,
+    "market_cap": 19541766144,
+    "ytd_return": 0.031760277627375995
+  },
+  {
+    "ticker": "REG",
+    "company": "Regency Centers Corporation",
+    "sector": "Real Estate",
+    "beta": 0.926,
+    "volatility_52wk": 0.18705404820366484,
+    "avg_volume": 1340300,
+    "market_cap": 14506332160,
+    "ytd_return": 0.1574456256883828
+  },
+  {
+    "ticker": "ROP",
+    "company": "Roper Technologies, Inc.",
+    "sector": "Technology",
+    "beta": 0.927,
+    "volatility_52wk": 0.2515260944394264,
+    "avg_volume": 1595640,
+    "market_cap": 38939992064,
+    "ytd_return": -0.15427810380316548
+  },
+  {
+    "ticker": "ROST",
+    "company": "Ross Stores, Inc.",
+    "sector": "Consumer Cyclical",
+    "beta": 0.98,
+    "volatility_52wk": 0.2657162902954435,
+    "avg_volume": 3472570,
+    "market_cap": 68128399360,
+    "ytd_return": 0.15875010197436568
+  },
+  {
+    "ticker": "SBUX",
+    "company": "Starbucks Corporation",
+    "sector": "Consumer Cyclical",
+    "beta": 0.928,
+    "volatility_52wk": 0.3373113762526623,
+    "avg_volume": 7517410,
+    "market_cap": 112303874048,
+    "ytd_return": 0.17887336459110553
+  },
+  {
+    "ticker": "TMUS",
+    "company": "T-Mobile US, Inc.",
+    "sector": "Communication Services",
+    "beta": 0.412,
+    "volatility_52wk": 0.2705771270452293,
+    "avg_volume": 5813400,
+    "market_cap": 245456273408,
+    "ytd_return": 0.11018140741264595
+  },
+  {
+    "ticker": "SBAC",
+    "company": "SBA Communications Corporation",
+    "sector": "Real Estate",
+    "beta": 0.833,
+    "volatility_52wk": 0.2522539027560696,
+    "avg_volume": 1246360,
+    "market_cap": 20576645120,
+    "ytd_return": 0.02130094656339925
+  },
+  {
+    "ticker": "SNPS",
+    "company": "Synopsys, Inc.",
+    "sector": "Technology",
+    "beta": 1.156,
+    "volatility_52wk": 0.5709805385427295,
+    "avg_volume": 2951520,
+    "market_cap": 83296919552,
+    "ytd_return": -0.08952584938906723
+  },
+  {
+    "ticker": "SMCI",
+    "company": "Super Micro Computer, Inc.",
+    "sector": "Technology",
+    "beta": 1.487,
+    "volatility_52wk": 0.7441415631674982,
+    "avg_volume": 26231910,
+    "market_cap": 18664511488,
+    "ytd_return": 0.01130492221639832
+  },
+  {
+    "ticker": "STLD",
+    "company": "Steel Dynamics, Inc.",
+    "sector": "Basic Materials",
+    "beta": 1.395,
+    "volatility_52wk": 0.37326798364590014,
+    "avg_volume": 1164800,
+    "market_cap": 25945081856,
+    "ytd_return": 0.03152336208519337
+  },
+  {
+    "ticker": "STX",
+    "company": "Seagate Technology Holdings PLC",
+    "sector": "Technology",
+    "beta": 1.648,
+    "volatility_52wk": 0.6232781412240398,
+    "avg_volume": 3510730,
+    "market_cap": 80982933504,
+    "ytd_return": 0.22695964842698202
+  },
+  {
+    "ticker": "TTWO",
+    "company": "Take-Two Interactive Software, ",
+    "sector": "Communication Services",
+    "beta": 0.958,
+    "volatility_52wk": 0.3031219910507805,
+    "avg_volume": 2133160,
+    "market_cap": 39414595584,
+    "ytd_return": -0.15937998859593552
+  },
+  {
+    "ticker": "TROW",
+    "company": "T. Rowe Price Group, Inc.",
+    "sector": "Financial Services",
+    "beta": 1.553,
+    "volatility_52wk": 0.30412589712047333,
+    "avg_volume": 2079500,
+    "market_cap": 19357620224,
+    "ytd_return": -0.13600302113239526
+  },
+  {
+    "ticker": "SWKS",
+    "company": "Skyworks Solutions, Inc.",
+    "sector": "Technology",
+    "beta": 1.297,
+    "volatility_52wk": 0.45568331182106403,
+    "avg_volume": 3083360,
+    "market_cap": 8163783680,
+    "ytd_return": -0.1489130423193264
+  },
+  {
+    "ticker": "TTD",
+    "company": "The Trade Desk, Inc.",
+    "sector": "Communication Services",
+    "beta": 1.19,
+    "volatility_52wk": 0.7047907938899203,
+    "avg_volume": 30705570,
+    "market_cap": 13517748224,
+    "ytd_return": -0.22292992437625955
+  },
+  {
+    "ticker": "TER",
+    "company": "Teradyne, Inc.",
+    "sector": "Technology",
+    "beta": 1.801,
+    "volatility_52wk": 0.6284719311608307,
+    "avg_volume": 3665600,
+    "market_cap": 44934688768,
+    "ytd_return": 0.3155231788624748
+  },
+  {
+    "ticker": "TSCO",
+    "company": "Tractor Supply Company",
+    "sector": "Consumer Cyclical",
+    "beta": 0.698,
+    "volatility_52wk": 0.285965752910316,
+    "avg_volume": 6236240,
+    "market_cap": 26451785728,
+    "ytd_return": -0.01318123075953224
+  },
+  {
+    "ticker": "TRMB",
+    "company": "Trimble Inc.",
+    "sector": "Technology",
+    "beta": 1.574,
+    "volatility_52wk": 0.32327329222099654,
+    "avg_volume": 1877700,
+    "market_cap": 16546212864,
+    "ytd_return": -0.1053236283307376
+  },
+  {
+    "ticker": "ULTA",
+    "company": "Ulta Beauty, Inc.",
+    "sector": "Consumer Cyclical",
+    "beta": 0.847,
+    "volatility_52wk": 0.37358776635930946,
+    "avg_volume": 459790,
+    "market_cap": 28166115328,
+    "ytd_return": 0.0424166985357921
+  },
+  {
+    "ticker": "UAL",
+    "company": "United Airlines Holdings, Inc.",
+    "sector": "Industrials",
+    "beta": 1.247,
+    "volatility_52wk": 0.5762466354864554,
+    "avg_volume": 7907780,
+    "market_cap": 29178503168,
+    "ytd_return": -0.18529335497369206
+  },
+  {
+    "ticker": "TSLA",
+    "company": "Tesla, Inc.",
+    "sector": "Consumer Cyclical",
+    "beta": 1.926,
+    "volatility_52wk": 0.5822380724791913,
+    "avg_volume": 59536900,
+    "market_cap": 1463673552896,
+    "ytd_return": -0.09436846998588196
+  },
+  {
+    "ticker": "VRSK",
+    "company": "Verisk Analytics, Inc.",
+    "sector": "Industrials",
+    "beta": 0.797,
+    "volatility_52wk": 0.2861626548258951,
+    "avg_volume": 2641780,
+    "market_cap": 29629913088,
+    "ytd_return": -0.027961305832534276
+  },
+  {
+    "ticker": "VRSN",
+    "company": "VeriSign, Inc.",
+    "sector": "Technology",
+    "beta": 0.765,
+    "volatility_52wk": 0.2720026255604053,
+    "avg_volume": 852660,
+    "market_cap": 22486239232,
+    "ytd_return": 0.013511828114970818
+  },
+  {
+    "ticker": "TXN",
+    "company": "Texas Instruments Incorporated",
+    "sector": "Technology",
+    "beta": 0.979,
+    "volatility_52wk": 0.4100108262717972,
+    "avg_volume": 7371720,
+    "market_cap": 175482372096,
+    "ytd_return": 0.08849702048770877
+  },
+  {
+    "ticker": "VRTX",
+    "company": "Vertex Pharmaceuticals Incorpor",
+    "sector": "Healthcare",
+    "beta": 0.315,
+    "volatility_52wk": 0.34581008047097195,
+    "avg_volume": 1184910,
+    "market_cap": 115308380160,
+    "ytd_return": 0.0100855893423301
+  },
+  {
+    "ticker": "VTRS",
+    "company": "Viatris Inc.",
+    "sector": "Healthcare",
+    "beta": 0.796,
+    "volatility_52wk": 0.349106750304287,
+    "avg_volume": 13589620,
+    "market_cap": 16112453632,
+    "ytd_return": 0.1364365813852724
+  },
+  {
+    "ticker": "WBD",
+    "company": "Warner Bros. Discovery, Inc. - ",
+    "sector": "Communication Services",
+    "beta": 1.675,
+    "volatility_52wk": 0.5933916209803158,
+    "avg_volume": 30820700,
+    "market_cap": 68984610816,
+    "ytd_return": -0.0196422119062307
+  },
+  {
+    "ticker": "WDC",
+    "company": "Western Digital Corporation",
+    "sector": "Technology",
+    "beta": 1.853,
+    "volatility_52wk": 0.6366113060199481,
+    "avg_volume": 8858770,
+    "market_cap": 88107450368,
+    "ytd_return": 0.306606307871316
+  },
+  {
+    "ticker": "WMT",
+    "company": "Walmart Inc.",
+    "sector": "Consumer Defensive",
+    "beta": 0.657,
+    "volatility_52wk": 0.24752715499162575,
+    "avg_volume": 21117290,
+    "market_cap": 983849828352,
+    "ytd_return": 0.09790706550527924
+  },
+  {
+    "ticker": "WDAY",
+    "company": "Workday, Inc.",
+    "sector": "Technology",
+    "beta": 1.167,
+    "volatility_52wk": 0.38297485587045926,
+    "avg_volume": 8670680,
+    "market_cap": 39570735104,
+    "ytd_return": -0.26604792160071145
+  },
+  {
+    "ticker": "WYNN",
+    "company": "Wynn Resorts, Limited",
+    "sector": "Consumer Cyclical",
+    "beta": 1.034,
+    "volatility_52wk": 0.40538311757301043,
+    "avg_volume": 2102490,
+    "market_cap": 10250525696,
+    "ytd_return": -0.17100431701606456
+  },
+  {
+    "ticker": "WTW",
+    "company": "Willis Towers Watson Public Lim",
+    "sector": "Financial Services",
+    "beta": 0.622,
+    "volatility_52wk": 0.25514364675308526,
+    "avg_volume": 770060,
+    "market_cap": 27997853696,
+    "ytd_return": -0.0715051563363004
+  },
+  {
+    "ticker": "ZBRA",
+    "company": "Zebra Technologies Corporation",
+    "sector": "Technology",
+    "beta": 1.679,
+    "volatility_52wk": 0.4749487254613127,
+    "avg_volume": 917060,
+    "market_cap": 10669553664,
+    "ytd_return": -0.11538465083829008
+  },
+  {
+    "ticker": "XEL",
+    "company": "Xcel Energy Inc.",
+    "sector": "Utilities",
+    "beta": 0.426,
+    "volatility_52wk": 0.1953570943175976,
+    "avg_volume": 4729490,
+    "market_cap": 51139182592,
+    "ytd_return": 0.10498120388126546
+  }
+]
