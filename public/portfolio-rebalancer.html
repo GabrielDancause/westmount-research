@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio Rebalancing Tool | Westmount Research</title>
+<meta name="description" content="Calculate exactly what to buy and sell to rebalance your portfolio back to your target asset allocation percentages.">
+<link rel="canonical" href="https://westmountresearch.com/portfolio-rebalancer.html">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Portfolio Rebalancing Tool",
+  "operatingSystem": "Web",
+  "applicationCategory": "FinanceApplication",
+  "description": "Calculate exactly what to buy and sell to rebalance your portfolio back to your target asset allocation percentages.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Westmount Research",
+    "url": "https://westmountresearch.com"
+  }
+}
+</script>
+
+<style>
+:root {
+  --bg-color: #060a12;
+  --card-bg: #0a1020;
+  --border-color: #152040;
+  --accent-color: #1a5276;
+  --accent-light: #2980b9;
+  --text-main: #c8d0de;
+  --text-muted: #5a6a80;
+  --buy-color: #27ae60;
+  --sell-color: #e74c3c;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  background: var(--bg-color);
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+.header {
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--border-color);
+  background: #040810;
+}
+.header a {
+  color: var(--accent-light);
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 1.1rem;
+  letter-spacing: -0.5px;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+h1 { color: #fff; font-size: 2.5rem; font-weight: 900; letter-spacing: -1px; margin-bottom: 8px; }
+h2 { color: #fff; font-size: 1.5rem; margin-bottom: 16px; font-weight: 800; }
+p { color: var(--text-muted); margin-bottom: 32px; font-size: 1.1rem; }
+
+.rebalancer-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 40px;
+  position: relative;
+  overflow: hidden;
+}
+.rebalancer-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 3px;
+  background: var(--accent-color);
+}
+
+.holdings-table-container {
+  overflow-x: auto;
+  margin-bottom: 24px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+  font-family: 'Inter', sans-serif;
+}
+th {
+  text-align: left;
+  padding: 12px;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid var(--border-color);
+}
+td {
+  padding: 12px;
+  border-bottom: 1px solid var(--border-color);
+}
+td input {
+  width: 100%;
+  background: #040810;
+  border: 1px solid var(--border-color);
+  color: #fff;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1rem;
+  padding: 8px 12px;
+  border-radius: 6px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+td input:focus {
+  border-color: var(--accent-light);
+}
+
+.btn {
+  background: var(--accent-color);
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: background 0.2s;
+}
+.btn:hover {
+  background: var(--accent-light);
+}
+
+.btn-add {
+  background: rgba(41, 128, 185, 0.1);
+  color: var(--accent-light);
+  border: 1px dashed var(--accent-light);
+  width: 100%;
+  margin-top: 10px;
+  padding: 12px;
+}
+.btn-add:hover {
+  background: rgba(41, 128, 185, 0.2);
+}
+
+.btn-remove {
+  background: rgba(231, 76, 60, 0.1);
+  color: #e74c3c;
+  border: 1px solid rgba(231, 76, 60, 0.3);
+  padding: 6px 10px;
+  font-size: 0.8rem;
+}
+.btn-remove:hover {
+  background: rgba(231, 76, 60, 0.2);
+}
+
+.summary-panel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 24px;
+  padding: 16px;
+  background: #040810;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+}
+
+.summary-item {
+  display: flex;
+  flex-direction: column;
+}
+.summary-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.summary-val {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #fff;
+  font-family: 'JetBrains Mono', monospace;
+}
+.error-text {
+  color: var(--sell-color);
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: none;
+}
+
+.results-table-container {
+  overflow-x: auto;
+  margin-top: 40px;
+  display: none;
+}
+.results-table-container.visible {
+  display: block;
+}
+
+#results-table th, #results-table td {
+  text-align: right;
+  font-family: 'JetBrains Mono', monospace;
+}
+#results-table th:first-child, #results-table td:first-child {
+  text-align: left;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+}
+
+.action-buy { color: var(--buy-color); font-weight: 700; }
+.action-sell { color: var(--sell-color); font-weight: 700; }
+.action-hold { color: var(--text-muted); }
+
+/* FAQ Section */
+.faq-section {
+  margin-top: 60px;
+  padding-top: 40px;
+  border-top: 1px solid var(--border-color);
+}
+.faq-item {
+  margin-bottom: 24px;
+}
+.faq-item h3 {
+  font-size: 1.1rem;
+  color: #fff;
+  margin-bottom: 8px;
+}
+.faq-item p {
+  font-size: 0.95rem;
+  margin-bottom: 0;
+}
+
+.footer {
+  text-align: center;
+  padding: 50px 24px;
+  font-size: 0.85rem;
+  color: #3a4a5a;
+  border-top: 1px solid #151f2e;
+  background: #040810;
+  margin-top: 40px;
+}
+.footer a { color: var(--accent-light); text-decoration: none; }
+.footer a:hover { text-decoration: underline; }
+.disclaimer {
+  max-width: 600px;
+  margin: 16px auto 0;
+  color: #2a3a4a;
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+</style>
+</head>
+<body>
+<script src="/nav.js"></script>
+
+<div class="header">
+  <a href="/">← Westmount Research</a>
+</div>
+
+<div class="container">
+  <h1>Portfolio Rebalancing Tool</h1>
+  <p>Enter your current holdings and target asset allocation percentages. We'll calculate exactly how much of each asset you need to buy or sell to reach your ideal balance.</p>
+
+  <div class="rebalancer-card">
+    <div class="holdings-table-container">
+      <table id="holdings-table">
+        <thead>
+          <tr>
+            <th style="width: 30%">Asset Name / Ticker</th>
+            <th style="width: 25%">Current Value ($)</th>
+            <th style="width: 25%">Target Allocation (%)</th>
+            <th style="width: 20%">Action</th>
+          </tr>
+        </thead>
+        <tbody id="holdings-body">
+          <!-- Rows will be dynamically added here -->
+        </tbody>
+      </table>
+      <button class="btn btn-add" id="add-row-btn">+ Add Asset</button>
+    </div>
+
+    <div class="summary-panel">
+      <div class="summary-item">
+        <span class="summary-label">Total Portfolio Value</span>
+        <span class="summary-val" id="total-value">$0.00</span>
+      </div>
+      <div class="summary-item" style="text-align: right;">
+        <span class="summary-label">Total Target %</span>
+        <span class="summary-val" id="total-target-pct">0%</span>
+        <span id="target-error" class="error-text">Must equal 100%</span>
+      </div>
+    </div>
+
+    <div style="margin-top: 24px; text-align: center;">
+      <button class="btn" id="calculate-btn" style="padding: 14px 32px; font-size: 1.1rem;">Calculate Rebalance</button>
+    </div>
+  </div>
+
+  <div class="rebalancer-card results-table-container" id="results-container">
+    <h2>Rebalancing Instructions</h2>
+    <table id="results-table">
+      <thead>
+        <tr>
+          <th>Asset</th>
+          <th>Current Value</th>
+          <th>Target Value</th>
+          <th>Action</th>
+          <th>Amount</th>
+        </tr>
+      </thead>
+      <tbody id="results-body">
+        <!-- Results will appear here -->
+      </tbody>
+    </table>
+  </div>
+
+  <div class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <h3>What is portfolio rebalancing?</h3>
+      <p>Portfolio rebalancing is the process of realigning the weightings of your portfolio of assets. Over time, some investments will grow faster than others, shifting your portfolio away from your original target allocation. Rebalancing involves buying or selling assets to get back to your desired risk level.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Why should I rebalance my portfolio?</h3>
+      <p>Rebalancing helps you maintain your desired level of risk. If stocks perform very well, they might grow to become a larger portion of your portfolio than you intended, exposing you to more risk than you are comfortable with. Rebalancing forces you to sell high (the assets that grew) and buy low (the assets that shrunk).</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Methodology</h3>
+      <p>This tool sums the current value of all entered assets to determine your total portfolio value. It then multiplies this total value by your target allocation percentage for each asset to find the target dollar value. Finally, it subtracts your current value from the target value to determine whether you need to buy or sell, and by how much.</p>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  © <script>document.write(new Date().getFullYear())</script> <a href="/">westmount-research</a> · A <a href="https://gab.ae">GAB Ventures</a> property
+  <div class="disclaimer">This calculator provides illustrative results for informational purposes only. It does not account for taxes, trading fees, or other costs. Rebalancing by selling assets in a taxable account may trigger capital gains taxes. Nothing here constitutes financial advice.</div>
+</div>
+
+<script>
+  // Initial default rows
+  const initialData = [
+    { name: 'VTI (Total Stock Market)', val: 50000, target: 60 },
+    { name: 'BND (Total Bond Market)', val: 25000, target: 30 },
+    { name: 'VXUS (Total Int Stock)', val: 15000, target: 10 }
+  ];
+
+  const tbody = document.getElementById('holdings-body');
+  const addBtn = document.getElementById('add-row-btn');
+  const calcBtn = document.getElementById('calculate-btn');
+  const totalValEl = document.getElementById('total-value');
+  const totalPctEl = document.getElementById('total-target-pct');
+  const errorEl = document.getElementById('target-error');
+  const resultsContainer = document.getElementById('results-container');
+  const resultsBody = document.getElementById('results-body');
+
+  function createRow(name = '', val = '', target = '') {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td><input type="text" class="asset-name" placeholder="Asset Name" value="${name}"></td>
+      <td><input type="number" class="asset-val" placeholder="0.00" min="0" step="0.01" value="${val}"></td>
+      <td><input type="number" class="asset-target" placeholder="0" min="0" max="100" step="0.1" value="${target}"></td>
+      <td><button class="btn-remove" onclick="this.closest('tr').remove(); updateTotals();">Remove</button></td>
+    `;
+
+    // Add event listeners to inputs to update totals in real-time
+    const inputs = tr.querySelectorAll('input');
+    inputs.forEach(input => {
+      input.addEventListener('input', updateTotals);
+    });
+
+    return tr;
+  }
+
+  function init() {
+    initialData.forEach(item => {
+      tbody.appendChild(createRow(item.name, item.val, item.target));
+    });
+    updateTotals();
+  }
+
+  addBtn.addEventListener('click', () => {
+    tbody.appendChild(createRow());
+    updateTotals();
+  });
+
+  const formatCurrency = (val) => {
+    return new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    }).format(val);
+  };
+
+  function updateTotals() {
+    const valInputs = document.querySelectorAll('.asset-val');
+    const targetInputs = document.querySelectorAll('.asset-target');
+
+    let totalVal = 0;
+    let totalTarget = 0;
+
+    valInputs.forEach(input => {
+      const val = parseFloat(input.value) || 0;
+      totalVal += val;
+    });
+
+    targetInputs.forEach(input => {
+      const val = parseFloat(input.value) || 0;
+      totalTarget += val;
+    });
+
+    totalValEl.innerText = formatCurrency(totalVal);
+    totalPctEl.innerText = totalTarget.toFixed(1) + '%';
+
+    // Highlight target % if not exactly 100
+    if (Math.abs(totalTarget - 100) > 0.01) {
+      totalPctEl.style.color = 'var(--sell-color)';
+      errorEl.style.display = 'block';
+    } else {
+      totalPctEl.style.color = '#fff';
+      errorEl.style.display = 'none';
+    }
+  }
+
+  calcBtn.addEventListener('click', () => {
+    const rows = document.querySelectorAll('#holdings-body tr');
+    let totalVal = 0;
+    let totalTarget = 0;
+    const holdings = [];
+
+    rows.forEach(tr => {
+      const name = tr.querySelector('.asset-name').value.trim() || 'Unnamed Asset';
+      const currentVal = parseFloat(tr.querySelector('.asset-val').value) || 0;
+      const targetPct = parseFloat(tr.querySelector('.asset-target').value) || 0;
+
+      totalVal += currentVal;
+      totalTarget += targetPct;
+
+      holdings.push({ name, currentVal, targetPct });
+    });
+
+    if (Math.abs(totalTarget - 100) > 0.01) {
+      alert("Your Target Allocation percentages must sum to exactly 100%. Currently it is " + totalTarget.toFixed(1) + "%.");
+      return;
+    }
+
+    resultsBody.innerHTML = '';
+
+    holdings.forEach(h => {
+      const targetVal = totalVal * (h.targetPct / 100);
+      const diff = targetVal - h.currentVal;
+
+      let action = 'Hold';
+      let actionClass = 'action-hold';
+      let amountStr = '$0.00';
+
+      // We use a small epsilon to avoid floating point precision issues showing a 1 cent buy/sell
+      if (diff > 0.01) {
+        action = 'Buy';
+        actionClass = 'action-buy';
+        amountStr = formatCurrency(diff);
+      } else if (diff < -0.01) {
+        action = 'Sell';
+        actionClass = 'action-sell';
+        amountStr = formatCurrency(Math.abs(diff));
+      } else {
+        amountStr = '-';
+      }
+
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td>${h.name}</td>
+        <td>${formatCurrency(h.currentVal)}</td>
+        <td>${formatCurrency(targetVal)}</td>
+        <td class="${actionClass}">${action}</td>
+        <td class="${actionClass}">${amountStr}</td>
+      `;
+      resultsBody.appendChild(tr);
+    });
+
+    resultsContainer.classList.add('visible');
+
+    // Scroll to results
+    resultsContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+
+  // Run on load
+  init();
+</script>
+
+</body>
+</html>
