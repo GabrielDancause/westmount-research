@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discounted Cash Flow (DCF) Calculator | Westmount Fundamentals</title>
+    <meta name="description" content="Calculate the intrinsic value of a stock using the Discounted Cash Flow (DCF) model. Input free cash flow, growth rate, discount rate, and terminal growth rate.">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G86C7NJG3F"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-G86C7NJG3F');
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: #060a12;
+            color: #c8d0de;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            padding: 40px 24px;
+            background: linear-gradient(180deg, #0a1628 0%, #060a12 100%);
+            text-align: center;
+            border-bottom: 1px solid #152040;
+        }
+        .header-tag {
+            color: #1a5276;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            display: inline-block;
+            background: rgba(26,82,118,0.1);
+            padding: 4px 12px;
+            border-radius: 12px;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #fff;
+            margin-bottom: 16px;
+            letter-spacing: -1px;
+        }
+        .header-desc {
+            color: #5a6a80;
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 1.05rem;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 24px;
+        }
+
+        /* Calculator Grid */
+        .calc-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+        @media (max-width: 768px) {
+            .calc-grid { grid-template-columns: 1fr; }
+        }
+
+        .card {
+            background: #0a1020;
+            border: 1px solid #152040;
+            border-radius: 16px;
+            padding: 24px;
+        }
+        .card h2 {
+            font-size: 1.25rem;
+            color: #fff;
+            margin-bottom: 20px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Inputs */
+        .input-group {
+            margin-bottom: 16px;
+        }
+        .input-group label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #8a9bb3;
+            margin-bottom: 8px;
+        }
+        .input-wrapper {
+            position: relative;
+        }
+        .prefix, .suffix {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #5a6a80;
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .prefix { left: 12px; }
+        .suffix { right: 12px; }
+
+        input[type="number"] {
+            width: 100%;
+            background: #060a12;
+            border: 1px solid #152040;
+            color: #fff;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1rem;
+            padding: 10px 12px;
+            border-radius: 8px;
+            transition: all 0.2s;
+        }
+        input[type="number"]:focus {
+            outline: none;
+            border-color: #1a5276;
+            box-shadow: 0 0 0 2px rgba(26,82,118,0.2);
+        }
+        input.has-prefix { padding-left: 28px; }
+        input.has-suffix { padding-right: 28px; }
+
+        /* Results */
+        .result-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #152040;
+        }
+        .result-row:last-child { border-bottom: none; }
+        .result-label {
+            font-size: 0.95rem;
+            color: #8a9bb3;
+        }
+        .result-value {
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #fff;
+        }
+        .result-value.accent {
+            color: #1a5276;
+            font-size: 1.5rem;
+        }
+
+        /* Content Sections */
+        .content-section {
+            background: #0a1020;
+            border: 1px solid #152040;
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 32px;
+        }
+        .content-section h2 {
+            font-size: 1.5rem;
+            color: #fff;
+            margin-bottom: 16px;
+            font-weight: 800;
+        }
+        .content-section p {
+            margin-bottom: 16px;
+            color: #8a9bb3;
+        }
+        .content-section ul {
+            list-style-type: none;
+        }
+        .content-section li {
+            color: #8a9bb3;
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+        .content-section li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #1a5276;
+            font-weight: bold;
+        }
+
+        /* FAQ */
+        .faq-item { margin-bottom: 20px; }
+        .faq-item h4 {
+            font-size: 1.05rem;
+            color: #e0e8f0;
+            margin-bottom: 8px;
+        }
+        .faq-item p { color: #8a9bb3; font-size: 0.95rem; margin-bottom: 0; }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 40px 24px;
+            font-size: 0.85rem;
+            color: #3a4a5a;
+            border-top: 1px solid #152040;
+            background: #040810;
+            margin-top: 40px;
+        }
+        .footer a { color: #1a5276; text-decoration: none; }
+        .footer a:hover { text-decoration: underline; }
+        .disclaimer {
+            max-width: 600px;
+            margin: 16px auto 0;
+            color: #2a3a4a;
+            font-size: 0.75rem;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <script src="/nav.js"></script>
+
+    <header>
+        <span class="header-tag">Interactive Tool</span>
+        <h1>Discounted Cash Flow (DCF) Calculator</h1>
+        <p class="header-desc">Calculate the intrinsic value of a company using future cash flow projections to determine if a stock is overvalued or undervalued.</p>
+    </header>
+
+    <div class="container">
+
+        <div class="calc-grid">
+            <!-- Inputs -->
+            <div class="card">
+                <h2>DCF Inputs</h2>
+
+                <div class="input-group">
+                    <label>Free Cash Flow (TTM)</label>
+                    <div class="input-wrapper">
+                        <span class="prefix">$</span>
+                        <input type="number" id="fcf" class="has-prefix" value="1000000000" min="0" step="10000">
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>Growth Rate (Next 10 Years)</label>
+                    <div class="input-wrapper">
+                        <input type="number" id="growth-rate" class="has-suffix" value="10" min="0" max="100" step="0.1">
+                        <span class="suffix">%</span>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>Discount Rate (WACC or Required Return)</label>
+                    <div class="input-wrapper">
+                        <input type="number" id="discount-rate" class="has-suffix" value="10" min="0.1" max="100" step="0.1">
+                        <span class="suffix">%</span>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>Terminal Growth Rate (Perpetual)</label>
+                    <div class="input-wrapper">
+                        <input type="number" id="terminal-rate" class="has-suffix" value="2.5" min="0" max="10" step="0.1">
+                        <span class="suffix">%</span>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>Shares Outstanding</label>
+                    <input type="number" id="shares" value="500000000" min="1" step="1000">
+                </div>
+            </div>
+
+            <!-- Results -->
+            <div class="card">
+                <h2>Valuation Results</h2>
+
+                <div class="result-row">
+                    <span class="result-label">Present Value of FCF (Years 1-10)</span>
+                    <span class="result-value" id="res-pv-fcf">$0.00</span>
+                </div>
+                <div class="result-row">
+                    <span class="result-label">Present Value of Terminal Value</span>
+                    <span class="result-value" id="res-pv-tv">$0.00</span>
+                </div>
+                <div class="result-row">
+                    <span class="result-label">Total Intrinsic Value (Company)</span>
+                    <span class="result-value" id="res-total-value">$0.00</span>
+                </div>
+                <div class="result-row" style="margin-top: 16px; border-top: 1px solid #152040; padding-top: 24px;">
+                    <span class="result-label" style="font-weight: 700; color: #fff;">Intrinsic Value Per Share</span>
+                    <span class="result-value accent" id="res-value-per-share">$0.00</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>Methodology</h2>
+            <p>The Discounted Cash Flow (DCF) model is a valuation method used to estimate the value of an investment based on its expected future cash flows. It rests on the principle that the value of a company today is the sum of all the cash it will generate in the future, discounted back to today's dollars.</p>
+            <ul>
+                <li><strong>Free Cash Flow Projections:</strong> This calculator assumes the current Free Cash Flow grows at the specified Growth Rate for the next 10 years.</li>
+                <li><strong>Discounting:</strong> Each future cash flow is discounted back to its present value using the Discount Rate, which typically represents the Weighted Average Cost of Capital (WACC) or an investor's required rate of return.</li>
+                <li><strong>Terminal Value:</strong> Beyond the 10-year projection period, the model calculates a Terminal Value using the Gordon Growth Model, assuming cash flows grow at a constant, perpetual Terminal Growth Rate. This terminal value is also discounted back to the present.</li>
+                <li><strong>Intrinsic Value Per Share:</strong> The Present Value of the 10-year FCFs and the Present Value of the Terminal Value are summed to get the Total Intrinsic Value of the company. This total is then divided by the number of Shares Outstanding to arrive at the Intrinsic Value Per Share.</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <h4>What should I use for the Discount Rate?</h4>
+                <p>The discount rate is often a company's Weighted Average Cost of Capital (WACC), which is the blended cost of its debt and equity. Alternatively, many individual investors use their own "required rate of return," such as 9% or 10%, which represents the long-term historical average return of the stock market.</p>
+            </div>
+
+            <div class="faq-item">
+                <h4>What is a realistic Terminal Growth Rate?</h4>
+                <p>The terminal growth rate assumes the company will grow at that rate forever. Because no company can grow faster than the overall economy indefinitely, a rate between 2% and 3% is standard, as it aligns with long-term historical GDP growth and inflation.</p>
+            </div>
+
+            <div class="faq-item">
+                <h4>Why project for 10 years?</h4>
+                <p>A 5 to 10-year projection period is typical in DCF models. It is long enough to capture an expected high-growth or transitional phase before the company matures and settles into a stable, perpetual growth rate modeled by the terminal value.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        © <span id="current-year"></span> <a href="/">westmount-research</a> · A <a href="https://gab.ae">GAB Ventures</a> property
+        <div class="disclaimer">This site provides data and analysis for informational purposes only. The DCF model is highly sensitive to its inputs, and slight changes can result in vastly different valuations. Nothing here constitutes investment advice. Do your own research.</div>
+    </div>
+
+    <!-- JSON-LD SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Discounted Cash Flow (DCF) Calculator",
+      "operatingSystem": "Web",
+      "applicationCategory": "FinanceApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "description": "Calculate the intrinsic value of a stock using the Discounted Cash Flow (DCF) model with projections for free cash flow, growth rate, and terminal value.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Westmount Fundamentals"
+      }
+    }
+    </script>
+
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        const formatCurrency = (val) => new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(val);
+        const formatCurrencyPerShare = (val) => new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(val);
+
+        function calculateDCF() {
+            const fcf = parseFloat(document.getElementById('fcf').value) || 0;
+            const growthRate = (parseFloat(document.getElementById('growth-rate').value) || 0) / 100;
+            const discountRate = (parseFloat(document.getElementById('discount-rate').value) || 0) / 100;
+            const terminalRate = (parseFloat(document.getElementById('terminal-rate').value) || 0) / 100;
+            const shares = parseFloat(document.getElementById('shares').value) || 1; // Prevent division by zero
+
+            let pvFcfSum = 0;
+            let currentFcf = fcf;
+            const projectionYears = 10;
+
+            // Prevent infinite values if discount rate <= terminal rate
+            if (discountRate <= terminalRate) {
+                document.getElementById('res-pv-fcf').textContent = 'Error';
+                document.getElementById('res-pv-tv').textContent = 'Discount rate must be > terminal rate';
+                document.getElementById('res-total-value').textContent = 'Error';
+                document.getElementById('res-value-per-share').textContent = 'Error';
+                return;
+            }
+
+            // Calculate PV of FCFs for the projection period
+            for (let year = 1; year <= projectionYears; year++) {
+                currentFcf = currentFcf * (1 + growthRate);
+                const discountFactor = Math.pow(1 + discountRate, year);
+                const pvFcf = currentFcf / discountFactor;
+                pvFcfSum += pvFcf;
+            }
+
+            // Calculate Terminal Value (Gordon Growth Model)
+            const expectedFcfYear11 = currentFcf * (1 + terminalRate);
+            const terminalValue = expectedFcfYear11 / (discountRate - terminalRate);
+
+            // Discount Terminal Value back to Present Value
+            const pvTerminalValue = terminalValue / Math.pow(1 + discountRate, projectionYears);
+
+            // Total Intrinsic Value
+            const totalIntrinsicValue = pvFcfSum + pvTerminalValue;
+
+            // Value Per Share
+            const valuePerShare = totalIntrinsicValue / shares;
+
+            // Update UI
+            document.getElementById('res-pv-fcf').textContent = formatCurrency(pvFcfSum);
+            document.getElementById('res-pv-tv').textContent = formatCurrency(pvTerminalValue);
+            document.getElementById('res-total-value').textContent = formatCurrency(totalIntrinsicValue);
+            document.getElementById('res-value-per-share').textContent = formatCurrencyPerShare(valuePerShare);
+        }
+
+        // Event Listeners
+        const inputs = document.querySelectorAll('input');
+        inputs.forEach(input => {
+            input.addEventListener('input', calculateDCF);
+        });
+
+        // Initial calculation
+        calculateDCF();
+    </script>
+</body>
+</html>
