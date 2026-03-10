@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G86C7NJG3F"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-G86C7NJG3F');</script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="canonical" href="https://westmountfundamentals.com/tools/" />
+  <title>Financial Calculators & Tools — Westmount Fundamentals</title>
+  <meta name="description" content="Interactive financial calculators and market simulators. Margin, leverage, dividend reinvestment, and more." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: #060a12;
+      color: #c8d0de;
+      line-height: 1.6;
+    }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 100px 24px 70px;
+      background: linear-gradient(180deg, #0a1628 0%, #060a12 100%);
+      position: relative;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 40%, rgba(26,82,118,0.15) 0%, transparent 60%);
+    }
+    .hero-content { position: relative; z-index: 1; }
+    .hero .tagline {
+      color: #1a5276;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 900;
+      letter-spacing: -1.5px;
+      margin-bottom: 20px;
+      color: #fff;
+    }
+    .hero p {
+      color: #5a6a80;
+      font-size: 1.05rem;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    /* Search Box */
+    .search-container {
+      max-width: 500px;
+      margin: 30px auto 0;
+      position: relative;
+    }
+    .search-input {
+      width: 100%;
+      padding: 16px 20px;
+      padding-left: 48px;
+      background: #111318;
+      border: 1px solid #1e2030;
+      border-radius: 12px;
+      color: #fff;
+      font-size: 1rem;
+      font-family: 'Inter', sans-serif;
+      transition: border-color 0.3s ease;
+    }
+    .search-input:focus {
+      outline: none;
+      border-color: #1a5276;
+    }
+    .search-icon {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #5a6a80;
+      width: 20px;
+      height: 20px;
+    }
+
+    /* Sections */
+    .section-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 24px;
+    }
+    .tools-count {
+      color: #5a6a80;
+      font-size: 0.9rem;
+      margin-bottom: 24px;
+      font-weight: 500;
+    }
+
+    /* Tools Grid */
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 24px;
+    }
+    .tool-card {
+      background: #111318;
+      border: 1px solid #1e2030;
+      border-radius: 12px;
+      padding: 32px 28px;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .tool-card:hover {
+      border-color: #1a5276;
+      transform: translateY(-2px);
+    }
+
+    .tool-emoji {
+      font-size: 2rem;
+      margin-bottom: 16px;
+      display: block;
+    }
+    .tool-name {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+    .tool-desc {
+      font-size: 0.95rem;
+      color: #8a94a6;
+      line-height: 1.5;
+    }
+
+    .no-results {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 40px;
+      color: #5a6a80;
+      font-size: 1.1rem;
+      display: none;
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 50px 24px;
+      font-size: 0.85rem;
+      color: #3a4a5a;
+      border-top: 1px solid #151f2e;
+      background: #040810;
+      margin-top: 40px;
+    }
+    .footer a {
+      color: #1a5276;
+      text-decoration: none;
+    }
+    .footer a:hover {
+      text-decoration: underline;
+    }
+    .disclaimer {
+      max-width: 600px;
+      margin: 16px auto 0;
+      color: #2a3a4a;
+      font-size: 0.75rem;
+      line-height: 1.5;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.2rem; }
+      .hero { padding: 70px 20px 50px; }
+      .section-container { padding: 40px 20px; }
+      .tools-grid {
+        grid-template-columns: 1fr;
+      }
+      .tool-card { padding: 24px 20px; }
+    }
+  </style>
+</head>
+<body>
+  <script src="/nav.js"></script>
+
+  <div class="hero">
+    <div class="hero-content">
+      <div class="tagline">Calculators & Tools</div>
+      <h1>Financial Tools</h1>
+      <p>Interactive financial calculators and market simulators to help you analyze risk and returns.</p>
+
+      <div class="search-container">
+        <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+        </svg>
+        <input type="text" id="searchInput" class="search-input" placeholder="Search tools..." autocomplete="off">
+      </div>
+    </div>
+  </div>
+
+  <div class="section-container">
+    <div class="tools-count" id="toolsCount">Loading tools...</div>
+
+    <div class="tools-grid" id="toolsGrid">
+      <!-- Tools will be injected here -->
+    </div>
+    <div id="noResults" class="no-results">No tools found matching your search.</div>
+  </div>
+
+  <div class="footer">
+    © 2026 <a href="/">westmount-research</a> · A <a href="https://gab.ae">GAB Ventures</a> property
+    <div class="disclaimer">This site provides data and analysis for informational purposes only. Nothing here constitutes investment advice. Do your own research.</div>
+  </div>
+
+  <script>
+    // Data extracted from index.astro
+    const tools = [
+      {
+        emoji: "📊",
+        title: "Margin & Leverage Calculator",
+        subtitle: "margin call · buying power · leverage",
+        slug: "/margin-calculator.html",
+        stat: "Interactive",
+        statLabel: "margin risk simulator",
+        desc: "Calculate your buying power, maintenance margin requirements, and exact margin call price. Simulate leveraged returns across various stock price scenarios.",
+        tag: "TOOL"
+      }
+    ];
+
+    const grid = document.getElementById('toolsGrid');
+    const searchInput = document.getElementById('searchInput');
+    const countDisplay = document.getElementById('toolsCount');
+    const noResults = document.getElementById('noResults');
+
+    function renderTools(toolsToRender) {
+      grid.innerHTML = '';
+
+      if (toolsToRender.length === 0) {
+        noResults.style.display = 'block';
+        countDisplay.textContent = '0 tools found';
+        return;
+      }
+
+      noResults.style.display = 'none';
+      countDisplay.textContent = `${toolsToRender.length} tool${toolsToRender.length !== 1 ? 's' : ''}`;
+
+      toolsToRender.forEach(tool => {
+        const title = tool.title || tool.name;
+        const a = document.createElement('a');
+        a.href = tool.slug;
+        a.className = 'tool-card';
+
+        let html = '';
+        if (tool.emoji) {
+          html += `<span class="tool-emoji">${tool.emoji}</span>`;
+        }
+        html += `<h3 class="tool-name">${title}</h3>`;
+        html += `<p class="tool-desc">${tool.desc}</p>`;
+
+        a.innerHTML = html;
+        grid.appendChild(a);
+      });
+    }
+
+    // Initial render
+    renderTools(tools);
+
+    // Search functionality
+    searchInput.addEventListener('input', (e) => {
+      const searchTerm = e.target.value.toLowerCase();
+      const filtered = tools.filter(tool => {
+        const title = (tool.title || tool.name || '').toLowerCase();
+        const desc = (tool.desc || '').toLowerCase();
+        return title.includes(searchTerm) || desc.includes(searchTerm);
+      });
+      renderTools(filtered);
+    });
+  </script>
+</body>
+</html>
