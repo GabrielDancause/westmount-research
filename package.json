@@ -10,8 +10,13 @@
   },
   "dependencies": {
     "astro": "^5.17.1",
+    "cheerio": "^1.2.0",
     "jsdom": "^28.1.0",
     "node-fetch": "^3.3.2",
     "yahoo-finance2": "^3.13.2"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.58.2",
+    "playwright": "^1.58.2"
   }
 }
