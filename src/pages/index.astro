@@ -317,7 +317,7 @@ const lists = [];
       </div>
       <div class="studies-grid">
         {guides.map(guide => (
-          <a class="study-card" href={`/${guide.slug}.html`} style="border-top: 2px solid #e78f4a;">
+          <a class="study-card" href={guide.slug} style="border-top: 2px solid #e78f4a;">
             {guide.emoji && <span class="study-emoji">{guide.emoji}</span>}
             {guide.tag && <span class="study-tag" style="display:inline-block; font-size:0.7rem; font-weight:800; color:#e78f4a; background:rgba(231,143,74,0.1); padding:4px 8px; border-radius:4px; margin-bottom:12px;">{guide.tag}</span>}
             <div class="study-stat">
