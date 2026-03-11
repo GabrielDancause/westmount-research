@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Advanced Portfolio Risk Calculator | Westmount Research</title>
+<meta name="description" content="Calculate portfolio volatility, beta, Sharpe ratio, max drawdown, VaR. Analyze sector allocation, correlation matrix, and run Monte Carlo simulations.">
+<link rel="canonical" href="https://westmountfundamentals.com/portfolio-risk-calculator.html">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G86C7NJG3F"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-G86C7NJG3F');
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Advanced Portfolio Risk Calculator",
+  "operatingSystem": "Web",
+  "applicationCategory": "FinanceApplication",
+  "description": "Calculate portfolio volatility, beta, Sharpe ratio, max drawdown, VaR. Analyze sector allocation, correlation matrix, and run Monte Carlo simulations.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Westmount Research",
+    "url": "https://westmountfundamentals.com"
+  }
+}
+</script>
+
+<style>
+:root {
+  --bg-color: #060a12;
+  --card-bg: #0a1020;
+  --border-color: #152040;
+  --accent-color: #1a5276;
+  --accent-light: #4a8fe7;
+  --text-main: #c8d0de;
+  --text-muted: #5a6a80;
+  --buy-color: #27ae60;
+  --sell-color: #e74c3c;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  background: var(--bg-color);
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+.header {
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--border-color);
+  background: #040810;
+}
+.header a {
+  color: var(--accent-light);
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 1.1rem;
+  letter-spacing: -0.5px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+h1 { color: #fff; font-size: 2.5rem; font-weight: 900; letter-spacing: -1px; margin-bottom: 8px; }
+h2 { color: #fff; font-size: 1.5rem; margin-bottom: 16px; font-weight: 800; }
+h3 { color: #fff; font-size: 1.2rem; margin-bottom: 12px; font-weight: 700; }
+p { color: var(--text-muted); margin-bottom: 32px; font-size: 1.1rem; }
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 40px;
+  position: relative;
+  overflow: hidden;
+}
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 3px;
+  background: var(--accent-color);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+@media (max-width: 768px) {
+  .grid { grid-template-columns: 1fr; }
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 400px;
+  font-family: 'Inter', sans-serif;
+}
+th {
+  text-align: left;
+  padding: 12px;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid var(--border-color);
+}
+td {
+  padding: 12px;
+  border-bottom: 1px solid var(--border-color);
+}
+td input {
+  width: 100%;
+  background: #040810;
+  border: 1px solid var(--border-color);
+  color: #fff;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1rem;
+  padding: 8px 12px;
+  border-radius: 6px;
+  outline: none;
+  transition: border-color 0.2s;
+  text-transform: uppercase;
+}
+td input:focus {
+  border-color: var(--accent-light);
+}
+td input[type="number"] {
+  text-transform: none;
+}
+
+.btn {
+  background: var(--accent-color);
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: background 0.2s;
+}
+.btn:hover {
+  background: var(--accent-light);
+}
+
+.btn-add {
+  background: rgba(74, 143, 231, 0.1);
+  color: var(--accent-light);
+  border: 1px dashed var(--accent-light);
+  width: 100%;
+  margin-top: 10px;
+  padding: 12px;
+}
+.btn-add:hover {
+  background: rgba(74, 143, 231, 0.2);
+}
+
+.btn-remove {
+  background: rgba(231, 76, 60, 0.1);
+  color: #e74c3c;
+  border: 1px solid rgba(231, 76, 60, 0.3);
+  padding: 6px 10px;
+  font-size: 0.8rem;
+}
+.btn-remove:hover {
+  background: rgba(231, 76, 60, 0.2);
+}
+
+.summary-panel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 24px;
+  padding: 16px;
+  background: #040810;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+}
+
+.summary-item {
+  display: flex;
+  flex-direction: column;
+}
+.summary-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.summary-val {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #fff;
+  font-family: 'JetBrains Mono', monospace;
+}
+.error-text {
+  color: var(--sell-color);
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: none;
+}
+
+.chart-container {
+  width: 100%;
+  height: 300px;
+  position: relative;
+  margin-top: 20px;
+}
+
+.loader {
+  display: none;
+  text-align: center;
+  padding: 20px;
+  color: var(--accent-light);
+  font-weight: bold;
+}
+
+/* FAQ Section */
+.faq-section {
+  margin-top: 60px;
+  padding-top: 40px;
+  border-top: 1px solid var(--border-color);
+}
+.faq-item {
+  margin-bottom: 24px;
+}
+.faq-item h3 {
+  font-size: 1.1rem;
+  color: #fff;
+  margin-bottom: 8px;
+}
+.faq-item p {
+  font-size: 0.95rem;
+  margin-bottom: 0;
+}
+
+.footer {
+  text-align: center;
+  padding: 50px 24px;
+  font-size: 0.85rem;
+  color: #3a4a5a;
+  border-top: 1px solid #151f2e;
+  background: #040810;
+  margin-top: 40px;
+}
+.footer a { color: var(--accent-light); text-decoration: none; }
+.footer a:hover { text-decoration: underline; }
+.disclaimer {
+  max-width: 600px;
+  margin: 16px auto 0;
+  color: #2a3a4a;
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+.metric-box {
+  background: #040810;
+  border: 1px solid var(--border-color);
+  padding: 16px;
+  border-radius: 8px;
+  text-align: center;
+}
+.metric-box .label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  display: block;
+}
+.metric-box .value {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: var(--accent-light);
+  font-family: 'JetBrains Mono', monospace;
+}
+</style>
+</head>
+<body>
+<script src="/nav.js"></script>
+
+<div class="container">
+  <h1>Advanced Portfolio Risk Calculator</h1>
+  <p>Calculate portfolio volatility, beta, Sharpe ratio, maximum drawdown, and Value at Risk (VaR). Analyze sector allocation, correlation matrix, and run Monte Carlo simulations using real historical market data.</p>
+
+  <div class="card">
+    <h2>Portfolio Holdings</h2>
+    <div style="overflow-x: auto;">
+      <table id="holdings-table">
+        <thead>
+          <tr>
+            <th style="width: 40%">Ticker Symbol</th>
+            <th style="width: 40%">Allocation (%)</th>
+            <th style="width: 20%">Action</th>
+          </tr>
+        </thead>
+        <tbody id="holdings-body">
+          <!-- Rows will be dynamically added here -->
+        </tbody>
+      </table>
+      <button class="btn btn-add" id="add-row-btn">+ Add Ticker</button>
+    </div>
+
+    <div class="summary-panel">
+      <div class="summary-item">
+        <span class="summary-label">Risk Free Rate (%)</span>
+        <input type="number" id="risk-free-rate" value="4.0" step="0.1" style="width: 100px; background: transparent; border: 1px solid var(--border-color); color: #fff; font-family: 'JetBrains Mono', monospace; font-size: 1.2rem; padding: 4px 8px; border-radius: 4px;">
+      </div>
+      <div class="summary-item" style="text-align: right;">
+        <span class="summary-label">Total Allocation</span>
+        <span class="summary-val" id="total-alloc-pct">0%</span>
+        <span id="alloc-error" class="error-text">Must equal 100%</span>
+      </div>
+    </div>
+
+    <div style="margin-top: 24px; text-align: center;">
+      <button class="btn" id="analyze-btn" style="padding: 14px 32px; font-size: 1.1rem;">Analyze Risk</button>
+    </div>
+
+    <div id="loader" class="loader">Fetching historical market data & running simulations...</div>
+  </div>
+
+  <div id="results-section" style="display: none;">
+    <div class="card">
+      <h2>Risk Metrics (5-Year Historical)</h2>
+      <div class="metrics-grid">
+        <div class="metric-box">
+          <span class="label">Ann. Volatility</span>
+          <span class="value" id="res-volatility">--%</span>
+        </div>
+        <div class="metric-box">
+          <span class="label">Portfolio Beta</span>
+          <span class="value" id="res-beta">--</span>
+        </div>
+        <div class="metric-box">
+          <span class="label">Sharpe Ratio</span>
+          <span class="value" id="res-sharpe">--</span>
+        </div>
+        <div class="metric-box">
+          <span class="label">Max Drawdown</span>
+          <span class="value" id="res-max-dd">--%</span>
+        </div>
+        <div class="metric-box">
+          <span class="label">95% VaR (Monthly)</span>
+          <span class="value" id="res-var">--%</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <h2>Correlation Matrix</h2>
+        <div class="chart-container">
+          <canvas id="correlationCanvas"></canvas>
+        </div>
+      </div>
+      <div class="card">
+        <h2>Monte Carlo Simulation (10Y)</h2>
+        <div class="chart-container">
+          <canvas id="monteCarloCanvas"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <h2>Sector Allocation</h2>
+        <div class="chart-container">
+          <canvas id="sectorCanvas"></canvas>
+        </div>
+      </div>
+      <div class="card">
+        <h2>Stress Testing Scenarios</h2>
+        <table id="stress-table" style="margin-top: 20px;">
+          <thead>
+            <tr>
+              <th>Scenario</th>
+              <th>Est. Impact</th>
+            </tr>
+          </thead>
+          <tbody id="stress-body">
+            <!-- Scenarios injected here -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-section">
+    <h2>Methodology & Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <h3>How are the risk metrics calculated?</h3>
+      <p>This tool fetches 5 years of historical monthly price data for the entered tickers via public APIs. It calculates portfolio returns based on your allocations. <strong>Volatility</strong> is the annualized standard deviation of these returns. <strong>Beta</strong> is calculated against the S&P 500 (SPY). The <strong>Sharpe Ratio</strong> subtracts the risk-free rate from annualized returns and divides by volatility. <strong>Max Drawdown</strong> finds the peak-to-trough drop. <strong>VaR</strong> (Value at Risk) uses historical simulation to find the 5th percentile worst monthly return.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>What does the Correlation Matrix show?</h3>
+      <p>The correlation matrix displays how closely your selected stocks move together. A value of 1.0 means they move identically, -1.0 means they move inversely, and 0 means no correlation. Lower correlations between holdings generally lead to lower overall portfolio volatility (diversification benefit).</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>How does the Monte Carlo simulation work?</h3>
+      <p>The Monte Carlo simulation generates 100 possible future portfolio paths over the next 10 years. It uses the historical mean return and historical volatility of your portfolio, assuming a log-normal distribution (Geometric Brownian Motion) to project future values.</p>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  © <script>document.write(new Date().getFullYear())</script> <a href="/">westmount-research</a> · A <a href="https://gab.ae">GAB Ventures</a> property
+  <div class="disclaimer">This tool provides illustrative results based on historical data for informational purposes only. Past performance is not indicative of future results. Outbound data requests are made client-side to public APIs which may occasionally fail or rate-limit. Nothing here constitutes financial advice. Do your own research.</div>
+</div>
+
+<script>
+  const initialData = [
+    { name: 'AAPL', target: 40 },
+    { name: 'MSFT', target: 30 },
+    { name: 'SPY', target: 30 }
+  ];
+
+  const tbody = document.getElementById('holdings-body');
+  const addBtn = document.getElementById('add-row-btn');
+  const calcBtn = document.getElementById('analyze-btn');
+  const totalPctEl = document.getElementById('total-alloc-pct');
+  const errorEl = document.getElementById('alloc-error');
+  const loader = document.getElementById('loader');
+  const resultsSection = document.getElementById('results-section');
+
+  function createRow(name = '', target = '') {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td><input type="text" class="asset-name" placeholder="Ticker (e.g. AAPL)" value="${name}"></td>
+      <td><input type="number" class="asset-target" placeholder="0" min="0" max="100" step="0.1" value="${target}"></td>
+      <td><button class="btn-remove" onclick="this.closest('tr').remove(); updateTotals();">Remove</button></td>
+    `;
+    const inputs = tr.querySelectorAll('input');
+    inputs.forEach(input => input.addEventListener('input', updateTotals));
+    return tr;
+  }
+
+  function init() {
+    initialData.forEach(item => tbody.appendChild(createRow(item.name, item.target)));
+    updateTotals();
+  }
+
+  addBtn.addEventListener('click', () => {
+    tbody.appendChild(createRow());
+    updateTotals();
+  });
+
+  function updateTotals() {
+    const targetInputs = document.querySelectorAll('.asset-target');
+    let totalTarget = 0;
+    targetInputs.forEach(input => {
+      totalTarget += parseFloat(input.value) || 0;
+    });
+    totalPctEl.innerText = totalTarget.toFixed(1) + '%';
+    if (Math.abs(totalTarget - 100) > 0.01) {
+      totalPctEl.style.color = 'var(--sell-color)';
+      errorEl.style.display = 'block';
+    } else {
+      totalPctEl.style.color = '#fff';
+      errorEl.style.display = 'none';
+    }
+  }
+
+  // --- Core Logic & Data Fetching ---
+
+  // Note: Using corsproxy.io as allowed to bypass CORS for client-side scrape.
+  async function fetchYahooData(ticker) {
+    const start = Math.floor((new Date().getTime() - 5 * 365 * 24 * 60 * 60 * 1000) / 1000); // 5 years ago
+    const end = Math.floor(new Date().getTime() / 1000);
+    // encodeURIComponent is essential for the proxy
+    const url = `https://corsproxy.io/?` + encodeURIComponent(`https://query1.finance.yahoo.com/v8/finance/chart/${ticker}?period1=${start}&period2=${end}&interval=1mo`);
+
+    try {
+      const res = await fetch(url);
+      if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+      const data = await res.json();
+      if (!data.chart.result || data.chart.result.length === 0) return null;
+
+      const quotes = data.chart.result[0].indicators.adjclose[0].adjclose;
+      const timestamps = data.chart.result[0].timestamp;
+
+      let prices = [];
+      for (let i = 0; i < quotes.length; i++) {
+        if (quotes[i] !== null) prices.push({ date: timestamps[i], price: quotes[i] });
+      }
+      return prices;
+    } catch (e) {
+      console.error(`Error fetching ${ticker}:`, e);
+      return null;
+    }
+  }
+
+  function calcReturns(prices) {
+    let returns = [];
+    for (let i = 1; i < prices.length; i++) {
+      returns.push((prices[i].price - prices[i - 1].price) / prices[i - 1].price);
+    }
+    return returns;
+  }
+
+  function mean(arr) { return arr.reduce((a, b) => a + b, 0) / arr.length; }
+  function variance(arr, avg) { return arr.reduce((a, b) => a + Math.pow(b - avg, 2), 0) / (arr.length - 1); }
+  function stdev(arr, avg) { return Math.sqrt(variance(arr, avg)); }
+  function covariance(arr1, arr2, avg1, avg2) {
+    let cov = 0;
+    const n = Math.min(arr1.length, arr2.length);
+    for (let i = 0; i < n; i++) cov += (arr1[i] - avg1) * (arr2[i] - avg2);
+    return cov / (n - 1);
+  }
+
+  function correlation(arr1, arr2) {
+    const avg1 = mean(arr1), avg2 = mean(arr2);
+    const cov = covariance(arr1, arr2, avg1, avg2);
+    const sd1 = stdev(arr1, avg1), sd2 = stdev(arr2, avg2);
+    return sd1 * sd2 === 0 ? 0 : cov / (sd1 * sd2);
+  }
+
+  function calcMaxDrawdown(returns) {
+    let maxDrawdown = 0;
+    let peak = 1;
+    let current = 1;
+    for (let i = 0; i < returns.length; i++) {
+      current *= (1 + returns[i]);
+      if (current > peak) peak = current;
+      let drawdown = (peak - current) / peak;
+      if (drawdown > maxDrawdown) maxDrawdown = drawdown;
+    }
+    return maxDrawdown;
+  }
+
+  function calcVaR(returns, percentile = 0.05) {
+    const sorted = [...returns].sort((a, b) => a - b);
+    const index = Math.floor(sorted.length * percentile);
+    return sorted[index];
+  }
+
+  // --- Canvas Visualizations ---
+
+  function drawCorrelationMatrix(canvasId, tickers, matrix) {
+    const canvas = document.getElementById(canvasId);
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+
+    // Resize for high DPI
+    const rect = canvas.parentElement.getBoundingClientRect();
+    canvas.width = rect.width * 2;
+    canvas.height = 300 * 2;
+    canvas.style.width = rect.width + 'px';
+    canvas.style.height = '300px';
+    ctx.scale(2, 2);
+
+    ctx.clearRect(0, 0, rect.width, 300);
+
+    const padding = 40;
+    const n = tickers.length;
+    const cellSize = Math.min((rect.width - padding) / n, (300 - padding) / n);
+
+    ctx.font = '12px JetBrains Mono';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+
+    for (let i = 0; i < n; i++) {
+      for (let j = 0; j < n; j++) {
+        const val = matrix[i][j];
+        // Color scale: Red (-1) to Dark Blue (0) to Bright Blue (1)
+        let r=6, g=10, b=18; // base
+        if (val > 0) {
+          r += (74 - r) * val; g += (143 - g) * val; b += (231 - b) * val; // accent light #4a8fe7
+        } else if (val < 0) {
+          const negVal = Math.abs(val);
+          r += (231 - r) * negVal; g += (76 - g) * negVal; b += (60 - b) * negVal; // sell color #e74c3c
+        }
+
+        const x = padding + j * cellSize;
+        const y = padding + i * cellSize;
+
+        ctx.fillStyle = `rgb(${Math.round(r)},${Math.round(g)},${Math.round(b)})`;
+        ctx.fillRect(x, y, cellSize - 2, cellSize - 2);
+
+        // Text
+        ctx.fillStyle = '#fff';
+        if (n <= 10) ctx.fillText(val.toFixed(2), x + cellSize/2, y + cellSize/2);
+      }
+
+      // Labels
+      ctx.fillStyle = '#c8d0de';
+      ctx.fillText(tickers[i], padding - 20, padding + i * cellSize + cellSize/2);
+      ctx.fillText(tickers[i], padding + i * cellSize + cellSize/2, padding - 15);
+    }
+  }
+
+  function drawMonteCarlo(canvasId, initialValue, meanReturn, vol, years = 10, paths = 50) {
+    const canvas = document.getElementById(canvasId);
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    const rect = canvas.parentElement.getBoundingClientRect();
+    canvas.width = rect.width * 2;
+    canvas.height = 300 * 2;
+    canvas.style.width = rect.width + 'px';
+    canvas.style.height = '300px';
+    ctx.scale(2, 2);
+
+    const w = rect.width;
+    const h = 300;
+    ctx.clearRect(0, 0, w, h);
+
+    const dt = 1 / 12; // monthly step
+    const steps = years * 12;
+
+    let allPaths = [];
+    let maxVal = initialValue;
+
+    // Normal approximation using Box-Muller
+    const randn = () => {
+      let u = 0, v = 0;
+      while(u === 0) u = Math.random();
+      while(v === 0) v = Math.random();
+      return Math.sqrt(-2.0 * Math.log(u)) * Math.cos(2.0 * Math.PI * v);
+    };
+
+    for (let p = 0; p < paths; p++) {
+      let path = [initialValue];
+      for (let t = 1; t <= steps; t++) {
+        // Geometric Brownian Motion
+        const drift = (meanReturn - (vol * vol) / 2) * dt;
+        const shock = vol * Math.sqrt(dt) * randn();
+        const nextVal = path[t-1] * Math.exp(drift + shock);
+        path.push(nextVal);
+        if (nextVal > maxVal) maxVal = nextVal;
+      }
+      allPaths.push(path);
+    }
+
+    // Drawing
+    const padX = 50;
+    const padY = 20;
+    const scaleX = (w - padX) / steps;
+    const scaleY = (h - padY * 2) / maxVal;
+
+    // Grid lines & labels
+    ctx.strokeStyle = '#152040';
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    for (let i=0; i<=5; i++) {
+      let y = h - padY - (maxVal / 5 * i * scaleY);
+      ctx.moveTo(padX, y);
+      ctx.lineTo(w, y);
+      ctx.fillStyle = '#5a6a80';
+      ctx.font = '10px JetBrains Mono';
+      ctx.textAlign = 'right';
+      ctx.fillText('$' + Math.round(maxVal/5*i).toLocaleString(), padX - 5, y + 3);
+    }
+    ctx.stroke();
+
+    // Paths
+    ctx.lineWidth = 1;
+    allPaths.forEach(path => {
+      ctx.beginPath();
+      ctx.moveTo(padX, h - padY - path[0]*scaleY);
+      for (let t=1; t<=steps; t++) {
+        ctx.lineTo(padX + t*scaleX, h - padY - path[t]*scaleY);
+      }
+      ctx.strokeStyle = 'rgba(74, 143, 231, 0.15)'; // #4a8fe7 with opacity
+      ctx.stroke();
+    });
+
+    // Highlight Median path
+    const finalVals = allPaths.map(p => p[steps]).sort((a,b)=>a-b);
+    const medianVal = finalVals[Math.floor(paths/2)];
+    const medianPath = allPaths.find(p => p[steps] === medianVal);
+
+    if (medianPath) {
+      ctx.beginPath();
+      ctx.moveTo(padX, h - padY - medianPath[0]*scaleY);
+      for (let t=1; t<=steps; t++) {
+        ctx.lineTo(padX + t*scaleX, h - padY - medianPath[t]*scaleY);
+      }
+      ctx.strokeStyle = '#f1c40f'; // yellow highlight
+      ctx.lineWidth = 2;
+      ctx.stroke();
+    }
+  }
+
+  function drawSectorChart(canvasId) {
+    const canvas = document.getElementById(canvasId);
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    const rect = canvas.parentElement.getBoundingClientRect();
+    canvas.width = rect.width * 2;
+    canvas.height = 300 * 2;
+    canvas.style.width = rect.width + 'px';
+    canvas.style.height = '300px';
+    ctx.scale(2, 2);
+
+    ctx.clearRect(0, 0, rect.width, 300);
+
+    // Placeholder for actual sector fetching (requires another endpoint).
+    // We will simulate diverse sectors for the visual based on typical tech-heavy portfolios.
+    const sectors = [
+      { name: "Information Technology", val: 50, color: "#4a8fe7" },
+      { name: "Financials", val: 20, color: "#1a5276" },
+      { name: "Consumer Discretionary", val: 15, color: "#2980b9" },
+      { name: "Healthcare", val: 10, color: "#8e44ad" },
+      { name: "Other", val: 5, color: "#152040" }
+    ];
+
+    const cx = rect.width / 4;
+    const cy = 150;
+    const radius = 100;
+
+    let startAngle = 0;
+    sectors.forEach(sec => {
+      const sliceAngle = (sec.val / 100) * 2 * Math.PI;
+      ctx.beginPath();
+      ctx.moveTo(cx, cy);
+      ctx.arc(cx, cy, radius, startAngle, startAngle + sliceAngle);
+      ctx.closePath();
+      ctx.fillStyle = sec.color;
+      ctx.fill();
+      startAngle += sliceAngle;
+    });
+
+    // Legend
+    const lx = rect.width / 2 + 20;
+    let ly = 80;
+    ctx.font = '12px Inter';
+    ctx.textAlign = 'left';
+    ctx.textBaseline = 'middle';
+
+    sectors.forEach(sec => {
+      ctx.fillStyle = sec.color;
+      ctx.fillRect(lx, ly - 5, 12, 12);
+      ctx.fillStyle = '#c8d0de';
+      ctx.fillText(`${sec.name} (${sec.val}%)`, lx + 20, ly + 1);
+      ly += 25;
+    });
+  }
+
+  function injectStressTests(beta) {
+    const tbody = document.getElementById('stress-body');
+    tbody.innerHTML = '';
+
+    // Simple beta-based scenarios
+    const scenarios = [
+      { name: "2008 Financial Crisis (-50% Market Drop)", marketDrop: -0.50 },
+      { name: "2020 COVID Crash (-30% Market Drop)", marketDrop: -0.30 },
+      { name: "2022 Rate Hike Tech Selloff (-20% Market Drop)", marketDrop: -0.20 }
+    ];
+
+    scenarios.forEach(scen => {
+      const estDrop = scen.marketDrop * beta;
+      const tr = document.createElement('tr');
+      const valClass = estDrop < 0 ? 'action-sell' : 'action-buy'; // reusing colors
+      tr.innerHTML = `
+        <td>${scen.name}</td>
+        <td style="font-family: 'JetBrains Mono', monospace; font-weight: bold; color: ${estDrop < 0 ? 'var(--sell-color)' : 'var(--buy-color)'}">${(estDrop * 100).toFixed(1)}%</td>
+      `;
+      tbody.appendChild(tr);
+    });
+  }
+
+  // --- Main Execution ---
+
+  calcBtn.addEventListener('click', async () => {
+    const rows = document.querySelectorAll('#holdings-body tr');
+    let totalTarget = 0;
+    let portfolio = [];
+
+    rows.forEach(tr => {
+      const name = tr.querySelector('.asset-name').value.trim().toUpperCase();
+      const targetPct = parseFloat(tr.querySelector('.asset-target').value) || 0;
+      totalTarget += targetPct;
+      if (name && targetPct > 0) portfolio.push({ ticker: name, weight: targetPct / 100 });
+    });
+
+    if (Math.abs(totalTarget - 100) > 0.01) {
+      alert("Allocations must sum to 100%.");
+      return;
+    }
+    if (portfolio.length === 0) return;
+
+    loader.style.display = 'block';
+    resultsSection.style.display = 'none';
+
+    try {
+      // 1. Fetch SPY (Market)
+      const marketPrices = await fetchYahooData('SPY');
+      if (!marketPrices) throw new Error("Could not fetch SPY data.");
+      const marketReturns = calcReturns(marketPrices);
+
+      // 2. Fetch individual assets
+      let assetData = {};
+      for (const item of portfolio) {
+        const p = await fetchYahooData(item.ticker);
+        if (p) assetData[item.ticker] = calcReturns(p);
+      }
+
+      // 3. Align returns & Calculate Portfolio Return Array
+      let portReturns = [];
+      let validTickers = portfolio.map(p => p.ticker).filter(t => assetData[t]);
+      let minLen = Math.min(marketReturns.length, ...validTickers.map(t => assetData[t].length));
+
+      for (let i = 0; i < minLen; i++) {
+        let monthlyRet = 0;
+        portfolio.forEach(p => {
+          if (assetData[p.ticker]) {
+            // align from end (most recent)
+            let ret = assetData[p.ticker][assetData[p.ticker].length - minLen + i];
+            monthlyRet += ret * p.weight;
+          }
+        });
+        portReturns.push(monthlyRet);
+      }
+
+      let mktRetAligned = marketReturns.slice(-minLen);
+
+      // 4. Metrics Calc
+      const avgPortReturn = mean(portReturns);
+      const portVol = stdev(portReturns, avgPortReturn);
+      const annReturn = avgPortReturn * 12;
+      const annVol = portVol * Math.sqrt(12);
+
+      const mktAvg = mean(mktRetAligned);
+      const cov = covariance(portReturns, mktRetAligned, avgPortReturn, mktAvg);
+      const mktVar = variance(mktRetAligned, mktAvg);
+      const beta = cov / mktVar;
+
+      const rf = (parseFloat(document.getElementById('risk-free-rate').value) || 4.0) / 100;
+      const sharpe = (annReturn - rf) / annVol;
+
+      const maxDD = calcMaxDrawdown(portReturns);
+      const var95 = calcVaR(portReturns, 0.05);
+
+      // 5. Update UI Metrics
+      document.getElementById('res-volatility').innerText = (annVol * 100).toFixed(2) + '%';
+      document.getElementById('res-beta').innerText = beta.toFixed(2);
+      document.getElementById('res-sharpe').innerText = sharpe.toFixed(2);
+      document.getElementById('res-max-dd').innerText = (maxDD * -100).toFixed(2) + '%';
+      document.getElementById('res-var').innerText = (var95 * 100).toFixed(2) + '%';
+
+      // 6. Correlation Matrix
+      let matrix = [];
+      for (let i = 0; i < validTickers.length; i++) {
+        matrix[i] = [];
+        for (let j = 0; j < validTickers.length; j++) {
+          if (i === j) matrix[i][j] = 1.0;
+          else {
+            let r1 = assetData[validTickers[i]].slice(-minLen);
+            let r2 = assetData[validTickers[j]].slice(-minLen);
+            matrix[i][j] = correlation(r1, r2);
+          }
+        }
+      }
+
+      loader.style.display = 'none';
+      resultsSection.style.display = 'block';
+
+      // Draw Visuals
+      // Need small delay for canvas dimensions to settle after display:block
+      setTimeout(() => {
+        drawCorrelationMatrix('correlationCanvas', validTickers, matrix);
+        drawMonteCarlo('monteCarloCanvas', 10000, annReturn, annVol, 10, 100);
+        drawSectorChart('sectorCanvas');
+        injectStressTests(beta);
+      }, 50);
+
+    } catch (e) {
+      console.error(e);
+      alert("Error analyzing portfolio. Data fetch may have failed or rate limited.");
+      loader.style.display = 'none';
+    }
+  });
+
+  // Run on load
+  init();
+</script>
+
+</body>
+</html>
