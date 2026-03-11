@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FIRE Retirement Calculator | Westmount Fundamentals</title>
+<meta name="description" content="Comprehensive Financial Independence Retire Early (FIRE) planning tool. Calculate Coast FIRE, Lean FIRE, Fat FIRE, and optimize withdrawal strategies.">
+<link rel="canonical" href="https://westmountfundamentals.com/fire-retirement-calculator.html">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G86C7NJG3F"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-G86C7NJG3F');
+</script>
+
+<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "FIRE Retirement Calculator",
+    "operatingSystem": "Web",
+    "applicationCategory": "FinanceApplication",
+    "description": "Comprehensive Financial Independence Retire Early (FIRE) planning tool. Calculate Coast FIRE, Lean FIRE, Fat FIRE, and optimize withdrawal strategies.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Westmount Fundamentals",
+      "url": "https://westmountfundamentals.com"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is FIRE?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "FIRE stands for Financial Independence, Retire Early. It's a movement focused on aggressive savings and investment to allow individuals to retire far earlier than traditional budgets and retirement plans would allow."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the 4% Rule?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The 4% rule is a rule of thumb used to determine a safe withdrawal rate from a retirement portfolio. It suggests that if you withdraw 4% of your portfolio's value in the first year of retirement, and then adjust that amount for inflation in subsequent years, your portfolio has a high probability of lasting 30 years."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is Coast FIRE?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Coast FIRE means you have saved enough money today that, even if you stop contributing entirely, your investments will grow to reach your traditional FIRE number by your target retirement age through compound interest alone."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are Lean FIRE and Fat FIRE?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Lean FIRE assumes a minimalist lifestyle in retirement with expenses significantly lower than average. Fat FIRE assumes a highly comfortable or luxurious retirement lifestyle with higher expenses. This calculator estimates Lean FIRE at 50% of your expected expenses and Fat FIRE at 150%."
+        }
+      }
+    ]
+  }
+]
+</script>
+
+<style>
+:root {
+  --bg-color: #060a12;
+  --card-bg: #0a1020;
+  --border-color: #152040;
+  --accent-color: #4a8fe7;
+  --accent-light: #6ba3f0;
+  --text-main: #c8d0de;
+  --text-muted: #5a6a80;
+  --buy-color: #27ae60;
+  --sell-color: #e74c3c;
+  --fat-fire: #9b59b6;
+  --lean-fire: #e67e22;
+  --coast-fire: #1abc9c;
+}
+
+.layout-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+@media (max-width: 900px) {
+  .layout-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.panel {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+}
+.panel::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 3px;
+  background: var(--accent-color);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #fff;
+}
+.form-group input, .form-group select {
+  width: 100%;
+  background: #040810;
+  border: 1px solid var(--border-color);
+  color: #fff;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1rem;
+  padding: 10px 12px;
+  border-radius: 6px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.form-group input:focus, .form-group select:focus {
+  border-color: var(--accent-light);
+}
+
+.input-hint {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+  font-family: 'Inter', sans-serif;
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.result-box {
+  background: #040810;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+}
+.result-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+.result-value {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #fff;
+  font-family: 'JetBrains Mono', monospace;
+}
+.result-value.accent {
+  color: var(--accent-color);
+}
+.result-value.fat { color: var(--fat-fire); }
+.result-value.lean { color: var(--lean-fire); }
+.result-value.coast { color: var(--coast-fire); }
+
+.chart-container {
+  width: 100%;
+  height: 350px;
+  margin-top: 24px;
+  background: #040810;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.faq-item {
+  margin-bottom: 24px;
+}
+.faq-item h3 {
+  font-size: 1.1rem;
+  color: #fff;
+  margin-bottom: 8px;
+}
+.faq-item p {
+  font-size: 0.95rem;
+  margin-bottom: 0;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  background: var(--bg-color);
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+.header {
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--border-color);
+  background: #040810;
+}
+.header a {
+  color: var(--accent-light);
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 1.1rem;
+  letter-spacing: -0.5px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+
+h1 { color: #fff; font-size: 2.5rem; font-weight: 900; letter-spacing: -1px; margin-bottom: 8px; }
+h2 { color: #fff; font-size: 1.5rem; margin-bottom: 16px; font-weight: 800; }
+p { color: var(--text-muted); margin-bottom: 32px; font-size: 1.1rem; }
+
+.footer {
+  text-align: center;
+  padding: 50px 24px;
+  font-size: 0.85rem;
+  color: #3a4a5a;
+  border-top: 1px solid #151f2e;
+  background: #040810;
+  margin-top: 40px;
+}
+.footer a { color: var(--accent-light); text-decoration: none; }
+.footer a:hover { text-decoration: underline; }
+.disclaimer {
+  max-width: 600px;
+  margin: 16px auto 0;
+  color: #2a3a4a;
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+</style>
+</head>
+<body>
+<script src="/nav.js"></script>
+
+<div class="header">
+  <a href="/">← Westmount Fundamentals</a>
+</div>
+
+<div class="container">
+  <h1>Interactive FIRE Calculator</h1>
+  <p>Plan your Financial Independence and Retire Early (FIRE) journey. Calculate your target numbers for different FIRE strategies, optimize your withdrawal rates, and project your portfolio growth.</p>
+
+  <div class="layout-grid">
+    <div class="panel">
+      <h2>Your Inputs</h2>
+
+      <div class="form-group">
+        <label for="currentAge">Current Age</label>
+        <input type="number" id="currentAge" value="30" min="18" max="100">
+      </div>
+
+      <div class="form-group">
+        <label for="retirementAge">Target Retirement Age</label>
+        <input type="number" id="retirementAge" value="50" min="18" max="100">
+      </div>
+
+      <div class="form-group">
+        <label for="currentPortfolio">Current Portfolio Value ($)</label>
+        <input type="number" id="currentPortfolio" value="100000" min="0" step="1000">
+      </div>
+
+      <div class="form-group">
+        <label for="annualSavings">Annual Savings / Contributions ($)</label>
+        <input type="number" id="annualSavings" value="20000" min="0" step="1000">
+      </div>
+
+      <div class="form-group">
+        <label for="annualExpenses">Base Annual Expenses in Retirement ($)</label>
+        <input type="number" id="annualExpenses" value="60000" min="0" step="1000">
+        <div class="input-hint">Core living costs before taxes, healthcare, or location changes.</div>
+      </div>
+
+      <div class="form-group">
+        <label for="healthcareCosts">Estimated Annual Healthcare Costs ($)</label>
+        <input type="number" id="healthcareCosts" value="6000" min="0" step="500">
+        <div class="input-hint">Added to your base expenses.</div>
+      </div>
+
+      <div class="form-group">
+        <label for="geoArbitrage">Geographic Arbitrage Savings ($)</label>
+        <input type="number" id="geoArbitrage" value="0" min="0" step="1000">
+        <div class="input-hint">Annual savings from moving to a lower cost of living area (reduces expenses).</div>
+      </div>
+
+      <div class="form-group">
+        <label for="taxRate">Effective Tax Rate in Retirement (%)</label>
+        <input type="number" id="taxRate" value="15" min="0" max="100" step="1">
+        <div class="input-hint">Used to gross-up withdrawals to cover tax liabilities.</div>
+      </div>
+
+      <div class="form-group">
+        <label for="withdrawalRate">Safe Withdrawal Rate (%)</label>
+        <select id="withdrawalRate">
+          <option value="3.0">3.0% (Very Conservative)</option>
+          <option value="3.5">3.5% (Conservative)</option>
+          <option value="4.0" selected>4.0% (Standard '4% Rule')</option>
+          <option value="4.5">4.5% (Aggressive)</option>
+          <option value="5.0">5.0% (Very Aggressive)</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="annualReturn">Expected Annual Return (%)</label>
+        <input type="number" id="annualReturn" value="7.0" min="0" max="20" step="0.1">
+        <div class="input-hint">Nominal return before inflation.</div>
+      </div>
+
+      <div class="form-group">
+        <label for="inflationRate">Expected Inflation Rate (%)</label>
+        <input type="number" id="inflationRate" value="2.5" min="0" max="15" step="0.1">
+        <div class="input-hint">Reduces the real purchasing power of your portfolio.</div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2>Your FIRE Projections</h2>
+
+      <div class="results-grid">
+        <div class="result-box">
+          <div class="result-label">Standard FIRE Target</div>
+          <div class="result-value accent" id="res-fire-target">--</div>
+        </div>
+        <div class="result-box">
+          <div class="result-label">Projected Portfolio at Age <span id="res-ret-age">--</span></div>
+          <div class="result-value" id="res-proj-port">--</div>
+        </div>
+        <div class="result-box">
+          <div class="result-label">Coast FIRE Number (Today)</div>
+          <div class="result-value coast" id="res-coast">--</div>
+        </div>
+        <div class="result-box">
+          <div class="result-label">Lean FIRE Target</div>
+          <div class="result-value lean" id="res-lean">--</div>
+        </div>
+        <div class="result-box" style="grid-column: span 2;">
+          <div class="result-label">Fat FIRE Target</div>
+          <div class="result-value fat" id="res-fat">--</div>
+        </div>
+      </div>
+
+      <div class="chart-container">
+        <canvas id="fireChart"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-section" style="margin-top: 60px; padding-top: 40px; border-top: 1px solid var(--border-color);">
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <h3>What is FIRE?</h3>
+      <p>FIRE stands for Financial Independence, Retire Early. It's a movement focused on aggressive savings and investment to allow individuals to retire far earlier than traditional budgets and retirement plans would allow.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>What is the 4% Rule?</h3>
+      <p>The 4% rule is a rule of thumb used to determine a safe withdrawal rate from a retirement portfolio. It suggests that if you withdraw 4% of your portfolio's value in the first year of retirement, and then adjust that amount for inflation in subsequent years, your portfolio has a high probability of lasting 30 years.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>What is Coast FIRE?</h3>
+      <p>Coast FIRE means you have saved enough money <em>today</em> that, even if you stop contributing entirely, your investments will grow to reach your traditional FIRE number by your target retirement age through compound interest alone.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>What are Lean FIRE and Fat FIRE?</h3>
+      <p>Lean FIRE assumes a minimalist lifestyle in retirement with expenses significantly lower than average. Fat FIRE assumes a highly comfortable or luxurious retirement lifestyle with higher expenses. This calculator estimates Lean FIRE at 50% of your expected expenses and Fat FIRE at 150%.</p>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  © <script>document.write(new Date().getFullYear())</script> <a href="/">westmount-fundamentals</a> · A <a href="https://gab.ae">GAB Ventures</a> property
+  <div class="disclaimer">
+    <strong>Methodology:</strong> The FIRE calculations project future portfolio values using assumed annual returns and inflation rates. The withdrawal strategies are simulated based on the user's inputs for expected expenses and safe withdrawal rates. Coast FIRE calculates the number needed today to grow to traditional FIRE without further contributions. Lean and Fat FIRE adjust the target based on lowered or increased lifestyle expenses.<br><br>
+    This calculator provides illustrative results for informational purposes only. It does not account for specific tax liabilities, trading fees, changing market conditions, or other costs. Nothing here constitutes financial advice.
+  </div>
+</div>
+
+<script>
+  // Utility: Format Currency
+  function formatCurrency(value) {
+    if (isNaN(value)) return '$0';
+    return new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+      maximumFractionDigits: 0
+    }).format(value);
+  }
+
+  // Inputs
+  const els = {
+    currentAge: document.getElementById('currentAge'),
+    retirementAge: document.getElementById('retirementAge'),
+    currentPortfolio: document.getElementById('currentPortfolio'),
+    annualSavings: document.getElementById('annualSavings'),
+    annualExpenses: document.getElementById('annualExpenses'),
+    healthcareCosts: document.getElementById('healthcareCosts'),
+    geoArbitrage: document.getElementById('geoArbitrage'),
+    taxRate: document.getElementById('taxRate'),
+    withdrawalRate: document.getElementById('withdrawalRate'),
+    annualReturn: document.getElementById('annualReturn'),
+    inflationRate: document.getElementById('inflationRate'),
+
+    // Results
+    resFireTarget: document.getElementById('res-fire-target'),
+    resProjPort: document.getElementById('res-proj-port'),
+    resRetAge: document.getElementById('res-ret-age'),
+    resCoast: document.getElementById('res-coast'),
+    resLean: document.getElementById('res-lean'),
+    resFat: document.getElementById('res-fat'),
+
+    // Chart
+    canvas: document.getElementById('fireChart')
+  };
+
+  let chartInstance = null;
+
+  function calculateFIRE() {
+    const currentAge = parseInt(els.currentAge.value) || 0;
+    const retirementAge = parseInt(els.retirementAge.value) || 0;
+    const currentPortfolio = parseFloat(els.currentPortfolio.value) || 0;
+    const annualSavings = parseFloat(els.annualSavings.value) || 0;
+    const baseExpenses = parseFloat(els.annualExpenses.value) || 0;
+    const healthcare = parseFloat(els.healthcareCosts.value) || 0;
+    const geoArbitrage = parseFloat(els.geoArbitrage.value) || 0;
+    const taxRate = parseFloat(els.taxRate.value) / 100 || 0;
+    const withdrawalRate = parseFloat(els.withdrawalRate.value) / 100 || 0.04;
+    const annualReturn = parseFloat(els.annualReturn.value) / 100 || 0;
+    const inflationRate = parseFloat(els.inflationRate.value) / 100 || 0;
+
+    // Calculate total net expenses, adjusted for healthcare and geo arbitrage
+    const netAnnualExpenses = Math.max(0, baseExpenses + healthcare - geoArbitrage);
+
+    // Gross up for taxes: Required Gross Withdrawal = Net Expenses / (1 - Tax Rate)
+    // Avoid division by zero if tax rate is somehow 100%
+    const grossAnnualExpenses = taxRate < 1 ? netAnnualExpenses / (1 - taxRate) : netAnnualExpenses;
+
+    // Time horizon
+    const yearsToRetirement = Math.max(0, retirementAge - currentAge);
+    els.resRetAge.textContent = retirementAge;
+
+    // Real return (inflation adjusted)
+    const realReturn = (1 + annualReturn) / (1 + inflationRate) - 1;
+
+    // Standard FIRE Target (in today's dollars)
+    const fireTarget = grossAnnualExpenses / withdrawalRate;
+    els.resFireTarget.textContent = formatCurrency(fireTarget);
+
+    // Lean and Fat FIRE Targets (in today's dollars)
+    // Using base expenses * multiplier + static healthcare - static geoArbitrage grossed up
+    const leanNetExpenses = Math.max(0, (baseExpenses * 0.5) + healthcare - geoArbitrage);
+    const fatNetExpenses = Math.max(0, (baseExpenses * 1.5) + healthcare - geoArbitrage);
+    const leanGrossExpenses = taxRate < 1 ? leanNetExpenses / (1 - taxRate) : leanNetExpenses;
+    const fatGrossExpenses = taxRate < 1 ? fatNetExpenses / (1 - taxRate) : fatNetExpenses;
+
+    const leanFireTarget = leanGrossExpenses / withdrawalRate;
+    const fatFireTarget = fatGrossExpenses / withdrawalRate;
+
+    els.resLean.textContent = formatCurrency(leanFireTarget);
+    els.resFat.textContent = formatCurrency(fatFireTarget);
+
+    // Projected Portfolio Value (Future Value of current portfolio + Future Value of series of contributions)
+    let projectedPortfolio = currentPortfolio;
+    const dataPoints = [];
+    const labels = [];
+    const targetPoints = [];
+    const coastPoints = [];
+
+    for (let year = 0; year <= yearsToRetirement + 10; year++) { // Project past retirement
+      const age = currentAge + year;
+      labels.push(age);
+      targetPoints.push(fireTarget); // Assuming target stays constant in real terms for the chart
+
+      dataPoints.push(projectedPortfolio);
+
+      // Calculate coast trajectory from current year
+      const coastTraj = currentPortfolio * Math.pow(1 + realReturn, year);
+      coastPoints.push(coastTraj);
+
+      // Next year projection (if still working, add savings)
+      if (age < retirementAge) {
+        // Compound current balance and add savings (assuming savings are at end of year and grow with inflation)
+        projectedPortfolio = projectedPortfolio * (1 + realReturn) + annualSavings;
+      } else {
+        // In retirement, withdraw gross expenses
+        projectedPortfolio = projectedPortfolio * (1 + realReturn) - grossAnnualExpenses;
+      }
+    }
+
+    const valueAtRetirement = dataPoints[yearsToRetirement] || 0;
+    els.resProjPort.textContent = formatCurrency(valueAtRetirement);
+
+    if (valueAtRetirement >= fireTarget) {
+        els.resProjPort.style.color = 'var(--buy-color)';
+    } else {
+        els.resProjPort.style.color = 'var(--sell-color)';
+    }
+
+    // Coast FIRE Number (Amount needed today to reach fireTarget without further contributions)
+    const coastFireNumber = fireTarget / Math.pow(1 + realReturn, yearsToRetirement);
+    els.resCoast.textContent = formatCurrency(Math.max(0, coastFireNumber));
+
+    drawChart(labels, dataPoints, targetPoints, coastPoints, currentAge, retirementAge);
+  }
+
+  function drawChart(labels, portfolioData, targetData, coastData, currentAge, retirementAge) {
+    const ctx = els.canvas.getContext('2d');
+
+    // Simple custom charting using Canvas API to avoid heavy dependencies
+    const width = els.canvas.parentElement.clientWidth - 24; // padding
+    const height = 326; // 350 - 24 padding
+
+    els.canvas.width = width;
+    els.canvas.height = height;
+
+    ctx.clearRect(0, 0, width, height);
+
+    const maxVal = Math.max(...portfolioData, ...targetData, ...coastData) * 1.1; // 10% headroom
+    if (maxVal <= 0) return;
+
+    const paddingLeft = 60;
+    const paddingBottom = 30;
+    const paddingTop = 20;
+    const paddingRight = 20;
+
+    const plotWidth = width - paddingLeft - paddingRight;
+    const plotHeight = height - paddingBottom - paddingTop;
+
+    function getX(index) {
+      return paddingLeft + (index / (labels.length - 1)) * plotWidth;
+    }
+
+    function getY(value) {
+      return height - paddingBottom - (value / maxVal) * plotHeight;
+    }
+
+    // Draw grid
+    ctx.strokeStyle = '#152040';
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    for (let i = 0; i <= 5; i++) {
+        const yVal = maxVal * (i / 5);
+        const y = getY(yVal);
+        ctx.moveTo(paddingLeft, y);
+        ctx.lineTo(width - paddingRight, y);
+
+        ctx.fillStyle = '#5a6a80';
+        ctx.font = '10px Inter';
+        ctx.textAlign = 'right';
+        ctx.textBaseline = 'middle';
+
+        // Format axis labels
+        let labelText = '';
+        if (yVal >= 1000000) {
+            labelText = '$' + (yVal / 1000000).toFixed(1) + 'M';
+        } else if (yVal >= 1000) {
+            labelText = '$' + (yVal / 1000).toFixed(0) + 'k';
+        } else {
+            labelText = '$' + yVal.toFixed(0);
+        }
+
+        ctx.fillText(labelText, paddingLeft - 10, y);
+    }
+    ctx.stroke();
+
+    // Draw retirement age line
+    const retIndex = labels.indexOf(retirementAge);
+    if (retIndex !== -1) {
+        const x = getX(retIndex);
+        ctx.strokeStyle = '#e74c3c';
+        ctx.setLineDash([5, 5]);
+        ctx.beginPath();
+        ctx.moveTo(x, paddingTop);
+        ctx.lineTo(x, height - paddingBottom);
+        ctx.stroke();
+        ctx.setLineDash([]);
+
+        ctx.fillStyle = '#e74c3c';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'bottom';
+        ctx.fillText('Retire', x, paddingTop - 5);
+    }
+
+    // X Axis Labels
+    ctx.fillStyle = '#5a6a80';
+    ctx.font = '10px Inter';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'top';
+    const step = Math.max(1, Math.floor(labels.length / 10));
+    for (let i = 0; i < labels.length; i += step) {
+        const x = getX(i);
+        ctx.fillText('Age ' + labels[i], x, height - paddingBottom + 10);
+    }
+
+    // Draw Target Line
+    ctx.strokeStyle = '#4a8fe7';
+    ctx.lineWidth = 2;
+    ctx.setLineDash([5, 5]);
+    ctx.beginPath();
+    ctx.moveTo(getX(0), getY(targetData[0]));
+    for (let i = 1; i < labels.length; i++) {
+      ctx.lineTo(getX(i), getY(targetData[i]));
+    }
+    ctx.stroke();
+    ctx.setLineDash([]);
+
+    // Draw Coast Line
+    ctx.strokeStyle = '#1abc9c';
+    ctx.lineWidth = 1.5;
+    ctx.beginPath();
+    ctx.moveTo(getX(0), getY(coastData[0]));
+    for (let i = 1; i < labels.length; i++) {
+      ctx.lineTo(getX(i), getY(coastData[i]));
+    }
+    ctx.stroke();
+
+    // Draw Portfolio Area
+    ctx.fillStyle = 'rgba(74, 143, 231, 0.2)';
+    ctx.beginPath();
+    ctx.moveTo(getX(0), getY(0));
+    for (let i = 0; i < labels.length; i++) {
+      ctx.lineTo(getX(i), getY(portfolioData[i]));
+    }
+    ctx.lineTo(getX(labels.length - 1), getY(0));
+    ctx.closePath();
+    ctx.fill();
+
+    // Draw Portfolio Line
+    ctx.strokeStyle = '#6ba3f0';
+    ctx.lineWidth = 3;
+    ctx.beginPath();
+    ctx.moveTo(getX(0), getY(portfolioData[0]));
+    for (let i = 1; i < labels.length; i++) {
+      ctx.lineTo(getX(i), getY(portfolioData[i]));
+    }
+    ctx.stroke();
+
+    // Legend
+    const legendY = paddingTop;
+
+    // Target legend
+    ctx.fillStyle = '#4a8fe7';
+    ctx.fillRect(paddingLeft + 20, legendY, 15, 3);
+    ctx.fillStyle = '#c8d0de';
+    ctx.textAlign = 'left';
+    ctx.textBaseline = 'middle';
+    ctx.fillText('FIRE Target', paddingLeft + 40, legendY + 2);
+
+    // Portfolio Legend
+    ctx.fillStyle = '#6ba3f0';
+    ctx.fillRect(paddingLeft + 120, legendY - 1, 15, 5);
+    ctx.fillStyle = '#c8d0de';
+    ctx.fillText('Projected Portfolio', paddingLeft + 140, legendY + 2);
+
+    // Coast Legend
+    ctx.fillStyle = '#1abc9c';
+    ctx.fillRect(paddingLeft + 260, legendY, 15, 3);
+    ctx.fillStyle = '#c8d0de';
+    ctx.fillText('Coast Trajectory (No savings)', paddingLeft + 280, legendY + 2);
+  }
+
+  // Event Listeners
+  Object.values(els).forEach(el => {
+    if (el && el.tagName === 'INPUT' || el.tagName === 'SELECT') {
+      el.addEventListener('input', calculateFIRE);
+    }
+  });
+
+  window.addEventListener('resize', calculateFIRE);
+
+  // Initial Calculation
+  calculateFIRE();
+
+</script>
+</body>
+</html>
