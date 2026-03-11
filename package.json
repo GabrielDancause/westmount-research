@@ -10,8 +10,11 @@
   },
   "dependencies": {
     "astro": "^5.17.1",
+    "axios": "^1.13.6",
+    "cheerio": "^1.2.0",
     "jsdom": "^28.1.0",
     "node-fetch": "^3.3.2",
+    "puppeteer": "^24.39.0",
     "yahoo-finance2": "^3.13.2"
   }
 }
