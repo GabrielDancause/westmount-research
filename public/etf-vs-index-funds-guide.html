@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ETF vs Index Fund Comparison Guide | Westmount Fundamentals</title>
+    <meta name="description" content="A comprehensive educational resource comparing ETFs and index funds based on expense ratios, tax efficiency, trading flexibility, minimum investments, and performance differences.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G86C7NJG3F"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-G86C7NJG3F');
+    </script>
+
+    <style>
+        :root {
+            --bg-color: #060a12;
+            --card-bg: #0a1020;
+            --border-color: #152040;
+            --accent-color: #4a8fe7;
+            --text-main: #c8d0de;
+            --text-muted: #8b9bb4;
+            --text-light: #ffffff;
+            --success-color: #2e7d32;
+            --warning-color: #ed6c02;
+            --error-color: #d32f2f;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            font-size: 16px;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--text-light);
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+            margin-top: 2rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.5rem;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+        }
+
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        strong {
+            color: var(--text-light);
+        }
+
+        ul, ol {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        code, pre {
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        code {
+            background-color: var(--card-bg);
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-size: 0.9em;
+            color: #e2e8f0;
+            border: 1px solid var(--border-color);
+        }
+
+        header {
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 0;
+            background-color: var(--bg-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-weight: 800;
+            color: var(--text-light);
+            font-size: 1.2rem;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+        }
+
+        .guide-header {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: rgba(74, 143, 231, 0.1);
+            color: var(--accent-color);
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1rem;
+            border: 1px solid rgba(74, 143, 231, 0.2);
+        }
+
+        .guide-meta {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .card h3 {
+            margin-top: 0;
+            color: var(--accent-color);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: rgba(21, 32, 64, 0.5);
+            color: var(--text-light);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        td {
+            color: var(--text-main);
+            font-size: 0.95rem;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1.5rem;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .faq-question {
+            font-weight: 700;
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .faq-answer {
+            color: var(--text-main);
+        }
+
+        footer {
+            border-top: 1px solid var(--border-color);
+            padding: 3rem 1.5rem;
+            margin-top: 4rem;
+            text-align: center;
+            background-color: #040810;
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .disclaimer {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .copyright {
+            font-size: 0.85rem;
+            color: #3a4a5a;
+        }
+
+        /* Calculator Styles */
+        .calculator-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        @media (max-width: 600px) {
+            .calculator-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .input-group {
+            margin-bottom: 1rem;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--text-light);
+            font-weight: 600;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 0.75rem;
+            background-color: var(--bg-color);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            color: var(--text-light);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1rem;
+        }
+
+        .input-group input:focus {
+            outline: none;
+            border-color: var(--accent-color);
+        }
+
+        .calc-results {
+            background-color: rgba(21, 32, 64, 0.3);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .result-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .result-row:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .result-label {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .result-value {
+            font-weight: 700;
+            color: var(--text-light);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .result-value.negative {
+            color: #ef4444;
+        }
+
+        /* Decision Tree Styles */
+        .decision-tree {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .dt-question {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        .dt-options {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .dt-btn {
+            flex: 1;
+            padding: 0.75rem 1rem;
+            background-color: var(--bg-color);
+            border: 1px solid var(--accent-color);
+            color: var(--accent-color);
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+            text-align: center;
+        }
+
+        .dt-btn:hover {
+            background-color: rgba(74, 143, 231, 0.1);
+        }
+
+        .dt-result-box {
+            display: none;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            border: 1px solid;
+            background-color: rgba(21, 32, 64, 0.3);
+        }
+
+        .dt-result-box.etf {
+            border-color: var(--accent-color);
+        }
+
+        .dt-result-box.index {
+            border-color: #e78f4a;
+        }
+
+        .dt-result-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .dt-result-box.etf .dt-result-title { color: var(--accent-color); }
+        .dt-result-box.index .dt-result-title { color: #e78f4a; }
+
+        .dt-restart {
+            margin-top: 1rem;
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            text-decoration: underline;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+        }
+
+        .dt-step {
+            display: none;
+        }
+
+        .dt-step.active {
+            display: block;
+        }
+    </style>
+
+    <!-- JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "ETF vs Index Fund Comparison Guide",
+      "description": "A comprehensive educational resource comparing ETFs and index funds based on expense ratios, tax efficiency, trading flexibility, minimum investments, and performance differences.",
+      "author": {
+        "@type": "Organization",
+        "name": "Westmount Fundamentals"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Westmount Fundamentals",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://westmountfundamentals.com/favicon.svg"
+        }
+      },
+      "datePublished": "2026-03-10",
+      "dateModified": "2026-03-10",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://westmountfundamentals.com/etf-vs-index-funds-guide.html"
+      }
+    }
+    </script>
+
+    <!-- FAQ JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the main difference between an ETF and an Index Fund?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The main difference is how they trade. ETFs trade on an exchange like a stock, meaning their price fluctuates throughout the day and you can buy/sell anytime the market is open. Index funds (structured as mutual funds) trade only once a day at the closing net asset value (NAV) price."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which is more tax-efficient: an ETF or an Index Fund?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ETFs are generally more tax-efficient due to their unique creation and redemption mechanism, which avoids capital gains distributions. Vanguard index funds are an exception, as they hold a patent allowing their mutual funds to share the tax efficiency of their ETF counterparts."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I automatically reinvest dividends with both?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Most brokerages allow automatic dividend reinvestment (DRIP) for both ETFs and mutual funds. However, mutual funds natively support reinvestment into fractional shares, whereas ETF DRIP capabilities depend on your specific broker supporting fractional ETF shares."
+          }
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+<script src="/nav.js"></script>
+
+<header>
+    <div class="header-container">
+        <a href="/" class="logo">Westmount<span>Fundamentals</span></a>
+        <nav>
+            <a href="/" style="font-size: 0.9rem; font-weight: 600;">Back to Home</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <div class="guide-header">
+        <span class="tag">Educational Guide</span>
+        <h1>ETF vs Index Fund: The Ultimate Comparison</h1>
+        <div class="guide-meta">
+            <span>By Westmount Research</span>
+            <span>·</span>
+            <span>12 Min Read</span>
+            <span>·</span>
+            <span>Updated: 2026</span>
+        </div>
+    </div>
+
+    <p>When building a passive investment portfolio, two vehicles stand out: <strong>Exchange-Traded Funds (ETFs)</strong> and <strong>Index Mutual Funds</strong>. Because both vehicles typically track the exact same underlying indices (like the S&P 500 or total stock market), investors often wonder which one to choose.</p>
+
+    <p>While the long-term returns of identical index-tracking ETFs and mutual funds are nearly indistinguishable, differences in how they trade, their tax efficiency, and their fee structures make them suited for different types of investors. This guide breaks down those crucial differences.</p>
+
+    <h2>1. Core Differences: How They Trade</h2>
+
+    <p>The fundamental difference between an ETF and a mutual fund lies in the mechanics of how you buy and sell them.</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Feature</th>
+                <th>ETF (Exchange-Traded Fund)</th>
+                <th>Index Mutual Fund</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Trading Hours</strong></td>
+                <td>Intraday (during market hours)</td>
+                <td>Once per day (after market close)</td>
+            </tr>
+            <tr>
+                <td><strong>Pricing</strong></td>
+                <td>Fluctuates throughout the day</td>
+                <td>Priced at Net Asset Value (NAV) at close</td>
+            </tr>
+            <tr>
+                <td><strong>Minimum Investment</strong></td>
+                <td>Price of one share (or fractional if broker allows)</td>
+                <td>Often requires a fixed minimum (e.g., $3,000)</td>
+            </tr>
+            <tr>
+                <td><strong>Automatic Investing</strong></td>
+                <td>Depends on broker supporting fractional shares</td>
+                <td>Built-in natively for exact dollar amounts</td>
+            </tr>
+            <tr>
+                <td><strong>Order Types</strong></td>
+                <td>Limit, Stop, Stop-Limit, Market</td>
+                <td>Market (executed at end-of-day NAV)</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="card">
+        <h3>Real-World Example: VTI vs VTSAX</h3>
+        <p>Consider Vanguard's Total Stock Market offerings. Both track the CRSP US Total Market Index.</p>
+        <ul>
+            <li><strong>VTI (ETF):</strong> You can buy it at 10:30 AM for $250.50 per share. You pay exactly that market price (plus/minus a tiny bid-ask spread). You only need enough money to buy one share.</li>
+            <li><strong>VTSAX (Mutual Fund):</strong> You place an order to buy $5,000 worth at 10:30 AM. The trade won't execute until after the market closes at 4:00 PM. You'll receive shares based on the closing NAV. It requires a $3,000 minimum initial investment.</li>
+        </ul>
+        <p><em>Conclusion:</em> They hold the exact same stocks, but VTI offers flexibility and lower entry barriers, while VTSAX offers seamless "set-it-and-forget-it" dollar-based automated investing.</p>
+    </div>
+
+    <h2>2. Expense Ratios and Cost Drag</h2>
+
+    <p>Expense ratios are the annual fees charged by the fund manager. Historically, ETFs had significantly lower expense ratios than mutual funds. Today, the gap has closed substantially, especially among broad-market index funds, but ETFs still generally maintain a slight edge.</p>
+
+    <p>Even a seemingly small difference in expense ratio (e.g., 0.03% vs 0.15%) can compound into thousands of dollars of lost wealth over a investing lifetime.</p>
+
+    <div class="card">
+        <h3>Expense Ratio Impact Calculator</h3>
+        <p>See how a higher expense ratio eats into your long-term returns.</p>
+
+        <div class="calculator-container">
+            <div>
+                <div class="input-group">
+                    <label>Initial Investment ($)</label>
+                    <input type="number" id="calc-initial" value="10000" min="0">
+                </div>
+                <div class="input-group">
+                    <label>Annual Contribution ($)</label>
+                    <input type="number" id="calc-annual" value="6000" min="0">
+                </div>
+                <div class="input-group">
+                    <label>Assumed Annual Return (%)</label>
+                    <input type="number" id="calc-return" value="7" min="0" step="0.1">
+                </div>
+                <div class="input-group">
+                    <label>Years to Invest</label>
+                    <input type="number" id="calc-years" value="30" min="1">
+                </div>
+                <div class="input-group">
+                    <label>Fund A Expense Ratio (%) e.g. ETF</label>
+                    <input type="number" id="calc-fee-a" value="0.03" min="0" step="0.01">
+                </div>
+                <div class="input-group">
+                    <label>Fund B Expense Ratio (%) e.g. Mutual Fund</label>
+                    <input type="number" id="calc-fee-b" value="0.25" min="0" step="0.01">
+                </div>
+            </div>
+
+            <div class="calc-results">
+                <div class="result-row">
+                    <span class="result-label">Fund A Final Balance</span>
+                    <span class="result-value" id="res-bal-a">$680,482</span>
+                </div>
+                <div class="result-row">
+                    <span class="result-label">Fund A Total Fees Paid</span>
+                    <span class="result-value" id="res-fee-a">$4,215</span>
+                </div>
+                <div class="result-row">
+                    <span class="result-label">Fund B Final Balance</span>
+                    <span class="result-value" id="res-bal-b">$651,324</span>
+                </div>
+                <div class="result-row">
+                    <span class="result-label">Fund B Total Fees Paid</span>
+                    <span class="result-value" id="res-fee-b">$33,373</span>
+                </div>
+                <div class="result-row" style="border-bottom: none; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border-color);">
+                    <span class="result-label" style="color: var(--text-light); font-weight: 600;">Wealth Lost to Higher Fees</span>
+                    <span class="result-value negative" id="res-diff">-$29,158</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h2>3. Tax Efficiency & Capital Gains</h2>
+
+    <p>This is often the most misunderstood difference. <strong>ETFs are generally more tax-efficient than mutual funds when held in a taxable brokerage account.</strong></p>
+
+    <p>When investors pull their money out of a mutual fund, the fund manager may have to sell underlying stocks to raise cash. If those stocks have gone up in value, selling them generates a capital gain. By law, mutual funds must distribute these capital gains to all shareholders at the end of the year. You will owe taxes on these distributions, even if you didn't sell your shares.</p>
+
+    <p>ETFs avoid this through an "in-kind" creation and redemption process. When large institutions want to redeem ETF shares, the ETF pays them with the actual underlying stocks, not cash. Since no stocks were sold for cash, no capital gains are triggered. You only pay capital gains taxes when you decide to sell your ETF shares.</p>
+
+    <p><em>Note: If you are investing inside a tax-advantaged account like an IRA or 401(k), this difference does not matter, as taxes on capital gains distributions are deferred or eliminated.</em></p>
+
+    <h3>Tax-Loss Harvesting Opportunities</h3>
+    <p>ETFs offer superior flexibility for tax-loss harvesting. Because they trade intraday, you can lock in a loss on a specific day when the market dips and immediately buy a similar (but not "substantially identical") ETF to maintain your market exposure, without waiting for the end-of-day mutual fund settlement process.</p>
+
+    <h2>4. Interactive Decision Tree</h2>
+
+    <div class="card">
+        <h3>Which structure is right for you?</h3>
+        <p>Answer a few questions to see if you lean toward ETFs or Index Mutual Funds.</p>
+
+        <div class="decision-tree" id="dt-container">
+            <!-- Step 1 -->
+            <div class="dt-step active" id="dt-step-1">
+                <div class="dt-question">Where are you holding these investments?</div>
+                <div class="dt-options">
+                    <button class="dt-btn" onclick="dtNext(1, 'taxable')">Taxable Brokerage Account</button>
+                    <button class="dt-btn" onclick="dtNext(1, 'tax-advantaged')">Tax-Advantaged Account (IRA, 401k)</button>
+                </div>
+            </div>
+
+            <!-- Step 2A (Taxable) -->
+            <div class="dt-step" id="dt-step-2a">
+                <div class="dt-question">How do you prefer to invest?</div>
+                <div class="dt-options">
+                    <button class="dt-btn" onclick="dtShowResult('etf', 'Tax Efficiency + Control')">I buy manually when I have extra cash</button>
+                    <button class="dt-btn" onclick="dtShowResult('etf', 'Tax Efficiency Priority')">I want to set up automatic monthly transfers</button>
+                </div>
+                <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 1rem; text-align: center;">Note: In a taxable account, tax efficiency strongly favors ETFs regardless of automation preferences.</p>
+            </div>
+
+            <!-- Step 2B (Tax-Advantaged) -->
+            <div class="dt-step" id="dt-step-2b">
+                <div class="dt-question">How important is automated, set-it-and-forget-it investing?</div>
+                <div class="dt-options">
+                    <button class="dt-btn" onclick="dtNext(3, 'auto')">Very important. I want to buy $X every paycheck automatically.</button>
+                    <button class="dt-btn" onclick="dtShowResult('etf', 'Lower Minimums + Flexibility')">Not important. I prefer to manually buy when I contribute.</button>
+                </div>
+            </div>
+
+            <!-- Step 3 (Tax-Advantaged, Wants Auto) -->
+            <div class="dt-step" id="dt-step-3">
+                <div class="dt-question">Do you have the initial minimum required by the mutual fund (e.g., $3,000 for Vanguard)?</div>
+                <div class="dt-options">
+                    <button class="dt-btn" onclick="dtShowResult('index', 'Automated Simplicity')">Yes</button>
+                    <button class="dt-btn" onclick="dtShowResult('etf', 'Start Small')">No, I'm starting with less</button>
+                </div>
+            </div>
+
+            <!-- Results -->
+            <div class="dt-result-box etf" id="dt-result-etf">
+                <div class="dt-result-title">🎯 You Lean Toward ETFs</div>
+                <p>Based on your answers, an Exchange-Traded Fund (ETF) is likely the better choice. Your profile suggests you value <strong>tax efficiency</strong>, <strong>lower investment minimums</strong>, or <strong>intraday trading control</strong>.</p>
+                <button class="dt-restart" onclick="dtRestart()">Start Over</button>
+            </div>
+
+            <div class="dt-result-box index" id="dt-result-index">
+                <div class="dt-result-title">🎯 You Lean Toward Index Mutual Funds</div>
+                <p>Based on your answers, an Index Mutual Fund is likely the better choice. Because you are in a tax-advantaged account and value <strong>automated, dollar-based investing</strong>, mutual funds provide the most seamless "set it and forget it" experience once you meet the initial minimums.</p>
+                <button class="dt-restart" onclick="dtRestart()">Start Over</button>
+            </div>
+        </div>
+    </div>
+
+    <h2>Methodology</h2>
+    <div class="card">
+        <p>This comparison focuses specifically on passive, index-tracking vehicles. Actively managed ETFs and mutual funds involve different considerations regarding manager risk and significantly higher fee structures. Tax efficiency explanations assume US tax law as of 2026. Vanguard's patented structure that allowed its mutual funds to operate as a share class of its ETFs expired in 2023, allowing other issuers to theoretically adopt similar structures, though ETFs remain the standard for tax efficiency in taxable accounts.</p>
+    </div>
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-container">
+        <div class="faq-item">
+            <div class="faq-question">What is the main difference between an ETF and an Index Fund?</div>
+            <div class="faq-answer">The main difference is how they trade. ETFs trade on an exchange like a stock, meaning their price fluctuates throughout the day and you can buy/sell anytime the market is open. Index funds (structured as mutual funds) trade only once a day at the closing net asset value (NAV) price.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Which is more tax-efficient: an ETF or an Index Fund?</div>
+            <div class="faq-answer">ETFs are generally more tax-efficient due to their unique creation and redemption mechanism, which avoids capital gains distributions. Vanguard index funds are an exception, as they held a patent allowing their mutual funds to share the tax efficiency of their ETF counterparts.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Can I automatically reinvest dividends with both?</div>
+            <div class="faq-answer">Yes. Most brokerages allow automatic dividend reinvestment (DRIP) for both ETFs and mutual funds. However, mutual funds natively support reinvestment into fractional shares, whereas ETF DRIP capabilities depend on your specific broker supporting fractional ETF shares.</div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="footer-content">
+        <div class="disclaimer">
+            <strong>Disclaimer:</strong> This guide provides educational information and data analysis only. Nothing in this article constitutes personalized investment advice. Investing in securities involves risk, including the risk of loss of principal. Please consult with a qualified financial advisor before making any investment decisions.
+        </div>
+        <div class="copyright" id="copyright">
+            &copy; 2026 <a href="/">westmount-research</a> · A GAB Ventures property
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Set dynamic year
+    document.getElementById('copyright').innerHTML = `&copy; ${new Date().getFullYear()} <a href="/">westmount-research</a> · A GAB Ventures property`;
+
+    // Calculator Logic
+    function updateCalculator() {
+        const initial = parseFloat(document.getElementById('calc-initial').value) || 0;
+        const annual = parseFloat(document.getElementById('calc-annual').value) || 0;
+        const rate = (parseFloat(document.getElementById('calc-return').value) || 0) / 100;
+        const years = parseFloat(document.getElementById('calc-years').value) || 0;
+        const feeA = (parseFloat(document.getElementById('calc-fee-a').value) || 0) / 100;
+        const feeB = (parseFloat(document.getElementById('calc-fee-b').value) || 0) / 100;
+
+        const rateA = rate - feeA;
+        const rateB = rate - feeB;
+
+        // Future Value formulas
+        // FV = P(1+r)^t + PMT * (((1+r)^t - 1) / r)
+        let finalA = 0, finalB = 0, noFeeFinal = 0;
+
+        if (rateA === 0) {
+            finalA = initial + (annual * years);
+        } else {
+            finalA = initial * Math.pow(1 + rateA, years) + annual * ((Math.pow(1 + rateA, years) - 1) / rateA);
+        }
+
+        if (rateB === 0) {
+            finalB = initial + (annual * years);
+        } else {
+            finalB = initial * Math.pow(1 + rateB, years) + annual * ((Math.pow(1 + rateB, years) - 1) / rateB);
+        }
+
+        if (rate === 0) {
+            noFeeFinal = initial + (annual * years);
+        } else {
+            noFeeFinal = initial * Math.pow(1 + rate, years) + annual * ((Math.pow(1 + rate, years) - 1) / rate);
+        }
+
+        const feePaidA = noFeeFinal - finalA;
+        const feePaidB = noFeeFinal - finalB;
+        const difference = finalB - finalA; // Amount lost compared to A
+
+        const formatter = new Intl.NumberFormat('en-US', {
+            style: 'currency',
+            currency: 'USD',
+            maximumFractionDigits: 0
+        });
+
+        document.getElementById('res-bal-a').textContent = formatter.format(finalA);
+        document.getElementById('res-fee-a').textContent = formatter.format(feePaidA);
+        document.getElementById('res-bal-b').textContent = formatter.format(finalB);
+        document.getElementById('res-fee-b').textContent = formatter.format(feePaidB);
+
+        const diffEl = document.getElementById('res-diff');
+        diffEl.textContent = formatter.format(difference);
+        if (difference < 0) {
+            diffEl.className = 'result-value negative';
+        } else {
+            diffEl.className = 'result-value';
+        }
+    }
+
+    // Attach event listeners to calculator inputs
+    const inputs = ['calc-initial', 'calc-annual', 'calc-return', 'calc-years', 'calc-fee-a', 'calc-fee-b'];
+    inputs.forEach(id => {
+        document.getElementById(id).addEventListener('input', updateCalculator);
+    });
+
+    // Initialize calculator
+    updateCalculator();
+
+    // Decision Tree Logic
+    function dtHideAll() {
+        document.querySelectorAll('.dt-step').forEach(el => el.classList.remove('active'));
+        document.querySelectorAll('.dt-result-box').forEach(el => el.style.display = 'none');
+    }
+
+    function dtNext(currentStep, answer) {
+        dtHideAll();
+        if (currentStep === 1) {
+            if (answer === 'taxable') {
+                document.getElementById('dt-step-2a').classList.add('active');
+            } else {
+                document.getElementById('dt-step-2b').classList.add('active');
+            }
+        } else if (currentStep === 3) {
+            if (answer === 'auto') {
+                document.getElementById('dt-step-3').classList.add('active');
+            }
+        }
+    }
+
+    function dtShowResult(type, reason) {
+        dtHideAll();
+        if (type === 'etf') {
+            document.getElementById('dt-result-etf').style.display = 'block';
+        } else {
+            document.getElementById('dt-result-index').style.display = 'block';
+        }
+    }
+
+    function dtRestart() {
+        dtHideAll();
+        document.getElementById('dt-step-1').classList.add('active');
+    }
+</script>
+
+</body>
+</html>
