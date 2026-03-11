@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Westmount Fundamentals - Research & Analysis</title>
+  <meta name="description" content="Independent equity research and fundamental analysis. Data-driven insights, calculators, and rankings for investors.">
+
+  <link rel="canonical" href="https://westmountfundamentals.com/.html">
+  <meta property="og:title" content="Westmount Fundamentals - Research & Analysis">
+  <meta property="og:description" content="Independent equity research and fundamental analysis. Data-driven insights, calculators, and rankings for investors.">
+  <meta property="og:url" content="https://westmountfundamentals.com/.html">
+  <meta property="og:type" content="website">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G86C7NJG3F"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-G86C7NJG3F');
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- FAQPage JSON-LD Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is fundamental analysis?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Fundamental analysis is a method of evaluating a security to measure its intrinsic value, by examining related economic and financial factors. Analysts study everything that can affect the security's value, from macroeconomic factors like the state of the economy and industry conditions to microeconomic factors like the effectiveness of the company's management."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are the most important financial statements?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The three most important financial statements are the Income Statement (showing profitability over a period), the Balance Sheet (showing assets, liabilities, and equity at a specific point in time), and the Cash Flow Statement (showing the actual cash moving in and out of the business)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is a P/E ratio calculated?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The Price-to-Earnings (P/E) ratio is calculated by dividing a company's current stock price by its earnings per share (EPS). It is a widely used valuation metric that helps investors determine how much they are paying for $1 of the company's earnings."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is free cash flow (FCF)?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Free cash flow (FCF) represents the cash a company generates after accounting for cash outflows to support operations and maintain its capital assets. It's an important metric because it shows the actual cash available for dividends, debt reduction, or reinvestment."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why are dividends important to value investors?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Dividends provide a tangible, regular return on investment regardless of the stock price fluctuations. For value investors, a consistent and growing dividend often signals financial health, disciplined management, and confidence in future earnings."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* Reset & Base Styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #060a12;
+      color: #e0e8f0;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    h1, h2, h3, h4 {
+      color: #ffffff;
+      margin-bottom: 1rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    a {
+      color: #4a8fe7;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    a:hover {
+      color: #6ba3f0;
+      text-decoration: underline;
+    }
+
+    /* Layout */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 4rem 1.5rem;
+      flex-grow: 1;
+      width: 100%;
+    }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      font-weight: 900;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      font-size: 1.1rem;
+      color: #8a9bb3;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Cards */
+    .card {
+      background-color: #0a1020;
+      border: 1px solid #152040;
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .card h2 {
+      font-size: 1.5rem;
+      color: #4a8fe7;
+      border-bottom: 1px solid #152040;
+      padding-bottom: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Typography inside cards */
+    .card p {
+      color: #b0c0d0;
+      margin-bottom: 1rem;
+    }
+
+    /* FAQ Section */
+    .faq-item {
+      margin-bottom: 1.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid #152040;
+    }
+    .faq-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    .faq-question {
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+    }
+    .faq-answer {
+      color: #8a9bb3;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    /* JetBrains Mono Utility */
+    .mono {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.9em;
+      background: rgba(74, 143, 231, 0.1);
+      color: #4a8fe7;
+      padding: 0.2em 0.4em;
+      border-radius: 4px;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #0a1020;
+      border-top: 1px solid #152040;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      margin-top: auto;
+    }
+    footer p {
+      color: #5a6a80;
+      font-size: 0.85rem;
+      margin-bottom: 0.5rem;
+    }
+    footer .disclaimer {
+      color: #4a5a70;
+      font-size: 0.75rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .container {
+        padding: 2rem 1rem;
+      }
+      .card {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <section class="hero">
+      <h1>Westmount Fundamentals</h1>
+      <p>Data-driven market analysis, financial modeling, and quantitative equity research.</p>
+    </section>
+
+    <section class="card">
+      <h2>About Our Research</h2>
+      <p>At Westmount Fundamentals, we focus on strictly quantitative, data-driven equity research. We believe that over the long term, intrinsic value and cash flow generation are the primary drivers of shareholder returns.</p>
+      <p>Our approach incorporates <span class="mono">fundamental analysis</span>, stripping away market noise to evaluate companies based on their balance sheet strength, earnings quality, and competitive advantages.</p>
+    </section>
+
+    <section class="card">
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <div class="faq-question">What is fundamental analysis?</div>
+        <div class="faq-answer">Fundamental analysis is a method of evaluating a security to measure its intrinsic value, by examining related economic and financial factors. Analysts study everything that can affect the security's value, from macroeconomic factors like the state of the economy and industry conditions to microeconomic factors like the effectiveness of the company's management.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">What are the most important financial statements?</div>
+        <div class="faq-answer">The three most important financial statements are the Income Statement (showing profitability over a period), the Balance Sheet (showing assets, liabilities, and equity at a specific point in time), and the Cash Flow Statement (showing the actual cash moving in and out of the business).</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">How is a P/E ratio calculated?</div>
+        <div class="faq-answer">The Price-to-Earnings (P/E) ratio is calculated by dividing a company's current stock price by its earnings per share (EPS). It is a widely used valuation metric that helps investors determine how much they are paying for $1 of the company's earnings.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">What is free cash flow (FCF)?</div>
+        <div class="faq-answer">Free cash flow (FCF) represents the cash a company generates after accounting for cash outflows to support operations and maintain its capital assets. It's an important metric because it shows the actual cash available for dividends, debt reduction, or reinvestment.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Why are dividends important to value investors?</div>
+        <div class="faq-answer">Dividends provide a tangible, regular return on investment regardless of the stock price fluctuations. For value investors, a consistent and growing dividend often signals financial health, disciplined management, and confidence in future earnings.</div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Westmount Research · A GAB Ventures property</p>
+    <p class="disclaimer">Data for informational purposes only. Not investment advice.</p>
+  </footer>
+</body>
+</html>
