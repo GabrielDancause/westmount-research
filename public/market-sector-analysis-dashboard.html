@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market Sector Analysis Dashboard | Westmount Fundamentals</title>
+    <meta name="description" content="Interactive market sector analysis dashboard. Track real-time sector performance, rotation, relative strength, P/E ratios, and economic cycle positioning.">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G86C7NJG3F"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-G86C7NJG3F');
+    </script>
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: #060a12;
+            color: #c8d0de;
+            line-height: 1.6;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 24px;
+        }
+
+        /* Hero Header */
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .tagline {
+            display: inline-block;
+            background: rgba(74,143,231,0.1);
+            color: #4a8fe7;
+            font-size: 0.75rem;
+            font-weight: 800;
+            padding: 6px 16px;
+            border-radius: 20px;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #fff;
+            margin-bottom: 12px;
+            letter-spacing: -1px;
+        }
+        .desc {
+            color: #6a7a90;
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 1.05rem;
+        }
+
+        /* Grid Layout */
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+        @media (max-width: 900px) {
+            .dashboard-grid { grid-template-columns: 1fr; }
+        }
+
+        /* Cards */
+        .card {
+            background: linear-gradient(135deg, #0a1020 0%, #0d1428 100%);
+            border: 1px solid #152040;
+            border-radius: 12px;
+            padding: 24px;
+        }
+        .card h2 {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: #e0e8f0;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .card h2 span {
+            color: #4a8fe7;
+        }
+
+        /* Charts */
+        .chart-container {
+            width: 100%;
+            height: 300px;
+            position: relative;
+        }
+        canvas {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Table */
+        .table-container {
+            overflow-x: auto;
+            margin-top: 24px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            font-family: 'JetBrains Mono', monospace;
+        }
+        th {
+            text-align: left;
+            padding: 12px 16px;
+            background: #0d1428;
+            color: #4a8fe7;
+            font-weight: 700;
+            font-family: 'Inter', sans-serif;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.5px;
+            border-bottom: 2px solid #152040;
+            cursor: pointer;
+        }
+        th:hover { background: #152040; }
+        td {
+            padding: 12px 16px;
+            border-bottom: 1px solid #152040;
+            color: #e0e8f0;
+        }
+        tr:hover td { background: rgba(74,143,231,0.05); }
+        .positive { color: #4ade80; }
+        .negative { color: #f87171; }
+        .ticker { color: #6a7a90; font-size: 0.8rem; margin-left: 6px; }
+
+        /* Guide Section */
+        .guide-section {
+            background: #0a1020;
+            border: 1px solid #152040;
+            border-radius: 12px;
+            padding: 32px;
+            margin-bottom: 40px;
+        }
+        .guide-section h3 {
+            font-size: 1.4rem;
+            color: #fff;
+            margin-bottom: 16px;
+        }
+        .cycle-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-top: 20px;
+        }
+        @media (max-width: 768px) {
+            .cycle-grid { grid-template-columns: 1fr 1fr; }
+        }
+        .cycle-phase {
+            background: #060a12;
+            padding: 16px;
+            border: 1px solid #152040;
+            border-radius: 8px;
+        }
+        .cycle-phase h4 { color: #4a8fe7; margin-bottom: 8px; font-size: 0.9rem; }
+        .cycle-phase ul { list-style: none; font-size: 0.85rem; color: #a0aec0; }
+        .cycle-phase li { margin-bottom: 4px; display: flex; align-items: center; gap: 6px;}
+        .cycle-phase li::before { content: "•"; color: #4a8fe7; }
+
+        /* FAQ */
+        .faq { margin-top: 40px; }
+        .faq h3 { font-size: 1.5rem; color: #fff; margin-bottom: 24px; }
+        .faq-item { margin-bottom: 24px; border-bottom: 1px solid #152040; padding-bottom: 24px;}
+        .faq-item:last-child { border-bottom: none; }
+        .faq-q { font-weight: 700; color: #e0e8f0; margin-bottom: 8px; font-size: 1.1rem; }
+        .faq-a { color: #8a9ab0; font-size: 0.95rem; }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 50px 24px;
+            font-size: 0.85rem;
+            color: #3a4a5a;
+            border-top: 1px solid #151f2e;
+            background: #040810;
+            margin-top: 60px;
+        }
+        .footer a { color: #4a8fe7; text-decoration: none; }
+        .footer a:hover { text-decoration: underline; }
+        .disclaimer {
+            max-width: 600px;
+            margin: 16px auto 0;
+            color: #2a3a4a;
+            font-size: 0.75rem;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <script src="/nav.js"></script>
+
+    <div class="container">
+        <header>
+            <div class="tagline">Interactive Dashboard</div>
+            <h1>Market Sector Analysis</h1>
+            <p class="desc">Track real-time sector performance, rotation trends, relative strength against the S&P 500, and current P/E valuations.</p>
+        </header>
+
+        <div class="dashboard-grid">
+            <div class="card">
+                <h2><span>📊</span> 1-Year Relative Strength vs SPY</h2>
+                <div class="chart-container">
+                    <canvas id="rsiChart"></canvas>
+                </div>
+                <p style="font-size:0.8rem; color:#6a7a90; margin-top:12px; text-align:center;">Relative outperformance or underperformance compared to S&P 500 over 12 months.</p>
+            </div>
+
+            <div class="card">
+                <h2><span>⚖️</span> Sector P/E Ratios</h2>
+                <div class="chart-container">
+                    <canvas id="peChart"></canvas>
+                </div>
+                <p style="font-size:0.8rem; color:#6a7a90; margin-top:12px; text-align:center;">Trailing 12-month Price-to-Earnings ratios by sector.</p>
+            </div>
+        </div>
+
+        <div class="card" style="margin-bottom: 40px;">
+            <h2><span>📋</span> Live Sector Data Screen</h2>
+            <div class="table-container">
+                <table id="sectorTable">
+                    <thead>
+                        <tr>
+                            <th onclick="sortTable(0)">Sector ↕</th>
+                            <th onclick="sortTable(1)">Price ↕</th>
+                            <th onclick="sortTable(2)">Change ↕</th>
+                            <th onclick="sortTable(3)">P/E Ratio ↕</th>
+                            <th onclick="sortTable(4)">Div Yield ↕</th>
+                            <th onclick="sortTable(5)">YTD Return ↕</th>
+                            <th onclick="sortTable(6)">1Yr Rel Strength ↕</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                        <tr><td colspan="7" style="text-align:center;">Loading sector data...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="guide-section">
+            <h3>Sector Rotation & The Economic Cycle</h3>
+            <p style="color:#a0aec0; font-size:0.95rem; max-width:800px;">Sector rotation theory suggests that different market sectors outperform during specific phases of the economic cycle. While past performance does not guarantee future results, this framework is widely used by institutional investors for asset allocation.</p>
+
+            <div class="cycle-grid">
+                <div class="cycle-phase">
+                    <h4>1. Early Recovery</h4>
+                    <ul>
+                        <li>Financials</li>
+                        <li>Real Estate</li>
+                        <li>Consumer Discretionary</li>
+                    </ul>
+                </div>
+                <div class="cycle-phase">
+                    <h4>2. Mid Cycle</h4>
+                    <ul>
+                        <li>Information Technology</li>
+                        <li>Communication Services</li>
+                        <li>Industrials</li>
+                    </ul>
+                </div>
+                <div class="cycle-phase">
+                    <h4>3. Late Cycle</h4>
+                    <ul>
+                        <li>Energy</li>
+                        <li>Materials</li>
+                        <li>Health Care</li>
+                    </ul>
+                </div>
+                <div class="cycle-phase">
+                    <h4>4. Recession</h4>
+                    <ul>
+                        <li>Consumer Staples</li>
+                        <li>Utilities</li>
+                        <li>Health Care</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="faq">
+            <h3>Methodology & FAQ</h3>
+            <div class="faq-item">
+                <div class="faq-q">What ETFs represent the sectors?</div>
+                <div class="faq-a">We use the State Street Global Advisors (SSGA) Select Sector SPDR ETFs as proxies for the 11 GICS (Global Industry Classification Standard) sectors of the S&P 500. For example, XLK for Technology, XLV for Health Care, etc.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">How is Relative Strength calculated?</div>
+                <div class="faq-a">Relative strength measures the 1-year total return of a sector ETF minus the 1-year total return of the SPDR S&P 500 ETF Trust (SPY). A positive number indicates the sector has outperformed the broader market over the trailing 12 months.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">How frequently is this data updated?</div>
+                <div class="faq-a">The dashboard fetches fresh market data during standard market hours. P/E ratios and dividend yields are based on trailing twelve month (TTM) figures provided by Yahoo Finance.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        © 2026 <a href="/">westmount-research</a> · A <a href="https://gab.ae">GAB Ventures</a> property
+        <div class="disclaimer">This site provides data and analysis for informational purposes only. Nothing here constitutes investment advice. Do your own research. All data is provided "as is" and subject to delays.</div>
+    </div>
+
+    <!-- JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Market Sector Analysis Dashboard",
+      "url": "https://westmountfundamentals.com/market-sector-analysis-dashboard.html",
+      "description": "Interactive market sector analysis dashboard. Track real-time sector performance, rotation, relative strength, P/E ratios.",
+      "applicationCategory": "FinanceApplication",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Westmount Fundamentals"
+      }
+    }
+    </script>
+
+    <script>
+        let sectorData = [];
+        let sortCol = -1;
+        let sortAsc = true;
+
+        const formatPercent = (val) => val === null || val === undefined ? 'N/A' : val.toFixed(2) + '%';
+        const formatNumber = (val) => val === null || val === undefined ? 'N/A' : val.toFixed(2);
+        const formatPrice = (val) => val === null || val === undefined ? 'N/A' : '$' + val.toFixed(2);
+
+        const getColor = (val) => {
+            if (val === null || val === undefined) return '';
+            return val > 0 ? 'positive' : (val < 0 ? 'negative' : '');
+        };
+
+        async function init() {
+            try {
+                const res = await fetch('/sector-data.json');
+                if (!res.ok) throw new Error('Failed to fetch data');
+                sectorData = await res.json();
+
+                renderTable();
+                drawCharts();
+            } catch (err) {
+                document.getElementById('tableBody').innerHTML = `<tr><td colspan="7" style="color:#f87171; text-align:center;">Error loading data: ${err.message}</td></tr>`;
+            }
+        }
+
+        function renderTable() {
+            const tbody = document.getElementById('tableBody');
+            tbody.innerHTML = '';
+
+            sectorData.forEach(s => {
+                const tr = document.createElement('tr');
+
+                const tdName = document.createElement('td');
+                tdName.innerHTML = `${s.name} <span class="ticker">${s.ticker}</span>`;
+                tr.appendChild(tdName);
+
+                const tdPrice = document.createElement('td');
+                tdPrice.textContent = formatPrice(s.price);
+                tr.appendChild(tdPrice);
+
+                const tdChange = document.createElement('td');
+                tdChange.textContent = `${formatNumber(s.change)} (${formatPercent(s.changePercent)})`;
+                tdChange.className = getColor(s.change);
+                tr.appendChild(tdChange);
+
+                const tdPE = document.createElement('td');
+                tdPE.textContent = formatNumber(s.pe);
+                tr.appendChild(tdPE);
+
+                const tdYield = document.createElement('td');
+                tdYield.textContent = formatPercent(s.yield);
+                tr.appendChild(tdYield);
+
+                const tdYTD = document.createElement('td');
+                tdYTD.textContent = formatPercent(s.ytdReturn);
+                tdYTD.className = getColor(s.ytdReturn);
+                tr.appendChild(tdYTD);
+
+                const tdRel = document.createElement('td');
+                tdRel.textContent = formatPercent(s.relativeStrength);
+                tdRel.className = getColor(s.relativeStrength);
+                tr.appendChild(tdRel);
+
+                tbody.appendChild(tr);
+            });
+        }
+
+        function sortTable(colIndex) {
+            if (sortCol === colIndex) {
+                sortAsc = !sortAsc;
+            } else {
+                sortCol = colIndex;
+                sortAsc = true;
+            }
+
+            sectorData.sort((a, b) => {
+                let valA, valB;
+                switch(colIndex) {
+                    case 0: valA = a.name; valB = b.name; break;
+                    case 1: valA = a.price || 0; valB = b.price || 0; break;
+                    case 2: valA = a.changePercent || 0; valB = b.changePercent || 0; break;
+                    case 3: valA = a.pe || 0; valB = b.pe || 0; break;
+                    case 4: valA = a.yield || 0; valB = b.yield || 0; break;
+                    case 5: valA = a.ytdReturn || 0; valB = b.ytdReturn || 0; break;
+                    case 6: valA = a.relativeStrength || 0; valB = b.relativeStrength || 0; break;
+                }
+
+                if (valA < valB) return sortAsc ? -1 : 1;
+                if (valA > valB) return sortAsc ? 1 : -1;
+                return 0;
+            });
+            renderTable();
+        }
+
+        function drawCharts() {
+            // Filter out missing data
+            const validData = sectorData.filter(s => s.name);
+
+            // RSI Chart Data (sorted)
+            const rsiData = [...validData].filter(s => s.relativeStrength !== undefined && s.relativeStrength !== null).sort((a,b) => b.relativeStrength - a.relativeStrength);
+            drawBarChart('rsiChart',
+                         rsiData.map(s => s.ticker),
+                         rsiData.map(s => s.relativeStrength),
+                         true);
+
+            // P/E Chart Data (sorted)
+            const peData = [...validData].filter(s => s.pe !== null).sort((a,b) => b.pe - a.pe);
+            drawBarChart('peChart',
+                         peData.map(s => s.ticker),
+                         peData.map(s => s.pe),
+                         false);
+        }
+
+        function drawBarChart(canvasId, labels, data, isDiverging) {
+            const canvas = document.getElementById(canvasId);
+            const ctx = canvas.getContext('2d');
+
+            // Handle retina displays
+            const dpr = window.devicePixelRatio || 1;
+            const rect = canvas.parentElement.getBoundingClientRect();
+            canvas.width = rect.width * dpr;
+            canvas.height = rect.height * dpr;
+            ctx.scale(dpr, dpr);
+            canvas.style.width = `${rect.width}px`;
+            canvas.style.height = `${rect.height}px`;
+
+            const width = rect.width;
+            const height = rect.height;
+            const padding = { top: 20, right: 20, bottom: 30, left: 40 };
+
+            // Find min/max
+            let min = Math.min(...data, 0);
+            let max = Math.max(...data, 0);
+
+            // Add some headroom
+            const range = max - min;
+            max += range * 0.1;
+            if (min < 0) min -= range * 0.1;
+
+            const drawAreaHeight = height - padding.top - padding.bottom;
+            const drawAreaWidth = width - padding.left - padding.right;
+
+            // Clear
+            ctx.clearRect(0, 0, width, height);
+
+            // Draw Zero Line if diverging
+            const zeroY = padding.top + drawAreaHeight - ((0 - min) / (max - min)) * drawAreaHeight;
+            ctx.beginPath();
+            ctx.moveTo(padding.left, zeroY);
+            ctx.lineTo(width - padding.right, zeroY);
+            ctx.strokeStyle = '#152040';
+            ctx.lineWidth = 1;
+            ctx.stroke();
+
+            // Draw Y-axis labels
+            ctx.fillStyle = '#6a7a90';
+            ctx.font = '10px JetBrains Mono';
+            ctx.textAlign = 'right';
+            ctx.textBaseline = 'middle';
+
+            const steps = 4;
+            for(let i=0; i<=steps; i++) {
+                const val = min + (range * (i/steps));
+                const y = padding.top + drawAreaHeight - ((val - min) / (max - min)) * drawAreaHeight;
+                ctx.fillText(isDiverging ? val.toFixed(1)+'%' : val.toFixed(1), padding.left - 5, y);
+            }
+
+            // Draw Bars
+            const barWidth = (drawAreaWidth / data.length) * 0.7;
+            const spacing = (drawAreaWidth / data.length) * 0.3;
+
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'top';
+
+            data.forEach((val, i) => {
+                const x = padding.left + (i * (barWidth + spacing)) + (spacing/2);
+
+                // Calculate height relative to zero line
+                let barH = ((Math.abs(val) / (max - min)) * drawAreaHeight);
+                let y = val >= 0 ? zeroY - barH : zeroY;
+
+                // Color
+                if (isDiverging) {
+                    ctx.fillStyle = val >= 0 ? '#4ade80' : '#f87171';
+                } else {
+                    ctx.fillStyle = '#4a8fe7';
+                }
+
+                ctx.fillRect(x, y, barWidth, barH);
+
+                // Label
+                ctx.fillStyle = '#a0aec0';
+                ctx.fillText(labels[i], x + barWidth/2, height - padding.bottom + 5);
+            });
+        }
+
+        // Handle window resize for canvas redraw
+        window.addEventListener('resize', () => {
+            if (sectorData.length > 0) drawCharts();
+        });
+
+        init();
+    </script>
+</body>
+</html>
