@@ -2,164 +2,55 @@
 import BaseHead from '../layouts/BaseHead.astro';
 import Nav from '../components/Nav.astro';
 
-// Auto-categorize from public/ directory
+// All pages from public/ — properly categorized, no duplicates
 const tools = [
-  {
-    title: "Portfolio Rebalancing Tool",
-    subtitle: "rebalancing · asset allocation · calculate buys and sells",
-    slug: "/portfolio-rebalancer.html",
-    stat: "Target %",
-    statLabel: "rebalance your portfolio",
-    desc: "Enter your current holdings and target asset allocation percentages to automatically calculate exactly what you need to buy and sell to rebalance your portfolio.",
-    tag: "TOOL"
-  },
-  {
-    title: "Margin & Leverage Calculator",
-    subtitle: "margin call · buying power · leverage",
-    slug: "/margin-calculator.html",
-    stat: "Interactive",
-    statLabel: "margin risk simulator",
-    desc: "Calculate your buying power, maintenance margin requirements, and exact margin call price. Simulate leveraged returns across various stock price scenarios.",
-    tag: "TOOL"
-  }
+  { title: "Portfolio Rebalancing Tool", subtitle: "rebalancing · asset allocation", slug: "/portfolio-rebalancer.html", stat: "Target %", statLabel: "rebalance your portfolio", desc: "Enter your current holdings and target allocation to calculate exactly what to buy and sell.", tag: "TOOL" },
+  { title: "Margin & Leverage Calculator", subtitle: "margin call · buying power · leverage", slug: "/margin-calculator.html", stat: "Interactive", statLabel: "margin risk simulator", desc: "Calculate buying power, maintenance margin, and exact margin call price. Simulate leveraged returns.", tag: "TOOL" },
+  { title: "Compound Interest Calculator", subtitle: "savings · growth · projections", slug: "/compound-interest-calculator.html", stat: "Interactive", statLabel: "compound growth simulator", desc: "Project how your investments grow over time with compound interest. Adjust rate, contributions, and timeline.", tag: "TOOL" },
+  { title: "Dividend Reinvestment Calculator (DRIP)", subtitle: "dividends · reinvestment · compounding", slug: "/dividend-reinvestment-calculator.html", stat: "Interactive", statLabel: "DRIP growth projector", desc: "See how reinvesting dividends accelerates portfolio growth over 5, 10, or 30 years.", tag: "TOOL" },
+  { title: "FIRE Retirement Calculator", subtitle: "financial independence · early retirement", slug: "/fire-retirement-calculator.html", stat: "Interactive", statLabel: "FIRE number calculator", desc: "Calculate your FIRE number, savings rate, and projected retirement date based on expenses and income.", tag: "TOOL" },
+  { title: "Portfolio Risk Calculator", subtitle: "risk · volatility · correlation", slug: "/portfolio-risk-calculator.html", stat: "Interactive", statLabel: "risk analysis tool", desc: "Analyze portfolio risk, expected volatility, and diversification score across your holdings.", tag: "TOOL" },
+  { title: "Market Sector Analysis Dashboard", subtitle: "sectors · performance · comparison", slug: "/market-sector-analysis-dashboard.html", stat: "11", statLabel: "GICS sectors tracked", desc: "Interactive dashboard comparing all 11 GICS sectors by performance, valuation, and momentum.", tag: "TOOL" },
 ];
 
 const studies = [
-  {
-    emoji: "👑",
-    title: "Dividend Aristocrats Analysis 2026",
-    subtitle: "Yield, Payout & Growth Rankings",
-    slug: "/dividend-aristocrats-analysis-2026.html",
-    stat: "68",
-    statLabel: "companies with 25+ yr streaks",
-    desc: "A comprehensive analysis of S&P 500 Dividend Aristocrats. Real-time yield tracking, payout ratios, valuation, sector breakdown, and historical growth rankings.",
-    tag: "STUDY"
-  },
-  {
-    title: "Value Investing Fundamentals",
-    subtitle: "Origins to modern portfolio construction",
-    slug: "/guide-value-investing.html",
-    stat: "8",
-    statLabel: "core concepts covered",
-    desc: "A comprehensive guide on value investing philosophy, from Benjamin Graham's margin of safety to Warren Buffett's evolution, qualitative analysis, and building a value portfolio.",
-    tag: "EDUCATIONAL GUIDE",
-  },
-  {
-    title: "IPO Performance Tracker: First-Year Returns 2024-2026",
-    subtitle: "50 items · first-year returns",
-    slug: "/ipo-performance",
-    stat: "50",
-    statLabel: "recent IPOs tracked",
-    desc: "Tracking IPO performance — how do newly listed stocks perform in their first year? Analyzing IPO price, first-day pop, and 1-year return for recent IPOs.",
-    tag: "ORIGINAL RESEARCH",
-  },
-  {
-    title: "Insider Trading Tracker: Who Is Buying & Selling Their Own Stock? 2026",
-    subtitle: "200 items · insider tracking",
-    slug: "/insider-trading",
-    stat: "$148M",
-    statLabel: "highest insider buy value",
-    desc: "Tracking 200 recent open-market buys and sells by corporate executives. Trade Desk, Inc. currently leads with $148M in recent insider purchases.",
-    tag: "ORIGINAL RESEARCH",
-  },
-  {
-    title: "Earnings Yield vs Bond Yield: Is the Stock Market Fairly Valued? 2026",
-    subtitle: "S&P 500 vs 10-Year Treasury · equity risk premium",
-    slug: "/equity-risk-premium",
-    stat: "-0.70%",
-    statLabel: "current equity risk premium",
-    desc: "Currently, the S&P 500 earnings yield is 3.45% while 10-year Treasuries yield 4.15%, resulting in a negative ERP. See how 11 GICS sectors compare against the risk-free rate in 2026.",
-    tag: "ORIGINAL RESEARCH",
-  },
-  {
-    title: "Debt-to-Equity Rankings: Most & Least Leveraged S&P 500 Companies 2026",
-    subtitle: "485 items · most leveraged",
-    slug: "/debt-to-equity",
-    stat: "91.9",
-    statLabel: "highest D/E ratio (CLX)",
-    desc: "485 S&P 500 companies ranked by debt-to-equity ratio. See which companies are heavily leveraged and which hold negative equity in 2026.",
-    tag: "ORIGINAL RESEARCH",
-  },
-
-  {
-    title: "Revenue Per Employee: The Most Efficient Companies in the S&P 500 2026",
-    subtitle: "130 items · highest revenue per employee",
-    slug: "/revenue-per-employee",
-    stat: "$7.29M",
-    statLabel: "highest revenue per employee",
-    desc: "130 S&P 500 companies ranked by operational efficiency. Devon Energy Corporation leads with $7.29M per employee.",
-    tag: "ORIGINAL RESEARCH",
-  },
-  {
-    emoji: "🏢",
-    name: "S&P 500 Market Cap Concentration 2026",
-    slug: "/market-concentration",
-    desc: "Top 10 stocks control 37.3% of the index. Full weight rankings & concentration analysis.",
-    stat: "37.3%",
-    statLabel: "of S&P 500 in just 10 stocks"
-  },
-  {
-    emoji: "👑",
-    name: "Dividend Aristocrats Analysis 2026",
-    slug: "/dividend-aristocrats",
-    desc: "All 67 S&P 500 companies with 25+ year dividend streaks. Yield, P/E, growth analysis.",
-    stat: "67",
-    statLabel: "companies with 25yr+ dividend streaks"
-  },
-  {
-    emoji: "🏦",
-    name: "Online Broker Fee Comparison 2026",
-    slug: "/broker-fees.html",
-    desc: "Compare commissions, options fees & margin rates across 22 US/Canada brokers.",
-    stat: "22",
-    statLabel: "brokers compared"
-  },
-  {
-    emoji: "📈",
-    name: "ETF Expense Ratio Index 2026",
-    slug: "/etf-expense-ratios",
-    desc: "86 major ETFs ranked by true cost. VOO vs SPY vs IVV and 83 more compared.",
-    stat: "86",
-    statLabel: "ETFs ranked by expense ratio"
-  },
-  {
-    emoji: "🏭",
-    name: "Sector P/E Ratios 2026",
-    slug: "/sector-pe-ratios.html",
-    desc: "All 11 GICS sectors vs 10-year historical average. Which sectors are overvalued?",
-    stat: "11",
-    statLabel: "GICS sectors analyzed"
-  },
-  {
-    emoji: "📉",
-    name: "Most Shorted Stocks 2026",
-    slug: "/short-interest.html",
-    desc: "76 stocks with 20%+ short interest ranked by % of float. Squeeze candidates & bearish bets.",
-    stat: "76",
-    statLabel: "heavily shorted stocks ranked"
-  },
-  {
-    emoji: "💰",
-    name: "Stock Buyback Leaders 2026",
-    slug: "/buyback-leaders",
-    desc: "106 companies ranked by share repurchase volume, buyback yield & count reduction.",
-    stat: "$709.5B",
-    statLabel: "in annual buybacks tracked"
-  }
+  { title: "Dividend Aristocrats Analysis 2026", subtitle: "yield · payout · growth rankings", slug: "/dividend-aristocrats-analysis-2026.html", stat: "68", statLabel: "companies with 25+ yr streaks", desc: "S&P 500 Dividend Aristocrats ranked by yield, payout ratio, valuation, and growth.", tag: "ORIGINAL RESEARCH" },
+  { title: "IPO Performance Tracker 2024–2026", subtitle: "50 items · first-year returns", slug: "/ipo-performance.html", stat: "50", statLabel: "recent IPOs tracked", desc: "How do newly listed stocks perform? IPO price, first-day pop, and 1-year return analysis.", tag: "ORIGINAL RESEARCH" },
+  { title: "Insider Trading Tracker 2026", subtitle: "200 items · insider buys & sells", slug: "/insider-trading.html", stat: "$148M", statLabel: "highest insider buy value", desc: "200 recent open-market trades by corporate executives. Who's buying their own stock?", tag: "ORIGINAL RESEARCH" },
+  { title: "Equity Risk Premium: Stock vs Bond Yield 2026", subtitle: "S&P 500 vs 10-Year Treasury", slug: "/equity-risk-premium.html", stat: "-0.70%", statLabel: "current equity risk premium", desc: "S&P 500 earnings yield vs Treasury yield. Is the stock market fairly valued in 2026?", tag: "ORIGINAL RESEARCH" },
+  { title: "Debt-to-Equity Rankings 2026", subtitle: "485 items · most leveraged", slug: "/debt-to-equity.html", stat: "91.9", statLabel: "highest D/E ratio (CLX)", desc: "485 S&P 500 companies ranked by leverage. See which hold negative equity.", tag: "ORIGINAL RESEARCH" },
+  { title: "Revenue Per Employee Rankings 2026", subtitle: "130 items · operational efficiency", slug: "/revenue-per-employee.html", stat: "$7.29M", statLabel: "highest revenue per employee", desc: "S&P 500 companies ranked by operational efficiency. Devon Energy leads at $7.29M/employee.", tag: "ORIGINAL RESEARCH" },
+  { title: "S&P 500 Market Cap Concentration 2026", subtitle: "weight rankings · concentration analysis", slug: "/market-concentration.html", stat: "37.3%", statLabel: "of S&P 500 in just 10 stocks", desc: "Top 10 stocks control 37.3% of the index. Full weight rankings & concentration trends.", tag: "ORIGINAL RESEARCH" },
+  { title: "Online Broker Fee Comparison 2026", subtitle: "22 brokers · commissions · margin rates", slug: "/broker-fees.html", stat: "22", statLabel: "brokers compared", desc: "Compare commissions, options fees, and margin rates across 22 US/Canada brokers.", tag: "ORIGINAL RESEARCH" },
+  { title: "ETF Expense Ratio Index 2026", subtitle: "86 ETFs ranked by cost", slug: "/etf-expense-ratios.html", stat: "86", statLabel: "ETFs ranked by expense ratio", desc: "VOO vs SPY vs IVV and 83 more compared by true cost. Which ETF is cheapest?", tag: "ORIGINAL RESEARCH" },
+  { title: "Sector P/E Ratios 2026", subtitle: "11 GICS sectors vs historical average", slug: "/sector-pe-ratios.html", stat: "11", statLabel: "GICS sectors analyzed", desc: "All 11 GICS sectors vs 10-year historical average. Which sectors are overvalued?", tag: "ORIGINAL RESEARCH" },
+  { title: "Most Shorted Stocks 2026", subtitle: "76 stocks · 20%+ short interest", slug: "/short-interest.html", stat: "76", statLabel: "heavily shorted stocks ranked", desc: "Stocks with 20%+ short interest ranked by % of float. Squeeze candidates & bearish bets.", tag: "ORIGINAL RESEARCH" },
+  { title: "Stock Buyback Leaders 2026", subtitle: "106 companies · repurchase volume", slug: "/buyback-leaders.html", stat: "$709.5B", statLabel: "in annual buybacks tracked", desc: "Companies ranked by share repurchase volume, buyback yield & share count reduction.", tag: "ORIGINAL RESEARCH" },
+  { title: "Beta & Volatility Rankings 2026", subtitle: "S&P 500 risk analysis", slug: "/beta-volatility.html", stat: "β", statLabel: "risk-adjusted rankings", desc: "S&P 500 stocks ranked by beta and volatility. Find the most and least volatile names.", tag: "ORIGINAL RESEARCH" },
+  { title: "CEO Compensation vs Stock Performance 2026", subtitle: "executive pay · shareholder returns", slug: "/ceo-compensation.html", stat: "$$$", statLabel: "pay vs performance gap", desc: "Are the highest-paid CEOs delivering the best returns? Compensation vs stock performance analysis.", tag: "ORIGINAL RESEARCH" },
+  { title: "Dividend Payout Ratio Analysis 2026", subtitle: "sustainability · coverage", slug: "/dividend-payout-ratios.html", stat: "%", statLabel: "payout sustainability ranked", desc: "Which companies can sustain their dividends? Payout ratios ranked across the S&P 500.", tag: "ORIGINAL RESEARCH" },
+  { title: "Dividend Yield vs Growth Rate 2026", subtitle: "income vs appreciation", slug: "/dividend-yield-vs-growth.html", stat: "vs", statLabel: "yield vs growth analysis", desc: "High yield or high growth? Analysis of which dividend strategy delivers better total returns.", tag: "ORIGINAL RESEARCH" },
+  { title: "EV/EBITDA by Sector 2026", subtitle: "enterprise value multiples", slug: "/ev-ebitda-sectors.html", stat: "11x", statLabel: "median EV/EBITDA", desc: "Enterprise value multiples across all GICS sectors. Find undervalued sectors by EV/EBITDA.", tag: "ORIGINAL RESEARCH" },
+  { title: "Free Cash Flow Yield: Top 50 S&P 500 2026", subtitle: "cash generation · value screen", slug: "/free-cash-flow-yield.html", stat: "50", statLabel: "highest FCF yield stocks", desc: "Top 50 S&P 500 companies by free cash flow yield. The best cash-generating machines.", tag: "ORIGINAL RESEARCH" },
+  { title: "Institutional Ownership Rankings 2026", subtitle: "most & least owned stocks", slug: "/institutional-ownership.html", stat: "%", statLabel: "institutional ownership ranked", desc: "Which stocks do institutions love (or avoid)? Ownership concentration analysis.", tag: "ORIGINAL RESEARCH" },
+  { title: "Price-to-Book Ratio by Sector 2026", subtitle: "valuation · asset-based", slug: "/price-to-book.html", stat: "P/B", statLabel: "sector valuations ranked", desc: "Price-to-book ratios across sectors. Where are you paying the most (or least) for assets?", tag: "ORIGINAL RESEARCH" },
+  { title: "Return on Equity Rankings 2026", subtitle: "profitability · efficiency", slug: "/roe-rankings.html", stat: "ROE", statLabel: "most efficient companies", desc: "S&P 500 companies ranked by return on equity. The most capital-efficient businesses.", tag: "ORIGINAL RESEARCH" },
+  { title: "S&P 500 PEG Ratio Rankings 2026", subtitle: "growth-adjusted valuations", slug: "/sp500-peg-ratios.html", stat: "PEG", statLabel: "growth-adjusted P/E", desc: "PEG ratios for S&P 500 stocks. Find companies where growth justifies the price.", tag: "ORIGINAL RESEARCH" },
+  { title: "S&P 500 Sector Weights: 25-Year Rotation", subtitle: "2000–2026 · sector evolution", slug: "/sp500-sector-weights.html", stat: "25yr", statLabel: "of sector weight shifts", desc: "How sector weights in the S&P 500 have shifted from 2000 to 2026. Tech's rise, Energy's fall.", tag: "ORIGINAL RESEARCH" },
+  { title: "Stock Split History & Post-Split Performance", subtitle: "2020–2026 · split returns", slug: "/stock-splits-history.html", stat: "📊", statLabel: "post-split performance tracked", desc: "Do stock splits boost returns? Historical analysis of splits and their 1-year post-split performance.", tag: "ORIGINAL RESEARCH" },
+  { title: "Working Capital Efficiency Rankings 2026", subtitle: "liquidity · operational efficiency", slug: "/working-capital.html", stat: "WC", statLabel: "efficiency rankings", desc: "Which companies manage cash most efficiently? Working capital rankings across the S&P 500.", tag: "ORIGINAL RESEARCH" },
 ];
 
 const guides = [
-  {
-    title: "The Complete Guide to ETF Investing",
-    subtitle: "Educational Guide · Asset Allocation",
-    slug: "guide-etf-investing",
-    stat: "15",
-    statLabel: "minute read",
-    desc: "A comprehensive educational guide on ETF investing. Learn what ETFs are, types, key metrics like expense ratios, tax efficiency, and how to build a portfolio.",
-    tag: "GUIDE"
-  }
-]; // westmount-research is studies only
-const lists = []; // westmount-research is studies only
+  { title: "The Complete Guide to ETF Investing", subtitle: "educational · asset allocation", slug: "/guide-etf-investing.html", stat: "15", statLabel: "minute read", desc: "Learn what ETFs are, types, key metrics like expense ratios, tax efficiency, and how to build a portfolio.", tag: "GUIDE" },
+  { title: "Value Investing Fundamentals", subtitle: "Graham to Buffett · portfolio construction", slug: "/guide-value-investing.html", stat: "8", statLabel: "core concepts covered", desc: "From Benjamin Graham's margin of safety to Buffett's evolution. Build a value investing framework.", tag: "GUIDE" },
+  { title: "ETF vs Index Funds Comparison", subtitle: "cost · tax · structure differences", slug: "/etf-vs-index-funds-guide.html", stat: "vs", statLabel: "ETF vs index fund", desc: "What's the real difference between ETFs and index mutual funds? Cost, tax, and structure compared.", tag: "GUIDE" },
+  { title: "Understanding Bond Ratings & Fixed Income", subtitle: "credit quality · yield curves", slug: "/guide-bond-ratings.html", stat: "AAA→D", statLabel: "rating scale explained", desc: "How bond ratings work, what they mean for investors, and how to evaluate fixed income risk.", tag: "GUIDE" },
+  { title: "Options Trading for Beginners", subtitle: "calls · puts · strategies", slug: "/guide-options-basics.html", stat: "101", statLabel: "options concepts explained", desc: "A complete guide to options trading. Calls, puts, greeks, basic strategies, and risk management.", tag: "GUIDE" },
+  { title: "How to Read Financial Statements", subtitle: "income statement · balance sheet · cash flow", slug: "/guide-reading-financial-statements.html", stat: "3", statLabel: "core statements explained", desc: "Learn to read income statements, balance sheets, and cash flow statements like a pro investor.", tag: "GUIDE" },
+];
+
+const lists = [];
 ---
 <html lang="en">
 <head>
