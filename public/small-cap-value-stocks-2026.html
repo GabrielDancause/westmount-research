@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VYF72NSC1Q"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-VYF72NSC1Q');</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Small Cap Value Stocks 2026: Undervalued Small Companies Screen</title>
+    <meta name="description" content="We screened the market for deeply discounted small-cap companies with positive earnings and P/E under 15. The #1 undervalued stock in 2026 might surprise you. See the top 50 list.">
+    <link rel="canonical" href="https://westmountfundamentals.com/small-cap-value-stocks-2026.html">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-color: #060a12;
+            --card-bg: #0a1020;
+            --border-color: #152040;
+            --accent-color: #4a8fe7;
+            --text-primary: #f0f4f8;
+            --text-secondary: #94a3b8;
+            --positive: #10b981;
+            --negative: #ef4444;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        .sticky-nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(6, 10, 18, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 0;
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-brand {
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--text-primary);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+        }
+
+        header {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            background: linear-gradient(135deg, #fff 0%, #94a3b8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 1.125rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .methodology-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+        }
+        .methodology-card h2 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+        .methodology-card ul {
+            list-style-type: disc;
+            padding-left: 1.5rem;
+            color: var(--text-secondary);
+        }
+        .methodology-card li { margin-bottom: 0.5rem; }
+
+        .table-container {
+            overflow-x: auto;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            margin-bottom: 3rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+        th {
+            background: rgba(255, 255, 255, 0.02);
+            padding: 1rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            border-bottom: 1px solid var(--border-color);
+            cursor: pointer;
+            user-select: none;
+            white-space: nowrap;
+        }
+        th:hover { color: var(--text-primary); }
+        th::after {
+            content: '↕';
+            margin-left: 5px;
+            opacity: 0.3;
+        }
+        td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 0.9rem;
+        }
+        tr:last-child td { border-bottom: none; }
+        tr:hover td { background: rgba(255, 255, 255, 0.02); }
+
+        .mono { font-family: 'JetBrains Mono', monospace; }
+        .ticker { color: var(--accent-color); font-weight: 600; text-decoration: none; }
+        .company-name { font-weight: 500; }
+        .sector-badge {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            background: rgba(74, 143, 231, 0.1);
+            color: var(--accent-color);
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+        .pos { color: var(--positive); }
+        .neg { color: var(--negative); }
+        .score { font-weight: 700; color: #f59e0b; }
+
+        .faq-section {
+            margin-bottom: 4rem;
+        }
+        .faq-section h2 {
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+        }
+        .faq-item {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            padding: 1.5rem;
+        }
+        .faq-item h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--accent-color);
+        }
+        .faq-item p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        footer {
+            border-top: 1px solid var(--border-color);
+            padding: 3rem 1.5rem;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+        }
+        footer p { margin-bottom: 0.5rem; }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            .nav-links { display: none; } /* Simplified mobile nav */
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Article","headline":"Small Cap Value Stocks 2026: Undervalued Small Companies Screen","description":"Discover 50 deeply undervalued small-cap stocks for 2026 filtered for low P/E, P/B, and insider buying.","datePublished":"2026-01-01T08:00:00Z","publisher":{"@type":"Organization","name":"Westmount Fundamentals","logo":{"@type":"ImageObject","url":"https://westmountfundamentals.com/logo.png"}}}
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What are the best small cap value stocks for 2026?","acceptedAnswer":{"@type":"Answer","text":"The best small cap value stocks for 2026 combine strong fundamentals with discounted valuations. Our strict screen requires a market cap between $300M and $2B, a Price-to-Earnings (P/E) ratio under 15, Price-to-Book (P/B) under 1.5, and positive recent earnings."}},{"@type":"Question","name":"How do you find undervalued small cap stocks?","acceptedAnswer":{"@type":"Answer","text":"Finding undervalued small cap stocks involves screening for low valuation multiples (P/E, P/B, P/S) relative to historical averages and peers, combined with positive cash flow, manageable debt, and catalysts like insider buying."}},{"@type":"Question","name":"Why invest in small cap value stocks in 2026?","acceptedAnswer":{"@type":"Answer","text":"Small cap value stocks often present significant upside potential because they are less followed by institutional analysts. In environments with favorable interest rates, deeply discounted smaller companies can see multiple expansion."}},{"@type":"Question","name":"What is considered a small cap stock?","acceptedAnswer":{"@type":"Answer","text":"A small cap stock typically represents a company with a total market capitalization between $300 million and $2 billion. They sit between micro-caps and mid-caps in terms of size and risk."}},{"@type":"Question","name":"Is insider buying a good sign for undervalued small caps?","acceptedAnswer":{"@type":"Answer","text":"Yes, insider buying is historically a strong bullish signal, especially in small cap value stocks. It indicates that executives who know the company best believe the current stock price severely underestimates the company's true intrinsic value."}}]}
+    </script>
+</head>
+<body>
+    <nav class="sticky-nav">
+        <div class="nav-container">
+            <a href="/" class="nav-brand">Westmount Fundamentals</a>
+            <div class="nav-links">
+                <a href="/#studies">Studies</a>
+                <a href="/#tools">Tools</a>
+                <a href="/#guides">Guides</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <header>
+            <h1>Small Cap Value Stocks 2026:<br>Undervalued Small Companies Screen</h1>
+            <p class="subtitle">A data-driven screen identifying 50 undervalued small-cap equities with compelling P/E and P/B multiples heading into 2026.</p>
+        </header>
+
+        <section class="methodology-card">
+            <h2>Screening Methodology</h2>
+            <p style="margin-bottom: 1rem; color: var(--text-secondary);">This proprietary screen filters the entire US equity market to identify small-cap value opportunities using strict fundamental criteria:</p>
+            <ul>
+                <li><strong>Market Capitalization:</strong> Strictly between $300 Million and $2 Billion.</li>
+                <li><strong>Valuation Multiples:</strong> Price-to-Earnings (P/E) under 15, and Price-to-Book (P/B) under 1.5.</li>
+                <li><strong>Profitability:</strong> Must have positive recent earnings.</li>
+                <li><strong>Composite Score:</strong> Ranked by a composite value score (P/E × P/B). Lower scores indicate deeper relative value.</li>
+            </ul>
+        </section>
+
+        <section class="table-container">
+            <table id="dataTable">
+                <thead>
+                    <tr>
+                        <th onclick="sortTable(0)">Ticker</th>
+                        <th onclick="sortTable(1)">Company</th>
+                        <th onclick="sortTable(2)">Sector</th>
+                        <th onclick="sortTable(3, true)">Market Cap</th>
+                        <th onclick="sortTable(4, true)">P/E</th>
+                        <th onclick="sortTable(5, true)">P/B</th>
+                        <th onclick="sortTable(6, true)">Recent Perf</th>
+                        <th onclick="sortTable(7, true)">Value Score</th>
+                        <th onclick="sortTable(8, true)">Net Insider Shares (6M)</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                </tbody>
+            </table>
+        </section>
+
+        <section class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <h3>What are the best small cap value stocks for 2026?</h3>
+                <p>The best small cap value stocks for 2026 combine strong fundamentals with discounted valuations. Our strict screen requires a market cap between $300M and $2B, a Price-to-Earnings (P/E) ratio under 15, Price-to-Book (P/B) under 1.5, and positive recent earnings.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>How do you find undervalued small cap stocks?</h3>
+                <p>Finding undervalued small cap stocks involves screening for low valuation multiples (P/E, P/B, P/S) relative to historical averages and peers, combined with positive cash flow, manageable debt, and catalysts like insider buying.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Why invest in small cap value stocks in 2026?</h3>
+                <p>Small cap value stocks often present significant upside potential because they are less followed by institutional analysts. In environments with favorable interest rates, deeply discounted smaller companies can see multiple expansion.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>What is considered a small cap stock?</h3>
+                <p>A small cap stock typically represents a company with a total market capitalization between $300 million and $2 billion. They sit between micro-caps and mid-caps in terms of size and risk.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Is insider buying a good sign for undervalued small caps?</h3>
+                <p>Yes, insider buying is historically a strong bullish signal, especially in small cap value stocks. It indicates that executives who know the company best believe the current stock price severely underestimates the company's true intrinsic value.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Westmount Research · A GAB Ventures property.</p>
+        <p>Data for informational purposes only. Not investment advice. All information for educational purposes only.</p>
+    </footer>
+
+    <script>
+        window.__INITIAL_DATA__ = [{"ticker":"BTBT","company":"Bit Digital Inc","sector":"Financial","marketCap":537332544,"pe":2.515303,"pb":0.59608614,"price":1.6601,"change":0.000060073635,"insiderBuying":-420000,"score":1.49933725620042},{"ticker":"AMCX","company":"AMC Networks Inc","sector":"Communication Services","marketCap":343861472,"pe":4.759036,"pb":0.34355295,"price":7.9,"change":-0.0075376816,"insiderBuying":94163,"score":1.6349808569562},{"ticker":"ASA","company":"ASA Gold and Precious Metals Ltd","sector":"Financial","marketCap":1341084288,"pe":2.028417,"pb":1.2192746,"price":71.38,"change":-0.036218666,"insiderBuying":0,"score":2.4731973263082003},{"ticker":"ANGI","company":"Angi Inc","sector":"Communication Services","marketCap":351029952,"pe":8.654256,"pb":0.35143426,"price":8.135,"change":-0.019879512,"insiderBuying":0,"score":3.04140205321056},{"ticker":"CIM","company":"Chimera Investment Corp","sector":"Real Estate","marketCap":1110921600,"pe":7.744186,"pb":0.4318786,"price":13.32,"change":-0.013333356,"insiderBuying":0,"score":3.3445482078196},{"ticker":"AII","company":"American Integrity Insurance Group Inc","sector":"Financial","marketCap":376210656,"pe":3.4008849,"pb":1.1163075,"price":19.215,"change":-0.009536055,"insiderBuying":-3259192,"score":3.79643332050675},{"ticker":"ACCO","company":"Acco Brands Corporation","sector":"Industrials","marketCap":320884640,"pe":8.476191,"pb":0.48284277,"price":3.56,"change":-0.019283794,"insiderBuying":0,"score":4.09266754148907},{"ticker":"AVK","company":"Advent Convertible and Income Fund","sector":"Financial","marketCap":543307712,"pe":4.5748324,"pb":0.9192724,"price":12.3063,"change":0.0054172743,"insiderBuying":0,"score":4.20551715994576},{"ticker":"CHW","company":"Calamos Global Dynamic Income Fund","sector":"Financial","marketCap":486614720,"pe":5.2188354,"pb":0.8884678,"price":7.6195,"change":0.006538968,"insiderBuying":0,"score":4.63676720640012},{"ticker":"CET","company":"Central Securities Corp","sector":"Financial","marketCap":1505387264,"pe":5.56776,"pb":0.8419965,"price":50.945,"change":-0.0026819825,"insiderBuying":0,"score":4.68803443284},{"ticker":"CHY","company":"Calamos Convertible and High Income Fund","sector":"Financial","marketCap":931091072,"pe":4.9722223,"pb":0.9881105,"price":11.635,"change":-0.0029952803,"insiderBuying":0,"score":4.91310506296415},{"ticker":"CHI","company":"Calamos Convertible Opportunities and Income Fund","sector":"Financial","marketCap":904172352,"pe":5.1849313,"pb":1.0214087,"price":11.355,"change":0.0057572704,"insiderBuying":0,"score":5.29593393872231},{"ticker":"BDJ","company":"BlackRock Enhanced Equity Dividend Trust","sector":"Financial","marketCap":1602924160,"pe":5.7699995,"pb":0.93054956,"price":9.0589,"change":-0.00012165907,"insiderBuying":0,"score":5.36927049592522},{"ticker":"BOE","company":"BlackRock Enhanced Global Dividend Trust","sector":"Financial","marketCap":637733504,"pe":6.26776,"pb":0.8900443,"price":11.47,"change":0.0008726203,"insiderBuying":0,"score":5.578584061768},{"ticker":"ADAM","company":"Adamas Trust Inc","sector":"Real Estate","marketCap":722437632,"pe":7.259091,"pb":0.8134678,"price":7.985,"change":-0.021446044,"insiderBuying":0,"score":5.905036785769799},{"ticker":"AOD","company":"abrdn Total Dynamic Dividend Fund","sector":"Financial","marketCap":1018980032,"pe":6.155987,"pb":0.96168154,"price":9.6649,"change":-0.004646776,"insiderBuying":0,"score":5.9200990583799795},{"ticker":"BCSF","company":"Bain Capital Specialty Finance Inc","sector":"Financial","marketCap":811498560,"pe":8.176406,"pb":0.726222,"price":12.5099,"change":0.00400482,"insiderBuying":0,"score":5.937885918132},{"ticker":"BBDC","company":"Barings BDC Inc","sector":"Financial","marketCap":849172800,"pe":8.360825,"pb":0.7316193,"price":8.11,"change":-0.0073439926,"insiderBuying":1090,"score":6.1169409339225},{"ticker":"AEF","company":"abrdn Emerging Markets ex-China Fund Inc","sector":"Financial","marketCap":316021184,"pe":8.024227,"pb":1.0198506,"price":7.7835,"change":0.0004498695,"insiderBuying":0,"score":8.1835127204862},{"ticker":"BTZ","company":"BlackRock Credit Allocation Income Trust","sector":"Financial","marketCap":952376064,"pe":9.277272,"pb":0.8980112,"price":10.205,"change":-0.012100678,"insiderBuying":0,"score":8.3310941614464},{"ticker":"BLX","company":"Banco Latinoamericano De Comercio Exterior SA","sector":"Financial","marketCap":1767652736,"pe":7.8510637,"pb":1.0638487,"price":47.97,"change":-0.0076540946,"insiderBuying":0,"score":8.35234391086219},{"ticker":"BHRB","company":"Burke & Herbert Financial Services Corp","sector":"Financial","marketCap":932709888,"pe":8.033679,"pb":1.1040303,"price":62.02,"change":-0.01524292,"insiderBuying":0,"score":8.8694250364737},{"ticker":"BFST","company":"Business First Bancshares Inc","sector":"Financial","marketCap":857260800,"pe":9.364158,"pb":1.0359238,"price":26.126,"change":-0.016710585,"insiderBuying":-11772,"score":9.700554139160399},{"ticker":"CBNK","company":"Capital Bancorp Inc","sector":"Financial","marketCap":473983584,"pe":8.413489,"pb":1.1691593,"price":28.69,"change":-0.014089341,"insiderBuying":100843,"score":9.8367089097977},{"ticker":"DIAX","company":"Nuveen Dow 30SM Dynamic Overwrite Fund","sector":"Financial","marketCap":547322048,"pe":10.673759,"pb":0.9364695,"price":15.05,"change":-0.0006640258,"insiderBuying":0,"score":9.9956497538505},{"ticker":"BLW","company":"BlackRock Limited Duration Income Trust","sector":"Financial","marketCap":521385888,"pe":10.934426,"pb":0.9538792,"price":13.34,"change":null,"insiderBuying":0,"score":10.430121525339201},{"ticker":"AWF","company":"AllianceBernstein Global High Income Fund Inc","sector":"Financial","marketCap":871782016,"pe":11.894117,"pb":0.8778327,"price":10.11,"change":-0.003944769,"insiderBuying":0,"score":10.4410448402259},{"ticker":"CFFN","company":"Capitol Federal Financial","sector":"Financial","marketCap":916124928,"pe":12.446428,"pb":0.85166174,"price":6.97,"change":-0.014144326,"insiderBuying":0,"score":10.600146527264718},{"ticker":"CBZ","company":"Cbiz Inc","sector":"Industrials","marketCap":1430252672,"pe":14.1912565,"pb":0.7880442,"price":25.97,"change":-0.0026882335,"insiderBuying":51866,"score":11.183337375537299},{"ticker":"BY","company":"Byline Bancorp Inc","sector":"Financial","marketCap":1399319296,"pe":10.567474,"pb":1.0970616,"price":30.54,"change":-0.012928235,"insiderBuying":104625,"score":11.5931699343984},{"ticker":"BCML","company":"BayCom Corp","sector":"Financial","marketCap":310586240,"pe":13.073394,"pb":0.91033953,"price":28.5,"change":-0.008695652,"insiderBuying":0,"score":11.90122734946482},{"ticker":"CWBC","company":"Community West Bancshares","sector":"Financial","marketCap":433381472,"pe":11.3075,"pb":1.0581107,"price":22.615,"change":-0.00941744,"insiderBuying":0,"score":11.96458674025},{"ticker":"BWB","company":"Bridgewater Bancshares Inc","sector":"Financial","marketCap":476913024,"pe":11.503355,"pb":1.0560038,"price":17.14,"change":-0.025028473,"insiderBuying":1031279,"score":12.147586592749002},{"ticker":"BWFG","company":"Bankwell Financial Group Inc","sector":"Financial","marketCap":365016896,"pe":10.383147,"pb":1.17903,"price":46.205,"change":-0.014818757,"insiderBuying":81264,"score":12.242041807409999},{"ticker":"AFYA","company":"Afya Ltd","sector":"Consumer Defensive","marketCap":1244110848,"pe":9.013158,"pb":1.3635873,"price":13.7,"change":-0.024216535,"insiderBuying":0,"score":12.290227781693401},{"ticker":"CCNE","company":"CNB Financial Corp (PA)","sector":"Financial","marketCap":794532032,"pe":12.835715,"pb":0.9672731,"price":26.955,"change":-0.016779171,"insiderBuying":38796,"score":12.4156418387665},{"ticker":"BBSI","company":"Barrett Business Services Inc","sector":"Industrials","marketCap":691352320,"pe":12.971154,"pb":0.9680313,"price":26.98,"change":-0.023171661,"insiderBuying":77757,"score":12.556483069120201},{"ticker":"BSRR","company":"Sierra Bancorp","sector":"Financial","marketCap":449909600,"pe":10.729903,"pb":1.1992381,"price":33.37,"change":-0.013013973,"insiderBuying":79837,"score":12.8677084869043},{"ticker":"CAC","company":"Camden National Corp","sector":"Financial","marketCap":766332736,"pe":11.791667,"pb":1.1001773,"price":45.28,"change":-0.012216435,"insiderBuying":0,"score":12.9729243625591},{"ticker":"CTBI","company":"Community Trust Bancorp, Inc","sector":"Financial","marketCap":1062727680,"pe":10.782689,"pb":1.2390223,"price":58.55,"change":-0.01314685,"insiderBuying":0,"score":13.3599921249647},{"ticker":"DCOM","company":"Dime Community Bancshares Inc","sector":"Financial","marketCap":1384572160,"pe":13.362288,"pb":1.0176519,"price":31.535,"change":-0.016988838,"insiderBuying":-30342,"score":13.598157771547198},{"ticker":"CPF","company":"Central Pacific Financial Corp","sector":"Financial","marketCap":820291904,"pe":10.699301,"pb":1.3575865,"price":30.6,"change":-0.015760688,"insiderBuying":41119,"score":14.5252265970365},{"ticker":"AROW","company":"Arrow Financial Corp","sector":"Financial","marketCap":530691200,"pe":12.177359,"pb":1.2288651,"price":32.27,"change":-0.026252232,"insiderBuying":0,"score":14.964331485270899},{"ticker":"ACNB","company":"ACNB Corp","sector":"Financial","marketCap":485386144,"pe":12.983335,"pb":1.1543591,"price":46.74,"change":-0.0149631,"insiderBuying":-5078,"score":14.987430905598499},{"ticker":"CCBG","company":"Capital City Bank Group, Inc","sector":"Financial","marketCap":717822080,"pe":11.625,"pb":1.2932632,"price":41.85,"change":-0.011469803,"insiderBuying":0,"score":15.034184699999999},{"ticker":"CARE","company":"Carter Bankshares Inc","sector":"Financial","marketCap":443706656,"pe":14.557247,"pb":1.0570377,"price":20.089,"change":-0.01669112,"insiderBuying":56679,"score":15.3875588872119},{"ticker":"CSWC","company":"Capital Southwest Corp","sector":"Financial","marketCap":1316651776,"pe":12.091215,"pb":1.3069632,"price":21.8851,"change":-0.004317567,"insiderBuying":0,"score":15.802773048288},{"ticker":"AMAL","company":"Amalgamated Financial Corp","sector":"Financial","marketCap":1120516480,"pe":11.2740965,"pb":1.4048718,"price":37.43,"change":-0.016294323,"insiderBuying":140403,"score":15.8386602433287},{"ticker":"CRI","company":"Carters Inc","sector":"Consumer Cyclical","marketCap":1250890880,"pe":13.565217,"pb":1.3514471,"price":34.32,"change":0.010600725,"insiderBuying":0,"score":18.3326731755207},{"ticker":"ARTNA","company":"Artesian Resources Corp","sector":"Utilities","marketCap":326671808,"pe":14.495413,"pb":1.3096274,"price":31.6,"change":-0.028887538,"insiderBuying":0,"score":18.9835900391162}];
+
+        function formatNumber(num) {
+            if (num === null || num === undefined) return 'N/A';
+            if (num >= 1e9) return '$' + (num / 1e9).toFixed(2) + 'B';
+            if (num >= 1e6) return '$' + (num / 1e6).toFixed(2) + 'M';
+            return num.toLocaleString();
+        }
+
+        function formatDecimal(num, decimals = 2) {
+            if (num === null || num === undefined) return 'N/A';
+            return num.toFixed(decimals);
+        }
+
+        function escapeHTML(str) {
+            if (!str) return '';
+            return str.replace(/[&<>'"]/g,
+                tag => ({
+                    '&': '&amp;',
+                    '<': '&lt;',
+                    '>': '&gt;',
+                    "'": '&#39;',
+                    '"': '&quot;'
+                }[tag] || tag)
+            );
+        }
+
+        function renderTable(data) {
+            const tbody = document.getElementById('tableBody');
+            tbody.innerHTML = '';
+
+            data.forEach(row => {
+                const tr = document.createElement('tr');
+
+                const insiderStr = row.insiderBuying === null ? 'N/A' : row.insiderBuying.toLocaleString();
+                const insiderClass = row.insiderBuying > 0 ? 'pos' : (row.insiderBuying < 0 ? 'neg' : '');
+
+                tr.innerHTML = `
+                    <td><a href="https://finance.yahoo.com/quote/${escapeHTML(row.ticker)}" target="_blank" rel="noopener noreferrer" class="ticker">${escapeHTML(row.ticker)}</a></td>
+                    <td class="company-name">${escapeHTML(row.company)}</td>
+                    <td><span class="sector-badge">${escapeHTML(row.sector)}</span></td>
+                    <td class="mono">${formatNumber(row.marketCap)}</td>
+                    <td class="mono">${formatDecimal(row.pe)}</td>
+                    <td class="mono">${formatDecimal(row.pb)}</td>
+                    <td class="mono ${row.change > 0 ? 'pos' : (row.change < 0 ? 'neg' : '')}">${formatDecimal(row.change * 100, 2)}%</td>
+                    <td class="mono score">${formatDecimal(row.score)}</td>
+                    <td class="mono ${insiderClass}">${insiderStr}</td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        let currentSortCol = 7; // Default sorted by score
+        let currentSortAsc = true;
+
+        function sortTable(colIndex, isNumeric = false) {
+            if (currentSortCol === colIndex) {
+                currentSortAsc = !currentSortAsc;
+            } else {
+                currentSortCol = colIndex;
+                currentSortAsc = true;
+            }
+
+            const keys = ['ticker', 'company', 'sector', 'marketCap', 'pe', 'pb', 'change', 'score', 'insiderBuying'];
+            const key = keys[colIndex];
+
+            window.__INITIAL_DATA__.sort((a, b) => {
+                let valA = a[key];
+                let valB = b[key];
+
+                if (valA === null) return 1;
+                if (valB === null) return -1;
+
+                if (isNumeric) {
+                    return currentSortAsc ? valA - valB : valB - valA;
+                } else {
+                    return currentSortAsc ? valA.localeCompare(valB) : valB.localeCompare(valA);
+                }
+            });
+
+            renderTable(window.__INITIAL_DATA__);
+        }
+
+        // Initial render
+        renderTable(window.__INITIAL_DATA__);
+    </script>
+</body>
+</html>

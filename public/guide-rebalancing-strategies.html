@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Rebalancing Strategy: When & How Often to Rebalance</title>
+    <meta name="description" content="Think rebalancing your portfolio every year is the smart move? Discover when sticking to a calendar actually hurts your returns and the threshold strategy the pros use instead.">
+    <link rel="canonical" href="https://westmountfundamentals.com/guide-rebalancing-strategies.html">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VYF72NSC1Q"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-VYF72NSC1Q');
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Portfolio Rebalancing: When, How Often, and Which Method Works Best",
+      "description": "Think rebalancing your portfolio every year is the smart move? Discover when sticking to a calendar actually hurts your returns and the threshold strategy the pros use instead.",
+      "datePublished": "2026-03-12T08:00:00+00:00",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Westmount Research",
+        "url": "https://westmountfundamentals.com"
+      }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "How often to rebalance portfolio?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most advisors recommend reviewing your portfolio at least annually. However, deciding exactly how often to rebalance depends on your strategy: you can rebalance on a set calendar date (like quarterly or yearly) or when your asset allocation drifts beyond a certain threshold (like 5%)."
+        }
+      }, {
+        "@type": "Question",
+        "name": "What is the best portfolio rebalancing strategy?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "There is no single 'best' strategy, but threshold rebalancing (only trading when allocations drift 5% to 10% off target) often provides a better balance of risk control and lower transaction costs than strict calendar rebalancing."
+        }
+      }, {
+        "@type": "Question",
+        "name": "What is calendar vs threshold rebalancing?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Calendar rebalancing involves adjusting your portfolio back to its target allocation at fixed time intervals (e.g., every January 1st). Threshold rebalancing only triggers a trade when an asset class drifts outside a pre-set tolerance band (e.g., +/- 5% of its target weight), regardless of the date."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Does rebalancing a portfolio trigger taxes?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, if you rebalance in a taxable brokerage account by selling profitable assets, you will trigger capital gains taxes. To minimize this, you can direct new contributions or dividends to underweight assets instead of selling."
+        }
+      }, {
+        "@type": "Question",
+        "name": "When does portfolio rebalancing hurt returns?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Rebalancing can actually hurt returns during strongly trending markets. By continuously selling your winners to buy losers, you cut your momentum short. Rebalancing works best in mean-reverting or volatile markets."
+        }
+      }]
+    }
+    </script>
+
+    <style>
+        :root {
+            --bg-color: #060a12;
+            --card-bg: #0a1020;
+            --border-color: #152040;
+            --accent-color: #4a8fe7;
+            --accent-hover: #3a75c4;
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --font-main: 'Inter', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+            --success-color: #10b981;
+            --danger-color: #ef4444;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .sticky-nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: rgba(6, 10, 18, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .sticky-nav a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+        }
+
+        .sticky-nav a:hover {
+            color: var(--accent-color);
+        }
+
+        .nav-brand {
+            font-weight: 700 !important;
+            font-size: 1.1rem !important;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        @media (max-width: 600px) {
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.85rem;
+            }
+            .nav-brand {
+                font-size: 1rem !important;
+            }
+        }
+
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+            flex: 1;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.03em;
+        }
+
+        h2 {
+            font-size: 1.75rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+
+        h3 {
+            font-size: 1.25rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: var(--accent-color);
+        }
+
+        p {
+            margin-bottom: 1.25rem;
+            color: var(--text-muted);
+            font-size: 1.05rem;
+        }
+
+        ul, ol {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+            color: var(--text-muted);
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            margin-bottom: 1.5rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            text-align: left;
+        }
+
+        th, td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: rgba(255, 255, 255, 0.03);
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .interactive-simulator {
+            background: linear-gradient(145deg, var(--card-bg), #0f172a);
+            border: 1px solid var(--accent-color);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 3rem 0;
+        }
+
+        .simulator-controls {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .control-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        label {
+            font-weight: 500;
+            font-size: 0.9rem;
+            color: var(--text-main);
+        }
+
+        select, button {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+            padding: 0.75rem;
+            border-radius: 6px;
+            font-family: var(--font-main);
+            font-size: 1rem;
+            outline: none;
+        }
+
+        select:focus {
+            border-color: var(--accent-color);
+        }
+
+        button {
+            background-color: var(--accent-color);
+            color: #fff;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        button:hover {
+            background-color: var(--accent-hover);
+        }
+
+        .chart-container {
+            position: relative;
+            height: 300px;
+            width: 100%;
+            margin-top: 1.5rem;
+            border: 1px solid var(--border-color);
+            background-color: rgba(0,0,0,0.2);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        canvas {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        .sim-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-top: 1.5rem;
+            font-family: var(--font-mono);
+            text-align: center;
+        }
+
+        .sim-stat-box {
+            background-color: var(--bg-color);
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .sim-stat-value {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 0.25rem;
+        }
+
+        .sim-stat-label {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+
+        .faq-section {
+            margin-top: 4rem;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+            padding: 1.5rem 0;
+        }
+
+        .faq-item h3 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1.1rem;
+            color: var(--text-main);
+        }
+
+        .faq-item p {
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1.5rem;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-top: auto;
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 2rem; }
+            .sim-stats { grid-template-columns: 1fr; }
+            .card, .interactive-simulator { padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="sticky-nav">
+        <a href="/" class="nav-brand">Westmount Fundamentals</a>
+        <div class="nav-links">
+            <a href="/#studies">Studies</a>
+            <a href="/#tools">Tools</a>
+            <a href="/#guides">Guides</a>
+        </div>
+    </nav>
+
+    <main>
+        <h1>Portfolio Rebalancing: When, How Often, and Which Method Works Best</h1>
+
+        <p>If you set your asset allocation to 60% stocks and 40% bonds, a strong stock market rally might push your portfolio to 70% stocks and 30% bonds. That shift increases your risk profile beyond what you originally intended. To fix this, investors use a <strong>portfolio rebalancing strategy</strong>—selling some of the high-performing assets and buying more of the underperforming ones.</p>
+
+        <p>But exactly <strong>how often to rebalance a portfolio</strong> is a fiercely debated topic among advisors and DIY investors. Should you do it every quarter? Once a year? Or only when your allocation drifts too far?</p>
+
+        <h2>Calendar vs Threshold Rebalancing</h2>
+
+        <p>There are three primary methods for maintaining your target asset allocation:</p>
+
+        <div class="card">
+            <h3>1. Calendar Rebalancing</h3>
+            <p>You rebalance on predetermined dates, regardless of market conditions. Typical intervals are quarterly, semi-annually, or annually.</p>
+            <ul>
+                <li><strong>Pros:</strong> Simple, removes emotion, easy to automate.</li>
+                <li><strong>Cons:</strong> You might execute trades even when allocations are barely off-target, incurring unnecessary fees or taxes. Conversely, in a fast-moving market, you might wait too long.</li>
+            </ul>
+
+            <h3>2. Threshold Rebalancing (Tolerance Bands)</h3>
+            <p>You only rebalance when an asset class drifts outside a predefined tolerance band (e.g., +/- 5% or 10% of its target weight).</p>
+            <ul>
+                <li><strong>Pros:</strong> Only trades when necessary, allowing "winners to run" slightly while maintaining strict risk controls.</li>
+                <li><strong>Cons:</strong> Requires more active monitoring to track the current weights compared to calendar dates.</li>
+            </ul>
+
+            <h3>3. Tactical Rebalancing</h3>
+            <p>A more active approach where you intentionally deviate from your target allocation based on macroeconomic conditions or market valuations.</p>
+        </div>
+
+        <h2>When Does Rebalancing Help vs Hurt?</h2>
+
+        <p>Rebalancing is inherently a contrarian strategy: you are selling what has done well recently to buy what has done poorly. Because of this, its effectiveness depends heavily on the market environment.</p>
+
+        <ul>
+            <li><strong>When it helps: Mean-Reverting Markets.</strong> In choppy or highly volatile markets where asset classes bounce back and forth, rebalancing systematically "sells high and buys low," potentially boosting returns.</li>
+            <li><strong>When it hurts: Trending Markets.</strong> In prolonged bull markets (like US equities over the 2010s), rebalancing constantly trims your best-performing assets. If you rebalance too frequently during a strong trend, you will drag down your total return compared to a "buy and hold" approach.</li>
+        </ul>
+
+        <h2>Tax Implications in Taxable Accounts</h2>
+
+        <p>If you are rebalancing in an IRA or 401(k), there are no immediate tax consequences. However, rebalancing a taxable brokerage account often involves selling assets that have appreciated, triggering capital gains taxes.</p>
+
+        <p>To avoid tax drag, use these strategies:</p>
+        <ol>
+            <li><strong>Cash Flow Rebalancing:</strong> Direct new cash deposits or dividends toward your underweight asset classes instead of selling the overweight ones.</li>
+            <li><strong>Asset Location:</strong> Do your buying and selling inside your tax-advantaged accounts to adjust your <em>overall</em> household portfolio allocation.</li>
+            <li><strong>Tax-Loss Harvesting:</strong> Use market downturns to sell losing positions for a tax deduction, and use the proceeds to restore your target weights.</li>
+        </ol>
+
+        <div class="interactive-simulator">
+            <h2>Interactive Simulator: Rebalancing Outcomes</h2>
+            <p>Test how different strategies impact a hypothetical $100,000 portfolio (60% Stocks, 40% Bonds) over a 20-year period.</p>
+
+            <div class="simulator-controls">
+                <div class="control-group">
+                    <label for="sim-strategy">Rebalancing Strategy</label>
+                    <select id="sim-strategy">
+                        <option value="none">Buy & Hold (Never Rebalance)</option>
+                        <option value="annual" selected>Calendar: Annually</option>
+                        <option value="quarterly">Calendar: Quarterly</option>
+                        <option value="threshold5">Threshold: 5% Bands</option>
+                    </select>
+                </div>
+                <div class="control-group">
+                    <label for="sim-market">Market Environment</label>
+                    <select id="sim-market">
+                        <option value="normal" selected>Historical Average</option>
+                        <option value="trend">Strong Trending (Bull Market)</option>
+                        <option value="volatile">Highly Volatile (Mean-Reverting)</option>
+                    </select>
+                </div>
+                <div class="control-group" style="justify-content: flex-end;">
+                    <button id="run-sim-btn">Run Simulation</button>
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <canvas id="simChart"></canvas>
+            </div>
+
+            <div class="sim-stats">
+                <div class="sim-stat-box">
+                    <div class="sim-stat-value" id="stat-final-value">$--</div>
+                    <div class="sim-stat-label">Final Portfolio Value</div>
+                </div>
+                <div class="sim-stat-box">
+                    <div class="sim-stat-value" id="stat-cagr">--%</div>
+                    <div class="sim-stat-label">Annualized Return</div>
+                </div>
+                <div class="sim-stat-box">
+                    <div class="sim-stat-value" id="stat-trades">--</div>
+                    <div class="sim-stat-label">Total Rebalance Trades</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <h3>How often to rebalance portfolio?</h3>
+                <p>Most advisors recommend reviewing your portfolio at least annually. However, deciding exactly how often to rebalance depends on your strategy: you can rebalance on a set calendar date (like quarterly or yearly) or when your asset allocation drifts beyond a certain threshold (like 5%).</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>What is the best portfolio rebalancing strategy?</h3>
+                <p>There is no single "best" strategy, but threshold rebalancing (only trading when allocations drift 5% to 10% off target) often provides a better balance of risk control and lower transaction costs than strict calendar rebalancing.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>What is calendar vs threshold rebalancing?</h3>
+                <p>Calendar rebalancing involves adjusting your portfolio back to its target allocation at fixed time intervals (e.g., every January 1st). Threshold rebalancing only triggers a trade when an asset class drifts outside a pre-set tolerance band (e.g., +/- 5% of its target weight), regardless of the date.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Does rebalancing a portfolio trigger taxes?</h3>
+                <p>Yes, if you rebalance in a taxable brokerage account by selling profitable assets, you will trigger capital gains taxes. To minimize this, you can direct new contributions or dividends to underweight assets instead of selling.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>When does portfolio rebalancing hurt returns?</h3>
+                <p>Rebalancing can actually hurt returns during strongly trending markets. By continuously selling your winners to buy losers, you cut your momentum short. Rebalancing works best in mean-reverting or volatile markets.</p>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        © 2026 Westmount Research · A GAB Ventures property. Not investment advice. All information for educational purposes only.
+    </footer>
+
+    <script>
+        // Simple Interactive Simulator Engine
+        document.addEventListener('DOMContentLoaded', () => {
+            const canvas = document.getElementById('simChart');
+            const ctx = canvas.getContext('2d');
+
+            const btn = document.getElementById('run-sim-btn');
+            const strategySelect = document.getElementById('sim-strategy');
+            const marketSelect = document.getElementById('sim-market');
+
+            const formatter = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
+
+            function runSimulation() {
+                const strategy = strategySelect.value;
+                const marketEnv = marketSelect.value;
+
+                const initialCapital = 100000;
+                let targetStocks = 0.60;
+                let targetBonds = 0.40;
+
+                let stockVal = initialCapital * targetStocks;
+                let bondVal = initialCapital * targetBonds;
+
+                let trades = 0;
+                const years = 20;
+                const periods = years * 12; // Monthly steps
+
+                let history = [];
+                history.push(initialCapital);
+
+                // Define market parameters based on environment
+                let stockMean, stockVol, bondMean, bondVol;
+
+                if (marketEnv === 'trend') {
+                    stockMean = 0.12 / 12; stockVol = 0.12 / Math.sqrt(12);
+                    bondMean = 0.03 / 12; bondVol = 0.04 / Math.sqrt(12);
+                } else if (marketEnv === 'volatile') {
+                    stockMean = 0.06 / 12; stockVol = 0.25 / Math.sqrt(12);
+                    bondMean = 0.04 / 12; bondVol = 0.08 / Math.sqrt(12);
+                } else {
+                    // Normal
+                    stockMean = 0.08 / 12; stockVol = 0.15 / Math.sqrt(12);
+                    bondMean = 0.04 / 12; bondVol = 0.05 / Math.sqrt(12);
+                }
+
+                // Box-Muller transform for normal distribution
+                function randomNormal(mean, stdDev) {
+                    let u1 = Math.random();
+                    let u2 = Math.random();
+                    let z0 = Math.sqrt(-2.0 * Math.log(u1)) * Math.cos(2.0 * Math.PI * u2);
+                    return z0 * stdDev + mean;
+                }
+
+                for (let i = 1; i <= periods; i++) {
+                    // Monthly returns
+                    let sRet = randomNormal(stockMean, stockVol);
+                    let bRet = randomNormal(bondMean, bondVol);
+
+                    // Add some mean reversion for volatile market
+                    if (marketEnv === 'volatile') {
+                        if (i > 1) {
+                            let prevTotal = history[i-1];
+                            let expected = initialCapital * Math.pow(1 + 0.05/12, i);
+                            if (prevTotal > expected) sRet -= 0.01;
+                            else sRet += 0.01;
+                        }
+                    }
+
+                    stockVal *= (1 + sRet);
+                    bondVal *= (1 + bRet);
+
+                    let totalVal = stockVal + bondVal;
+                    let stockWeight = stockVal / totalVal;
+
+                    let needsRebalance = false;
+
+                    if (strategy === 'annual' && i % 12 === 0) {
+                        needsRebalance = true;
+                    } else if (strategy === 'quarterly' && i % 3 === 0) {
+                        needsRebalance = true;
+                    } else if (strategy === 'threshold5') {
+                        if (Math.abs(stockWeight - targetStocks) > 0.05) {
+                            needsRebalance = true;
+                        }
+                    }
+
+                    if (needsRebalance) {
+                        stockVal = totalVal * targetStocks;
+                        bondVal = totalVal * targetBonds;
+                        trades++;
+                    }
+
+                    history.push(totalVal);
+                }
+
+                const finalValue = history[history.length - 1];
+                const cagr = (Math.pow(finalValue / initialCapital, 1 / years) - 1) * 100;
+
+                document.getElementById('stat-final-value').textContent = formatter.format(finalValue);
+                document.getElementById('stat-cagr').textContent = cagr.toFixed(2) + '%';
+                document.getElementById('stat-trades').textContent = trades;
+
+                drawChart(history);
+            }
+
+            function drawChart(data) {
+                const width = canvas.parentElement.clientWidth;
+                const height = canvas.parentElement.clientHeight;
+                canvas.width = width;
+                canvas.height = height;
+
+                ctx.clearRect(0, 0, width, height);
+
+                const maxVal = Math.max(...data);
+                const minVal = Math.min(...data, 100000); // Floor at initial capital or lowest dip
+
+                const padY = 20;
+                const rangeY = maxVal - minVal;
+
+                ctx.beginPath();
+                ctx.moveTo(0, height - padY - ((data[0] - minVal) / rangeY) * (height - padY * 2));
+
+                for (let i = 1; i < data.length; i++) {
+                    let x = (i / (data.length - 1)) * width;
+                    let y = height - padY - ((data[i] - minVal) / rangeY) * (height - padY * 2);
+                    ctx.lineTo(x, y);
+                }
+
+                ctx.strokeStyle = '#4a8fe7';
+                ctx.lineWidth = 2;
+                ctx.stroke();
+
+                // Fill area
+                ctx.lineTo(width, height);
+                ctx.lineTo(0, height);
+                ctx.closePath();
+
+                let gradient = ctx.createLinearGradient(0, 0, 0, height);
+                gradient.addColorStop(0, 'rgba(74, 143, 231, 0.3)');
+                gradient.addColorStop(1, 'rgba(74, 143, 231, 0.0)');
+
+                ctx.fillStyle = gradient;
+                ctx.fill();
+            }
+
+            // Initial run
+            window.addEventListener('resize', runSimulation);
+            btn.addEventListener('click', runSimulation);
+            runSimulation();
+        });
+    </script>
+</body>
+</html>
