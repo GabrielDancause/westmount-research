@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S&P 500 Dividend Yield History: 1960–2026 Complete Data</title>
+    <meta name="description" content="Why are S&P 500 dividends shrinking? Track the dramatic shift from 5%+ yields to historical lows with this 60-year comparative analysis of market income returns.">
+    <link rel="canonical" href="https://westmountfundamentals.com/sp500-dividend-yield-history.html">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VYF72NSC1Q"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-VYF72NSC1Q');
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "S&P 500 Dividend Yield History: 1960–2026 Complete Data",
+      "description": "Why are S&P 500 dividends shrinking? Track the dramatic shift from 5%+ yields to historical lows with this 60-year comparative analysis of market income returns.",
+      "datePublished": "2024-03-11",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Westmount Research",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://westmountfundamentals.com/favicon.svg"
+        }
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the historical dividend yield of the S&P 500?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Historically, the S&P 500 dividend yield averaged around 3-4% prior to the 1990s. However, since the late 1990s, the yield has typically remained below 2%, reflecting changes in corporate capital allocation, such as increased stock buybacks."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How has the S&P 500 dividend yield history changed over time?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Over time, the S&P 500 dividend yield has steadily compressed. Yields frequently exceeded 4% or 5% during the 1970s and 1980s, but dropped below 2% in the late 1990s and have largely stayed there through 2026."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why is the sp500 dividend yield over time going down?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The primary reasons are a shift towards stock buybacks as a more tax-efficient way to return capital to shareholders, rising stock market valuations (which mathematically lower the yield), and the growing dominance of high-growth technology companies that typically pay little to no dividends."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What was the highest historical dividend yield s&p 500 has seen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In the modern era, the S&P 500 dividend yield peaked above 5.3% in the late 1970s and early 1980s due to high inflation and lower equity valuations."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does the S&P 500 yield compare to the 10-year Treasury yield?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Historically, the 10-year Treasury yielded significantly more than the S&P 500, particularly in the 1980s. Following the 2008 financial crisis, Treasury yields dropped below the S&P 500 dividend yield for several years, though recent rate hikes have reversed this trend."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        :root {
+            --bg-color: #060a12;
+            --card-bg: #0a1020;
+            --border-color: #152040;
+            --accent: #4a8fe7;
+            --text-main: #e2e8f0;
+            --text-muted: #94a3b8;
+            --sp500-color: #4a8fe7;
+            --treasury-color: #f59e0b;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            color: #fff;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        h1 { font-size: 2.5rem; line-height: 1.2; text-align: center; }
+        h2 { font-size: 1.8rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; }
+
+        p { margin-bottom: 1.5rem; }
+
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        .sticky-nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: rgba(6, 10, 18, 0.85);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .sticky-nav a {
+            color: #fff;
+            font-weight: 500;
+            text-decoration: none;
+            margin-left: 1.5rem;
+        }
+
+        .sticky-nav .brand {
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-left: 0;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .header-content {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .chart-container {
+            width: 100%;
+            height: 450px;
+            position: relative;
+        }
+
+        canvas {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: rgba(21, 32, 64, 0.5);
+            color: #fff;
+            font-weight: 600;
+            font-family: 'Inter', sans-serif;
+        }
+
+        tr:hover td {
+            background-color: rgba(74, 143, 231, 0.05);
+        }
+
+        .text-right { text-align: right; }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1.5rem;
+        }
+
+        .faq-item h3 {
+            margin-top: 0;
+            font-size: 1.2rem;
+            color: var(--accent);
+        }
+
+        .faq-item p {
+            margin-bottom: 0;
+            color: var(--text-muted);
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-top: 3rem;
+        }
+
+        .disclaimer {
+            font-size: 0.8rem;
+            opacity: 0.8;
+            margin-top: 1rem;
+        }
+
+        .tooltip {
+            position: absolute;
+            background: rgba(10, 16, 32, 0.95);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            padding: 8px 12px;
+            font-size: 0.85rem;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.2s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            font-family: 'Inter', sans-serif;
+            z-index: 10;
+        }
+
+        .tooltip-year {
+            font-weight: 600;
+            margin-bottom: 4px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 4px;
+        }
+
+        .tooltip-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2px;
+        }
+
+        .tooltip-color {
+            width: 10px;
+            height: 10px;
+            border-radius: 2px;
+            margin-right: 6px;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            .sticky-nav { flex-direction: column; gap: 1rem; }
+            .nav-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; }
+            .nav-links a { margin-left: 0; }
+            .card { padding: 1.5rem 1rem; }
+            th, td { padding: 0.75rem 0.5rem; }
+            .chart-container { height: 350px; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="sticky-nav">
+        <a href="/" class="brand">Westmount Fundamentals</a>
+        <div class="nav-links">
+            <a href="/#studies">Studies</a>
+            <a href="/#tools">Tools</a>
+            <a href="/#guides">Guides</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="header-content">
+            <h1>S&P 500 Dividend Yield History</h1>
+            <p class="subtitle">An analysis of market income returns spanning 1960 to 2026, comparing the steady decline in equity yields against fixed income alternatives.</p>
+        </div>
+
+        <div class="card">
+            <h2>The Long-Term Yield Compression</h2>
+            <p>The historical dividend yield of the S&P 500 has undergone a massive transformation. For decades prior to the 1990s, income investors could reliably expect 3% to 5% yields from large-cap equities. Today, the yield routinely hovers just above 1%.</p>
+            <p>This interactive chart compares the S&P 500 dividend yield history against the 10-year Treasury yield, providing context on how stock yields measure up to the "risk-free" rate.</p>
+
+            <div class="chart-container" id="chart-wrapper">
+                <canvas id="yieldChart"></canvas>
+                <div id="chart-tooltip" class="tooltip"></div>
+            </div>
+
+            <p style="text-align: center; margin-top: 1.5rem; font-size: 0.85rem; color: var(--text-muted);">
+                <span style="display:inline-block; width:12px; height:12px; background:var(--sp500-color); margin-right:5px; vertical-align: middle;"></span> S&P 500 Yield
+                <span style="display:inline-block; width:12px; height:2px; background:var(--treasury-color); margin-left:15px; margin-right:5px; vertical-align: middle;"></span> 10-Year Treasury Yield
+                <br><br>Shaded areas represent US recessions (approximate).
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>Average Yield by Decade</h2>
+            <p>Averaging the data by decade clearly illustrates the structural shift in how companies distribute capital. The peak yields of the 1970s and 1980s have given way to the buyback-dominated era of the 21st century.</p>
+
+            <div style="overflow-x: auto;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Decade</th>
+                            <th class="text-right">Average Yield</th>
+                            <th class="text-right">Yield Range</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td>2020–2026</td>
+                            <td class="text-right">1.38%</td>
+                            <td class="text-right" style="color: var(--text-muted);">1.15% – 1.71%</td>
+                        </tr>
+                        <tr>
+                            <td>2010–2019</td>
+                            <td class="text-right">1.99%</td>
+                            <td class="text-right" style="color: var(--text-muted);">1.83% – 2.20%</td>
+                        </tr>
+                        <tr>
+                            <td>2000–2009</td>
+                            <td class="text-right">1.82%</td>
+                            <td class="text-right" style="color: var(--text-muted);">1.22% – 3.23%</td>
+                        </tr>
+                        <tr>
+                            <td>1990–1999</td>
+                            <td class="text-right">2.36%</td>
+                            <td class="text-right" style="color: var(--text-muted);">1.17% – 3.68%</td>
+                        </tr>
+                        <tr>
+                            <td>1980–1989</td>
+                            <td class="text-right">4.13%</td>
+                            <td class="text-right" style="color: var(--text-muted);">3.17% – 5.36%</td>
+                        </tr>
+                        <tr>
+                            <td>1970–1979</td>
+                            <td class="text-right">4.17%</td>
+                            <td class="text-right" style="color: var(--text-muted);">2.68% – 5.37%</td>
+                        </tr>
+                        <tr>
+                            <td>1960–1969</td>
+                            <td class="text-right">3.16%</td>
+                            <td class="text-right" style="color: var(--text-muted);">2.82% – 3.53%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>What Low Yields Mean for Income Investors</h2>
+            <p>The consistent downward trend in the sp500 dividend yield over time has profound implications for portfolio construction. In the 1980s, an investor could realistically fund retirement living expenses strictly from the dividend payouts of a broad market index. Today, a 1.2% to 1.5% yield requires either an enormous capital base or a willingness to sell off principal.</p>
+            <p>This shift isn't inherently bad. Rather than paying dividends, modern corporations—especially in the dominant tech sector—often prefer to return capital via stock buybacks. Buybacks reduce outstanding shares, which theoretically pushes the stock price higher, offering a more tax-efficient return for investors. However, for those explicitly seeking cash flow, this means the S&P 500 can no longer serve as a primary income engine on its own.</p>
+        </div>
+
+        <div class="card">
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <h3>What is the historical dividend yield of the S&P 500?</h3>
+                <p>Historically, the S&P 500 dividend yield averaged around 3-4% prior to the 1990s. However, since the late 1990s, the yield has typically remained below 2%, reflecting changes in corporate capital allocation, such as increased stock buybacks.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>How has the S&P 500 dividend yield history changed over time?</h3>
+                <p>Over time, the S&P 500 dividend yield has steadily compressed. Yields frequently exceeded 4% or 5% during the 1970s and 1980s, but dropped below 2% in the late 1990s and have largely stayed there through 2026.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Why is the sp500 dividend yield over time going down?</h3>
+                <p>The primary reasons are a shift towards stock buybacks as a more tax-efficient way to return capital to shareholders, rising stock market valuations (which mathematically lower the yield), and the growing dominance of high-growth technology companies that typically pay little to no dividends.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>What was the highest historical dividend yield s&p 500 has seen?</h3>
+                <p>In the modern era, the S&P 500 dividend yield peaked above 5.3% in the late 1970s and early 1980s due to high inflation and lower equity valuations.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>How does the S&P 500 yield compare to the 10-year Treasury yield?</h3>
+                <p>Historically, the 10-year Treasury yielded significantly more than the S&P 500, particularly in the 1980s. Following the 2008 financial crisis, Treasury yields dropped below the S&P 500 dividend yield for several years, though recent rate hikes have reversed this trend.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Westmount Research &middot; A GAB Ventures property</p>
+        <p class="disclaimer">Data for informational purposes only. Not investment advice. All information for educational purposes only.</p>
+    </footer>
+
+    <script>
+        const chartData = [{"year":1960,"yield":3.43,"treasury":4.72},{"year":1961,"yield":2.82,"treasury":3.84},{"year":1962,"yield":3.4,"treasury":4.08},{"year":1963,"yield":3.07,"treasury":3.83},{"year":1964,"yield":2.98,"treasury":4.17},{"year":1965,"yield":2.97,"treasury":4.19},{"year":1966,"yield":3.53,"treasury":4.61},{"year":1967,"yield":3.06,"treasury":4.58},{"year":1968,"yield":2.88,"treasury":5.53},{"year":1969,"yield":3.47,"treasury":6.04},{"year":1970,"yield":3.49,"treasury":7.79},{"year":1971,"yield":3.1,"treasury":6.24},{"year":1972,"yield":2.68,"treasury":5.95},{"year":1973,"yield":3.57,"treasury":6.46},{"year":1974,"yield":5.37,"treasury":6.99},{"year":1975,"yield":4.15,"treasury":7.5},{"year":1976,"yield":3.87,"treasury":7.74},{"year":1977,"yield":4.98,"treasury":7.21},{"year":1978,"yield":5.28,"treasury":7.96},{"year":1979,"yield":5.24,"treasury":9.1},{"year":1980,"yield":4.61,"treasury":10.8},{"year":1981,"yield":5.36,"treasury":12.57},{"year":1982,"yield":4.93,"treasury":14.59},{"year":1983,"yield":4.31,"treasury":10.46},{"year":1984,"yield":4.58,"treasury":11.67},{"year":1985,"yield":3.81,"treasury":11.38},{"year":1986,"yield":3.33,"treasury":9.19},{"year":1987,"yield":3.66,"treasury":7.08},{"year":1988,"yield":3.53,"treasury":8.67},{"year":1989,"yield":3.17,"treasury":9.09},{"year":1990,"yield":3.68,"treasury":8.21},{"year":1991,"yield":3.14,"treasury":8.09},{"year":1992,"yield":2.84,"treasury":7.03},{"year":1993,"yield":2.7,"treasury":6.6},{"year":1994,"yield":2.89,"treasury":5.75},{"year":1995,"yield":2.24,"treasury":7.78},{"year":1996,"yield":2,"treasury":5.65},{"year":1997,"yield":1.61,"treasury":6.58},{"year":1998,"yield":1.36,"treasury":5.54},{"year":1999,"yield":1.17,"treasury":4.72},{"year":2000,"yield":1.22,"treasury":6.66},{"year":2001,"yield":1.37,"treasury":5.16},{"year":2002,"yield":1.79,"treasury":5.04},{"year":2003,"yield":1.61,"treasury":4.05},{"year":2004,"yield":1.62,"treasury":4.15},{"year":2005,"yield":1.76,"treasury":4.22},{"year":2006,"yield":1.76,"treasury":4.42},{"year":2007,"yield":1.87,"treasury":4.76},{"year":2008,"yield":3.23,"treasury":3.74},{"year":2009,"yield":2.02,"treasury":2.52},{"year":2010,"yield":1.83,"treasury":3.73},{"year":2011,"yield":2.13,"treasury":3.39},{"year":2012,"yield":2.2,"treasury":1.97},{"year":2013,"yield":1.94,"treasury":1.91},{"year":2014,"yield":1.92,"treasury":2.86},{"year":2015,"yield":2.11,"treasury":1.88},{"year":2016,"yield":2.03,"treasury":2.09},{"year":2017,"yield":1.84,"treasury":2.43},{"year":2018,"yield":2.09,"treasury":2.58},{"year":2019,"yield":1.83,"treasury":2.71},{"year":2020,"yield":1.58,"treasury":1.76},{"year":2021,"yield":1.29,"treasury":1.08},{"year":2022,"yield":1.71,"treasury":1.76},{"year":2023,"yield":1.5,"treasury":3.53},{"year":2024,"yield":1.24,"treasury":4.06},{"year":2025,"yield":1.15,"treasury":4.63},{"year":2026,"yield":1.16,"treasury":4.18}];
+
+        // Approximate US Recessions
+        const recessions = [
+            { start: 1960, end: 1961 },
+            { start: 1969, end: 1970 },
+            { start: 1973, end: 1975 },
+            { start: 1980, end: 1980.5 },
+            { start: 1981, end: 1982 },
+            { start: 1990, end: 1991 },
+            { start: 2001, end: 2001 },
+            { start: 2007, end: 2009 },
+            { start: 2020, end: 2020 }
+        ];
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const canvas = document.getElementById('yieldChart');
+            const ctx = canvas.getContext('2d');
+            const wrapper = document.getElementById('chart-wrapper');
+            const tooltip = document.getElementById('chart-tooltip');
+
+            let width, height;
+            const padding = { top: 20, right: 20, bottom: 40, left: 50 };
+
+            // Extract values
+            const years = chartData.map(d => d.year);
+            const yields = chartData.map(d => d.yield);
+            const treasuries = chartData.map(d => d.treasury).filter(v => v !== null);
+
+            const minYear = Math.min(...years);
+            const maxYear = Math.max(...years);
+            const maxVal = Math.max(...yields, ...treasuries);
+
+            function resizeCanvas() {
+                // Get display size (css pixels)
+                const displayWidth = wrapper.clientWidth;
+                const displayHeight = wrapper.clientHeight;
+
+                // Set actual size in memory (scaled to account for extra pixel density)
+                const scale = window.devicePixelRatio || 1;
+                canvas.width = displayWidth * scale;
+                canvas.height = displayHeight * scale;
+
+                // Normalize coordinate system to use css pixels
+                ctx.scale(scale, scale);
+
+                width = displayWidth;
+                height = displayHeight;
+
+                drawChart();
+            }
+
+            function drawChart() {
+                ctx.clearRect(0, 0, width, height);
+
+                const plotWidth = width - padding.left - padding.right;
+                const plotHeight = height - padding.top - padding.bottom;
+
+                // Helpers
+                const getX = year => padding.left + ((year - minYear) / (maxYear - minYear)) * plotWidth;
+                const getY = val => padding.top + plotHeight - ((val / Math.ceil(maxVal + 1)) * plotHeight);
+
+                // Draw recessions
+                ctx.fillStyle = 'rgba(255, 255, 255, 0.04)';
+                recessions.forEach(r => {
+                    const xStart = Math.max(padding.left, getX(r.start));
+                    const xEnd = Math.min(width - padding.right, getX(r.end));
+                    if (xStart < width - padding.right && xEnd > padding.left) {
+                        ctx.fillRect(xStart, padding.top, xEnd - xStart, plotHeight);
+                    }
+                });
+
+                // Draw Grid & Axes
+                ctx.strokeStyle = 'rgba(255, 255, 255, 0.1)';
+                ctx.lineWidth = 1;
+                ctx.beginPath();
+
+                // Y-axis grid
+                const maxValCeil = Math.ceil(maxVal + 1);
+                for (let i = 0; i <= maxValCeil; i += 2) {
+                    const y = getY(i);
+                    ctx.moveTo(padding.left, y);
+                    ctx.lineTo(width - padding.right, y);
+
+                    ctx.fillStyle = '#94a3b8';
+                    ctx.font = '12px Inter, sans-serif';
+                    ctx.textAlign = 'right';
+                    ctx.textBaseline = 'middle';
+                    ctx.fillText(i + '%', padding.left - 10, y);
+                }
+
+                // X-axis grid
+                for (let y = Math.ceil(minYear / 10) * 10; y <= maxYear; y += 10) {
+                    const x = getX(y);
+                    ctx.moveTo(x, padding.top);
+                    ctx.lineTo(x, height - padding.bottom);
+
+                    ctx.fillStyle = '#94a3b8';
+                    ctx.textAlign = 'center';
+                    ctx.textBaseline = 'top';
+                    ctx.fillText(y, x, height - padding.bottom + 10);
+                }
+                ctx.stroke();
+
+                // Draw Area (S&P 500 Yield)
+                ctx.beginPath();
+                ctx.moveTo(getX(chartData[0].year), getY(0));
+                chartData.forEach(d => {
+                    ctx.lineTo(getX(d.year), getY(d.yield));
+                });
+                ctx.lineTo(getX(chartData[chartData.length - 1].year), getY(0));
+                ctx.closePath();
+                ctx.fillStyle = 'rgba(74, 143, 231, 0.2)';
+                ctx.fill();
+
+                // Draw Line (S&P 500 Yield)
+                ctx.beginPath();
+                chartData.forEach((d, i) => {
+                    const x = getX(d.year);
+                    const y = getY(d.yield);
+                    if (i === 0) ctx.moveTo(x, y);
+                    else ctx.lineTo(x, y);
+                });
+                ctx.strokeStyle = '#4a8fe7';
+                ctx.lineWidth = 2;
+                ctx.stroke();
+
+                // Draw Line (Treasury Yield)
+                ctx.beginPath();
+                ctx.setLineDash([5, 5]);
+                let firstT = true;
+                chartData.forEach(d => {
+                    if (d.treasury !== null) {
+                        const x = getX(d.year);
+                        const y = getY(d.treasury);
+                        if (firstT) {
+                            ctx.moveTo(x, y);
+                            firstT = false;
+                        } else {
+                            ctx.lineTo(x, y);
+                        }
+                    }
+                });
+                ctx.strokeStyle = '#f59e0b';
+                ctx.lineWidth = 2;
+                ctx.stroke();
+                ctx.setLineDash([]); // Reset
+            }
+
+            // Interactive Tooltip
+            wrapper.addEventListener('mousemove', (e) => {
+                const rect = canvas.getBoundingClientRect();
+                const mouseX = e.clientX - rect.left;
+
+                const plotWidth = width - padding.left - padding.right;
+                if (mouseX < padding.left || mouseX > width - padding.right) {
+                    tooltip.style.opacity = '0';
+                    drawChart();
+                    return;
+                }
+
+                const yearHover = minYear + ((mouseX - padding.left) / plotWidth) * (maxYear - minYear);
+                const closestData = chartData.reduce((prev, curr) =>
+                    Math.abs(curr.year - yearHover) < Math.abs(prev.year - yearHover) ? curr : prev
+                );
+
+                // Redraw to clear previous hover line
+                drawChart();
+
+                const getX = year => padding.left + ((year - minYear) / (maxYear - minYear)) * plotWidth;
+                const getY = val => padding.top + plotHeight - ((val / Math.ceil(maxVal + 1)) * plotHeight);
+                const plotHeight = height - padding.top - padding.bottom;
+
+                const cx = getX(closestData.year);
+
+                // Draw vertical indicator line
+                ctx.beginPath();
+                ctx.moveTo(cx, padding.top);
+                ctx.lineTo(cx, height - padding.bottom);
+                ctx.strokeStyle = 'rgba(255, 255, 255, 0.2)';
+                ctx.lineWidth = 1;
+                ctx.stroke();
+
+                // Draw points
+                ctx.beginPath();
+                ctx.arc(cx, getY(closestData.yield), 4, 0, Math.PI * 2);
+                ctx.fillStyle = '#4a8fe7';
+                ctx.fill();
+
+                if (closestData.treasury !== null) {
+                    ctx.beginPath();
+                    ctx.arc(cx, getY(closestData.treasury), 4, 0, Math.PI * 2);
+                    ctx.fillStyle = '#f59e0b';
+                    ctx.fill();
+                }
+
+                // Tooltip content
+                let html = `<div class="tooltip-year">${closestData.year}</div>`;
+                html += `
+                    <div class="tooltip-row">
+                        <div class="tooltip-color" style="background:#4a8fe7"></div>
+                        <span>S&P 500: ${closestData.yield.toFixed(2)}%</span>
+                    </div>`;
+                if (closestData.treasury !== null) {
+                    html += `
+                    <div class="tooltip-row">
+                        <div class="tooltip-color" style="background:#f59e0b"></div>
+                        <span>Treasury: ${closestData.treasury.toFixed(2)}%</span>
+                    </div>`;
+                }
+
+                tooltip.innerHTML = html;
+                tooltip.style.opacity = '1';
+
+                // Position tooltip
+                let tX = cx + 15;
+                if (tX + tooltip.offsetWidth > width) {
+                    tX = cx - tooltip.offsetWidth - 15;
+                }
+                tooltip.style.left = tX + 'px';
+                tooltip.style.top = (padding.top + 20) + 'px';
+            });
+
+            wrapper.addEventListener('mouseleave', () => {
+                tooltip.style.opacity = '0';
+                drawChart();
+            });
+
+            window.addEventListener('resize', resizeCanvas);
+            resizeCanvas();
+        });
+    </script>
+</body>
+</html>
