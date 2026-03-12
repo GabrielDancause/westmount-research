@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treasury Yield Curve 2026: Current Rates and Inversion Analysis</title>
+    <meta name="description" content="Is the yield curve predicting a recession right now? Compare the current US Treasury yield curve to 1 and 2 years ago to uncover what it signals about the economy.">
+    <link rel="canonical" href="https://westmountfundamentals.com/bond-yield-curve-2026.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VYF72NSC1Q"></script>
+    <script>
+      window.dataLayer=window.dataLayer||[];
+      function gtag(){dataLayer.push(arguments)}
+      gtag('js',new Date());
+      gtag('config','G-VYF72NSC1Q');
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Treasury Yield Curve 2026: Current Rates and Inversion Analysis",
+      "description": "Is the yield curve predicting a recession right now? Compare the current US Treasury yield curve to 1 and 2 years ago to uncover what it signals about the economy.",
+      "datePublished": "2026-03-01",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Westmount Research"
+      }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the yield curve 2026 signaling about the economy?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The yield curve in 2026 provides critical signals about economic health. An inverted curve, where short-term rates exceed long-term rates, often signals a potential recession, while a normal curve points to economic expansion. You can observe the current shape on our interactive chart to see its current state."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I check the treasury yield curve today?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can check the treasury yield curve today by reviewing our live-updated chart that pulls the latest data directly from the U.S. Department of the Treasury. The chart maps out yields from 1-month bills up to 30-year bonds."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there a yield curve inversion 2026?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "To determine if there is a yield curve inversion in 2026, you look at the spread between the 2-year and 10-year Treasury notes. If the 2-year yield is higher than the 10-year yield, the curve is considered inverted."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the current treasury rates for short-term and long-term bonds?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Current treasury rates vary across the maturity spectrum. Short-term rates (like 1-month or 6-month) reflect near-term monetary policy, while long-term rates (like 10-year or 30-year) reflect long-term growth and inflation expectations. Check our data table for the exact latest percentages."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why is the 2-year/10-year spread important?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The 2-year/10-year spread is the most closely watched part of the yield curve. A negative spread (inversion) has historically been one of the most reliable leading indicators of an impending economic recession."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        :root {
+            --bg-color: #060a12;
+            --card-bg: #0a1020;
+            --border-color: #152040;
+            --accent: #4a8fe7;
+            --text-main: #f0f0f0;
+            --text-muted: #a0a8b8;
+            --font-body: 'Inter', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: var(--font-body);
+            line-height: 1.6;
+        }
+
+        .sticky-nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: rgba(6, 10, 18, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .sticky-nav a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .sticky-nav .brand {
+            font-size: 1.25rem;
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        h2 {
+            font-size: 1.75rem;
+            margin-top: 2.5rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .stat-box {
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            padding: 1rem;
+            border-radius: 6px;
+            text-align: center;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .stat-value {
+            font-size: 1.75rem;
+            font-weight: 700;
+            font-family: var(--font-mono);
+            color: var(--accent);
+            margin-top: 0.5rem;
+        }
+
+        .chart-container {
+            position: relative;
+            height: 400px;
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+
+        canvas {
+            width: 100%;
+            height: 100%;
+        }
+
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .legend-color {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+        }
+
+        th, td {
+            padding: 0.75rem;
+            text-align: right;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            text-align: right;
+            color: var(--text-muted);
+            font-family: var(--font-body);
+            font-weight: 600;
+        }
+
+        th:first-child, td:first-child {
+            text-align: left;
+        }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .faq-item h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--accent);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid var(--border-color);
+            margin-top: 4rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 768px) {
+            .sticky-nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            .table-container {
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="sticky-nav">
+        <a href="/" class="brand">Westmount Fundamentals</a>
+        <div class="nav-links">
+            <a href="/#studies">Studies</a>
+            <a href="/#tools">Tools</a>
+            <a href="/#guides">Guides</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>Treasury Yield Curve 2026</h1>
+            <div class="subtitle">Current Rates and Inversion Analysis</div>
+        </header>
+
+        <section>
+            <div class="card">
+                <h2>Key Metrics (As of 01/30/2026)</h2>
+                <div class="stat-grid">
+                    <div class="stat-box">
+                        <div class="stat-label">2-Year Yield</div>
+                        <div class="stat-value">3.52%</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">10-Year Yield</div>
+                        <div class="stat-value">4.26%</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">2s10s Spread</div>
+                        <div class="stat-value" style="color: var(--accent)">+0.74%</div>
+                    </div>
+                </div>
+                <p><strong>Curve Status:</strong> The yield curve is currently normal (upward sloping), meaning long-term rates are higher than short-term rates. This typically signals an expanding economy.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Interactive Yield Curve Chart</h2>
+            <div class="card">
+                <p>Compare the current treasury rates across all maturities with historical data from 1 year and 2 years ago.</p>
+                <div class="chart-container">
+                    <canvas id="yieldChart"></canvas>
+                </div>
+                <div class="legend">
+                    <div class="legend-item"><div class="legend-color" style="background: #4a8fe7;"></div>Current (01/30/2026)</div>
+                    <div class="legend-item"><div class="legend-color" style="background: #e74c3c;"></div>1 Year Ago (01/31/2025)</div>
+                    <div class="legend-item"><div class="legend-color" style="background: #2ecc71;"></div>2 Years Ago (01/31/2024)</div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Data Table: Treasury Yields</h2>
+            <div class="card table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Maturity</th>
+                            <th>Current (01/30/2026)</th>
+                            <th>1 Year Ago (01/31/2025)</th>
+                            <th>2 Years Ago (01/31/2024)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td><strong>1 Mo</strong></td>
+                            <td>3.72%</td>
+                            <td>4.37%</td>
+                            <td>5.53%</td>
+                        </tr>
+
+                        <tr>
+                            <td><strong>2 Mo</strong></td>
+                            <td>3.75%</td>
+                            <td>4.37%</td>
+                            <td>5.46%</td>
+                        </tr>
+
+                        <tr>
+                            <td><strong>3 Mo</strong></td>
+                            <td>3.67%</td>
+                            <td>4.31%</td>
+                            <td>5.42%</td>
+                        </tr>
+
+                        <tr>
+                            <td><strong>4 Mo</strong></td>
+                            <td>3.69%</td>
+                            <td>4.33%</td>
+                            <td>5.40%</td>
+                        </tr>
+
+                        <tr>
+                            <td><strong>6 Mo</strong></td>
+                            <td>3.61%</td>
+                            <td>4.28%</td>
+                            <td>5.18%</td>
+                        </tr>
+
+                        <tr>
+                            <td><strong>1 Yr</strong></td>
+                            <td>3.48%</td>
+                            <td>4.17%</td>
+                            <td>4.73%</td>
+                        </tr>
+
+                        <tr>
+                            <td><strong>2 Yr</strong></td>
+                            <td>3.52%</td>
+                            <td>4.22%</td>
+                            <td>4.27%</td>
+                        </tr>
+
+                        <tr>
+                            <td><strong>3 Yr</strong></td>
+                            <td>3.60%</td>
+                            <td>4.27%</td>
+                            <td>4.05%</td>
+                        </tr>
+
+                        <tr>
+                            <td><strong>5 Yr</strong></td>
+                            <td>3.79%</td>
+                            <td>4.36%</td>
+                            <td>3.91%</td>
+                        </tr>
+
+                        <tr>
+                            <td><strong>7 Yr</strong></td>
+                            <td>4.01%</td>
+                            <td>4.47%</td>
+                            <td>3.95%</td>
+                        </tr>
+
+                        <tr>
+                            <td><strong>10 Yr</strong></td>
+                            <td>4.26%</td>
+                            <td>4.58%</td>
+                            <td>3.99%</td>
+                        </tr>
+
+                        <tr>
+                            <td><strong>20 Yr</strong></td>
+                            <td>4.82%</td>
+                            <td>4.88%</td>
+                            <td>4.34%</td>
+                        </tr>
+
+                        <tr>
+                            <td><strong>30 Yr</strong></td>
+                            <td>4.87%</td>
+                            <td>4.83%</td>
+                            <td>4.22%</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section>
+            <h2>Analysis & Methodology</h2>
+            <div class="card">
+                <p>The US Treasury Yield Curve plots the interest rates of government bonds across different maturities, from 1 month to 30 years. Data is sourced directly from the U.S. Department of the Treasury.</p>
+                <p><strong>Yield Curve Inversion 2026:</strong> Historically, a normal yield curve slopes upward, compensating investors for the risk of tying up their money for longer periods. When the curve inverts (short-term rates exceed long-term rates, typically measured by the 2-year and 10-year spread), it indicates that bond investors expect interest rates to fall in the future, often as a result of central bank intervention to combat a slowing economy or recession.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Frequently Asked Questions</h2>
+            <div class="card">
+                <div class="faq-item">
+                    <h3>What is the yield curve 2026 signaling about the economy?</h3>
+                    <p>The yield curve in 2026 provides critical signals about economic health. An inverted curve, where short-term rates exceed long-term rates, often signals a potential recession, while a normal curve points to economic expansion. You can observe the current shape on our interactive chart to see its current state.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>How do I check the treasury yield curve today?</h3>
+                    <p>You can check the treasury yield curve today by reviewing our live-updated chart that pulls the latest data directly from the U.S. Department of the Treasury. The chart maps out yields from 1-month bills up to 30-year bonds.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Is there a yield curve inversion 2026?</h3>
+                    <p>To determine if there is a yield curve inversion in 2026, you look at the spread between the 2-year and 10-year Treasury notes. If the 2-year yield is higher than the 10-year yield, the curve is considered inverted.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What are the current treasury rates for short-term and long-term bonds?</h3>
+                    <p>Current treasury rates vary across the maturity spectrum. Short-term rates (like 1-month or 6-month) reflect near-term monetary policy, while long-term rates (like 10-year or 30-year) reflect long-term growth and inflation expectations. Check our data table for the exact latest percentages.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Why is the 2-year/10-year spread important?</h3>
+                    <p>The 2-year/10-year spread is the most closely watched part of the yield curve. A negative spread (inversion) has historically been one of the most reliable leading indicators of an impending economic recession.</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        © 2026 Westmount Research · A GAB Ventures property.<br>
+        Data for informational purposes only. Not investment advice. All information for educational purposes only.
+    </footer>
+
+    <script>
+        // Native Canvas Chart implementation
+        window.addEventListener('DOMContentLoaded', () => {
+            const canvas = document.getElementById('yieldChart');
+            const ctx = canvas.getContext('2d');
+
+            // Data injected from build
+            const terms = ["1 Mo","2 Mo","3 Mo","4 Mo","6 Mo","1 Yr","2 Yr","3 Yr","5 Yr","7 Yr","10 Yr","20 Yr","30 Yr"];
+            const datasetNow = [3.72,3.75,3.67,3.69,3.61,3.48,3.52,3.6,3.79,4.01,4.26,4.82,4.87];
+            const dataset1y = [4.37,4.37,4.31,4.33,4.28,4.17,4.22,4.27,4.36,4.47,4.58,4.88,4.83];
+            const dataset2y = [5.53,5.46,5.42,5.4,5.18,4.73,4.27,4.05,3.91,3.95,3.99,4.34,4.22];
+
+            function resize() {
+                const parent = canvas.parentElement;
+                canvas.width = parent.clientWidth;
+                canvas.height = parent.clientHeight;
+                drawChart();
+            }
+
+            window.addEventListener('resize', resize);
+
+            function drawChart() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                const padding = { top: 20, right: 20, bottom: 40, left: 40 };
+                const width = canvas.width - padding.left - padding.right;
+                const height = canvas.height - padding.top - padding.bottom;
+
+                // Find min and max
+                let allVals = [...datasetNow, ...dataset1y, ...dataset2y].filter(v => v !== null);
+                let maxVal = Math.max(...allVals) + 0.5;
+                let minVal = Math.max(0, Math.min(...allVals) - 0.5); // ensure >= 0 unless actual negative
+
+                // Draw grid lines and Y axis labels
+                ctx.strokeStyle = '#152040';
+                ctx.fillStyle = '#a0a8b8';
+                ctx.font = '12px "JetBrains Mono"';
+                ctx.textAlign = 'right';
+                ctx.textBaseline = 'middle';
+
+                const ySteps = 5;
+                for(let i=0; i<=ySteps; i++) {
+                    const val = minVal + (maxVal - minVal) * (i / ySteps);
+                    const y = canvas.height - padding.bottom - (height * (i / ySteps));
+
+                    ctx.beginPath();
+                    ctx.moveTo(padding.left, y);
+                    ctx.lineTo(canvas.width - padding.right, y);
+                    ctx.stroke();
+
+                    ctx.fillText(val.toFixed(1) + '%', padding.left - 5, y);
+                }
+
+                // Draw X axis labels
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'top';
+                for(let i=0; i<terms.length; i++) {
+                    const x = padding.left + (width * (i / (terms.length - 1)));
+
+                    // only show some labels on mobile to prevent overlap
+                    if (window.innerWidth < 600 && i % 2 !== 0 && i !== terms.length -1) continue;
+
+                    ctx.fillText(terms[i], x, canvas.height - padding.bottom + 10);
+                }
+
+                // Draw lines
+                function drawLine(dataset, color, fillAlpha) {
+                    ctx.beginPath();
+                    let started = false;
+                    for(let i=0; i<terms.length; i++) {
+                        if (dataset[i] === null) continue;
+
+                        const x = padding.left + (width * (i / (terms.length - 1)));
+                        const y = canvas.height - padding.bottom - (height * ((dataset[i] - minVal) / (maxVal - minVal)));
+
+                        if (!started) {
+                            ctx.moveTo(x, y);
+                            started = true;
+                        } else {
+                            ctx.lineTo(x, y);
+                        }
+                    }
+
+                    ctx.strokeStyle = color;
+                    ctx.lineWidth = 3;
+                    ctx.lineJoin = 'round';
+                    ctx.stroke();
+
+                    // Optional fill (like area chart)
+                    if (fillAlpha && started) {
+                        ctx.lineTo(canvas.width - padding.right, canvas.height - padding.bottom);
+                        ctx.lineTo(padding.left, canvas.height - padding.bottom);
+                        ctx.fillStyle = color.replace('rgb', 'rgba').replace(')', `, ${fillAlpha})`);
+                        ctx.fill();
+                    }
+                }
+
+                drawLine(dataset2y, 'rgb(46, 204, 113)', 0.0);
+                drawLine(dataset1y, 'rgb(231, 76, 60)', 0.0);
+                drawLine(datasetNow, 'rgb(74, 143, 231)', 0.1);
+            }
+
+            // Initial draw
+            resize();
+        });
+    </script>
+</body>
+</html>
