@@ -12,7 +12,10 @@
     "@playwright/test": "^1.58.2",
     "astro": "^5.17.1",
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
     "axios": "^1.13.6",
+>>>>>>> main
     "cheerio": "^1.2.0",
     "jsdom": "^28.1.0",
     "node-fetch": "^3.3.2",
@@ -28,5 +31,9 @@
     "playwright": "^1.58.2",
 >>>>>>> main
     "yahoo-finance2": "^3.13.2"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.58.2",
+    "playwright": "^1.58.2"
   }
 }
