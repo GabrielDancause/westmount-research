@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://westmountfundamentals.com/reit-dividend-yields-2026.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://westmountfundamentals.com/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
   <url><loc>https://westmountfundamentals.com/average-etf-expense-ratio-2026.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://westmountfundamentals.com/average-institutional-ownership-2026.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://westmountfundamentals.com/best-dividend-etfs-2026.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://westmountfundamentals.com/best-performing-stocks-2026.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://westmountfundamentals.com/beta-volatility.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://westmountfundamentals.com/bond-etf-expense-ratio-comparison.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://westmountfundamentals.com/broker-fees.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
@@ -19,6 +21,7 @@
   <url><loc>https://westmountfundamentals.com/dividend-yield-vs-growth.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://westmountfundamentals.com/equity-risk-premium.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://westmountfundamentals.com/etf-expense-ratios.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://westmountfundamentals.com/etf-tax-efficiency-comparison.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://westmountfundamentals.com/etf-vs-index-funds-guide.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://westmountfundamentals.com/ev-ebitda-sectors.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://westmountfundamentals.com/fire-calculator.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
@@ -26,6 +29,7 @@
   <url><loc>https://westmountfundamentals.com/free-cash-flow-yield.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://westmountfundamentals.com/guide-bond-ratings.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://westmountfundamentals.com/guide-dividend-portfolio.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://westmountfundamentals.com/guide-dollar-cost-averaging.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://westmountfundamentals.com/guide-etf-investing.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://westmountfundamentals.com/guide-how-etf-expense-ratios-work.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://westmountfundamentals.com/guide-market-cycles.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
@@ -33,6 +37,8 @@
   <url><loc>https://westmountfundamentals.com/guide-reading-financial-statements.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://westmountfundamentals.com/guide-technical-analysis-basics.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://westmountfundamentals.com/guide-value-investing.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://westmountfundamentals.com/guide-portfolio-diversification.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://westmountfundamentals.com/guide-rebalancing-strategies.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://westmountfundamentals.com/highest-expense-ratio-etfs-2026.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://westmountfundamentals.com/insider-trading.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://westmountfundamentals.com/institutional-ownership.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
@@ -53,6 +59,20 @@
   <url><loc>https://westmountfundamentals.com/short-squeeze-candidates-march-2026.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://westmountfundamentals.com/sp500-peg-ratios.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://westmountfundamentals.com/sp500-sector-weights.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://westmountfundamentals.com/stock-correlation-matrix-2026.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://westmountfundamentals.com/stock-splits-history.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://westmountfundamentals.com/working-capital.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://westmountfundamentals.com/bond-yield-curve-2026.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://westmountfundamentals.com/magnificent-seven-stocks-2026.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url>
+    <loc>https://westmountfundamentals.com/sp500-dividend-yield-history.html</loc>
+  </url>
+  <url><loc>https://westmountfundamentals.com/small-cap-value-stocks-2026.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://westmountfundamentals.com/warren-buffett-portfolio-2026.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://westmountfundamentals.com/best-sp500-index-funds-2026.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://westmountfundamentals.com/sp500-pe-ratio-history.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://westmountfundamentals.com/inflation-adjusted-stock-returns.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://westmountfundamentals.com/stock-market-returns-by-year.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://westmountfundamentals.com/gold-vs-stocks-historical.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://westmountfundamentals.com/sp500-earnings-growth-rankings.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 </urlset>
