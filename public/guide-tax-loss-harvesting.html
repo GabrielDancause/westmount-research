@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tax Loss Harvesting Explained: Turn Losing Stocks Into Tax Savings</title>
+    <meta name="description" content="Think selling stocks in the red is a complete failure? In this comprehensive guide, discover how elite investors utilize this specific strategy to convert their losing trades into guaranteed IRS savings.">
+    <link rel="canonical" href="https://westmountfundamentals.com/guide-tax-loss-harvesting.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Tax Loss Harvesting Explained: Turn Losing Stocks Into Tax Savings",
+      "description": "Think selling stocks in the red is a complete failure? In this comprehensive guide, discover how elite investors utilize this specific strategy to convert their losing trades into guaranteed IRS savings.",
+      "datePublished": "2026-03-11",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Westmount Research",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://westmountfundamentals.com/favicon.svg"
+        }
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "Westmount Research"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Tax loss harvesting explained?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tax loss harvesting is an investment strategy where you sell securities at a loss to offset a capital gains tax liability. It allows you to reduce your overall tax bill while maintaining your market position by buying a similar, but not substantially identical, asset."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does tax loss harvesting work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It works by selling a stock or ETF that has dropped in value. The realized loss is then used to offset any realized capital gains from other investments. If your losses exceed your gains, you can offset up to $3,000 of ordinary income per year, and carry forward any remaining losses to future years."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the key tax loss harvesting rules?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The most important rules include the wash sale rule, which prevents you from claiming the loss if you buy a 'substantially identical' asset within 30 days before or after the sale. Also, short-term losses first offset short-term gains, and long-term losses first offset long-term gains."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much can you deduct with tax loss harvesting?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "If your capital losses exceed your capital gains, you can deduct up to $3,000 of those losses against your ordinary income in a given tax year. Any losses beyond that $3,000 limit can be carried forward indefinitely into future tax years."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is tax loss harvesting worth it?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It is generally worth it if you have highly taxed short-term capital gains, are in a high income tax bracket, or have significant portfolio losses. It may not make sense if you are in a very low tax bracket where capital gains taxes are already 0%, or if transaction costs outweigh the tax benefits."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        :root {
+            --bg-color: #060a12;
+            --card-bg: #0a1020;
+            --border-color: #152040;
+            --accent-color: #4a8fe7;
+            --text-primary: #e2e8f0;
+            --text-secondary: #94a3b8;
+            --font-body: 'Inter', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .sticky-nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(6, 10, 18, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 1.5rem;
+        }
+
+        .nav-brand {
+            color: var(--text-primary);
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+
+        .nav-brand span {
+            color: var(--accent-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            color: #ffffff;
+            letter-spacing: -0.02em;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+            color: #ffffff;
+            letter-spacing: -0.01em;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        strong {
+            color: var(--text-primary);
+        }
+
+        ul, ol {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .calculator-container {
+            margin-top: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 0.75rem;
+            background-color: var(--bg-color);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            color: var(--text-primary);
+            font-family: var(--font-mono);
+            font-size: 1rem;
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-color: var(--accent-color);
+        }
+
+        button {
+            background-color: var(--accent-color);
+            color: #ffffff;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #3a7bd5;
+        }
+
+        .results {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border-color);
+            display: none;
+        }
+
+        .result-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .result-item span:last-child {
+            font-family: var(--font-mono);
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .result-highlight {
+            font-size: 1.3rem;
+            color: var(--accent-color) !important;
+        }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            font-size: 1.2rem;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .faq-answer {
+            color: var(--text-secondary);
+            margin-bottom: 0;
+            font-size: 1rem;
+        }
+
+        .alert-box {
+            background-color: rgba(74, 143, 231, 0.1);
+            border-left: 4px solid var(--accent-color);
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .alert-box p {
+            margin: 0;
+            color: var(--text-primary);
+        }
+
+        footer {
+            border-top: 1px solid var(--border-color);
+            padding: 3rem 1.5rem;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VYF72NSC1Q"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-VYF72NSC1Q');</script>
+</head>
+<body>
+    <nav class="sticky-nav">
+        <div class="nav-container">
+            <a href="/" class="nav-brand">Westmount <span>Fundamentals</span></a>
+            <div class="nav-links">
+                <a href="/#studies">Studies</a>
+                <a href="/#tools">Tools</a>
+                <a href="/#guides">Guides</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <h1>Tax Loss Harvesting Explained: Turn Losing Stocks Into Tax Savings</h1>
+
+        <p>No one likes seeing red in their portfolio. But what if those losing investments could actively save you money when tax season rolls around? That's the power of tax-loss harvesting.</p>
+
+        <p>This strategy isn't just for billionaires and hedge funds. Anyone with a taxable brokerage account can use it to offset gains, reduce their ordinary income tax, and keep more of their hard-earned money working for them in the market.</p>
+
+        <h2>How Does Tax Loss Harvesting Work?</h2>
+        <p>At its core, <strong>tax-loss harvesting</strong> is the practice of selling an investment that has lost value, replacing it with a similar investment to maintain your asset allocation, and then using the realized loss to offset taxes on both gains and income.</p>
+
+        <p>Here is the step-by-step process:</p>
+        <ol>
+            <li><strong>Identify Losers:</strong> Review your taxable portfolio for assets trading below their original purchase price (your cost basis).</li>
+            <li><strong>Sell to Realize the Loss:</strong> Execute a sell order. What was previously an "unrealized" or "paper" loss is now a "realized" loss recognized by the IRS.</li>
+            <li><strong>Offset Gains:</strong> Use the realized losses to cancel out realized capital gains you may have incurred during the year.</li>
+            <li><strong>Reinvest:</strong> Take the cash from the sale and buy a similar—but not identical—asset to keep your portfolio balanced and positioned for a market recovery.</li>
+        </ol>
+
+        <h2>Tax Loss Harvesting Rules You Must Follow</h2>
+        <p>While the concept is straightforward, the IRS has strict rules governing how and when you can claim these losses. Understanding these <strong>tax loss harvesting rules</strong> is critical to successfully executing the strategy.</p>
+
+        <h3>The Wash Sale Rule (The 30-Day Trap)</h3>
+        <p>The most crucial regulation is the <strong>wash sale rule</strong>. The IRS won't let you sell a stock for a tax deduction and immediately buy it back. If you purchase a "substantially identical" security within 30 days before or 30 days after the sale, the wash sale rule is triggered.</p>
+
+        <div class="alert-box">
+            <p><strong>Warning:</strong> If you trigger a wash sale, your loss is disallowed for the current tax year. Instead, the loss is added to the cost basis of the newly purchased shares.</p>
+        </div>
+
+        <p>To avoid the wash sale rule while staying invested, you must buy a similar but not identical asset. For example, if you sell the SPDR S&P 500 ETF (SPY) at a loss, you cannot immediately buy back SPY. However, you could buy the Vanguard S&P 500 ETF (VOO) or a Russell 1000 ETF to maintain your large-cap US stock exposure.</p>
+
+        <h3>Short-Term vs. Long-Term Losses</h3>
+        <p>The IRS categorizes capital gains and losses by how long you held the asset:</p>
+        <ul>
+            <li><strong>Short-term:</strong> Held for one year or less. Taxed at your ordinary income tax rate.</li>
+            <li><strong>Long-term:</strong> Held for more than one year. Taxed at preferable capital gains rates (0%, 15%, or 20%).</li>
+        </ul>
+        <p>When offsetting gains, like must offset like first. Short-term losses must first offset short-term gains, and long-term losses must first offset long-term gains. If you have excess losses in one category, they can then cross over to offset gains in the other category.</p>
+
+        <h3>How Much You Can Deduct ($3,000/yr + Carry Forward)</h3>
+        <p>What happens if your losses exceed all your capital gains for the year? This is where tax-loss harvesting becomes highly valuable.</p>
+
+        <p>You can use up to <strong>$3,000 of excess capital losses</strong> ($1,500 if married filing separately) to offset your ordinary income (like your salary) each year. Depending on your tax bracket, this $3,000 deduction can save you over $1,000 in actual taxes.</p>
+
+        <p>If your net losses exceed $3,000, the remaining balance isn't lost. You can <strong>carry forward</strong> the remaining losses indefinitely into future tax years.</p>
+
+        <div class="card">
+            <h2 style="margin-top: 0;">Tax Loss Harvesting Calculator</h2>
+            <p>Estimate your potential tax savings by inputting your realized gains, losses, and estimated tax brackets.</p>
+
+            <div class="calculator-container">
+                <div class="form-group">
+                    <label for="realized-gains">Total Realized Capital Gains ($)</label>
+                    <input type="number" id="realized-gains" value="0" min="0" step="100">
+                </div>
+                <div class="form-group">
+                    <label for="realized-losses">Total Realized Capital Losses ($)</label>
+                    <input type="number" id="realized-losses" value="5000" min="0" step="100">
+                </div>
+                <div class="form-group">
+                    <label for="st-tax-rate">Estimated Short-Term / Ordinary Tax Rate (%)</label>
+                    <select id="st-tax-rate">
+                        <option value="0.10">10%</option>
+                        <option value="0.12">12%</option>
+                        <option value="0.22">22%</option>
+                        <option value="0.24" selected>24%</option>
+                        <option value="0.32">32%</option>
+                        <option value="0.35">35%</option>
+                        <option value="0.37">37%</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="lt-tax-rate">Estimated Long-Term Cap Gains Rate (%)</label>
+                    <select id="lt-tax-rate">
+                        <option value="0.00">0%</option>
+                        <option value="0.15" selected>15%</option>
+                        <option value="0.20">20%</option>
+                    </select>
+                </div>
+                <button onclick="calculateTaxSavings()">Calculate Estimated Savings</button>
+
+                <div class="results" id="calc-results">
+                    <div class="result-item">
+                        <span>Net Gain/Loss:</span>
+                        <span id="res-net">-$5,000</span>
+                    </div>
+                    <div class="result-item">
+                        <span>Losses Used to Offset Gains:</span>
+                        <span id="res-offset">$0</span>
+                    </div>
+                    <div class="result-item">
+                        <span>Losses Deducted from Income:</span>
+                        <span id="res-income-deduct">$3,000</span>
+                    </div>
+                    <div class="result-item">
+                        <span>Losses Carried Forward:</span>
+                        <span id="res-carry">$2,000</span>
+                    </div>
+                    <div class="result-item" style="margin-top: 1rem; border-top: 1px dashed var(--border-color); padding-top: 1rem;">
+                        <strong>Estimated Tax Savings:</strong>
+                        <span class="result-highlight" id="res-savings">$720</span>
+                    </div>
+                    <p style="font-size: 0.85rem; margin-top: 1rem; color: var(--text-secondary);">*Calculations are simplified estimates and assume all gains/losses are short-term for maximum possible benefit visualization. Consult a tax professional.</p>
+                </div>
+            </div>
+        </div>
+
+        <h2>When It Makes Sense (And When It Doesn't)</h2>
+        <p>Tax-loss harvesting is a powerful tool, but it's not a universal solution.</p>
+
+        <p><strong>It makes sense when:</strong></p>
+        <ul>
+            <li>You have significant realized capital gains in the current tax year.</li>
+            <li>You are in a high ordinary income tax bracket and want the $3,000 deduction.</li>
+            <li>You hold investments in taxable brokerage accounts (not IRAs or 401(k)s, where tax-loss harvesting provides zero benefit).</li>
+            <li>You can easily substitute the sold asset without fundamentally altering your portfolio's risk profile.</li>
+        </ul>
+
+        <p><strong>It doesn't make sense when:</strong></p>
+        <ul>
+            <li>You are in a 0% capital gains tax bracket. Selling at a loss gives you no tax benefit on gains, though it could still offset ordinary income.</li>
+            <li>The transaction costs (commissions, bid-ask spreads) outweigh the tax benefits.</li>
+            <li>You are holding the assets in tax-advantaged retirement accounts.</li>
+            <li>You plan to buy the exact same stock back within 30 days (triggering the wash sale rule).</li>
+        </ul>
+
+        <h2>Common Mistakes</h2>
+        <p>Beyond the wash sale rule, investors often make a few critical errors. First, letting the "tax tail wag the investment dog." Don't sell an investment you fundamentally believe in just to get a minor tax deduction, especially if you can't find a suitable replacement. Second, triggering wash sales across accounts. The wash sale rule applies across <em>all</em> your accounts, including your IRA or your spouse's accounts. If you sell a stock for a loss in your taxable account, but your IRA automatically reinvests dividends to buy the same stock the next day, you've triggered a wash sale.</p>
+
+        <h2>Automating with Robo-Advisors</h2>
+        <p>Keeping track of cost basis, wash sale windows, and cross-account trading can be exhausting. This is why many investors turn to <strong>robo-advisors</strong> like Betterment or Wealthfront.</p>
+        <p>These platforms offer automated tax-loss harvesting algorithms that scan your portfolio daily. When an asset drops by a specific percentage, the algorithm automatically sells it, buys a highly correlated alternative ETF to avoid wash sales, and banks the loss for tax season—all without requiring manual intervention.</p>
+
+        <h2>FAQ: Tax Loss Harvesting</h2>
+
+        <div class="faq-item">
+            <h3 class="faq-question">Tax loss harvesting explained?</h3>
+            <p class="faq-answer">Tax loss harvesting is an investment strategy where you sell securities at a loss to offset a capital gains tax liability. It allows you to reduce your overall tax bill while maintaining your market position by buying a similar, but not substantially identical, asset.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3 class="faq-question">How does tax loss harvesting work?</h3>
+            <p class="faq-answer">It works by selling a stock or ETF that has dropped in value. The realized loss is then used to offset any realized capital gains from other investments. If your losses exceed your gains, you can offset up to $3,000 of ordinary income per year, and carry forward any remaining losses to future years.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3 class="faq-question">What are the key tax loss harvesting rules?</h3>
+            <p class="faq-answer">The most important rules include the wash sale rule, which prevents you from claiming the loss if you buy a 'substantially identical' asset within 30 days before or after the sale. Also, short-term losses first offset short-term gains, and long-term losses first offset long-term gains.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3 class="faq-question">How much can you deduct with tax loss harvesting?</h3>
+            <p class="faq-answer">If your capital losses exceed your capital gains, you can deduct up to $3,000 of those losses against your ordinary income in a given tax year. Any losses beyond that $3,000 limit can be carried forward indefinitely into future tax years.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3 class="faq-question">Is tax loss harvesting worth it?</h3>
+            <p class="faq-answer">It is generally worth it if you have highly taxed short-term capital gains, are in a high income tax bracket, or have significant portfolio losses. It may not make sense if you are in a very low tax bracket where capital gains taxes are already 0%, or if transaction costs outweigh the tax benefits.</p>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>© 2026 Westmount Research · A GAB Ventures property. Not investment advice. All information for educational purposes only.</p>
+    </footer>
+
+    <script>
+        function calculateTaxSavings() {
+            const gains = parseFloat(document.getElementById('realized-gains').value) || 0;
+            const losses = parseFloat(document.getElementById('realized-losses').value) || 0;
+            const stRate = parseFloat(document.getElementById('st-tax-rate').value) || 0;
+            const ltRate = parseFloat(document.getElementById('lt-tax-rate').value) || 0;
+
+            const net = gains - losses;
+
+            let offsetAmount = 0;
+            let incomeDeduct = 0;
+            let carryForward = 0;
+            let savings = 0;
+
+            if (net < 0) {
+                // Net loss
+                const netLoss = Math.abs(net);
+                offsetAmount = gains;
+                incomeDeduct = Math.min(netLoss, 3000);
+                carryForward = Math.max(0, netLoss - 3000);
+
+                // Simplified savings calculation:
+                // Savings from offsetting gains (assume ST for max illustration)
+                const savingsFromGains = offsetAmount * stRate;
+                // Savings from income deduction
+                const savingsFromIncome = incomeDeduct * stRate;
+
+                savings = savingsFromGains + savingsFromIncome;
+
+            } else {
+                // Net gain or 0
+                offsetAmount = losses;
+                incomeDeduct = 0;
+                carryForward = 0;
+
+                savings = offsetAmount * stRate;
+            }
+
+            const formatter = new Intl.NumberFormat('en-US', {
+                style: 'currency',
+                currency: 'USD',
+                maximumFractionDigits: 0
+            });
+
+            document.getElementById('res-net').textContent = formatter.format(net);
+            // Color net red if negative, green if positive
+            document.getElementById('res-net').style.color = net < 0 ? '#ef4444' : (net > 0 ? '#22c55e' : 'var(--text-primary)');
+
+            document.getElementById('res-offset').textContent = formatter.format(offsetAmount);
+            document.getElementById('res-income-deduct').textContent = formatter.format(incomeDeduct);
+            document.getElementById('res-carry').textContent = formatter.format(carryForward);
+            document.getElementById('res-savings').textContent = formatter.format(savings);
+
+            document.getElementById('calc-results').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
