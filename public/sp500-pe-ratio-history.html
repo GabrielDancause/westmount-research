@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S&P 500 P/E Ratio History: Is the Market Overvalued in 2026?</title>
+    <!-- Curiosity Gap Description -->
+    <meta name="description" content="A shocking look at the S&P 500 P/E ratio history from 1950 to 2026. See exactly where current valuations sit compared to historic bubble peaks and bottoms.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://westmountfundamentals.com/sp500-pe-ratio-history.html">
+
+    <meta property="og:title" content="S&P 500 P/E Ratio History: Is the Market Overvalued in 2026?">
+    <meta property="og:description" content="A shocking look at the S&P 500 P/E ratio history from 1950 to 2026. See exactly where current valuations sit compared to historic bubble peaks and bottoms.">
+    <meta property="og:url" content="https://westmountfundamentals.com/sp500-pe-ratio-history.html">
+    <meta property="og:type" content="article">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@2.2.1/dist/chartjs-plugin-annotation.min.js"></script>
+
+    <style>
+        :root {
+            --bg-color: #060a12;
+            --card-bg: #0a1020;
+            --border-color: #152040;
+            --accent-color: #4a8fe7;
+            --text-color: #e2e8f0;
+            --text-muted: #94a3b8;
+            --accent-shiller: #f59e0b;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .sticky-nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: rgba(10, 16, 32, 0.85);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .nav-brand {
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+            font-size: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-brand span {
+            color: var(--accent-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+            font-size: 0.9rem;
+        }
+
+        .nav-links a:hover {
+            color: white;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        h1, h2, h3 {
+            color: white;
+            line-height: 1.2;
+            margin-top: 0;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .stat-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .stat-label {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-value {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: white;
+        }
+
+        .stat-value.pe { color: var(--accent-color); }
+        .stat-value.shiller { color: var(--accent-shiller); }
+
+        .stat-context {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .chart-section {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .chart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .chart-container {
+            position: relative;
+            height: 500px;
+            width: 100%;
+        }
+
+        .content-section {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .content-section p {
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        .faq-section {
+            margin-top: 4rem;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+            padding: 1.5rem 0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 0.75rem;
+        }
+
+        .faq-answer {
+            color: var(--text-muted);
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            .nav-container { padding: 0 1rem; flex-direction: column; gap: 1rem; }
+            .nav-links { gap: 1rem; }
+            .container { padding: 2rem 1rem; }
+            .chart-container { height: 350px; }
+            .content-section { padding: 1.5rem; }
+        }
+    </style>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VYF72NSC1Q"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-VYF72NSC1Q');
+    </script>
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "S&P 500 P/E Ratio History: Is the Market Overvalued in 2026?",
+      "description": "A shocking look at the S&P 500 P/E ratio history from 1950 to 2026. See exactly where current valuations sit compared to historic bubble peaks and bottoms.",
+      "datePublished": "2026-03-10",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Westmount Research",
+        "url": "https://westmountfundamentals.com"
+      }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the S&P 500 PE ratio history?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The S&P 500 P/E ratio has historically averaged around 15 to 16 over the long term. However, it has fluctuated significantly, reaching peaks near 45 during the Dot-Com bubble and plunging below 7 during major bear markets and recessions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the stock market overvalued in 2026?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Determining if the stock market is overvalued in 2026 requires looking at metrics like the trailing P/E ratio, the Shiller CAPE ratio, and the Buffett Indicator. When these metrics sit significantly above their historical averages, markets are generally considered expensive relative to historical norms, implying lower forward returns."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the Shiller PE ratio in 2026?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Shiller PE ratio, or CAPE ratio, is a valuation metric that uses 10 years of inflation-adjusted earnings to smooth out cyclical fluctuations. You can check the exact current value in our real-time interactive chart above, which updates based on the latest S&P 500 index levels and earnings reports."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the CAPE ratio current level?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The current CAPE (Cyclically Adjusted Price-to-Earnings) ratio compares the current price of the S&P 500 to average inflation-adjusted earnings from the previous 10 years. Our live dashboard provides the exact current CAPE ratio alongside its historical mean."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does an elevated P/E mean for forward returns?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Historically, starting valuation matters. An elevated P/E or CAPE ratio often correlates with lower annualized returns over the subsequent 7 to 10 years. While an overvalued market doesn't guarantee an immediate crash, it mathematically suggests less upside potential compared to buying during a trough."
+          }
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+
+    <nav class="sticky-nav">
+        <div class="nav-container">
+            <a href="/" class="nav-brand">Westmount <span>Fundamentals</span></a>
+            <div class="nav-links">
+                <a href="/#studies">Studies</a>
+                <a href="/#tools">Tools</a>
+                <a href="/#guides">Guides</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>S&P 500 P/E Ratio History: Is the Market Overvalued in 2026?</h1>
+            <p class="subtitle">An interactive historical analysis of S&P 500 trailing P/E and Shiller CAPE valuations from 1950 to present day.</p>
+        </header>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-label">Current Trailing P/E</div>
+                <div class="stat-value pe">29.16</div>
+                <div class="stat-context">Historical Avg: 18.83</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Current Shiller P/E</div>
+                <div class="stat-value shiller">39.21</div>
+                <div class="stat-context">Historical Avg: 20.73</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Historical Data Points</div>
+                <div class="stat-value" style="color: white;">916</div>
+                <div class="stat-context">Since Jan 1950</div>
+            </div>
+        </div>
+
+        <div class="chart-section">
+            <div class="chart-header">
+                <h2>Historical Valuations (1950–2026)</h2>
+            </div>
+            <div class="chart-container">
+                <canvas id="peChart"></canvas>
+            </div>
+            <p style="font-size: 0.8rem; color: var(--text-muted); text-align: center; margin-top: 1rem;">
+                Shaded areas represent recessions. Bubble peaks (2000, 2021) and bottoms (2009, 2020) are marked. Data sourced from Robert Shiller & Multpl.
+            </p>
+        </div>
+
+        <div class="content-section">
+            <h2>Understanding the Metrics</h2>
+            <p>
+                When determining "<strong>is the stock market overvalued 2026</strong>", investors primarily rely on two cornerstone metrics: the traditional Trailing Price-to-Earnings (P/E) ratio and the Shiller CAPE ratio.
+            </p>
+            <p>
+                The <strong>Trailing P/E Ratio</strong> divides the current S&P 500 index price by the cumulative earnings of its constituent companies over the past 12 months. While straightforward, it can be heavily skewed by sudden, short-term earnings collapses—such as those seen during the 2008 Financial Crisis or the 2020 pandemic lockdowns—which paradoxically make the market look "expensive" right when it is bottoming out.
+            </p>
+            <p>
+                To solve this, Nobel laureate Robert Shiller popularized the <strong>Cyclically Adjusted Price-to-Earnings (CAPE) ratio</strong> (often called the Shiller P/E). The <strong>Shiller PE ratio 2026</strong> takes the current price and divides it by the average, inflation-adjusted earnings from the previous 10 years. This smooths out the business cycle, providing a clearer picture of true valuation.
+            </p>
+
+            <h2>Current Valuation vs Historical Average</h2>
+            <p>
+                Looking at the <strong>s&p 500 pe ratio history</strong>, the historical average P/E sits around 16, while the historical average Shiller CAPE is around 17 (though the average for the CAPE has trended higher in the modern era).
+            </p>
+            <p>
+                Currently, valuations are well above these historical medians. While high valuations do not necessarily trigger an immediate crash, they are strongly correlated with lower forward returns. When the <strong>cape ratio current</strong> levels are elevated into the high 30s, historical precedents (like the late 1990s Dot-Com bubble or the 2021 post-pandemic peak) suggest that annualized returns over the subsequent 7-10 year period are likely to be subdued, or even negative in real terms.
+            </p>
+
+            <h2>The Buffett Indicator Comparison</h2>
+            <p>
+                Another popular macro valuation metric is the "Buffett Indicator"—the ratio of total United States stock market valuation to GDP. Similar to the Shiller P/E, when the Buffett Indicator stretches significantly past its historical trendline (often exceeding 150% to 200%), it corroborates the warning signs flashing from the P/E metrics. Together, an elevated CAPE ratio and a soaring Buffett Indicator suggest that the market is pulling forward future growth, increasing the risk profile for new capital deployed today.
+            </p>
+        </div>
+
+        <div class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <div class="faq-question">What is the S&P 500 PE ratio history?</div>
+                <div class="faq-answer">The S&P 500 P/E ratio has historically averaged around 15 to 16 over the long term. However, it has fluctuated significantly, reaching peaks near 45 during the Dot-Com bubble and plunging below 7 during major bear markets and recessions.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Is the stock market overvalued in 2026?</div>
+                <div class="faq-answer">Determining if the stock market is overvalued in 2026 requires looking at metrics like the trailing P/E ratio, the Shiller CAPE ratio, and the Buffett Indicator. When these metrics sit significantly above their historical averages, markets are generally considered expensive relative to historical norms, implying lower forward returns.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">What is the Shiller PE ratio in 2026?</div>
+                <div class="faq-answer">The Shiller PE ratio, or CAPE ratio, is a valuation metric that uses 10 years of inflation-adjusted earnings to smooth out cyclical fluctuations. You can check the exact current value in our real-time interactive chart above, which updates based on the latest S&P 500 index levels and earnings reports.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">What is the CAPE ratio current level?</div>
+                <div class="faq-answer">The current CAPE (Cyclically Adjusted Price-to-Earnings) ratio compares the current price of the S&P 500 to average inflation-adjusted earnings from the previous 10 years. Our live dashboard provides the exact current CAPE ratio alongside its historical mean.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">What does an elevated P/E mean for forward returns?</div>
+                <div class="faq-answer">Historically, starting valuation matters. An elevated P/E or CAPE ratio often correlates with lower annualized returns over the subsequent 7 to 10 years. While an overvalued market doesn't guarantee an immediate crash, it mathematically suggests less upside potential compared to buying during a trough.</div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        © 2026 Westmount Research · A GAB Ventures property.<br>
+        Data for informational purposes only. Not investment advice.
+    </footer>
+
+    <script>
+        // Inject data directly into client
+        window.__INITIAL_DATA__ = [{"date":"1950-01-01","pe":7.22,"shiller":10.75},{"date":"1950-02-01","pe":7.31,"shiller":10.91},{"date":"1950-03-01","pe":7.32,"shiller":10.91},{"date":"1950-04-01","pe":7.35,"shiller":11.18},{"date":"1950-05-01","pe":7.43,"shiller":11.46},{"date":"1950-06-01","pe":7.38,"shiller":11.55},{"date":"1950-07-01","pe":6.68,"shiller":10.54},{"date":"1950-08-01","pe":6.93,"shiller":11.04},{"date":"1950-09-01","pe":7.01,"shiller":11.34},{"date":"1950-10-01","pe":7.2,"shiller":11.66},{"date":"1950-11-01","pe":7.08,"shiller":11.54},{"date":"1950-12-01","pe":6.95,"shiller":11.31},{"date":"1951-01-01","pe":7.48,"shiller":11.9},{"date":"1951-02-01","pe":7.76,"shiller":12.14},{"date":"1951-03-01","pe":7.64,"shiller":11.84},{"date":"1951-04-01","pe":7.85,"shiller":11.95},{"date":"1951-05-01","pe":7.96,"shiller":11.86},{"date":"1951-06-01","pe":7.92,"shiller":11.62},{"date":"1951-07-01","pe":8.28,"shiller":11.78},{"date":"1951-08-01","pe":8.87,"shiller":12.26},{"date":"1951-09-01","pe":9.35,"shiller":12.44},{"date":"1951-10-01","pe":9.39,"shiller":12.31},{"date":"1951-11-01","pe":9.22,"shiller":11.85},{"date":"1951-12-01","pe":9.59,"shiller":12.15},{"date":"1952-01-01","pe":9.97,"shiller":12.53},{"date":"1952-02-01","pe":9.84,"shiller":12.36},{"date":"1952-03-01","pe":9.92,"shiller":12.36},{"date":"1952-04-01","pe":9.97,"shiller":12.24},{"date":"1952-05-01","pe":10.06,"shiller":12.2},{"date":"1952-06-01","pe":10.42,"shiller":12.45},{"date":"1952-07-01","pe":10.69,"shiller":12.67},{"date":"1952-08-01","pe":10.7,"shiller":12.68},{"date":"1952-09-01","pe":10.5,"shiller":12.43},{"date":"1952-10-01","pe":10.22,"shiller":12.13},{"date":"1952-11-01","pe":10.49,"shiller":12.47},{"date":"1952-12-01","pe":10.85,"shiller":12.93},{"date":"1953-01-01","pe":10.86,"shiller":13.01},{"date":"1953-02-01","pe":10.69,"shiller":12.86},{"date":"1953-03-01","pe":10.7,"shiller":12.83},{"date":"1953-04-01","pe":10.06,"shiller":12.16},{"date":"1953-05-01","pe":10,"shiller":12.14},{"date":"1953-06-01","pe":9.54,"shiller":11.62},{"date":"1953-07-01","pe":9.63,"shiller":11.75},{"date":"1953-08-01","pe":9.61,"shiller":11.72},{"date":"1953-09-01","pe":9.13,"shiller":11.14},{"date":"1953-10-01","pe":9.45,"shiller":11.39},{"date":"1953-11-01","pe":9.71,"shiller":11.64},{"date":"1953-12-01","pe":9.89,"shiller":11.75},{"date":"1954-01-01","pe":10.09,"shiller":12},{"date":"1954-02-01","pe":10.26,"shiller":12.22},{"date":"1954-03-01","pe":10.42,"shiller":12.42},{"date":"1954-04-01","pe":10.74,"shiller":12.91},{"date":"1954-05-01","pe":11.06,"shiller":13.31},{"date":"1954-06-01","pe":11.05,"shiller":13.36},{"date":"1954-07-01","pe":11.49,"shiller":13.83},{"date":"1954-08-01","pe":11.7,"shiller":14.04},{"date":"1954-09-01","pe":11.96,"shiller":14.36},{"date":"1954-10-01","pe":12.02,"shiller":14.62},{"date":"1954-11-01","pe":12.28,"shiller":15.12},{"date":"1954-12-01","pe":12.62,"shiller":15.79},{"date":"1955-01-01","pe":12.56,"shiller":15.99},{"date":"1955-02-01","pe":12.7,"shiller":16.44},{"date":"1955-03-01","pe":12.33,"shiller":16.22},{"date":"1955-04-01","pe":12.39,"shiller":16.69},{"date":"1955-05-01","pe":12,"shiller":16.52},{"date":"1955-06-01","pe":12.35,"shiller":17.37},{"date":"1955-07-01","pe":12.96,"shiller":18.45},{"date":"1955-08-01","pe":12.6,"shiller":18.22},{"date":"1955-09-01","pe":12.89,"shiller":18.84},{"date":"1955-10-01","pe":12.03,"shiller":17.77},{"date":"1955-11-01","pe":12.63,"shiller":18.84},{"date":"1955-12-01","pe":12.53,"shiller":18.94},{"date":"1956-01-01","pe":12.12,"shiller":18.29},{"date":"1956-02-01","pe":12.12,"shiller":18.27},{"date":"1956-03-01","pe":12.87,"shiller":19.37},{"date":"1956-04-01","pe":13.13,"shiller":19.37},{"date":"1956-05-01","pe":12.82,"shiller":18.54},{"date":"1956-06-01","pe":12.85,"shiller":18.16},{"date":"1956-07-01","pe":13.73,"shiller":18.86},{"date":"1956-08-01","pe":13.83,"shiller":18.67},{"date":"1956-09-01","pe":13.54,"shiller":17.84},{"date":"1956-10-01","pe":13.43,"shiller":17.42},{"date":"1956-11-01","pe":13.35,"shiller":17.12},{"date":"1956-12-01","pe":13.62,"shiller":17.2},{"date":"1957-01-01","pe":13.34,"shiller":16.72},{"date":"1957-02-01","pe":12.77,"shiller":15.84},{"date":"1957-03-01","pe":12.95,"shiller":15.9},{"date":"1957-04-01","pe":13.22,"shiller":16.12},{"date":"1957-05-01","pe":13.71,"shiller":16.6},{"date":"1957-06-01","pe":13.9,"shiller":16.73},{"date":"1957-07-01","pe":14.12,"shiller":16.87},{"date":"1957-08-01","pe":13.27,"shiller":15.87},{"date":"1957-09-01","pe":12.67,"shiller":15.16},{"date":"1957-10-01","pe":12,"shiller":14.15},{"date":"1957-11-01","pe":11.86,"shiller":13.74},{"date":"1957-12-01","pe":11.97,"shiller":13.67},{"date":"1958-01-01","pe":12.49,"shiller":13.79},{"date":"1958-02-01","pe":12.83,"shiller":13.78},{"date":"1958-03-01","pe":13.41,"shiller":13.93},{"date":"1958-04-01","pe":13.79,"shiller":13.91},{"date":"1958-05-01","pe":14.57,"shiller":14.32},{"date":"1958-06-01","pe":15.27,"shiller":14.64},{"date":"1958-07-01","pe":15.78,"shiller":14.96},{"date":"1958-08-01","pe":16.47,"shiller":15.54},{"date":"1958-09-01","pe":17,"shiller":15.93},{"date":"1958-10-01","pe":17.67,"shiller":16.56},{"date":"1958-11-01","pe":18.19,"shiller":16.99},{"date":"1958-12-01","pe":18.51,"shiller":17.36},{"date":"1959-01-01","pe":18.77,"shiller":17.98},{"date":"1959-02-01","pe":18.04,"shiller":17.76},{"date":"1959-03-01","pe":18.06,"shiller":18.2},{"date":"1959-04-01","pe":17.81,"shiller":18.43},{"date":"1959-05-01","pe":17.55,"shiller":18.69},{"date":"1959-06-01","pe":16.9,"shiller":18.45},{"date":"1959-07-01","pe":17.52,"shiller":19.09},{"date":"1959-08-01","pe":17.37,"shiller":18.96},{"date":"1959-09-01","pe":16.63,"shiller":18.12},{"date":"1959-10-01","pe":16.68,"shiller":18.02},{"date":"1959-11-01","pe":16.82,"shiller":18.07},{"date":"1959-12-01","pe":17.42,"shiller":18.62},{"date":"1960-01-01","pe":17.12,"shiller":18.34},{"date":"1960-02-01","pe":16.45,"shiller":17.55},{"date":"1960-03-01","pe":16.23,"shiller":17.29},{"date":"1960-04-01","pe":16.65,"shiller":17.43},{"date":"1960-05-01","pe":16.72,"shiller":17.26},{"date":"1960-06-01","pe":17.56,"shiller":17.82},{"date":"1960-07-01","pe":17.11,"shiller":17.38},{"date":"1960-08-01","pe":17.3,"shiller":17.58},{"date":"1960-09-01","pe":16.76,"shiller":17.05},{"date":"1960-10-01","pe":16.43,"shiller":16.61},{"date":"1960-11-01","pe":16.96,"shiller":17.15},{"date":"1960-12-01","pe":17.37,"shiller":17.56},{"date":"1961-01-01","pe":18.6,"shiller":18.47},{"date":"1961-02-01","pe":19.74,"shiller":19.23},{"date":"1961-03-01","pe":20.75,"shiller":19.84},{"date":"1961-04-01","pe":21.44,"shiller":20.38},{"date":"1961-05-01","pe":21.8,"shiller":20.6},{"date":"1961-06-01","pe":21.66,"shiller":20.33},{"date":"1961-07-01","pe":21.55,"shiller":20.15},{"date":"1961-08-01","pe":22.27,"shiller":20.94},{"date":"1961-09-01","pe":22.05,"shiller":20.71},{"date":"1961-10-01","pe":21.96,"shiller":20.92},{"date":"1961-11-01","pe":22.61,"shiller":21.86},{"date":"1961-12-01","pe":22.49,"shiller":22.04},{"date":"1962-01-01","pe":21.25,"shiller":21.2},{"date":"1962-02-01","pe":21.21,"shiller":21.45},{"date":"1962-03-01","pe":20.86,"shiller":21.44},{"date":"1962-04-01","pe":20,"shiller":20.66},{"date":"1962-05-01","pe":18.33,"shiller":19.09},{"date":"1962-06-01","pe":16.03,"shiller":16.83},{"date":"1962-07-01","pe":16.32,"shiller":17.14},{"date":"1962-08-01","pe":16.67,"shiller":17.57},{"date":"1962-09-01","pe":16.43,"shiller":17.32},{"date":"1962-10-01","pe":15.7,"shiller":16.74},{"date":"1962-11-01","pe":16.57,"shiller":17.85},{"date":"1962-12-01","pe":17.07,"shiller":18.59},{"date":"1963-01-01","pe":17.66,"shiller":19.26},{"date":"1963-02-01","pe":17.83,"shiller":19.47},{"date":"1963-03-01","pe":17.7,"shiller":19.29},{"date":"1963-04-01","pe":18.32,"shiller":20.15},{"date":"1963-05-01","pe":18.47,"shiller":20.51},{"date":"1963-06-01","pe":18.26,"shiller":20.38},{"date":"1963-07-01","pe":17.8,"shiller":19.97},{"date":"1963-08-01","pe":18.11,"shiller":20.47},{"date":"1963-09-01","pe":18.4,"shiller":20.96},{"date":"1963-10-01","pe":18.35,"shiller":20.89},{"date":"1963-11-01","pe":18.16,"shiller":20.72},{"date":"1963-12-01","pe":18.45,"shiller":21.04},{"date":"1964-01-01","pe":18.77,"shiller":21.63},{"date":"1964-02-01","pe":18.75,"shiller":21.83},{"date":"1964-03-01","pe":18.85,"shiller":22.17},{"date":"1964-04-01","pe":18.9,"shiller":22.42},{"date":"1964-05-01","pe":18.86,"shiller":22.57},{"date":"1964-06-01","pe":18.53,"shiller":22.3},{"date":"1964-07-01","pe":19.01,"shiller":22.98},{"date":"1964-08-01","pe":18.54,"shiller":22.65},{"date":"1964-09-01","pe":18.66,"shiller":22.89},{"date":"1964-10-01","pe":18.87,"shiller":23.21},{"date":"1964-11-01","pe":18.89,"shiller":23.23},{"date":"1964-12-01","pe":18.45,"shiller":22.75},{"date":"1965-01-01","pe":18.75,"shiller":23.27},{"date":"1965-02-01","pe":18.71,"shiller":23.37},{"date":"1965-03-01","pe":18.55,"shiller":23.25},{"date":"1965-04-01","pe":18.59,"shiller":23.42},{"date":"1965-05-01","pe":18.65,"shiller":23.71},{"date":"1965-06-01","pe":17.57,"shiller":22.39},{"date":"1965-07-01","pe":17.38,"shiller":22.3},{"date":"1965-08-01","pe":17.53,"shiller":22.67},{"date":"1965-09-01","pe":17.95,"shiller":23.37},{"date":"1965-10-01","pe":18.1,"shiller":23.78},{"date":"1965-11-01","pe":18,"shiller":23.93},{"date":"1965-12-01","pe":17.67,"shiller":23.69},{"date":"1966-01-01","pe":17.81,"shiller":24.06},{"date":"1966-02-01","pe":17.52,"shiller":23.7},{"date":"1966-03-01","pe":16.64,"shiller":22.61},{"date":"1966-04-01","pe":17.03,"shiller":23.11},{"date":"1966-05-01","pe":16.01,"shiller":21.85},{"date":"1966-06-01","pe":15.76,"shiller":21.56},{"date":"1966-07-01","pe":15.67,"shiller":21.38},{"date":"1966-08-01","pe":14.68,"shiller":19.91},{"date":"1966-09-01","pe":14.12,"shiller":19.16},{"date":"1966-10-01","pe":13.96,"shiller":18.83},{"date":"1966-11-01","pe":14.63,"shiller":19.71},{"date":"1966-12-01","pe":14.65,"shiller":19.74},{"date":"1967-01-01","pe":15.31,"shiller":20.43},{"date":"1967-02-01","pe":15.93,"shiller":21.07},{"date":"1967-03-01","pe":16.41,"shiller":21.44},{"date":"1967-04-01","pe":16.81,"shiller":21.69},{"date":"1967-05-01","pe":17.24,"shiller":21.95},{"date":"1967-06-01","pe":17.15,"shiller":21.55},{"date":"1967-07-01","pe":17.48,"shiller":21.8},{"date":"1967-08-01","pe":17.79,"shiller":22.03},{"date":"1967-09-01","pe":18.08,"shiller":22.22},{"date":"1967-10-01","pe":18.02,"shiller":22.07},{"date":"1967-11-01","pe":17.42,"shiller":21.26},{"date":"1967-12-01","pe":17.88,"shiller":21.75},{"date":"1968-01-01","pe":17.71,"shiller":21.51},{"date":"1968-02-01","pe":16.8,"shiller":20.42},{"date":"1968-03-01","pe":16.38,"shiller":19.93},{"date":"1968-04-01","pe":17.45,"shiller":21.28},{"date":"1968-05-01","pe":17.71,"shiller":21.63},{"date":"1968-06-01","pe":18.04,"shiller":22},{"date":"1968-07-01","pe":17.91,"shiller":21.75},{"date":"1968-08-01","pe":17.43,"shiller":21.14},{"date":"1968-09-01","pe":17.9,"shiller":21.68},{"date":"1968-10-01","pe":18.23,"shiller":22},{"date":"1968-11-01","pe":18.41,"shiller":22.2},{"date":"1968-12-01","pe":18.49,"shiller":22.28},{"date":"1969-01-01","pe":17.65,"shiller":21.19},{"date":"1969-02-01","pe":17.5,"shiller":20.9},{"date":"1969-03-01","pe":17.06,"shiller":20.2},{"date":"1969-04-01","pe":17.39,"shiller":20.43},{"date":"1969-05-01","pe":17.93,"shiller":20.97},{"date":"1969-06-01","pe":16.98,"shiller":19.71},{"date":"1969-07-01","pe":16.17,"shiller":18.68},{"date":"1969-08-01","pe":16.04,"shiller":18.43},{"date":"1969-09-01","pe":16.05,"shiller":18.4},{"date":"1969-10-01","pe":16.32,"shiller":18.45},{"date":"1969-11-01","pe":16.54,"shiller":18.44},{"date":"1969-12-01","pe":15.76,"shiller":17.33},{"date":"1970-01-01","pe":15.76,"shiller":17.09},{"date":"1970-02-01","pe":15.35,"shiller":16.37},{"date":"1970-03-01","pe":15.75,"shiller":16.53},{"date":"1970-04-01","pe":15.37,"shiller":15.87},{"date":"1970-05-01","pe":13.69,"shiller":13.98},{"date":"1970-06-01","pe":13.69,"shiller":13.8},{"date":"1970-07-01","pe":13.85,"shiller":13.73},{"date":"1970-08-01","pe":14.39,"shiller":14.1},{"date":"1970-09-01","pe":15.41,"shiller":14.84},{"date":"1970-10-01","pe":15.97,"shiller":15.06},{"date":"1970-11-01","pe":16.19,"shiller":14.95},{"date":"1970-12-01","pe":17.55,"shiller":15.87},{"date":"1971-01-01","pe":18.12,"shiller":16.46},{"date":"1971-02-01","pe":18.71,"shiller":17.03},{"date":"1971-03-01","pe":19.08,"shiller":17.4},{"date":"1971-04-01","pe":19.61,"shiller":17.92},{"date":"1971-05-01","pe":19.22,"shiller":17.56},{"date":"1971-06-01","pe":18.74,"shiller":17.08},{"date":"1971-07-01","pe":18.48,"shiller":16.89},{"date":"1971-08-01","pe":18.03,"shiller":16.52},{"date":"1971-09-01","pe":18.31,"shiller":16.86},{"date":"1971-10-01","pe":17.62,"shiller":16.43},{"date":"1971-11-01","pe":16.54,"shiller":15.64},{"date":"1971-12-01","pe":17.4,"shiller":16.6},{"date":"1972-01-01","pe":18.01,"shiller":17.26},{"date":"1972-02-01","pe":18.22,"shiller":17.46},{"date":"1972-03-01","pe":18.54,"shiller":17.81},{"date":"1972-04-01","pe":18.56,"shiller":17.92},{"date":"1972-05-01","pe":18.2,"shiller":17.66},{"date":"1972-06-01","pe":18.09,"shiller":17.64},{"date":"1972-07-01","pe":17.79,"shiller":17.4},{"date":"1972-08-01","pe":18.25,"shiller":17.94},{"date":"1972-09-01","pe":17.82,"shiller":17.61},{"date":"1972-10-01","pe":17.58,"shiller":17.53},{"date":"1972-11-01","pe":18.19,"shiller":18.34},{"date":"1972-12-01","pe":18.3,"shiller":18.65},{"date":"1973-01-01","pe":18.09,"shiller":18.71},{"date":"1973-02-01","pe":17.11,"shiller":17.89},{"date":"1973-03-01","pe":16.53,"shiller":17.41},{"date":"1973-04-01","pe":15.89,"shiller":16.94},{"date":"1973-05-01","pe":15.13,"shiller":16.31},{"date":"1973-06-01","pe":14.5,"shiller":15.81},{"date":"1973-07-01","pe":14.33,"shiller":15.89},{"date":"1973-08-01","pe":13.77,"shiller":15.28},{"date":"1973-09-01","pe":13.73,"shiller":15.48},{"date":"1973-10-01","pe":13.99,"shiller":15.91},{"date":"1973-11-01","pe":12.74,"shiller":14.65},{"date":"1973-12-01","pe":11.62,"shiller":13.49},{"date":"1974-01-01","pe":11.68,"shiller":13.53},{"date":"1974-02-01","pe":11.27,"shiller":12.96},{"date":"1974-03-01","pe":11.66,"shiller":13.31},{"date":"1974-04-01","pe":10.89,"shiller":12.55},{"date":"1974-05-01","pe":10.41,"shiller":12},{"date":"1974-06-01","pe":10.27,"shiller":11.89},{"date":"1974-07-01","pe":8.95,"shiller":10.39},{"date":"1974-08-01","pe":8.46,"shiller":9.82},{"date":"1974-09-01","pe":7.48,"shiller":8.68},{"date":"1974-10-01","pe":7.68,"shiller":8.74},{"date":"1974-11-01","pe":8,"shiller":8.95},{"date":"1974-12-01","pe":7.54,"shiller":8.29},{"date":"1975-01-01","pe":8.3,"shiller":8.92},{"date":"1975-02-01","pe":9.32,"shiller":9.76},{"date":"1975-03-01","pe":9.91,"shiller":10.16},{"date":"1975-04-01","pe":10.22,"shiller":10.23},{"date":"1975-05-01","pe":11.09,"shiller":10.82},{"date":"1975-06-01","pe":11.61,"shiller":11.01},{"date":"1975-07-01","pe":11.72,"shiller":10.9},{"date":"1975-08-01","pe":10.95,"shiller":10.09},{"date":"1975-09-01","pe":10.91,"shiller":9.92},{"date":"1975-10-01","pe":11.32,"shiller":10.33},{"date":"1975-11-01","pe":11.41,"shiller":10.44},{"date":"1975-12-01","pe":11.14,"shiller":10.25},{"date":"1976-01-01","pe":11.82,"shiller":11.19},{"date":"1976-02-01","pe":11.94,"shiller":11.59},{"date":"1976-03-01","pe":11.67,"shiller":11.63},{"date":"1976-04-01","pe":11.51,"shiller":11.69},{"date":"1976-05-01","pe":11.18,"shiller":11.53},{"date":"1976-06-01","pe":11.01,"shiller":11.54},{"date":"1976-07-01","pe":11.14,"shiller":11.76},{"date":"1976-08-01","pe":10.93,"shiller":11.6},{"date":"1976-09-01","pe":11.05,"shiller":11.81},{"date":"1976-10-01","pe":10.54,"shiller":11.35},{"date":"1976-11-01","pe":10.34,"shiller":11.25},{"date":"1976-12-01","pe":10.57,"shiller":11.6},{"date":"1977-01-01","pe":10.41,"shiller":11.44},{"date":"1977-02-01","pe":10.08,"shiller":11.01},{"date":"1977-03-01","pe":9.98,"shiller":10.9},{"date":"1977-04-01","pe":9.72,"shiller":10.64},{"date":"1977-05-01","pe":9.58,"shiller":10.55},{"date":"1977-06-01","pe":9.53,"shiller":10.53},{"date":"1977-07-01","pe":9.53,"shiller":10.57},{"date":"1977-08-01","pe":9.21,"shiller":10.27},{"date":"1977-09-01","pe":8.99,"shiller":10.07},{"date":"1977-10-01","pe":8.7,"shiller":9.77},{"date":"1977-11-01","pe":8.71,"shiller":9.77},{"date":"1977-12-01","pe":8.62,"shiller":9.68},{"date":"1978-01-01","pe":8.28,"shiller":9.24},{"date":"1978-02-01","pe":8.16,"shiller":9.05},{"date":"1978-03-01","pe":8.13,"shiller":8.95},{"date":"1978-04-01","pe":8.41,"shiller":9.26},{"date":"1978-05-01","pe":8.75,"shiller":9.63},{"date":"1978-06-01","pe":8.7,"shiller":9.55},{"date":"1978-07-01","pe":8.57,"shiller":9.43},{"date":"1978-08-01","pe":9.07,"shiller":10.02},{"date":"1978-09-01","pe":8.98,"shiller":9.94},{"date":"1978-10-01","pe":8.51,"shiller":9.53},{"date":"1978-11-01","pe":7.84,"shiller":8.93},{"date":"1978-12-01","pe":7.79,"shiller":9.01},{"date":"1979-01-01","pe":7.88,"shiller":9.26},{"date":"1979-02-01","pe":7.57,"shiller":9},{"date":"1979-03-01","pe":7.53,"shiller":9.07},{"date":"1979-04-01","pe":7.55,"shiller":9.13},{"date":"1979-05-01","pe":7.25,"shiller":8.79},{"date":"1979-06-01","pe":7.27,"shiller":8.85},{"date":"1979-07-01","pe":7.23,"shiller":8.83},{"date":"1979-08-01","pe":7.45,"shiller":9.13},{"date":"1979-09-01","pe":7.42,"shiller":9.11},{"date":"1979-10-01","pe":7.11,"shiller":8.68},{"date":"1979-11-01","pe":7.01,"shiller":8.52},{"date":"1979-12-01","pe":7.25,"shiller":8.75},{"date":"1980-01-01","pe":7.39,"shiller":8.85},{"date":"1980-02-01","pe":7.61,"shiller":9.05},{"date":"1980-03-01","pe":6.85,"shiller":8.08},{"date":"1980-04-01","pe":6.79,"shiller":7.84},{"date":"1980-05-01","pe":7.15,"shiller":8.1},{"date":"1980-06-01","pe":7.67,"shiller":8.51},{"date":"1980-07-01","pe":8.07,"shiller":8.88},{"date":"1980-08-01","pe":8.38,"shiller":9.07},{"date":"1980-09-01","pe":8.64,"shiller":9.2},{"date":"1980-10-01","pe":8.86,"shiller":9.36},{"date":"1980-11-01","pe":9.19,"shiller":9.65},{"date":"1980-12-01","pe":9.01,"shiller":9.39},{"date":"1981-01-01","pe":9.02,"shiller":9.26},{"date":"1981-02-01","pe":8.76,"shiller":8.83},{"date":"1981-03-01","pe":9.14,"shiller":9.08},{"date":"1981-04-01","pe":9.13,"shiller":9.09},{"date":"1981-05-01","pe":8.86,"shiller":8.82},{"date":"1981-06-01","pe":8.81,"shiller":8.77},{"date":"1981-07-01","pe":8.55,"shiller":8.45},{"date":"1981-08-01","pe":8.54,"shiller":8.4},{"date":"1981-09-01","pe":7.75,"shiller":7.58},{"date":"1981-10-01","pe":7.83,"shiller":7.65},{"date":"1981-11-01","pe":8.02,"shiller":7.81},{"date":"1981-12-01","pe":8.06,"shiller":7.83},{"date":"1982-01-01","pe":7.73,"shiller":7.39},{"date":"1982-02-01","pe":7.64,"shiller":7.18},{"date":"1982-03-01","pe":7.48,"shiller":6.95},{"date":"1982-04-01","pe":7.97,"shiller":7.26},{"date":"1982-05-01","pe":8.09,"shiller":7.19},{"date":"1982-06-01","pe":7.74,"shiller":6.69},{"date":"1982-07-01","pe":7.83,"shiller":6.64},{"date":"1982-08-01","pe":7.97,"shiller":6.64},{"date":"1982-09-01","pe":9.03,"shiller":7.4},{"date":"1982-10-01","pe":10.01,"shiller":8},{"date":"1982-11-01","pe":10.67,"shiller":8.35},{"date":"1982-12-01","pe":11.03,"shiller":8.47},{"date":"1983-01-01","pe":11.48,"shiller":8.76},{"date":"1983-02-01","pe":11.75,"shiller":8.91},{"date":"1983-03-01","pe":12.23,"shiller":9.23},{"date":"1983-04-01","pe":12.64,"shiller":9.53},{"date":"1983-05-01","pe":13.09,"shiller":9.87},{"date":"1983-06-01","pe":13.22,"shiller":10},{"date":"1983-07-01","pe":13.02,"shiller":10.01},{"date":"1983-08-01","pe":12.43,"shiller":9.73},{"date":"1983-09-01","pe":12.57,"shiller":9.98},{"date":"1983-10-01","pe":12.38,"shiller":10},{"date":"1983-11-01","pe":11.98,"shiller":9.85},{"date":"1983-12-01","pe":11.72,"shiller":9.82},{"date":"1984-01-01","pe":11.52,"shiller":9.89},{"date":"1984-02-01","pe":10.59,"shiller":9.32},{"date":"1984-03-01","pe":10.31,"shiller":9.33},{"date":"1984-04-01","pe":10.12,"shiller":9.31},{"date":"1984-05-01","pe":9.86,"shiller":9.23},{"date":"1984-06-01","pe":9.45,"shiller":9.01},{"date":"1984-07-01","pe":9.26,"shiller":8.87},{"date":"1984-08-01","pe":10,"shiller":9.62},{"date":"1984-09-01","pe":10.03,"shiller":9.69},{"date":"1984-10-01","pe":9.94,"shiller":9.6},{"date":"1984-11-01","pe":10.01,"shiller":9.69},{"date":"1984-12-01","pe":9.89,"shiller":9.6},{"date":"1985-01-01","pe":10.36,"shiller":10},{"date":"1985-02-01","pe":10.98,"shiller":10.49},{"date":"1985-03-01","pe":10.95,"shiller":10.37},{"date":"1985-04-01","pe":11.2,"shiller":10.4},{"date":"1985-05-01","pe":11.65,"shiller":10.61},{"date":"1985-06-01","pe":12.1,"shiller":10.81},{"date":"1985-07-01","pe":12.43,"shiller":11},{"date":"1985-08-01","pe":12.26,"shiller":10.74},{"date":"1985-09-01","pe":12.09,"shiller":10.47},{"date":"1985-10-01","pe":12.39,"shiller":10.55},{"date":"1985-11-01","pe":13.33,"shiller":11.16},{"date":"1985-12-01","pe":14.19,"shiller":11.69},{"date":"1986-01-01","pe":14.28,"shiller":11.72},{"date":"1986-02-01","pe":15.08,"shiller":12.39},{"date":"1986-03-01","pe":16,"shiller":13.19},{"date":"1986-04-01","pe":16.32,"shiller":13.55},{"date":"1986-05-01","pe":16.28,"shiller":13.56},{"date":"1986-06-01","pe":16.68,"shiller":13.89},{"date":"1986-07-01","pe":16.28,"shiller":13.62},{"date":"1986-08-01","pe":16.55,"shiller":13.89},{"date":"1986-09-01","pe":16.05,"shiller":13.47},{"date":"1986-10-01","pe":16.12,"shiller":13.43},{"date":"1986-11-01","pe":16.78,"shiller":13.87},{"date":"1986-12-01","pe":17.17,"shiller":14.09},{"date":"1987-01-01","pe":18.01,"shiller":14.92},{"date":"1987-02-01","pe":18.86,"shiller":15.82},{"date":"1987-03-01","pe":19.37,"shiller":16.43},{"date":"1987-04-01","pe":19.45,"shiller":16.2},{"date":"1987-05-01","pe":19.74,"shiller":16.16},{"date":"1987-06-01","pe":20.9,"shiller":16.83},{"date":"1987-07-01","pe":20.81,"shiller":17.31},{"date":"1987-08-01","pe":21.42,"shiller":18.33},{"date":"1987-09-01","pe":20.09,"shiller":17.68},{"date":"1987-10-01","pe":17.08,"shiller":15.53},{"date":"1987-11-01","pe":14.45,"shiller":13.59},{"date":"1987-12-01","pe":13.77,"shiller":13.39},{"date":"1988-01-01","pe":14.02,"shiller":13.9},{"date":"1988-02-01","pe":14.16,"shiller":14.3},{"date":"1988-03-01","pe":14.29,"shiller":14.67},{"date":"1988-04-01","pe":13.39,"shiller":14.43},{"date":"1988-05-01","pe":12.41,"shiller":14.03},{"date":"1988-06-01","pe":12.49,"shiller":14.77},{"date":"1988-07-01","pe":12.22,"shiller":14.61},{"date":"1988-08-01","pe":11.78,"shiller":14.24},{"date":"1988-09-01","pe":11.79,"shiller":14.37},{"date":"1988-10-01","pe":12.02,"shiller":14.81},{"date":"1988-11-01","pe":11.57,"shiller":14.45},{"date":"1988-12-01","pe":11.64,"shiller":14.7},{"date":"1989-01-01","pe":11.82,"shiller":15.09},{"date":"1989-02-01","pe":11.97,"shiller":15.47},{"date":"1989-03-01","pe":11.73,"shiller":15.3},{"date":"1989-04-01","pe":12.07,"shiller":15.69},{"date":"1989-05-01","pe":12.49,"shiller":16.19},{"date":"1989-06-01","pe":12.84,"shiller":16.64},{"date":"1989-07-01","pe":13.43,"shiller":17.01},{"date":"1989-08-01","pe":14.32,"shiller":17.73},{"date":"1989-09-01","pe":14.66,"shiller":17.71},{"date":"1989-10-01","pe":14.84,"shiller":17.64},{"date":"1989-11-01","pe":14.7,"shiller":17.24},{"date":"1989-12-01","pe":15.24,"shiller":17.65},{"date":"1990-01-01","pe":15.13,"shiller":17.05},{"date":"1990-02-01","pe":14.97,"shiller":16.51},{"date":"1990-03-01","pe":15.62,"shiller":16.83},{"date":"1990-04-01","pe":15.7,"shiller":16.81},{"date":"1990-05-01","pe":16.37,"shiller":17.39},{"date":"1990-06-01","pe":16.95,"shiller":17.82},{"date":"1990-07-01","pe":16.81,"shiller":17.75},{"date":"1990-08-01","pe":15.33,"shiller":16.17},{"date":"1990-09-01","pe":14.51,"shiller":15.3},{"date":"1990-10-01","pe":14.21,"shiller":14.82},{"date":"1990-11-01","pe":14.68,"shiller":15.19},{"date":"1990-12-01","pe":15.41,"shiller":15.85},{"date":"1991-01-01","pe":15.35,"shiller":15.61},{"date":"1991-02-01","pe":17.19,"shiller":17.36},{"date":"1991-03-01","pe":17.78,"shiller":17.82},{"date":"1991-04-01","pe":18.58,"shiller":18.16},{"date":"1991-05-01","pe":18.98,"shiller":18.03},{"date":"1991-06-01","pe":19.49,"shiller":18.01},{"date":"1991-07-01","pe":20.14,"shiller":18.1},{"date":"1991-08-01","pe":21.22,"shiller":18.51},{"date":"1991-09-01","pe":21.73,"shiller":18.36},{"date":"1991-10-01","pe":22.49,"shiller":18.35},{"date":"1991-11-01","pe":23.27,"shiller":18.29},{"date":"1991-12-01","pe":24.33,"shiller":18.44},{"date":"1992-01-01","pe":25.93,"shiller":19.77},{"date":"1992-02-01","pe":25.6,"shiller":19.58},{"date":"1992-03-01","pe":25.16,"shiller":19.28},{"date":"1992-04-01","pe":24.73,"shiller":19.3},{"date":"1992-05-01","pe":24.75,"shiller":19.66},{"date":"1992-06-01","pe":23.95,"shiller":19.31},{"date":"1992-07-01","pe":23.88,"shiller":19.62},{"date":"1992-08-01","pe":23.6,"shiller":19.72},{"date":"1992-09-01","pe":23.2,"shiller":19.71},{"date":"1992-10-01","pe":22.43,"shiller":19.37},{"date":"1992-11-01","pe":22.56,"shiller":19.83},{"date":"1992-12-01","pe":22.82,"shiller":20.45},{"date":"1993-01-01","pe":22.5,"shiller":20.32},{"date":"1993-02-01","pe":22.55,"shiller":20.54},{"date":"1993-03-01","pe":22.69,"shiller":20.85},{"date":"1993-04-01","pe":22.53,"shiller":20.46},{"date":"1993-05-01","pe":22.83,"shiller":20.52},{"date":"1993-06-01","pe":23.18,"shiller":20.61},{"date":"1993-07-01","pe":22.72,"shiller":20.56},{"date":"1993-08-01","pe":22.65,"shiller":20.81},{"date":"1993-09-01","pe":22.5,"shiller":20.99},{"date":"1993-10-01","pe":22.19,"shiller":21.11},{"date":"1993-11-01","pe":21.63,"shiller":21.04},{"date":"1993-12-01","pe":21.29,"shiller":21.16},{"date":"1994-01-01","pe":21.34,"shiller":21.41},{"date":"1994-02-01","pe":21.02,"shiller":21.26},{"date":"1994-03-01","pe":20.42,"shiller":20.83},{"date":"1994-04-01","pe":19,"shiller":20.05},{"date":"1994-05-01","pe":18.5,"shiller":20.19},{"date":"1994-06-01","pe":18.05,"shiller":20.29},{"date":"1994-07-01","pe":17.42,"shiller":20.07},{"date":"1994-08-01","pe":17.44,"shiller":20.53},{"date":"1994-09-01","pe":17.09,"shiller":20.57},{"date":"1994-10-01","pe":16.32,"shiller":20.39},{"date":"1994-11-01","pe":15.62,"shiller":20.21},{"date":"1994-12-01","pe":14.88,"shiller":19.91},{"date":"1995-01-01","pe":14.89,"shiller":20.22},{"date":"1995-02-01","pe":15.11,"shiller":20.8},{"date":"1995-03-01","pe":15.15,"shiller":21.15},{"date":"1995-04-01","pe":15.31,"shiller":21.64},{"date":"1995-05-01","pe":15.5,"shiller":22.19},{"date":"1995-06-01","pe":15.67,"shiller":22.72},{"date":"1995-07-01","pe":16.07,"shiller":23.37},{"date":"1995-08-01","pe":16.01,"shiller":23.28},{"date":"1995-09-01","pe":16.45,"shiller":23.94},{"date":"1995-10-01","pe":16.76,"shiller":23.93},{"date":"1995-11-01","pe":17.33,"shiller":24.35},{"date":"1995-12-01","pe":18.1,"shiller":25.03},{"date":"1996-01-01","pe":18.08,"shiller":24.76},{"date":"1996-02-01","pe":19.1,"shiller":25.97},{"date":"1996-03-01","pe":19.01,"shiller":25.63},{"date":"1996-04-01","pe":18.85,"shiller":25.42},{"date":"1996-05-01","pe":19.1,"shiller":25.81},{"date":"1996-06-01","pe":19.15,"shiller":25.96},{"date":"1996-07-01","pe":18.26,"shiller":24.86},{"date":"1996-08-01","pe":18.6,"shiller":25.41},{"date":"1996-09-01","pe":18.75,"shiller":25.68},{"date":"1996-10-01","pe":19,"shiller":26.48},{"date":"1996-11-01","pe":19.45,"shiller":27.58},{"date":"1996-12-01","pe":19.19,"shiller":27.72},{"date":"1997-01-01","pe":19.53,"shiller":28.33},{"date":"1997-02-01","pe":20.09,"shiller":29.26},{"date":"1997-03-01","pe":19.69,"shiller":28.8},{"date":"1997-04-01","pe":18.94,"shiller":27.58},{"date":"1997-05-01","pe":20.6,"shiller":29.93},{"date":"1997-06-01","pe":21.61,"shiller":31.25},{"date":"1997-07-01","pe":22.8,"shiller":32.76},{"date":"1997-08-01","pe":22.83,"shiller":32.58},{"date":"1997-09-01","pe":23.06,"shiller":32.66},{"date":"1997-10-01","pe":23.58,"shiller":32.9},{"date":"1997-11-01","pe":23.46,"shiller":32.33},{"date":"1997-12-01","pe":24.23,"shiller":33.03},{"date":"1998-01-01","pe":24.29,"shiller":32.86},{"date":"1998-02-01","pe":25.85,"shiller":34.71},{"date":"1998-03-01","pe":27.23,"shiller":36.29},{"date":"1998-04-01","pe":28.26,"shiller":37.27},{"date":"1998-05-01","pe":28.3,"shiller":36.95},{"date":"1998-06-01","pe":28.44,"shiller":36.8},{"date":"1998-07-01","pe":29.9,"shiller":38.26},{"date":"1998-08-01","pe":28,"shiller":35.42},{"date":"1998-09-01","pe":26.8,"shiller":33.53},{"date":"1998-10-01","pe":27.2,"shiller":33.77},{"date":"1998-11-01","pe":30.25,"shiller":37.37},{"date":"1998-12-01","pe":31.56,"shiller":38.82},{"date":"1999-01-01","pe":32.92,"shiller":40.57},{"date":"1999-02-01","pe":32.67,"shiller":40.4},{"date":"1999-03-01","pe":33.39,"shiller":41.35},{"date":"1999-04-01","pe":34,"shiller":42.7},{"date":"1999-05-01","pe":33.19,"shiller":42.55},{"date":"1999-06-01","pe":32.24,"shiller":42.18},{"date":"1999-07-01","pe":32.88,"shiller":43.83},{"date":"1999-08-01","pe":30.89,"shiller":41.93},{"date":"1999-09-01","pe":29.99,"shiller":41.32},{"date":"1999-10-01","pe":28.66,"shiller":40.55},{"date":"1999-11-01","pe":29.74,"shiller":43.21},{"date":"1999-12-01","pe":29.66,"shiller":44.19},{"date":"2000-01-01","pe":29.04,"shiller":43.77},{"date":"2000-02-01","pe":27.76,"shiller":42.18},{"date":"2000-03-01","pe":28.31,"shiller":43.22},{"date":"2000-04-01","pe":28.5,"shiller":43.53},{"date":"2000-05-01","pe":27.49,"shiller":41.96},{"date":"2000-06-01","pe":28.16,"shiller":42.78},{"date":"2000-07-01","pe":28.05,"shiller":42.75},{"date":"2000-08-01","pe":27.97,"shiller":42.87},{"date":"2000-09-01","pe":27.34,"shiller":41.89},{"date":"2000-10-01","pe":26.5,"shiller":39.37},{"date":"2000-11-01","pe":26.9,"shiller":38.78},{"date":"2000-12-01","pe":26.62,"shiller":37.27},{"date":"2001-01-01","pe":27.55,"shiller":36.98},{"date":"2001-02-01","pe":27.81,"shiller":35.83},{"date":"2001-03-01","pe":26.1,"shiller":32.32},{"date":"2001-04-01","pe":27.96,"shiller":32.17},{"date":"2001-05-01","pe":32.02,"shiller":34.07},{"date":"2001-06-01","pe":33.67,"shiller":33.07},{"date":"2001-07-01","pe":35.46,"shiller":32.16},{"date":"2001-08-01","pe":37.85,"shiller":31.4},{"date":"2001-09-01","pe":36.9,"shiller":27.67},{"date":"2001-10-01","pe":39.72,"shiller":28.58},{"date":"2001-11-01","pe":43.62,"shiller":30.01},{"date":"2001-12-01","pe":46.37,"shiller":30.5},{"date":"2002-01-01","pe":46.17,"shiller":30.28},{"date":"2002-02-01","pe":44.57,"shiller":29.09},{"date":"2002-03-01","pe":46.71,"shiller":30.29},{"date":"2002-04-01","pe":43.81,"shiller":29.01},{"date":"2002-05-01","pe":41.41,"shiller":28.13},{"date":"2002-06-01","pe":37.92,"shiller":26.39},{"date":"2002-07-01","pe":32.46,"shiller":23.46},{"date":"2002-08-01","pe":31.53,"shiller":23.59},{"date":"2002-09-01","pe":28.89,"shiller":22.36},{"date":"2002-10-01","pe":29.24,"shiller":21.96},{"date":"2002-11-01","pe":32.03,"shiller":23.35},{"date":"2002-12-01","pe":32.59,"shiller":23.1},{"date":"2003-01-01","pe":31.43,"shiller":22.9},{"date":"2003-02-01","pe":28.46,"shiller":21.21},{"date":"2003-03-01","pe":27.92,"shiller":21.31},{"date":"2003-04-01","pe":28.05,"shiller":22.43},{"date":"2003-05-01","pe":28.24,"shiller":23.59},{"date":"2003-06-01","pe":28.6,"shiller":24.83},{"date":"2003-07-01","pe":27.65,"shiller":24.87},{"date":"2003-08-01","pe":26.57,"shiller":24.64},{"date":"2003-09-01","pe":26.42,"shiller":25.24},{"date":"2003-10-01","pe":24.75,"shiller":25.68},{"date":"2003-11-01","pe":23.15,"shiller":25.95},{"date":"2003-12-01","pe":22.17,"shiller":26.64},{"date":"2004-01-01","pe":22.73,"shiller":27.66},{"date":"2004-02-01","pe":22.46,"shiller":27.65},{"date":"2004-03-01","pe":21.61,"shiller":26.89},{"date":"2004-04-01","pe":21.23,"shiller":26.9},{"date":"2004-05-01","pe":20.14,"shiller":25.9},{"date":"2004-06-01","pe":20.17,"shiller":26.4},{"date":"2004-07-01","pe":19.51,"shiller":25.7},{"date":"2004-08-01","pe":19.03,"shiller":25.17},{"date":"2004-09-01","pe":19.35,"shiller":25.67},{"date":"2004-10-01","pe":19.25,"shiller":25.41},{"date":"2004-11-01","pe":20.05,"shiller":26.47},{"date":"2004-12-01","pe":20.48,"shiller":27.14},{"date":"2005-01-01","pe":19.99,"shiller":26.59},{"date":"2005-02-01","pe":20.11,"shiller":26.74},{"date":"2005-03-01","pe":19.84,"shiller":26.34},{"date":"2005-04-01","pe":19.02,"shiller":25.41},{"date":"2005-05-01","pe":18.93,"shiller":25.65},{"date":"2005-06-01","pe":19,"shiller":26.07},{"date":"2005-07-01","pe":19,"shiller":26.29},{"date":"2005-08-01","pe":18.72,"shiller":26.1},{"date":"2005-09-01","pe":18.44,"shiller":25.73},{"date":"2005-10-01","pe":17.64,"shiller":24.88},{"date":"2005-11-01","pe":18.01,"shiller":25.93},{"date":"2005-12-01","pe":18.07,"shiller":26.44},{"date":"2006-01-01","pe":18.07,"shiller":26.47},{"date":"2006-02-01","pe":17.8,"shiller":26.25},{"date":"2006-03-01","pe":17.8,"shiller":26.33},{"date":"2006-04-01","pe":17.77,"shiller":26.15},{"date":"2006-05-01","pe":17.46,"shiller":25.65},{"date":"2006-06-01","pe":16.82,"shiller":24.75},{"date":"2006-07-01","pe":16.61,"shiller":24.7},{"date":"2006-08-01","pe":16.67,"shiller":25.05},{"date":"2006-09-01","pe":16.77,"shiller":25.64},{"date":"2006-10-01","pe":17.14,"shiller":26.54},{"date":"2006-11-01","pe":17.24,"shiller":26.93},{"date":"2006-12-01","pe":17.38,"shiller":27.28},{"date":"2007-01-01","pe":17.36,"shiller":27.21},{"date":"2007-02-01","pe":17.49,"shiller":27.32},{"date":"2007-03-01","pe":16.92,"shiller":26.23},{"date":"2007-04-01","pe":17.48,"shiller":26.98},{"date":"2007-05-01","pe":17.92,"shiller":27.55},{"date":"2007-06-01","pe":17.83,"shiller":27.42},{"date":"2007-07-01","pe":18.36,"shiller":27.41},{"date":"2007-08-01","pe":18.02,"shiller":26.15},{"date":"2007-09-01","pe":19.05,"shiller":26.73},{"date":"2007-10-01","pe":20.68,"shiller":27.32},{"date":"2007-11-01","pe":20.81,"shiller":25.73},{"date":"2007-12-01","pe":22.35,"shiller":25.96},{"date":"2008-01-01","pe":21.46,"shiller":24.02},{"date":"2008-02-01","pe":21.74,"shiller":23.5},{"date":"2008-03-01","pe":21.81,"shiller":22.61},{"date":"2008-04-01","pe":23.88,"shiller":23.36},{"date":"2008-05-01","pe":25.81,"shiller":23.7},{"date":"2008-06-01","pe":26.11,"shiller":22.42},{"date":"2008-07-01","pe":25.37,"shiller":20.91},{"date":"2008-08-01","pe":26.83,"shiller":21.4},{"date":"2008-09-01","pe":26.48,"shiller":20.36},{"date":"2008-10-01","pe":27.22,"shiller":16.39},{"date":"2008-11-01","pe":34.99,"shiller":15.26},{"date":"2008-12-01","pe":58.98,"shiller":15.38},{"date":"2009-01-01","pe":70.91,"shiller":15.17},{"date":"2009-02-01","pe":84.46,"shiller":14.12},{"date":"2009-03-01","pe":110.37,"shiller":13.32},{"date":"2009-04-01","pe":119.85,"shiller":14.98},{"date":"2009-05-01","pe":123.73,"shiller":16},{"date":"2009-06-01","pe":123.32,"shiller":16.38},{"date":"2009-07-01","pe":101.87,"shiller":16.69},{"date":"2009-08-01","pe":92.95,"shiller":18.09},{"date":"2009-09-01","pe":83.3,"shiller":18.83},{"date":"2009-10-01","pe":42.12,"shiller":19.36},{"date":"2009-11-01","pe":28.51,"shiller":19.81},{"date":"2009-12-01","pe":21.78,"shiller":20.32},{"date":"2010-01-01","pe":20.7,"shiller":20.53},{"date":"2010-02-01","pe":18.91,"shiller":19.92},{"date":"2010-03-01","pe":18.91,"shiller":21},{"date":"2010-04-01","pe":19.01,"shiller":21.8},{"date":"2010-05-01","pe":17.3,"shiller":20.48},{"date":"2010-06-01","pe":16.15,"shiller":19.74},{"date":"2010-07-01","pe":15.72,"shiller":19.67},{"date":"2010-08-01","pe":15.47,"shiller":19.77},{"date":"2010-09-01","pe":15.61,"shiller":20.38},{"date":"2010-10-01","pe":15.9,"shiller":21.24},{"date":"2010-11-01","pe":15.88,"shiller":21.7},{"date":"2010-12-01","pe":16.05,"shiller":22.4},{"date":"2011-01-01","pe":16.3,"shiller":22.98},{"date":"2011-02-01","pe":16.52,"shiller":23.49},{"date":"2011-03-01","pe":16.04,"shiller":22.9},{"date":"2011-04-01","pe":16.21,"shiller":23.14},{"date":"2011-05-01","pe":16.12,"shiller":23.06},{"date":"2011-06-01","pe":15.35,"shiller":22.1},{"date":"2011-07-01","pe":15.61,"shiller":22.61},{"date":"2011-08-01","pe":13.79,"shiller":20.05},{"date":"2011-09-01","pe":13.5,"shiller":19.7},{"date":"2011-10-01","pe":13.88,"shiller":20.16},{"date":"2011-11-01","pe":14.1,"shiller":20.35},{"date":"2011-12-01","pe":14.3,"shiller":20.52},{"date":"2012-01-01","pe":14.87,"shiller":21.21},{"date":"2012-02-01","pe":15.37,"shiller":21.8},{"date":"2012-03-01","pe":15.69,"shiller":22.05},{"date":"2012-04-01","pe":15.7,"shiller":21.78},{"date":"2012-05-01","pe":15.22,"shiller":20.94},{"date":"2012-06-01","pe":15.05,"shiller":20.55},{"date":"2012-07-01","pe":15.55,"shiller":21},{"date":"2012-08-01","pe":16.14,"shiller":21.41},{"date":"2012-09-01","pe":16.69,"shiller":21.78},{"date":"2012-10-01","pe":16.62,"shiller":21.58},{"date":"2012-11-01","pe":16.12,"shiller":20.9},{"date":"2012-12-01","pe":16.44,"shiller":21.24},{"date":"2013-01-01","pe":17.03,"shiller":21.9},{"date":"2013-02-01","pe":17.32,"shiller":22.05},{"date":"2013-03-01","pe":17.68,"shiller":22.42},{"date":"2013-04-01","pe":17.69,"shiller":22.6},{"date":"2013-05-01","pe":18.25,"shiller":23.41},{"date":"2013-06-01","pe":17.8,"shiller":22.93},{"date":"2013-07-01","pe":18.12,"shiller":23.49},{"date":"2013-08-01","pe":17.91,"shiller":23.36},{"date":"2013-09-01","pe":17.88,"shiller":23.44},{"date":"2013-10-01","pe":17.86,"shiller":23.83},{"date":"2013-11-01","pe":18.15,"shiller":24.64},{"date":"2013-12-01","pe":18.04,"shiller":24.86},{"date":"2014-01-01","pe":18.15,"shiller":24.86},{"date":"2014-02-01","pe":18.06,"shiller":24.59},{"date":"2014-03-01","pe":18.48,"shiller":24.96},{"date":"2014-04-01","pe":18.35,"shiller":24.79},{"date":"2014-05-01","pe":18.46,"shiller":24.94},{"date":"2014-06-01","pe":18.88,"shiller":25.56},{"date":"2014-07-01","pe":18.96,"shiller":25.82},{"date":"2014-08-01","pe":18.68,"shiller":25.62},{"date":"2014-09-01","pe":18.81,"shiller":25.92},{"date":"2014-10-01","pe":18.5,"shiller":25.16},{"date":"2014-11-01","pe":19.75,"shiller":26.61},{"date":"2014-12-01","pe":20.08,"shiller":26.79},{"date":"2015-01-01","pe":20.02,"shiller":26.49},{"date":"2015-02-01","pe":20.77,"shiller":27},{"date":"2015-03-01","pe":20.96,"shiller":26.73},{"date":"2015-04-01","pe":21.42,"shiller":26.79},{"date":"2015-05-01","pe":21.92,"shiller":26.81},{"date":"2015-06-01","pe":22.12,"shiller":26.5},{"date":"2015-07-01","pe":22.4,"shiller":26.38},{"date":"2015-08-01","pe":22.15,"shiller":25.69},{"date":"2015-09-01","pe":21.45,"shiller":24.5},{"date":"2015-10-01","pe":22.68,"shiller":25.49},{"date":"2015-11-01","pe":23.67,"shiller":26.23},{"date":"2015-12-01","pe":23.74,"shiller":25.97},{"date":"2016-01-01","pe":22.18,"shiller":24.21},{"date":"2016-02-01","pe":22.02,"shiller":24},{"date":"2016-03-01","pe":23.39,"shiller":25.37},{"date":"2016-04-01","pe":23.97,"shiller":25.92},{"date":"2016-05-01","pe":23.81,"shiller":25.69},{"date":"2016-06-01","pe":23.97,"shiller":25.84},{"date":"2016-07-01","pe":24.52,"shiller":26.69},{"date":"2016-08-01","pe":24.57,"shiller":26.95},{"date":"2016-09-01","pe":24.22,"shiller":26.73},{"date":"2016-10-01","pe":23.57,"shiller":26.53},{"date":"2016-11-01","pe":23.35,"shiller":26.85},{"date":"2016-12-01","pe":23.76,"shiller":27.87},{"date":"2017-01-01","pe":23.59,"shiller":28.06},{"date":"2017-02-01","pe":23.68,"shiller":28.66},{"date":"2017-03-01","pe":23.6,"shiller":29.09},{"date":"2017-04-01","pe":23.24,"shiller":28.9},{"date":"2017-05-01","pe":23.31,"shiller":29.31},{"date":"2017-06-01","pe":23.4,"shiller":29.75},{"date":"2017-07-01","pe":23.36,"shiller":30},{"date":"2017-08-01","pe":23.16,"shiller":29.91},{"date":"2017-09-01","pe":23.28,"shiller":30.17},{"date":"2017-10-01","pe":23.67,"shiller":30.92},{"date":"2017-11-01","pe":23.81,"shiller":31.3},{"date":"2017-12-01","pe":24.25,"shiller":32.09},{"date":"2018-01-01","pe":24.97,"shiller":33.31},{"date":"2018-02-01","pe":23.82,"shiller":32.04},{"date":"2018-03-01","pe":23.41,"shiller":31.81},{"date":"2018-04-01","pe":22.53,"shiller":30.97},{"date":"2018-05-01","pe":22.49,"shiller":31.24},{"date":"2018-06-01","pe":22.49,"shiller":31.63},{"date":"2018-07-01","pe":22.33,"shiller":31.89},{"date":"2018-08-01","pe":22.37,"shiller":32.39},{"date":"2018-09-01","pe":22.25,"shiller":32.62},{"date":"2018-10-01","pe":21.25,"shiller":31.04},{"date":"2018-11-01","pe":20.67,"shiller":30.2},{"date":"2018-12-01","pe":19.39,"shiller":28.29},{"date":"2019-01-01","pe":19.6,"shiller":28.38},{"date":"2019-02-01","pe":20.6,"shiller":29.54},{"date":"2019-03-01","pe":20.86,"shiller":29.58},{"date":"2019-04-01","pe":21.56,"shiller":30.13},{"date":"2019-05-01","pe":21.15,"shiller":29.24},{"date":"2019-06-01","pe":21.37,"shiller":29.28},{"date":"2019-07-01","pe":22.28,"shiller":29.99},{"date":"2019-08-01","pe":21.67,"shiller":28.71},{"date":"2019-09-01","pe":22.44,"shiller":29.23},{"date":"2019-10-01","pe":22.04,"shiller":28.84},{"date":"2019-11-01","pe":22.62,"shiller":29.84},{"date":"2019-12-01","pe":22.78,"shiller":30.33},{"date":"2020-01-01","pe":24.88,"shiller":30.99},{"date":"2020-02-01","pe":26.42,"shiller":30.73},{"date":"2020-03-01","pe":22.8,"shiller":24.82},{"date":"2020-04-01","pe":24.97,"shiller":25.93},{"date":"2020-05-01","pe":27.82,"shiller":27.33},{"date":"2020-06-01","pe":31.29,"shiller":28.84},{"date":"2020-07-01","pe":32.44,"shiller":29.6},{"date":"2020-08-01","pe":34.41,"shiller":31.16},{"date":"2020-09-01","pe":34.27,"shiller":30.84},{"date":"2020-10-01","pe":35.3,"shiller":31.28},{"date":"2020-11-01","pe":37.16,"shiller":32.47},{"date":"2020-12-01","pe":39.26,"shiller":33.77},{"date":"2021-01-01","pe":35.96,"shiller":34.51},{"date":"2021-02-01","pe":33.24,"shiller":35.1},{"date":"2021-03-01","pe":30.5,"shiller":35.04},{"date":"2021-04-01","pe":29.92,"shiller":36.72},{"date":"2021-05-01","pe":28.05,"shiller":36.55},{"date":"2021-06-01","pe":26.7,"shiller":36.7},{"date":"2021-07-01","pe":26.56,"shiller":37.44},{"date":"2021-08-01","pe":26.23,"shiller":37.97},{"date":"2021-09-01","pe":25.35,"shiller":37.62},{"date":"2021-10-01","pe":24.39,"shiller":37.25},{"date":"2021-11-01","pe":24.52,"shiller":38.58},{"date":"2021-12-01","pe":23.63,"shiller":38.31},{"date":"2022-01-01","pe":23.11,"shiller":36.94},{"date":"2022-02-01","pe":22.42,"shiller":35.29},{"date":"2022-03-01","pe":22.19,"shiller":34.27},{"date":"2022-04-01","pe":22.4,"shiller":33.89},{"date":"2022-05-01","pe":20.81,"shiller":30.67},{"date":"2022-06-01","pe":20.28,"shiller":29.05},{"date":"2022-07-01","pe":20.53,"shiller":29},{"date":"2022-08-01","pe":22.03,"shiller":30.7},{"date":"2022-09-01","pe":20.58,"shiller":28.23},{"date":"2022-10-01","pe":20.44,"shiller":27.08},{"date":"2022-11-01","pe":22.07,"shiller":28.38},{"date":"2022-12-01","pe":22.65,"shiller":28.32},{"date":"2023-01-01","pe":22.82,"shiller":28.34},{"date":"2023-02-01","pe":23.4,"shiller":28.92},{"date":"2023-03-01","pe":22.66,"shiller":27.94},{"date":"2023-04-01","pe":23.27,"shiller":28.77},{"date":"2023-05-01","pe":23.15,"shiller":28.76},{"date":"2023-06-01","pe":24.01,"shiller":29.94},{"date":"2023-07-01","pe":24.76,"shiller":30.89},{"date":"2023-08-01","pe":24.16,"shiller":30.09},{"date":"2023-09-01","pe":23.93,"shiller":29.8},{"date":"2023-10-01","pe":22.78,"shiller":28.7},{"date":"2023-11-01","pe":23.51,"shiller":30.01},{"date":"2023-12-01","pe":24.35,"shiller":31.45},{"date":"2024-01-01","pe":25.01,"shiller":31.97},{"date":"2024-02-01","pe":26.14,"shiller":33.04},{"date":"2024-03-01","pe":27.02,"shiller":33.76},{"date":"2024-04-01","pe":26.41,"shiller":33.03},{"date":"2024-05-01","pe":26.93,"shiller":33.78},{"date":"2024-06-01","pe":27.64,"shiller":34.81},{"date":"2024-07-01","pe":28.08,"shiller":35.48},{"date":"2024-08-01","pe":27.67,"shiller":35.08},{"date":"2024-09-01","pe":28.09,"shiller":35.7},{"date":"2024-10-01","pe":28.45,"shiller":36.59},{"date":"2024-11-01","pe":28.66,"shiller":37.36},{"date":"2024-12-01","pe":28.6,"shiller":37.72},{"date":"2025-01-01","pe":28.16,"shiller":37.14},{"date":"2025-02-01","pe":28.15,"shiller":37.19},{"date":"2025-03-01","pe":26.23,"shiller":34.79},{"date":"2025-04-01","pe":24.56,"shiller":32.63},{"date":"2025-05-01","pe":26.34,"shiller":35.08},{"date":"2025-06-01","pe":27.1,"shiller":36.12},{"date":"2025-07-01","pe":27.81,"shiller":37.48},{"date":"2025-08-01","pe":27.84,"shiller":37.85},{"date":"2025-09-01","pe":28.13,"shiller":38.59},{"date":"2025-10-01","pe":28.78,"shiller":39.31},{"date":"2025-11-01","pe":28.8,"shiller":39.28},{"date":"2025-12-01","pe":29.28,"shiller":39.84},{"date":"2026-01-01","pe":29.6,"shiller":40.03},{"date":"2026-02-01","pe":29.45,"shiller":39.72},{"date":"2026-03-01","pe":29.15,"shiller":39.2},{"date":"2026-03-10","pe":29.16,"shiller":39.21}];
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const data = window.__INITIAL_DATA__;
+
+            const labels = data.map(d => d.date);
+            const peValues = data.map(d => d.pe);
+            const shillerValues = data.map(d => d.shiller);
+
+            // NBER Recession Dates (approximate for charting since 1950)
+            const recessions = [
+                { start: '1953-07-01', end: '1954-05-01' },
+                { start: '1957-08-01', end: '1958-04-01' },
+                { start: '1960-04-01', end: '1961-02-01' },
+                { start: '1969-12-01', end: '1970-11-01' },
+                { start: '1973-11-01', end: '1975-03-01' },
+                { start: '1980-01-01', end: '1980-07-01' },
+                { start: '1981-07-01', end: '1982-11-01' },
+                { start: '1990-07-01', end: '1991-03-01' },
+                { start: '2001-03-01', end: '2001-11-01' },
+                { start: '2007-12-01', end: '2009-06-01' },
+                { start: '2020-02-01', end: '2020-04-01' }
+            ];
+
+            const annotations = {};
+
+            // Add recession shading
+            recessions.forEach((rec, idx) => {
+                annotations['rec' + idx] = {
+                    type: 'box',
+                    xMin: rec.start,
+                    xMax: rec.end,
+                    backgroundColor: 'rgba(255, 255, 255, 0.05)',
+                    borderWidth: 0,
+                    drawTime: 'beforeDatasetsDraw'
+                };
+            });
+
+            // Add major peaks/bottoms markers
+            const keyEvents = [
+                { date: '2000-03-01', label: 'Dot-Com Peak', y: 44.19 },
+                { date: '2009-03-01', label: 'GFC Bottom', y: 13.32 }, // Using Shiller for bottom
+                { date: '2020-03-01', label: 'COVID Bottom', y: 22.80 },
+                { date: '2021-12-01', label: '2021 Peak', y: 38.31 } // Shiller peak
+            ];
+
+            keyEvents.forEach((ev, idx) => {
+                annotations['event' + idx] = {
+                    type: 'point',
+                    xValue: ev.date,
+                    yValue: ev.y,
+                    backgroundColor: 'rgba(255, 255, 255, 0.8)',
+                    radius: 4,
+                    borderWidth: 2,
+                    borderColor: '#152040'
+                };
+                annotations['label' + idx] = {
+                    type: 'label',
+                    xValue: ev.date,
+                    yValue: ev.y + 5,
+                    backgroundColor: 'rgba(10, 16, 32, 0.8)',
+                    content: ev.label,
+                    color: '#94a3b8',
+                    font: { size: 10, family: 'Inter' },
+                    padding: 4,
+                    borderRadius: 4
+                };
+            });
+
+            const ctx = document.getElementById('peChart').getContext('2d');
+
+            Chart.defaults.color = '#94a3b8';
+            Chart.defaults.font.family = "'Inter', sans-serif";
+
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [
+                        {
+                            label: 'Trailing P/E',
+                            data: peValues,
+                            borderColor: '#4a8fe7',
+                            backgroundColor: 'rgba(74, 143, 231, 0.1)',
+                            borderWidth: 2,
+                            pointRadius: 0,
+                            pointHoverRadius: 4,
+                            fill: true,
+                            tension: 0.2
+                        },
+                        {
+                            label: 'Shiller CAPE',
+                            data: shillerValues,
+                            borderColor: '#f59e0b',
+                            backgroundColor: 'rgba(245, 158, 11, 0.1)',
+                            borderWidth: 2,
+                            pointRadius: 0,
+                            pointHoverRadius: 4,
+                            fill: true,
+                            tension: 0.2
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    interaction: {
+                        mode: 'index',
+                        intersect: false,
+                    },
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                            labels: {
+                                color: '#e2e8f0',
+                                usePointStyle: true,
+                                boxWidth: 8
+                            }
+                        },
+                        tooltip: {
+                            backgroundColor: 'rgba(10, 16, 32, 0.9)',
+                            titleColor: '#e2e8f0',
+                            bodyColor: '#e2e8f0',
+                            borderColor: '#152040',
+                            borderWidth: 1,
+                            padding: 12,
+                            displayColors: true,
+                            callbacks: {
+                                label: function(context) {
+                                    return context.dataset.label + ': ' + context.parsed.y.toFixed(2);
+                                }
+                            }
+                        },
+                        annotation: {
+                            annotations: annotations
+                        }
+                    },
+                    scales: {
+                        x: {
+                            type: 'category',
+                            grid: {
+                                color: '#152040',
+                                drawBorder: false
+                            },
+                            ticks: {
+                                maxTicksLimit: 12,
+                                callback: function(val, index) {
+                                    // Show only year
+                                    const date = labels[index];
+                                    return date ? date.substring(0, 4) : '';
+                                }
+                            }
+                        },
+                        y: {
+                            grid: {
+                                color: '#152040',
+                                drawBorder: false
+                            },
+                            suggestedMin: 0,
+                            suggestedMax: 50
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
