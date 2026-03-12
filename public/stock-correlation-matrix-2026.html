@@ -1,0 +1,517 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Correlation Matrix 2026: What Actually Diversifies?</title>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VYF72NSC1Q"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-VYF72NSC1Q');</script>
+
+    <!-- Meta Descriptions & SEO -->
+    <meta name="description" content="Discover the surprising truth about which sectors are uncorrelated right now. A deep dive into the stock correlation matrix of 2026 reveals what actually diversifies a portfolio when markets turn volatile.">
+    <link rel="canonical" href="https://westmountfundamentals.com/stock-correlation-matrix-2026.html">
+    <meta property="og:title" content="Stock Correlation Matrix 2026: What Actually Diversifies?">
+    <meta property="og:description" content="Discover the surprising truth about which sectors are uncorrelated right now. A deep dive into the stock correlation matrix of 2026 reveals what actually diversifies a portfolio when markets turn volatile.">
+    <meta property="og:url" content="https://westmountfundamentals.com/stock-correlation-matrix-2026.html">
+    <meta property="og:type" content="article">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-color: #060a12;
+            --card-bg: #0a1020;
+            --border-color: #152040;
+            --accent-color: #4a8fe7;
+            --text-main: #e2e8f0;
+            --text-muted: #94a3b8;
+            --green: #10b981;
+            --red: #ef4444;
+            --nav-bg: rgba(6, 10, 18, 0.85);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding-bottom: 2rem;
+        }
+
+        /* Sticky Nav */
+        .sticky-nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: var(--nav-bg);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-brand {
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--text-main);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+            font-size: 0.95rem;
+        }
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        @media (max-width: 600px) {
+            .nav-links {
+                display: none; /* simple mobile nav */
+            }
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        /* Typography */
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #fff;
+            line-height: 1.2;
+        }
+        h2 {
+            font-size: 1.75rem;
+            font-weight: 600;
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+            color: #fff;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        h3 {
+            font-size: 1.25rem;
+            margin-top: 2rem;
+            margin-bottom: 0.75rem;
+            color: var(--accent-color);
+        }
+        p {
+            margin-bottom: 1.25rem;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+        strong {
+            color: var(--text-main);
+        }
+
+        /* Hero */
+        .hero {
+            margin-bottom: 3rem;
+            text-align: center;
+            padding: 3rem 1rem;
+            background: linear-gradient(180deg, rgba(10,16,32,1) 0%, rgba(6,10,18,1) 100%);
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+        }
+        .hero p {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Matrix Container */
+        .matrix-wrapper {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            overflow-x: auto;
+            margin-bottom: 3rem;
+        }
+
+        .heatmap-table {
+            border-collapse: collapse;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            margin: 0 auto;
+            min-width: 1000px; /* Force scroll on small screens */
+        }
+        .heatmap-table th, .heatmap-table td {
+            width: 45px;
+            height: 45px;
+            text-align: center;
+            vertical-align: middle;
+            border: 1px solid var(--border-color);
+        }
+        .heatmap-table th {
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            color: var(--text-muted);
+            white-space: nowrap;
+            background-color: var(--bg-color);
+            padding: 0 0.5rem;
+        }
+        .heatmap-table th.col-header {
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+            height: 120px;
+            text-align: left;
+            padding: 0.5rem 0;
+            width: 45px;
+        }
+        .heatmap-table td.row-header {
+            text-align: right;
+            padding-right: 1rem;
+            font-family: 'Inter', sans-serif;
+            width: 180px;
+            background-color: var(--bg-color);
+        }
+
+        .matrix-legend {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+        .legend-bar {
+            width: 200px;
+            height: 12px;
+            border-radius: 6px;
+            background: linear-gradient(to right, #ef4444, #060a12, #10b981);
+            border: 1px solid var(--border-color);
+        }
+
+        /* FAQ Section */
+        .faq-item {
+            margin-bottom: 1.5rem;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+        .faq-item h3 {
+            margin-top: 0;
+            font-size: 1.15rem;
+            color: var(--text-main);
+        }
+        .faq-item p {
+            margin-bottom: 0;
+            font-size: 1rem;
+        }
+
+        /* Methodology */
+        .methodology {
+            background-color: rgba(10, 16, 32, 0.5);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 3rem 0;
+            font-size: 0.95rem;
+            border-left: 4px solid var(--accent-color);
+        }
+        .methodology p {
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 3rem 1rem;
+            margin-top: 4rem;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Tooltip */
+        #tooltip {
+            position: absolute;
+            background: rgba(10, 16, 32, 0.95);
+            border: 1px solid var(--accent-color);
+            color: #fff;
+            padding: 0.75rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.2s;
+            z-index: 2000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+        }
+    </style>
+</head>
+<body>
+    <nav class="sticky-nav">
+        <a href="/" class="nav-brand">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent-color)"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+            Westmount Fundamentals
+        </a>
+        <div class="nav-links">
+            <a href="/#studies">Studies</a>
+            <a href="/#tools">Tools</a>
+            <a href="/#guides">Guides</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="hero">
+            <h1>Stock Correlation Matrix 2026: What Actually Diversifies?</h1>
+            <p>A data-driven look at how the 11 GICS sectors and major asset classes move together over the trailing 3-year period (2023-03-11 to 2026-03-11). Discover which sectors are uncorrelated when it matters most.</p>
+        </div>
+
+        <div class="matrix-wrapper">
+            <table class="heatmap-table" id="matrixTable">
+                <!-- Generated by JS -->
+            </table>
+
+            <div class="matrix-legend">
+                <span>-1.0 (Inverse)</span>
+                <div class="legend-bar"></div>
+                <span>0.0 (Uncorrelated)</span>
+                <div class="legend-bar" style="background: linear-gradient(to right, #060a12, #10b981);"></div>
+                <span>+1.0 (Correlated)</span>
+            </div>
+        </div>
+
+        <h2>Understanding Sector Correlation in 2026</h2>
+        <p>A stock correlation matrix measures how closely the daily returns of two assets move in tandem. A correlation of <strong>+1.0</strong> means they move perfectly together, <strong>0.0</strong> means they are completely independent (uncorrelated), and <strong>-1.0</strong> means they move in exact opposite directions.</p>
+
+        <p>Post-2020 market dynamics fundamentally changed the relationships between sectors. Tech dominance, inflation shocks, and shifting interest rate regimes mean that old assumptions about diversification no longer hold true. The interactive heatmap above uses daily return data from 2023-03-11 to 2026-03-11 across 750 trading days to show you the reality of today's market.</p>
+
+        <h3>Which Sectors are Uncorrelated?</h3>
+        <p>Looking at the data, the true diversifiers are assets with correlations near zero relative to the broader market. Real estate, utilities, and consumer staples often show lower correlations to high-beta sectors like technology and consumer discretionary. Furthermore, alternative asset classes like gold and commodities provide some of the lowest correlations to the S&P 500, offering genuine portfolio ballast.</p>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+            <h3>What is a stock correlation matrix?</h3>
+            <p>A stock correlation matrix is a table showing correlation coefficients between different variables—in this case, stock market sectors or asset classes. Each cell in the matrix represents the correlation between two specific assets, helping investors see which investments move together and which are independent.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>How do you read a stock correlation matrix?</h3>
+            <p>Find the row of one asset and follow it to the column of another. The intersecting cell shows a number between -1.0 and 1.0. Positive numbers (usually shaded green) mean they move together. Values near zero (often dark) mean they are uncorrelated. Negative numbers (shaded red) mean they move in opposite directions.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Which sectors are uncorrelated to the S&P 500?</h3>
+            <p>Based on recent data, defensive sectors like Utilities and Consumer Staples tend to have the lowest correlation to the broader S&P 500. Additionally, specific asset classes outside of equities—such as Gold, Commodities, and Total Bond Market indices—often exhibit correlations near zero or slightly negative relative to the S&P 500.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>How has sector correlation changed in 2026?</h3>
+            <p>Post-2020, macro factors like shifting interest rates and concentrated mega-cap tech performance have caused many sectors to move in lockstep, increasing overall market correlation. However, assets highly sensitive to physical supply chains or specific interest rate curves (like Energy or Real Estate) have occasionally decoupled from the broader market.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Why is sector correlation important for diversification?</h3>
+            <p>True diversification isn't just owning many different stocks; it's owning assets that don't all drop at the same time. If you own 10 different technology and consumer discretionary ETFs, but they all have a 0.9 correlation to each other, a market shock will still pull your entire portfolio down. Uncorrelated assets smooth out long-term returns.</p>
+        </div>
+
+        <div class="methodology">
+            <h3>Methodology</h3>
+            <p>This study calculates Pearson correlation coefficients using daily adjusted closing prices over the trailing 3-year period (2023-03-11 to 2026-03-11). The data includes 750 trading days. We use the 11 SPDR GICS Sector ETFs as proxies for sector performance, SPY for the S&P 500, BND for the Total Bond Market, GLD for Gold, VNQ for broad Real Estate, and PDBC for broad Commodities. Missing data points are removed from the vector pairs to ensure exact matching periods.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 Westmount Research · A GAB Ventures property.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.8rem;">Data for informational purposes only. Not investment advice. All information for educational purposes only.</p>
+    </footer>
+
+    <div id="tooltip"></div>
+
+    <!-- Data Injection -->
+    <script>
+        window.__INITIAL_DATA__ = {"labels":["Technology","Health Care","Financials","Consumer Discretionary","Industrials","Communication Services","Consumer Staples","Energy","Utilities","Real Estate","Materials","S&P 500 (Equities)","Total Bond Market","Gold","Real Estate (Broad)","Commodities"],"symbols":["XLK","XLV","XLF","XLY","XLI","XLC","XLP","XLE","XLU","XLRE","XLB","SPY","BND","GLD","VNQ","PDBC"],"matrix":[[1,0.32,0.53,0.74,0.67,0.7,0.1,0.28,0.17,0.32,0.53,0.91,0.04,0.09,0.34,0.2],[0.32,1,0.53,0.42,0.54,0.4,0.56,0.3,0.4,0.55,0.57,0.54,0.2,0.06,0.55,0.02],[0.53,0.53,1,0.67,0.8,0.62,0.41,0.53,0.39,0.57,0.7,0.77,0.02,-0.02,0.6,0.16],[0.74,0.42,0.67,1,0.72,0.75,0.32,0.34,0.25,0.49,0.65,0.86,0.14,0.01,0.53,0.15],[0.67,0.54,0.8,0.72,1,0.63,0.39,0.55,0.42,0.6,0.81,0.84,0.07,0.07,0.64,0.22],[0.7,0.4,0.62,0.75,0.63,1,0.3,0.32,0.25,0.43,0.55,0.82,0.11,0.05,0.46,0.15],[0.1,0.56,0.41,0.32,0.39,0.3,1,0.25,0.51,0.56,0.5,0.34,0.2,0.08,0.55,0.02],[0.28,0.3,0.53,0.34,0.55,0.32,0.25,1,0.3,0.35,0.55,0.47,-0.06,0.12,0.37,0.63],[0.17,0.4,0.39,0.25,0.42,0.25,0.51,0.3,1,0.62,0.44,0.36,0.3,0.19,0.61,0.11],[0.32,0.55,0.57,0.49,0.6,0.43,0.56,0.35,0.62,1,0.64,0.54,0.38,0.12,0.99,0.09],[0.53,0.57,0.7,0.65,0.81,0.55,0.5,0.55,0.44,0.64,1,0.73,0.15,0.23,0.67,0.29],[0.91,0.54,0.77,0.86,0.84,0.82,0.34,0.47,0.36,0.54,0.73,1,0.1,0.07,0.57,0.24],[0.04,0.2,0.02,0.14,0.07,0.11,0.2,-0.06,0.3,0.38,0.15,0.1,1,0.22,0.38,-0.09],[0.09,0.06,-0.02,0.01,0.07,0.05,0.08,0.12,0.19,0.12,0.23,0.07,0.22,1,0.12,0.4],[0.34,0.55,0.6,0.53,0.64,0.46,0.55,0.37,0.61,0.99,0.67,0.57,0.38,0.12,1,0.1],[0.2,0.02,0.16,0.15,0.22,0.15,0.02,0.63,0.11,0.09,0.29,0.24,-0.09,0.4,0.1,1]],"generatedAt":"2026-03-11T16:29:40.555Z","dateRange":"2023-03-11 to 2026-03-11","dataPoints":750};
+
+        // Render Heatmap
+        document.addEventListener('DOMContentLoaded', () => {
+            const data = window.__INITIAL_DATA__;
+            const table = document.getElementById('matrixTable');
+            const tooltip = document.getElementById('tooltip');
+
+            // Function to map correlation to color
+            function getColor(val) {
+                if (val === null) return 'transparent';
+
+                // Color mapping:
+                // 1.0 = #10b981 (Green)
+                // 0.0 = #060a12 (Dark)
+                // -1.0 = #ef4444 (Red)
+
+                if (val > 0) {
+                    // Map 0 to 1 -> opacity of green
+                    const opacity = val;
+                    return `rgba(16, 185, 129, ${opacity})`;
+                } else if (val < 0) {
+                    // Map -1 to 0 -> opacity of red
+                    const opacity = Math.abs(val);
+                    return `rgba(239, 68, 68, ${opacity})`;
+                }
+                return '#060a12';
+            }
+
+            // Create Header Row
+            const thead = document.createElement('thead');
+            const headerRow = document.createElement('tr');
+
+            // Empty top-left cell
+            headerRow.appendChild(document.createElement('th'));
+
+            data.labels.forEach((label, idx) => {
+                const th = document.createElement('th');
+                th.className = 'col-header';
+                th.textContent = data.symbols[idx];
+                th.title = label; // tooltip fallback
+                headerRow.appendChild(th);
+            });
+            thead.appendChild(headerRow);
+            table.appendChild(thead);
+
+            // Create Body Rows
+            const tbody = document.createElement('tbody');
+
+            data.matrix.forEach((row, rIdx) => {
+                const tr = document.createElement('tr');
+
+                // Row Header
+                const th = document.createElement('td');
+                th.className = 'row-header';
+                th.textContent = `${data.labels[rIdx]} (${data.symbols[rIdx]})`;
+                tr.appendChild(th);
+
+                // Cells
+                row.forEach((val, cIdx) => {
+                    const td = document.createElement('td');
+                    if (val !== null) {
+                        td.style.backgroundColor = getColor(val);
+                        // For readability, if magnitude is low, make text muted, otherwise white
+                        const intensity = Math.abs(val);
+                        td.style.color = intensity > 0.5 ? '#fff' : 'rgba(255,255,255,0.7)';
+                        td.textContent = val.toFixed(2);
+
+                        // Tooltip logic
+                        td.addEventListener('mouseenter', (e) => {
+                            tooltip.style.opacity = 1;
+                            tooltip.innerHTML = `
+                                <strong>${data.labels[rIdx]}</strong> vs <strong>${data.labels[cIdx]}</strong><br>
+                                Correlation: ${val.toFixed(2)}
+                            `;
+                        });
+                        td.addEventListener('mousemove', (e) => {
+                            tooltip.style.left = e.pageX + 15 + 'px';
+                            tooltip.style.top = e.pageY + 15 + 'px';
+                        });
+                        td.addEventListener('mouseleave', () => {
+                            tooltip.style.opacity = 0;
+                        });
+                    } else {
+                        td.textContent = '-';
+                    }
+                    tr.appendChild(td);
+                });
+
+                tbody.appendChild(tr);
+            });
+
+            table.appendChild(tbody);
+        });
+    </script>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "What is a stock correlation matrix?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A stock correlation matrix is a table showing correlation coefficients between different variables—in this case, stock market sectors or asset classes. Each cell in the matrix represents the correlation between two specific assets, helping investors see which investments move together and which are independent."
+        }
+      },{
+        "@type": "Question",
+        "name": "How do you read a stock correlation matrix?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Find the row of one asset and follow it to the column of another. The intersecting cell shows a number between -1.0 and 1.0. Positive numbers (usually shaded green) mean they move together. Values near zero (often dark) mean they are uncorrelated. Negative numbers (shaded red) mean they move in opposite directions."
+        }
+      },{
+        "@type": "Question",
+        "name": "Which sectors are uncorrelated to the S&P 500?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Based on recent data, defensive sectors like Utilities and Consumer Staples tend to have the lowest correlation to the broader S&P 500. Additionally, specific asset classes outside of equities—such as Gold, Commodities, and Total Bond Market indices—often exhibit correlations near zero or slightly negative relative to the S&P 500."
+        }
+      },{
+        "@type": "Question",
+        "name": "How has sector correlation changed in 2026?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Post-2020, macro factors like shifting interest rates and concentrated mega-cap tech performance have caused many sectors to move in lockstep, increasing overall market correlation. However, assets highly sensitive to physical supply chains or specific interest rate curves (like Energy or Real Estate) have occasionally decoupled from the broader market."
+        }
+      },{
+        "@type": "Question",
+        "name": "Why is sector correlation important for diversification?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "True diversification isn't just owning many different stocks; it's owning assets that don't all drop at the same time. If you own 10 different technology and consumer discretionary ETFs, but they all have a 0.9 correlation to each other, a market shock will still pull your entire portfolio down. Uncorrelated assets smooth out long-term returns."
+        }
+      }]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Stock Correlation Matrix 2026: What Actually Diversifies?",
+      "description": "Discover the surprising truth about which sectors are uncorrelated right now. A deep dive into the stock correlation matrix of 2026 reveals what actually diversifies a portfolio when markets turn volatile.",
+      "datePublished": "2026-03-11T16:29:40.555Z",
+      "author": {
+        "@type": "Organization",
+        "name": "Westmount Research"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Westmount Research",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://westmountfundamentals.com/logo.png"
+        }
+      }
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Diversification Guide: How Many Stocks Do You Actually Need?</title>
+    <meta name="description" content="Adding more stocks isn't always safer. This comprehensive portfolio diversification guide reveals the exact threshold where risk reduction stalls. Discover if your holdings hit the optimal sweet spot.">
+    <link rel="canonical" href="https://westmountfundamentals.com/guide-portfolio-diversification.html">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-color: #060a12;
+            --card-bg: #0a1020;
+            --border-color: #152040;
+            --accent-color: #4a8fe7;
+            --text-main: #e2e8f0;
+            --text-muted: #94a3b8;
+            --success: #22c55e;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            font-size: 16px;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            color: #ffffff;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        h1 { font-size: 2.5rem; margin-top: 0; }
+        h2 { font-size: 1.8rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; }
+        h3 { font-size: 1.4rem; }
+
+        p { margin-bottom: 1.2rem; }
+
+        a { color: var(--accent-color); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        /* Sticky Nav */
+        .sticky-nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: rgba(6, 10, 18, 0.85);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .sticky-nav .brand {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #ffffff;
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .sticky-nav .links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .sticky-nav .links a {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .sticky-nav .links a:hover {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        /* Header */
+        header {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .meta-info {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* Cards and interactive elements */
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .chart-container {
+            position: relative;
+            height: 300px;
+            width: 100%;
+            margin: 2rem 0;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1rem;
+        }
+
+        /* Interactive Tool */
+        .tool-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .tool-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .tool-group input, .tool-group select {
+            width: 100%;
+            background-color: var(--bg-color);
+            border: 1px solid var(--border-color);
+            color: #ffffff;
+            padding: 0.75rem;
+            border-radius: 6px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+        }
+
+        .tool-group input:focus, .tool-group select:focus {
+            outline: none;
+            border-color: var(--accent-color);
+        }
+
+        .btn {
+            background-color: var(--accent-color);
+            color: #ffffff;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #3a7bc8;
+        }
+
+        #tool-result {
+            margin-top: 1.5rem;
+            padding: 1.5rem;
+            border-radius: 8px;
+            display: none;
+            text-align: center;
+        }
+
+        .score-display {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .score-low { color: var(--danger); }
+        .score-med { color: var(--warning); }
+        .score-high { color: var(--success); }
+
+        ul, ol {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* FAQ Section */
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-q {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-a {
+            color: var(--text-muted);
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border-color);
+            padding: 2rem 1.5rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-top: 4rem;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 600px) {
+            h1 { font-size: 2rem; }
+            .sticky-nav { padding: 1rem; }
+            .sticky-nav .links { gap: 1rem; }
+            .sticky-nav .links a { font-size: 0.85rem; }
+            .container { padding: 1.5rem 1rem; }
+        }
+    </style>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VYF72NSC1Q"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-VYF72NSC1Q');
+    </script>
+
+    <!-- JSON-LD Article -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Portfolio Diversification Guide: How Many Stocks Do You Actually Need?",
+      "description": "Adding more stocks isn't always safer. This comprehensive portfolio diversification guide reveals the exact threshold where risk reduction stalls. Discover if your holdings hit the optimal sweet spot.",
+      "datePublished": "2026-03-01",
+      "author": {
+        "@type": "Organization",
+        "name": "Westmount Research"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Westmount Research",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://westmountfundamentals.com/logo.png"
+        }
+      }
+    }
+    </script>
+
+    <!-- JSON-LD FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How many stocks to diversify a portfolio effectively?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Academic research and statistical models generally show that holding between 20 to 30 uncorrelated stocks provides the bulk of diversification benefits. Beyond 30 stocks, the incremental reduction in unsystematic risk becomes negligible."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is 20 stocks enough diversification for long-term investing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, 20 stocks can be enough diversification, provided they are distributed across various uncorrelated sectors and industries. Holding 20 stocks in a single sector, such as technology, does not constitute a properly diversified portfolio."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a comprehensive portfolio diversification guide?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A comprehensive portfolio diversification guide explains not just the mathematical threshold of stock quantities, but also the importance of diversifying across sectors, market capitalizations, asset classes, and geographic regions to effectively mitigate risk."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many sectors should a well-diversified portfolio include?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A robust portfolio should ideally have exposure to at least 5 to 7 distinct market sectors. This prevents an economic downturn in a single industry from catastrophically impacting the entire portfolio."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does over-diversification hurt my investment returns?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, over-diversification can lead to \"diworsification.\" When you hold too many stocks, your portfolio increasingly mimics a broad market index fund, but often with higher trading costs and less concentration in your best investment ideas, ultimately capping your potential upside."
+          }
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+
+    <nav class="sticky-nav">
+        <a href="/" class="brand">Westmount Fundamentals</a>
+        <div class="links">
+            <a href="/#studies">Studies</a>
+            <a href="/#tools">Tools</a>
+            <a href="/#guides">Guides</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <header>
+            <div class="meta-info">EDUCATIONAL GUIDE · PUBLISHED MARCH 2026</div>
+            <h1>Portfolio Diversification: How Many Stocks Do You Actually Need?</h1>
+        </header>
+
+        <section>
+            <p>One of the most persistent myths in investing is that more is always better. As you add positions to your portfolio, risk decreases—but only up to a point. Understanding the mathematical reality behind this dynamic is the cornerstone of effective portfolio construction.</p>
+
+            <p>This <strong>portfolio diversification guide</strong> explores the empirical data behind risk reduction, answering the critical question: <em>how many stocks to diversify</em> optimally before you begin diluting your best ideas?</p>
+        </section>
+
+        <section>
+            <h2>The Mathematics of Risk Reduction</h2>
+            <p>In finance, risk is typically divided into two categories:</p>
+            <ul>
+                <li><strong>Systematic Risk (Market Risk):</strong> The risk inherent to the entire market. This cannot be diversified away (e.g., global recessions, interest rate hikes).</li>
+                <li><strong>Unsystematic Risk (Specific Risk):</strong> Risk specific to individual companies or industries (e.g., a CEO scandal, a failed product launch). <em>This is the risk diversification eliminates.</em></li>
+            </ul>
+
+            <p>The classic curve of risk reduction demonstrates a profound statistical reality: the marginal benefit of adding another stock to your portfolio diminishes rapidly.</p>
+
+            <div class="chart-container" id="diversificationChart">
+                <canvas id="riskCanvas"></canvas>
+            </div>
+
+            <p>As the curve illustrates, holding just one stock exposes you to maximum unsystematic risk. By the time you reach 10-15 stocks, you have already eliminated the vast majority of company-specific risk. So, <strong>is 20 stocks enough diversification?</strong> The data strongly suggests yes, as long as those stocks are not highly correlated.</p>
+            <p>Beyond 25-30 stocks, the risk reduction curve essentially flattens. Adding a 31st or 50th stock does almost nothing to lower your risk profile, but it significantly increases your tracking burden and transaction costs.</p>
+        </section>
+
+        <section>
+            <h2>Beyond the Number: True Diversification</h2>
+            <p>It is crucial to understand that 20 software companies do not make a diversified portfolio. True risk mitigation requires spreading capital across different vectors:</p>
+
+            <ul>
+                <li><strong>Sector Diversification:</strong> Avoid concentrating in a single area like Tech or Financials. Aim for representation across at least 5-7 different GICS sectors.</li>
+                <li><strong>Geographic Diversification:</strong> Including international equities hedges against domestic economic slumps.</li>
+                <li><strong>Asset Class Diversification:</strong> Stocks, bonds, real estate, and cash equivalents react differently to inflation and interest rate cycles.</li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2>Interactive Tool: Diversification Health Check</h2>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">Enter your current portfolio composition to evaluate your diversification score.</p>
+
+            <div class="tool-group">
+                <label for="stockCount">Total Number of Individual Stocks</label>
+                <input type="number" id="stockCount" placeholder="e.g., 15" min="1" max="500">
+            </div>
+
+            <div class="tool-group">
+                <label for="sectorCount">Number of Distinct Sectors Represented</label>
+                <select id="sectorCount">
+                    <option value="1">1 Sector</option>
+                    <option value="2">2 Sectors</option>
+                    <option value="3">3 Sectors</option>
+                    <option value="4">4 Sectors</option>
+                    <option value="5" selected>5 Sectors</option>
+                    <option value="6">6 Sectors</option>
+                    <option value="7">7 Sectors</option>
+                    <option value="8">8 Sectors</option>
+                    <option value="9">9 Sectors</option>
+                    <option value="10">10 Sectors</option>
+                    <option value="11">11 Sectors</option>
+                </select>
+            </div>
+
+            <div class="tool-group">
+                <label for="top3Weight">Weight of Top 3 Holdings (%)</label>
+                <input type="number" id="top3Weight" placeholder="e.g., 40" min="0" max="100">
+            </div>
+
+            <button class="btn" id="calculateBtn">Calculate Diversification Score</button>
+
+            <div id="tool-result">
+                <div class="score-display" id="scoreValue">--</div>
+                <h3 id="scoreTitle">Score</h3>
+                <p id="scoreMessage">Enter your data above to see your score.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>The Danger of Over-Diversification</h2>
+            <p>If holding 30 stocks is good, is holding 100 better? Generally, no. This phenomenon is known as "diworsification."</p>
+            <p>When you hold too many individual stocks, your portfolio begins to mimic a broad market index fund, but with distinct disadvantages. You cap your upside potential because your best ideas are diluted by dozens of mediocre ones. Furthermore, it becomes practically impossible for a retail investor to stay actively informed on the quarterly earnings and fundamental changes of 80 different companies.</p>
+            <p>If you prefer to hold hundreds of stocks to guarantee market-average returns with zero unsystematic risk, <strong>ETFs make more sense than individual stocks</strong>. A single S&P 500 or Total Stock Market ETF achieves ultimate diversification instantly and cost-effectively.</p>
+        </section>
+
+        <section>
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <div class="faq-q">How many stocks to diversify a portfolio effectively?</div>
+                <div class="faq-a">Academic research and statistical models generally show that holding between 20 to 30 uncorrelated stocks provides the bulk of diversification benefits. Beyond 30 stocks, the incremental reduction in unsystematic risk becomes negligible.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">Is 20 stocks enough diversification for long-term investing?</div>
+                <div class="faq-a">Yes, 20 stocks can be enough diversification, provided they are distributed across various uncorrelated sectors and industries. Holding 20 stocks in a single sector, such as technology, does not constitute a properly diversified portfolio.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">What is a comprehensive portfolio diversification guide?</div>
+                <div class="faq-a">A comprehensive portfolio diversification guide explains not just the mathematical threshold of stock quantities, but also the importance of diversifying across sectors, market capitalizations, asset classes, and geographic regions to effectively mitigate risk.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">How many sectors should a well-diversified portfolio include?</div>
+                <div class="faq-a">A robust portfolio should ideally have exposure to at least 5 to 7 distinct market sectors. This prevents an economic downturn in a single industry from catastrophically impacting the entire portfolio.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">Does over-diversification hurt my investment returns?</div>
+                <div class="faq-a">Yes, over-diversification can lead to "diworsification." When you hold too many stocks, your portfolio increasingly mimics a broad market index fund, but often with higher trading costs and less concentration in your best investment ideas, ultimately capping your potential upside.</div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 Westmount Research · A GAB Ventures property.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.75rem;">Data for informational purposes only. Not investment advice. All information for educational purposes only.</p>
+    </footer>
+
+    <script>
+        // Draw the Chart using vanilla Canvas API
+        const canvas = document.getElementById('riskCanvas');
+        const ctx = canvas.getContext('2d');
+
+        function drawChart() {
+            // Resize handler for high DPI screens
+            const dpr = window.devicePixelRatio || 1;
+            const rect = canvas.parentNode.getBoundingClientRect();
+            canvas.width = rect.width * dpr;
+            canvas.height = rect.height * dpr;
+
+            ctx.scale(dpr, dpr);
+
+            const w = rect.width;
+            const h = rect.height;
+            const padding = 40;
+
+            ctx.clearRect(0, 0, w, h);
+
+            // Axes
+            ctx.strokeStyle = '#152040';
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.moveTo(padding, padding);
+            ctx.lineTo(padding, h - padding);
+            ctx.lineTo(w - padding, h - padding);
+            ctx.stroke();
+
+            // Labels
+            ctx.fillStyle = '#94a3b8';
+            ctx.font = '12px Inter';
+            ctx.textAlign = 'center';
+            ctx.fillText('Number of Stocks', w / 2, h - 10);
+
+            ctx.save();
+            ctx.translate(15, h / 2);
+            ctx.rotate(-Math.PI / 2);
+            ctx.fillText('Portfolio Risk (%)', 0, 0);
+            ctx.restore();
+
+            // Data Points (conceptual representation of 1/sqrt(n) relationship)
+            ctx.beginPath();
+            ctx.strokeStyle = '#4a8fe7';
+            ctx.lineWidth = 3;
+
+            const points = [];
+            for (let i = 1; i <= 50; i++) {
+                const x = padding + ((i / 50) * (w - padding * 2));
+                // Base systematic risk + unsystematic risk that decays
+                const yValue = 20 + (80 / Math.sqrt(i));
+                const y = (h - padding) - ((yValue / 100) * (h - padding * 2));
+                points.push({x, y});
+
+                if (i === 1) ctx.moveTo(x, y);
+                else ctx.lineTo(x, y);
+            }
+            ctx.stroke();
+
+            // Systematic Risk Line
+            ctx.beginPath();
+            ctx.strokeStyle = '#ef4444';
+            ctx.setLineDash([5, 5]);
+            ctx.lineWidth = 1;
+            const sysRiskY = (h - padding) - (0.2 * (h - padding * 2));
+            ctx.moveTo(padding, sysRiskY);
+            ctx.lineTo(w - padding, sysRiskY);
+            ctx.stroke();
+            ctx.setLineDash([]);
+
+            // Text annotations
+            ctx.fillStyle = '#ef4444';
+            ctx.textAlign = 'right';
+            ctx.fillText('Market Risk (Undiversifiable)', w - padding - 10, sysRiskY - 10);
+
+            // Highlight the sweet spot (20-30)
+            const x20 = padding + ((20 / 50) * (w - padding * 2));
+            const x30 = padding + ((30 / 50) * (w - padding * 2));
+
+            ctx.fillStyle = 'rgba(34, 197, 94, 0.1)';
+            ctx.fillRect(x20, padding, x30 - x20, h - padding * 2);
+
+            ctx.fillStyle = '#22c55e';
+            ctx.textAlign = 'center';
+            ctx.fillText('Optimal Zone (20-30)', (x20 + x30) / 2, padding + 20);
+        }
+
+        window.addEventListener('resize', drawChart);
+        // Initial draw after a slight delay to ensure container width is calculated
+        setTimeout(drawChart, 100);
+
+        // Tool Logic
+        document.getElementById('calculateBtn').addEventListener('click', function() {
+            const stocks = parseInt(document.getElementById('stockCount').value);
+            const sectors = parseInt(document.getElementById('sectorCount').value);
+            const top3 = parseFloat(document.getElementById('top3Weight').value);
+
+            const resultDiv = document.getElementById('tool-result');
+            const scoreVal = document.getElementById('scoreValue');
+            const scoreTitle = document.getElementById('scoreTitle');
+            const scoreMsg = document.getElementById('scoreMessage');
+
+            if (isNaN(stocks) || isNaN(top3)) {
+                alert('Please enter valid numbers for stocks and weight.');
+                return;
+            }
+
+            let score = 100;
+            let feedback = [];
+
+            // Stock Count penalty
+            if (stocks < 10) {
+                score -= 40;
+                feedback.push("You hold too few stocks, leaving you exposed to significant company-specific risk.");
+            } else if (stocks < 20) {
+                score -= 15;
+                feedback.push("Good start, but increasing to 20-30 stocks could optimize your risk profile.");
+            } else if (stocks > 50) {
+                score -= 20;
+                feedback.push("You are likely over-diversified. Tracking this many individual stocks is difficult and dilutes returns.");
+            } else {
+                feedback.push("You are in the \"sweet spot\" for the number of individual holdings (20-30).");
+            }
+
+            // Sector penalty
+            if (sectors < 3) {
+                score -= 30;
+                feedback.push("Heavy sector concentration! A downturn in your represented sectors will severely hurt your portfolio.");
+            } else if (sectors < 5) {
+                score -= 10;
+                feedback.push("Consider expanding into 1-2 more sectors to smooth out economic cycle volatility.");
+            } else {
+                feedback.push("Excellent sector representation.");
+            }
+
+            // Top heavy penalty
+            if (top3 > 60) {
+                score -= 30;
+                feedback.push("Extremely top-heavy. Your portfolio performance is almost entirely dictated by just 3 companies.");
+            } else if (top3 > 40) {
+                score -= 15;
+                feedback.push("Slightly concentrated at the top. Ensure you have high conviction in those top 3 positions.");
+            } else {
+                feedback.push("Good balance among your top positions without over-concentration.");
+            }
+
+            // Clamp score
+            score = Math.max(0, Math.min(100, score));
+
+            // UI Update
+            scoreVal.textContent = score;
+            scoreVal.className = 'score-display';
+
+            if (score >= 80) {
+                scoreVal.classList.add('score-high');
+                scoreTitle.textContent = 'Excellent Diversification';
+                scoreTitle.style.color = 'var(--success)';
+            } else if (score >= 50) {
+                scoreVal.classList.add('score-med');
+                scoreTitle.textContent = 'Moderate Diversification';
+                scoreTitle.style.color = 'var(--warning)';
+            } else {
+                scoreVal.classList.add('score-low');
+                scoreTitle.textContent = 'Poor Diversification';
+                scoreTitle.style.color = 'var(--danger)';
+            }
+
+            scoreMsg.innerHTML = '<ul style="text-align: left; margin-top: 1rem; color: var(--text-muted); font-size: 0.95rem;"><li>' + feedback.join('</li><li>') + '</li></ul>';
+
+            resultDiv.style.display = 'block';
+            resultDiv.style.backgroundColor = 'var(--bg-color)';
+            resultDiv.style.border = '1px solid var(--border-color)';
+        });
+    </script>
+</body>
+</html>

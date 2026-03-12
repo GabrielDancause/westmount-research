@@ -1,0 +1,1217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Largest Stock Buybacks 2026: Which Companies Are Buying Back the Most Stock? | Westmount Fundamentals</title>
+  <meta name="description" content="Discover the biggest stock buybacks of 2026. Explore our comprehensive list of companies buying back stock, track buyback yields, and see which sectors spend the most.">
+  <link rel="canonical" href="https://westmountfundamentals.com/largest-stock-buybacks-2026.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Which companies have the largest share buybacks?","acceptedAnswer":{"@type":"Answer","text":"The companies with the largest share buybacks are typically mega-cap technology and financial firms. Apple (AAPL) frequently leads, often repurchasing tens of billions of dollars annually, followed by companies like Alphabet (GOOGL), Meta (META), and Microsoft (MSFT)."}},{"@type":"Question","name":"What are the biggest stock buybacks in 2026?","acceptedAnswer":{"@type":"Answer","text":"The biggest stock buybacks in 2026 are dominated by the Information Technology sector, with Apple alone accounting for nearly $100 billion in trailing 12-month repurchases. Financials and Energy companies also have significant buyback programs."}},{"@type":"Question","name":"Are stock buybacks good or bad for shareholders?","acceptedAnswer":{"@type":"Answer","text":"Stock buybacks can be good or bad depending on the price paid. When a company buys back undervalued stock, it creates value for remaining shareholders by increasing their ownership percentage and boosting earnings per share (EPS). However, if management buys back overvalued stock, it destroys shareholder value."}},{"@type":"Question","name":"Where can I find a list of companies buying back stock?","acceptedAnswer":{"@type":"Answer","text":"You can find a list of companies buying back stock on our comprehensive buyback tracker, which ranks the top 50 companies by total buyback amount, buyback yield, and share count reduction."}},{"@type":"Question","name":"How does buyback yield compare to dividend yield?","acceptedAnswer":{"@type":"Answer","text":"Buyback yield is the total amount spent on share repurchases divided by market cap, whereas dividend yield is total dividends paid divided by market cap. Both return capital to shareholders, but buybacks are often more tax-efficient and flexible, while dividends provide predictable income. Many top companies offer a combination of both."}}]}
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VYF72NSC1Q"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VYF72NSC1Q');
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: #060a12;
+      color: #c8d0de;
+      line-height: 1.6;
+    }
+
+    .sticky-nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(6, 10, 18, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 24px;
+      height: 48px;
+    }
+    .nav-logo {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #fff;
+      text-decoration: none;
+      letter-spacing: -0.3px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 8px;
+    }
+    .nav-links a {
+      color: #8a94a6;
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 500;
+      padding: 6px 14px;
+      border-radius: 6px;
+    }
+    .nav-links a:hover {
+      color: #fff;
+      background: rgba(255,255,255,0.05);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 24px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 60px;
+      border-bottom: 1px solid #152040;
+      padding-bottom: 40px;
+    }
+
+    .tagline {
+      color: #4a8fe7;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 900;
+      letter-spacing: -1.5px;
+      margin-bottom: 20px;
+      color: #fff;
+    }
+
+    h2 {
+      font-size: 2rem;
+      color: #fff;
+      margin: 40px 0 20px;
+    }
+<<<<<<< HEAD
+
+=======
+    
+>>>>>>> main
+    h3 {
+      font-size: 1.5rem;
+      color: #e0e8f0;
+      margin: 30px 0 15px;
+    }
+
+    .desc {
+      color: #5a6a80;
+      font-size: 1.05rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: #0a1020;
+      border: 1px solid #152040;
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 40px;
+      overflow-x: auto;
+    }
+
+    .text-content p {
+      margin-bottom: 1.2rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+
+    th, td {
+      padding: 12px 16px;
+      text-align: left;
+      border-bottom: 1px solid #152040;
+    }
+
+    th {
+      color: #5a6a80;
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      cursor: pointer;
+      user-select: none;
+    }
+<<<<<<< HEAD
+
+=======
+    
+>>>>>>> main
+    th:hover {
+      color: #4a8fe7;
+    }
+
+    td.ticker {
+      font-family: 'JetBrains Mono', monospace;
+      color: #4a8fe7;
+      font-weight: 700;
+    }
+<<<<<<< HEAD
+
+=======
+    
+>>>>>>> main
+    td.num {
+      font-family: 'JetBrains Mono', monospace;
+      text-align: right;
+    }
+    th.num {
+      text-align: right;
+    }
+
+    .positive { color: #4ade80; }
+    .negative { color: #f87171; }
+
+    .chart-container {
+      position: relative;
+      height: 400px;
+      width: 100%;
+    }
+
+    .faq, .methodology, .content-section {
+      background: #0a1020;
+      border: 1px solid #152040;
+      border-radius: 12px;
+      padding: 32px;
+      margin-bottom: 40px;
+    }
+
+    .faq h3, .methodology h3, .content-section h3 {
+      color: #fff;
+      margin-bottom: 12px;
+      font-size: 1.2rem;
+    }
+
+    .faq p, .methodology p, .content-section p {
+      margin-bottom: 24px;
+      color: #8a9bb0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 50px 24px;
+      font-size: 0.85rem;
+      color: #3a4a5a;
+      border-top: 1px solid #151f2e;
+      background: #040810;
+      margin-top: 60px;
+    }
+
+    footer a {
+      color: #4a8fe7;
+      text-decoration: none;
+    }
+
+    .disclaimer {
+      max-width: 600px;
+      margin: 16px auto 0;
+      color: #2a3a4a;
+      font-size: 0.75rem;
+      line-height: 1.5;
+    }
+<<<<<<< HEAD
+
+=======
+    
+>>>>>>> main
+    .sort-icon::after {
+      content: '↕';
+      margin-left: 5px;
+      opacity: 0.5;
+    }
+    .sort-asc::after { content: '↑'; opacity: 1; }
+    .sort-desc::after { content: '↓'; opacity: 1; }
+
+    @media (max-width: 768px) {
+      .container { padding: 40px 16px; }
+      h1 { font-size: 2.2rem; }
+      .chart-container { height: 300px; }
+      th, td { padding: 10px 8px; font-size: 0.8rem; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="sticky-nav">
+    <div class="nav-container">
+      <a href="/" class="nav-logo">Westmount Fundamentals</a>
+      <div class="nav-links">
+        <a href="/#studies">Studies</a>
+        <a href="/#tools">Tools</a>
+        <a href="/#guides">Guides</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <header>
+      <div class="tagline">Original Research</div>
+      <h1>Largest Stock Buybacks 2026</h1>
+      <p class="desc">Which companies are buying back the most stock? A comprehensive tracker of the largest share repurchases, buyback yields, and the ongoing debate over their value to shareholders.</p>
+    </header>
+<<<<<<< HEAD
+
+    <div class="content-section text-content">
+      <h2>The Debate: Are Buybacks Good or Bad for Shareholders?</h2>
+      <p>Stock buybacks remain one of the most debated topics in finance. In theory, a share repurchase is a tax-efficient way to return capital to shareholders. By reducing the number of outstanding shares, each remaining share represents a larger ownership stake in the company, inherently boosting Earnings Per Share (EPS).</p>
+
+      <h3>The Case For Buybacks</h3>
+      <p>Supporters argue that buybacks are a sign of financial health and disciplined capital allocation. When management believes their stock is undervalued, repurchasing shares is an excellent investment. It's often more tax-efficient than paying dividends, as shareholders only pay capital gains tax when they choose to sell, rather than being forced to pay taxes on dividend income every year. Furthermore, buybacks provide companies with flexibility—they can be ramped up during good times and paused during downturns without the negative market reaction that typically accompanies a dividend cut.</p>
+
+      <h3>The Case Against Buybacks</h3>
+      <p>Critics, however, point out that executives are notoriously bad at market timing, frequently buying back stock at peak valuations, which destroys shareholder value. Moreover, some argue that heavy buyback activity signals a lack of internal investment opportunities—suggesting the company can't find better ways to spend its cash on R&D, expansion, or employee compensation. Finally, because executive compensation is often tied to EPS targets, there's a structural incentive for management to aggressively buy back stock to boost EPS, even if it leaves the company financially fragile in a downturn.</p>
+
+=======
+    
+    <div class="content-section text-content">
+      <h2>The Debate: Are Buybacks Good or Bad for Shareholders?</h2>
+      <p>Stock buybacks remain one of the most debated topics in finance. In theory, a share repurchase is a tax-efficient way to return capital to shareholders. By reducing the number of outstanding shares, each remaining share represents a larger ownership stake in the company, inherently boosting Earnings Per Share (EPS).</p>
+      
+      <h3>The Case For Buybacks</h3>
+      <p>Supporters argue that buybacks are a sign of financial health and disciplined capital allocation. When management believes their stock is undervalued, repurchasing shares is an excellent investment. It's often more tax-efficient than paying dividends, as shareholders only pay capital gains tax when they choose to sell, rather than being forced to pay taxes on dividend income every year. Furthermore, buybacks provide companies with flexibility—they can be ramped up during good times and paused during downturns without the negative market reaction that typically accompanies a dividend cut.</p>
+      
+      <h3>The Case Against Buybacks</h3>
+      <p>Critics, however, point out that executives are notoriously bad at market timing, frequently buying back stock at peak valuations, which destroys shareholder value. Moreover, some argue that heavy buyback activity signals a lack of internal investment opportunities—suggesting the company can't find better ways to spend its cash on R&D, expansion, or employee compensation. Finally, because executive compensation is often tied to EPS targets, there's a structural incentive for management to aggressively buy back stock to boost EPS, even if it leaves the company financially fragile in a downturn.</p>
+      
+>>>>>>> main
+      <h3>Net Buybacks: The Complete Picture</h3>
+      <p>It's crucial to look at <em>net</em> buybacks. Some companies announce massive buyback programs, but simultaneously issue huge amounts of stock-based compensation to employees. If a company buys back $5 billion in stock but issues $4 billion in new shares to executives, the net reduction in share count is minimal. The companies truly creating value are those executing significant <strong>net</strong> buybacks that meaningfully reduce their shares outstanding.</p>
+    </div>
+
+    <h2>Buyback Spending by Sector ($ Billions)</h2>
+    <div class="card">
+      <div class="chart-container">
+        <canvas id="sectorChart"></canvas>
+      </div>
+    </div>
+
+    <h2>Top 50 Companies by Total Buyback Amount</h2>
+    <div class="card">
+      <table id="buybackTable">
+        <thead>
+          <tr>
+            <th onclick="sortTable(0, 'str')">Company <span class="sort-icon"></span></th>
+            <th onclick="sortTable(1, 'str')">Ticker <span class="sort-icon"></span></th>
+            <th onclick="sortTable(2, 'num')" class="num sort-desc">Buybacks ($B) <span class="sort-icon"></span></th>
+            <th onclick="sortTable(3, 'num')" class="num">Buyback Yield <span class="sort-icon"></span></th>
+            <th onclick="sortTable(4, 'num')" class="num">Div Yield <span class="sort-icon"></span></th>
+            <th onclick="sortTable(5, 'num')" class="num">Share Reduction <span class="sort-icon"></span></th>
+            <th onclick="sortTable(6, 'num')" class="num">Market Cap ($B) <span class="sort-icon"></span></th>
+            <th onclick="sortTable(7, 'str')">Sector <span class="sort-icon"></span></th>
+          </tr>
+        </thead>
+        <tbody>
+<<<<<<< HEAD
+
+=======
+          
+>>>>>>> main
+            <tr>
+              <td>Apple Inc.</td>
+              <td class="ticker">AAPL</td>
+              <td class="num">$94.0B</td>
+              <td class="num">2.49%</td>
+              <td class="num">0.39%</td>
+              <td class="num">3.80%</td>
+              <td class="num">$3780B</td>
+              <td>Information Technology</td>
+            </tr>
+<<<<<<< HEAD
+
+=======
+            
+>>>>>>> main
+            <tr>
+              <td>Alphabet Inc.</td>
+              <td class="ticker">GOOGL</td>
+              <td class="num">$62.0B</td>
+              <td class="num">1.72%</td>
+              <td class="num">0.45%</td>
+              <td class="num">3.20%</td>
+              <td class="num">$3610B</td>
+              <td>Communication Services</td>
+            </tr>
+<<<<<<< HEAD
+
+=======
+            
+>>>>>>> main
+            <tr>
+              <td>Meta Platforms Inc.</td>
+              <td class="ticker">META</td>
+              <td class="num">$48.0B</td>
+              <td class="num">2.94%</td>
+              <td class="num">0.31%</td>
+              <td class="num">4.50%</td>
+              <td class="num">$1630B</td>
+              <td>Communication Services</td>
+            </tr>
+<<<<<<< HEAD
+
+=======
+            
+>>>>>>> main
+            <tr>
+              <td>Microsoft Corporation</td>
+              <td class="ticker">MSFT</td>
+              <td class="num">$33.0B</td>
+              <td class="num">1.09%</td>
+              <td class="num">0.73%</td>
+              <td class="num">1.50%</td>
+              <td class="num">$3040B</td>
+              <td>Information Technology</td>
+            </tr>
+<<<<<<< HEAD
+
+=======
+            
+>>>>>>> main
+            <tr>
+              <td>NVIDIA Corporation</td>
+              <td class="ticker">NVDA</td>
+              <td class="num">$27.0B</td>
+              <td class="num">0.62%</td>
+              <td class="num">0.02%</td>
+              <td class="num">1.10%</td>
+              <td class="num">$4320B</td>
+              <td>Information Technology</td>
+            </tr>
+<<<<<<< HEAD
+
+=======
+            
+>>>>>>> main
+            <tr>
+              <td>Exxon Mobil Corporation</td>
+              <td class="ticker">XOM</td>
+              <td class="num">$18.0B</td>
+              <td class="num">2.86%</td>
+              <td class="num">3.45%</td>
+              <td class="num">3.50%</td>
+              <td class="num">$630B</td>
+              <td>Energy</td>
+            </tr>
+<<<<<<< HEAD
+
+=======
+            
+>>>>>>> main
+            <tr>
+              <td>Visa Inc.</td>
+              <td class="ticker">V</td>
+              <td class="num">$16.5B</td>
+              <td class="num">2.73%</td>
+              <td class="num">0.72%</td>
+              <td class="num">3.00%</td>
+              <td class="num">$605B</td>
+              <td>Financials</td>
+            </tr>
+<<<<<<< HEAD
+
+=======
+            
+>>>>>>> main
+            <tr>
+              <td>Chevron Corporation</td>
+              <td class="ticker">CVX</td>
+              <td class="num">$15.0B</td>
+              <td class="num">3.96%</td>
+              <td class="num">4.15%</td>
+              <td class="num">4.00%</td>
+              <td class="num">$379B</td>
+              <td>Energy</td>
+            </tr>
+<<<<<<< HEAD
+
+=======
+            
+>>>>>>> main
+            <tr>
+              <td>JPMorgan Chase & Co.</td>
+              <td class="ticker">JPM</td>
+              <td class="num">$12.5B</td>
+              <td class="num">1.60%</td>
+              <td class="num">2.05%</td>
+              <td class="num">2.80%</td>
+              <td class="num">$781B</td>
+              <td>Financials</td>
+            </tr>
+<<<<<<< HEAD
+
+=======
+            
+>>>>>>> main
+            <tr>
+              <td>Mastercard Incorporated</td>
+              <td class="ticker">MA</td>
+              <td class="num">$11.0B</td>
+              <td class="num">2.36%</td>
+              <td class="num">0.55%</td>
+              <td class="num">2.80%</td>
+              <td class="num">$466B</td>
+              <td>Financials</td>
+            </tr>
+<<<<<<< HEAD
+
+=======
+            
+>>>>>>> main
+            <tr>
+              <td>Marathon Petroleum Corp.</td>
+              <td class="ticker">MPC</td>
+              <td class="num">$10.0B</td>
+              <td class="num">15.38%</td>
+              <td class="num">1.78%</td>
+              <td class="num">12.50%</td>
+              <td class="num">$65B</td>
+              <td>Energy</td>
+            </tr>
+<<<<<<< HEAD
+
+=======
+            
+>>>>>>> main
+            <tr>
+              <td>Bank of America Corporation</td>
+              <td class="ticker">BAC</td>
+              <td class="num">$9.5B</td>
+              <td class="num">2.72%</td>
+              <td class="num">2.35%</td>
+              <td class="num">3.10%</td>
+              <td class="num">$349B</td>
+              <td>Financials</td>
+            </tr>
+<<<<<<< HEAD
+
+=======
+            
+>>>>>>> main
+            <tr>
+              <td>Lowe's Companies Inc.</td>
+              <td class="ticker">LOW</td>
+              <td class="num">$8.5B</td>
+              <td class="num">6.03%</td>
+              <td class="num">1.72%</td>
+              <td class="num">7.00%</td>
+              <td class="num">$141B</td>
+              <td>Consumer Discretionary</td>
+            </tr>
+<<<<<<< HEAD
+
+=======
+            
+>>>>>>> main
+            <tr>
+              <td>Wells Fargo & Company</td>
+              <td class="ticker">WFC</td>
+              <td class="num">$8.0B</td>
+              <td class="num">3.23%</td>
+              <td class="num">2.24%</td>
+              <td class="num">5.20%</td>
+              <td class="num">$248B</td>
+              <td>Financials</td>
+            </tr>
+<<<<<<< HEAD
+
+=======
+            
+>>>>>>> main
+            <tr>
+              <td>UnitedHealth Group</td>
+              <td class="ticker">UNH</td>
+              <td class="num">$8.0B</td>
+              <td class="num">3.08%</td>
+              <td class="num">1.55%</td>
+              <td class="num">2.00%</td>
+              <td class="num">$260B</td>
+              <td>Health Care</td>
+            </tr>
+<<<<<<< HEAD
+
+=======
+            
+>>>>>>> main
+            <tr>
+              <td>The Home Depot Inc.</td>
+              <td class="ticker">HD</td>
+              <td class="num">$8.0B</td>
+              <td class="num">2.25%</td>
+              <td class="num">2.30%</td>
+              <td class="num">2.50%</td>
+              <td class="num">$356B</td>
+              <td>Consumer Discretionary</td>
+            </tr>
+<<<<<<< HEAD
+
+=======
+            
+>>>>>>> main
+            <tr>
+              <td>Broadcom Inc.</td>
+              <td class="ticker">AVGO</td>
+              <td class="num">$8.0B</td>
+              <td class="num">0.51%</td>
+              <td class="num">1.15%</td>
+              <td class="num">2.00%</td>
+              <td class="num">$1570B</td>
+              <td>Information Technology</td>
+            </tr>
+<<<<<<< HEAD
+
+=======
+            
+>>>>>>> main
+            <tr>
+              <td>The Goldman Sachs Group</td>
+              <td class="ticker">GS</td>
+              <td class="num">$7.5B</td>
+              <td class="num">2.96%</td>
+              <td class="num">2.12%</td>
+              <td class="num">4.00%</td>
+              <td class="num">$253B</td>
+              <td>Financials</td>
+            </tr>
+<<<<<<< HEAD
+
+=======
+            
+>>>>>>> main
+            <tr>
+              <td>Amgen Inc.</td>
+              <td class="ticker">AMGN</td>
+              <td class="num">$7.5B</td>
+              <td class="num">3.77%</td>
+              <td class="num">2.75%</td>
+              <td class="num">5.00%</td>
+              <td class="num">$199B</td>
+              <td>Health Care</td>
+            </tr>
+<<<<<<< HEAD
+
+=======
+            
+>>>>>>> main
+            <tr>
+              <td>Comcast Corporation</td>
+              <td class="ticker">CMCSA</td>
+              <td class="num">$7.5B</td>
+              <td class="num">6.52%</td>
+              <td class="num">3.55%</td>
+              <td class="num">5.50%</td>
+              <td class="num">$115B</td>
+              <td>Communication Services</td>
+            </tr>
+<<<<<<< HEAD
+
+=======
+            
+>>>>>>> main
+            <tr>
+              <td>Morgan Stanley</td>
+              <td class="ticker">MS</td>
+              <td class="num">$7.0B</td>
+              <td class="num">2.76%</td>
+              <td class="num">3.10%</td>
+              <td class="num">4.20%</td>
+              <td class="num">$254B</td>
+              <td>Financials</td>
+            </tr>
+<<<<<<< HEAD
+
+=======
+            
+>>>>>>> main
+            <tr>
+              <td>ConocoPhillips</td>
+              <td class="ticker">COP</td>
+              <td class="num">$7.0B</td>
+              <td class="num">4.90%</td>
+              <td class="num">2.90%</td>
+              <td class="num">5.50%</td>
+              <td class="num">$143B</td>
+              <td>Energy</td>
+            </tr>
+<<<<<<< HEAD
+
+=======
+            
+>>>>>>> main
+            <tr>
+              <td>Salesforce Inc.</td>
+              <td class="ticker">CRM</td>
+              <td class="num">$7.0B</td>
+              <td class="num">3.74%</td>
+              <td class="num">0.55%</td>
+              <td class="num">4.50%</td>
+              <td class="num">$187B</td>
+              <td>Information Technology</td>
+            </tr>
+<<<<<<< HEAD
+
+=======
+            
+>>>>>>> main
+            <tr>
+              <td>Citigroup Inc.</td>
+              <td class="ticker">C</td>
+              <td class="num">$6.5B</td>
+              <td class="num">3.49%</td>
+              <td class="num">3.15%</td>
+              <td class="num">5.00%</td>
+              <td class="num">$186B</td>
+              <td>Financials</td>
+            </tr>
+<<<<<<< HEAD
+
+=======
+            
+>>>>>>> main
+            <tr>
+              <td>Netflix Inc.</td>
+              <td class="ticker">NFLX</td>
+              <td class="num">$6.5B</td>
+              <td class="num">1.56%</td>
+              <td class="num">0.00%</td>
+              <td class="num">2.80%</td>
+              <td class="num">$418B</td>
+              <td>Communication Services</td>
+            </tr>
+<<<<<<< HEAD
+
+=======
+            
+>>>>>>> main
+            <tr>
+              <td>The Cigna Group</td>
+              <td class="ticker">CI</td>
+              <td class="num">$6.0B</td>
+              <td class="num">8.33%</td>
+              <td class="num">1.72%</td>
+              <td class="num">5.50%</td>
+              <td class="num">$72B</td>
+              <td>Health Care</td>
+            </tr>
+<<<<<<< HEAD
+
+=======
+            
+>>>>>>> main
+            <tr>
+              <td>Amazon.com Inc.</td>
+              <td class="ticker">AMZN</td>
+              <td class="num">$6.0B</td>
+              <td class="num">0.26%</td>
+              <td class="num">0.00%</td>
+              <td class="num">0.50%</td>
+              <td class="num">$2290B</td>
+              <td>Consumer Discretionary</td>
+            </tr>
+<<<<<<< HEAD
+
+=======
+            
+>>>>>>> main
+            <tr>
+              <td>Adobe Inc.</td>
+              <td class="ticker">ADBE</td>
+              <td class="num">$6.0B</td>
+              <td class="num">5.17%</td>
+              <td class="num">0.00%</td>
+              <td class="num">4.50%</td>
+              <td class="num">$116B</td>
+              <td>Information Technology</td>
+            </tr>
+<<<<<<< HEAD
+
+=======
+            
+>>>>>>> main
+            <tr>
+              <td>Procter & Gamble Co.</td>
+              <td class="ticker">PG</td>
+              <td class="num">$6.0B</td>
+              <td class="num">1.68%</td>
+              <td class="num">2.45%</td>
+              <td class="num">1.50%</td>
+              <td class="num">$357B</td>
+              <td>Consumer Staples</td>
+            </tr>
+<<<<<<< HEAD
+
+=======
+            
+>>>>>>> main
+            <tr>
+              <td>General Motors Company</td>
+              <td class="ticker">GM</td>
+              <td class="num">$6.0B</td>
+              <td class="num">8.82%</td>
+              <td class="num">0.95%</td>
+              <td class="num">8.00%</td>
+              <td class="num">$68B</td>
+              <td>Consumer Discretionary</td>
+            </tr>
+<<<<<<< HEAD
+
+=======
+            
+>>>>>>> main
+            <tr>
+              <td>American Express Company</td>
+              <td class="ticker">AXP</td>
+              <td class="num">$5.5B</td>
+              <td class="num">2.66%</td>
+              <td class="num">1.05%</td>
+              <td class="num">3.50%</td>
+              <td class="num">$207B</td>
+              <td>Financials</td>
+            </tr>
+<<<<<<< HEAD
+
+=======
+            
+>>>>>>> main
+            <tr>
+              <td>AbbVie Inc.</td>
+              <td class="ticker">ABBV</td>
+              <td class="num">$5.5B</td>
+              <td class="num">1.35%</td>
+              <td class="num">3.30%</td>
+              <td class="num">1.50%</td>
+              <td class="num">$407B</td>
+              <td>Health Care</td>
+            </tr>
+<<<<<<< HEAD
+
+=======
+            
+>>>>>>> main
+            <tr>
+              <td>Cisco Systems Inc.</td>
+              <td class="ticker">CSCO</td>
+              <td class="num">$5.5B</td>
+              <td class="num">1.77%</td>
+              <td class="num">2.55%</td>
+              <td class="num">2.80%</td>
+              <td class="num">$311B</td>
+              <td>Information Technology</td>
+            </tr>
+<<<<<<< HEAD
+
+=======
+            
+>>>>>>> main
+            <tr>
+              <td>Union Pacific Corp.</td>
+              <td class="ticker">UNP</td>
+              <td class="num">$5.5B</td>
+              <td class="num">3.64%</td>
+              <td class="num">2.15%</td>
+              <td class="num">3.50%</td>
+              <td class="num">$151B</td>
+              <td>Industrials</td>
+            </tr>
+<<<<<<< HEAD
+
+=======
+            
+>>>>>>> main
+            <tr>
+              <td>Deere & Company</td>
+              <td class="ticker">DE</td>
+              <td class="num">$5.5B</td>
+              <td class="num">3.46%</td>
+              <td class="num">1.35%</td>
+              <td class="num">4.50%</td>
+              <td class="num">$159B</td>
+              <td>Industrials</td>
+            </tr>
+<<<<<<< HEAD
+
+=======
+            
+>>>>>>> main
+            <tr>
+              <td>Elevance Health Inc.</td>
+              <td class="ticker">ELV</td>
+              <td class="num">$5.0B</td>
+              <td class="num">7.81%</td>
+              <td class="num">1.45%</td>
+              <td class="num">3.80%</td>
+              <td class="num">$64B</td>
+              <td>Health Care</td>
+            </tr>
+<<<<<<< HEAD
+
+=======
+            
+>>>>>>> main
+            <tr>
+              <td>Merck & Co. Inc.</td>
+              <td class="ticker">MRK</td>
+              <td class="num">$5.0B</td>
+              <td class="num">1.75%</td>
+              <td class="num">2.85%</td>
+              <td class="num">2.00%</td>
+              <td class="num">$286B</td>
+              <td>Health Care</td>
+            </tr>
+<<<<<<< HEAD
+
+=======
+            
+>>>>>>> main
+            <tr>
+              <td>Gilead Sciences Inc.</td>
+              <td class="ticker">GILD</td>
+              <td class="num">$5.0B</td>
+              <td class="num">2.79%</td>
+              <td class="num">3.20%</td>
+              <td class="num">4.50%</td>
+              <td class="num">$179B</td>
+              <td>Health Care</td>
+            </tr>
+<<<<<<< HEAD
+
+=======
+            
+>>>>>>> main
+            <tr>
+              <td>McDonald's Corporation</td>
+              <td class="ticker">MCD</td>
+              <td class="num">$5.0B</td>
+              <td class="num">2.15%</td>
+              <td class="num">2.15%</td>
+              <td class="num">2.50%</td>
+              <td class="num">$233B</td>
+              <td>Consumer Discretionary</td>
+            </tr>
+<<<<<<< HEAD
+
+=======
+            
+>>>>>>> main
+            <tr>
+              <td>Accenture plc</td>
+              <td class="ticker">ACN</td>
+              <td class="num">$5.0B</td>
+              <td class="num">3.79%</td>
+              <td class="num">1.65%</td>
+              <td class="num">3.50%</td>
+              <td class="num">$132B</td>
+              <td>Information Technology</td>
+            </tr>
+<<<<<<< HEAD
+
+=======
+            
+>>>>>>> main
+            <tr>
+              <td>Caterpillar Inc.</td>
+              <td class="ticker">CAT</td>
+              <td class="num">$5.0B</td>
+              <td class="num">1.58%</td>
+              <td class="num">1.55%</td>
+              <td class="num">4.50%</td>
+              <td class="num">$317B</td>
+              <td>Industrials</td>
+            </tr>
+<<<<<<< HEAD
+
+=======
+            
+>>>>>>> main
+            <tr>
+              <td>GE Aerospace</td>
+              <td class="ticker">GE</td>
+              <td class="num">$5.0B</td>
+              <td class="num">1.47%</td>
+              <td class="num">0.58%</td>
+              <td class="num">3.00%</td>
+              <td class="num">$339B</td>
+              <td>Industrials</td>
+            </tr>
+<<<<<<< HEAD
+
+=======
+            
+>>>>>>> main
+            <tr>
+              <td>HCA Healthcare Inc.</td>
+              <td class="ticker">HCA</td>
+              <td class="num">$5.0B</td>
+              <td class="num">4.20%</td>
+              <td class="num">0.72%</td>
+              <td class="num">5.00%</td>
+              <td class="num">$119B</td>
+              <td>Health Care</td>
+            </tr>
+<<<<<<< HEAD
+
+=======
+            
+>>>>>>> main
+            <tr>
+              <td>Valero Energy Corporation</td>
+              <td class="ticker">VLO</td>
+              <td class="num">$4.5B</td>
+              <td class="num">6.72%</td>
+              <td class="num">2.85%</td>
+              <td class="num">7.00%</td>
+              <td class="num">$67B</td>
+              <td>Energy</td>
+            </tr>
+<<<<<<< HEAD
+
+=======
+            
+>>>>>>> main
+            <tr>
+              <td>Oracle Corporation</td>
+              <td class="ticker">ORCL</td>
+              <td class="num">$4.5B</td>
+              <td class="num">1.02%</td>
+              <td class="num">1.05%</td>
+              <td class="num">2.50%</td>
+              <td class="num">$440B</td>
+              <td>Information Technology</td>
+            </tr>
+<<<<<<< HEAD
+
+=======
+            
+>>>>>>> main
+            <tr>
+              <td>Applied Materials Inc.</td>
+              <td class="ticker">AMAT</td>
+              <td class="num">$4.5B</td>
+              <td class="num">1.74%</td>
+              <td class="num">0.85%</td>
+              <td class="num">3.00%</td>
+              <td class="num">$258B</td>
+              <td>Information Technology</td>
+            </tr>
+<<<<<<< HEAD
+
+=======
+            
+>>>>>>> main
+            <tr>
+              <td>RTX Corporation</td>
+              <td class="ticker">RTX</td>
+              <td class="num">$4.5B</td>
+              <td class="num">1.60%</td>
+              <td class="num">2.15%</td>
+              <td class="num">2.50%</td>
+              <td class="num">$282B</td>
+              <td>Industrials</td>
+            </tr>
+<<<<<<< HEAD
+
+=======
+            
+>>>>>>> main
+            <tr>
+              <td>Phillips 66</td>
+              <td class="ticker">PSX</td>
+              <td class="num">$4.0B</td>
+              <td class="num">5.97%</td>
+              <td class="num">3.10%</td>
+              <td class="num">6.00%</td>
+              <td class="num">$67B</td>
+              <td>Energy</td>
+            </tr>
+<<<<<<< HEAD
+
+=======
+            
+>>>>>>> main
+            <tr>
+              <td>Bristol-Myers Squibb</td>
+              <td class="ticker">BMY</td>
+              <td class="num">$4.0B</td>
+              <td class="num">3.25%</td>
+              <td class="num">4.10%</td>
+              <td class="num">3.50%</td>
+              <td class="num">$123B</td>
+              <td>Health Care</td>
+            </tr>
+<<<<<<< HEAD
+
+=======
+            
+>>>>>>> main
+            <tr>
+              <td>NIKE Inc.</td>
+              <td class="ticker">NKE</td>
+              <td class="num">$4.0B</td>
+              <td class="num">4.76%</td>
+              <td class="num">2.05%</td>
+              <td class="num">3.50%</td>
+              <td class="num">$84B</td>
+              <td>Consumer Discretionary</td>
+            </tr>
+<<<<<<< HEAD
+
+=======
+            
+>>>>>>> main
+        </tbody>
+      </table>
+    </div>
+
+    <div class="faq">
+      <h2>Frequently Asked Questions</h2>
+<<<<<<< HEAD
+
+      <h3>Which companies have the largest share buybacks?</h3>
+      <p>The companies with the largest share buybacks are typically mega-cap technology and financial firms. Apple (AAPL) frequently leads, often repurchasing tens of billions of dollars annually, followed by companies like Alphabet (GOOGL), Meta (META), and Microsoft (MSFT).</p>
+
+=======
+      
+      <h3>Which companies have the largest share buybacks?</h3>
+      <p>The companies with the largest share buybacks are typically mega-cap technology and financial firms. Apple (AAPL) frequently leads, often repurchasing tens of billions of dollars annually, followed by companies like Alphabet (GOOGL), Meta (META), and Microsoft (MSFT).</p>
+      
+>>>>>>> main
+      <h3>What are the biggest stock buybacks in 2026?</h3>
+      <p>The biggest stock buybacks in 2026 are dominated by the Information Technology sector, with Apple alone accounting for nearly $100 billion in trailing 12-month repurchases. Financials and Energy companies also have significant buyback programs.</p>
+
+      <h3>Are stock buybacks good or bad for shareholders?</h3>
+      <p>Stock buybacks can be good or bad depending on the price paid. When a company buys back undervalued stock, it creates value for remaining shareholders by increasing their ownership percentage and boosting earnings per share (EPS). However, if management buys back overvalued stock, it destroys shareholder value.</p>
+<<<<<<< HEAD
+
+=======
+      
+>>>>>>> main
+      <h3>Where can I find a list of companies buying back stock?</h3>
+      <p>You can find a list of companies buying back stock on our comprehensive buyback tracker, which ranks the top 50 companies by total buyback amount, buyback yield, and share count reduction.</p>
+
+      <h3>How does buyback yield compare to dividend yield?</h3>
+      <p>Buyback yield is the total amount spent on share repurchases divided by market cap, whereas dividend yield is total dividends paid divided by market cap. Both return capital to shareholders, but buybacks are often more tax-efficient and flexible, while dividends provide predictable income. Many top companies offer a combination of both.</p>
+    </div>
+
+    <div class="methodology">
+      <h2>Methodology & Recent Announcements</h2>
+      <p>This study compiles buyback data from SEC 10-K filings, quarterly earnings reports, and S&P Dow Jones Indices. Buyback amounts represent trailing 12-month share repurchases. Buyback yield is calculated as the buyback amount divided by market capitalization. Market capitalization data is sourced as of early 2026.</p>
+      <p><strong>Recent Announcements:</strong> Note that this tracker uses trailing 12-month <em>actual</em> repurchases, not just authorizations. Companies often announce massive multi-year buyback authorizations (e.g., $50B over 5 years) but only execute a fraction of that in any given year. We track the actual capital deployed to purchase shares.</p>
+    </div>
+  </div>
+
+  <footer>
+    © 2026 Westmount Research · A GAB Ventures property
+    <div class="disclaimer">Data for informational purposes only. Not investment advice. Past performance is not indicative of future results.</div>
+  </footer>
+
+  <script>
+    // Chart.js implementation
+    const ctx = document.getElementById('sectorChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ["Information Technology","Communication Services","Financials","Energy","Health Care","Consumer Discretionary","Industrials","Consumer Staples"],
+        datasets: [{
+          label: 'Total Buybacks ($ Billions)',
+          data: [213.5,129,127.7,64.5,62,48.3,42.5,22],
+          backgroundColor: ["rgba(74, 143, 231, 0.7)","rgba(74, 222, 128, 0.7)","rgba(248, 113, 113, 0.7)","rgba(250, 204, 21, 0.7)","rgba(167, 139, 250, 0.7)","rgba(251, 146, 60, 0.7)","rgba(96, 165, 250, 0.7)","rgba(52, 211, 153, 0.7)"],
+          borderColor: ["rgba(74, 143, 231, 0.7)","rgba(74, 222, 128, 0.7)","rgba(248, 113, 113, 0.7)","rgba(250, 204, 21, 0.7)","rgba(167, 139, 250, 0.7)","rgba(251, 146, 60, 0.7)","rgba(96, 165, 250, 0.7)","rgba(52, 211, 153, 0.7)"].map(c => c.replace('0.7', '1')),
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false }
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+            grid: { color: '#152040' },
+            ticks: { color: '#8a9bb0' }
+          },
+          x: {
+            grid: { display: false },
+            ticks: { color: '#8a9bb0', maxRotation: 45, minRotation: 45 }
+          }
+        }
+      }
+    });
+
+    // Table sorting logic
+    let currentSortCol = 2; // Default sorted by Buybacks ($B)
+    let currentSortDesc = true;
+
+    function sortTable(colIndex, type) {
+      const table = document.getElementById("buybackTable");
+      const tbody = table.querySelector("tbody");
+      const rows = Array.from(tbody.querySelectorAll("tr"));
+      const headers = table.querySelectorAll("th");
+<<<<<<< HEAD
+
+=======
+      
+>>>>>>> main
+      // Update sort direction
+      if (currentSortCol === colIndex) {
+        currentSortDesc = !currentSortDesc;
+      } else {
+        currentSortCol = colIndex;
+        currentSortDesc = type === 'num' ? true : false; // Default desc for num, asc for str
+      }
+
+      // Update header styles
+      headers.forEach(th => {
+        th.classList.remove("sort-asc", "sort-desc");
+      });
+      headers[colIndex].classList.add(currentSortDesc ? "sort-desc" : "sort-asc");
+
+      rows.sort((a, b) => {
+        let valA = a.cells[colIndex].innerText.replace(/[^0-9.-]+/g,"");
+        let valB = b.cells[colIndex].innerText.replace(/[^0-9.-]+/g,"");
+<<<<<<< HEAD
+
+=======
+        
+>>>>>>> main
+        if (type === 'num') {
+            valA = valA === 'NA' || valA === '' ? -1 : parseFloat(valA);
+            valB = valB === 'NA' || valB === '' ? -1 : parseFloat(valB);
+            return currentSortDesc ? valB - valA : valA - valB;
+        } else {
+            valA = a.cells[colIndex].innerText.toLowerCase();
+            valB = b.cells[colIndex].innerText.toLowerCase();
+            if (valA < valB) return currentSortDesc ? 1 : -1;
+            if (valA > valB) return currentSortDesc ? -1 : 1;
+            return 0;
+        }
+      });
+
+      rows.forEach(row => tbody.appendChild(row));
+    }
+  </script>
+</body>
+</html>
