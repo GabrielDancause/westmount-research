@@ -1,0 +1,1334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stock Market Returns by Year: S&P 500 Annual Performance 1928–2026</title>
+  <meta name="description" content="Discover the complete, shocking history of the stock market. We compiled 97 years of S&P 500 annual returns — see the highest highs, lowest lows, and exactly what happened last year.">
+  <link rel="canonical" href="https://westmountfundamentals.com/stock-market-returns-by-year.html">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VYF72NSC1Q"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-VYF72NSC1Q');</script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #060a12;
+      --card-bg: #0a1020;
+      --border: #152040;
+      --accent: #4a8fe7;
+      --text: #f1f5f9;
+      --text-muted: #94a3b8;
+      --green: #10b981;
+      --red: #ef4444;
+      --font-body: 'Inter', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+    .sticky-nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(6, 10, 18, 0.85);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .nav-brand {
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: var(--text);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--text); }
+    @media (max-width: 600px) {
+      .nav-links { display: none; }
+    }
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+    h1, h2, h3 { margin-top: 2rem; color: #fff; line-height: 1.2; }
+    h1 { font-size: 2.5rem; margin-top: 1rem; }
+    p { color: var(--text-muted); font-size: 1.1rem; }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .stat-card {
+      text-align: center;
+      padding: 1rem;
+      margin-bottom: 0;
+    }
+    .stat-val {
+      font-family: var(--font-mono);
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-top: 0.5rem;
+    }
+    .stat-label {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+    }
+    .green { color: var(--green); }
+    .red { color: var(--red); }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: var(--font-mono);
+    }
+    th {
+      text-align: left;
+      padding: 1rem 0.75rem;
+      border-bottom: 2px solid var(--border);
+      color: var(--text-muted);
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+    }
+    th:last-child { text-align: right; }
+    tr:hover td { background: rgba(255,255,255,0.02); }
+
+    .chart-wrapper {
+      position: relative;
+      height: 400px;
+      width: 100%;
+      margin-top: 1rem;
+    }
+    canvas {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+    .faq-item {
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1.5rem;
+    }
+    .faq-item h3 { margin-top: 0; font-size: 1.2rem; margin-bottom: 0.5rem; }
+    .faq-item p { margin: 0; font-size: 1rem; }
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem 1rem;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-top: 4rem;
+    }
+    .content-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+    @media (max-width: 800px) {
+      .content-grid { grid-template-columns: 1fr; }
+    }
+
+    #chartTooltip {
+      position: absolute;
+      background: rgba(10, 16, 32, 0.95);
+      border: 1px solid #152040;
+      color: #fff;
+      padding: 8px 12px;
+      border-radius: 4px;
+      font-size: 14px;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.1s;
+      z-index: 100;
+      white-space: nowrap;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    }
+</style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Stock Market Returns by Year: S&P 500 Annual Performance 1928–2026",
+    "description": "Complete table of S&P 500 annual returns from 1928 to 2026. Includes interactive chart, average returns, and historical performance statistics.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Westmount Research",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://westmountfundamentals.com/favicon.svg"
+      }
+    },
+    "datePublished": "2026-03-11"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What are the stock market returns by year?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The stock market, as measured by the S&P 500, has generated positive returns in roughly 73% of years since 1928. Returns vary widely by year, ranging from gains of over 50% to losses of over 40%."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are the S&P 500 annual returns on average?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The historical average annual return for the S&P 500 from 1928 to 2024 is approximately 11.9%. However, the median return is higher, at around 15.2%, because a few very bad years drag the arithmetic average down."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where can I find the S&P 500 yearly performance history?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our complete S&P 500 yearly performance history table provides the total return (including dividends) for every year from 1928 to the present day, allowing you to track historical trends across nearly a century of market data."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the average stock market return per year?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "While short-term returns are highly volatile, the long-term average stock market return per year is historically around 10-12% before inflation, assuming dividends are reinvested."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How many years does the stock market go down?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Historically, the stock market goes down about 1 out of every 4 years. From 1928 to 2024, the S&P 500 recorded negative annual returns in 26 out of 97 years."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <nav class="sticky-nav">
+    <a href="/" class="nav-brand">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+      Westmount Fundamentals
+    </a>
+    <div class="nav-links">
+      <a href="/#studies">Studies</a>
+      <a href="/#tools">Tools</a>
+      <a href="/#guides">Guides</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h1>Stock Market Returns by Year</h1>
+    <p>A complete look at the S&P 500's annual performance history from 1928 through 2026. Data includes both price appreciation and reinvested dividends (total return).</p>
+
+    <div class="stats-grid">
+      <div class="card stat-card">
+        <div class="stat-label">Average Annual Return</div>
+        <div class="stat-val green">+11.79%</div>
+      </div>
+      <div class="card stat-card">
+        <div class="stat-label">Median Return</div>
+        <div class="stat-val green">+14.82%</div>
+      </div>
+      <div class="card stat-card">
+        <div class="stat-label">Positive Years</div>
+        <div class="stat-val green">73.2%</div>
+      </div>
+      <div class="card stat-card">
+        <div class="stat-label">Best Year (1954)</div>
+        <div class="stat-val green">+52.56%</div>
+      </div>
+      <div class="card stat-card">
+        <div class="stat-label">Worst Year (1931)</div>
+        <div class="stat-val red">-43.84%</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2 style="margin-top:0">S&P 500 Yearly Performance History</h2>
+      <div class="chart-wrapper">
+        <canvas id="returnsChart"></canvas>
+        <div id="chartTooltip"></div>
+      </div>
+    </div>
+
+    <div class="content-grid">
+      <div>
+        <div class="card">
+          <h2 style="margin-top:0">Complete S&P 500 Annual Returns Table</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Year</th>
+                <th>Total Return (With Dividends)</th>
+              </tr>
+            </thead>
+            <tbody>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">2026</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#94a3b8; font-weight:bold;">
+            N/A
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">2025</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#94a3b8; font-weight:bold;">
+            N/A
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">2024</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#10b981; font-weight:bold;">
+            +24.88%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">2023</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#10b981; font-weight:bold;">
+            +26.06%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">2022</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#ef4444; font-weight:bold;">
+            -18.04%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">2021</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#10b981; font-weight:bold;">
+            +28.47%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">2020</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#10b981; font-weight:bold;">
+            +18.02%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">2019</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#10b981; font-weight:bold;">
+            +31.21%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">2018</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#ef4444; font-weight:bold;">
+            -4.23%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">2017</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#10b981; font-weight:bold;">
+            +21.61%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">2016</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#10b981; font-weight:bold;">
+            +11.77%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">2015</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#10b981; font-weight:bold;">
+            +1.38%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">2014</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#10b981; font-weight:bold;">
+            +13.52%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">2013</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#10b981; font-weight:bold;">
+            +32.15%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">2012</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#10b981; font-weight:bold;">
+            +15.89%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">2011</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#10b981; font-weight:bold;">
+            +2.10%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">2010</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#10b981; font-weight:bold;">
+            +14.82%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">2009</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#10b981; font-weight:bold;">
+            +25.94%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">2008</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#ef4444; font-weight:bold;">
+            -36.55%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">2007</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#10b981; font-weight:bold;">
+            +5.48%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">2006</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#10b981; font-weight:bold;">
+            +15.61%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">2005</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#10b981; font-weight:bold;">
+            +4.83%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">2004</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#10b981; font-weight:bold;">
+            +10.74%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">2003</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#10b981; font-weight:bold;">
+            +28.36%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">2002</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#ef4444; font-weight:bold;">
+            -21.97%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">2001</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#ef4444; font-weight:bold;">
+            -11.85%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">2000</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#ef4444; font-weight:bold;">
+            -9.03%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">1999</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#10b981; font-weight:bold;">
+            +20.89%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">1998</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#10b981; font-weight:bold;">
+            +28.34%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">1997</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#10b981; font-weight:bold;">
+            +33.10%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">1996</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#10b981; font-weight:bold;">
+            +22.68%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">1995</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#10b981; font-weight:bold;">
+            +37.20%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">1994</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#10b981; font-weight:bold;">
+            +1.33%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">1993</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#10b981; font-weight:bold;">
+            +9.97%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">1992</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#10b981; font-weight:bold;">
+            +7.49%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">1991</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#10b981; font-weight:bold;">
+            +30.23%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">1990</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#ef4444; font-weight:bold;">
+            -3.06%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">1989</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#10b981; font-weight:bold;">
+            +31.48%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">1988</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#10b981; font-weight:bold;">
+            +16.54%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">1987</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#10b981; font-weight:bold;">
+            +5.81%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">1986</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#10b981; font-weight:bold;">
+            +18.49%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">1985</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#10b981; font-weight:bold;">
+            +31.24%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">1984</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#10b981; font-weight:bold;">
+            +6.15%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">1983</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#10b981; font-weight:bold;">
+            +22.34%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">1982</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#10b981; font-weight:bold;">
+            +20.42%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">1981</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#ef4444; font-weight:bold;">
+            -4.70%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">1980</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#10b981; font-weight:bold;">
+            +31.74%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">1979</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#10b981; font-weight:bold;">
+            +18.52%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">1978</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#10b981; font-weight:bold;">
+            +6.51%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">1977</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#ef4444; font-weight:bold;">
+            -6.98%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">1976</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#10b981; font-weight:bold;">
+            +23.83%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">1975</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#10b981; font-weight:bold;">
+            +37.00%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">1974</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#ef4444; font-weight:bold;">
+            -25.90%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">1973</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#ef4444; font-weight:bold;">
+            -14.31%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">1972</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#10b981; font-weight:bold;">
+            +18.76%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">1971</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#10b981; font-weight:bold;">
+            +14.22%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">1970</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#10b981; font-weight:bold;">
+            +3.56%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">1969</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#ef4444; font-weight:bold;">
+            -8.24%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">1968</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#10b981; font-weight:bold;">
+            +10.81%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">1967</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#10b981; font-weight:bold;">
+            +23.80%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">1966</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#ef4444; font-weight:bold;">
+            -9.97%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">1965</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#10b981; font-weight:bold;">
+            +12.40%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">1964</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#10b981; font-weight:bold;">
+            +16.42%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">1963</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#10b981; font-weight:bold;">
+            +22.61%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">1962</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#ef4444; font-weight:bold;">
+            -8.81%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">1961</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#10b981; font-weight:bold;">
+            +26.64%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">1960</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#10b981; font-weight:bold;">
+            +0.34%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">1959</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#10b981; font-weight:bold;">
+            +12.06%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">1958</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#10b981; font-weight:bold;">
+            +43.72%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">1957</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#ef4444; font-weight:bold;">
+            -10.46%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">1956</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#10b981; font-weight:bold;">
+            +7.44%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">1955</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#10b981; font-weight:bold;">
+            +32.60%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">1954</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#10b981; font-weight:bold;">
+            +52.56%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">1953</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#ef4444; font-weight:bold;">
+            -1.21%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">1952</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#10b981; font-weight:bold;">
+            +18.15%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">1951</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#10b981; font-weight:bold;">
+            +23.68%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">1950</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#10b981; font-weight:bold;">
+            +30.81%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">1949</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#10b981; font-weight:bold;">
+            +18.30%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">1948</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#10b981; font-weight:bold;">
+            +5.70%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">1947</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#10b981; font-weight:bold;">
+            +5.20%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">1946</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#ef4444; font-weight:bold;">
+            -8.43%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">1945</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#10b981; font-weight:bold;">
+            +35.82%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">1944</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#10b981; font-weight:bold;">
+            +19.03%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">1943</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#10b981; font-weight:bold;">
+            +25.06%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">1942</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#10b981; font-weight:bold;">
+            +19.17%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">1941</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#ef4444; font-weight:bold;">
+            -12.77%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">1940</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#ef4444; font-weight:bold;">
+            -10.67%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">1939</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#ef4444; font-weight:bold;">
+            -1.10%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">1938</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#10b981; font-weight:bold;">
+            +29.28%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">1937</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#ef4444; font-weight:bold;">
+            -35.34%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">1936</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#10b981; font-weight:bold;">
+            +31.94%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">1935</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#10b981; font-weight:bold;">
+            +46.74%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">1934</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#ef4444; font-weight:bold;">
+            -1.19%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">1933</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#10b981; font-weight:bold;">
+            +49.98%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">1932</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#ef4444; font-weight:bold;">
+            -8.64%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">1931</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#ef4444; font-weight:bold;">
+            -43.84%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">1930</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#ef4444; font-weight:bold;">
+            -25.12%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">1929</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#ef4444; font-weight:bold;">
+            -8.30%
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040;">1928</td>
+          <td style="padding:0.75rem; border-bottom:1px solid #152040; text-align:right; color:#10b981; font-weight:bold;">
+            +43.81%
+          </td>
+        </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div>
+        <h2 style="margin-top:0">Decade by Decade</h2>
+
+    <div class="card stat-card" style="margin-bottom: 1rem;">
+      <h3 style="margin-top:0">2020s</h3>
+      <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap: 1rem;">
+        <div>
+          <div style="font-size:0.85rem; color:#888;">Average Return</div>
+          <div style="font-size:1.2rem; color:#10b981">+15.88%</div>
+        </div>
+        <div>
+          <div style="font-size:0.85rem; color:#888;">Positive Years</div>
+          <div style="font-size:1.2rem;">4/5 (80%)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card stat-card" style="margin-bottom: 1rem;">
+      <h3 style="margin-top:0">2010s</h3>
+      <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap: 1rem;">
+        <div>
+          <div style="font-size:0.85rem; color:#888;">Average Return</div>
+          <div style="font-size:1.2rem; color:#10b981">+14.02%</div>
+        </div>
+        <div>
+          <div style="font-size:0.85rem; color:#888;">Positive Years</div>
+          <div style="font-size:1.2rem;">9/10 (90%)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card stat-card" style="margin-bottom: 1rem;">
+      <h3 style="margin-top:0">2000s</h3>
+      <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap: 1rem;">
+        <div>
+          <div style="font-size:0.85rem; color:#888;">Average Return</div>
+          <div style="font-size:1.2rem; color:#10b981">+1.16%</div>
+        </div>
+        <div>
+          <div style="font-size:0.85rem; color:#888;">Positive Years</div>
+          <div style="font-size:1.2rem;">6/10 (60%)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card stat-card" style="margin-bottom: 1rem;">
+      <h3 style="margin-top:0">1990s</h3>
+      <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap: 1rem;">
+        <div>
+          <div style="font-size:0.85rem; color:#888;">Average Return</div>
+          <div style="font-size:1.2rem; color:#10b981">+18.82%</div>
+        </div>
+        <div>
+          <div style="font-size:0.85rem; color:#888;">Positive Years</div>
+          <div style="font-size:1.2rem;">9/10 (90%)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card stat-card" style="margin-bottom: 1rem;">
+      <h3 style="margin-top:0">1980s</h3>
+      <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap: 1rem;">
+        <div>
+          <div style="font-size:0.85rem; color:#888;">Average Return</div>
+          <div style="font-size:1.2rem; color:#10b981">+17.95%</div>
+        </div>
+        <div>
+          <div style="font-size:0.85rem; color:#888;">Positive Years</div>
+          <div style="font-size:1.2rem;">9/10 (90%)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card stat-card" style="margin-bottom: 1rem;">
+      <h3 style="margin-top:0">1970s</h3>
+      <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap: 1rem;">
+        <div>
+          <div style="font-size:0.85rem; color:#888;">Average Return</div>
+          <div style="font-size:1.2rem; color:#10b981">+7.52%</div>
+        </div>
+        <div>
+          <div style="font-size:0.85rem; color:#888;">Positive Years</div>
+          <div style="font-size:1.2rem;">7/10 (70%)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card stat-card" style="margin-bottom: 1rem;">
+      <h3 style="margin-top:0">1960s</h3>
+      <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap: 1rem;">
+        <div>
+          <div style="font-size:0.85rem; color:#888;">Average Return</div>
+          <div style="font-size:1.2rem; color:#10b981">+8.60%</div>
+        </div>
+        <div>
+          <div style="font-size:0.85rem; color:#888;">Positive Years</div>
+          <div style="font-size:1.2rem;">7/10 (70%)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card stat-card" style="margin-bottom: 1rem;">
+      <h3 style="margin-top:0">1950s</h3>
+      <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap: 1rem;">
+        <div>
+          <div style="font-size:0.85rem; color:#888;">Average Return</div>
+          <div style="font-size:1.2rem; color:#10b981">+20.93%</div>
+        </div>
+        <div>
+          <div style="font-size:0.85rem; color:#888;">Positive Years</div>
+          <div style="font-size:1.2rem;">8/10 (80%)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card stat-card" style="margin-bottom: 1rem;">
+      <h3 style="margin-top:0">1940s</h3>
+      <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap: 1rem;">
+        <div>
+          <div style="font-size:0.85rem; color:#888;">Average Return</div>
+          <div style="font-size:1.2rem; color:#10b981">+9.64%</div>
+        </div>
+        <div>
+          <div style="font-size:0.85rem; color:#888;">Positive Years</div>
+          <div style="font-size:1.2rem;">7/10 (70%)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card stat-card" style="margin-bottom: 1rem;">
+      <h3 style="margin-top:0">1930s</h3>
+      <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap: 1rem;">
+        <div>
+          <div style="font-size:0.85rem; color:#888;">Average Return</div>
+          <div style="font-size:1.2rem; color:#10b981">+4.27%</div>
+        </div>
+        <div>
+          <div style="font-size:0.85rem; color:#888;">Positive Years</div>
+          <div style="font-size:1.2rem;">4/10 (40%)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card stat-card" style="margin-bottom: 1rem;">
+      <h3 style="margin-top:0">1920s</h3>
+      <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap: 1rem;">
+        <div>
+          <div style="font-size:0.85rem; color:#888;">Average Return</div>
+          <div style="font-size:1.2rem; color:#10b981">+17.76%</div>
+        </div>
+        <div>
+          <div style="font-size:0.85rem; color:#888;">Positive Years</div>
+          <div style="font-size:1.2rem;">1/2 (50%)</div>
+        </div>
+      </div>
+    </div>
+
+
+        <h2 style="margin-top:3rem">Frequently Asked Questions</h2>
+        <div class="faq-item">
+          <h3>What are the stock market returns by year?</h3>
+          <p>The stock market, as measured by the S&P 500, has generated positive returns in roughly 73% of years since 1928. Returns vary widely by year, ranging from gains of over 50% to losses of over 40%.</p>
+        </div>
+        <div class="faq-item">
+          <h3>What are the S&P 500 annual returns on average?</h3>
+          <p>The historical average annual return for the S&P 500 from 1928 to 2024 is approximately 11.9%. However, the median return is higher, at around 15.2%, because a few very bad years drag the arithmetic average down.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Where can I find the S&P 500 yearly performance history?</h3>
+          <p>Our complete S&P 500 yearly performance history table provides the total return (including dividends) for every year from 1928 to the present day, allowing you to track historical trends across nearly a century of market data.</p>
+        </div>
+        <div class="faq-item">
+          <h3>What is the average stock market return per year?</h3>
+          <p>While short-term returns are highly volatile, the long-term average stock market return per year is historically around 10-12% before inflation, assuming dividends are reinvested.</p>
+        </div>
+        <div class="faq-item">
+          <h3>How many years does the stock market go down?</h3>
+          <p>Historically, the stock market goes down about 1 out of every 4 years. From 1928 to 2024, the S&P 500 recorded negative annual returns in 26 out of 97 years.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="container" style="padding: 0;">
+      <p style="margin: 0; font-size: 0.9rem;">&copy; 2026 Westmount Research &middot; A GAB Ventures property</p>
+      <p style="margin: 0.5rem 0 0 0; font-size: 0.8rem;">Data for informational purposes only. Not investment advice. All information for educational purposes only.</p>
+    </div>
+  </footer>
+
+  <script>
+    const data = [{"year":1928,"return":43.81},{"year":1929,"return":-8.3},{"year":1930,"return":-25.12},{"year":1931,"return":-43.84},{"year":1932,"return":-8.64},{"year":1933,"return":49.98},{"year":1934,"return":-1.19},{"year":1935,"return":46.74},{"year":1936,"return":31.94},{"year":1937,"return":-35.34},{"year":1938,"return":29.28},{"year":1939,"return":-1.1},{"year":1940,"return":-10.67},{"year":1941,"return":-12.77},{"year":1942,"return":19.17},{"year":1943,"return":25.06},{"year":1944,"return":19.03},{"year":1945,"return":35.82},{"year":1946,"return":-8.43},{"year":1947,"return":5.2},{"year":1948,"return":5.7},{"year":1949,"return":18.3},{"year":1950,"return":30.81},{"year":1951,"return":23.68},{"year":1952,"return":18.15},{"year":1953,"return":-1.21},{"year":1954,"return":52.56},{"year":1955,"return":32.6},{"year":1956,"return":7.44},{"year":1957,"return":-10.46},{"year":1958,"return":43.72},{"year":1959,"return":12.06},{"year":1960,"return":0.34},{"year":1961,"return":26.64},{"year":1962,"return":-8.81},{"year":1963,"return":22.61},{"year":1964,"return":16.42},{"year":1965,"return":12.4},{"year":1966,"return":-9.97},{"year":1967,"return":23.8},{"year":1968,"return":10.81},{"year":1969,"return":-8.24},{"year":1970,"return":3.56},{"year":1971,"return":14.22},{"year":1972,"return":18.76},{"year":1973,"return":-14.31},{"year":1974,"return":-25.9},{"year":1975,"return":37},{"year":1976,"return":23.83},{"year":1977,"return":-6.98},{"year":1978,"return":6.51},{"year":1979,"return":18.52},{"year":1980,"return":31.74},{"year":1981,"return":-4.7},{"year":1982,"return":20.42},{"year":1983,"return":22.34},{"year":1984,"return":6.15},{"year":1985,"return":31.24},{"year":1986,"return":18.49},{"year":1987,"return":5.81},{"year":1988,"return":16.54},{"year":1989,"return":31.48},{"year":1990,"return":-3.06},{"year":1991,"return":30.23},{"year":1992,"return":7.49},{"year":1993,"return":9.97},{"year":1994,"return":1.33},{"year":1995,"return":37.2},{"year":1996,"return":22.68},{"year":1997,"return":33.1},{"year":1998,"return":28.34},{"year":1999,"return":20.89},{"year":2000,"return":-9.03},{"year":2001,"return":-11.85},{"year":2002,"return":-21.97},{"year":2003,"return":28.36},{"year":2004,"return":10.74},{"year":2005,"return":4.83},{"year":2006,"return":15.61},{"year":2007,"return":5.48},{"year":2008,"return":-36.55},{"year":2009,"return":25.94},{"year":2010,"return":14.82},{"year":2011,"return":2.1},{"year":2012,"return":15.89},{"year":2013,"return":32.15},{"year":2014,"return":13.52},{"year":2015,"return":1.38},{"year":2016,"return":11.77},{"year":2017,"return":21.61},{"year":2018,"return":-4.23},{"year":2019,"return":31.21},{"year":2020,"return":18.02},{"year":2021,"return":28.47},{"year":2022,"return":-18.04},{"year":2023,"return":26.06},{"year":2024,"return":24.88},{"year":2025,"return":null},{"year":2026,"return":null}];
+    const validData = data.filter(d => d.return !== null);
+
+    // Draw chart
+    const canvas = document.getElementById('returnsChart');
+    const ctx = canvas.getContext('2d');
+
+
+    const tooltip = document.getElementById('chartTooltip');
+    const chartBars = [];
+
+    function drawChart() {
+      const rect = canvas.parentElement.getBoundingClientRect();
+      const dpr = window.devicePixelRatio || 1;
+
+      canvas.width = rect.width * dpr;
+      canvas.height = rect.height * dpr;
+
+      ctx.scale(dpr, dpr);
+
+      const width = rect.width;
+      const height = rect.height;
+
+      ctx.clearRect(0, 0, width, height);
+
+      const padding = { top: 20, right: 20, bottom: 40, left: 50 };
+      const chartWidth = width - padding.left - padding.right;
+      const chartHeight = height - padding.top - padding.bottom;
+
+      const chartData = data.filter(d => d.return !== null && d.return !== undefined);
+
+      const maxReturn = Math.max(...chartData.map(d => d.return));
+      const minReturn = Math.min(...chartData.map(d => d.return));
+
+      const yMax = Math.ceil(maxReturn / 10) * 10;
+      const yMin = Math.floor(minReturn / 10) * 10;
+      const yRange = yMax - yMin;
+
+      const zeroY = padding.top + chartHeight - ((0 - yMin) / yRange) * chartHeight;
+
+      ctx.beginPath();
+      ctx.strokeStyle = '#152040';
+      ctx.lineWidth = 1;
+      for (let i = yMin; i <= yMax; i += 20) {
+        const y = padding.top + chartHeight - ((i - yMin) / yRange) * chartHeight;
+        ctx.moveTo(padding.left, y);
+        ctx.lineTo(width - padding.right, y);
+      }
+      ctx.stroke();
+
+      ctx.fillStyle = '#8892b0';
+      ctx.font = '12px "JetBrains Mono", monospace';
+      ctx.textAlign = 'right';
+      ctx.textBaseline = 'middle';
+      for (let i = yMin; i <= yMax; i += 20) {
+        const y = padding.top + chartHeight - ((i - yMin) / yRange) * chartHeight;
+        ctx.fillText(i + '%', padding.left - 10, y);
+      }
+
+      ctx.beginPath();
+      ctx.strokeStyle = '#8892b0';
+      ctx.lineWidth = 1;
+      ctx.moveTo(padding.left, zeroY);
+      ctx.lineTo(width - padding.right, zeroY);
+      ctx.stroke();
+
+      const barWidth = chartWidth / chartData.length;
+      chartBars.length = 0; // Clear previous bars
+
+      chartData.forEach((d, i) => {
+        const x = padding.left + i * barWidth;
+        const barHeight = Math.abs((d.return / yRange) * chartHeight);
+        const y = d.return >= 0 ? zeroY - barHeight : zeroY;
+
+        ctx.fillStyle = d.return >= 0 ? '#10b981' : '#ef4444';
+
+        const rectW = Math.max(barWidth - 1, 1);
+        ctx.fillRect(x, y, rectW, barHeight);
+
+        chartBars.push({
+          year: d.year,
+          return: d.return,
+          x: x,
+          y: d.return >= 0 ? y : zeroY,
+          w: rectW,
+          h: barHeight,
+          color: d.return >= 0 ? '#10b981' : '#ef4444'
+        });
+
+        if (i % 10 === 0 && i !== 0) {
+          ctx.fillStyle = '#8892b0';
+          ctx.textAlign = 'center';
+          ctx.textBaseline = 'top';
+          ctx.fillText(d.year, x + barWidth / 2, padding.top + chartHeight + 10);
+        }
+      });
+    }
+
+    canvas.addEventListener('mousemove', (e) => {
+      const rect = canvas.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      let hovered = false;
+      for (let bar of chartBars) {
+        if (x >= bar.x && x <= bar.x + bar.w) {
+          tooltip.style.opacity = '1';
+          const sign = bar.return > 0 ? '+' : '';
+          tooltip.innerHTML = `<strong>${bar.year}</strong><br><span style="color: ${bar.color}">${sign}${bar.return.toFixed(2)}%</span>`;
+
+          let tooltipX = x + 10;
+          let tooltipY = y - 30;
+
+          tooltip.style.left = tooltipX + 'px';
+          tooltip.style.top = tooltipY + 'px';
+
+          hovered = true;
+          break;
+        }
+      }
+
+      if (!hovered) {
+        tooltip.style.opacity = '0';
+      }
+    });
+
+    canvas.addEventListener('mouseleave', () => {
+      tooltip.style.opacity = '0';
+    });
+
+    window.addEventListener('resize', drawChart);
+    drawChart();
+
+  </script>
+</body>
+</html>
