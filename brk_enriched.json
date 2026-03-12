@@ -1,0 +1,380 @@
+[
+  {
+    "ticker": "AAPL",
+    "nameText": "Apple Inc.",
+    "percent": 22.6,
+    "activity": "Reduce 4.32%",
+    "shares": 227917808,
+    "value": 61961735000,
+    "sector": "Technology"
+  },
+  {
+    "ticker": "AXP",
+    "nameText": "American Express",
+    "percent": 20.46,
+    "activity": "",
+    "shares": 151610700,
+    "value": 56088379000,
+    "sector": "Financial Services"
+  },
+  {
+    "ticker": "BAC",
+    "nameText": "Bank of America Corp.",
+    "percent": 10.38,
+    "activity": "Reduce 8.94%",
+    "shares": 517295934,
+    "value": 28451277000,
+    "sector": "Financial Services"
+  },
+  {
+    "ticker": "KO",
+    "nameText": "Coca Cola Co.",
+    "percent": 10.2,
+    "activity": "",
+    "shares": 400000000,
+    "value": 27964001000,
+    "sector": "Consumer Defensive"
+  },
+  {
+    "ticker": "CVX",
+    "nameText": "Chevron Corp.",
+    "percent": 7.24,
+    "activity": "Add 6.63%",
+    "shares": 130156362,
+    "value": 19837132000,
+    "sector": "Energy"
+  },
+  {
+    "ticker": "MCO",
+    "nameText": "Moody's Corp.",
+    "percent": 4.6,
+    "activity": "",
+    "shares": 24669778,
+    "value": 12602556000,
+    "sector": "Financial Services"
+  },
+  {
+    "ticker": "OXY",
+    "nameText": "Occidental Petroleum",
+    "percent": 3.97,
+    "activity": "",
+    "shares": 264941431,
+    "value": 10894392000,
+    "sector": "Energy"
+  },
+  {
+    "ticker": "CB",
+    "nameText": "Chubb Limited",
+    "percent": 3.9,
+    "activity": "Add 9.31%",
+    "shares": 34249183,
+    "value": 10689855000,
+    "sector": "Financial Services"
+  },
+  {
+    "ticker": "KHC",
+    "nameText": "Kraft Heinz Co.",
+    "percent": 2.88,
+    "activity": "",
+    "shares": 325634818,
+    "value": 7896644000,
+    "sector": "Consumer Defensive"
+  },
+  {
+    "ticker": "GOOGL",
+    "nameText": "Alphabet Inc.",
+    "percent": 2.04,
+    "activity": "",
+    "shares": 17846142,
+    "value": 5585842000,
+    "sector": "Communication Services"
+  },
+  {
+    "ticker": "DVA",
+    "nameText": "DaVita HealthCare Partners",
+    "percent": 1.32,
+    "activity": "Reduce 1.25%",
+    "shares": 31759065,
+    "value": 3608148000,
+    "sector": "Healthcare"
+  },
+  {
+    "ticker": "KR",
+    "nameText": "Kroger Co.",
+    "percent": 1.14,
+    "activity": "",
+    "shares": 50000000,
+    "value": 3124001000,
+    "sector": "Consumer Defensive"
+  },
+  {
+    "ticker": "V",
+    "nameText": "Visa Inc.",
+    "percent": 1.06,
+    "activity": "",
+    "shares": 8297460,
+    "value": 2910002000,
+    "sector": "Financial Services"
+  },
+  {
+    "ticker": "SIRI",
+    "nameText": "SiriusXM Holdings Inc",
+    "percent": 0.91,
+    "activity": "",
+    "shares": 124807117,
+    "value": 2495518000,
+    "sector": "Communication Services"
+  },
+  {
+    "ticker": "MA",
+    "nameText": "Mastercard Inc.",
+    "percent": 0.83,
+    "activity": "",
+    "shares": 3986648,
+    "value": 2275898000,
+    "sector": "Financial Services"
+  },
+  {
+    "ticker": "VRSN",
+    "nameText": "Verisign Inc.",
+    "percent": 0.8,
+    "activity": "",
+    "shares": 8989880,
+    "value": 2184091000,
+    "sector": "Technology"
+  },
+  {
+    "ticker": "STZ",
+    "nameText": "Constellation Brands",
+    "percent": 0.65,
+    "activity": "Reduce 2.99%",
+    "shares": 13000000,
+    "value": 1793480000,
+    "sector": "Consumer Defensive"
+  },
+  {
+    "ticker": "COF",
+    "nameText": "Capital One Financial",
+    "percent": 0.63,
+    "activity": "",
+    "shares": 7150000,
+    "value": 1732874000,
+    "sector": "Financial Services"
+  },
+  {
+    "ticker": "UNH",
+    "nameText": "United Health Group Inc.",
+    "percent": 0.61,
+    "activity": "",
+    "shares": 5039564,
+    "value": 1663610000,
+    "sector": "Healthcare"
+  },
+  {
+    "ticker": "DPZ",
+    "nameText": "Dominos Pizza Inc.",
+    "percent": 0.51,
+    "activity": "Add 12.34%",
+    "shares": 3350000,
+    "value": 1396347000,
+    "sector": "Consumer Cyclical"
+  },
+  {
+    "ticker": "ALLY",
+    "nameText": "Ally Financial Inc.",
+    "percent": 0.48,
+    "activity": "",
+    "shares": 29000000,
+    "value": 1313410000,
+    "sector": "Financial Services"
+  },
+  {
+    "ticker": "AON",
+    "nameText": "Aon Plc",
+    "percent": 0.46,
+    "activity": "Reduce 12.12%",
+    "shares": 3602995,
+    "value": 1271424000,
+    "sector": "Financial Services"
+  },
+  {
+    "ticker": "NUE",
+    "nameText": "Nucor Corp.",
+    "percent": 0.38,
+    "activity": "",
+    "shares": 6407749,
+    "value": 1045168000,
+    "sector": "Basic Materials"
+  },
+  {
+    "ticker": "LLYVK",
+    "nameText": "Liberty Media Corp. Series C Live",
+    "percent": 0.33,
+    "activity": "",
+    "shares": 10917661,
+    "value": 907912000,
+    "sector": "Communication Services"
+  },
+  {
+    "ticker": "LEN",
+    "nameText": "Lennar Corp.",
+    "percent": 0.26,
+    "activity": "",
+    "shares": 7050950,
+    "value": 724838000,
+    "sector": "Consumer Cyclical"
+  },
+  {
+    "ticker": "POOL",
+    "nameText": "Pool Corp.",
+    "percent": 0.26,
+    "activity": "Reduce 11.28%",
+    "shares": 3068885,
+    "value": 702007000,
+    "sector": "Industrials"
+  },
+  {
+    "ticker": "AMZN",
+    "nameText": "Amazon.com Inc.",
+    "percent": 0.19,
+    "activity": "Reduce 77.24%",
+    "shares": 2276000,
+    "value": 525346000,
+    "sector": "Consumer Cyclical"
+  },
+  {
+    "ticker": "LPX",
+    "nameText": "Louisiana-Pacific Corp.",
+    "percent": 0.17,
+    "activity": "",
+    "shares": 5664793,
+    "value": 457489000,
+    "sector": "Industrials"
+  },
+  {
+    "ticker": "LLYVA",
+    "nameText": "Liberty Media Corp. Series A Live",
+    "percent": 0.15,
+    "activity": "",
+    "shares": 4986588,
+    "value": 406407000,
+    "sector": "Communication Services"
+  },
+  {
+    "ticker": "NYT",
+    "nameText": "New York Times CL A",
+    "percent": 0.13,
+    "activity": "Buy",
+    "shares": 5065744,
+    "value": 351664000,
+    "sector": "Communication Services"
+  },
+  {
+    "ticker": "HEI.A",
+    "nameText": "HEICO Corp. CL A",
+    "percent": 0.12,
+    "activity": "",
+    "shares": 1294612,
+    "value": 326799000,
+    "sector": "Industrials"
+  },
+  {
+    "ticker": "FWONK",
+    "nameText": "Liberty Media Corp Formula One Series C",
+    "percent": 0.11,
+    "activity": "",
+    "shares": 3018555,
+    "value": 297358000,
+    "sector": "Communication Services"
+  },
+  {
+    "ticker": "CHTR",
+    "nameText": "Charter Communications",
+    "percent": 0.08,
+    "activity": "",
+    "shares": 1060882,
+    "value": 221459000,
+    "sector": "Communication Services"
+  },
+  {
+    "ticker": "LAMR",
+    "nameText": "Lamar Advertising Co.",
+    "percent": 0.06,
+    "activity": "Add 0.02%",
+    "shares": 1202410,
+    "value": 152201000,
+    "sector": "Real Estate"
+  },
+  {
+    "ticker": "ALLE",
+    "nameText": "Allegion Plc",
+    "percent": 0.05,
+    "activity": "",
+    "shares": 780133,
+    "value": 124213000,
+    "sector": "Industrials"
+  },
+  {
+    "ticker": "NVR",
+    "nameText": "NVR Inc.",
+    "percent": 0.03,
+    "activity": "",
+    "shares": 11112,
+    "value": 81037000,
+    "sector": "Consumer Cyclical"
+  },
+  {
+    "ticker": "DEO",
+    "nameText": "Diageo ADR",
+    "percent": 0.01,
+    "activity": "",
+    "shares": 227750,
+    "value": 19648000,
+    "sector": "Consumer Defensive"
+  },
+  {
+    "ticker": "JEF",
+    "nameText": "Jefferies Financial Group Inc.",
+    "percent": 0.01,
+    "activity": "",
+    "shares": 433558,
+    "value": 26868000,
+    "sector": "Financial Services"
+  },
+  {
+    "ticker": "LEN.B",
+    "nameText": "Lennar Corp. CL B",
+    "percent": 0.01,
+    "activity": "",
+    "shares": 180980,
+    "value": 17215000,
+    "sector": "Consumer Cyclical"
+  },
+  {
+    "ticker": "LILA",
+    "nameText": "Liberty LiLAC Group A",
+    "percent": 0.01,
+    "activity": "Reduce 8.90%",
+    "shares": 2396665,
+    "value": 17711000,
+    "sector": "Communication Services"
+  },
+  {
+    "ticker": "BATRK",
+    "nameText": "Atlanta Braves Holdings Inc. Series C",
+    "percent": 0,
+    "activity": "Reduce 48.39%",
+    "shares": 115428,
+    "value": 4553000,
+    "sector": "Communication Services"
+  },
+  {
+    "ticker": "LILAK",
+    "nameText": "Liberty LiLAC Group C",
+    "percent": 0,
+    "activity": "",
+    "shares": 1284020,
+    "value": 9579000,
+    "sector": "Communication Services"
+  }
+]
