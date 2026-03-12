@@ -7,7 +7,11 @@
     <meta name="description" content="Discover which stocks have the highest short interest in March 2026. Is a short squeeze brewing? We analyze the data, catalysts, and historical examples.">
     <link rel="canonical" href="https://westmountfundamentals.com/short-squeeze-candidates-march-2026.html">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> main
     <style>
         :root {
             --bg-color: #060a12;
@@ -143,7 +147,11 @@
             user-select: none;
             position: relative;
         }
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> main
         th:hover {
             background-color: rgba(21, 32, 64, 0.8);
         }
@@ -193,7 +201,11 @@
             color: var(--text-main);
             margin-bottom: 0;
         }
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> main
         .faq-section {
             margin-top: 4rem;
         }
@@ -241,7 +253,11 @@
         gtag('js', new Date());
         gtag('config', 'G-VYF72NSC1Q');
     </script>
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> main
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -317,7 +333,11 @@
             <h2>The Mechanics of a Short Squeeze</h2>
             <p>A short squeeze is a market phenomenon that occurs when a heavily shorted asset experiences a rapid increase in price. Short sellers borrow shares and sell them, hoping to buy them back later at a lower price. However, if the price starts to rise unexpectedly, these short sellers begin to accrue losses.</p>
             <p>To cut their losses or meet margin calls, short sellers are forced to buy the stock back to return the borrowed shares. This aggressive buying pressure drives the stock price even higher, forcing more short sellers to cover, creating a cascading feedback loop of upward price momentum.</p>
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> main
             <h3>Key Ingredients for a Squeeze</h3>
             <ul>
                 <li style="margin-left: 1.5rem; color: var(--text-muted); margin-bottom: 0.5rem;"><strong style="color: var(--text-main);">High Short Interest:</strong> Typically, a stock needs a short interest of at least 20% of its tradable float to have enough "fuel" for a squeeze.</li>
@@ -329,7 +349,11 @@
         <div class="card">
             <h2>March 2026 Squeeze Screener</h2>
             <p>We've filtered U.S. equities with a market capitalization over $100M and average volume over 500K to identify those with the highest short interest as a percentage of float. The "Squeeze Prob" score is a proprietary ranking metric calculated by multiplying Short % by Days to Cover.</p>
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> main
             <div class="table-container">
                 <table id="screenerTable">
                     <thead>
@@ -353,10 +377,17 @@
 
         <div class="card">
             <h2>Historical Examples</h2>
+<<<<<<< HEAD
 
             <h3>GameStop (GME) - January 2021</h3>
             <p>The most famous short squeeze in modern history. GameStop had a short interest exceeding 140% of its float—meaning more shares were shorted than actually existed. A massive influx of retail buying, coordinated on social media, combined with a gamma squeeze from options trading, sent the stock from under $5 to over $120 (split-adjusted) in weeks.</p>
 
+=======
+            
+            <h3>GameStop (GME) - January 2021</h3>
+            <p>The most famous short squeeze in modern history. GameStop had a short interest exceeding 140% of its float—meaning more shares were shorted than actually existed. A massive influx of retail buying, coordinated on social media, combined with a gamma squeeze from options trading, sent the stock from under $5 to over $120 (split-adjusted) in weeks.</p>
+            
+>>>>>>> main
             <h3>AMC Entertainment (AMC) - June 2021</h3>
             <p>Following in GME's footsteps, the struggling theater chain had over 20% short interest. Supported by retail enthusiasm and a reopening economy catalyst, AMC squeezed from $2 to over $70, severely punishing institutional short sellers.</p>
 
@@ -366,12 +397,20 @@
 
         <div class="faq-section">
             <h2>Frequently Asked Questions</h2>
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> main
             <div class="faq-item">
                 <div class="faq-question">What are the highest short interest stocks in March 2026?</div>
                 <div class="faq-answer">As of March 2026, some of the stocks with the highest short interest relative to their float include NVAX (Novavax), LCID (Lucid Group), RUN (Sunrun), and BYND (Beyond Meat). Short interest percentages can fluctuate rapidly, so it is important to check real-time data.</div>
             </div>
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> main
             <div class="faq-item">
                 <div class="faq-question">What makes a stock a good short squeeze candidate?</div>
                 <div class="faq-answer">A good short squeeze candidate typically has a high short percentage of its float (usually >20%), a high 'days to cover' ratio (indicating it would take days of average volume to buy back all shorted shares), a relatively low public float, and a potential catalyst that could drive the price up unexpectedly.</div>
@@ -565,11 +604,16 @@
         function renderTable() {
             const tbody = document.getElementById('tableBody');
             tbody.innerHTML = '';
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> main
             // Apply sorting
             const data = [...window.__INITIAL_DATA__].sort((a, b) => {
                 let valA = a[currentSort.column];
                 let valB = b[currentSort.column];
+<<<<<<< HEAD
 
                 if (valA === null || valA === undefined) valA = -Infinity;
                 if (valB === null || valB === undefined) valB = -Infinity;
@@ -578,15 +622,32 @@
                     return currentSort.isAsc ? valA.localeCompare(valB) : valB.localeCompare(valA);
                 }
 
+=======
+                
+                if (valA === null || valA === undefined) valA = -Infinity;
+                if (valB === null || valB === undefined) valB = -Infinity;
+                
+                if (typeof valA === 'string') {
+                    return currentSort.isAsc ? valA.localeCompare(valB) : valB.localeCompare(valA);
+                }
+                
+>>>>>>> main
                 return currentSort.isAsc ? valA - valB : valB - valA;
             });
 
             data.forEach(item => {
                 const tr = document.createElement('tr');
+<<<<<<< HEAD
 
                 const wkClass = getColorClass(item.price1wk);
                 const wkPrefix = item.price1wk > 0 ? '+' : '';
 
+=======
+                
+                const wkClass = getColorClass(item.price1wk);
+                const wkPrefix = item.price1wk > 0 ? '+' : '';
+                
+>>>>>>> main
                 const moClass = getColorClass(item.price1mo);
                 const moPrefix = item.price1mo > 0 ? '+' : '';
 
@@ -602,12 +663,20 @@
                 `;
                 tbody.appendChild(tr);
             });
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> main
             // Update header classes
             document.querySelectorAll('th').forEach(th => {
                 th.classList.remove('sort-asc', 'sort-desc');
             });
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> main
             // Find the th corresponding to current sort
             const columns = ['ticker', 'name', 'shortPercent', 'daysToCover', 'marketCap', 'price1wk', 'price1mo', 'squeezeProbability'];
             const idx = columns.indexOf(currentSort.column);
