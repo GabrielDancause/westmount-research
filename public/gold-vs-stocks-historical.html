@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gold vs Stocks: 50-Year Performance Comparison (1975-2026)</title>
+    <meta name="description" content="What truly happens when you pit gold against the S&P 500 over 50 years? The long-term performance data reveals a shocking reality about inflation and crises you didn't expect.">
+    <link rel="canonical" href="https://westmountfundamentals.com/gold-vs-stocks-historical.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VYF72NSC1Q"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-VYF72NSC1Q');</script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Gold vs Stocks: 50-Year Performance Comparison",
+      "description": "What truly happens when you pit gold against the S&P 500 over 50 years? The long-term performance data reveals a shocking reality about inflation and crises you didn't expect.",
+      "datePublished": "2026-03-01T00:00:00Z",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Westmount Research",
+        "url": "https://westmountfundamentals.com"
+      }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How does gold vs stocks performance compare over the last 50 years?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Over the past 50 years, the S&P 500 has significantly outperformed gold in both nominal and inflation-adjusted terms, benefiting from dividend reinvestment and corporate earnings growth. However, gold has shown strong performance during specific decades marked by high inflation or market instability."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the historical gold vs s&p 500 returns?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Since 1975, the S&P 500 has delivered a high single-digit to double-digit annualized return, while gold has provided a lower, but positive, long-term return. When adjusted for inflation, the gap in total returns becomes even more pronounced in favor of equities."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should i invest in gold or stocks for long-term growth?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For long-term capital appreciation, stocks have historically been the superior asset class. Gold is typically viewed as a store of value or a portfolio diversifier rather than a primary driver of long-term compound growth."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "When does gold outperform the stock market?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Gold tends to outperform the stock market during periods of severe economic crisis, deeply negative real interest rates, and sustained high inflation, such as the late 1970s and the 2000s (the 'Lost Decade' for stocks)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does gold protect against inflation better than the S&P 500?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "While gold is a traditional inflation hedge and protects purchasing power over centuries, the S&P 500 has historically been a better long-term hedge against inflation, as corporate earnings and dividends tend to rise alongside consumer prices over extended periods."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        :root {
+            --bg: #060a12;
+            --card-bg: #0a1020;
+            --border: #152040;
+            --accent: #4a8fe7;
+            --accent-hover: #3a7fd7;
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --gold: #fbbf24;
+            --gold-hover: #f59e0b;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            font-family: 'Inter', -apple-system, sans-serif;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .sticky-nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(6, 10, 18, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.125rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-brand span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #fff;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #fff 0%, #9ca3af 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            font-size: 1.125rem;
+            color: var(--text-muted);
+            margin-bottom: 3rem;
+            max-width: 800px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .card-header {
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 1rem;
+        }
+
+        .card-header h2 {
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .chart-container {
+            position: relative;
+            height: 500px;
+            width: 100%;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .stat-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .stat-label {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-value {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.75rem;
+            font-weight: 700;
+        }
+
+        .stat-value.sp500 { color: var(--accent); }
+        .stat-value.gold { color: var(--gold); }
+
+        .content-section {
+            margin-bottom: 3rem;
+        }
+
+        .content-section h2, .content-section h3 {
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .content-section p {
+            margin-bottom: 1.5rem;
+            color: var(--text-muted);
+        }
+
+        .rolling-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.875rem;
+            margin-top: 1rem;
+        }
+
+        .rolling-table th, .rolling-table td {
+            padding: 0.75rem 1rem;
+            text-align: right;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .rolling-table th {
+            text-align: right;
+            color: var(--text-muted);
+            font-weight: 500;
+            font-family: 'Inter', sans-serif;
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .rolling-table th:first-child, .rolling-table td:first-child {
+            text-align: left;
+        }
+
+        .rolling-table tbody tr:hover {
+            background: rgba(255,255,255,0.03);
+        }
+
+        .winner-gold { color: var(--gold); font-weight: bold; }
+        .winner-sp { color: var(--accent); font-weight: bold; }
+
+        .faq-section {
+            margin-top: 4rem;
+            border-top: 1px solid var(--border);
+            padding-top: 3rem;
+        }
+
+        .faq-item {
+            margin-bottom: 2rem;
+        }
+
+        .faq-item h3 {
+            font-size: 1.125rem;
+            margin-bottom: 0.75rem;
+            color: #fff;
+        }
+
+        .faq-item p {
+            color: var(--text-muted);
+        }
+
+        .chart-controls {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            justify-content: flex-end;
+        }
+
+        .chart-btn {
+            background: transparent;
+            border: 1px solid var(--border);
+            color: var(--text-muted);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .chart-btn:hover {
+            border-color: var(--accent);
+            color: #fff;
+        }
+
+        .chart-btn.active {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: #fff;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1.5rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            h1 { font-size: 2rem; }
+            .chart-container { height: 350px; }
+            .stats-grid { grid-template-columns: 1fr 1fr; }
+            .rolling-table { font-size: 0.75rem; }
+            .rolling-table th, .rolling-table td { padding: 0.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="sticky-nav">
+        <a href="/" class="nav-brand">Westmount <span>Fundamentals</span></a>
+        <div class="nav-links">
+            <a href="/#studies">Studies</a>
+            <a href="/#tools">Tools</a>
+            <a href="/#guides">Guides</a>
+        </div>
+    </nav>
+
+    <main>
+        <h1>Gold vs Stocks: 50-Year Performance Comparison</h1>
+        <p class="subtitle">An interactive historical analysis of the S&P 500 total return versus gold prices since 1975, including inflation-adjusted real returns and rolling decade performance.</p>
+
+        <div class="stats-grid" id="stats-grid">
+            <div class="stat-card">
+                <div class="stat-label">S&P 500 Annualized Return (Nominal)</div>
+                <div class="stat-value sp500" id="stat-sp-nom">--</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Gold Annualized Return (Nominal)</div>
+                <div class="stat-value gold" id="stat-gold-nom">--</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">S&P 500 Annualized (Real)</div>
+                <div class="stat-value sp500" id="stat-sp-real">--</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Gold Annualized (Real)</div>
+                <div class="stat-value gold" id="stat-gold-real">--</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header" style="display:flex; justify-content:space-between; align-items:center;">
+                <h2>Growth of $10,000 (1975 - 2026)</h2>
+                <div class="chart-controls">
+                    <button class="chart-btn active" data-type="nominal">Nominal</button>
+                    <button class="chart-btn" data-type="real">Inflation-Adjusted</button>
+                </div>
+            </div>
+            <div class="chart-container">
+                <canvas id="mainChart"></canvas>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>Rolling 10-Year Return Analysis</h2>
+            <p>While the S&P 500 dominates over the full 50-year timeline, analyzing <strong>rolling 10-year periods</strong> reveals periods where gold was the vastly superior asset class. Below is a breakdown of annualized returns across distinct decades.</p>
+
+            <div class="card" style="overflow-x:auto;">
+                <table class="rolling-table">
+                    <thead>
+                        <tr>
+                            <th>Decade (End Year)</th>
+                            <th>S&P 500 (Nominal CAGR)</th>
+                            <th>Gold (Nominal CAGR)</th>
+                            <th>Winner</th>
+                        </tr>
+                    </thead>
+                    <tbody id="rolling-tbody">
+                        <!-- Populated by JS -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>Correlation Analysis & When Does Gold Outperform?</h2>
+            <p>Historically, the correlation between gold and the S&P 500 hovers near zero over the long term, making it an excellent diversifier. However, correlation often turns negative during acute market stress.</p>
+            <h3>High Inflation and Crisis Periods</h3>
+            <p>Gold tends to outperform stocks when <strong>real interest rates are negative</strong> and during periods of high, sustained inflation (like the late 1970s). During the 1970s inflation shock, gold delivered massive real returns while the S&P 500 suffered a "lost decade" of negative real returns. Similarly, following the Dot-Com bubble and through the 2008 Financial Crisis (the 2000s "Lost Decade"), gold significantly outpaced equities.</p>
+            <p>Conversely, during periods of economic expansion, low inflation, and technological productivity booms (such as the 1990s and 2010s), stocks vastly outperform gold. Therefore, the answer to "should I invest in gold or stocks" often depends on whether you seek long-term compounding growth (stocks) or a crisis hedge / store of value (gold).</p>
+        </div>
+
+        <div class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <h3>How does gold vs stocks performance compare over the last 50 years?</h3>
+                <p>Over the past 50 years, the S&P 500 has significantly outperformed gold in both nominal and inflation-adjusted terms, benefiting from dividend reinvestment and corporate earnings growth. However, gold has shown strong performance during specific decades marked by high inflation or market instability.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>What are the historical gold vs s&p 500 returns?</h3>
+                <p>Since 1975, the S&P 500 has delivered a high single-digit to double-digit annualized return, while gold has provided a lower, but positive, long-term return. When adjusted for inflation, the gap in total returns becomes even more pronounced in favor of equities.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Should i invest in gold or stocks for long-term growth?</h3>
+                <p>For long-term capital appreciation, stocks have historically been the superior asset class. Gold is typically viewed as a store of value or a portfolio diversifier rather than a primary driver of long-term compound growth.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>When does gold outperform the stock market?</h3>
+                <p>Gold tends to outperform the stock market during periods of severe economic crisis, deeply negative real interest rates, and sustained high inflation, such as the late 1970s and the 2000s (the 'Lost Decade' for stocks).</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Does gold protect against inflation better than the S&P 500?</h3>
+                <p>While gold is a traditional inflation hedge and protects purchasing power over centuries, the S&P 500 has historically been a better long-term hedge against inflation, as corporate earnings and dividends tend to rise alongside consumer prices over extended periods.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Westmount Research &middot; A GAB Ventures property. Data for informational purposes only. Not investment advice. All information for educational purposes only.</p>
+    </footer>
+
+    <script>
+    window.__INITIAL_DATA__ = [{"date":"1975-01","sp500_tr":108.6,"sp500_real_tr":108.18,"gold_tr":95.91,"gold_real_tr":95.55,"cpi":52.1},{"date":"1975-02","sp500_tr":120.3,"sp500_real_tr":118.92,"gold_tr":97.73,"gold_real_tr":96.61,"cpi":52.5},{"date":"1975-03","sp500_tr":126.26,"sp500_real_tr":124.35,"gold_tr":96.94,"gold_real_tr":95.47,"cpi":52.7},{"date":"1975-04","sp500_tr":128.14,"sp500_real_tr":125.72,"gold_tr":92.41,"gold_real_tr":90.67,"cpi":52.9},{"date":"1975-05","sp500_tr":136.71,"sp500_real_tr":133.37,"gold_tr":91.08,"gold_real_tr":88.86,"cpi":53.2},{"date":"1975-06","sp500_tr":140.66,"sp500_real_tr":136.2,"gold_tr":89.37,"gold_real_tr":86.53,"cpi":53.6},{"date":"1975-07","sp500_tr":141.27,"sp500_real_tr":135.27,"gold_tr":89.87,"gold_real_tr":86.06,"cpi":54.2},{"date":"1975-08","sp500_tr":131.42,"sp500_real_tr":125.61,"gold_tr":88.69,"gold_real_tr":84.77,"cpi":54.3},{"date":"1975-09","sp500_tr":130.31,"sp500_real_tr":123.86,"gold_tr":78.45,"gold_real_tr":74.57,"cpi":54.6},{"date":"1975-10","sp500_tr":136.76,"sp500_real_tr":129.29,"gold_tr":77.7,"gold_real_tr":73.45,"cpi":54.9},{"date":"1975-11","sp500_tr":139.55,"sp500_real_tr":130.97,"gold_tr":77.49,"gold_real_tr":72.73,"cpi":55.3},{"date":"1975-12","sp500_tr":137.91,"sp500_real_tr":128.96,"gold_tr":75.8,"gold_real_tr":70.88,"cpi":55.5},{"date":"1976-01","sp500_tr":151.03,"sp500_real_tr":140.98,"gold_tr":71.31,"gold_real_tr":66.56,"cpi":55.6},{"date":"1976-02","sp500_tr":157.32,"sp500_real_tr":146.33,"gold_tr":71.31,"gold_real_tr":66.33,"cpi":55.8},{"date":"1976-03","sp500_tr":158.58,"sp500_real_tr":147.24,"gold_tr":72.24,"gold_real_tr":67.07,"cpi":55.9},{"date":"1976-04","sp500_tr":160.32,"sp500_real_tr":148.32,"gold_tr":69.62,"gold_real_tr":64.4,"cpi":56.1},{"date":"1976-05","sp500_tr":159.71,"sp500_real_tr":146.71,"gold_tr":69.06,"gold_real_tr":63.44,"cpi":56.5},{"date":"1976-06","sp500_tr":161.15,"sp500_real_tr":147.25,"gold_tr":68.4,"gold_real_tr":62.5,"cpi":56.8},{"date":"1976-07","sp500_tr":165.44,"sp500_real_tr":150.37,"gold_tr":64.06,"gold_real_tr":58.23,"cpi":57.1},{"date":"1976-08","sp500_tr":164.52,"sp500_real_tr":148.76,"gold_tr":59.82,"gold_real_tr":54.08,"cpi":57.4},{"date":"1976-09","sp500_tr":168.52,"sp500_real_tr":151.85,"gold_tr":62.11,"gold_real_tr":55.97,"cpi":57.6},{"date":"1976-10","sp500_tr":163.31,"sp500_real_tr":146.39,"gold_tr":63.2,"gold_real_tr":56.65,"cpi":57.9},{"date":"1976-11","sp500_tr":162.73,"sp500_real_tr":145.61,"gold_tr":70.99,"gold_real_tr":63.52,"cpi":58},{"date":"1976-12","sp500_tr":168.88,"sp500_real_tr":150.6,"gold_tr":72.88,"gold_real_tr":64.99,"cpi":58.2},{"date":"1977-01","sp500_tr":167.98,"sp500_real_tr":149.03,"gold_tr":71.97,"gold_real_tr":63.85,"cpi":58.5},{"date":"1977-02","sp500_tr":164.03,"sp500_real_tr":144.04,"gold_tr":74.13,"gold_real_tr":65.1,"cpi":59.1},{"date":"1977-03","sp500_tr":163.95,"sp500_real_tr":143,"gold_tr":80.66,"gold_real_tr":70.35,"cpi":59.5},{"date":"1977-04","sp500_tr":162.01,"sp500_real_tr":140.13,"gold_tr":81.17,"gold_real_tr":70.21,"cpi":60},{"date":"1977-05","sp500_tr":162.12,"sp500_real_tr":139.54,"gold_tr":79.77,"gold_real_tr":68.66,"cpi":60.3},{"date":"1977-06","sp500_tr":163.58,"sp500_real_tr":139.87,"gold_tr":76.6,"gold_real_tr":65.5,"cpi":60.7},{"date":"1977-07","sp500_tr":165.68,"sp500_real_tr":140.96,"gold_tr":78.02,"gold_real_tr":66.38,"cpi":61},{"date":"1977-08","sp500_tr":162.26,"sp500_real_tr":137.6,"gold_tr":78.87,"gold_real_tr":66.88,"cpi":61.2},{"date":"1977-09","sp500_tr":160.37,"sp500_real_tr":135.56,"gold_tr":81.36,"gold_real_tr":68.77,"cpi":61.4},{"date":"1977-10","sp500_tr":156.87,"sp500_real_tr":132.17,"gold_tr":86.49,"gold_real_tr":72.87,"cpi":61.6},{"date":"1977-11","sp500_tr":158.41,"sp500_real_tr":132.82,"gold_tr":88.2,"gold_real_tr":73.95,"cpi":61.9},{"date":"1977-12","sp500_tr":158.3,"sp500_real_tr":132.3,"gold_tr":87.31,"gold_real_tr":72.97,"cpi":62.1},{"date":"1978-01","sp500_tr":152.96,"sp500_real_tr":127.02,"gold_tr":94.23,"gold_real_tr":78.25,"cpi":62.5},{"date":"1978-02","sp500_tr":151.49,"sp500_real_tr":125,"gold_tr":96.93,"gold_real_tr":79.98,"cpi":62.9},{"date":"1978-03","sp500_tr":151.9,"sp500_real_tr":124.35,"gold_tr":99.91,"gold_real_tr":81.79,"cpi":63.4},{"date":"1978-04","sp500_tr":159.21,"sp500_real_tr":129.31,"gold_tr":95.37,"gold_real_tr":77.46,"cpi":63.9},{"date":"1978-05","sp500_tr":167.95,"sp500_real_tr":135.14,"gold_tr":95.94,"gold_real_tr":77.19,"cpi":64.5},{"date":"1978-06","sp500_tr":169.08,"sp500_real_tr":134.59,"gold_tr":99.98,"gold_real_tr":79.59,"cpi":65.2},{"date":"1978-07","sp500_tr":168.99,"sp500_real_tr":133.49,"gold_tr":102.69,"gold_real_tr":81.12,"cpi":65.7},{"date":"1978-08","sp500_tr":181.33,"sp500_real_tr":142.59,"gold_tr":112.25,"gold_real_tr":88.27,"cpi":66},{"date":"1978-09","sp500_tr":182.06,"sp500_real_tr":142.09,"gold_tr":115.4,"gold_real_tr":90.06,"cpi":66.5},{"date":"1978-10","sp500_tr":177.04,"sp500_real_tr":136.93,"gold_tr":123.76,"gold_real_tr":95.72,"cpi":67.1},{"date":"1978-11","sp500_tr":167.46,"sp500_real_tr":128.95,"gold_tr":112.2,"gold_real_tr":86.4,"cpi":67.4},{"date":"1978-12","sp500_tr":170.67,"sp500_real_tr":130.84,"gold_tr":113.1,"gold_real_tr":86.7,"cpi":67.7},{"date":"1979-01","sp500_tr":177.79,"sp500_real_tr":135.1,"gold_tr":123.67,"gold_real_tr":93.97,"cpi":68.3},{"date":"1979-02","sp500_tr":175.93,"sp500_real_tr":132.14,"gold_tr":133.68,"gold_real_tr":100.4,"cpi":69.1},{"date":"1979-03","sp500_tr":180.04,"sp500_real_tr":133.87,"gold_tr":131.71,"gold_real_tr":97.93,"cpi":69.8},{"date":"1979-04","sp500_tr":184.41,"sp500_real_tr":135.56,"gold_tr":130.11,"gold_real_tr":95.64,"cpi":70.6},{"date":"1979-05","sp500_tr":180.94,"sp500_real_tr":131.34,"gold_tr":140.16,"gold_real_tr":101.74,"cpi":71.5},{"date":"1979-06","sp500_tr":185.31,"sp500_real_tr":133.02,"gold_tr":151.85,"gold_real_tr":109,"cpi":72.3},{"date":"1979-07","sp500_tr":187.94,"sp500_real_tr":133.44,"gold_tr":160.38,"gold_real_tr":113.87,"cpi":73.1},{"date":"1979-08","sp500_tr":197.34,"sp500_real_tr":138.78,"gold_tr":163.68,"gold_real_tr":115.11,"cpi":73.8},{"date":"1979-09","sp500_tr":200.38,"sp500_real_tr":139.41,"gold_tr":193.14,"gold_real_tr":134.37,"cpi":74.6},{"date":"1979-10","sp500_tr":193.7,"sp500_real_tr":133.69,"gold_tr":213.11,"gold_real_tr":147.08,"cpi":75.2},{"date":"1979-11","sp500_tr":193.09,"sp500_real_tr":132.04,"gold_tr":213.29,"gold_real_tr":145.85,"cpi":75.9},{"date":"1979-12","sp500_tr":201.57,"sp500_real_tr":136.39,"gold_tr":247.62,"gold_real_tr":167.56,"cpi":76.7},{"date":"1980-01","sp500_tr":208.23,"sp500_real_tr":138.91,"gold_tr":367.46,"gold_real_tr":245.13,"cpi":77.8},{"date":"1980-02","sp500_tr":217.36,"sp500_real_tr":142.98,"gold_tr":362.02,"gold_real_tr":238.13,"cpi":78.9},{"date":"1980-03","sp500_tr":198.38,"sp500_real_tr":128.54,"gold_tr":301.22,"gold_real_tr":195.17,"cpi":80.1},{"date":"1980-04","sp500_tr":196.09,"sp500_real_tr":125.65,"gold_tr":281.54,"gold_real_tr":180.39,"cpi":81},{"date":"1980-05","sp500_tr":205.94,"sp500_real_tr":130.66,"gold_tr":279.57,"gold_real_tr":177.38,"cpi":81.8},{"date":"1980-06","sp500_tr":220.02,"sp500_real_tr":138.08,"gold_tr":326.87,"gold_real_tr":205.13,"cpi":82.7},{"date":"1980-07","sp500_tr":230.92,"sp500_real_tr":144.92,"gold_tr":350.02,"gold_real_tr":219.66,"cpi":82.7},{"date":"1980-08","sp500_tr":238.99,"sp500_real_tr":148.9,"gold_tr":341.25,"gold_real_tr":212.62,"cpi":83.3},{"date":"1980-09","sp500_tr":245.75,"sp500_real_tr":151.84,"gold_tr":366.54,"gold_real_tr":226.47,"cpi":84},{"date":"1980-10","sp500_tr":253.9,"sp500_real_tr":155.39,"gold_tr":359.75,"gold_real_tr":220.18,"cpi":84.8},{"date":"1980-11","sp500_tr":265.58,"sp500_real_tr":161.21,"gold_tr":339.96,"gold_real_tr":206.36,"cpi":85.5},{"date":"1980-12","sp500_tr":262.3,"sp500_real_tr":157.74,"gold_tr":292.88,"gold_real_tr":176.14,"cpi":86.3},{"date":"1981-01","sp500_tr":262.33,"sp500_real_tr":156.49,"gold_tr":303.29,"gold_real_tr":180.93,"cpi":87},{"date":"1981-02","sp500_tr":254.32,"sp500_real_tr":150.16,"gold_tr":271.93,"gold_real_tr":160.56,"cpi":87.9},{"date":"1981-03","sp500_tr":264.83,"sp500_real_tr":155.31,"gold_tr":271.58,"gold_real_tr":159.27,"cpi":88.5},{"date":"1981-04","sp500_tr":268.25,"sp500_real_tr":156.25,"gold_tr":269.78,"gold_real_tr":157.14,"cpi":89.1},{"date":"1981-05","sp500_tr":263.94,"sp500_real_tr":152.54,"gold_tr":261.02,"gold_real_tr":150.86,"cpi":89.8},{"date":"1981-06","sp500_tr":266.2,"sp500_real_tr":152.49,"gold_tr":250.89,"gold_real_tr":143.72,"cpi":90.6},{"date":"1981-07","sp500_tr":260.87,"sp500_real_tr":147.81,"gold_tr":222.59,"gold_real_tr":126.12,"cpi":91.6},{"date":"1981-08","sp500_tr":262.97,"sp500_real_tr":147.87,"gold_tr":223.18,"gold_real_tr":125.49,"cpi":92.3},{"date":"1981-09","sp500_tr":241.25,"sp500_real_tr":134.34,"gold_tr":241.46,"gold_real_tr":134.46,"cpi":93.2},{"date":"1981-10","sp500_tr":245.41,"sp500_real_tr":136.37,"gold_tr":238.2,"gold_real_tr":132.36,"cpi":93.4},{"date":"1981-11","sp500_tr":252.85,"sp500_real_tr":140.05,"gold_tr":224.93,"gold_real_tr":124.59,"cpi":93.7},{"date":"1981-12","sp500_tr":255.83,"sp500_real_tr":141.25,"gold_tr":223.14,"gold_real_tr":123.2,"cpi":94},{"date":"1982-01","sp500_tr":243.61,"sp500_real_tr":134.08,"gold_tr":209.02,"gold_real_tr":115.04,"cpi":94.3},{"date":"1982-02","sp500_tr":238.98,"sp500_real_tr":131.11,"gold_tr":203.57,"gold_real_tr":111.69,"cpi":94.6},{"date":"1982-03","sp500_tr":232.47,"sp500_real_tr":127.67,"gold_tr":179.7,"gold_real_tr":98.69,"cpi":94.5},{"date":"1982-04","sp500_tr":245.13,"sp500_real_tr":134.06,"gold_tr":190.61,"gold_real_tr":104.24,"cpi":94.9},{"date":"1982-05","sp500_tr":246.53,"sp500_real_tr":133.56,"gold_tr":181.58,"gold_real_tr":98.37,"cpi":95.8},{"date":"1982-06","sp500_tr":233.62,"sp500_real_tr":125,"gold_tr":171.39,"gold_real_tr":91.7,"cpi":97},{"date":"1982-07","sp500_tr":234.19,"sp500_real_tr":124.66,"gold_tr":184.44,"gold_real_tr":98.18,"cpi":97.5},{"date":"1982-08","sp500_tr":236.05,"sp500_real_tr":125.4,"gold_tr":198.19,"gold_real_tr":105.28,"cpi":97.7},{"date":"1982-09","sp500_tr":264.48,"sp500_real_tr":140.21,"gold_tr":237.95,"gold_real_tr":126.15,"cpi":97.9},{"date":"1982-10","sp500_tr":287.88,"sp500_real_tr":152.15,"gold_tr":229.7,"gold_real_tr":121.4,"cpi":98.2},{"date":"1982-11","sp500_tr":300.78,"sp500_real_tr":159.29,"gold_tr":225.75,"gold_real_tr":119.56,"cpi":98},{"date":"1982-12","sp500_tr":304.85,"sp500_real_tr":162.11,"gold_tr":241.87,"gold_real_tr":128.61,"cpi":97.6},{"date":"1983-01","sp500_tr":316.78,"sp500_real_tr":168.11,"gold_tr":261.88,"gold_real_tr":138.98,"cpi":97.8},{"date":"1983-02","sp500_tr":323.5,"sp500_real_tr":171.5,"gold_tr":267.22,"gold_real_tr":141.66,"cpi":97.9},{"date":"1983-03","sp500_tr":335.97,"sp500_real_tr":178.11,"gold_tr":228.37,"gold_real_tr":121.07,"cpi":97.9},{"date":"1983-04","sp500_tr":350.03,"sp500_real_tr":184.24,"gold_tr":235.54,"gold_real_tr":123.98,"cpi":98.6},{"date":"1983-05","sp500_tr":365.46,"sp500_real_tr":191.21,"gold_tr":238.33,"gold_real_tr":124.69,"cpi":99.2},{"date":"1983-06","sp500_tr":371.86,"sp500_real_tr":193.96,"gold_tr":224.64,"gold_real_tr":117.17,"cpi":99.5},{"date":"1983-07","sp500_tr":374.49,"sp500_real_tr":194.55,"gold_tr":219.23,"gold_real_tr":113.9,"cpi":99.9},{"date":"1983-08","sp500_tr":365.52,"sp500_real_tr":189.32,"gold_tr":226.47,"gold_real_tr":117.3,"cpi":100.2},{"date":"1983-09","sp500_tr":377.59,"sp500_real_tr":194.61,"gold_tr":224.07,"gold_real_tr":115.49,"cpi":100.7},{"date":"1983-10","sp500_tr":380.04,"sp500_real_tr":195.29,"gold_tr":214.17,"gold_real_tr":110.05,"cpi":101},{"date":"1983-11","sp500_tr":375.73,"sp500_real_tr":192.69,"gold_tr":207.69,"gold_real_tr":106.51,"cpi":101.2},{"date":"1983-12","sp500_tr":375.26,"sp500_real_tr":192.26,"gold_tr":211.31,"gold_real_tr":108.26,"cpi":101.3},{"date":"1984-01","sp500_tr":381.16,"sp500_real_tr":194.14,"gold_tr":201.81,"gold_real_tr":102.79,"cpi":101.9},{"date":"1984-02","sp500_tr":361.76,"sp500_real_tr":183.35,"gold_tr":210.01,"gold_real_tr":106.44,"cpi":102.4},{"date":"1984-03","sp500_tr":363.37,"sp500_real_tr":183.81,"gold_tr":214.53,"gold_real_tr":108.52,"cpi":102.6},{"date":"1984-04","sp500_tr":365.22,"sp500_real_tr":183.85,"gold_tr":207.51,"gold_real_tr":104.46,"cpi":103.1},{"date":"1984-05","sp500_tr":364.31,"sp500_real_tr":182.86,"gold_tr":205.35,"gold_real_tr":103.07,"cpi":103.4},{"date":"1984-06","sp500_tr":357.62,"sp500_real_tr":178.98,"gold_tr":205.52,"gold_real_tr":102.86,"cpi":103.7},{"date":"1984-07","sp500_tr":354.39,"sp500_real_tr":176.69,"gold_tr":189.2,"gold_real_tr":94.33,"cpi":104.1},{"date":"1984-08","sp500_tr":386.91,"sp500_real_tr":192.16,"gold_tr":189.19,"gold_real_tr":93.96,"cpi":104.5},{"date":"1984-09","sp500_tr":392.34,"sp500_real_tr":193.93,"gold_tr":185.11,"gold_real_tr":91.5,"cpi":105},{"date":"1984-10","sp500_tr":390.75,"sp500_real_tr":192.59,"gold_tr":185.55,"gold_real_tr":91.45,"cpi":105.3},{"date":"1984-11","sp500_tr":395.77,"sp500_real_tr":195.07,"gold_tr":186.09,"gold_real_tr":91.72,"cpi":105.3},{"date":"1984-12","sp500_tr":392.99,"sp500_real_tr":193.7,"gold_tr":173.87,"gold_real_tr":85.7,"cpi":105.3},{"date":"1985-01","sp500_tr":411.4,"sp500_real_tr":202.39,"gold_tr":164.76,"gold_real_tr":81.05,"cpi":105.5},{"date":"1985-02","sp500_tr":435.14,"sp500_real_tr":213.05,"gold_tr":162.75,"gold_real_tr":79.69,"cpi":106},{"date":"1985-03","sp500_tr":433.08,"sp500_real_tr":211.25,"gold_tr":170.58,"gold_real_tr":83.21,"cpi":106.4},{"date":"1985-04","sp500_tr":437.51,"sp500_real_tr":212.41,"gold_tr":177.82,"gold_real_tr":86.33,"cpi":106.9},{"date":"1985-05","sp500_tr":449.45,"sp500_real_tr":217.4,"gold_tr":171.94,"gold_real_tr":83.17,"cpi":107.3},{"date":"1985-06","sp500_tr":460.71,"sp500_real_tr":222.22,"gold_tr":172.22,"gold_real_tr":83.07,"cpi":107.6},{"date":"1985-07","sp500_tr":471.04,"sp500_real_tr":226.78,"gold_tr":172.6,"gold_real_tr":83.1,"cpi":107.8},{"date":"1985-08","sp500_tr":462.39,"sp500_real_tr":222.2,"gold_tr":179.78,"gold_real_tr":86.39,"cpi":108},{"date":"1985-09","sp500_tr":453.72,"sp500_real_tr":217.43,"gold_tr":175.94,"gold_real_tr":84.32,"cpi":108.3},{"date":"1985-10","sp500_tr":460.49,"sp500_real_tr":219.87,"gold_tr":177.3,"gold_real_tr":84.66,"cpi":108.7},{"date":"1985-11","sp500_tr":489.97,"sp500_real_tr":233.3,"gold_tr":174.94,"gold_real_tr":83.3,"cpi":109},{"date":"1985-12","sp500_tr":515.83,"sp500_real_tr":244.94,"gold_tr":175.16,"gold_real_tr":83.17,"cpi":109.3},{"date":"1986-01","sp500_tr":519.71,"sp500_real_tr":246.11,"gold_tr":189.07,"gold_real_tr":89.53,"cpi":109.6},{"date":"1986-02","sp500_tr":549.25,"sp500_real_tr":260.8,"gold_tr":184.4,"gold_real_tr":87.56,"cpi":109.3},{"date":"1986-03","sp500_tr":583.12,"sp500_real_tr":278.16,"gold_tr":188.11,"gold_real_tr":89.73,"cpi":108.8},{"date":"1986-04","sp500_tr":599.07,"sp500_real_tr":286.3,"gold_tr":185.24,"gold_real_tr":88.53,"cpi":108.6},{"date":"1986-05","sp500_tr":602.02,"sp500_real_tr":286.91,"gold_tr":186.31,"gold_real_tr":88.79,"cpi":108.9},{"date":"1986-06","sp500_tr":620.84,"sp500_real_tr":294.26,"gold_tr":186.47,"gold_real_tr":88.38,"cpi":109.5},{"date":"1986-07","sp500_tr":609.69,"sp500_real_tr":288.98,"gold_tr":189.54,"gold_real_tr":89.84,"cpi":109.5},{"date":"1986-08","sp500_tr":623.57,"sp500_real_tr":295.02,"gold_tr":204.95,"gold_real_tr":96.96,"cpi":109.7},{"date":"1986-09","sp500_tr":608.31,"sp500_real_tr":286.49,"gold_tr":227.3,"gold_real_tr":107.05,"cpi":110.2},{"date":"1986-10","sp500_tr":607.77,"sp500_real_tr":285.98,"gold_tr":230.44,"gold_real_tr":108.43,"cpi":110.3},{"date":"1986-11","sp500_tr":629.19,"sp500_real_tr":295.79,"gold_tr":216.32,"gold_real_tr":101.7,"cpi":110.4},{"date":"1986-12","sp500_tr":639.93,"sp500_real_tr":300.56,"gold_tr":212.71,"gold_real_tr":99.91,"cpi":110.5},{"date":"1987-01","sp500_tr":682.53,"sp500_real_tr":318.55,"gold_tr":222.15,"gold_real_tr":103.68,"cpi":111.2},{"date":"1987-02","sp500_tr":726.53,"sp500_real_tr":337.88,"gold_tr":218.26,"gold_real_tr":101.5,"cpi":111.6},{"date":"1987-03","sp500_tr":758.26,"sp500_real_tr":351.06,"gold_tr":222.5,"gold_real_tr":103.01,"cpi":112.1},{"date":"1987-04","sp500_tr":751.8,"sp500_real_tr":346.21,"gold_tr":238.52,"gold_real_tr":109.84,"cpi":112.7},{"date":"1987-05","sp500_tr":753.11,"sp500_real_tr":345.59,"gold_tr":250.42,"gold_real_tr":114.92,"cpi":113.1},{"date":"1987-06","sp500_tr":786.93,"sp500_real_tr":359.84,"gold_tr":244.63,"gold_real_tr":111.86,"cpi":113.5},{"date":"1987-07","sp500_tr":811.46,"sp500_real_tr":370.08,"gold_tr":245.14,"gold_real_tr":111.8,"cpi":113.8},{"date":"1987-08","sp500_tr":863.73,"sp500_real_tr":391.85,"gold_tr":250.93,"gold_real_tr":113.84,"cpi":114.4},{"date":"1987-09","sp500_tr":837.63,"sp500_real_tr":378.02,"gold_tr":250.51,"gold_real_tr":113.05,"cpi":115},{"date":"1987-10","sp500_tr":738.61,"sp500_real_tr":332.47,"gold_tr":253.21,"gold_real_tr":113.98,"cpi":115.3},{"date":"1987-11","sp500_tr":648.02,"sp500_real_tr":291.44,"gold_tr":254.42,"gold_real_tr":114.42,"cpi":115.4},{"date":"1987-12","sp500_tr":639.42,"sp500_real_tr":287.57,"gold_tr":264.58,"gold_real_tr":118.99,"cpi":115.4},{"date":"1988-01","sp500_tr":666.51,"sp500_real_tr":298.98,"gold_tr":259.32,"gold_real_tr":116.32,"cpi":115.7},{"date":"1988-02","sp500_tr":688.64,"sp500_real_tr":308.11,"gold_tr":240.54,"gold_real_tr":107.62,"cpi":116},{"date":"1988-03","sp500_tr":710.85,"sp500_real_tr":316.68,"gold_tr":241.38,"gold_real_tr":107.53,"cpi":116.5},{"date":"1988-04","sp500_tr":704.6,"sp500_real_tr":312.29,"gold_tr":245.7,"gold_real_tr":108.9,"cpi":117.1},{"date":"1988-05","sp500_tr":689.25,"sp500_real_tr":304.44,"gold_tr":245.44,"gold_real_tr":108.41,"cpi":117.5},{"date":"1988-06","sp500_tr":730.51,"sp500_real_tr":321.3,"gold_tr":245.58,"gold_real_tr":108.01,"cpi":118},{"date":"1988-07","sp500_tr":728.29,"sp500_real_tr":318.97,"gold_tr":238.13,"gold_real_tr":104.29,"cpi":118.5},{"date":"1988-08","sp500_tr":715.84,"sp500_real_tr":312.2,"gold_tr":234.67,"gold_real_tr":102.35,"cpi":119},{"date":"1988-09","sp500_tr":729.62,"sp500_real_tr":316.09,"gold_tr":224.98,"gold_real_tr":97.46,"cpi":119.8},{"date":"1988-10","sp500_tr":757.3,"sp500_real_tr":326.99,"gold_tr":221.34,"gold_real_tr":95.57,"cpi":120.2},{"date":"1988-11","sp500_tr":742.07,"sp500_real_tr":320.15,"gold_tr":228.63,"gold_real_tr":98.63,"cpi":120.3},{"date":"1988-12","sp500_tr":759.32,"sp500_real_tr":327.04,"gold_tr":228.02,"gold_real_tr":98.21,"cpi":120.5},{"date":"1989-01","sp500_tr":785.93,"sp500_real_tr":336.83,"gold_tr":219.83,"gold_real_tr":94.21,"cpi":121.1},{"date":"1989-02","sp500_tr":811.82,"sp500_real_tr":346.49,"gold_tr":210.86,"gold_real_tr":90,"cpi":121.6},{"date":"1989-03","sp500_tr":810.54,"sp500_real_tr":343.97,"gold_tr":212.29,"gold_real_tr":90.09,"cpi":122.3},{"date":"1989-04","sp500_tr":839.38,"sp500_real_tr":353.89,"gold_tr":209.16,"gold_real_tr":88.18,"cpi":123.1},{"date":"1989-05","sp500_tr":873.86,"sp500_real_tr":366.34,"gold_tr":201.9,"gold_real_tr":84.64,"cpi":123.8},{"date":"1989-06","sp500_tr":903.48,"sp500_real_tr":377.84,"gold_tr":200.02,"gold_real_tr":83.65,"cpi":124.1},{"date":"1989-07","sp500_tr":928.73,"sp500_real_tr":387.47,"gold_tr":204.07,"gold_real_tr":85.14,"cpi":124.4},{"date":"1989-08","sp500_tr":972.22,"sp500_real_tr":404.96,"gold_tr":198.68,"gold_real_tr":82.76,"cpi":124.6},{"date":"1989-09","sp500_tr":976.68,"sp500_real_tr":405.52,"gold_tr":196.84,"gold_real_tr":81.73,"cpi":125},{"date":"1989-10","sp500_tr":979.49,"sp500_real_tr":404.74,"gold_tr":199.63,"gold_real_tr":82.49,"cpi":125.6},{"date":"1989-11","sp500_tr":961.81,"sp500_real_tr":396.49,"gold_tr":214.53,"gold_real_tr":88.44,"cpi":125.9},{"date":"1989-12","sp500_tr":988.11,"sp500_real_tr":406.68,"gold_tr":222.76,"gold_real_tr":91.68,"cpi":126.1},{"date":"1990-01","sp500_tr":966.34,"sp500_real_tr":393.67,"gold_tr":223.15,"gold_real_tr":90.91,"cpi":127.4},{"date":"1990-02","sp500_tr":942.02,"sp500_real_tr":381.96,"gold_tr":226.8,"gold_real_tr":91.96,"cpi":128},{"date":"1990-03","sp500_tr":967.48,"sp500_real_tr":390.15,"gold_tr":213.88,"gold_real_tr":86.25,"cpi":128.7},{"date":"1990-04","sp500_tr":969.41,"sp500_real_tr":390.32,"gold_tr":203.63,"gold_real_tr":81.99,"cpi":128.9},{"date":"1990-05","sp500_tr":1006.67,"sp500_real_tr":404.38,"gold_tr":200.81,"gold_real_tr":80.67,"cpi":129.2},{"date":"1990-06","sp500_tr":1038.53,"sp500_real_tr":414.93,"gold_tr":191.71,"gold_real_tr":76.6,"cpi":129.9},{"date":"1990-07","sp500_tr":1040.31,"sp500_real_tr":414.05,"gold_tr":197.26,"gold_real_tr":78.51,"cpi":130.4},{"date":"1990-08","sp500_tr":958.79,"sp500_real_tr":378.13,"gold_tr":214.78,"gold_real_tr":84.71,"cpi":131.6},{"date":"1990-09","sp500_tr":917.32,"sp500_real_tr":358.77,"gold_tr":211.84,"gold_real_tr":82.85,"cpi":132.7},{"date":"1990-10","sp500_tr":896.18,"sp500_real_tr":348.4,"gold_tr":207.17,"gold_real_tr":80.54,"cpi":133.5},{"date":"1990-11","sp500_tr":922.86,"sp500_real_tr":357.97,"gold_tr":207.71,"gold_real_tr":80.57,"cpi":133.8},{"date":"1990-12","sp500_tr":965.09,"sp500_real_tr":374.35,"gold_tr":205.11,"gold_real_tr":79.56,"cpi":133.8},{"date":"1991-01","sp500_tr":958.51,"sp500_real_tr":369.59,"gold_tr":208.75,"gold_real_tr":80.49,"cpi":134.6},{"date":"1991-02","sp500_tr":1069.46,"sp500_real_tr":411.76,"gold_tr":197.97,"gold_real_tr":76.22,"cpi":134.8},{"date":"1991-03","sp500_tr":1101.94,"sp500_real_tr":423.64,"gold_tr":197.7,"gold_real_tr":76.01,"cpi":135},{"date":"1991-04","sp500_tr":1126.78,"sp500_real_tr":432.54,"gold_tr":195,"gold_real_tr":74.86,"cpi":135.2},{"date":"1991-05","sp500_tr":1124.78,"sp500_real_tr":430.5,"gold_tr":194.23,"gold_real_tr":74.34,"cpi":135.6},{"date":"1991-06","sp500_tr":1128.69,"sp500_real_tr":430.73,"gold_tr":199.54,"gold_real_tr":76.15,"cpi":136},{"date":"1991-07","sp500_tr":1137.49,"sp500_real_tr":433.45,"gold_tr":200.07,"gold_real_tr":76.24,"cpi":136.2},{"date":"1991-08","sp500_tr":1167.9,"sp500_real_tr":443.73,"gold_tr":193.88,"gold_real_tr":73.66,"cpi":136.6},{"date":"1991-09","sp500_tr":1164.39,"sp500_real_tr":440.47,"gold_tr":189.76,"gold_real_tr":71.78,"cpi":137.2},{"date":"1991-10","sp500_tr":1166.5,"sp500_real_tr":440.62,"gold_tr":195.17,"gold_real_tr":73.72,"cpi":137.4},{"date":"1991-11","sp500_tr":1166.69,"sp500_real_tr":439.41,"gold_tr":195.98,"gold_real_tr":73.81,"cpi":137.8},{"date":"1991-12","sp500_tr":1177.57,"sp500_real_tr":443.19,"gold_tr":196.83,"gold_real_tr":74.08,"cpi":137.9},{"date":"1992-01","sp500_tr":1264.02,"sp500_real_tr":475.04,"gold_tr":192.87,"gold_real_tr":72.48,"cpi":138.1},{"date":"1992-02","sp500_tr":1256.46,"sp500_real_tr":470.49,"gold_tr":192.57,"gold_real_tr":72.11,"cpi":138.6},{"date":"1992-03","sp500_tr":1243.79,"sp500_real_tr":463.41,"gold_tr":187.37,"gold_real_tr":69.81,"cpi":139.3},{"date":"1992-04","sp500_tr":1247.08,"sp500_real_tr":463.97,"gold_tr":184.25,"gold_real_tr":68.55,"cpi":139.5},{"date":"1992-05","sp500_tr":1272.82,"sp500_real_tr":472.86,"gold_tr":183.5,"gold_real_tr":68.17,"cpi":139.7},{"date":"1992-06","sp500_tr":1255.95,"sp500_real_tr":464.93,"gold_tr":185.44,"gold_real_tr":68.65,"cpi":140.2},{"date":"1992-07","sp500_tr":1279.92,"sp500_real_tr":472.8,"gold_tr":191.93,"gold_real_tr":70.9,"cpi":140.5},{"date":"1992-08","sp500_tr":1291.96,"sp500_real_tr":475.89,"gold_tr":186.67,"gold_real_tr":68.76,"cpi":140.9},{"date":"1992-09","sp500_tr":1296.85,"sp500_real_tr":476.34,"gold_tr":187.96,"gold_real_tr":69.04,"cpi":141.3},{"date":"1992-10","sp500_tr":1281.56,"sp500_real_tr":469.06,"gold_tr":187.39,"gold_real_tr":68.59,"cpi":141.8},{"date":"1992-11","sp500_tr":1316.81,"sp500_real_tr":481.29,"gold_tr":182.29,"gold_real_tr":66.63,"cpi":142},{"date":"1992-12","sp500_tr":1359.8,"sp500_real_tr":497.35,"gold_tr":182.19,"gold_real_tr":66.63,"cpi":141.9},{"date":"1993-01","sp500_tr":1361.75,"sp500_real_tr":495.62,"gold_tr":179.02,"gold_real_tr":65.16,"cpi":142.6},{"date":"1993-02","sp500_tr":1385.19,"sp500_real_tr":502.39,"gold_tr":179.19,"gold_real_tr":64.99,"cpi":143.1},{"date":"1993-03","sp500_tr":1414.92,"sp500_real_tr":511.38,"gold_tr":179.61,"gold_real_tr":64.91,"cpi":143.6},{"date":"1993-04","sp500_tr":1395.99,"sp500_real_tr":503.14,"gold_tr":186.17,"gold_real_tr":67.1,"cpi":144},{"date":"1993-05","sp500_tr":1406.1,"sp500_real_tr":506.08,"gold_tr":199.79,"gold_real_tr":71.91,"cpi":144.2},{"date":"1993-06","sp500_tr":1418.24,"sp500_real_tr":509.74,"gold_tr":202.36,"gold_real_tr":72.73,"cpi":144.4},{"date":"1993-07","sp500_tr":1419.12,"sp500_real_tr":510.06,"gold_tr":213.4,"gold_real_tr":76.7,"cpi":144.4},{"date":"1993-08","sp500_tr":1444.08,"sp500_real_tr":517.59,"gold_tr":206.14,"gold_real_tr":73.89,"cpi":144.8},{"date":"1993-09","sp500_tr":1463.61,"sp500_real_tr":523.51,"gold_tr":193.32,"gold_real_tr":69.15,"cpi":145.1},{"date":"1993-10","sp500_tr":1481.76,"sp500_real_tr":527.82,"gold_tr":198.16,"gold_real_tr":70.59,"cpi":145.7},{"date":"1993-11","sp500_tr":1481.88,"sp500_real_tr":527.5,"gold_tr":203.41,"gold_real_tr":72.41,"cpi":145.8},{"date":"1993-12","sp500_tr":1495.01,"sp500_real_tr":532.17,"gold_tr":208.56,"gold_real_tr":74.24,"cpi":145.8},{"date":"1994-01","sp500_tr":1520.92,"sp500_real_tr":539.92,"gold_tr":210.51,"gold_real_tr":74.73,"cpi":146.2},{"date":"1994-02","sp500_tr":1519.79,"sp500_real_tr":537.68,"gold_tr":207.81,"gold_real_tr":73.52,"cpi":146.7},{"date":"1994-03","sp500_tr":1498.22,"sp500_real_tr":528.25,"gold_tr":209.02,"gold_real_tr":73.7,"cpi":147.2},{"date":"1994-04","sp500_tr":1448.23,"sp500_real_tr":509.92,"gold_tr":205.28,"gold_real_tr":72.28,"cpi":147.4},{"date":"1994-05","sp500_tr":1463.53,"sp500_real_tr":514.97,"gold_tr":207.55,"gold_real_tr":73.03,"cpi":147.5},{"date":"1994-06","sp500_tr":1479.73,"sp500_real_tr":518.91,"gold_tr":209.84,"gold_real_tr":73.59,"cpi":148},{"date":"1994-07","sp500_tr":1472.09,"sp500_real_tr":514.83,"gold_tr":209.76,"gold_real_tr":73.36,"cpi":148.4},{"date":"1994-08","sp500_tr":1517.37,"sp500_real_tr":528.53,"gold_tr":206.96,"gold_real_tr":72.09,"cpi":149},{"date":"1994-09","sp500_tr":1529.76,"sp500_real_tr":531.42,"gold_tr":213.07,"gold_real_tr":74.02,"cpi":149.4},{"date":"1994-10","sp500_tr":1523.02,"sp500_real_tr":528.73,"gold_tr":212.09,"gold_real_tr":73.63,"cpi":149.5},{"date":"1994-11","sp500_tr":1517.43,"sp500_real_tr":526.08,"gold_tr":209.16,"gold_real_tr":72.51,"cpi":149.7},{"date":"1994-12","sp500_tr":1501.93,"sp500_real_tr":520.71,"gold_tr":206.38,"gold_real_tr":71.55,"cpi":149.7},{"date":"1995-01","sp500_tr":1538.67,"sp500_real_tr":531.32,"gold_tr":205.98,"gold_real_tr":71.13,"cpi":150.3},{"date":"1995-02","sp500_tr":1597.31,"sp500_real_tr":549.37,"gold_tr":204.94,"gold_real_tr":70.49,"cpi":150.9},{"date":"1995-03","sp500_tr":1638.09,"sp500_real_tr":561.54,"gold_tr":207.92,"gold_real_tr":71.28,"cpi":151.4},{"date":"1995-04","sp500_tr":1690.67,"sp500_real_tr":577.66,"gold_tr":212.77,"gold_real_tr":72.7,"cpi":151.9},{"date":"1995-05","sp500_tr":1747.18,"sp500_real_tr":595.79,"gold_tr":209.61,"gold_real_tr":71.48,"cpi":152.2},{"date":"1995-06","sp500_tr":1802.62,"sp500_real_tr":613.48,"gold_tr":210.88,"gold_real_tr":71.77,"cpi":152.5},{"date":"1995-07","sp500_tr":1866.47,"sp500_real_tr":635.21,"gold_tr":210.16,"gold_real_tr":71.52,"cpi":152.5},{"date":"1995-08","sp500_tr":1876.05,"sp500_real_tr":636.8,"gold_tr":208.77,"gold_real_tr":70.86,"cpi":152.9},{"date":"1995-09","sp500_tr":1945.69,"sp500_real_tr":659.15,"gold_tr":208.43,"gold_real_tr":70.61,"cpi":153.2},{"date":"1995-10","sp500_tr":1963.44,"sp500_real_tr":663,"gold_tr":208.48,"gold_real_tr":70.4,"cpi":153.7},{"date":"1995-11","sp500_tr":2009.68,"sp500_real_tr":679.05,"gold_tr":209.66,"gold_real_tr":70.84,"cpi":153.6},{"date":"1995-12","sp500_tr":2077.69,"sp500_real_tr":702.49,"gold_tr":210.82,"gold_real_tr":71.28,"cpi":153.5},{"date":"1996-01","sp500_tr":2081.1,"sp500_real_tr":699.54,"gold_tr":217.35,"gold_real_tr":73.06,"cpi":154.4},{"date":"1996-02","sp500_tr":2203.79,"sp500_real_tr":738.39,"gold_tr":220.24,"gold_real_tr":73.79,"cpi":154.9},{"date":"1996-03","sp500_tr":2199.41,"sp500_real_tr":733.14,"gold_tr":215.59,"gold_real_tr":71.86,"cpi":155.7},{"date":"1996-04","sp500_tr":2203.76,"sp500_real_tr":731.77,"gold_tr":213.76,"gold_real_tr":70.98,"cpi":156.3},{"date":"1996-05","sp500_tr":2255.59,"sp500_real_tr":747.54,"gold_tr":213.26,"gold_real_tr":70.68,"cpi":156.6},{"date":"1996-06","sp500_tr":2284.4,"sp500_real_tr":756.61,"gold_tr":209.64,"gold_real_tr":69.43,"cpi":156.7},{"date":"1996-07","sp500_tr":2205.17,"sp500_real_tr":728.97,"gold_tr":208.66,"gold_real_tr":68.98,"cpi":157},{"date":"1996-08","sp500_tr":2272.92,"sp500_real_tr":749.93,"gold_tr":210.77,"gold_real_tr":69.54,"cpi":157.3},{"date":"1996-09","sp500_tr":2318.88,"sp500_real_tr":762.67,"gold_tr":208.48,"gold_real_tr":68.57,"cpi":157.8},{"date":"1996-10","sp500_tr":2414.27,"sp500_real_tr":791.54,"gold_tr":207.35,"gold_real_tr":67.98,"cpi":158.3},{"date":"1996-11","sp500_tr":2536.06,"sp500_real_tr":829.9,"gold_tr":205.6,"gold_real_tr":67.28,"cpi":158.6},{"date":"1996-12","sp500_tr":2566.43,"sp500_real_tr":839.83,"gold_tr":200.78,"gold_real_tr":65.7,"cpi":158.6},{"date":"1997-01","sp500_tr":2649.92,"sp500_real_tr":864.43,"gold_tr":193.23,"gold_real_tr":63.03,"cpi":159.1},{"date":"1997-02","sp500_tr":2765.33,"sp500_real_tr":899.25,"gold_tr":188.58,"gold_real_tr":61.33,"cpi":159.6},{"date":"1997-03","sp500_tr":2748.13,"sp500_real_tr":891.42,"gold_tr":191.43,"gold_real_tr":62.1,"cpi":160},{"date":"1997-04","sp500_tr":2654.72,"sp500_real_tr":860.05,"gold_tr":187.44,"gold_real_tr":60.72,"cpi":160.2},{"date":"1997-05","sp500_tr":2899.07,"sp500_real_tr":939.8,"gold_tr":187.09,"gold_real_tr":60.65,"cpi":160.1},{"date":"1997-06","sp500_tr":3053.58,"sp500_real_tr":988.65,"gold_tr":185.42,"gold_real_tr":60.03,"cpi":160.3},{"date":"1997-07","sp500_tr":3228.52,"sp500_real_tr":1043.99,"gold_tr":176.35,"gold_real_tr":57.03,"cpi":160.5},{"date":"1997-08","sp500_tr":3239.75,"sp500_real_tr":1045.67,"gold_tr":176.3,"gold_real_tr":56.9,"cpi":160.8},{"date":"1997-09","sp500_tr":3278.34,"sp500_real_tr":1055.5,"gold_tr":175.66,"gold_real_tr":56.55,"cpi":161.2},{"date":"1997-10","sp500_tr":3332.23,"sp500_real_tr":1070.19,"gold_tr":176.77,"gold_real_tr":56.77,"cpi":161.6},{"date":"1997-11","sp500_tr":3293.92,"sp500_real_tr":1058.54,"gold_tr":166.53,"gold_real_tr":53.51,"cpi":161.5},{"date":"1997-12","sp500_tr":3380.61,"sp500_real_tr":1087.75,"gold_tr":157.11,"gold_real_tr":50.55,"cpi":161.3},{"date":"1998-01","sp500_tr":3388.63,"sp500_real_tr":1088.3,"gold_tr":157.31,"gold_real_tr":50.52,"cpi":161.6},{"date":"1998-02","sp500_tr":3605.32,"sp500_real_tr":1155.75,"gold_tr":161.87,"gold_real_tr":51.89,"cpi":161.9},{"date":"1998-03","sp500_tr":3796.65,"sp500_real_tr":1214.84,"gold_tr":161.03,"gold_real_tr":51.53,"cpi":162.2},{"date":"1998-04","sp500_tr":3925.84,"sp500_real_tr":1253.85,"gold_tr":167.75,"gold_real_tr":53.58,"cpi":162.5},{"date":"1998-05","sp500_tr":3917.18,"sp500_real_tr":1248.78,"gold_tr":162.75,"gold_real_tr":51.88,"cpi":162.8},{"date":"1998-06","sp500_tr":3921.77,"sp500_real_tr":1248.71,"gold_tr":159.06,"gold_real_tr":50.65,"cpi":163},{"date":"1998-07","sp500_tr":4096.8,"sp500_real_tr":1302.84,"gold_tr":159.36,"gold_real_tr":50.68,"cpi":163.2},{"date":"1998-08","sp500_tr":3811.6,"sp500_real_tr":1210.66,"gold_tr":154.59,"gold_real_tr":49.1,"cpi":163.4},{"date":"1998-09","sp500_tr":3625.16,"sp500_real_tr":1150.03,"gold_tr":157.24,"gold_real_tr":49.88,"cpi":163.6},{"date":"1998-10","sp500_tr":3671.9,"sp500_real_tr":1162.02,"gold_tr":161.02,"gold_real_tr":50.96,"cpi":164},{"date":"1998-11","sp500_tr":4074.41,"sp500_real_tr":1289.4,"gold_tr":160.04,"gold_real_tr":50.65,"cpi":164},{"date":"1998-12","sp500_tr":4241.45,"sp500_real_tr":1343.08,"gold_tr":158.71,"gold_real_tr":50.26,"cpi":163.9},{"date":"1999-01","sp500_tr":4455.34,"sp500_real_tr":1407.38,"gold_tr":156.21,"gold_real_tr":49.34,"cpi":164.3},{"date":"1999-02","sp500_tr":4452.4,"sp500_real_tr":1404.74,"gold_tr":156.34,"gold_real_tr":49.33,"cpi":164.5},{"date":"1999-03","sp500_tr":4582.46,"sp500_real_tr":1441.39,"gold_tr":155.6,"gold_real_tr":48.94,"cpi":165},{"date":"1999-04","sp500_tr":4777.02,"sp500_real_tr":1491.74,"gold_tr":153.78,"gold_real_tr":48.02,"cpi":166.2},{"date":"1999-05","sp500_tr":4772.31,"sp500_real_tr":1490.27,"gold_tr":150.42,"gold_real_tr":46.97,"cpi":166.2},{"date":"1999-06","sp500_tr":4743.15,"sp500_real_tr":1481.16,"gold_tr":142.19,"gold_real_tr":44.4,"cpi":166.2},{"date":"1999-07","sp500_tr":4957.46,"sp500_real_tr":1543.44,"gold_tr":139.34,"gold_real_tr":43.38,"cpi":166.7},{"date":"1999-08","sp500_tr":4770.57,"sp500_real_tr":1481.7,"gold_tr":139.67,"gold_real_tr":43.38,"cpi":167.1},{"date":"1999-09","sp500_tr":4742.09,"sp500_real_tr":1465.84,"gold_tr":144.05,"gold_real_tr":44.53,"cpi":167.9},{"date":"1999-10","sp500_tr":4681.82,"sp500_real_tr":1444.63,"gold_tr":169.07,"gold_real_tr":52.17,"cpi":168.2},{"date":"1999-11","sp500_tr":5014.19,"sp500_real_tr":1546.27,"gold_tr":159.53,"gold_real_tr":49.19,"cpi":168.3},{"date":"1999-12","sp500_tr":5154.9,"sp500_real_tr":1589.66,"gold_tr":154.03,"gold_real_tr":47.5,"cpi":168.3},{"date":"2000-01","sp500_tr":5148.79,"sp500_real_tr":1583.07,"gold_tr":154.71,"gold_real_tr":47.57,"cpi":168.8},{"date":"2000-02","sp500_tr":5021.33,"sp500_real_tr":1534.79,"gold_tr":163.16,"gold_real_tr":49.87,"cpi":169.8},{"date":"2000-03","sp500_tr":5219.04,"sp500_real_tr":1582.17,"gold_tr":155.83,"gold_real_tr":47.24,"cpi":171.2},{"date":"2000-04","sp500_tr":5293.33,"sp500_real_tr":1603.76,"gold_tr":152.19,"gold_real_tr":46.11,"cpi":171.3},{"date":"2000-05","sp500_tr":5143.21,"sp500_real_tr":1556.46,"gold_tr":149.74,"gold_real_tr":45.31,"cpi":171.5},{"date":"2000-06","sp500_tr":5305.75,"sp500_real_tr":1597.27,"gold_tr":155.47,"gold_real_tr":46.8,"cpi":172.4},{"date":"2000-07","sp500_tr":5350.8,"sp500_real_tr":1607.1,"gold_tr":153.22,"gold_real_tr":46.02,"cpi":172.8},{"date":"2000-08","sp500_tr":5401,"sp500_real_tr":1622.18,"gold_tr":149.35,"gold_real_tr":44.86,"cpi":172.8},{"date":"2000-09","sp500_tr":5342.71,"sp500_real_tr":1596.35,"gold_tr":148.92,"gold_real_tr":44.5,"cpi":173.7},{"date":"2000-10","sp500_tr":5064.4,"sp500_real_tr":1510.59,"gold_tr":146.91,"gold_real_tr":43.82,"cpi":174},{"date":"2000-11","sp500_tr":5025.31,"sp500_real_tr":1498.07,"gold_tr":144.74,"gold_real_tr":43.15,"cpi":174.1},{"date":"2000-12","sp500_tr":4858.63,"sp500_real_tr":1449.21,"gold_tr":147.7,"gold_real_tr":44.06,"cpi":174},{"date":"2001-01","sp500_tr":4880.69,"sp500_real_tr":1446.65,"gold_tr":144.46,"gold_real_tr":42.82,"cpi":175.1},{"date":"2001-02","sp500_tr":4776.51,"sp500_real_tr":1410.13,"gold_tr":142.49,"gold_real_tr":42.07,"cpi":175.8},{"date":"2001-03","sp500_tr":4343.27,"sp500_real_tr":1279.32,"gold_tr":143.12,"gold_real_tr":42.16,"cpi":176.2},{"date":"2001-04","sp500_tr":4362.71,"sp500_real_tr":1279.96,"gold_tr":141.73,"gold_real_tr":41.58,"cpi":176.9},{"date":"2001-05","sp500_tr":4662.5,"sp500_real_tr":1361.76,"gold_tr":148.2,"gold_real_tr":43.28,"cpi":177.7},{"date":"2001-06","sp500_tr":4551.23,"sp500_real_tr":1327.02,"gold_tr":147.04,"gold_real_tr":42.87,"cpi":178},{"date":"2001-07","sp500_tr":4430.3,"sp500_real_tr":1295.39,"gold_tr":145.57,"gold_real_tr":42.56,"cpi":177.5},{"date":"2001-08","sp500_tr":4339.77,"sp500_real_tr":1268.92,"gold_tr":148.22,"gold_real_tr":43.34,"cpi":177.5},{"date":"2001-09","sp500_tr":3852.29,"sp500_real_tr":1121.33,"gold_tr":154.22,"gold_real_tr":44.89,"cpi":178.3},{"date":"2001-10","sp500_tr":3974.8,"sp500_real_tr":1160.9,"gold_tr":154.02,"gold_real_tr":44.98,"cpi":177.7},{"date":"2001-11","sp500_tr":4175.43,"sp500_real_tr":1221.56,"gold_tr":150.27,"gold_real_tr":43.96,"cpi":177.4},{"date":"2001-12","sp500_tr":4236.58,"sp500_real_tr":1244.36,"gold_tr":150.1,"gold_real_tr":44.09,"cpi":176.7},{"date":"2002-01","sp500_tr":4223.98,"sp500_real_tr":1237.86,"gold_tr":153.18,"gold_real_tr":44.89,"cpi":177.1},{"date":"2002-02","sp500_tr":4082.54,"sp500_real_tr":1191.7,"gold_tr":160.79,"gold_real_tr":46.93,"cpi":177.8},{"date":"2002-03","sp500_tr":4284.2,"sp500_real_tr":1243.57,"gold_tr":160.01,"gold_real_tr":46.44,"cpi":178.8},{"date":"2002-04","sp500_tr":4133.85,"sp500_real_tr":1193.25,"gold_tr":164.7,"gold_real_tr":47.54,"cpi":179.8},{"date":"2002-05","sp500_tr":4017.45,"sp500_real_tr":1159.65,"gold_tr":171.12,"gold_real_tr":49.4,"cpi":179.8},{"date":"2002-06","sp500_tr":3779.93,"sp500_real_tr":1090.48,"gold_tr":174.76,"gold_real_tr":50.42,"cpi":179.9},{"date":"2002-07","sp500_tr":3373.84,"sp500_real_tr":972.25,"gold_tr":170.47,"gold_real_tr":49.12,"cpi":180.1},{"date":"2002-08","sp500_tr":3412.19,"sp500_real_tr":980.04,"gold_tr":168.82,"gold_real_tr":48.49,"cpi":180.7},{"date":"2002-09","sp500_tr":3250.08,"sp500_real_tr":931.93,"gold_tr":173.65,"gold_real_tr":49.79,"cpi":181},{"date":"2002-10","sp500_tr":3205.75,"sp500_real_tr":917.7,"gold_tr":172.25,"gold_real_tr":49.31,"cpi":181.3},{"date":"2002-11","sp500_tr":3417.88,"sp500_real_tr":978.42,"gold_tr":173.62,"gold_real_tr":49.7,"cpi":181.3},{"date":"2002-12","sp500_tr":3382.59,"sp500_real_tr":970.46,"gold_tr":180.61,"gold_real_tr":51.82,"cpi":180.9},{"date":"2003-01","sp500_tr":3375.1,"sp500_real_tr":964.05,"gold_tr":194.18,"gold_real_tr":55.46,"cpi":181.7},{"date":"2003-02","sp500_tr":3158.96,"sp500_real_tr":895.41,"gold_tr":195.33,"gold_real_tr":55.37,"cpi":183.1},{"date":"2003-03","sp500_tr":3200.24,"sp500_real_tr":901.69,"gold_tr":185.3,"gold_real_tr":52.21,"cpi":184.2},{"date":"2003-04","sp500_tr":3369.14,"sp500_real_tr":951.35,"gold_tr":178.57,"gold_real_tr":50.42,"cpi":183.8},{"date":"2003-05","sp500_tr":3547.86,"sp500_real_tr":1003.46,"gold_tr":193.54,"gold_real_tr":54.74,"cpi":183.5},{"date":"2003-06","sp500_tr":3749.96,"sp500_real_tr":1059.46,"gold_tr":193.9,"gold_real_tr":54.78,"cpi":183.7},{"date":"2003-07","sp500_tr":3772.33,"sp500_real_tr":1064.62,"gold_tr":191,"gold_real_tr":53.9,"cpi":183.9},{"date":"2003-08","sp500_tr":3766.12,"sp500_real_tr":1058.84,"gold_tr":195.76,"gold_real_tr":55.04,"cpi":184.6},{"date":"2003-09","sp500_tr":3885.06,"sp500_real_tr":1088.74,"gold_tr":206.19,"gold_real_tr":57.78,"cpi":185.2},{"date":"2003-10","sp500_tr":3963.83,"sp500_real_tr":1112.01,"gold_tr":206.18,"gold_real_tr":57.84,"cpi":185},{"date":"2003-11","sp500_tr":4011.84,"sp500_real_tr":1128.53,"gold_tr":212.16,"gold_real_tr":59.68,"cpi":184.5},{"date":"2003-12","sp500_tr":4134.68,"sp500_real_tr":1164.35,"gold_tr":221.43,"gold_real_tr":62.36,"cpi":184.3},{"date":"2004-01","sp500_tr":4338.54,"sp500_real_tr":1215.82,"gold_tr":225.15,"gold_real_tr":63.1,"cpi":185.2},{"date":"2004-02","sp500_tr":4385.7,"sp500_real_tr":1222.44,"gold_tr":220.31,"gold_real_tr":61.41,"cpi":186.2},{"date":"2004-03","sp500_tr":4317.22,"sp500_real_tr":1195.64,"gold_tr":221.28,"gold_real_tr":61.28,"cpi":187.4},{"date":"2004-04","sp500_tr":4359.03,"sp500_real_tr":1203.37,"gold_tr":219.43,"gold_real_tr":60.58,"cpi":188},{"date":"2004-05","sp500_tr":4247.48,"sp500_real_tr":1165.75,"gold_tr":208.83,"gold_real_tr":57.31,"cpi":189.1},{"date":"2004-06","sp500_tr":4368.76,"sp500_real_tr":1195.25,"gold_tr":213.5,"gold_real_tr":58.41,"cpi":189.7},{"date":"2004-07","sp500_tr":4271.16,"sp500_real_tr":1170.4,"gold_tr":216.61,"gold_real_tr":59.36,"cpi":189.4},{"date":"2004-08","sp500_tr":4212.05,"sp500_real_tr":1153.59,"gold_tr":217.93,"gold_real_tr":59.69,"cpi":189.5},{"date":"2004-09","sp500_tr":4329.16,"sp500_real_tr":1183.17,"gold_tr":220.52,"gold_real_tr":60.27,"cpi":189.9},{"date":"2004-10","sp500_tr":4333.63,"sp500_real_tr":1178.18,"gold_tr":228.79,"gold_real_tr":62.2,"cpi":190.9},{"date":"2004-11","sp500_tr":4540.27,"sp500_real_tr":1233.72,"gold_tr":239.08,"gold_real_tr":64.96,"cpi":191},{"date":"2004-12","sp500_tr":4663.97,"sp500_real_tr":1271.99,"gold_tr":240.55,"gold_real_tr":65.6,"cpi":190.3},{"date":"2005-01","sp500_tr":4601.23,"sp500_real_tr":1252.25,"gold_tr":230.73,"gold_real_tr":62.79,"cpi":190.7},{"date":"2005-02","sp500_tr":4678.57,"sp500_real_tr":1265.99,"gold_tr":230.36,"gold_real_tr":62.33,"cpi":191.8},{"date":"2005-03","sp500_tr":4666.72,"sp500_real_tr":1252.99,"gold_tr":236.07,"gold_real_tr":63.38,"cpi":193.3},{"date":"2005-04","sp500_tr":4554.56,"sp500_real_tr":1214.7,"gold_tr":233.56,"gold_real_tr":62.29,"cpi":194.6},{"date":"2005-05","sp500_tr":4615.4,"sp500_real_tr":1232.2,"gold_tr":229.55,"gold_real_tr":61.29,"cpi":194.4},{"date":"2005-06","sp500_tr":4715.98,"sp500_real_tr":1258.4,"gold_tr":234.33,"gold_real_tr":62.53,"cpi":194.5},{"date":"2005-07","sp500_tr":4801.18,"sp500_real_tr":1275.24,"gold_tr":230.97,"gold_real_tr":61.35,"cpi":195.4},{"date":"2005-08","sp500_tr":4816.12,"sp500_real_tr":1272.69,"gold_tr":238.29,"gold_real_tr":62.97,"cpi":196.4},{"date":"2005-09","sp500_tr":4829.64,"sp500_real_tr":1260.86,"gold_tr":248.15,"gold_real_tr":64.78,"cpi":198.8},{"date":"2005-10","sp500_tr":4703.18,"sp500_real_tr":1225.38,"gold_tr":255.69,"gold_real_tr":66.62,"cpi":199.2},{"date":"2005-11","sp500_tr":4889.32,"sp500_real_tr":1284.19,"gold_tr":259.37,"gold_real_tr":68.12,"cpi":197.6},{"date":"2005-12","sp500_tr":4994.09,"sp500_real_tr":1317.04,"gold_tr":277.56,"gold_real_tr":73.2,"cpi":196.8},{"date":"2006-01","sp500_tr":5067.31,"sp500_real_tr":1326.24,"gold_tr":299.2,"gold_real_tr":78.31,"cpi":198.3},{"date":"2006-02","sp500_tr":5066.54,"sp500_real_tr":1323.37,"gold_tr":301.99,"gold_real_tr":78.88,"cpi":198.7},{"date":"2006-03","sp500_tr":5141.79,"sp500_real_tr":1335.63,"gold_tr":303.13,"gold_real_tr":78.74,"cpi":199.8},{"date":"2006-04","sp500_tr":5182.87,"sp500_real_tr":1334.94,"gold_tr":332.27,"gold_real_tr":85.58,"cpi":201.5},{"date":"2006-05","sp500_tr":5142.24,"sp500_real_tr":1317.94,"gold_tr":367.5,"gold_real_tr":94.19,"cpi":202.5},{"date":"2006-06","sp500_tr":5003.41,"sp500_real_tr":1279.83,"gold_tr":324.38,"gold_real_tr":82.97,"cpi":202.9},{"date":"2006-07","sp500_tr":5039.46,"sp500_real_tr":1285.25,"gold_tr":344.82,"gold_real_tr":87.94,"cpi":203.5},{"date":"2006-08","sp500_tr":5154.86,"sp500_real_tr":1312.1,"gold_tr":344.21,"gold_real_tr":87.61,"cpi":203.9},{"date":"2006-09","sp500_tr":5285.23,"sp500_real_tr":1351.91,"gold_tr":325.49,"gold_real_tr":83.26,"cpi":202.9},{"date":"2006-10","sp500_tr":5476.15,"sp500_real_tr":1408.39,"gold_tr":318.74,"gold_real_tr":81.98,"cpi":201.8},{"date":"2006-11","sp500_tr":5585.7,"sp500_real_tr":1438.7,"gold_tr":341.62,"gold_real_tr":87.99,"cpi":201.5},{"date":"2006-12","sp500_tr":5705.62,"sp500_real_tr":1467.4,"gold_tr":342.69,"gold_real_tr":88.13,"cpi":201.8},{"date":"2007-01","sp500_tr":5745.17,"sp500_real_tr":1473.05,"gold_tr":343.44,"gold_real_tr":88.06,"cpi":202.42},{"date":"2007-02","sp500_tr":5836.81,"sp500_real_tr":1488.6,"gold_tr":361.71,"gold_real_tr":92.25,"cpi":203.5},{"date":"2007-03","sp500_tr":5692.72,"sp500_real_tr":1438.77,"gold_tr":356.35,"gold_real_tr":90.06,"cpi":205.35},{"date":"2007-04","sp500_tr":5930.43,"sp500_real_tr":1489.13,"gold_tr":369.66,"gold_real_tr":92.82,"cpi":206.69},{"date":"2007-05","sp500_tr":6131.37,"sp500_real_tr":1530.26,"gold_tr":363.1,"gold_real_tr":90.62,"cpi":207.95},{"date":"2007-06","sp500_tr":6152.58,"sp500_real_tr":1532.61,"gold_tr":356.76,"gold_real_tr":88.87,"cpi":208.35},{"date":"2007-07","sp500_tr":6187.99,"sp500_real_tr":1541.8,"gold_tr":362.05,"gold_real_tr":90.21,"cpi":208.3},{"date":"2007-08","sp500_tr":5928.53,"sp500_real_tr":1479.85,"gold_tr":362.07,"gold_real_tr":90.38,"cpi":207.92},{"date":"2007-09","sp500_tr":6110.64,"sp500_real_tr":1521.14,"gold_tr":387.78,"gold_real_tr":96.53,"cpi":208.49},{"date":"2007-10","sp500_tr":6293.28,"sp500_real_tr":1563.23,"gold_tr":410.6,"gold_real_tr":101.99,"cpi":208.94},{"date":"2007-11","sp500_tr":5991.38,"sp500_real_tr":1479.46,"gold_tr":438.7,"gold_real_tr":108.33,"cpi":210.18},{"date":"2007-12","sp500_tr":6065.55,"sp500_real_tr":1498.77,"gold_tr":437.05,"gold_real_tr":107.99,"cpi":210.04},{"date":"2008-01","sp500_tr":5663.85,"sp500_real_tr":1392.62,"gold_tr":484.05,"gold_real_tr":119.02,"cpi":211.08},{"date":"2008-02","sp500_tr":5575.5,"sp500_real_tr":1366.95,"gold_tr":501.85,"gold_real_tr":123.04,"cpi":211.69},{"date":"2008-03","sp500_tr":5429.4,"sp500_real_tr":1319.65,"gold_tr":526.95,"gold_real_tr":128.08,"cpi":213.53},{"date":"2008-04","sp500_tr":5659.48,"sp500_real_tr":1367.32,"gold_tr":495,"gold_real_tr":119.59,"cpi":214.82},{"date":"2008-05","sp500_tr":5804.33,"sp500_real_tr":1390.59,"gold_tr":483.55,"gold_real_tr":115.85,"cpi":216.63},{"date":"2008-06","sp500_tr":5558.34,"sp500_real_tr":1318.4,"gold_tr":484,"gold_real_tr":114.8,"cpi":218.81},{"date":"2008-07","sp500_tr":5221.16,"sp500_real_tr":1231.94,"gold_tr":511.36,"gold_real_tr":120.66,"cpi":219.96},{"date":"2008-08","sp500_tr":5331.18,"sp500_real_tr":1262.9,"gold_tr":456.54,"gold_real_tr":108.15,"cpi":219.09},{"date":"2008-09","sp500_tr":5073.3,"sp500_real_tr":1203.51,"gold_tr":451.59,"gold_real_tr":107.13,"cpi":218.78},{"date":"2008-10","sp500_tr":4051.32,"sp500_real_tr":970.88,"gold_tr":438.91,"gold_real_tr":105.18,"cpi":216.57},{"date":"2008-11","sp500_tr":3703.6,"sp500_real_tr":904.85,"gold_tr":414.01,"gold_real_tr":101.15,"cpi":212.43},{"date":"2008-12","sp500_tr":3690.6,"sp500_real_tr":911.11,"gold_tr":444.06,"gold_real_tr":109.63,"cpi":210.23},{"date":"2009-01","sp500_tr":3650.17,"sp500_real_tr":897.24,"gold_tr":467.24,"gold_real_tr":114.85,"cpi":211.14},{"date":"2009-02","sp500_tr":3406.12,"sp500_real_tr":833.11,"gold_tr":513.11,"gold_real_tr":125.5,"cpi":212.19},{"date":"2009-03","sp500_tr":3212.87,"sp500_real_tr":783.92,"gold_tr":502.92,"gold_real_tr":122.71,"cpi":212.71},{"date":"2009-04","sp500_tr":3607.54,"sp500_real_tr":878.03,"gold_tr":484.38,"gold_real_tr":117.89,"cpi":213.24},{"date":"2009-05","sp500_tr":3847.05,"sp500_real_tr":933.61,"gold_tr":505.3,"gold_real_tr":122.63,"cpi":213.86},{"date":"2009-06","sp500_tr":3956.98,"sp500_real_tr":952.14,"gold_tr":514.57,"gold_real_tr":123.82,"cpi":215.69},{"date":"2009-07","sp500_tr":4007.25,"sp500_real_tr":965.76,"gold_tr":508.34,"gold_real_tr":122.51,"cpi":215.35},{"date":"2009-08","sp500_tr":4331.82,"sp500_real_tr":1041.66,"gold_tr":516.58,"gold_real_tr":124.22,"cpi":215.83},{"date":"2009-09","sp500_tr":4489.46,"sp500_real_tr":1078.87,"gold_tr":542.27,"gold_real_tr":130.31,"cpi":215.97},{"date":"2009-10","sp500_tr":4596.99,"sp500_real_tr":1103.64,"gold_tr":567.61,"gold_real_tr":136.27,"cpi":216.18},{"date":"2009-11","sp500_tr":4692.93,"sp500_real_tr":1125.89,"gold_tr":613.25,"gold_real_tr":147.13,"cpi":216.33},{"date":"2009-12","sp500_tr":4797.05,"sp500_real_tr":1152.89,"gold_tr":617.44,"gold_real_tr":148.39,"cpi":215.95},{"date":"2010-01","sp500_tr":4861.99,"sp500_real_tr":1164.51,"gold_tr":608.32,"gold_real_tr":145.7,"cpi":216.69},{"date":"2010-02","sp500_tr":4721.26,"sp500_real_tr":1130.54,"gold_tr":596.05,"gold_real_tr":142.73,"cpi":216.74},{"date":"2010-03","sp500_tr":5001.35,"sp500_real_tr":1192.71,"gold_tr":605.8,"gold_real_tr":144.47,"cpi":217.63},{"date":"2010-04","sp500_tr":5205.52,"sp500_real_tr":1239.24,"gold_tr":625.03,"gold_real_tr":148.8,"cpi":218.01},{"date":"2010-05","sp500_tr":4899.84,"sp500_real_tr":1165.56,"gold_tr":655.91,"gold_real_tr":156.03,"cpi":218.18},{"date":"2010-06","sp500_tr":4726.53,"sp500_real_tr":1125.42,"gold_tr":670.87,"gold_real_tr":159.74,"cpi":217.97},{"date":"2010-07","sp500_tr":4719.08,"sp500_real_tr":1123.44,"gold_tr":649.13,"gold_real_tr":154.53,"cpi":218.01},{"date":"2010-08","sp500_tr":4759.82,"sp500_real_tr":1131.58,"gold_tr":661.56,"gold_real_tr":157.28,"cpi":218.31},{"date":"2010-09","sp500_tr":4920.06,"sp500_real_tr":1168.98,"gold_tr":691.58,"gold_real_tr":164.31,"cpi":218.44},{"date":"2010-10","sp500_tr":5144.97,"sp500_real_tr":1220.91,"gold_tr":730.23,"gold_real_tr":173.28,"cpi":218.71},{"date":"2010-11","sp500_tr":5272.99,"sp500_real_tr":1250.77,"gold_tr":745.39,"gold_real_tr":176.81,"cpi":218.8},{"date":"2010-12","sp500_tr":5468.57,"sp500_real_tr":1294.91,"gold_tr":756.64,"gold_real_tr":179.17,"cpi":219.18},{"date":"2011-01","sp500_tr":5657.72,"sp500_real_tr":1333.37,"gold_tr":740.27,"gold_real_tr":174.46,"cpi":220.22},{"date":"2011-02","sp500_tr":5835.83,"sp500_real_tr":1368.58,"gold_tr":748,"gold_real_tr":175.42,"cpi":221.31},{"date":"2011-03","sp500_tr":5771.1,"sp500_real_tr":1340.31,"gold_tr":774.44,"gold_real_tr":179.86,"cpi":223.47},{"date":"2011-04","sp500_tr":5899.21,"sp500_real_tr":1361.3,"gold_tr":805.79,"gold_real_tr":185.94,"cpi":224.91},{"date":"2011-05","sp500_tr":5938.17,"sp500_real_tr":1363.92,"gold_tr":823.04,"gold_real_tr":189.04,"cpi":225.96},{"date":"2011-06","sp500_tr":5721.14,"sp500_real_tr":1315.47,"gold_tr":832.17,"gold_real_tr":191.34,"cpi":225.72},{"date":"2011-07","sp500_tr":5898.44,"sp500_real_tr":1355.03,"gold_tr":855.78,"gold_real_tr":196.6,"cpi":225.92},{"date":"2011-08","sp500_tr":5286.16,"sp500_real_tr":1211.05,"gold_tr":957.13,"gold_real_tr":219.28,"cpi":226.54},{"date":"2011-09","sp500_tr":5244.63,"sp500_real_tr":1199.68,"gold_tr":964.27,"gold_real_tr":220.57,"cpi":226.89},{"date":"2011-10","sp500_tr":5402.86,"sp500_real_tr":1238.44,"gold_tr":906.75,"gold_real_tr":207.85,"cpi":226.42},{"date":"2011-11","sp500_tr":5498.34,"sp500_real_tr":1261.39,"gold_tr":946.24,"gold_real_tr":217.08,"cpi":226.23},{"date":"2011-12","sp500_tr":5583.84,"sp500_real_tr":1284.18,"gold_tr":892.35,"gold_real_tr":205.23,"cpi":225.67},{"date":"2012-01","sp500_tr":5850.57,"sp500_real_tr":1339.65,"gold_tr":900.02,"gold_real_tr":206.08,"cpi":226.66},{"date":"2012-02","sp500_tr":6093.83,"sp500_real_tr":1389.22,"gold_tr":949.41,"gold_real_tr":216.44,"cpi":227.66},{"date":"2012-03","sp500_tr":6269.41,"sp500_real_tr":1418.47,"gold_tr":911.93,"gold_real_tr":206.33,"cpi":229.39},{"date":"2012-04","sp500_tr":6267.16,"sp500_real_tr":1413.64,"gold_tr":897.38,"gold_real_tr":202.42,"cpi":230.09},{"date":"2012-05","sp500_tr":6073.92,"sp500_real_tr":1371.73,"gold_tr":864.64,"gold_real_tr":195.27,"cpi":229.81},{"date":"2012-06","sp500_tr":6004.19,"sp500_real_tr":1357.93,"gold_tr":869.93,"gold_real_tr":196.75,"cpi":229.48},{"date":"2012-07","sp500_tr":6179.44,"sp500_real_tr":1399.88,"gold_tr":867.5,"gold_real_tr":196.52,"cpi":229.1},{"date":"2012-08","sp500_tr":6388.6,"sp500_real_tr":1439.22,"gold_tr":887.1,"gold_real_tr":199.85,"cpi":230.38},{"date":"2012-09","sp500_tr":6581.46,"sp500_real_tr":1476.07,"gold_tr":949.4,"gold_real_tr":212.93,"cpi":231.41},{"date":"2012-10","sp500_tr":6567.43,"sp500_real_tr":1473.5,"gold_tr":950.36,"gold_real_tr":213.23,"cpi":231.32},{"date":"2012-11","sp500_tr":6381.65,"sp500_real_tr":1438.66,"gold_tr":936.79,"gold_real_tr":211.19,"cpi":230.22},{"date":"2012-12","sp500_tr":6520.46,"sp500_real_tr":1473.92,"gold_tr":916.73,"gold_real_tr":207.22,"cpi":229.6},{"date":"2013-01","sp500_tr":6798.44,"sp500_real_tr":1532.22,"gold_tr":909.7,"gold_real_tr":205.03,"cpi":230.28},{"date":"2013-02","sp500_tr":6956.9,"sp500_real_tr":1555.17,"gold_tr":885.61,"gold_real_tr":197.97,"cpi":232.17},{"date":"2013-03","sp500_tr":7146.11,"sp500_real_tr":1593.35,"gold_tr":866.84,"gold_real_tr":193.28,"cpi":232.77},{"date":"2013-04","sp500_tr":7249.99,"sp500_real_tr":1618.18,"gold_tr":809.59,"gold_real_tr":180.7,"cpi":232.53},{"date":"2013-05","sp500_tr":7581.24,"sp500_real_tr":1689.13,"gold_tr":769.41,"gold_real_tr":171.43,"cpi":232.94},{"date":"2013-06","sp500_tr":7496.81,"sp500_real_tr":1666.31,"gold_tr":730.96,"gold_real_tr":162.47,"cpi":233.5},{"date":"2013-07","sp500_tr":7740.55,"sp500_real_tr":1719.75,"gold_tr":699.49,"gold_real_tr":155.41,"cpi":233.6},{"date":"2013-08","sp500_tr":7760.23,"sp500_real_tr":1722.06,"gold_tr":735.52,"gold_real_tr":163.22,"cpi":233.88},{"date":"2013-09","sp500_tr":7852.78,"sp500_real_tr":1740.59,"gold_tr":733.81,"gold_real_tr":162.65,"cpi":234.15},{"date":"2013-10","sp500_tr":8018.89,"sp500_real_tr":1781.98,"gold_tr":716.39,"gold_real_tr":159.2,"cpi":233.55},{"date":"2013-11","sp500_tr":8328.01,"sp500_real_tr":1854.48,"gold_tr":694.23,"gold_real_tr":154.59,"cpi":233.07},{"date":"2013-12","sp500_tr":8454.63,"sp500_real_tr":1882.84,"gold_tr":664.66,"gold_real_tr":148.02,"cpi":233.05},{"date":"2014-01","sp500_tr":8536.5,"sp500_real_tr":1894,"gold_tr":677.04,"gold_real_tr":150.22,"cpi":233.92},{"date":"2014-02","sp500_tr":8525.61,"sp500_real_tr":1884.65,"gold_tr":707.14,"gold_real_tr":156.32,"cpi":234.78},{"date":"2014-03","sp500_tr":8757.5,"sp500_real_tr":1923.55,"gold_tr":727,"gold_real_tr":159.68,"cpi":236.29},{"date":"2014-04","sp500_tr":8775.32,"sp500_real_tr":1921.12,"gold_tr":706.52,"gold_real_tr":154.67,"cpi":237.07},{"date":"2014-05","sp500_tr":8909.71,"sp500_real_tr":1943.73,"gold_tr":701.24,"gold_real_tr":152.98,"cpi":237.9},{"date":"2014-06","sp500_tr":9194.21,"sp500_real_tr":2002.1,"gold_tr":696,"gold_real_tr":151.56,"cpi":238.34},{"date":"2014-07","sp500_tr":9331.69,"sp500_real_tr":2032.8,"gold_tr":713.13,"gold_real_tr":155.35,"cpi":238.25},{"date":"2014-08","sp500_tr":9292.08,"sp500_real_tr":2027.58,"gold_tr":704.72,"gold_real_tr":153.77,"cpi":237.85},{"date":"2014-09","sp500_tr":9457.2,"sp500_real_tr":2062.05,"gold_tr":672.84,"gold_real_tr":146.71,"cpi":238.03},{"date":"2014-10","sp500_tr":9207.48,"sp500_real_tr":2012.67,"gold_tr":665.19,"gold_real_tr":145.4,"cpi":237.43},{"date":"2014-11","sp500_tr":9732.14,"sp500_real_tr":2138.89,"gold_tr":639.53,"gold_real_tr":140.55,"cpi":236.15},{"date":"2014-12","sp500_tr":9793.88,"sp500_real_tr":2164.74,"gold_tr":653.29,"gold_real_tr":144.4,"cpi":234.81},{"date":"2015-01","sp500_tr":9685.55,"sp500_real_tr":2150.87,"gold_tr":680.57,"gold_real_tr":151.13,"cpi":233.71},{"date":"2015-02","sp500_tr":9959.16,"sp500_real_tr":2202.12,"gold_tr":667.69,"gold_real_tr":147.64,"cpi":234.72},{"date":"2015-03","sp500_tr":9964.88,"sp500_real_tr":2190.31,"gold_tr":641.33,"gold_real_tr":140.97,"cpi":236.12},{"date":"2015-04","sp500_tr":10052.42,"sp500_real_tr":2205.07,"gold_tr":652.37,"gold_real_tr":143.1,"cpi":236.6},{"date":"2015-05","sp500_tr":10150.81,"sp500_real_tr":2215.33,"gold_tr":652.21,"gold_real_tr":142.34,"cpi":237.81},{"date":"2015-06","sp500_tr":10106.83,"sp500_real_tr":2198.06,"gold_tr":642.89,"gold_real_tr":139.82,"cpi":238.64},{"date":"2015-07","sp500_tr":10098.92,"sp500_real_tr":2196.25,"gold_tr":613.95,"gold_real_tr":133.52,"cpi":238.65},{"date":"2015-08","sp500_tr":9854.64,"sp500_real_tr":2146.09,"gold_tr":608.3,"gold_real_tr":132.47,"cpi":238.32},{"date":"2015-09","sp500_tr":9411.43,"sp500_real_tr":2052.84,"gold_tr":612.02,"gold_real_tr":133.5,"cpi":237.94},{"date":"2015-10","sp500_tr":9817.16,"sp500_real_tr":2142.24,"gold_tr":630.78,"gold_real_tr":137.65,"cpi":237.84},{"date":"2015-11","sp500_tr":10104.7,"sp500_real_tr":2209.63,"gold_tr":591.16,"gold_real_tr":129.27,"cpi":237.34},{"date":"2015-12","sp500_tr":9993.59,"sp500_real_tr":2192.82,"gold_tr":585.34,"gold_real_tr":128.44,"cpi":236.53},{"date":"2016-01","sp500_tr":9353.35,"sp500_real_tr":2048.96,"gold_tr":597.4,"gold_real_tr":130.87,"cpi":236.92},{"date":"2016-02","sp500_tr":9302.12,"sp500_real_tr":2036.1,"gold_tr":652.68,"gold_real_tr":142.86,"cpi":237.11},{"date":"2016-03","sp500_tr":9893.02,"sp500_real_tr":2156.16,"gold_tr":677.52,"gold_real_tr":147.66,"cpi":238.13},{"date":"2016-04","sp500_tr":10172.73,"sp500_real_tr":2206.66,"gold_tr":675.95,"gold_real_tr":146.63,"cpi":239.26},{"date":"2016-05","sp500_tr":10141.93,"sp500_real_tr":2191.09,"gold_tr":686.12,"gold_real_tr":148.23,"cpi":240.23},{"date":"2016-06","sp500_tr":10250.01,"sp500_real_tr":2207.18,"gold_tr":694.53,"gold_real_tr":149.56,"cpi":241.02},{"date":"2016-07","sp500_tr":10587.53,"sp500_real_tr":2283.56,"gold_tr":727.32,"gold_real_tr":156.87,"cpi":240.63},{"date":"2016-08","sp500_tr":10714.39,"sp500_real_tr":2308.81,"gold_tr":729.23,"gold_real_tr":157.14,"cpi":240.85},{"date":"2016-09","sp500_tr":10667.58,"sp500_real_tr":2293.2,"gold_tr":721.85,"gold_real_tr":155.17,"cpi":241.43},{"date":"2016-10","sp500_tr":10613.82,"sp500_real_tr":2278.81,"gold_tr":689.17,"gold_real_tr":147.97,"cpi":241.73},{"date":"2016-11","sp500_tr":10741.21,"sp500_real_tr":2309.79,"gold_tr":673.82,"gold_real_tr":144.9,"cpi":241.35},{"date":"2016-12","sp500_tr":11164.46,"sp500_real_tr":2400.02,"gold_tr":629.75,"gold_real_tr":135.38,"cpi":241.43},{"date":"2017-01","sp500_tr":11324.82,"sp500_real_tr":2420.35,"gold_tr":648.66,"gold_real_tr":138.63,"cpi":242.84},{"date":"2017-02","sp500_tr":11616.25,"sp500_real_tr":2474.89,"gold_tr":671.56,"gold_real_tr":143.08,"cpi":243.6},{"date":"2017-03","sp500_tr":11819.24,"sp500_real_tr":2516.07,"gold_tr":670.05,"gold_real_tr":142.64,"cpi":243.8},{"date":"2017-04","sp500_tr":11801.21,"sp500_real_tr":2504.84,"gold_tr":689.35,"gold_real_tr":146.32,"cpi":244.52},{"date":"2017-05","sp500_tr":12000.76,"sp500_real_tr":2545.01,"gold_tr":678.01,"gold_real_tr":143.79,"cpi":244.73},{"date":"2017-06","sp500_tr":12213.74,"sp500_real_tr":2587.74,"gold_tr":685.74,"gold_real_tr":145.29,"cpi":244.96},{"date":"2017-07","sp500_tr":12334.37,"sp500_real_tr":2615.11,"gold_tr":673,"gold_real_tr":142.69,"cpi":244.79},{"date":"2017-08","sp500_tr":12365.05,"sp500_real_tr":2613.82,"gold_tr":698.14,"gold_real_tr":147.58,"cpi":245.52},{"date":"2017-09","sp500_tr":12569.32,"sp500_real_tr":2643.01,"gold_tr":715.02,"gold_real_tr":150.35,"cpi":246.82},{"date":"2017-10","sp500_tr":12912.66,"sp500_real_tr":2716.97,"gold_tr":696.22,"gold_real_tr":146.49,"cpi":246.66},{"date":"2017-11","sp500_tr":13117.73,"sp500_real_tr":2760,"gold_tr":697.52,"gold_real_tr":146.76,"cpi":246.67},{"date":"2017-12","sp500_tr":13495.54,"sp500_real_tr":2841.22,"gold_tr":688.02,"gold_real_tr":144.85,"cpi":246.52},{"date":"2018-01","sp500_tr":14150.89,"sp500_real_tr":2962.97,"gold_tr":724.4,"gold_real_tr":151.68,"cpi":247.87},{"date":"2018-02","sp500_tr":13743.21,"sp500_real_tr":2864.66,"gold_tr":724.09,"gold_real_tr":150.93,"cpi":248.99},{"date":"2018-03","sp500_tr":13752.25,"sp500_real_tr":2860.12,"gold_tr":720.79,"gold_real_tr":149.9,"cpi":249.55},{"date":"2018-04","sp500_tr":13523.95,"sp500_real_tr":2801.41,"gold_tr":726.28,"gold_real_tr":150.45,"cpi":250.55},{"date":"2018-05","sp500_tr":13789,"sp500_real_tr":2844.51,"gold_tr":709.24,"gold_real_tr":146.31,"cpi":251.59},{"date":"2018-06","sp500_tr":14080.08,"sp500_real_tr":2899.94,"gold_tr":697.34,"gold_real_tr":143.62,"cpi":251.99},{"date":"2018-07","sp500_tr":14302.54,"sp500_real_tr":2945.52,"gold_tr":673.47,"gold_real_tr":138.7,"cpi":252.01},{"date":"2018-08","sp500_tr":14652.76,"sp500_real_tr":3015.98,"gold_tr":653.89,"gold_real_tr":134.59,"cpi":252.15},{"date":"2018-09","sp500_tr":14898.74,"sp500_real_tr":3063.08,"gold_tr":652.08,"gold_real_tr":134.06,"cpi":252.44},{"date":"2018-10","sp500_tr":14326.43,"sp500_real_tr":2940.3,"gold_tr":661.33,"gold_real_tr":135.73,"cpi":252.88},{"date":"2018-11","sp500_tr":14029.73,"sp500_real_tr":2889,"gold_tr":664.19,"gold_real_tr":136.77,"cpi":252.04},{"date":"2018-12","sp500_tr":13250.92,"sp500_real_tr":2737.42,"gold_tr":680.38,"gold_real_tr":140.56,"cpi":251.23},{"date":"2019-01","sp500_tr":13480.72,"sp500_real_tr":2779.59,"gold_tr":702.88,"gold_real_tr":144.93,"cpi":251.71},{"date":"2019-02","sp500_tr":14265.42,"sp500_real_tr":2928.93,"gold_tr":718.29,"gold_real_tr":147.48,"cpi":252.78},{"date":"2019-03","sp500_tr":14543.06,"sp500_real_tr":2969.26,"gold_tr":707.86,"gold_real_tr":144.52,"cpi":254.2},{"date":"2019-04","sp500_tr":15083.88,"sp500_real_tr":3063.41,"gold_tr":699.7,"gold_real_tr":142.1,"cpi":255.55},{"date":"2019-05","sp500_tr":14853.4,"sp500_real_tr":3010.24,"gold_tr":698.5,"gold_real_tr":141.56,"cpi":256.09},{"date":"2019-06","sp500_tr":15061.92,"sp500_real_tr":3051.9,"gold_tr":739.49,"gold_real_tr":149.84,"cpi":256.14},{"date":"2019-07","sp500_tr":15637.69,"sp500_real_tr":3163.25,"gold_tr":768.79,"gold_real_tr":155.51,"cpi":256.57},{"date":"2019-08","sp500_tr":15148.55,"sp500_real_tr":3064.43,"gold_tr":816.42,"gold_real_tr":165.15,"cpi":256.56},{"date":"2019-09","sp500_tr":15615.37,"sp500_real_tr":3156.4,"gold_tr":821.95,"gold_real_tr":166.14,"cpi":256.76},{"date":"2019-10","sp500_tr":15617.09,"sp500_real_tr":3149.51,"gold_tr":813.37,"gold_real_tr":164.03,"cpi":257.35},{"date":"2019-11","sp500_tr":16308.62,"sp500_real_tr":3290.76,"gold_tr":800.3,"gold_real_tr":161.48,"cpi":257.21},{"date":"2019-12","sp500_tr":16710.9,"sp500_real_tr":3375.09,"gold_tr":804.84,"gold_real_tr":162.55,"cpi":256.97},{"date":"2020-01","sp500_tr":17269.51,"sp500_real_tr":3474.39,"gold_tr":849.21,"gold_real_tr":170.85,"cpi":257.97},{"date":"2020-02","sp500_tr":17290.8,"sp500_real_tr":3469.12,"gold_tr":869.03,"gold_real_tr":174.36,"cpi":258.68},{"date":"2020-03","sp500_tr":14026.14,"sp500_real_tr":2820.23,"gold_tr":866.22,"gold_real_tr":174.17,"cpi":258.12},{"date":"2020-04","sp500_tr":14630.85,"sp500_real_tr":2961.66,"gold_tr":915.86,"gold_real_tr":185.39,"cpi":256.39},{"date":"2020-05","sp500_tr":15490.82,"sp500_real_tr":3135.74,"gold_tr":933.68,"gold_real_tr":189,"cpi":256.39},{"date":"2020-06","sp500_tr":16497.44,"sp500_real_tr":3321.25,"gold_tr":942.55,"gold_real_tr":189.75,"cpi":257.8},{"date":"2020-07","sp500_tr":17070,"sp500_real_tr":3419.27,"gold_tr":1004.74,"gold_real_tr":201.26,"cpi":259.1},{"date":"2020-08","sp500_tr":18074.47,"sp500_real_tr":3609.05,"gold_tr":1071.19,"gold_real_tr":213.89,"cpi":259.92},{"date":"2020-09","sp500_tr":17961.23,"sp500_real_tr":3581.48,"gold_tr":1045.77,"gold_real_tr":208.53,"cpi":260.28},{"date":"2020-10","sp500_tr":18270.75,"sp500_real_tr":3641.66,"gold_tr":1033.99,"gold_real_tr":206.09,"cpi":260.39},{"date":"2020-11","sp500_tr":18992.15,"sp500_real_tr":3787.78,"gold_tr":1015.51,"gold_real_tr":202.53,"cpi":260.23},{"date":"2020-12","sp500_tr":19800.12,"sp500_real_tr":3945.28,"gold_tr":1011.22,"gold_real_tr":201.49,"cpi":260.47},{"date":"2021-01","sp500_tr":20352.82,"sp500_real_tr":4038.2,"gold_tr":1015.88,"gold_real_tr":201.56,"cpi":261.58},{"date":"2021-02","sp500_tr":20859.23,"sp500_real_tr":4116.17,"gold_tr":983.88,"gold_real_tr":194.15,"cpi":263.01},{"date":"2021-03","sp500_tr":21030.28,"sp500_real_tr":4120.63,"gold_tr":934.94,"gold_real_tr":183.19,"cpi":264.88},{"date":"2021-04","sp500_tr":22295.21,"sp500_real_tr":4332.98,"gold_tr":957.69,"gold_real_tr":186.12,"cpi":267.05},{"date":"2021-05","sp500_tr":22464.57,"sp500_real_tr":4331.18,"gold_tr":1006.78,"gold_real_tr":194.11,"cpi":269.19},{"date":"2021-06","sp500_tr":22870.88,"sp500_real_tr":4368.78,"gold_tr":998.24,"gold_real_tr":190.68,"cpi":271.7},{"date":"2021-07","sp500_tr":23572.06,"sp500_real_tr":4481.28,"gold_tr":983.7,"gold_real_tr":187.01,"cpi":273},{"date":"2021-08","sp500_tr":24086.82,"sp500_real_tr":4569.6,"gold_tr":971.42,"gold_real_tr":184.29,"cpi":273.57},{"date":"2021-09","sp500_tr":24066.73,"sp500_real_tr":4553.47,"gold_tr":965.9,"gold_real_tr":182.75,"cpi":274.31},{"date":"2021-10","sp500_tr":24175.63,"sp500_real_tr":4536.37,"gold_tr":966.84,"gold_real_tr":181.42,"cpi":276.59},{"date":"2021-11","sp500_tr":25321.67,"sp500_real_tr":4728.17,"gold_tr":991.27,"gold_real_tr":185.09,"cpi":277.95},{"date":"2021-12","sp500_tr":25389.01,"sp500_real_tr":4726.29,"gold_tr":974.22,"gold_real_tr":181.36,"cpi":278.8},{"date":"2022-01","sp500_tr":24868.88,"sp500_real_tr":4590.77,"gold_tr":988.15,"gold_real_tr":182.41,"cpi":281.15},{"date":"2022-02","sp500_tr":24148.15,"sp500_real_tr":4417.34,"gold_tr":1010.07,"gold_real_tr":184.77,"cpi":283.72},{"date":"2022-03","sp500_tr":23933.13,"sp500_real_tr":4320.45,"gold_tr":1059.87,"gold_real_tr":191.33,"cpi":287.5},{"date":"2022-04","sp500_tr":23961.75,"sp500_real_tr":4301.53,"gold_tr":1053.9,"gold_real_tr":189.19,"cpi":289.11},{"date":"2022-05","sp500_tr":22078.12,"sp500_real_tr":3920.13,"gold_tr":1005.82,"gold_real_tr":178.59,"cpi":292.3},{"date":"2022-06","sp500_tr":21335.59,"sp500_real_tr":3737.02,"gold_tr":999.33,"gold_real_tr":175.04,"cpi":296.31},{"date":"2022-07","sp500_tr":21434.84,"sp500_real_tr":3754.79,"gold_tr":942.83,"gold_real_tr":165.16,"cpi":296.28},{"date":"2022-08","sp500_tr":22815.27,"sp500_real_tr":3998.08,"gold_tr":960.15,"gold_real_tr":168.25,"cpi":296.17},{"date":"2022-09","sp500_tr":21157.49,"sp500_real_tr":3699.59,"gold_tr":914.56,"gold_real_tr":159.92,"cpi":296.81},{"date":"2022-10","sp500_tr":20504.73,"sp500_real_tr":3571.01,"gold_tr":905.68,"gold_real_tr":157.73,"cpi":298.01},{"date":"2022-11","sp500_tr":21587.18,"sp500_real_tr":3763.31,"gold_tr":938.66,"gold_real_tr":163.64,"cpi":297.71},{"date":"2022-12","sp500_tr":21589.81,"sp500_real_tr":3775.31,"gold_tr":978.1,"gold_real_tr":171.04,"cpi":296.8},{"date":"2023-01","sp500_tr":21886.8,"sp500_real_tr":3796.92,"gold_tr":1032.6,"gold_real_tr":179.14,"cpi":299.17},{"date":"2023-02","sp500_tr":22574.86,"sp500_real_tr":3894.55,"gold_tr":1009.11,"gold_real_tr":174.09,"cpi":300.84},{"date":"2023-03","sp500_tr":21992.28,"sp500_real_tr":3783.6,"gold_tr":1040.77,"gold_real_tr":179.06,"cpi":301.67},{"date":"2023-04","sp500_tr":22870.05,"sp500_real_tr":3912.7,"gold_tr":1088.13,"gold_real_tr":186.16,"cpi":303.36},{"date":"2023-05","sp500_tr":23038.65,"sp500_real_tr":3931.56,"gold_tr":1083.98,"gold_real_tr":184.98,"cpi":304.13},{"date":"2023-06","sp500_tr":24175.88,"sp500_real_tr":4112.38,"gold_tr":1057.19,"gold_real_tr":179.83,"cpi":305.11},{"date":"2023-07","sp500_tr":25111.8,"sp500_real_tr":4263.48,"gold_tr":1061.61,"gold_real_tr":180.24,"cpi":305.69},{"date":"2023-08","sp500_tr":24861.54,"sp500_real_tr":4216.99,"gold_tr":1044.02,"gold_real_tr":177.09,"cpi":305.98},{"date":"2023-09","sp500_tr":25218.86,"sp500_real_tr":4275.5,"gold_tr":1042.52,"gold_real_tr":176.75,"cpi":306.13},{"date":"2023-10","sp500_tr":23876.8,"sp500_real_tr":4047.97,"gold_tr":1042.69,"gold_real_tr":176.77,"cpi":306.13},{"date":"2023-11","sp500_tr":24973.73,"sp500_real_tr":4233.94,"gold_tr":1079.61,"gold_real_tr":183.03,"cpi":306.13},{"date":"2023-12","sp500_tr":26264.06,"sp500_real_tr":4452.7,"gold_tr":1102.5,"gold_real_tr":186.91,"cpi":306.13},{"date":"2024-01","sp500_tr":26964.93,"sp500_real_tr":4571.52,"gold_tr":1106.78,"gold_real_tr":187.64,"cpi":306.13},{"date":"2024-02","sp500_tr":28160.15,"sp500_real_tr":4774.15,"gold_tr":1100.9,"gold_real_tr":186.64,"cpi":306.13},{"date":"2024-03","sp500_tr":29082.5,"sp500_real_tr":4930.53,"gold_tr":1174.24,"gold_real_tr":199.07,"cpi":306.13},{"date":"2024-04","sp500_tr":28788.4,"sp500_real_tr":4880.66,"gold_tr":1268.61,"gold_real_tr":215.07,"cpi":306.13},{"date":"2024-05","sp500_tr":29511.03,"sp500_real_tr":5003.18,"gold_tr":1279.32,"gold_real_tr":216.89,"cpi":306.13},{"date":"2024-06","sp500_tr":30556.39,"sp500_real_tr":5180.4,"gold_tr":1265.88,"gold_real_tr":214.61,"cpi":306.13},{"date":"2024-07","sp500_tr":31281.25,"sp500_real_tr":5303.29,"gold_tr":1304.93,"gold_real_tr":221.23,"cpi":306.13},{"date":"2024-08","sp500_tr":30976.23,"sp500_real_tr":5251.58,"gold_tr":1344.08,"gold_real_tr":227.87,"cpi":306.13},{"date":"2024-09","sp500_tr":31816.65,"sp500_real_tr":5394.06,"gold_tr":1398.71,"gold_real_tr":237.13,"cpi":306.13},{"date":"2024-10","sp500_tr":32816.31,"sp500_real_tr":5563.54,"gold_tr":1463.75,"gold_real_tr":248.16,"cpi":306.13},{"date":"2024-11","sp500_tr":33627.56,"sp500_real_tr":5701.08,"gold_tr":1442.56,"gold_real_tr":244.56,"cpi":306.13},{"date":"2024-12","sp500_tr":34118.88,"sp500_real_tr":5784.37,"gold_tr":1440.86,"gold_real_tr":244.28,"cpi":306.13},{"date":"2025-01","sp500_tr":33973.37,"sp500_real_tr":5759.7,"gold_tr":1474.42,"gold_real_tr":249.97,"cpi":306.13},{"date":"2025-02","sp500_tr":34341.77,"sp500_real_tr":5822.16,"gold_tr":1575.11,"gold_real_tr":267.04,"cpi":306.13},{"date":"2025-03","sp500_tr":32359.14,"sp500_real_tr":5486.03,"gold_tr":1623.27,"gold_real_tr":275.2,"cpi":306.13},{"date":"2025-04","sp500_tr":30603.3,"sp500_real_tr":5188.36,"gold_tr":1750.81,"gold_real_tr":296.83,"cpi":306.13},{"date":"2025-05","sp500_tr":33149.32,"sp500_real_tr":5620,"gold_tr":1800.79,"gold_real_tr":305.3,"cpi":306.13},{"date":"2025-06","sp500_tr":34430.29,"sp500_real_tr":5837.17,"gold_tr":1824.28,"gold_real_tr":309.28,"cpi":306.13},{"date":"2025-07","sp500_tr":35983.56,"sp500_real_tr":6100.5,"gold_tr":1817.47,"gold_real_tr":308.13,"cpi":306.13},{"date":"2025-08","sp500_tr":36658.35,"sp500_real_tr":6214.9,"gold_tr":1832.64,"gold_real_tr":310.7,"cpi":306.13},{"date":"2025-09","sp500_tr":37691.6,"sp500_real_tr":6390.08,"gold_tr":1995.69,"gold_real_tr":338.34,"cpi":306.13},{"date":"2025-10","sp500_tr":38591.91,"sp500_real_tr":6542.71,"gold_tr":2208.25,"gold_real_tr":374.38,"cpi":306.13},{"date":"2025-11","sp500_tr":38654.49,"sp500_real_tr":6553.32,"gold_tr":2223.96,"gold_real_tr":377.04,"cpi":306.13},{"date":"2025-12","sp500_tr":39329.83,"sp500_real_tr":6667.81,"gold_tr":2344.78,"gold_real_tr":397.52,"cpi":306.13},{"date":"2026-01","sp500_tr":39799.01,"sp500_real_tr":6747.36,"gold_tr":2586.11,"gold_real_tr":438.44,"cpi":306.13},{"date":"2026-02","sp500_tr":39629.26,"sp500_real_tr":6718.58,"gold_tr":2731.51,"gold_real_tr":463.09,"cpi":306.13}];
+</script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const data = window.__INITIAL_DATA__;
+            if (!data || data.length === 0) return;
+
+            // Format helpers
+            const formatPct = (val) => (val * 100).toFixed(2) + '%';
+            const formatMoney = (val) => new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(val);
+
+            // Calculate overall CAGRs
+            const initialInvestment = 10000;
+            const years = data.length / 12;
+
+            const first = data[0];
+            const last = data[data.length - 1];
+
+            const spNomCagr = Math.pow(last.sp500_tr / first.sp500_tr, 1 / years) - 1;
+            const goldNomCagr = Math.pow(last.gold_tr / first.gold_tr, 1 / years) - 1;
+            const spRealCagr = Math.pow(last.sp500_real_tr / first.sp500_real_tr, 1 / years) - 1;
+            const goldRealCagr = Math.pow(last.gold_real_tr / first.gold_real_tr, 1 / years) - 1;
+
+            document.getElementById('stat-sp-nom').textContent = formatPct(spNomCagr);
+            document.getElementById('stat-gold-nom').textContent = formatPct(goldNomCagr);
+            document.getElementById('stat-sp-real').textContent = formatPct(spRealCagr);
+            document.getElementById('stat-gold-real').textContent = formatPct(goldRealCagr);
+
+            // Prepare Chart Data
+            const labels = data.map(d => d.date);
+
+            // Scale data to $10k initial investment
+            const getScaled = (key) => {
+                const base = data[0][key];
+                return data.map(d => (d[key] / base) * initialInvestment);
+            };
+
+            const datasetsNominal = {
+                sp500: getScaled('sp500_tr'),
+                gold: getScaled('gold_tr')
+            };
+
+            const datasetsReal = {
+                sp500: getScaled('sp500_real_tr'),
+                gold: getScaled('gold_real_tr')
+            };
+
+            let currentMode = 'nominal';
+
+            const ctx = document.getElementById('mainChart').getContext('2d');
+
+            Chart.defaults.color = '#9ca3af';
+            Chart.defaults.font.family = "'Inter', sans-serif";
+
+            let chart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [
+                        {
+                            label: 'S&P 500 (Total Return)',
+                            data: datasetsNominal.sp500,
+                            borderColor: '#4a8fe7',
+                            backgroundColor: 'rgba(74, 143, 231, 0.2)',
+                            fill: true,
+                            borderWidth: 2,
+                            pointRadius: 0,
+                            pointHoverRadius: 4,
+                            tension: 0.1
+                        },
+                        {
+                            label: 'Gold',
+                            data: datasetsNominal.gold,
+                            borderColor: '#fbbf24',
+                            backgroundColor: 'rgba(251, 191, 36, 0.2)',
+                            fill: true,
+                            borderWidth: 2,
+                            pointRadius: 0,
+                            pointHoverRadius: 4,
+                            tension: 0.1
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    interaction: {
+                        mode: 'index',
+                        intersect: false,
+                    },
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                            labels: {
+                                usePointStyle: true,
+                                boxWidth: 8
+                            }
+                        },
+                        tooltip: {
+                            backgroundColor: 'rgba(10, 16, 32, 0.9)',
+                            titleColor: '#fff',
+                            bodyColor: '#e5e7eb',
+                            borderColor: '#152040',
+                            borderWidth: 1,
+                            callbacks: {
+                                label: function(context) {
+                                    let label = context.dataset.label || '';
+                                    if (label) {
+                                        label += ': ';
+                                    }
+                                    if (context.parsed.y !== null) {
+                                        label += formatMoney(context.parsed.y);
+                                    }
+                                    return label;
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            grid: {
+                                color: 'rgba(21, 32, 64, 0.5)',
+                                drawBorder: false
+                            },
+                            ticks: {
+                                maxTicksLimit: 10,
+                                callback: function(val, index) {
+                                    return labels[index].split('-')[0];
+                                }
+                            }
+                        },
+                        y: {
+                            type: 'logarithmic',
+                            grid: {
+                                color: 'rgba(21, 32, 64, 0.5)',
+                                drawBorder: false
+                            },
+                            ticks: {
+                                callback: function(value, index, values) {
+                                    if (value === 10000 || value === 100000 || value === 1000000 || value === 10000000) {
+                                        return formatMoney(value);
+                                    }
+                                    return null;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Buttons logic
+            document.querySelectorAll('.chart-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    document.querySelectorAll('.chart-btn').forEach(b => b.classList.remove('active'));
+                    e.target.classList.add('active');
+
+                    const mode = e.target.getAttribute('data-type');
+                    if (mode === 'nominal') {
+                        chart.data.datasets[0].data = datasetsNominal.sp500;
+                        chart.data.datasets[1].data = datasetsNominal.gold;
+                    } else {
+                        chart.data.datasets[0].data = datasetsReal.sp500;
+                        chart.data.datasets[1].data = datasetsReal.gold;
+                    }
+                    chart.update();
+                });
+            });
+
+            // Rolling 10-year calculations
+            // Pick some exact decades: 1975-1985, 1985-1995, 1995-2005, 2005-2015, 2015-2025
+            const decades = [
+                {start: '1975', end: '1985'},
+                {start: '1985', end: '1995'},
+                {start: '1995', end: '2005'},
+                {start: '2005', end: '2015'},
+                {start: '2015', end: '2025'}
+            ];
+
+            const tbody = document.getElementById('rolling-tbody');
+
+            decades.forEach(dec => {
+                // Find matching months
+                const startIdx = data.findIndex(d => d.date.startsWith(dec.start));
+                let endIdx = data.findIndex(d => d.date.startsWith(dec.end));
+                if (endIdx === -1) endIdx = data.length - 1; // Fallback
+
+                if (startIdx !== -1 && endIdx !== -1) {
+                    const dStart = data[startIdx];
+                    const dEnd = data[endIdx];
+
+                    const yearsSpan = (new Date(dEnd.date) - new Date(dStart.date)) / (1000 * 60 * 60 * 24 * 365.25);
+
+                    if (yearsSpan > 0) {
+                        const spCagr = Math.pow(dEnd.sp500_tr / dStart.sp500_tr, 1 / yearsSpan) - 1;
+                        const goldCagr = Math.pow(dEnd.gold_tr / dStart.gold_tr, 1 / yearsSpan) - 1;
+
+                        const tr = document.createElement('tr');
+
+                        const tdPeriod = document.createElement('td');
+                        tdPeriod.textContent = `${dec.start} - ${dec.end}`;
+
+                        const tdSp = document.createElement('td');
+                        tdSp.textContent = formatPct(spCagr);
+
+                        const tdGold = document.createElement('td');
+                        tdGold.textContent = formatPct(goldCagr);
+
+                        const tdWin = document.createElement('td');
+                        if (spCagr > goldCagr) {
+                            tdWin.textContent = 'S&P 500';
+                            tdWin.className = 'winner-sp';
+                        } else {
+                            tdWin.textContent = 'Gold';
+                            tdWin.className = 'winner-gold';
+                        }
+
+                        tr.appendChild(tdPeriod);
+                        tr.appendChild(tdSp);
+                        tr.appendChild(tdGold);
+                        tr.appendChild(tdWin);
+
+                        tbody.appendChild(tr);
+                    }
+                }
+            });
+
+        });
+    </script>
+</body>
+</html>
