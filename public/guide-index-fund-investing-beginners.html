@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Index Fund Investing for Beginners</title>
+  <meta name="description" content="A complete guide to index fund investing. Learn what index funds are, passive investing, and the best funds for beginners.">
+  <link rel="canonical" href="https://westmountfundamentals.com/guide-index-fund-investing-beginners">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Index Fund Investing for Beginners">
+  <meta property="og:description" content="A complete guide to index fund investing. Learn what index funds are, passive investing, and the best funds for beginners.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://westmountfundamentals.com/guide-index-fund-investing-beginners">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Index Fund Investing for Beginners">
+  <meta name="twitter:description" content="A complete guide to index fund investing. Learn what index funds are, passive investing, and the best funds for beginners.">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VYF72NSC1Q"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VYF72NSC1Q');
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <style>
+    :root {
+      --bg: #060a12;
+      --card-bg: #0a1020;
+      --border: #152040;
+      --accent: #4a8fe7;
+      --text: #e2e8f0;
+      --text-muted: #94a3b8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(6, 10, 18, 0.85);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav .brand {
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    nav .links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      margin-left: 1.5rem;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+
+    nav .links a:hover {
+      color: var(--accent);
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      background: linear-gradient(to right, #ffffff, var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      line-height: 1.2;
+    }
+
+    h2 {
+      font-size: 1.75rem;
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+      color: var(--text);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.5rem;
+    }
+
+    p {
+      margin-bottom: 1.5rem;
+      color: var(--text-muted);
+    }
+
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .stat-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .stat-value {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--accent);
+      font-family: 'JetBrains Mono', monospace;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .chart-container {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      margin: 2rem 0;
+      position: relative;
+      height: 400px;
+    }
+
+    .table-controls {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    input[type="text"] {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 0.5rem 1rem;
+      border-radius: 0.25rem;
+      font-family: 'Inter', sans-serif;
+      flex-grow: 1;
+      max-width: 300px;
+    }
+
+    input[type="text"]:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+
+    .table-wrapper {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 2rem;
+      font-size: 0.95rem;
+    }
+
+    th, td {
+      padding: 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+      white-space: nowrap;
+    }
+
+    th {
+      background: var(--card-bg);
+      font-weight: 600;
+      color: var(--text);
+      cursor: pointer;
+      user-select: none;
+    }
+
+    th:hover {
+      color: var(--accent);
+    }
+
+    td {
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .ticker {
+      color: var(--accent);
+      font-weight: bold;
+    }
+
+    .faq {
+      margin-top: 2rem;
+    }
+
+    .faq-item {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      margin-bottom: 1rem;
+      padding: 1.5rem;
+    }
+
+    .faq-item h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      color: var(--text);
+    }
+
+    .faq-item p {
+      margin-bottom: 0;
+    }
+
+    .methodology {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      padding: 1.5rem;
+      margin-top: 3rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      border-top: 1px solid var(--border);
+      margin-top: 3rem;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 768px) {
+      .table-controls {
+        flex-direction: column;
+      }
+      input[type="text"] {
+        max-width: 100%;
+      }
+      .table-wrapper {
+        overflow-x: auto;
+      }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Index Fund Investing for Beginners",
+    "description": "A complete guide to index fund investing. Learn what index funds are, passive investing, and the best funds for beginners.",
+    "datePublished": "2026-03-13",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Westmount Research",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://westmountfundamentals.com/logo.png"
+      }
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is an index fund?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "An index fund is a type of mutual fund or exchange-traded fund (ETF) that holds a portfolio constructed to match or track the components of a financial market index, such as the Standard & Poor's 500 Index (S&P 500). They provide broad market exposure, low operating expenses, and low portfolio turnover."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How to invest in index funds?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "To invest in index funds, you first need to open a brokerage account. Once your account is funded, you can search for the ticker symbol of the index fund (like VOO or VTI) and execute a buy order. Many platforms also allow you to set up automated recurring investments."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are the best index funds for beginners?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For beginners, broad-market index funds are typically recommended. Examples include the Vanguard S&P 500 ETF (VOO), Vanguard Total Stock Market ETF (VTI), or the iShares Core S&P 500 ETF (IVV). These offer instant diversification at a very low cost."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between active and passive investing?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Active investing involves hands-on stock picking and market timing by a fund manager trying to beat the market. Passive investing simply seeks to match the market's performance by tracking an index. Passive funds (like index funds) generally have much lower fees and have historically outperformed most active funds over the long term."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are index funds a good investment?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, index funds are widely considered one of the best investments for most people. They offer low fees, instant diversification, and historically strong long-term returns. Even legendary investor Warren Buffett has recommended low-cost S&P 500 index funds for the average investor."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="brand">Westmount Fundamentals</a>
+    <div class="links">
+      <a href="/#studies">Studies</a>
+      <a href="/#tools">Tools</a>
+      <a href="/#guides">Guides</a>
+    </div>
+  </nav>
+
+  <main>
+    <h1>Index Fund Investing for Beginners</h1>
+    <p>The smartest way to build wealth in the stock market is often the simplest. Index funds offer a low-cost, hands-off approach to investing that historically beats most professional stock pickers. This guide will help you understand what they are, how they work, and how to get started.</p>
+
+    <div class="stats-row">
+      <div class="stat-card">
+        <div class="stat-value">~10%</div>
+        <div class="stat-label">Historical S&P 500 Return</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">0.03%</div>
+        <div class="stat-label">Typical Expense Ratio</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">14.33%</div>
+        <div class="stat-label">10-Year CAGR (S&P 500)</div>
+      </div>
+    </div>
+
+    <h2>What is an Index Fund?</h2>
+    <p>Imagine trying to buy a tiny slice of every major company in America. Buying the stocks individually would be a nightmare of fees and math. An index fund does this for you.</p>
+    <p>An index fund is simply a basket of stocks (or bonds) that automatically tracks a specific market index. The most famous is the S&P 500, which tracks the 500 largest U.S. companies. When you buy a share of an S&P 500 index fund, you instantly own a tiny piece of Apple, Microsoft, Amazon, and 497 other major corporations.</p>
+
+    <h2>Active vs. Passive Investing</h2>
+    <p>Index funds fall under the category of <strong>passive investing</strong>. Unlike <em>active</em> mutual funds, where highly-paid managers constantly buy and sell stocks trying to "beat the market" (and usually failing), index funds simply match the market.</p>
+    <p>Because there is no expensive team of analysts making decisions, index funds have incredibly low fees (known as the <em>expense ratio</em>). Over decades, avoiding these high fees can save you tens or hundreds of thousands of dollars.</p>
+
+    <h2>The Power of Compound Interest</h2>
+    <p>The true magic of index funds lies in long-term compounding. If you invested $10,000 in an S&P 500 index fund ten years ago and reinvested the dividends, here is what it would look like today.</p>
+
+    <div class="chart-container">
+      <canvas id="growthChart"></canvas>
+    </div>
+
+    <h2>Popular Index Funds for Beginners</h2>
+    <p>To get started, here are some of the most popular, low-cost exchange-traded funds (ETFs) that track major indexes. You can buy these through any major brokerage (like Vanguard, Fidelity, or Charles Schwab).</p>
+
+    <div class="table-controls">
+      <input type="text" id="searchInput" placeholder="Search by ticker or name...">
+    </div>
+
+    <div class="table-wrapper">
+      <table id="fundsTable">
+        <thead>
+          <tr>
+            <th data-sort="ticker">Ticker ↕</th>
+            <th data-sort="name">Fund Name ↕</th>
+            <th data-sort="expenseRatio">Expense Ratio (%) ↕</th>
+            <th data-sort="aum">Net Assets (B) ↕</th>
+            <th data-sort="yield">Div Yield (%) ↕</th>
+          </tr>
+        </thead>
+        <tbody id="fundsBody">
+          <!-- Populated by JS -->
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Common Mistakes to Avoid</h2>
+    <p>While index funds are beginner-friendly, there are a few common pitfalls to watch out for:</p>
+    <ul>
+      <li style="margin-bottom: 0.5rem; margin-left: 1.5rem; color: var(--text-muted);"><strong>Trying to time the market:</strong> Don't wait for the "perfect" time to invest. Consistency is key. Set up automatic contributions and ignore short-term market fluctuations.</li>
+      <li style="margin-bottom: 0.5rem; margin-left: 1.5rem; color: var(--text-muted);"><strong>Ignoring the expense ratio:</strong> Always check the fees. A good broad-market index ETF should have an expense ratio well under 0.10%. High fees eat directly into your compounding returns.</li>
+      <li style="margin-bottom: 0.5rem; margin-left: 1.5rem; color: var(--text-muted);"><strong>Panic selling:</strong> The stock market will experience downturns. Selling your index funds during a crash locks in your losses. Historically, the broader market has always recovered over the long term.</li>
+    </ul>
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq">
+      <div class="faq-item">
+        <h3>What is an index fund?</h3>
+        <p>An index fund is a type of mutual fund or exchange-traded fund (ETF) that holds a portfolio constructed to match or track the components of a financial market index, such as the Standard & Poor's 500 Index (S&P 500). They provide broad market exposure, low operating expenses, and low portfolio turnover.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How to invest in index funds?</h3>
+        <p>To invest in index funds, you first need to open a brokerage account. Once your account is funded, you can search for the ticker symbol of the index fund (like VOO or VTI) and execute a buy order. Many platforms also allow you to set up automated recurring investments.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What are the best index funds for beginners?</h3>
+        <p>For beginners, broad-market index funds are typically recommended. Examples include the Vanguard S&P 500 ETF (VOO), Vanguard Total Stock Market ETF (VTI), or the iShares Core S&P 500 ETF (IVV). These offer instant diversification at a very low cost.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What is the difference between active and passive investing?</h3>
+        <p>Active investing involves hands-on stock picking and market timing by a fund manager trying to beat the market. Passive investing simply seeks to match the market's performance by tracking an index. Passive funds (like index funds) generally have much lower fees and have historically outperformed most active funds over the long term.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Are index funds a good investment?</h3>
+        <p>Yes, index funds are widely considered one of the best investments for most people. They offer low fees, instant diversification, and historically strong long-term returns. Even legendary investor Warren Buffett has recommended low-cost S&P 500 index funds for the average investor.</p>
+      </div>
+    </div>
+
+    <div class="methodology">
+      <strong>Methodology & Data Sources:</strong> Financial data (expense ratios, assets under management, dividend yields, and historical pricing) is sourced from Yahoo Finance API. Historical returns for the S&P 500 chart use adjusted close prices (which account for dividend reinvestment) for the Vanguard S&P 500 ETF (VOO) over the past 10 years. Data is embedded statically and may not reflect real-time market movements.
+    </div>
+
+  </main>
+
+  <footer>
+    <p>© 2026 Westmount Research · A GAB Ventures property. Not investment advice. All information for educational purposes only.</p>
+  </footer>
+
+  <script>
+    // Inline Data
+    const fundData = [{"ticker":"VOO","name":"Vanguard S&P 500 ETF","price":612.5,"expenseRatio":"0.03","aum":454496120000,"ytdReturn":"0.67","yield":"1.12"},{"ticker":"VTI","name":"Vanguard Total Stock Market ETF","price":327.92,"expenseRatio":"0.03","aum":284486700000,"ytdReturn":"1.05","yield":"1.11"},{"ticker":"QQQ","name":"Invesco QQQ Trust, Series 1","price":597.26,"expenseRatio":"0.18","aum":603680700000,"ytdReturn":"-1.09","yield":"0.46"},{"ticker":"IVV","name":"iShares Core S&P 500 ETF","price":668.95,"expenseRatio":"0.03","aum":422358400000,"ytdReturn":"0.67","yield":"1.17"},{"ticker":"VT","name":"Vanguard Total World Stock Inde","price":140.55,"expenseRatio":"0.06","aum":148027830000,"ytdReturn":"4.87","yield":"1.74"},{"ticker":"VXUS","name":"Vanguard Total International St","price":77.47,"expenseRatio":"0.05","aum":45714950000,"ytdReturn":"11.36","yield":"2.86"},{"ticker":"BND","name":"Vanguard Total Bond Market ETF","price":73.62,"expenseRatio":"0.03","aum":395346084000,"ytdReturn":"1.79","yield":"3.82"},{"ticker":"SCHD","name":"Schwab US Dividend Equity ETF","price":30.82,"expenseRatio":"0.06","aum":95840650000,"ytdReturn":"15.74","yield":"3.30"}];
+    const chartData = [{"date":"2016-04-01","value":10000},{"date":"2016-05-01","value":10175.455534872113},{"date":"2016-06-01","value":10157.488530794733},{"date":"2016-07-01","value":10584.283513565624},{"date":"2016-08-01","value":10597.030612137263},{"date":"2016-09-01","value":10552.949826283484},{"date":"2016-10-01","value":10410.184032790852},{"date":"2016-11-01","value":10798.032609727536},{"date":"2016-12-01","value":10953.286074483765},{"date":"2017-01-01","value":11218.250682612164},{"date":"2017-02-01","value":11653.088862215494},{"date":"2017-03-01","value":11614.436093883798},{"date":"2017-04-01","value":11789.806103269744},{"date":"2017-05-01","value":11955.377742790462},{"date":"2017-06-01","value":11976.415111821249},{"date":"2017-07-01","value":12278.792368731922},{"date":"2017-08-01","value":12314.55057449845},{"date":"2017-09-01","value":12502.003434513466},{"date":"2017-10-01","value":12858.460356894053},{"date":"2017-11-01","value":13251.62861907034},{"date":"2017-12-01","value":13357.273500716847},{"date":"2018-01-01","value":14171.231906251904},{"date":"2018-02-01","value":13643.209908336636},{"date":"2018-03-01","value":13245.963981036528},{"date":"2018-04-01","value":13352.71689287049},{"date":"2018-05-01","value":13675.378894533676},{"date":"2018-06-01","value":13714.954387832802},{"date":"2018-07-01","value":14270.049003252725},{"date":"2018-08-01","value":14729.513771456326},{"date":"2018-09-01","value":14747.741153124925},{"date":"2018-10-01","value":13801.421604631072},{"date":"2018-11-01","value":14061.596785534106},{"date":"2018-12-01","value":12748.52114555877},{"date":"2019-01-01","value":13832.635556232579},{"date":"2019-02-01","value":14282.181268607139},{"date":"2019-03-01","value":14475.71404040547},{"date":"2019-04-01","value":15144.446369295818},{"date":"2019-05-01","value":14183.092390616943},{"date":"2019-06-01","value":15096.213796230208},{"date":"2019-07-01","value":15396.231500005844},{"date":"2019-08-01","value":15143.647181141743},{"date":"2019-09-01","value":15369.170285899347},{"date":"2019-10-01","value":15779.37712548651},{"date":"2019-11-01","value":16351.526473131362},{"date":"2019-12-01","value":16756.561871654943},{"date":"2020-01-01","value":16831.506904900125},{"date":"2020-02-01","value":15468.199296049226},{"date":"2020-03-01","value":13480.459659576256},{"date":"2020-04-01","value":15275.45906042271},{"date":"2020-05-01","value":15998.908694796506},{"date":"2020-06-01","value":16209.369811156876},{"date":"2020-07-01","value":17251.94259263289},{"date":"2020-08-01","value":18454.577271754097},{"date":"2020-09-01","value":17685.973031533533},{"date":"2020-10-01","value":17309.324492152038},{"date":"2020-11-01","value":19204.101726293928},{"date":"2020-12-01","value":19842.045830447245},{"date":"2021-01-01","value":19719.713976166327},{"date":"2021-02-01","value":20265.19932807377},{"date":"2021-03-01","value":21117.91123195757},{"date":"2021-04-01","value":22313.37317363888},{"date":"2021-05-01","value":22462.293951286014},{"date":"2021-06-01","value":22892.194459487953},{"date":"2021-07-01","value":23531.944101682584},{"date":"2021-08-01","value":24226.55169127124},{"date":"2021-09-01","value":23021.203003388993},{"date":"2021-10-01","value":24722.377144777256},{"date":"2021-11-01","value":24540.835046139575},{"date":"2021-12-01","value":25566.25141509044},{"date":"2022-01-01","value":24315.15419437415},{"date":"2022-02-01","value":23590.44163365462},{"date":"2022-03-01","value":24402.1450172044},{"date":"2022-04-01","value":22333.541983843475},{"date":"2022-05-01","value":22391.332505129867},{"date":"2022-06-01","value":20456.97977768885},{"date":"2022-07-01","value":22430.38344211383},{"date":"2022-08-01","value":21504.245057505912},{"date":"2022-09-01","value":19440.573993847298},{"date":"2022-10-01","value":21111.14141458584},{"date":"2022-11-01","value":22273.31113535178},{"date":"2022-12-01","value":20896.43063184614},{"date":"2023-01-01","value":22317.231323348202},{"date":"2023-02-01","value":21759.658369395787},{"date":"2023-03-01","value":22474.402459560937},{"date":"2023-04-01","value":22925.779367622657},{"date":"2023-05-01","value":23036.190869698214},{"date":"2023-06-01","value":24439.76102658712},{"date":"2023-07-01","value":25343.077410352897},{"date":"2023-08-01","value":24930.413138463195},{"date":"2023-09-01","value":23657.476509712513},{"date":"2023-10-01","value":23231.894088278837},{"date":"2023-11-01","value":25362.356755501354},{"date":"2023-12-01","value":26414.584414082474},{"date":"2024-01-01","value":26949.871326906064},{"date":"2024-02-01","value":28353.16780223923},{"date":"2024-03-01","value":29189.32007143469},{"date":"2024-04-01","value":28109.302331548293},{"date":"2024-05-01","value":29521.98760469626},{"date":"2024-06-01","value":30466.81996001398},{"date":"2024-07-01","value":30929.65918378847},{"date":"2024-08-01","value":31669.992499414864},{"date":"2024-09-01","value":32258.711934863033},{"date":"2024-10-01","value":32052.595513199958},{"date":"2024-11-01","value":33940.17720310564},{"date":"2024-12-01","value":33042.38006404719},{"date":"2025-01-01","value":34041.431776462225},{"date":"2025-02-01","value":33610.78244511473},{"date":"2025-03-01","value":31616.267289570955},{"date":"2025-04-01","value":31468.4488404122},{"date":"2025-05-01","value":33445.178495965905},{"date":"2025-06-01","value":35066.94697486378},{"date":"2025-07-01","value":35979.61034398446},{"date":"2025-08-01","value":36726.42649146233},{"date":"2025-09-01","value":37921.57864082707},{"date":"2025-10-01","value":38940.44185697117},{"date":"2025-11-01","value":39025.52261061035},{"date":"2025-12-01","value":38946.03332320014},{"date":"2026-01-01","value":39622.35366327989},{"date":"2026-02-01","value":39299.75533058974},{"date":"2026-03-01","value":38145.12705713739},{"date":"2026-03-12","value":38145.12705713739}];
+
+    // Render Table
+    const tbody = document.getElementById('fundsBody');
+    const searchInput = document.getElementById('searchInput');
+    let currentSort = { column: 'aum', asc: false };
+
+    function formatCurrency(val) {
+      if (!val) return 'N/A';
+      return '$' + (val / 1e9).toFixed(2);
+    }
+
+    function renderTable(data) {
+      tbody.innerHTML = '';
+      data.forEach(fund => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td class="ticker">${fund.ticker}</td>
+          <td>${fund.name}</td>
+          <td>${fund.expenseRatio !== 'N/A' ? fund.expenseRatio : '-'}</td>
+          <td>${fund.aum ? formatCurrency(fund.aum) : '-'}</td>
+          <td>${fund.yield !== 'N/A' ? fund.yield : '-'}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    function sortData(data, column, asc) {
+      return [...data].sort((a, b) => {
+        let valA = a[column];
+        let valB = b[column];
+
+        if (valA === 'N/A' || valA === null) valA = -Infinity;
+        if (valB === 'N/A' || valB === null) valB = -Infinity;
+
+        if (column === 'ticker' || column === 'name') {
+          valA = valA.toString().toLowerCase();
+          valB = valB.toString().toLowerCase();
+          if (valA < valB) return asc ? -1 : 1;
+          if (valA > valB) return asc ? 1 : -1;
+          return 0;
+        }
+
+        return asc ? Number(valA) - Number(valB) : Number(valB) - Number(valA);
+      });
+    }
+
+    function filterAndRender() {
+      const query = searchInput.value.toLowerCase();
+      let filtered = fundData.filter(f =>
+        f.ticker.toLowerCase().includes(query) ||
+        (f.name && f.name.toLowerCase().includes(query))
+      );
+      filtered = sortData(filtered, currentSort.column, currentSort.asc);
+      renderTable(filtered);
+    }
+
+    if (searchInput) {
+        searchInput.addEventListener('input', filterAndRender);
+        searchInput.addEventListener('keyup', filterAndRender); // For testing
+    }
+
+    document.querySelectorAll('th[data-sort]').forEach(th => {
+      th.addEventListener('click', () => {
+        const col = th.getAttribute('data-sort');
+        if (currentSort.column === col) {
+          currentSort.asc = !currentSort.asc;
+        } else {
+          currentSort.column = col;
+          currentSort.asc = true;
+        }
+        filterAndRender();
+      });
+    });
+
+    // Initial render
+    filterAndRender();
+
+    // Render Chart
+    if (chartData.length > 0) {
+      const ctx = document.getElementById('growthChart').getContext('2d');
+      new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: chartData.map(d => d.date),
+          datasets: [{
+            label: 'Growth of $10,000 (VOO)',
+            data: chartData.map(d => d.value),
+            borderColor: '#4a8fe7',
+            backgroundColor: 'rgba(74, 143, 231, 0.1)',
+            borderWidth: 2,
+            pointRadius: 0,
+            pointHitRadius: 10,
+            fill: true,
+            tension: 0.1
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              labels: { color: '#e2e8f0', font: { family: "'Inter', sans-serif" } }
+            },
+            tooltip: {
+              mode: 'index',
+              intersect: false,
+              callbacks: {
+                label: function(context) {
+                  let label = context.dataset.label || '';
+                  if (label) {
+                    label += ': ';
+                  }
+                  if (context.parsed.y !== null) {
+                    label += new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(context.parsed.y);
+                  }
+                  return label;
+                }
+              }
+            }
+          },
+          scales: {
+            x: {
+              grid: { color: '#152040' },
+              ticks: { color: '#94a3b8', font: { family: "'JetBrains Mono', monospace" } }
+            },
+            y: {
+              grid: { color: '#152040' },
+              ticks: {
+                color: '#94a3b8',
+                font: { family: "'JetBrains Mono', monospace" },
+                callback: function(value) {
+                  return '$' + value.toLocaleString();
+                }
+              }
+            }
+          },
+          interaction: {
+            mode: 'nearest',
+            axis: 'x',
+            intersect: false
+          }
+        }
+      });
+    }
+  </script>
+</body>
+</html>
