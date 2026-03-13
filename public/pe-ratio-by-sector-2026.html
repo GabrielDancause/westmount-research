@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P/E Ratio by Sector: S&P 500 Valuations 2026</title>
+    <meta name="description" content="Current and forward P/E ratios for all 11 S&P 500 sectors. Compare trailing earnings multiples, valuations, and market expectations across the index.">
+    <link rel="canonical" href="https://westmountfundamentals.com/pe-ratio-by-sector-2026">
+    <meta property="og:title" content="P/E Ratio by Sector: S&P 500 Valuations 2026">
+    <meta property="og:description" content="Current and forward P/E ratios for all 11 S&P 500 sectors. Compare trailing earnings multiples, valuations, and market expectations across the index.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://westmountfundamentals.com/pe-ratio-by-sector-2026">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="P/E Ratio by Sector: S&P 500 Valuations 2026">
+    <meta name="twitter:description" content="Current and forward P/E ratios for all 11 S&P 500 sectors. Compare trailing earnings multiples, valuations, and market expectations across the index.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VYF72NSC1Q"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-VYF72NSC1Q');
+    </script>
+
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "P/E Ratio by Sector: S&P 500 Sector Valuations (2026)",
+      "description": "Current and forward P/E ratios for all 11 S&P 500 sectors.",
+      "datePublished": "2026-03-12T08:00:00+00:00",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Westmount Fundamentals",
+        "url": "https://westmountfundamentals.com"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "What is the P/E ratio by sector for the S&P 500?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The P/E ratio varies widely across the 11 GICS sectors. Technology and Consumer Discretionary typically trade at higher P/E multiples (often 25-35x), reflecting higher growth expectations. Conversely, Financials and Energy usually trade at lower multiples (often 10-15x)."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Which S&P 500 sector has the highest P/E ratio?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Historically, the Information Technology, Real Estate, and Consumer Discretionary sectors trade at the highest P/E ratios due to high growth expectations or specific accounting practices (like depreciation in Real Estate that lowers standard earnings)."
+        }
+      }, {
+        "@type": "Question",
+        "name": "What is a good P/E ratio for a sector?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A 'good' P/E ratio is relative to the sector's historical average and its growth rate. For example, a 15x P/E might be expensive for a bank but very cheap for a software company. Investors often use the PEG ratio (Price/Earnings-to-Growth) to normalize valuations."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Why do Energy and Financials have low P/E ratios?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Energy and Financials typically have low P/E ratios because they are cyclical businesses with lower long-term growth rates compared to tech. Their earnings can fluctuate wildly with commodity prices or interest rates, so investors refuse to pay a high multiple for those earnings."
+        }
+      }, {
+        "@type": "Question",
+        "name": "What is the difference between trailing P/E and forward P/E?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Trailing P/E uses actual earnings from the past 12 months. Forward P/E uses estimated earnings for the next 12 months. Forward P/E is more relevant for valuing a stock's future, but it relies on analyst estimates which can be inaccurate."
+        }
+      }]
+    }
+    </script>
+
+    <style>
+      :root {
+        --bg-main: #060a12;
+        --bg-card: #0a1020;
+        --border-color: #152040;
+        --accent: #4a8fe7;
+        --accent-hover: #3a75c4;
+        --text-primary: #c8d0de;
+        --text-secondary: #8a9bb3;
+        --text-white: #ffffff;
+      }
+
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+
+      body {
+        font-family: 'Inter', -apple-system, sans-serif;
+        background-color: var(--bg-main);
+        color: var(--text-primary);
+        line-height: 1.6;
+        padding-top: 60px; /* space for sticky nav */
+      }
+
+      /* Sticky Nav */
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 60px;
+        background: rgba(6, 10, 18, 0.85);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--border-color);
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        padding: 0 24px;
+      }
+      .nav-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+      }
+      .brand {
+        font-weight: 800;
+        color: var(--text-white);
+        text-decoration: none;
+        font-size: 1.1rem;
+        letter-spacing: -0.5px;
+      }
+      .nav-links {
+        display: flex;
+        gap: 20px;
+      }
+      .nav-links a {
+        color: var(--text-secondary);
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: 500;
+        transition: color 0.2s;
+      }
+      .nav-links a:hover {
+        color: var(--accent);
+      }
+
+      /* Layout & Typography */
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 24px;
+      }
+
+      .hero {
+        text-align: center;
+        margin-bottom: 50px;
+      }
+      h1 {
+        font-size: 2.8rem;
+        font-weight: 900;
+        letter-spacing: -1px;
+        margin-bottom: 16px;
+        background: linear-gradient(90deg, #fff, var(--text-secondary));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        line-height: 1.2;
+      }
+      .subtitle {
+        font-size: 1.1rem;
+        color: var(--text-secondary);
+        max-width: 700px;
+        margin: 0 auto;
+      }
+
+      /* Stats Row */
+      .stats-row {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        margin-bottom: 40px;
+      }
+      .stat-card {
+        background: var(--bg-card);
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        padding: 24px;
+        text-align: center;
+      }
+      .stat-card h3 {
+        font-size: 0.9rem;
+        color: var(--text-secondary);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 8px;
+        font-weight: 600;
+      }
+      .stat-card .value {
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: var(--accent);
+        line-height: 1;
+        font-family: 'JetBrains Mono', monospace;
+      }
+      .stat-card .desc {
+        font-size: 0.85rem;
+        color: var(--text-secondary);
+        margin-top: 8px;
+      }
+
+      /* Chart Section */
+      .chart-container {
+        background: var(--bg-card);
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        padding: 24px;
+        margin-bottom: 40px;
+        height: 500px;
+      }
+      .chart-header {
+        margin-bottom: 20px;
+      }
+      .chart-header h2 {
+        font-size: 1.4rem;
+        color: var(--text-white);
+        margin-bottom: 4px;
+      }
+      .chart-header p {
+        font-size: 0.9rem;
+        color: var(--text-secondary);
+      }
+
+      /* Data Table */
+      .table-container {
+        background: var(--bg-card);
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        overflow: hidden;
+        margin-bottom: 40px;
+      }
+      .table-controls {
+        padding: 20px;
+        border-bottom: 1px solid var(--border-color);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .search-box {
+        background: var(--bg-main);
+        border: 1px solid var(--border-color);
+        color: var(--text-white);
+        padding: 10px 16px;
+        border-radius: 8px;
+        width: 300px;
+        font-family: 'Inter', sans-serif;
+        outline: none;
+      }
+      .search-box:focus {
+        border-color: var(--accent);
+      }
+
+      .data-table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      .data-table th, .data-table td {
+        padding: 16px 20px;
+        text-align: left;
+        border-bottom: 1px solid var(--border-color);
+      }
+      .data-table th {
+        background: rgba(21, 32, 64, 0.4);
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: var(--text-secondary);
+        font-weight: 600;
+        cursor: pointer;
+        user-select: none;
+      }
+      .data-table th:hover {
+        color: var(--text-white);
+      }
+      .data-table td {
+        font-size: 0.95rem;
+      }
+      .data-table td.numeric {
+        font-family: 'JetBrains Mono', monospace;
+      }
+      .data-table tr:last-child td {
+        border-bottom: none;
+      }
+      .data-table tbody tr:hover {
+        background: rgba(255, 255, 255, 0.02);
+      }
+
+      .ticker-badge {
+        display: inline-block;
+        background: rgba(74, 143, 231, 0.15);
+        color: var(--accent);
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 0.8rem;
+        font-weight: 600;
+        margin-left: 8px;
+      }
+      .null-val {
+        color: #556677;
+        font-style: italic;
+      }
+
+      /* Text Sections */
+      .text-section {
+        background: var(--bg-card);
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        padding: 32px;
+        margin-bottom: 40px;
+      }
+      .text-section h2 {
+        color: var(--text-white);
+        font-size: 1.5rem;
+        margin-bottom: 16px;
+      }
+      .text-section p {
+        margin-bottom: 16px;
+        color: var(--text-secondary);
+      }
+
+      .faq-item {
+        margin-bottom: 24px;
+        border-bottom: 1px solid var(--border-color);
+        padding-bottom: 20px;
+      }
+      .faq-item:last-child {
+        margin-bottom: 0;
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+      .faq-item h3 {
+        font-size: 1.1rem;
+        color: var(--text-white);
+        margin-bottom: 8px;
+      }
+      .faq-item p {
+        color: var(--text-secondary);
+        margin-bottom: 0;
+      }
+
+      /* Footer */
+      footer {
+        text-align: center;
+        padding: 40px 24px;
+        border-top: 1px solid var(--border-color);
+        margin-top: 40px;
+      }
+      footer p {
+        color: var(--text-secondary);
+        font-size: 0.85rem;
+        margin-bottom: 8px;
+      }
+
+      @media (max-width: 768px) {
+        h1 { font-size: 2rem; }
+        .table-controls { flex-direction: column; gap: 16px; align-items: stretch; }
+        .search-box { width: 100%; }
+        .data-table { display: block; overflow-x: auto; }
+        .stats-row { grid-template-columns: 1fr; }
+        .chart-container { height: 400px; }
+      }
+    </style>
+</head>
+<body>
+    <nav>
+      <div class="nav-container">
+        <a href="/" class="brand">Westmount Fundamentals</a>
+        <div class="nav-links">
+          <a href="/#studies">Studies</a>
+          <a href="/#tools">Tools</a>
+          <a href="/#guides">Guides</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="hero">
+        <h1>P/E Ratio by Sector: S&P 500 Valuations 2026</h1>
+        <p class="subtitle">Current and forward price-to-earnings multiples across all 11 GICS sectors. A data-driven snapshot of market expectations.</p>
+      </div>
+
+      <div class="stats-row">
+        <div class="stat-card">
+          <h3>S&P 500 Trailing P/E</h3>
+          <div class="value" id="sp500-pe">-</div>
+          <div class="desc">Broad market current multiple</div>
+        </div>
+        <div class="stat-card">
+          <h3>S&P 500 Forward P/E</h3>
+          <div class="value" id="sp500-fpe">-</div>
+          <div class="desc">Based on forward estimates</div>
+        </div>
+        <div class="stat-card">
+          <h3>Highest Valuation</h3>
+          <div class="value" style="font-size:1.8rem; margin-top:10px;" id="highest-pe-sector">-</div>
+          <div class="desc" id="highest-pe-val">Trading at premium</div>
+        </div>
+      </div>
+
+      <div class="chart-container">
+        <div class="chart-header">
+          <h2>Sector Valuations Comparison</h2>
+          <p>Trailing vs. Forward P/E Ratios across the S&P 500</p>
+        </div>
+        <canvas id="valuationChart"></canvas>
+      </div>
+
+      <div class="table-container">
+        <div class="table-controls">
+          <input type="text" id="searchInput" class="search-box" placeholder="Search sectors or tickers...">
+          <div style="color:var(--text-secondary); font-size:0.85rem;">Click headers to sort</div>
+        </div>
+        <table class="data-table" id="dataTable">
+          <thead>
+            <tr>
+              <th data-sort="name">Sector</th>
+              <th data-sort="trailingPE">Trailing P/E</th>
+              <th data-sort="forwardPE">Forward P/E</th>
+              <th data-sort="avg10Y">10Y Average P/E</th>
+              <th data-sort="premiumDiscount">Premium/Discount</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody">
+            <!-- Data injected via JS -->
+          </tbody>
+        </table>
+      </div>
+
+      <div class="text-section">
+        <h2>Methodology & Data Sources</h2>
+        <p>This page analyzes the price-to-earnings (P/E) ratios of the 11 Global Industry Classification Standard (GICS) sectors comprising the S&P 500. Data is extracted using the <code>yahoo-finance2</code> API for standard State Street SPDR Sector ETFs (XLK, XLV, XLF, etc.) and the SPDR S&P 500 ETF Trust (SPY) as the market baseline.</p>
+        <p><strong>Trailing P/E</strong> represents the current multiple based on the past 12 months of actual earnings. <strong>Forward P/E</strong> is calculated independently by aggregating the forward P/E estimates of the top 10 holdings within each respective sector ETF and computing a market-cap weighted average. This provides a clean proxy for expected forward valuation without relying on opaque index-level estimates.</p>
+        <p><em>Note on Missing Data (Null values):</em> In alignment with strict quantitative data standards, missing metrics such as definitive 10-year historical average P/E ratios and corresponding premiums/discounts are marked as "null" (N/A). We prioritize null over fake data; we never fabricate or interpolate historical valuations when precise programmatic extraction is unavailable.</p>
+      </div>
+
+      <div class="text-section">
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+          <h3>What is the P/E ratio by sector for the S&P 500?</h3>
+          <p>The P/E ratio varies widely across the 11 GICS sectors. Technology and Consumer Discretionary typically trade at higher P/E multiples (often 25-35x), reflecting higher growth expectations. Conversely, Financials and Energy usually trade at lower multiples (often 10-15x).</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Which S&P 500 sector has the highest P/E ratio?</h3>
+          <p>Historically, the Information Technology, Real Estate, and Consumer Discretionary sectors trade at the highest P/E ratios due to high growth expectations or specific accounting practices (like depreciation in Real Estate that lowers standard earnings metrics).</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>What is a good P/E ratio for a sector?</h3>
+          <p>A "good" P/E ratio is relative to the sector's historical average and its growth rate. For example, a 15x P/E might be expensive for a bank but very cheap for a software company. Investors often use the PEG ratio (Price/Earnings-to-Growth) to normalize valuations across differently priced sectors.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Why do Energy and Financials have low P/E ratios?</h3>
+          <p>Energy and Financials typically have low P/E ratios because they are cyclical businesses with lower long-term secular growth rates compared to tech. Their earnings can fluctuate wildly with commodity prices or interest rates, so investors refuse to pay a high multiple for those unpredictable earnings.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>What is the difference between trailing P/E and forward P/E?</h3>
+          <p>Trailing P/E uses actual earnings from the past 12 months. Forward P/E uses estimated earnings for the next 12 months. Forward P/E is more relevant for valuing a stock's future, but it relies on analyst estimates which can be inaccurate during economic turning points.</p>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>© 2026 Westmount Research · A GAB Ventures property. Not investment advice. All information for educational purposes only.</p>
+    </footer>
+
+    <!-- Chart.js from CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+    <script>
+      // Inject real data
+      window.__INITIAL_DATA__ = {"sp500":{"name":"S&P 500","ticker":"SPY","trailingPE":26.42,"forwardPE":27.85},"sectors":[{"name":"Information Technology","ticker":"XLK","trailingPE":33.96,"forwardPE":23.58,"avg10Y":null,"premiumDiscount":null},{"name":"Health Care","ticker":"XLV","trailingPE":26.25,"forwardPE":19.07,"avg10Y":null,"premiumDiscount":null},{"name":"Financials","ticker":"XLF","trailingPE":16.33,"forwardPE":16.27,"avg10Y":null,"premiumDiscount":null},{"name":"Consumer Discretionary","ticker":"XLY","trailingPE":29.72,"forwardPE":54.72,"avg10Y":null,"premiumDiscount":null},{"name":"Industrials","ticker":"XLI","trailingPE":29.2,"forwardPE":28.36,"avg10Y":null,"premiumDiscount":null},{"name":"Communication Services","ticker":"XLC","trailingPE":17.9,"forwardPE":17.56,"avg10Y":null,"premiumDiscount":null},{"name":"Consumer Staples","ticker":"XLP","trailingPE":26.78,"forwardPE":26.64,"avg10Y":null,"premiumDiscount":null},{"name":"Energy","ticker":"XLE","trailingPE":22.1,"forwardPE":18.71,"avg10Y":null,"premiumDiscount":null},{"name":"Utilities","ticker":"XLU","trailingPE":23.02,"forwardPE":19.03,"avg10Y":null,"premiumDiscount":null},{"name":"Real Estate","ticker":"XLRE","trailingPE":32.42,"forwardPE":45.56,"avg10Y":null,"premiumDiscount":null},{"name":"Materials","ticker":"XLB","trailingPE":26.52,"forwardPE":19.94,"avg10Y":null,"premiumDiscount":null}]};
+
+      const state = {
+        data: window.__INITIAL_DATA__.sectors,
+        sp500: window.__INITIAL_DATA__.sp500,
+        sortCol: 'trailingPE',
+        sortAsc: false,
+        searchQuery: ''
+      };
+
+      // Initialize UI
+      document.addEventListener('DOMContentLoaded', () => {
+        // Set stats
+        document.getElementById('sp500-pe').textContent = state.sp500.trailingPE ? state.sp500.trailingPE.toFixed(2) + 'x' : 'N/A';
+        document.getElementById('sp500-fpe').textContent = state.sp500.forwardPE ? state.sp500.forwardPE.toFixed(2) + 'x' : 'N/A';
+
+        const validSectors = state.data.filter(s => s.trailingPE !== null);
+        if(validSectors.length > 0) {
+            const highest = validSectors.reduce((max, obj) => obj.trailingPE > max.trailingPE ? obj : max, validSectors[0]);
+            document.getElementById('highest-pe-sector').textContent = highest.name;
+            document.getElementById('highest-pe-val').textContent = highest.trailingPE.toFixed(2) + 'x Trailing P/E';
+        }
+
+        initTable();
+        initChart();
+
+        // Search listener
+        document.getElementById('searchInput').addEventListener('input', (e) => {
+          state.searchQuery = e.target.value.toLowerCase();
+          renderTable();
+        });
+
+        // Sort listeners
+        document.querySelectorAll('th[data-sort]').forEach(th => {
+          th.addEventListener('click', () => {
+            const col = th.dataset.sort;
+            if (state.sortCol === col) {
+              state.sortAsc = !state.sortAsc;
+            } else {
+              state.sortCol = col;
+              state.sortAsc = col === 'name' ? true : false; // Default numeric to descending, alpha to ascending
+            }
+            renderTable();
+          });
+        });
+      });
+
+      function initTable() {
+        renderTable();
+      }
+
+      function renderTable() {
+        let filtered = state.data.filter(row => {
+          return row.name.toLowerCase().includes(state.searchQuery) || row.ticker.toLowerCase().includes(state.searchQuery);
+        });
+
+        filtered.sort((a, b) => {
+          let valA = a[state.sortCol];
+          let valB = b[state.sortCol];
+
+          if (valA === null) valA = -999999;
+          if (valB === null) valB = -999999;
+
+          if (typeof valA === 'string') {
+            return state.sortAsc ? valA.localeCompare(valB) : valB.localeCompare(valA);
+          }
+          return state.sortAsc ? valA - valB : valB - valA;
+        });
+
+        const tbody = document.getElementById('tableBody');
+        tbody.innerHTML = '';
+
+        filtered.forEach(row => {
+          const tr = document.createElement('tr');
+
+          // Name cell
+          const tdName = document.createElement('td');
+          tdName.innerHTML = `${row.name} <span class="ticker-badge">${row.ticker}</span>`;
+          tr.appendChild(tdName);
+
+          // Helper to format numeric or null
+          const fmt = (val, suffix='') => {
+            if (val === null) return '<span class="null-val">N/A</span>';
+            return val.toFixed(2) + suffix;
+          };
+
+          tr.innerHTML += `
+            <td class="numeric">${fmt(row.trailingPE, 'x')}</td>
+            <td class="numeric">${fmt(row.forwardPE, 'x')}</td>
+            <td class="numeric">${fmt(row.avg10Y, 'x')}</td>
+            <td class="numeric">${fmt(row.premiumDiscount, '%')}</td>
+          `;
+
+          tbody.appendChild(tr);
+        });
+      }
+
+      function initChart() {
+        const ctx = document.getElementById('valuationChart').getContext('2d');
+
+        // Prepare data - sort by Trailing PE for nice chart
+        const sortedData = [...state.data].sort((a,b) => (b.trailingPE || 0) - (a.trailingPE || 0));
+
+        const labels = sortedData.map(d => d.name);
+        const trailingData = sortedData.map(d => d.trailingPE);
+        const forwardData = sortedData.map(d => d.forwardPE);
+
+        Chart.defaults.color = '#8a9bb3';
+        Chart.defaults.font.family = "'Inter', sans-serif";
+
+        new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: labels,
+            datasets: [
+              {
+                label: 'Trailing P/E',
+                data: trailingData,
+                backgroundColor: 'rgba(74, 143, 231, 0.8)',
+                borderColor: '#4a8fe7',
+                borderWidth: 1,
+                borderRadius: 4
+              },
+              {
+                label: 'Forward P/E',
+                data: forwardData,
+                backgroundColor: 'rgba(231, 143, 74, 0.8)',
+                borderColor: '#e78f4a',
+                borderWidth: 1,
+                borderRadius: 4
+              }
+            ]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: {
+                position: 'top',
+                labels: { color: '#c8d0de', usePointStyle: true, boxWidth: 8 }
+              },
+              tooltip: {
+                backgroundColor: 'rgba(10, 16, 32, 0.9)',
+                titleColor: '#fff',
+                bodyColor: '#c8d0de',
+                borderColor: '#152040',
+                borderWidth: 1,
+                padding: 12,
+                callbacks: {
+                  label: function(context) {
+                    let label = context.dataset.label || '';
+                    if (label) label += ': ';
+                    if (context.parsed.y !== null) {
+                      label += context.parsed.y.toFixed(2) + 'x';
+                    } else {
+                      label += 'N/A';
+                    }
+                    return label;
+                  }
+                }
+              }
+            },
+            scales: {
+              y: {
+                beginAtZero: true,
+                grid: { color: 'rgba(21, 32, 64, 0.5)' },
+                ticks: {
+                  callback: function(value) { return value + 'x'; }
+                }
+              },
+              x: {
+                grid: { display: false },
+                ticks: {
+                  maxRotation: 45,
+                  minRotation: 45
+                }
+              }
+            }
+          }
+        });
+      }
+    </script>
+</body>
+</html>

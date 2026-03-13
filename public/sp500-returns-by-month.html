@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>S&P 500 Returns by Month: Seasonal Market Patterns</title>
+  <meta name="description" content="Discover the best and worst months for stocks. Analyze historical S&P 500 returns, seasonal patterns, and market seasonality data from 1950 to today.">
+  <link rel="canonical" href="https://westmountfundamentals.com/sp500-returns-by-month">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="S&P 500 Returns by Month: Seasonal Market Patterns">
+  <meta property="og:description" content="Discover the best and worst months for stocks. Analyze historical S&P 500 returns, seasonal patterns, and market seasonality data from 1950 to today.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://westmountfundamentals.com/sp500-returns-by-month">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="S&P 500 Returns by Month: Seasonal Market Patterns">
+  <meta name="twitter:description" content="Discover the best and worst months for stocks. Analyze historical S&P 500 returns, seasonal patterns, and market seasonality data from 1950 to today.">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VYF72NSC1Q"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VYF72NSC1Q');
+  </script>
+
+  <!-- JSON-LD FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the best month for the stock market?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Historically, November and December are among the best months for the stock market, often driven by the 'Santa Claus Rally' and strong Q4 institutional buying. April also shows consistently strong average returns."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the worst month for the stock market?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "September is historically the worst month for the S&P 500. This phenomenon is known as the 'September Effect,' where average returns are often negative as institutional investors return from summer vacations and reposition portfolios."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What does 'Sell in May and go away' mean?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It is an investment adage suggesting that the stock market underperforms during the six-month period from May to October compared to the November to April period. Investors are historically advised to sell stocks in May and buy them back in November."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the January Effect in stocks?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The January Effect is a seasonal increase in stock prices during the month of January. It is often attributed to tax-loss harvesting in December followed by repurchasing in January, as well as the deployment of year-end bonuses."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How reliable are seasonal stock market patterns?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "While historical data shows clear seasonal trends (like the September Effect), these are averages over many decades. In any given year, macroeconomic factors, interest rates, and earnings heavily outweigh seasonal patterns, meaning seasonality should not be the sole basis for investing decisions."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD Article Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "S&P 500 Returns by Month: Seasonal Market Patterns",
+    "description": "Discover the best and worst months for stocks. Analyze historical S&P 500 returns, seasonal patterns, and market seasonality data from 1950 to today.",
+    "datePublished": "2026-03-13T03:55:56.958Z",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Westmount Research",
+      "url": "https://westmountfundamentals.com"
+    }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: #060a12;
+      color: #c8d0de;
+      line-height: 1.6;
+    }
+
+    /* Navigation */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(6, 10, 18, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid #152040;
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .nav-brand {
+      color: #fff;
+      font-weight: 800;
+      font-size: 1.2rem;
+      text-decoration: none;
+      letter-spacing: -0.5px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 24px;
+    }
+    .nav-links a {
+      color: #8a9ab0;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover {
+      color: #fff;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 24px;
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      margin-bottom: 60px;
+      padding: 40px 0;
+    }
+    h1 {
+      font-size: 3rem;
+      font-weight: 900;
+      letter-spacing: -1px;
+      margin-bottom: 20px;
+      background: linear-gradient(90deg, #fff, #8a9ab0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .subtitle {
+      font-size: 1.1rem;
+      color: #8a9ab0;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Stats Row */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+    .stat-card {
+      background: #0a1020;
+      border: 1px solid #152040;
+      border-radius: 12px;
+      padding: 24px;
+      text-align: center;
+    }
+    .stat-card h3 {
+      font-size: 0.85rem;
+      color: #8a9ab0;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+    }
+    .stat-value {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #4a8fe7;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .stat-desc {
+      font-size: 0.85rem;
+      color: #5a6a80;
+      margin-top: 8px;
+    }
+
+    /* Section Styles */
+    section {
+      margin-bottom: 60px;
+      background: #0a1020;
+      border: 1px solid #152040;
+      border-radius: 12px;
+      padding: 32px;
+    }
+    section h2 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 24px;
+      border-bottom: 1px solid #152040;
+      padding-bottom: 16px;
+    }
+
+    /* Chart Container */
+    .chart-container {
+      position: relative;
+      height: 400px;
+      width: 100%;
+      margin-bottom: 30px;
+    }
+
+    /* Table Styles */
+    .table-container {
+      overflow-x: auto;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.9rem;
+    }
+    th, td {
+      padding: 12px 16px;
+      text-align: right;
+      border-bottom: 1px solid #152040;
+    }
+    th:first-child, td:first-child {
+      text-align: left;
+    }
+    th {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #8a9ab0;
+      background: rgba(21, 32, 64, 0.4);
+      position: sticky;
+      top: 0;
+    }
+    tbody tr:hover {
+      background: rgba(74, 143, 231, 0.05);
+    }
+    .positive { color: #4ade80; }
+    .negative { color: #f87171; }
+
+    /* Heatmap grid specifically */
+    .heatmap-controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .heatmap-grid {
+      display: grid;
+      grid-template-columns: 60px repeat(12, 1fr);
+      gap: 2px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      overflow-x: auto;
+    }
+
+    .hm-cell {
+      padding: 8px 4px;
+      text-align: center;
+      border-radius: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hm-header {
+      background: #152040;
+      color: #8a9ab0;
+      font-weight: bold;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .hm-year {
+      background: #060a12;
+      color: #8a9ab0;
+      font-weight: bold;
+      border-right: 1px solid #152040;
+    }
+
+    /* FAQ & Methodology */
+    .faq-item {
+      margin-bottom: 24px;
+    }
+    .faq-item h3 {
+      font-size: 1.1rem;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    .faq-item p, .methodology-content p {
+      color: #8a9ab0;
+      font-size: 0.95rem;
+      margin-bottom: 16px;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 40px 24px;
+      border-top: 1px solid #152040;
+      color: #5a6a80;
+      font-size: 0.85rem;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 2.2rem; }
+      .nav-links { display: none; }
+      section { padding: 20px; }
+      .hm-cell { font-size: 0.6rem; padding: 4px 2px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="nav-brand">Westmount Fundamentals</a>
+    <div class="nav-links">
+      <a href="/#studies">Studies</a>
+      <a href="/#tools">Tools</a>
+      <a href="/#guides">Guides</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <header>
+      <h1>S&P 500 Returns by Month:<br>Seasonal Market Patterns</h1>
+      <p class="subtitle">Historical average returns, best and worst months, and seasonal market data from 1950-2026.</p>
+    </header>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <h3>Best Month Average</h3>
+        <div class="stat-value" id="val-best-month">1.91%</div>
+        <div class="stat-desc" id="desc-best-month">Nov historical avg</div>
+      </div>
+      <div class="stat-card">
+        <h3>Worst Month Average</h3>
+        <div class="stat-value" id="val-worst-month" style="color: #f87171;">-0.90%</div>
+        <div class="stat-desc" id="desc-worst-month">Sep historical avg</div>
+      </div>
+      <div class="stat-card">
+        <h3>Most Consistent</h3>
+        <div class="stat-value" id="val-consistent">78.0%</div>
+        <div class="stat-desc" id="desc-consistent">Mays are positive</div>
+      </div>
+      <div class="stat-card">
+        <h3>Average Month</h3>
+        <div class="stat-value" id="val-avg">0.83%</div>
+        <div class="stat-desc">Baseline monthly return</div>
+      </div>
+    </div>
+
+    <section>
+      <h2>Average Monthly Returns (1950-2026)</h2>
+      <div class="chart-container">
+        <canvas id="monthlyReturnsChart"></canvas>
+      </div>
+
+      <div class="table-container">
+        <table id="monthlyStatsTable">
+          <thead>
+            <tr>
+              <th>Month</th>
+              <th>Average Return</th>
+              <th>% Positive</th>
+              <th>Data Points</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Populated by JS -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2>Historical Returns Heatmap</h2>
+      <p style="color: #8a9ab0; margin-bottom: 20px; font-size: 0.95rem;">Annual month-by-month returns for the S&P 500.</p>
+      <div class="table-container">
+        <div id="heatmapContainer" class="heatmap-grid">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3>What is the best month for the stock market?</h3>
+          <p>Historically, November and December are among the best months for the stock market, often driven by the "Santa Claus Rally" and strong Q4 institutional buying. April also shows consistently strong average returns.</p>
+        </div>
+        <div class="faq-item">
+          <h3>What is the worst month for the stock market?</h3>
+          <p>September is historically the worst month for the S&P 500. This phenomenon is known as the "September Effect," where average returns are often negative as institutional investors return from summer vacations and reposition portfolios.</p>
+        </div>
+        <div class="faq-item">
+          <h3>What does 'Sell in May and go away' mean?</h3>
+          <p>It is an investment adage suggesting that the stock market underperforms during the six-month period from May to October compared to the November to April period. Investors are historically advised to sell stocks in May and buy them back in November.</p>
+        </div>
+        <div class="faq-item">
+          <h3>What is the January Effect in stocks?</h3>
+          <p>The January Effect is a seasonal increase in stock prices during the month of January. It is often attributed to tax-loss harvesting in December followed by repurchasing in January, as well as the deployment of year-end bonuses.</p>
+        </div>
+        <div class="faq-item">
+          <h3>How reliable are seasonal stock market patterns?</h3>
+          <p>While historical data shows clear seasonal trends (like the September Effect), these are averages over many decades. In any given year, macroeconomic factors, interest rates, and earnings heavily outweigh seasonal patterns, meaning seasonality should not be the sole basis for investing decisions.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Methodology & Data Sources</h2>
+      <div class="methodology-content">
+        <p>This study analyzes historical S&P 500 (Ticker: ^GSPC) adjusted closing price data from 1950-2026. Data is sourced directly via the Yahoo Finance API.</p>
+        <p>Monthly returns are calculated as the percentage change in the adjusted close price from the end of the previous month to the end of the current month. The adjusted close accounts for corporate actions like stock splits and dividends (total return).</p>
+        <p>Note: Past performance is not indicative of future results. Seasonal patterns represent statistical averages, and individual years may vary significantly from these historical norms.</p>
+      </div>
+    </section>
+
+  </div>
+
+  <footer>
+    <p>&copy; 2026 Westmount Research &middot; A GAB Ventures property. Not investment advice. All information for educational purposes only.</p>
+  </footer>
+
+  <script>
+    window.__INITIAL_DATA__ = {"monthStats":[{"month":0,"monthName":"Jan","totalReturn":40.08600343283806,"count":41,"positiveCount":26,"averageReturn":0.9777074008009283,"percentPositive":63.41463414634146},{"month":1,"monthName":"Feb","totalReturn":14.502307957155873,"count":42,"positiveCount":25,"averageReturn":0.3452930465989493,"percentPositive":59.523809523809526},{"month":2,"monthName":"Mar","totalReturn":38.8261249910263,"count":43,"positiveCount":26,"averageReturn":0.902933139326193,"percentPositive":60.46511627906976},{"month":3,"monthName":"Apr","totalReturn":56.83453820426854,"count":41,"positiveCount":28,"averageReturn":1.3862082488845986,"percentPositive":68.29268292682927},{"month":4,"monthName":"May","totalReturn":56.1399254564942,"count":41,"positiveCount":32,"averageReturn":1.369266474548639,"percentPositive":78.04878048780488},{"month":5,"monthName":"Jun","totalReturn":15.79417713941005,"count":41,"positiveCount":26,"averageReturn":0.38522383266853777,"percentPositive":63.41463414634146},{"month":6,"monthName":"Jul","totalReturn":59.37656318139473,"count":41,"positiveCount":25,"averageReturn":1.4482088580827983,"percentPositive":60.97560975609756},{"month":7,"monthName":"Aug","totalReturn":-10.468445332398801,"count":41,"positiveCount":23,"averageReturn":-0.25532793493655614,"percentPositive":56.09756097560976},{"month":8,"monthName":"Sep","totalReturn":-36.95331193969147,"count":41,"positiveCount":19,"averageReturn":-0.901300291211987,"percentPositive":46.34146341463415},{"month":9,"monthName":"Oct","totalReturn":40.683345113579556,"count":41,"positiveCount":26,"averageReturn":0.9922767100873062,"percentPositive":63.41463414634146},{"month":10,"monthName":"Nov","totalReturn":78.14362383261789,"count":41,"positiveCount":30,"averageReturn":1.9059420446979973,"percentPositive":73.17073170731707},{"month":11,"monthName":"Dec","totalReturn":57.175535950218254,"count":41,"positiveCount":30,"averageReturn":1.394525267078494,"percentPositive":73.17073170731707}],"heatmapData":[{"year":1985,"months":[null,0.8628779996860408,-0.28700134379759423,-0.45942755132843355,5.405105444993988,1.2134017487352835,-0.4847578342366653,-1.1994517641396556,-3.472407826012113,4.250881708769823,6.5061586598889845,4.506109063095852]},{"year":1986,"months":[0.23665278440402684,7.148927885973946,5.279391778691879,-1.4148136083619955,5.022928675463664,1.4109521521153487,-5.868283142882344,7.119260505765666,-8.543860347658846,5.472932734943258,2.147719315076863,-2.8288271475909763]},{"year":1987,"months":[13.176689368870093,3.6923621317010378,2.638986515783987,-1.1450211572491118,0.603419628362003,4.791449018971918,4.822369625693873,3.495884015199987,-2.416616590570124,-21.763041421998015,-8.534886535365164,7.2861478753544455]},{"year":1988,"months":[4.043227059709553,4.181740262854552,-3.3343262010185595,0.9424743272317827,0.31761264779854315,4.3256012280601075,-0.541137472149223,-3.8600104492586627,3.9729332689343013,2.596446421061764,-1.8890880706211126,1.4687573381001855]},{"year":1989,"months":[7.111479156412917,-2.8944148431130574,2.080596160908339,5.008993717851857,3.513749467292656,-0.7924554206930933,8.837025792525584,1.551671822445676,-0.654436827616892,-2.5175450948247553,1.6541324259951389,2.14168151428017]},{"year":1990,"months":[-6.8817226214617335,0.8539042758088833,2.425498640414323,-2.68871406212716,9.19891907988945,-0.8886365681221716,-0.5223158411739098,-9.431418479162916,-5.118430645643194,-0.6698212301042433,5.99342145417866,2.482775733875203]},{"year":1991,"months":[4.151774999817478,6.7281176812780386,2.2202832522042044,0.031979936249965334,3.860497249360748,-4.789262897479863,4.485934295776635,1.9648784624321614,-1.914373584308641,1.1834236654519223,-4.3903708626307,11.158785507428137]},{"year":1992,"months":[-1.9923751783923633,0.9589543126964041,-2.183186212532778,2.7892713957560393,0.09639568254424001,-1.7358833150663815,3.9373686063305837,-2.399753160189124,0.9105593857418791,0.21062826915365213,3.0261807703684136,1.010776698706291]},{"year":1993,"months":[0.7045987892006532,1.0483627595407772,1.8697299051888832,-2.541681016015664,2.271746278774494,0.07552285391652531,-0.5327045708359301,3.4431956145887272,-0.9987930164805193,1.9392922751884565,-1.2910626083629113,1.0091174724184315]},{"year":1994,"months":[3.2500745519977774,-3.0044997286678568,-4.574651060635082,1.1530643100964462,1.2397144202814145,-2.67908236283201,3.148990725890017,3.7598699649926237,-2.687753484147469,2.0833815622011254,-3.950461187888718,1.2299117331743004]},{"year":1995,"months":[2.4277711761677025,3.6074148072592673,2.73291951133807,2.796035780491142,3.6311712699464684,2.1278543431649437,3.177603957520651,-0.03202374774278187,4.009747288732524,-0.49793351897702476,4.104900278106191,1.7443873405964803]},{"year":1996,"months":[3.261738686923129,0.693370178470392,0.7916567590839628,1.343142201418474,2.2853405991703055,0.22567099722681905,-4.5748016719207705,1.8813935147560679,5.420332732833037,2.610100242291795,7.337615178140575,-2.1505414489508037]},{"year":1997,"months":[6.131703905412893,0.592759023465416,-4.261401064074874,5.840557906734037,5.857688480332512,4.345261479527594,7.814580943742487,-5.746563170852836,5.3153590615567055,-3.447769737522033,4.4586855212639405,1.5731597108694322]},{"year":1998,"months":[1.015017744240787,7.044919253631239,4.994571434122058,0.9076469253460404,-1.8826223261468407,3.94382406350405,-1.1615326917385385,-14.579671825011392,6.239551504341091,8.029422856762881,5.912599628568143,5.6375287084956165]},{"year":1999,"months":[4.10094408537484,-3.228256237759128,3.8794215408916783,3.7944027596277565,-2.49704807961751,5.443833111432483,-3.20460923910917,-0.6254091687234965,-2.8551792448024598,6.253954145238466,1.9061858969220493,5.784389473992286]},{"year":2000,"months":[-5.090354879190063,-2.0108083256356943,9.671982835364815,-3.0795755780191323,-2.191505060341778,2.393354961587722,-1.6341275904170858,6.069910494167101,-5.348297471976424,-0.49494854217705975,-8.006861010730898,0.4053445623728773]},{"year":2001,"months":[3.463657667616456,-9.229073539585968,-6.420471080339151,7.681436165439455,0.5090187401275708,-2.5035389427564647,-1.0740149595403683,-6.410840688075743,-8.172340570563886,1.8099111333141011,7.51759041240455,0.7573834088927656]},{"year":2002,"months":[-1.5573832456979857,-2.0766211039727613,3.673889286207476,-6.141762591921905,-0.9081481352177009,-7.245535380817983,-7.900427514940763,0.4881433306494344,-11.002431825242784,8.644880033371393,5.706962070498581,-6.03325718850288]},{"year":2003,"months":[-2.7414692683044595,-1.700360825687177,0.8357567684332842,8.104410718003226,5.089870960952263,1.1322214676852052,1.6223701958536427,1.7873203593487899,-1.1944364585525753,5.496148663571674,0.7128504071372872,5.076554077889215]},{"year":2004,"months":[1.727638695075525,1.2208973737610505,-1.6358919617866827,-1.6790751960348202,1.2083450097354185,1.7988998771432532,-3.429051952002624,0.22873503233691106,0.9363875526838908,1.4014243690939923,3.8594936295970514,3.2458212843205123]},{"year":2005,"months":[-2.529046744229405,1.8903346132113334,-1.9117655560289664,-2.0108582083263498,2.9952046631208575,-0.014271417986781368,3.5968286903618316,-1.1222104598600076,0.6949024316733625,-1.774077993231352,3.5186096519093275,-0.09523493171964119]},{"year":2006,"months":[2.546677134110803,0.045315772835616365,1.1095810408889688,1.2155652917844089,-3.091691653820322,0.008659650459600616,0.5085878803453334,2.1274193115026496,2.4566297967782282,3.1508003585395716,1.6466656343095958,1.261578281467054]},{"year":2007,"months":[1.4059043023177953,-2.1846175991944365,0.9979982939206324,4.329069042675983,3.254922870736171,-1.7816322547885015,-3.198187836198828,1.2863572018857916,3.5794008178600842,1.4822338223554938,-4.4043417379415795,-0.8628508561297941]},{"year":2008,"months":[-6.11634322777699,-3.4761192737288193,-0.5959623397817407,4.7546697641229,1.0674181704068444,-8.596238482631449,-0.9859371185302733,1.2190464669121532,-9.079143354379218,-16.94245240177707,-7.484904233870967,0.7821576633499491]},{"year":2009,"months":[-8.565734305805424,-10.993119762019946,8.540446199532287,9.392507914826325,5.308144638516644,0.019582726560990332,7.414172714778426,3.356018886854411,3.5723345723119673,-1.9762000526814232,5.736406145372758,1.7770570919338309]},{"year":2010,"months":[-3.6974245692262167,2.8513689046546133,5.879642554549733,1.4759230482012942,-8.197584207319055,-5.3882442239838495,6.87778495746352,-4.74491836326047,8.755110305113556,3.685599403554073,-0.22902497465766442,6.530004034715511]},{"year":2011,"months":[2.2645574359139116,3.195656372809334,-0.10473129391664504,2.8495380666535985,-1.3500952895223242,-1.8257461652479274,-2.1474425306666256,-5.679110795232884,-7.176198808089655,10.772303843744137,-0.5058715107011431,0.8532763666636124]},{"year":2012,"months":[4.358306270498538,4.058946376811729,3.1332314531441856,-0.7497452372495989,-6.265072571454369,3.9554982228336413,1.2597574204787874,1.9763369506085684,2.4236153617775273,-1.9789409716293953,0.28467166850428516,0.7068230956284646]},{"year":2013,"months":[5.042809646686892,1.1060648765041434,3.5987723982873017,1.8085767779889916,2.0762811683057754,-1.4999301595580874,4.946207991308528,-3.129801947934393,2.9749523259195247,4.459575276194464,2.8049471367328684,2.356279197544601]},{"year":2014,"months":[-3.558290595581162,4.3117030178161615,0.693216541822697,0.6200789153414197,2.103028007328042,1.9058331749470185,-1.5079830845342357,3.7655295579825276,-1.5513837249454,2.320146066720307,2.453358864631494,-0.41885875159970937]},{"year":2015,"months":[-3.1040805838410654,5.489251089062335,-1.739610711421953,0.8520819822535262,1.0491382304589811,-2.1011671979729996,1.9742029435184834,-6.258081825586559,-2.6442831280001444,8.298311781266646,0.05048691103349172,-1.7530185032692553]},{"year":2016,"months":[-5.073532204695234,-0.4128360309003535,6.599111444005835,0.26993982833325136,1.5324602525288527,0.09109212401242645,3.5609800753315337,-0.12192428990192818,-0.12344511393173194,-1.9425678909034487,3.4174521829295044,1.8200762441865863]},{"year":2017,"months":[1.7884358198382422,3.7198160066816284,-0.038919713526945135,0.9091208748854712,1.1576251246328597,0.48137752078125806,1.9348826001101924,0.05464330198533378,1.930297856216758,2.2188135066151298,2.808262780656345,0.9831630594270564]},{"year":2018,"months":[5.617870412552813,-3.8947371879367747,-2.6884498600556612,0.2718774995368403,2.160834185458363,0.48424362676077315,3.602155617289916,3.0263211276748243,0.42942874264617165,-6.940335609369636,1.7859356654779877,-9.177689467997258]},{"year":2019,"months":[7.86844016658262,2.9728889343927056,1.7924256249588457,3.9313498313737942,-6.57777313668354,6.893016399824066,1.3128152166958007,-1.8091627240523882,1.7181177931020677,2.04317705136841,3.404703771449992,2.858981890573003]},{"year":2020,"months":[-0.16280928190489505,-8.411048363840315,-12.511928240892825,12.68440381652789,4.528181966555827,1.83883965139243,5.510132148044365,7.006466690171771,-3.922797017842309,-2.7665786221379722,10.754563544385906,3.712145909357002]},{"year":2021,"months":[-1.1136660755445142,2.6091451377448505,4.2438632533165235,5.242532134755841,0.5486488670607014,2.221400956583477,2.2748054828388597,2.8990416255438545,-4.75691688019011,6.914383640060659,-0.8333706184746144,4.361291346206482]},{"year":2022,"months":[-5.258516502739384,-3.1360491945908264,3.5773288371546275,-8.795671180434304,0.0053177704644647075,-8.391999993382681,9.111639173020995,-4.244012827299838,-9.339567201327434,7.9863413837009,5.37528933524931,-5.89714740747305]},{"year":2023,"months":[6.175285783467899,-2.6112493931818617,3.5051612577108933,1.464234166248112,0.24823473681929992,6.472746490423457,3.113893235501095,-1.7716390070854067,-4.871936746562492,-2.197968873798299,8.917926878197004,4.422923115636011]},{"year":2024,"months":[1.5895707598991546,5.172064062372309,3.1018779915342876,-4.161507173789873,4.8021190151199065,3.4669801283083252,1.1321316887868735,2.2834706936630336,2.0196884090601226,-0.9896743303151727,5.730129548209882,-2.499013704848363]},{"year":2025,"months":[2.7016304240444087,-1.4242092699825115,-5.754469768137542,-0.7624943346289837,6.152382614078288,4.960683946771579,2.166656253064078,1.9066444295036207,3.5323687218701596,2.2686871904923698,0.12996181666717824,-0.05241344225139403]},{"year":2026,"months":[1.3662958900920312,-0.8668344740704348,0,null,null,null,null,null,null,null,null,null]}],"summary":{"bestMonth":"Nov","bestMonthReturn":"1.91","worstMonth":"Sep","worstMonthReturn":"-0.90","mostPositiveMonth":"May","mostPositivePct":"78.0","avgMonthlyReturn":"0.83","dateRange":"1950-2026"}};
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const data = window.__INITIAL_DATA__;
+
+      // 1. Render Table
+      const tbody = document.querySelector('#monthlyStatsTable tbody');
+      data.monthStats.forEach(stat => {
+        const tr = document.createElement('tr');
+        const retClass = stat.averageReturn >= 0 ? 'positive' : 'negative';
+
+        tr.innerHTML = `
+          <td style="font-family: 'Inter', sans-serif; font-weight: 600; color: #fff;">${stat.monthName}</td>
+          <td class="${retClass}">${stat.averageReturn > 0 ? '+' : ''}${stat.averageReturn.toFixed(2)}%</td>
+          <td style="color: #fff;">${stat.percentPositive.toFixed(1)}%</td>
+          <td style="color: #8a9ab0;">${stat.count} yrs</td>
+        `;
+        tbody.appendChild(tr);
+      });
+
+      // 2. Render Chart
+      const ctx = document.getElementById('monthlyReturnsChart').getContext('2d');
+      const labels = data.monthStats.map(s => s.monthName);
+      const returns = data.monthStats.map(s => s.averageReturn);
+      const bgColors = returns.map(val => val >= 0 ? 'rgba(74, 222, 128, 0.7)' : 'rgba(248, 113, 113, 0.7)');
+      const borderColors = returns.map(val => val >= 0 ? 'rgba(74, 222, 128, 1)' : 'rgba(248, 113, 113, 1)');
+
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: labels,
+          datasets: [{
+            label: 'Average Return (%)',
+            data: returns,
+            backgroundColor: bgColors,
+            borderColor: borderColors,
+            borderWidth: 1,
+            borderRadius: 4
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              callbacks: {
+                label: function(context) {
+                  return context.parsed.y > 0 ? '+' + context.parsed.y.toFixed(2) + '%' : context.parsed.y.toFixed(2) + '%';
+                }
+              }
+            }
+          },
+          scales: {
+            y: {
+              grid: { color: 'rgba(21, 32, 64, 0.5)' },
+              ticks: {
+                color: '#8a9ab0',
+                callback: function(value) { return value + '%'; }
+              }
+            },
+            x: {
+              grid: { display: false },
+              ticks: { color: '#8a9ab0', font: { family: 'Inter' } }
+            }
+          }
+        }
+      });
+
+      // 3. Render Heatmap
+      const hmContainer = document.getElementById('heatmapContainer');
+
+      // Headers
+      const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+      hmContainer.innerHTML += `<div class="hm-cell hm-header">Year</div>`;
+      months.forEach(m => {
+        hmContainer.innerHTML += `<div class="hm-cell hm-header">${m}</div>`;
+      });
+
+      // Colors for heatmap
+      function getHeatmapColor(val) {
+        if (val === null) return '#0a1020'; // no data
+        if (val > 0) {
+          // Green gradient based on intensity (max ~ 10%)
+          const intensity = Math.min(val / 10, 1);
+          return `rgba(74, 222, 128, ${0.1 + (intensity * 0.9)})`;
+        } else {
+          // Red gradient based on intensity (min ~ -10%)
+          const intensity = Math.min(Math.abs(val) / 10, 1);
+          return `rgba(248, 113, 113, ${0.1 + (intensity * 0.9)})`;
+        }
+      }
+
+      function getTextColor(val) {
+        if (val === null) return 'transparent';
+        const intensity = Math.min(Math.abs(val) / 10, 1);
+        if (intensity > 0.5) return '#000'; // dark text for bright backgrounds
+        return '#fff'; // light text for dark backgrounds
+      }
+
+      // Reverse order to show newest first
+      const reversedHeatmap = [...data.heatmapData].reverse();
+
+      reversedHeatmap.forEach(row => {
+        hmContainer.innerHTML += `<div class="hm-cell hm-year">${row.year}</div>`;
+
+        row.months.forEach(val => {
+          if (val === null) {
+            hmContainer.innerHTML += `<div class="hm-cell" style="background: #0a1020;">-</div>`;
+          } else {
+            const bg = getHeatmapColor(val);
+            const color = getTextColor(val);
+            hmContainer.innerHTML += `<div class="hm-cell" style="background: ${bg}; color: ${color};" title="${val > 0 ? '+' : ''}${val.toFixed(2)}%">${val.toFixed(1)}</div>`;
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

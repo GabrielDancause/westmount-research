@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operating Margin by Industry: Profitability Rankings (2026)</title>
+    <meta name="description" content="Operating and net profit margins across 30+ industries. Rank by profitability, identify the most and least profitable industries, and view 5-year trends.">
+    <link rel="canonical" href="https://westmountfundamentals.com/operating-margin-by-industry-2026">
+
+    <meta property="og:title" content="Operating Margin by Industry: Profitability Rankings (2026)">
+    <meta property="og:description" content="Operating and net profit margins across 30+ industries. Rank by profitability, identify the most and least profitable industries, and view 5-year trends.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://westmountfundamentals.com/operating-margin-by-industry-2026">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Operating Margin by Industry: Profitability Rankings (2026)">
+    <meta name="twitter:description" content="Operating and net profit margins across 30+ industries. Rank by profitability, identify the most and least profitable industries, and view 5-year trends.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+    <script type="application/ld+json">
+      {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a good operating margin by industry?","acceptedAnswer":{"@type":"Answer","text":"A 'good' operating margin varies drastically by industry. High-margin industries like Software or Pharmaceuticals often see operating margins above 20-30%, while volume-driven industries like Retail or Grocery typically operate on single-digit margins (3-8%)."}},{"@type":"Question","name":"Which industry has the highest profit margins?","acceptedAnswer":{"@type":"Answer","text":"Historically, industries with high intellectual property and low marginal costs of reproduction—such as Software, Biotechnology, and Capital Markets—tend to have the highest profit margins."}},{"@type":"Question","name":"What is the average profit margin for a business?","acceptedAnswer":{"@type":"Answer","text":"Across the broader S&P 500, the average net profit margin typically hovers around 10-12%, though this fluctuates with macroeconomic conditions and inflation."}},{"@type":"Question","name":"How do you calculate operating margin?","acceptedAnswer":{"@type":"Answer","text":"Operating margin is calculated by dividing a company's operating income (profit after deducting operating expenses like wages and depreciation, but before interest and taxes) by its total revenue, then multiplying by 100 to get a percentage."}},{"@type":"Question","name":"Why are gross margins higher than net margins?","acceptedAnswer":{"@type":"Answer","text":"Gross margin only deducts the direct costs of making a product (COGS). Net margin is lower because it deducts all other expenses, including operating costs, interest, and taxes."}}]}
+    </script>
+    <script type="application/ld+json">
+      {"@context":"https://schema.org","@type":"Article","headline":"Operating Margin by Industry: Profitability Rankings (2026)","description":"Operating and net profit margins across 30+ industries. Rank by profitability, identify the most and least profitable industries, and view 5-year trends.","datePublished":"2026-03-13T00:00:00.000Z","author":{"@type":"Organization","name":"Westmount Research"},"publisher":{"@type":"Organization","name":"Westmount Research","logo":{"@type":"ImageObject","url":"https://westmountfundamentals.com/logo.png"}}}
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VYF72NSC1Q"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-VYF72NSC1Q');
+    </script>
+
+    <style>
+        :root {
+            --bg: #060a12;
+            --card: #0a1020;
+            --border: #152040;
+            --accent: #4a8fe7;
+            --text-main: #c8d0de;
+            --text-muted: #6a7a90;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(6, 10, 18, 0.85);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav .brand {
+            font-weight: 900;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+        nav .links a {
+            color: var(--text-main);
+            text-decoration: none;
+            margin-left: 1.5rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        nav .links a:hover { color: var(--accent); }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            background: linear-gradient(90deg, #fff, var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 3rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .stat-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+        }
+        .stat-card .value {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .stat-card .label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        .controls {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        input[type="text"], select {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            color: var(--text-main);
+            padding: 0.8rem 1rem;
+            border-radius: 8px;
+            font-family: inherit;
+            flex: 1;
+            min-width: 200px;
+        }
+        input[type="text"]:focus, select:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        .table-container {
+            overflow-x: auto;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            margin-bottom: 4rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-variant-numeric: tabular-nums;
+        }
+
+        th, td {
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        th {
+            font-weight: 800;
+            color: #fff;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+        th:hover { color: var(--accent); }
+
+        td { font-family: 'JetBrains Mono', monospace; font-size: 0.95rem; }
+        td.industry-col { font-family: 'Inter', sans-serif; font-weight: 600; color: #fff; }
+        td.sector-col { font-family: 'Inter', sans-serif; color: var(--text-muted); font-size: 0.85rem; }
+
+        .positive { color: #4ade80; }
+        .negative { color: #f87171; }
+        .null-val { color: var(--text-muted); font-style: italic; }
+
+        .chart-container {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 4rem;
+            height: 500px;
+            position: relative;
+        }
+
+        .content-section {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 3rem;
+            margin-bottom: 4rem;
+        }
+        .content-section h2 {
+            font-size: 2rem;
+            color: #fff;
+            margin-bottom: 1.5rem;
+        }
+        .content-section p { margin-bottom: 1.5rem; }
+        .content-section ul { margin-left: 1.5rem; margin-bottom: 1.5rem; }
+        .content-section li { margin-bottom: 0.5rem; }
+
+        .faq-item {
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 1.5rem;
+        }
+        .faq-item h3 {
+            font-size: 1.2rem;
+            color: #fff;
+            margin-bottom: 0.8rem;
+        }
+        .faq-item p { margin-bottom: 0; color: var(--text-muted); }
+
+        footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            .container { padding: 2rem 1rem; }
+            .content-section { padding: 1.5rem; }
+            nav { flex-direction: column; gap: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/" class="brand">Westmount Fundamentals</a>
+        <div class="links">
+            <a href="/#studies">Studies</a>
+            <a href="/#tools">Tools</a>
+            <a href="/#guides">Guides</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Operating Margin by Industry: Profitability Rankings (2026)</h1>
+        <p class="subtitle">An analysis of profit margins across S&P 500 industries.</p>
+
+        <div class="stats-grid" id="stats-grid">
+            <!-- Stats populated by JS -->
+        </div>
+
+        <div class="chart-container">
+            <canvas id="marginChart"></canvas>
+        </div>
+
+        <div class="controls">
+            <input type="text" id="searchInput" placeholder="Search industries...">
+            <select id="sectorFilter">
+                <option value="all">All Sectors</option>
+            </select>
+        </div>
+
+        <div class="table-container">
+            <table id="dataTable">
+                <thead>
+                    <tr>
+                        <th data-sort="industry">Industry ↕</th>
+                        <th data-sort="sector">Sector ↕</th>
+                        <th data-sort="companiesCount">S&P 500 Cos ↕</th>
+                        <th data-sort="avgOperatingMargin">Operating Margin ↕</th>
+                        <th data-sort="avgNetMargin">Net Margin ↕</th>
+                        <th data-sort="avgGrossMargin">Gross Margin ↕</th>
+                        <th data-sort="avgFiveYearGrowth">5Y EPS Growth ↕</th>
+                        <th>Top Companies</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    <!-- Populated by JS -->
+                </tbody>
+            </table>
+        </div>
+
+        <div class="content-section">
+
+  <h2>Methodology & Data Sources</h2>
+  <p>This study analyzes the profit margins of S&P 500 companies, grouped by their respective GICS industries, to determine the most and least profitable sectors of the economy in 2026.</p>
+  <ul>
+    <li><strong>Data Source:</strong> Financial data is aggregated from standard SEC filings (10-K, 10-Q) using the Yahoo Finance API.</li>
+    <li><strong>Margin Definitions:</strong>
+      <ul>
+        <li><em>Operating Margin:</em> Operating Income divided by Total Revenue. Represents profit from core business operations before interest and taxes.</li>
+        <li><em>Net Margin:</em> Net Income divided by Total Revenue. The final "bottom line" profit percentage.</li>
+        <li><em>Gross Margin:</em> Gross Profit divided by Total Revenue. Revenue remaining after deducting the direct costs of goods sold (COGS).</li>
+      </ul>
+    </li>
+    <li><strong>Averages:</strong> Industry averages are calculated as an equally-weighted average of the constituent S&P 500 companies within that industry.</li>
+    <li><strong>Null Over Fake Data:</strong> Where financial models (e.g., banks, REITs) do not utilize standard gross margins, or where 5-year growth data is unavailable, values are explicitly reported as "N/A" rather than using placeholder values.</li>
+  </ul>
+
+        </div>
+
+        <div class="content-section">
+            <h2>Frequently Asked Questions</h2>
+            <div id="faq-container">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 Westmount Research · A GAB Ventures property. Not investment advice. All information for educational purposes only.</p>
+    </footer>
+
+    <script>
+        const INITIAL_DATA = [{"industry":"REIT - Diversified","sector":"Real Estate","companiesCount":1,"avgOperatingMargin":0.8031,"avgNetMargin":0.69281,"avgGrossMargin":0.9914,"avgFiveYearGrowth":null,"topCompaniesStr":"VICI"},{"industry":"Gold","sector":"Basic Materials","companiesCount":1,"avgOperatingMargin":0.58111,"avgNetMargin":0.31254,"avgGrossMargin":0.63236,"avgFiveYearGrowth":null,"topCompaniesStr":"NEM"},{"industry":"Capital Markets","sector":"Financial Services","companiesCount":5,"avgOperatingMargin":0.503921998,"avgNetMargin":0.29570799400000003,"avgGrossMargin":0.904537994,"avgFiveYearGrowth":null,"topCompaniesStr":"IBKR, SCHW, HOOD"},{"industry":"Lodging","sector":"Consumer Cyclical","companiesCount":2,"avgOperatingMargin":0.4515,"avgNetMargin":0.33331999,"avgGrossMargin":0.784959985,"avgFiveYearGrowth":null,"topCompaniesStr":"HLT, MAR"},{"industry":"Tobacco","sector":"Consumer Defensive","companiesCount":2,"avgOperatingMargin":0.45008,"avgNetMargin":0.312065,"avgGrossMargin":0.69712496,"avgFiveYearGrowth":null,"topCompaniesStr":"MO, PM"},{"industry":"REIT - Industrial","sector":"Real Estate","companiesCount":3,"avgOperatingMargin":0.43995999999999996,"avgNetMargin":0.3379400033333333,"avgGrossMargin":0.7514733333333333,"avgFiveYearGrowth":null,"topCompaniesStr":"PSA, EXR, PLD"},{"industry":"Financial Data & Stock Exchanges","sector":"Financial Services","companiesCount":9,"avgOperatingMargin":0.4193155522222222,"avgNetMargin":0.3293822255555556,"avgGrossMargin":0.7956566688888889,"avgFiveYearGrowth":null,"topCompaniesStr":"CME, MSCI, ICE"},{"industry":"Advertising Agencies","sector":"Communication Services","companiesCount":3,"avgOperatingMargin":0.40709666666666666,"avgNetMargin":0.2527233333333333,"avgGrossMargin":0.6168666666666667,"avgFiveYearGrowth":null,"topCompaniesStr":"APP, TTD, OMC"},{"industry":"REIT - Retail","sector":"Real Estate","companiesCount":5,"avgOperatingMargin":0.40583800000000003,"avgNetMargin":0.36647200199999996,"avgGrossMargin":0.766098012,"avgFiveYearGrowth":null,"topCompaniesStr":"SPG, O, REG"},{"industry":"Credit Services","sector":"Financial Services","companiesCount":6,"avgOperatingMargin":0.38740333499999996,"avgNetMargin":0.286201661,"avgGrossMargin":0.5045500133333333,"avgFiveYearGrowth":null,"topCompaniesStr":"V, MA, SYF"},{"industry":"Banks - Regional","sector":"Financial Services","companiesCount":9,"avgOperatingMargin":0.3848811188888889,"avgNetMargin":0.2879988888888889,"avgGrossMargin":0,"avgFiveYearGrowth":null,"topCompaniesStr":"RF, MTB, FITB"},{"industry":"Consumer Electronics","sector":"Technology","companiesCount":1,"avgOperatingMargin":0.35374,"avgNetMargin":0.27037,"avgGrossMargin":0.47325,"avgFiveYearGrowth":null,"topCompaniesStr":"AAPL"},{"industry":"Banks - Diversified","sector":"Financial Services","companiesCount":5,"avgOperatingMargin":0.35120198999999996,"avgNetMargin":0.271205998,"avgGrossMargin":0,"avgFiveYearGrowth":null,"topCompaniesStr":"BAC, JPM, BK"},{"industry":"Internet Content & Information","sector":"Communication Services","companiesCount":4,"avgOperatingMargin":0.33618249,"avgNetMargin":0.283237515,"avgGrossMargin":0.6854575,"avgFiveYearGrowth":null,"topCompaniesStr":"META, GOOGL, GOOG"},{"industry":"Utilities - Regulated Gas","sector":"Utilities","companiesCount":2,"avgOperatingMargin":0.329115,"avgNetMargin":0.198309995,"avgGrossMargin":0.54219002,"avgFiveYearGrowth":null,"topCompaniesStr":"ATO, NI"},{"industry":"Solar","sector":"Technology","companiesCount":1,"avgOperatingMargin":0.32560003,"avgNetMargin":0.2928,"avgGrossMargin":0.40624002,"avgFiveYearGrowth":null,"topCompaniesStr":"FSLR"},{"industry":"Utilities - Regulated Water","sector":"Utilities","companiesCount":1,"avgOperatingMargin":0.32179,"avgNetMargin":0.21615,"avgGrossMargin":0.6072,"avgFiveYearGrowth":null,"topCompaniesStr":"AWK"},{"industry":"Beverages - Wineries & Distilleries","sector":"Consumer Defensive","companiesCount":1,"avgOperatingMargin":0.31913,"avgNetMargin":0.20639,"avgGrossMargin":0.59335,"avgFiveYearGrowth":null,"topCompaniesStr":"BF-B"},{"industry":"Semiconductor Equipment & Materials","sector":"Technology","companiesCount":5,"avgOperatingMargin":0.311687996,"avgNetMargin":0.251384006,"avgGrossMargin":0.5289900000000001,"avgFiveYearGrowth":null,"topCompaniesStr":"KLAC, LRCX, TER"},{"industry":"Consulting Services","sector":"Industrials","companiesCount":2,"avgOperatingMargin":0.310435,"avgNetMargin":0.20215,"avgGrossMargin":0.631634985,"avgFiveYearGrowth":null,"topCompaniesStr":"VRSK, EFX"},{"industry":"Drug Manufacturers - General","sector":"Healthcare","companiesCount":9,"avgOperatingMargin":0.3060188866666667,"avgNetMargin":0.20569222155555555,"avgGrossMargin":0.7521744422222223,"avgFiveYearGrowth":null,"topCompaniesStr":"LLY, GILD, ABBV"},{"industry":"Railroads","sector":"Industrials","companiesCount":4,"avgOperatingMargin":0.29947499499999997,"avgNetMargin":0.20922249874999999,"avgGrossMargin":0.456389995,"avgFiveYearGrowth":null,"topCompaniesStr":"UNP, CSX, NSC"},{"industry":"Software - Infrastructure","sector":"Technology","companiesCount":15,"avgOperatingMargin":0.29415466803333334,"avgNetMargin":0.2078679997333333,"avgGrossMargin":0.7286433326666668,"avgFiveYearGrowth":null,"topCompaniesStr":"VRSN, CPAY, MSFT"},{"industry":"Luxury Goods","sector":"Consumer Cyclical","companiesCount":1,"avgOperatingMargin":0.28764,"avgNetMargin":0.0695,"avgGrossMargin":0.75981003,"avgFiveYearGrowth":null,"topCompaniesStr":"TPR"},{"industry":"Specialty Business Services","sector":"Industrials","companiesCount":3,"avgOperatingMargin":0.2864966633333333,"avgNetMargin":0.23170666333333334,"avgGrossMargin":0.56745334,"avgFiveYearGrowth":null,"topCompaniesStr":"CPRT, GPN, CTAS"},{"industry":"Oil & Gas Midstream","sector":"Energy","companiesCount":4,"avgOperatingMargin":0.2777574975,"avgNetMargin":0.15388999750000001,"avgGrossMargin":0.45054249999999996,"avgFiveYearGrowth":null,"topCompaniesStr":"WMB, KMI, TRGP"},{"industry":"Semiconductors","sector":"Technology","companiesCount":13,"avgOperatingMargin":0.27575845976923075,"avgNetMargin":0.18808538630769228,"avgGrossMargin":0.5404222961538462,"avgFiveYearGrowth":null,"topCompaniesStr":"NVDA, MU, TXN"},{"industry":"REIT - Specialty","sector":"Real Estate","companiesCount":7,"avgOperatingMargin":0.27544143071428573,"avgNetMargin":0.16355571685714285,"avgGrossMargin":0.5706471428571428,"avgFiveYearGrowth":null,"topCompaniesStr":"SBAC, CCI, AMT"},{"industry":"Asset Management","sector":"Financial Services","companiesCount":13,"avgOperatingMargin":0.27345691846153847,"avgNetMargin":0.1451953830769231,"avgGrossMargin":0.45217538999999995,"avgFiveYearGrowth":null,"topCompaniesStr":"BX, BLK, AMP"},{"industry":"REIT - Residential","sector":"Real Estate","companiesCount":7,"avgOperatingMargin":0.2705514285714286,"avgNetMargin":0.2757999985714285,"avgGrossMargin":0.6284171371428572,"avgFiveYearGrowth":null,"topCompaniesStr":"ESS, AVB, EQR"},{"industry":"Rental & Leasing Services","sector":"Industrials","companiesCount":1,"avgOperatingMargin":0.25166,"avgNetMargin":0.15492,"avgGrossMargin":0.38356,"avgFiveYearGrowth":null,"topCompaniesStr":"URI"},{"industry":"Software - Application","sector":"Technology","companiesCount":16,"avgOperatingMargin":0.24467125103125,"avgNetMargin":0.19433062250000002,"avgGrossMargin":0.7437062568749998,"avgFiveYearGrowth":null,"topCompaniesStr":"FICO, PAYX, ADBE"},{"industry":"Insurance - Diversified","sector":"Financial Services","companiesCount":4,"avgOperatingMargin":0.2406825,"avgNetMargin":0.163135,"avgGrossMargin":0.3371374875,"avgFiveYearGrowth":null,"topCompaniesStr":"BRK-B, ACGL, HIG"},{"industry":"Insurance Brokers","sector":"Financial Services","companiesCount":6,"avgOperatingMargin":0.23824500583333333,"avgNetMargin":0.16163667,"avgGrossMargin":0.4021333283333333,"avgFiveYearGrowth":null,"topCompaniesStr":"WTW, AON, MRSH"},{"industry":"Beverages - Brewers","sector":"Consumer Defensive","companiesCount":2,"avgOperatingMargin":0.23738,"avgNetMargin":-0.036895,"avgGrossMargin":0.45255,"avgFiveYearGrowth":null,"topCompaniesStr":"STZ, TAP"},{"industry":"Trucking","sector":"Industrials","companiesCount":1,"avgOperatingMargin":0.23273,"avgNetMargin":0.18625,"avgGrossMargin":0.38955003,"avgFiveYearGrowth":null,"topCompaniesStr":"ODFL"},{"industry":"Beverages - Non-Alcoholic","sector":"Consumer Defensive","companiesCount":4,"avgOperatingMargin":0.2271624975,"avgNetMargin":0.17901999999999998,"avgGrossMargin":0.5653374999999999,"avgFiveYearGrowth":null,"topCompaniesStr":"MNST, KO, KDP"},{"industry":"Pollution & Treatment Controls","sector":"Industrials","companiesCount":1,"avgOperatingMargin":0.22708,"avgNetMargin":0.17082001,"avgGrossMargin":0.59949,"avgFiveYearGrowth":null,"topCompaniesStr":"VLTO"},{"industry":"Utilities - Diversified","sector":"Utilities","companiesCount":2,"avgOperatingMargin":0.221580005,"avgNetMargin":0.10419500000000001,"avgGrossMargin":0.29792499,"avgFiveYearGrowth":null,"topCompaniesStr":"SRE, AES"},{"industry":"Scientific & Technical Instruments","sector":"Technology","companiesCount":5,"avgOperatingMargin":0.216886002,"avgNetMargin":0.160574001,"avgGrossMargin":0.5958979999999999,"avgFiveYearGrowth":null,"topCompaniesStr":"GRMN, TRMB, TDY"},{"industry":"Restaurants","sector":"Consumer Cyclical","companiesCount":6,"avgOperatingMargin":0.21655166833333336,"avgNetMargin":0.14740500116666666,"avgGrossMargin":0.3600266683333333,"avgFiveYearGrowth":null,"topCompaniesStr":"MCD, YUM, DPZ"},{"industry":"Security & Protection Services","sector":"Industrials","companiesCount":1,"avgOperatingMargin":0.21409,"avgNetMargin":0.15829,"avgGrossMargin":0.45196998,"avgFiveYearGrowth":null,"topCompaniesStr":"ALLE"},{"industry":"Drug Manufacturers - Specialty & Generic","sector":"Healthcare","companiesCount":2,"avgOperatingMargin":0.21235,"avgNetMargin":0.018275,"avgGrossMargin":0.55719501,"avgFiveYearGrowth":null,"topCompaniesStr":"ZTS, VTRS"},{"industry":"Utilities - Regulated Electric","sector":"Utilities","companiesCount":23,"avgOperatingMargin":0.20810478108695651,"avgNetMargin":0.1453456511304348,"avgGrossMargin":0.47540347608695654,"avgFiveYearGrowth":null,"topCompaniesStr":"EIX, DUK, FE"},{"industry":"Leisure","sector":"Consumer Cyclical","companiesCount":1,"avgOperatingMargin":0.20672001,"avgNetMargin":-0.06858,"avgGrossMargin":0.63821,"avgFiveYearGrowth":null,"topCompaniesStr":"HAS"},{"industry":"Medical Devices","sector":"Healthcare","companiesCount":10,"avgOperatingMargin":0.204746001,"avgNetMargin":0.13064799860000004,"avgGrossMargin":0.6194060049999999,"avgFiveYearGrowth":null,"topCompaniesStr":"SYK, DXCM, EW"},{"industry":"Diagnostics & Research","sector":"Healthcare","companiesCount":11,"avgOperatingMargin":0.20426636199999998,"avgNetMargin":0.12998363636363636,"avgGrossMargin":0.47109,"avgFiveYearGrowth":null,"topCompaniesStr":"WAT, MTD, IDXX"},{"industry":"Insurance - Property & Casualty","sector":"Financial Services","companiesCount":8,"avgOperatingMargin":0.203503752,"avgNetMargin":0.131436249375,"avgGrossMargin":0.28198,"avgFiveYearGrowth":null,"topCompaniesStr":"ALL, CINF, TRV"},{"industry":"Computer Hardware","sector":"Technology","companiesCount":7,"avgOperatingMargin":0.20223,"avgNetMargin":0.13623285714285713,"avgGrossMargin":0.32661857000000005,"avgFiveYearGrowth":null,"topCompaniesStr":"ANET, SNDK, STX"},{"industry":"Oil & Gas E&P","sector":"Energy","companiesCount":10,"avgOperatingMargin":0.202030999,"avgNetMargin":0.21605399800000002,"avgGrossMargin":0.6581409980000001,"avgFiveYearGrowth":null,"topCompaniesStr":"TPL, EQT, CTRA"},{"industry":"Medical Instruments & Supplies","sector":"Healthcare","companiesCount":9,"avgOperatingMargin":0.20092221777777777,"avgNetMargin":0.1368577751111111,"avgGrossMargin":0.55011445,"avgFiveYearGrowth":null,"topCompaniesStr":"RMD, ISRG, HOLX"},{"industry":"Apparel Manufacturing","sector":"Consumer Cyclical","companiesCount":1,"avgOperatingMargin":0.20091,"avgNetMargin":0.11726,"avgGrossMargin":0.69649005,"avgFiveYearGrowth":null,"topCompaniesStr":"RL"},{"industry":"Waste Management","sector":"Industrials","companiesCount":2,"avgOperatingMargin":0.19765,"avgNetMargin":0.11818499999999998,"avgGrossMargin":0.41721501,"avgFiveYearGrowth":null,"topCompaniesStr":"WM, RSG"},{"industry":"Footwear & Accessories","sector":"Consumer Cyclical","companiesCount":2,"avgOperatingMargin":0.197395,"avgNetMargin":0.12387000000000001,"avgGrossMargin":0.49338999,"avgFiveYearGrowth":null,"topCompaniesStr":"DECK, NKE"},{"industry":"Electrical Equipment & Parts","sector":"Industrials","companiesCount":1,"avgOperatingMargin":0.19126,"avgNetMargin":0.15178001,"avgGrossMargin":0.35486,"avgFiveYearGrowth":null,"topCompaniesStr":"HUBB"},{"industry":"Telecom Services","sector":"Communication Services","companiesCount":5,"avgOperatingMargin":0.186600003,"avgNetMargin":0.13523600019999998,"avgGrossMargin":0.617692006,"avgFiveYearGrowth":null,"topCompaniesStr":"CHTR, VZ, T"},{"industry":"Building Materials","sector":"Basic Materials","companiesCount":3,"avgOperatingMargin":0.18562332999999998,"avgNetMargin":0.14023,"avgGrossMargin":0.31435667333333334,"avgFiveYearGrowth":null,"topCompaniesStr":"MLM, VMC, CRH"},{"industry":"Insurance - Life","sector":"Financial Services","companiesCount":4,"avgOperatingMargin":0.182202495,"avgNetMargin":0.12709499999999999,"avgGrossMargin":0.33355001,"avgFiveYearGrowth":null,"topCompaniesStr":"AFL, GL, PRU"},{"industry":"Specialty Industrial Machinery","sector":"Industrials","companiesCount":17,"avgOperatingMargin":0.18184999941176475,"avgNetMargin":0.1318835305882353,"avgGrossMargin":0.3961211752941176,"avgFiveYearGrowth":null,"topCompaniesStr":"AME, ITW, NDSN"},{"industry":"Tools & Accessories","sector":"Industrials","companiesCount":2,"avgOperatingMargin":0.17873999999999998,"avgNetMargin":0.11189,"avgGrossMargin":0.41181501,"avgFiveYearGrowth":null,"topCompaniesStr":"SNA, SWK"},{"industry":"Household & Personal Products","sector":"Consumer Defensive","companiesCount":7,"avgOperatingMargin":0.17790571142857142,"avgNetMargin":0.1051499992857143,"avgGrossMargin":0.5294028471428571,"avgFiveYearGrowth":null,"topCompaniesStr":"PG, CL, CHD"},{"industry":"Communication Equipment","sector":"Technology","companiesCount":5,"avgOperatingMargin":0.177546,"avgNetMargin":0.09819999856,"avgGrossMargin":0.477724,"avgFiveYearGrowth":null,"topCompaniesStr":"MSI, CSCO, ZBRA"},{"industry":"Personal Services","sector":"Consumer Cyclical","companiesCount":1,"avgOperatingMargin":0.17643,"avgNetMargin":0.14004,"avgGrossMargin":0.52752,"avgFiveYearGrowth":null,"topCompaniesStr":"ROL"},{"industry":"Electronic Components","sector":"Technology","companiesCount":4,"avgOperatingMargin":0.172657498,"avgNetMargin":0.10592,"avgGrossMargin":0.294582499,"avgFiveYearGrowth":null,"topCompaniesStr":"APH, TEL, GLW"},{"industry":"Information Technology Services","sector":"Technology","companiesCount":10,"avgOperatingMargin":0.16949400100000003,"avgNetMargin":0.10737199900000001,"avgGrossMargin":0.37284499800000004,"avgFiveYearGrowth":null,"topCompaniesStr":"JKHY, IBM, FIS"},{"industry":"Travel Services","sector":"Consumer Cyclical","companiesCount":6,"avgOperatingMargin":0.16253833433333334,"avgNetMargin":0.14640666716666664,"avgGrossMargin":0.68202666,"avgFiveYearGrowth":null,"topCompaniesStr":"BKNG, RCL, EXPE"},{"industry":"Resorts & Casinos","sector":"Consumer Cyclical","companiesCount":3,"avgOperatingMargin":0.15533,"avgNetMargin":0.060863331333333326,"avgGrossMargin":0.6419466666666667,"avgFiveYearGrowth":null,"topCompaniesStr":"LVS, WYNN, MGM"},{"industry":"Specialty Chemicals","sector":"Basic Materials","companiesCount":9,"avgOperatingMargin":0.14789000172222222,"avgNetMargin":0.026894446888888885,"avgGrossMargin":0.34241332888888887,"avgFiveYearGrowth":null,"topCompaniesStr":"DD, LIN, APD"},{"industry":"Agricultural Inputs","sector":"Basic Materials","companiesCount":3,"avgOperatingMargin":0.14567333233333332,"avgNetMargin":0.10437333,"avgGrossMargin":0.3384099933333333,"avgFiveYearGrowth":null,"topCompaniesStr":"CF, CTVA, MOS"},{"industry":"Oil & Gas Equipment & Services","sector":"Energy","companiesCount":3,"avgOperatingMargin":0.1446666666666667,"avgNetMargin":0.08188000333333334,"avgGrossMargin":0.19356333,"avgFiveYearGrowth":null,"topCompaniesStr":"SLB, HAL, BKR"},{"industry":"Copper","sector":"Basic Materials","companiesCount":1,"avgOperatingMargin":0.14397,"avgNetMargin":0.08505,"avgGrossMargin":0.37063,"avgFiveYearGrowth":null,"topCompaniesStr":"FCX"},{"industry":"Medical Care Facilities","sector":"Healthcare","companiesCount":3,"avgOperatingMargin":0.14348333333333332,"avgNetMargin":0.07673999999999999,"avgGrossMargin":0.39214666666666664,"avgFiveYearGrowth":null,"topCompaniesStr":"HCA, DVA, UHS"},{"industry":"Apparel Retail","sector":"Consumer Cyclical","companiesCount":3,"avgOperatingMargin":0.14174666666666666,"avgNetMargin":0.11416333733333332,"avgGrossMargin":0.3902733333333333,"avgFiveYearGrowth":null,"topCompaniesStr":"LULU, TJX, ROST"},{"industry":"Conglomerates","sector":"Industrials","companiesCount":2,"avgOperatingMargin":0.13910499999999998,"avgNetMargin":0.12828499999999998,"avgGrossMargin":0.38424498500000004,"avgFiveYearGrowth":null,"topCompaniesStr":"HON, MMM"},{"industry":"Packaged Foods","sector":"Consumer Defensive","companiesCount":8,"avgOperatingMargin":0.13902250175,"avgNetMargin":0.002802501124999999,"avgGrossMargin":0.28903500875,"avgFiveYearGrowth":null,"topCompaniesStr":"SJM, GIS, KHC"},{"industry":"Aerospace & Defense","sector":"Industrials","companiesCount":12,"avgOperatingMargin":0.1318125020833333,"avgNetMargin":0.09762833483333333,"avgGrossMargin":0.25978,"avgFiveYearGrowth":null,"topCompaniesStr":"TDG, HWM, GE"},{"industry":"Residential Construction","sector":"Consumer Cyclical","companiesCount":4,"avgOperatingMargin":0.13094249875,"avgNetMargin":0.1041975,"avgGrossMargin":0.2227800025,"avgFiveYearGrowth":null,"topCompaniesStr":"NVR, PHM, DHI"},{"industry":"Industrial Distribution","sector":"Industrials","companiesCount":3,"avgOperatingMargin":0.13004333233333332,"avgNetMargin":0.10845333333333333,"avgGrossMargin":0.37934998999999997,"avgFiveYearGrowth":null,"topCompaniesStr":"FAST, GWW, POOL"},{"industry":"Auto Parts","sector":"Consumer Cyclical","companiesCount":4,"avgOperatingMargin":0.12567249749999998,"avgNetMargin":0.07032500024999999,"avgGrossMargin":0.4008599975,"avgFiveYearGrowth":null,"topCompaniesStr":"ORLY, AZO, APTV"},{"industry":"Insurance - Reinsurance","sector":"Financial Services","companiesCount":1,"avgOperatingMargin":0.1233,"avgNetMargin":0.0907,"avgGrossMargin":0.124960005,"avgFiveYearGrowth":null,"topCompaniesStr":"EG"},{"industry":"Confectioners","sector":"Consumer Defensive","companiesCount":2,"avgOperatingMargin":0.121150005,"avgNetMargin":0.06956999999999999,"avgGrossMargin":0.30962,"avgFiveYearGrowth":null,"topCompaniesStr":"HSY, MDLZ"},{"industry":"REIT - Hotel & Motel","sector":"Real Estate","companiesCount":1,"avgOperatingMargin":0.12087,"avgNetMargin":0.12476,"avgGrossMargin":0.28832,"avgFiveYearGrowth":null,"topCompaniesStr":"HST"},{"industry":"Farm & Heavy Construction Machinery","sector":"Industrials","companiesCount":3,"avgOperatingMargin":0.115016664,"avgNetMargin":0.10599333333333333,"avgGrossMargin":0.23016,"avgFiveYearGrowth":null,"topCompaniesStr":"CAT, DE, PCAR"},{"industry":"Building Products & Equipment","sector":"Industrials","companiesCount":6,"avgOperatingMargin":0.11418166666666667,"avgNetMargin":0.10627833333333335,"avgGrossMargin":0.330229995,"avgFiveYearGrowth":null,"topCompaniesStr":"LII, TT, MAS"},{"industry":"Entertainment","sector":"Communication Services","companiesCount":10,"avgOperatingMargin":0.11238800242999998,"avgNetMargin":0.092505001,"avgGrossMargin":0.431713004,"avgFiveYearGrowth":null,"topCompaniesStr":"NFLX, NWSA, NWS"},{"industry":"Internet Retail","sector":"Consumer Cyclical","companiesCount":3,"avgOperatingMargin":0.106716666,"avgNetMargin":0.11982333166666666,"avgGrossMargin":0.5785399833333333,"avgFiveYearGrowth":null,"topCompaniesStr":"EBAY, AMZN, DASH"},{"industry":"Specialty Retail","sector":"Consumer Cyclical","companiesCount":4,"avgOperatingMargin":0.10108000249999999,"avgNetMargin":0.08463500000000002,"avgGrossMargin":0.37028750499999996,"avgFiveYearGrowth":null,"topCompaniesStr":"WSM, ULTA, TSCO"},{"industry":"Engineering & Construction","sector":"Industrials","companiesCount":4,"avgOperatingMargin":0.0957350025,"avgNetMargin":0.0645849985,"avgGrossMargin":0.2072749925,"avgFiveYearGrowth":null,"topCompaniesStr":"FIX, EME, J"},{"industry":"Packaging & Containers","sector":"Consumer Cyclical","companiesCount":6,"avgOperatingMargin":0.095561666,"avgNetMargin":0.022856665999999998,"avgGrossMargin":0.23031666666666664,"avgFiveYearGrowth":null,"topCompaniesStr":"PKG, AVY, BALL"},{"industry":"Oil & Gas Integrated","sector":"Energy","companiesCount":2,"avgOperatingMargin":0.094945005,"avgNetMargin":0.0778299975,"avgGrossMargin":0.36472499999999997,"avgFiveYearGrowth":null,"topCompaniesStr":"XOM, CVX"},{"industry":"Home Improvement Retail","sector":"Consumer Cyclical","companiesCount":2,"avgOperatingMargin":0.0918700075,"avgNetMargin":0.08154,"avgGrossMargin":0.33396000000000003,"avgFiveYearGrowth":null,"topCompaniesStr":"HD, LOW"},{"industry":"Utilities - Independent Power Producers","sector":"Utilities","companiesCount":3,"avgOperatingMargin":0.09024666533333332,"avgNetMargin":0.05739,"avgGrossMargin":0.23665999333333332,"avgFiveYearGrowth":null,"topCompaniesStr":"VST, CEG, NRG"},{"industry":"REIT - Office","sector":"Real Estate","companiesCount":2,"avgOperatingMargin":0.080755,"avgNetMargin":-0.1930299875,"avgGrossMargin":0.629314985,"avgFiveYearGrowth":null,"topCompaniesStr":"ARE, BXP"},{"industry":"Integrated Freight & Logistics","sector":"Industrials","companiesCount":5,"avgOperatingMargin":0.0804080008,"avgNetMargin":0.0540460004,"avgGrossMargin":0.182206,"avgFiveYearGrowth":null,"topCompaniesStr":"UPS, EXPD, JBHT"},{"industry":"Airlines","sector":"Industrials","companiesCount":3,"avgOperatingMargin":0.07720667,"avgNetMargin":0.050486669000000005,"avgGrossMargin":0.25485,"avgFiveYearGrowth":null,"topCompaniesStr":"UAL, DAL, LUV"},{"industry":"Auto & Truck Dealerships","sector":"Consumer Cyclical","companiesCount":1,"avgOperatingMargin":0.07567,"avgNetMargin":0.06924,"avgGrossMargin":0.20628001,"avgFiveYearGrowth":null,"topCompaniesStr":"CVNA"},{"industry":"Steel","sector":"Basic Materials","companiesCount":2,"avgOperatingMargin":0.06948499999999999,"avgNetMargin":0.05945,"avgGrossMargin":0.125940005,"avgFiveYearGrowth":null,"topCompaniesStr":"STLD, NUE"},{"industry":"Oil & Gas Refining & Marketing","sector":"Energy","companiesCount":3,"avgOperatingMargin":0.052273332666666665,"avgNetMargin":0.027946666666666665,"avgGrossMargin":0.119909997,"avgFiveYearGrowth":null,"topCompaniesStr":"MPC, VLO, PSX"},{"industry":"Discount Stores","sector":"Consumer Defensive","companiesCount":5,"avgOperatingMargin":0.047718,"avgNetMargin":-0.005543999799999999,"avgGrossMargin":0.264267994,"avgFiveYearGrowth":null,"topCompaniesStr":"DLTR, TGT, WMT"},{"industry":"REIT - Healthcare Facilities","sector":"Real Estate","companiesCount":3,"avgOperatingMargin":0.04071666333333335,"avgNetMargin":0.05164333333333334,"avgGrossMargin":0.4713666566666667,"avgFiveYearGrowth":null,"topCompaniesStr":"VTR, DOC, WELL"},{"industry":"Food Distribution","sector":"Consumer Defensive","companiesCount":1,"avgOperatingMargin":0.03988,"avgNetMargin":0.021760002,"avgGrossMargin":0.18462999,"avgFiveYearGrowth":null,"topCompaniesStr":"SYY"},{"industry":"Grocery Stores","sector":"Consumer Defensive","companiesCount":1,"avgOperatingMargin":0.03516,"avgNetMargin":0.0068800002,"avgGrossMargin":0.23301001,"avgFiveYearGrowth":null,"topCompaniesStr":"KR"},{"industry":"Electronic Gaming & Multimedia","sector":"Communication Services","companiesCount":2,"avgOperatingMargin":0.0326299995,"avgNetMargin":-0.25571002,"avgGrossMargin":0.687765,"avgFiveYearGrowth":null,"topCompaniesStr":"EA, TTWO"},{"industry":"Real Estate Services","sector":"Real Estate","companiesCount":2,"avgOperatingMargin":0.02810499995,"avgNetMargin":0.01534500005,"avgGrossMargin":0.487655,"avgFiveYearGrowth":null,"topCompaniesStr":"CSGP, CBRE"},{"industry":"Medical Distribution","sector":"Healthcare","companiesCount":4,"avgOperatingMargin":0.023135000500000003,"avgNetMargin":0.013220000075000002,"avgGrossMargin":0.1047425,"avgFiveYearGrowth":null,"topCompaniesStr":"HSIC, MCK, CAH"},{"industry":"Farm Products","sector":"Consumer Defensive","companiesCount":3,"avgOperatingMargin":0.019976666666666667,"avgNetMargin":0.009553333399999999,"avgGrossMargin":0.05756,"avgFiveYearGrowth":null,"topCompaniesStr":"TSN, ADM, BG"},{"industry":"Auto Manufacturers","sector":"Consumer Cyclical","companiesCount":3,"avgOperatingMargin":0.015163332333333335,"avgNetMargin":0.0036333323333333327,"avgGrossMargin":0.11519333166666668,"avgFiveYearGrowth":null,"topCompaniesStr":"GM, TSLA, F"},{"industry":"Healthcare Plans","sector":"Healthcare","companiesCount":7,"avgOperatingMargin":0.002588571428571429,"avgNetMargin":0.009079999571428573,"avgGrossMargin":0.14434428428571427,"avgFiveYearGrowth":null,"topCompaniesStr":"CI, CVS, ELV"},{"industry":"Chemicals","sector":"Basic Materials","companiesCount":1,"avgOperatingMargin":-0.031400003,"avgNetMargin":-0.065630004,"avgGrossMargin":0.062319998,"avgFiveYearGrowth":null,"topCompaniesStr":"DOW"},{"industry":"Biotechnology","sector":"Healthcare","companiesCount":5,"avgOperatingMargin":-0.03684599000000001,"avgNetMargin":-0.09823598600000001,"avgGrossMargin":0.22391999599999995,"avgFiveYearGrowth":null,"topCompaniesStr":"VRTX, INCY, REGN"}];
+        const FAQ_DATA = [{"@type":"Question","name":"What is a good operating margin by industry?","acceptedAnswer":{"@type":"Answer","text":"A 'good' operating margin varies drastically by industry. High-margin industries like Software or Pharmaceuticals often see operating margins above 20-30%, while volume-driven industries like Retail or Grocery typically operate on single-digit margins (3-8%)."}},{"@type":"Question","name":"Which industry has the highest profit margins?","acceptedAnswer":{"@type":"Answer","text":"Historically, industries with high intellectual property and low marginal costs of reproduction—such as Software, Biotechnology, and Capital Markets—tend to have the highest profit margins."}},{"@type":"Question","name":"What is the average profit margin for a business?","acceptedAnswer":{"@type":"Answer","text":"Across the broader S&P 500, the average net profit margin typically hovers around 10-12%, though this fluctuates with macroeconomic conditions and inflation."}},{"@type":"Question","name":"How do you calculate operating margin?","acceptedAnswer":{"@type":"Answer","text":"Operating margin is calculated by dividing a company's operating income (profit after deducting operating expenses like wages and depreciation, but before interest and taxes) by its total revenue, then multiplying by 100 to get a percentage."}},{"@type":"Question","name":"Why are gross margins higher than net margins?","acceptedAnswer":{"@type":"Answer","text":"Gross margin only deducts the direct costs of making a product (COGS). Net margin is lower because it deducts all other expenses, including operating costs, interest, and taxes."}}];
+
+        let currentData = [...INITIAL_DATA];
+        let sortCol = 'avgOperatingMargin';
+        let sortAsc = false;
+
+        const formatPct = (val) => {
+            if (val === null || val === undefined) return '<span class="null-val">N/A</span>';
+            const num = val * 100;
+            const cls = num < 0 ? 'negative' : '';
+            return `<span class="${cls}">${num.toFixed(1)}%</span>`;
+        };
+
+        const renderStats = () => {
+            const validOp = INITIAL_DATA.filter(d => d.avgOperatingMargin !== null);
+            validOp.sort((a,b) => b.avgOperatingMargin - a.avgOperatingMargin);
+
+            const highestOp = validOp[0];
+            const lowestOp = validOp[validOp.length - 1];
+
+            let totalOp = 0;
+            validOp.forEach(d => totalOp += d.avgOperatingMargin);
+            const avgOp = totalOp / validOp.length;
+
+            const statsHtml = `
+                <div class="stat-card">
+                    <div class="value">${(highestOp.avgOperatingMargin * 100).toFixed(1)}%</div>
+                    <div class="label">Highest Op Margin (${highestOp.industry})</div>
+                </div>
+                <div class="stat-card">
+                    <div class="value">${(lowestOp.avgOperatingMargin * 100).toFixed(1)}%</div>
+                    <div class="label">Lowest Op Margin (${lowestOp.industry})</div>
+                </div>
+                <div class="stat-card">
+                    <div class="value">${(avgOp * 100).toFixed(1)}%</div>
+                    <div class="label">Avg Industry Op Margin</div>
+                </div>
+            `;
+            document.getElementById('stats-grid').innerHTML = statsHtml;
+        };
+
+        const populateSectors = () => {
+            const sectors = [...new Set(INITIAL_DATA.map(d => d.sector))].filter(Boolean).sort();
+            const select = document.getElementById('sectorFilter');
+            sectors.forEach(s => {
+                const opt = document.createElement('option');
+                opt.value = s;
+                opt.textContent = s;
+                select.appendChild(opt);
+            });
+        };
+
+        const renderTable = () => {
+            const tbody = document.getElementById('tableBody');
+            tbody.innerHTML = '';
+
+            currentData.forEach(row => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td class="industry-col">${row.industry}</td>
+                    <td class="sector-col">${row.sector || 'N/A'}</td>
+                    <td>${row.companiesCount}</td>
+                    <td>${formatPct(row.avgOperatingMargin)}</td>
+                    <td>${formatPct(row.avgNetMargin)}</td>
+                    <td>${formatPct(row.avgGrossMargin)}</td>
+                    <td>${formatPct(row.avgFiveYearGrowth)}</td>
+                    <td class="sector-col">${row.topCompaniesStr}</td>
+                `;
+                tbody.appendChild(tr);
+            });
+        };
+
+        const renderChart = () => {
+            // Take top 15 industries by operating margin for the chart
+            const chartData = [...INITIAL_DATA]
+                .filter(d => d.avgOperatingMargin !== null)
+                .sort((a, b) => b.avgOperatingMargin - a.avgOperatingMargin)
+                .slice(0, 15);
+
+            const ctx = document.getElementById('marginChart').getContext('2d');
+
+            // Destroy existing chart if it exists
+            if (window.myChart) {
+                window.myChart.destroy();
+            }
+
+            Chart.defaults.color = '#6a7a90';
+            Chart.defaults.font.family = 'Inter';
+
+            window.myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: chartData.map(d => d.industry.length > 20 ? d.industry.substring(0, 20) + '...' : d.industry),
+                    datasets: [
+                        {
+                            label: 'Operating Margin',
+                            data: chartData.map(d => (d.avgOperatingMargin * 100).toFixed(1)),
+                            backgroundColor: '#4a8fe7',
+                            borderRadius: 4
+                        },
+                        {
+                            label: 'Net Margin',
+                            data: chartData.map(d => d.avgNetMargin !== null ? (d.avgNetMargin * 100).toFixed(1) : 0),
+                            backgroundColor: '#152040',
+                            borderColor: '#4a8fe7',
+                            borderWidth: 1,
+                            borderRadius: 4
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { position: 'top', labels: { color: '#c8d0de' } },
+                        tooltip: {
+                            mode: 'index',
+                            intersect: false,
+                            callbacks: {
+                                label: function(context) {
+                                    return context.dataset.label + ': ' + context.parsed.y + '%';
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            grid: { color: '#152040' },
+                            ticks: { callback: function(value) { return value + '%'; } }
+                        },
+                        x: {
+                            grid: { display: false },
+                            ticks: { maxRotation: 45, minRotation: 45 }
+                        }
+                    }
+                }
+            });
+        };
+
+        const renderFAQ = () => {
+            const container = document.getElementById('faq-container');
+            let html = '';
+            FAQ_DATA.forEach(q => {
+                html += `
+                    <div class="faq-item">
+                        <h3>${q.name}</h3>
+                        <p>${q.acceptedAnswer.text}</p>
+                    </div>
+                `;
+            });
+            container.innerHTML = html;
+        };
+
+        const filterAndSort = () => {
+            const search = document.getElementById('searchInput').value.toLowerCase();
+            const sector = document.getElementById('sectorFilter').value;
+
+            currentData = INITIAL_DATA.filter(d => {
+                const matchSearch = d.industry.toLowerCase().includes(search);
+                const matchSector = sector === 'all' || d.sector === sector;
+                return matchSearch && matchSector;
+            });
+
+            currentData.sort((a, b) => {
+                let valA = a[sortCol];
+                let valB = b[sortCol];
+
+                if (valA === null) valA = sortAsc ? Infinity : -Infinity;
+                if (valB === null) valB = sortAsc ? Infinity : -Infinity;
+
+                if (typeof valA === 'string') {
+                    return sortAsc ? valA.localeCompare(valB) : valB.localeCompare(valA);
+                }
+
+                return sortAsc ? valA - valB : valB - valA;
+            });
+
+            renderTable();
+        };
+
+        // Event Listeners
+        document.getElementById('searchInput').addEventListener('input', filterAndSort);
+        document.getElementById('sectorFilter').addEventListener('change', filterAndSort);
+
+        document.querySelectorAll('th[data-sort]').forEach(th => {
+            th.addEventListener('click', () => {
+                const col = th.getAttribute('data-sort');
+                if (sortCol === col) {
+                    sortAsc = !sortAsc;
+                } else {
+                    sortCol = col;
+                    sortAsc = false;
+                }
+                filterAndSort();
+            });
+        });
+
+        // Init
+        renderStats();
+        populateSectors();
+        renderTable();
+        renderChart();
+        renderFAQ();
+    </script>
+</body>
+</html>

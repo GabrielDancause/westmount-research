@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canadian Dividend Aristocrats Complete List (2026)</title>
+    <meta name="description" content="Complete 2026 list of Canadian Dividend Aristocrats. See the TSX dividend stocks with 5+ years of consecutive dividend increases. Filter by yield.">
+    <link rel="canonical" href="https://westmountfundamentals.com/canadian-dividend-aristocrats-2026">
+
+    <meta property="og:title" content="Canadian Dividend Aristocrats Complete List (2026)">
+    <meta property="og:description" content="Complete 2026 list of Canadian Dividend Aristocrats. See the TSX dividend stocks with 5+ years of consecutive dividend increases. Filter by yield.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://westmountfundamentals.com/canadian-dividend-aristocrats-2026">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Canadian Dividend Aristocrats Complete List (2026)">
+    <meta name="twitter:description" content="Complete 2026 list of Canadian Dividend Aristocrats. See the TSX dividend stocks with 5+ years of consecutive dividend increases. Filter by yield.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VYF72NSC1Q"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-VYF72NSC1Q');
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        :root {
+            --bg-color: #060a12;
+            --card-bg: #0a1020;
+            --border-color: #152040;
+            --accent-color: #4a8fe7;
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --font-main: 'Inter', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Nav */
+        .sticky-nav {
+            position: sticky;
+            top: 0;
+            background-color: rgba(6, 10, 18, 0.9);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 0;
+            z-index: 1000;
+        }
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-brand {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.25rem;
+        }
+        .nav-links { display: flex; gap: 1.5rem; }
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--text-main); }
+        @media (max-width: 600px) { .nav-links { display: none; } }
+
+        main {
+            flex: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 20px;
+            width: 100%;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            letter-spacing: -1.5px;
+            margin-bottom: 1rem;
+            background: linear-gradient(90deg, #fff, #a0aec0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+        }
+
+        h2, h3 { color: var(--text-main); margin: 2.5rem 0 1rem; }
+        p { color: var(--text-muted); margin-bottom: 1.5rem; }
+        strong { color: var(--text-main); }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        .stat-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--accent-color);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+            font-family: var(--font-mono);
+        }
+        .stat-label {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Controls */
+        .controls {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .search-input, .filter-select {
+            background-color: var(--bg-color);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            font-family: var(--font-main);
+            font-size: 0.95rem;
+            outline: none;
+        }
+        .search-input { flex: 1; min-width: 200px; }
+        .search-input:focus, .filter-select:focus { border-color: var(--accent-color); }
+
+        /* Table */
+        .table-container {
+            overflow-x: auto;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            margin-bottom: 3rem;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+        th, td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border-color);
+            white-space: nowrap;
+        }
+        th {
+            font-weight: 600;
+            color: var(--text-main);
+            background-color: rgba(21, 32, 64, 0.4);
+            cursor: pointer;
+            user-select: none;
+        }
+        th:hover { background-color: rgba(21, 32, 64, 0.8); }
+        tr:last-child td { border-bottom: none; }
+        td { font-family: var(--font-mono); font-size: 0.95rem; }
+        td.col-name { font-family: var(--font-main); font-weight: 500; white-space: normal; min-width: 200px; }
+        .ticker-badge {
+            display: inline-block;
+            background-color: rgba(74, 143, 231, 0.1);
+            color: var(--accent-color);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+        .streak-badge {
+            display: inline-block;
+            background-color: rgba(16, 185, 129, 0.1);
+            color: #10b981;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-weight: 700;
+        }
+
+        /* Chart */
+        .chart-container {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* FAQ */
+        .faq-item {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .faq-q {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+        }
+        .faq-item p { margin-bottom: 0; }
+
+        footer {
+            background-color: var(--card-bg);
+            border-top: 1px solid var(--border-color);
+            padding: 2rem 20px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-top: auto;
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Canadian Dividend Aristocrats Complete List (2026)",
+      "description": "Complete 2026 list of Canadian Dividend Aristocrats. See the TSX dividend stocks with 5+ years of consecutive dividend increases.",
+      "author": {
+        "@type": "Organization",
+        "name": "Westmount Research"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Westmount Research",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://westmountfundamentals.com/favicon.ico"
+        }
+      },
+      "datePublished": "2026-03-13"
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "What are Canadian Dividend Aristocrats?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Unlike the US S&P 500 Dividend Aristocrats which require 25 years of consecutive dividend increases, the S&P/TSX Canadian Dividend Aristocrats Index only requires a stock to have increased its regular cash dividends for at least 5 consecutive years."
+        }
+      }, {
+        "@type": "Question",
+        "name": "How many Canadian Dividend Aristocrats are there?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "As of 2026, there are approximately 36 large-cap Canadian stocks that have maintained a streak of increasing dividends for 5 or more consecutive years, meeting the core requirement for the TSX Aristocrats index."
+        }
+      }, {
+        "@type": "Question",
+        "name": "What is the highest yielding Canadian dividend stock?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Among the Canadian Aristocrats, telecom and pipeline companies often have the highest yields. Yields fluctuate daily with stock prices, but historically companies like Enbridge (ENB.TO) and TELUS (T.TO) have offered yields well above 5%."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Are Canadian dividend stocks safe?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Canadian dividend stocks, particularly those in the Financials, Utilities, and Telecommunications sectors, are generally considered safer due to oligopolistic market structures in Canada. However, no stock is immune to market volatility or dividend cuts during severe economic stress."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Which Canadian stock has the longest dividend streak?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Fortis Inc. (FTS.TO) and Canadian Utilities (CU.TO) have some of the longest dividend growth streaks in Canada, both exceeding 50 consecutive years of dividend increases, making them true 'Dividend Kings' as well as Aristocrats."
+        }
+      }]
+    }
+    </script>
+</head>
+<body>
+
+    <nav class="sticky-nav">
+        <div class="nav-content">
+            <a href="/" class="nav-brand">Westmount Fundamentals</a>
+            <div class="nav-links">
+                <a href="/#studies">Studies</a>
+                <a href="/#tools">Tools</a>
+                <a href="/#guides">Guides</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <h1>Canadian Dividend Aristocrats (2026)</h1>
+        <p class="subtitle">The complete list of S&P/TSX constituents with 5+ consecutive years of dividend increases. Updated daily with real-time yields and 5-year growth rates.</p>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-value">36</div>
+                <div class="stat-label">Total Aristocrats</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">2.99%</div>
+                <div class="stat-label">Average Yield</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">21 yrs</div>
+                <div class="stat-label">Average Streak</div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <input type="text" id="searchInput" class="search-input" placeholder="Search by ticker or company name...">
+            <select id="sectorFilter" class="filter-select">
+                <option value="all">All Sectors</option>
+                <option value="Financial Services">Financial Services</option><option value="Energy">Energy</option><option value="Consumer Defensive">Consumer Defensive</option><option value="Consumer Cyclical">Consumer Cyclical</option><option value="Industrials">Industrials</option><option value="Communication Services">Communication Services</option><option value="Utilities">Utilities</option>
+            </select>
+        </div>
+
+        <div class="table-container">
+            <table id="dataTable">
+                <thead>
+                    <tr>
+                        <th data-sort="ticker">Ticker ↕</th>
+                        <th data-sort="name">Company Name ↕</th>
+                        <th data-sort="sector">Sector ↕</th>
+                        <th data-sort="streak">Streak (Yrs) ↕</th>
+                        <th data-sort="yield">Yield % ↕</th>
+                        <th data-sort="cagr5Y">5Y CAGR % ↕</th>
+                        <th data-sort="payoutRatio">Payout Ratio % ↕</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    <!-- Data injected via JS -->
+                </tbody>
+            </table>
+        </div>
+
+        <h2>Methodology & Data Sources</h2>
+        <div class="card" style="background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; padding: 1.5rem; margin-bottom: 3rem;">
+            <p><strong>The "5-Year" Rule:</strong> Unlike the United States where "Dividend Aristocrat" status requires 25 consecutive years of increases, the S&P/TSX Canadian Dividend Aristocrats index only requires 5 consecutive years. This list filters specifically for large-cap Canadian stocks meeting or exceeding this 5-year minimum streak.</p>
+            <p><strong>Data Sources:</strong> Financial metrics, yields, and historical dividend payout data are sourced dynamically via the Yahoo Finance API. Streaks are calculated by analyzing annual cash dividends paid over the trailing history.</p>
+            <p><strong>Null Values:</strong> If a 5-year CAGR or payout ratio cannot be reliably calculated due to missing historical data or negative earnings, it is displayed as "N/A" rather than fabricating a zero value.</p>
+        </div>
+
+        <h2>Sector Breakdown</h2>
+        <p>A visual representation of how the Canadian Dividend Aristocrats are distributed across different market sectors. Notice the heavy concentration in Financials.</p>
+        <div class="chart-container">
+            <canvas id="sectorChart"></canvas>
+        </div>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+            <div class="faq-q">What are Canadian Dividend Aristocrats?</div>
+            <p>Unlike the US S&P 500 Dividend Aristocrats which require 25 years of consecutive dividend increases, the S&P/TSX Canadian Dividend Aristocrats Index only requires a stock to have increased its regular cash dividends for at least 5 consecutive years.</p>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">How many Canadian Dividend Aristocrats are there?</div>
+            <p>As of 2026, there are approximately 36 large-cap Canadian stocks that have maintained a streak of increasing dividends for 5 or more consecutive years, meeting the core requirement for the TSX Aristocrats index.</p>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">What is the highest yielding Canadian dividend stock?</div>
+            <p>Among the Canadian Aristocrats, telecom and pipeline companies often have the highest yields. Yields fluctuate daily with stock prices, but historically companies like Enbridge (ENB.TO) and TELUS (T.TO) have offered yields well above 5%.</p>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">Are Canadian dividend stocks safe?</div>
+            <p>Canadian dividend stocks, particularly those in the Financials, Utilities, and Telecommunications sectors, are generally considered safer due to oligopolistic market structures in Canada. However, no stock is immune to market volatility or dividend cuts during severe economic stress.</p>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">Which Canadian stock has the longest dividend streak?</div>
+            <p>Fortis Inc. (FTS.TO) and Canadian Utilities (CU.TO) have some of the longest dividend growth streaks in Canada, both exceeding 50 consecutive years of dividend increases, making them true "Dividend Kings" as well as Aristocrats.</p>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>© 2026 Westmount Research · A GAB Ventures property. Not investment advice. All information for educational purposes only.</p>
+    </footer>
+
+    <script>
+        const INITIAL_DATA = [{"ticker":"BMO.TO","name":"Bank of Montreal","sector":"Financial Services","price":189.43,"yield":"3.53","streak":30,"cagr5Y":"8.72","payoutRatio":"54.3","marketCap":133774663680},{"ticker":"CM.TO","name":"Canadian Imperial Bank of Commerce","sector":"Financial Services","price":132.11,"yield":"3.24","streak":30,"cagr5Y":"6.39","payoutRatio":"41.5","marketCap":121587441664},{"ticker":"ENB.TO","name":"Enbridge Inc.","sector":"Energy","price":73.12,"yield":"5.31","streak":30,"cagr5Y":"3.09","payoutRatio":"117.1","marketCap":159620972544},{"ticker":"L.TO","name":"Loblaw Companies Limited","sector":"Consumer Defensive","price":62.08,"yield":"0.91","streak":30,"cagr5Y":"11.49","payoutRatio":"26.1","marketCap":72753709056},{"ticker":"CCL-B.TO","name":"CCL Industries Inc.","sector":"Consumer Cyclical","price":85.48,"yield":"1.68","streak":30,"cagr5Y":"12.20","payoutRatio":"28.0","marketCap":14812565504},{"ticker":"EMP-A.TO","name":"Empire Company Limited","sector":"Consumer Defensive","price":47.35,"yield":"1.76","streak":30,"cagr5Y":"10.93","payoutRatio":"28.5","marketCap":10896423936},{"ticker":"IGM.TO","name":"IGM Financial Inc.","sector":"Financial Services","price":63.94,"yield":"3.88","streak":30,"cagr5Y":"0.00","payoutRatio":"48.5","marketCap":14977647616},{"ticker":"CTC-A.TO","name":"Canadian Tire Corporation, Limited","sector":"Consumer Cyclical","price":186.39,"yield":"3.86","streak":30,"cagr5Y":"9.30","payoutRatio":"67.2","marketCap":9868958720},{"ticker":"CNR.TO","name":"Canadian National Railway Company","sector":"Industrials","price":141.5,"yield":"2.59","streak":29,"cagr5Y":"9.08","payoutRatio":"46.9","marketCap":86513098752},{"ticker":"RY.TO","name":"Royal Bank of Canada","sector":"Financial Services","price":222.11,"yield":"2.95","streak":29,"cagr5Y":"7.08","payoutRatio":"42.6","marketCap":311001088000},{"ticker":"SAP.TO","name":"Saputo Inc.","sector":"Consumer Defensive","price":41.9,"yield":"1.89","streak":27,"cagr5Y":"2.48","payoutRatio":"50.0","marketCap":16980153344},{"ticker":"IAG.TO","name":"iA Financial Corporation Inc.","sector":"Financial Services","price":149,"yield":"2.60","streak":25,"cagr5Y":"14.27","payoutRatio":"33.5","marketCap":13729390592},{"ticker":"CP.TO","name":"Canadian Pacific Kansas City Limited","sector":"Industrials","price":110.64,"yield":"0.82","streak":24,"cagr5Y":"4.19","payoutRatio":"19.4","marketCap":99350183936},{"ticker":"GWO.TO","name":"Great-West Lifeco Inc.","sector":"Financial Services","price":62.38,"yield":"4.01","streak":23,"cagr5Y":"6.85","payoutRatio":"57.3","marketCap":56588259328},{"ticker":"T.TO","name":"TELUS Corporation","sector":"Communication Services","price":18,"yield":"9.30","streak":23,"cagr5Y":"6.88","payoutRatio":"229.6","marketCap":28097998848},{"ticker":"IMO.TO","name":"Imperial Oil Limited","sector":"Energy","price":165.59,"yield":"2.10","streak":21,"cagr5Y":"26.76","payoutRatio":"44.4","marketCap":82275213312},{"ticker":"NA.TO","name":"National Bank of Canada","sector":"Financial Services","price":181.33,"yield":"2.74","streak":21,"cagr5Y":"10.79","payoutRatio":"45.7","marketCap":70773882880},{"ticker":"CCA.TO","name":"Cogeco Communications Inc.","sector":"Communication Services","price":70.95,"yield":"5.56","streak":21,"cagr5Y":"9.54","payoutRatio":"51.3","marketCap":2987691776},{"ticker":"EQB.TO","name":"EQB Inc.","sector":"Financial Services","price":109.01,"yield":"2.05","streak":21,"cagr5Y":"23.89","payoutRatio":"36.1","marketCap":3988979456},{"ticker":"ATD.TO","name":"Alimentation Couche-Tard Inc.","sector":"Consumer Cyclical","price":81.6,"yield":"1.05","streak":20,"cagr5Y":"21.84","payoutRatio":"20.3","marketCap":76754960384},{"ticker":"FTS.TO","name":"Fortis Inc.","sector":"Utilities","price":79.16,"yield":"3.20","streak":20,"cagr5Y":"5.09","payoutRatio":"73.1","marketCap":40165785600},{"ticker":"TD.TO","name":"The Toronto-Dominion Bank","sector":"Financial Services","price":128.24,"yield":"3.37","streak":19,"cagr5Y":"6.19","payoutRatio":"34.3","marketCap":214319448064},{"ticker":"PBH.TO","name":"Premium Brands Holdings Corporation","sector":"Consumer Defensive","price":92.63,"yield":"3.67","streak":17,"cagr5Y":"8.02","payoutRatio":"231.3","marketCap":4137730048},{"ticker":"PPL.TO","name":"Pembina Pipeline Corporation","sector":"Energy","price":60.7,"yield":"4.68","streak":16,"cagr5Y":"2.28","payoutRatio":"106.0","marketCap":35280719872},{"ticker":"RCI-B.TO","name":"Rogers Communications Inc.","sector":"Communication Services","price":52.77,"yield":"3.79","streak":16,"cagr5Y":"0.00","payoutRatio":"15.7","marketCap":28507688960},{"ticker":"TFII.TO","name":"TFI International Inc.","sector":"Industrials","price":140.34,"yield":"1.86","streak":16,"cagr5Y":"18.79","payoutRatio":"48.9","marketCap":11548270592},{"ticker":"MFC.TO","name":"Manulife Financial Corporation","sector":"Financial Services","price":45.69,"yield":"3.95","streak":15,"cagr5Y":"9.46","payoutRatio":"57.3","marketCap":76586967040},{"ticker":"CGY.TO","name":"Calian Group Ltd.","sector":"Industrials","price":78.7,"yield":"1.42","streak":15,"cagr5Y":"0.00","payoutRatio":"49.1","marketCap":898294592},{"ticker":"KEY.TO","name":"Keyera Corp.","sector":"Energy","price":53.76,"yield":"3.98","streak":15,"cagr5Y":"2.00","payoutRatio":"112.2","marketCap":12326243328},{"ticker":"MRU.TO","name":"Metro Inc.","sector":"Consumer Defensive","price":93.61,"yield":"1.74","streak":13,"cagr5Y":"10.46","payoutRatio":"32.7","marketCap":19953158144},{"ticker":"TIH.TO","name":"Toromont Industries Ltd.","sector":"Industrials","price":196.69,"yield":"1.08","streak":13,"cagr5Y":"10.90","payoutRatio":"34.3","marketCap":16020768768},{"ticker":"STN.TO","name":"Stantec Inc.","sector":"Industrials","price":121.06,"yield":"0.81","streak":13,"cagr5Y":"7.74","payoutRatio":"21.4","marketCap":13808950272},{"ticker":"GEI.TO","name":"Gibson Energy Inc.","sector":"Energy","price":29.31,"yield":"5.94","streak":13,"cagr5Y":"4.81","payoutRatio":"143.3","marketCap":5041319936},{"ticker":"SLF.TO","name":"Sun Life Financial Inc.","sector":"Financial Services","price":85.68,"yield":"4.20","streak":11,"cagr5Y":"9.86","payoutRatio":"57.2","marketCap":47458398208},{"ticker":"WN.TO","name":"George Weston Limited","sector":"Consumer Defensive","price":95.88,"yield":"1.24","streak":11,"cagr5Y":"10.51","payoutRatio":"44.5","marketCap":36657291264},{"ticker":"WCN.TO","name":"Waste Connections, Inc.","sector":"Industrials","price":227.51,"yield":"0.81","streak":6,"cagr5Y":"12.14","payoutRatio":"31.1","marketCap":58369703936}];
+        let currentData = [...INITIAL_DATA];
+        let sortCol = 'streak';
+        let sortAsc = false;
+
+        const tbody = document.getElementById('tableBody');
+        const searchInput = document.getElementById('searchInput');
+        const sectorFilter = document.getElementById('sectorFilter');
+        const headers = document.querySelectorAll('th');
+
+        function renderTable() {
+            tbody.innerHTML = '';
+            currentData.forEach(row => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td><span class="ticker-badge">${row.ticker}</span></td>
+                    <td class="col-name">${row.name}</td>
+                    <td>${row.sector}</td>
+                    <td><span class="streak-badge">${row.streak}</span></td>
+                    <td>${row.yield}%</td>
+                    <td>${row.cagr5Y !== 'N/A' && row.cagr5Y !== '0.00' ? row.cagr5Y + '%' : 'N/A'}</td>
+                    <td>${row.payoutRatio !== 'N/A' ? row.payoutRatio + '%' : 'N/A'}</td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        function filterData() {
+            const term = searchInput.value.toLowerCase();
+            const sector = sectorFilter.value;
+
+            currentData = INITIAL_DATA.filter(row => {
+                const matchesSearch = row.ticker.toLowerCase().includes(term) || row.name.toLowerCase().includes(term);
+                const matchesSector = sector === 'all' || row.sector === sector;
+                return matchesSearch && matchesSector;
+            });
+
+            sortData();
+        }
+
+        function sortData() {
+            currentData.sort((a, b) => {
+                let valA = a[sortCol];
+                let valB = b[sortCol];
+
+                if (['streak', 'yield', 'cagr5Y', 'payoutRatio'].includes(sortCol)) {
+                    valA = parseFloat(valA) || 0;
+                    valB = parseFloat(valB) || 0;
+                } else {
+                    valA = String(valA).toLowerCase();
+                    valB = String(valB).toLowerCase();
+                }
+
+                if (valA < valB) return sortAsc ? -1 : 1;
+                if (valA > valB) return sortAsc ? 1 : -1;
+                return 0;
+            });
+            renderTable();
+        }
+
+        headers.forEach(th => {
+            th.addEventListener('click', () => {
+                const col = th.dataset.sort;
+                if (sortCol === col) {
+                    sortAsc = !sortAsc;
+                } else {
+                    sortCol = col;
+                    sortAsc = false; // default desc for numbers
+                    if (['ticker', 'name', 'sector'].includes(col)) sortAsc = true;
+                }
+                sortData();
+            });
+        });
+
+        searchInput.addEventListener('input', filterData);
+        sectorFilter.addEventListener('change', filterData);
+
+        // Init Chart
+        const ctx = document.getElementById('sectorChart').getContext('2d');
+        const sectorLabels = ["Financial Services","Energy","Consumer Defensive","Consumer Cyclical","Industrials","Communication Services","Utilities"];
+        const sectorCounts = [11,5,6,3,7,3,1];
+
+        new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: sectorLabels,
+                datasets: [{
+                    data: sectorCounts,
+                    backgroundColor: [
+                        '#4a8fe7', '#10b981', '#f59e0b', '#ef4444',
+                        '#8b5cf6', '#ec4899', '#06b6d4', '#64748b', '#22c55e', '#3b82f6'
+                    ],
+                    borderColor: '#0a1020',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'right',
+                        labels: { color: '#c8d0de', font: { family: 'Inter' } }
+                    }
+                }
+            }
+        });
+
+        // Initial render
+        sortData();
+    </script>
+</body>
+</html>

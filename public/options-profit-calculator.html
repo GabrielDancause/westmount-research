@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Options Profit Calculator: Calls & Puts Payoff Chart</title>
+<meta name="description" content="Visual options profit and loss calculator. Calculate max profit, max loss, and break-even points for calls, puts, and basic spreads with payoff charts.">
+<link rel="canonical" href="https://westmountfundamentals.com/options-profit-calculator">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://westmountfundamentals.com/options-profit-calculator">
+<meta property="og:title" content="Options Profit Calculator: Calls & Puts Payoff Chart">
+<meta property="og:description" content="Visual options profit and loss calculator. Calculate max profit, max loss, and break-even points for calls, puts, and basic spreads with payoff charts.">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:url" content="https://westmountfundamentals.com/options-profit-calculator">
+<meta name="twitter:title" content="Options Profit Calculator: Calls & Puts Payoff Chart">
+<meta name="twitter:description" content="Visual options profit and loss calculator. Calculate max profit, max loss, and break-even points for calls, puts, and basic spreads with payoff charts.">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VYF72NSC1Q"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-VYF72NSC1Q');
+</script>
+
+<!-- FAQ Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do you calculate profit on an options call?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For a long call option, your profit at expiration is calculated by taking the underlying stock price, subtracting the strike price, and then subtracting the premium paid. Multiply this result by 100 per contract. If the stock price is below the strike price, your loss is capped at the premium paid."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you use an options profit calculator?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "To use an options profit calculator, enter your option's strike price, the premium paid (or received), the expiration date, and the number of contracts. The calculator will automatically generate a payoff diagram showing your break-even point, maximum profit, and maximum loss."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a good payoff for options?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A good payoff for options depends on your risk tolerance and strategy. Many traders look for a risk-to-reward ratio of at least 1:2 or 1:3, meaning they aim to make $2 or $3 for every $1 they risk. For selling options, a good payoff might mean consistently collecting premium with a high probability of success."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you calculate break even on a put option?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "To calculate the break-even point for a long put option, subtract the premium paid from the strike price. For a short put option (selling a put), the break-even point is also the strike price minus the premium received."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you lose more than you invest in options?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, but it depends on the strategy. If you buy options (long calls or long puts), your maximum loss is strictly limited to the premium paid. However, if you sell naked options (short calls or short puts), your risk can be substantial, and in the case of naked short calls, theoretically unlimited."
+      }
+    }
+  ]
+}
+</script>
+
+<!-- Article Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Options Profit Calculator: Calls & Puts Payoff Chart",
+  "description": "Visual options profit and loss calculator. Calculate max profit, max loss, and break-even points for calls, puts, and basic spreads with payoff charts.",
+  "datePublished": "2024-03-01T08:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "Westmount Fundamentals",
+    "url": "https://westmountfundamentals.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Westmount Fundamentals",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://westmountfundamentals.com/logo.png"
+    }
+  }
+}
+</script>
+<style>
+:root {
+  --bg-color: #060a12;
+  --card-bg: #0a1020;
+  --border-color: #152040;
+  --accent-color: #4a8fe7;
+  --text-main: #c8d0de;
+  --text-muted: #5a6a80;
+  --buy-color: #27ae60;
+  --sell-color: #e74c3c;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  background: var(--bg-color);
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+.header-nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(6, 10, 18, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+.header-nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  height: 48px;
+}
+.header-nav a {
+  text-decoration: none;
+}
+.brand {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.3px;
+}
+.nav-links {
+  display: flex;
+  gap: 8px;
+}
+.nav-links a {
+  color: #8a94a6;
+  font-size: 0.82rem;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: 6px;
+  transition: background 0.2s, color 0.2s;
+}
+.nav-links a:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+.title-gradient {
+  background: linear-gradient(90deg, #fff, #8ab4f8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 2.8rem;
+  font-weight: 900;
+  letter-spacing: -1px;
+  margin-bottom: 16px;
+  line-height: 1.1;
+}
+.subtitle {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+  max-width: 800px;
+}
+
+.grid-layout {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 24px;
+}
+@media (max-width: 900px) {
+  .grid-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.card-title {
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 12px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.stat-box {
+  background: #040810;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+}
+.stat-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+.stat-value {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #fff;
+}
+.stat-value.profit { color: var(--buy-color); }
+.stat-value.loss { color: var(--sell-color); }
+
+/* Form Styles */
+.form-group {
+  margin-bottom: 16px;
+}
+.form-group label {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+.form-control {
+  width: 100%;
+  background: #040810;
+  border: 1px solid var(--border-color);
+  color: #fff;
+  padding: 10px 12px;
+  border-radius: 6px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1rem;
+  outline: none;
+}
+.form-control:focus {
+  border-color: var(--accent-color);
+}
+.form-row {
+  display: flex;
+  gap: 12px;
+}
+.form-row > * {
+  flex: 1;
+}
+
+.btn {
+  background: var(--accent-color);
+  color: #fff;
+  border: none;
+  padding: 12px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1rem;
+  width: 100%;
+  transition: opacity 0.2s;
+}
+.btn:hover {
+  opacity: 0.9;
+}
+.btn-outline {
+  background: transparent;
+  border: 1px solid var(--accent-color);
+  color: var(--accent-color);
+}
+.btn-outline:hover {
+  background: rgba(74, 143, 231, 0.1);
+}
+
+.leg-item {
+  background: #040810;
+  border: 1px solid var(--border-color);
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  position: relative;
+}
+.leg-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.leg-title {
+  font-weight: 700;
+  color: #fff;
+  font-size: 0.9rem;
+}
+.btn-remove {
+  background: transparent;
+  border: none;
+  color: var(--sell-color);
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.chart-container {
+  height: 400px;
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.9rem;
+}
+th, td {
+  padding: 12px;
+  text-align: right;
+  border-bottom: 1px solid var(--border-color);
+}
+th {
+  font-family: 'Inter', sans-serif;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
+}
+th:first-child, td:first-child {
+  text-align: left;
+}
+.val-positive { color: var(--buy-color); }
+.val-negative { color: var(--sell-color); }
+
+.content-section {
+  margin-top: 60px;
+  padding-top: 40px;
+  border-top: 1px solid var(--border-color);
+  max-width: 800px;
+}
+.content-section h2 {
+  color: #fff;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+.content-section h3 {
+  color: #fff;
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+  margin-top: 32px;
+}
+.content-section p {
+  margin-bottom: 16px;
+  color: #a0aabf;
+}
+
+.footer {
+  text-align: center;
+  padding: 50px 24px;
+  font-size: 0.85rem;
+  color: #3a4a5a;
+  border-top: 1px solid #151f2e;
+  background: #040810;
+  margin-top: 60px;
+}
+.footer a { color: var(--accent-color); text-decoration: none; }
+.footer a:hover { text-decoration: underline; }
+.disclaimer {
+  max-width: 600px;
+  margin: 16px auto 0;
+  color: #2a3a4a;
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+</style>
+</head>
+<body>
+
+<nav class="header-nav">
+  <div class="header-nav-container">
+    <a href="/" class="brand">Westmount Fundamentals</a>
+    <div class="nav-links">
+      <a href="/#studies">Studies</a>
+      <a href="/#tools">Tools</a>
+      <a href="/#guides">Guides</a>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <h1 class="title-gradient">Options Profit Calculator</h1>
+  <p class="subtitle">Calculate max profit, max loss, and break-even points for calls, puts, and spreads. Visualize your exact payoff at expiration.</p>
+  <div class="grid-layout">
+    <!-- Left Column: Input Form -->
+    <div class="card">
+      <div class="card-title">Option Legs</div>
+
+      <div id="legs-container">
+        <!-- Legs will be added here via JS -->
+      </div>
+
+      <button class="btn btn-outline" id="add-leg-btn" style="margin-bottom: 16px;">+ Add Leg</button>
+      <button class="btn" id="calculate-btn">Calculate Payoff</button>
+    </div>
+
+    <!-- Right Column: Results & Chart -->
+    <div>
+      <div class="stats-grid">
+        <div class="stat-box">
+          <div class="stat-label">Max Profit</div>
+          <div class="stat-value profit" id="stat-max-profit">--</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">Max Loss</div>
+          <div class="stat-value loss" id="stat-max-loss">--</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">Break-even(s)</div>
+          <div class="stat-value" id="stat-break-even">--</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">Net Premium</div>
+          <div class="stat-value" id="stat-net-premium">--</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Payoff Diagram at Expiration</div>
+        <div class="chart-container">
+          <canvas id="payoffChart"></canvas>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">P&L by Underlying Price</div>
+        <div class="table-container">
+          <table id="pnl-table">
+            <thead>
+              <tr>
+                <th>Underlying Price</th>
+                <th>Profit / Loss</th>
+                <th>Return on Risk</th>
+              </tr>
+            </thead>
+            <tbody id="pnl-tbody">
+              <!-- Rows added via JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-section">
+    <h2>Methodology</h2>
+    <p>This options profit calculator computes the profit and loss (P&L) of individual or multi-leg option strategies at expiration. It assumes standard options contracts where one contract represents 100 shares of the underlying asset.</p>
+    <p><strong>Max Profit & Max Loss:</strong> Calculated by evaluating the combined payoff of all entered legs across a wide range of underlying prices from zero up to double the highest strike price. If a strategy's theoretical profit or loss approaches infinity (e.g., selling naked calls), it is displayed as "Unlimited".</p>
+    <p><strong>Break-even Points:</strong> Identified by finding the underlying prices where the total strategy payoff crosses exactly zero.</p>
+    <p><strong>Net Premium:</strong> The total amount paid or received to initiate the strategy. Buying options results in a debit (paid), while selling options results in a credit (received).</p>
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <h3>How do you calculate profit on an options call?</h3>
+      <p>For a long call option, your profit at expiration is calculated by taking the underlying stock price, subtracting the strike price, and then subtracting the premium paid. Multiply this result by 100 per contract. If the stock price is below the strike price, your loss is capped at the premium paid.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How do you use an options profit calculator?</h3>
+      <p>To use an options profit calculator, enter your option's strike price, the premium paid (or received), the expiration date, and the number of contracts. The calculator will automatically generate a payoff diagram showing your break-even point, maximum profit, and maximum loss.</p>
+    </div>
+    <div class="faq-item">
+      <h3>What is a good payoff for options?</h3>
+      <p>A good payoff for options depends on your risk tolerance and strategy. Many traders look for a risk-to-reward ratio of at least 1:2 or 1:3, meaning they aim to make $2 or $3 for every $1 they risk. For selling options, a good payoff might mean consistently collecting premium with a high probability of success.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How do you calculate break even on a put option?</h3>
+      <p>To calculate the break-even point for a long put option, subtract the premium paid from the strike price. For a short put option (selling a put), the break-even point is also the strike price minus the premium received.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Can you lose more than you invest in options?</h3>
+      <p>Yes, but it depends on the strategy. If you buy options (long calls or long puts), your maximum loss is strictly limited to the premium paid. However, if you sell naked options (short calls or short puts), your risk can be substantial, and in the case of naked short calls, theoretically unlimited.</p>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  © <script>document.write(new Date().getFullYear())</script> <a href="/">westmount-research</a> · A <a href="https://gab.ae">GAB Ventures</a> property
+  <div class="disclaimer">This calculator provides theoretical payoffs at expiration based on user input. It does not account for commissions, slippage, assignment risk, or early exercise. It does not constitute investment advice or a recommendation to trade options, which carry significant risk. Options trading is not suitable for all investors.</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  let legCount = 0;
+  let payoffChart = null;
+
+  const legsContainer = document.getElementById('legs-container');
+  const addLegBtn = document.getElementById('add-leg-btn');
+  const calculateBtn = document.getElementById('calculate-btn');
+
+  function createLegHTML(id) {
+    return `
+      <div class="leg-item" id="leg-${id}">
+        <div class="leg-header">
+          <div class="leg-title">Leg ${id}</div>
+          ${id > 1 ? `<button class="btn-remove" onclick="removeLeg(${id})">✕ Remove</button>` : ''}
+        </div>
+        <div class="form-row form-group">
+          <div>
+            <label>Action</label>
+            <select class="form-control leg-action" id="action-${id}">
+              <option value="buy">Buy</option>
+              <option value="sell">Sell</option>
+            </select>
+          </div>
+          <div>
+            <label>Type</label>
+            <select class="form-control leg-type" id="type-${id}">
+              <option value="call">Call</option>
+              <option value="put">Put</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row form-group" style="margin-bottom: 0;">
+          <div>
+            <label>Strike Price</label>
+            <input type="number" step="0.5" class="form-control leg-strike" id="strike-${id}" value="${id === 1 ? 100 : 105}">
+          </div>
+          <div>
+            <label>Premium</label>
+            <input type="number" step="0.01" class="form-control leg-premium" id="premium-${id}" value="${id === 1 ? 2.50 : 1.00}">
+          </div>
+          <div>
+            <label>Contracts</label>
+            <input type="number" step="1" min="1" class="form-control leg-contracts" id="contracts-${id}" value="1">
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
+  function addLeg() {
+    legCount++;
+    const div = document.createElement('div');
+    div.innerHTML = createLegHTML(legCount);
+    legsContainer.appendChild(div.firstElementChild);
+  }
+
+  function removeLeg(id) {
+    const el = document.getElementById(`leg-${id}`);
+    if (el) el.remove();
+  }
+
+  function getLegs() {
+    const legs = [];
+    document.querySelectorAll('.leg-item').forEach(legEl => {
+      const idStr = legEl.id.split('-')[1];
+      legs.push({
+        action: document.getElementById(`action-${idStr}`).value,
+        type: document.getElementById(`type-${idStr}`).value,
+        strike: parseFloat(document.getElementById(`strike-${idStr}`).value) || 0,
+        premium: parseFloat(document.getElementById(`premium-${idStr}`).value) || 0,
+        contracts: parseInt(document.getElementById(`contracts-${idStr}`).value) || 1
+      });
+    });
+    return legs;
+  }
+
+  function calculatePayoff(underlyingPrice, legs) {
+    let totalPnl = 0;
+    legs.forEach(leg => {
+      let legPnl = 0;
+      const multiplier = 100 * leg.contracts;
+
+      if (leg.type === 'call') {
+        const intrinsic = Math.max(0, underlyingPrice - leg.strike);
+        if (leg.action === 'buy') {
+          legPnl = (intrinsic - leg.premium) * multiplier;
+        } else { // sell
+          legPnl = (leg.premium - intrinsic) * multiplier;
+        }
+      } else { // put
+        const intrinsic = Math.max(0, leg.strike - underlyingPrice);
+        if (leg.action === 'buy') {
+          legPnl = (intrinsic - leg.premium) * multiplier;
+        } else { // sell
+          legPnl = (leg.premium - intrinsic) * multiplier;
+        }
+      }
+      totalPnl += legPnl;
+    });
+    return totalPnl;
+  }
+
+  function calculateAll() {
+    const legs = getLegs();
+    if (legs.length === 0) return;
+
+    // Determine range for underlying price
+    const strikes = legs.map(l => l.strike);
+    const minStrike = Math.min(...strikes);
+    const maxStrike = Math.max(...strikes);
+    const rangeMargin = Math.max(20, (maxStrike - minStrike) * 1.5);
+
+    const startPrice = Math.max(0, minStrike - rangeMargin);
+    const endPrice = maxStrike + rangeMargin;
+    const step = (endPrice - startPrice) / 100;
+
+    const labels = [];
+    const data = [];
+    let hasInfiniteProfit = false;
+    let hasInfiniteLoss = false;
+
+    for (let p = startPrice; p <= endPrice; p += step) {
+      labels.push(p.toFixed(2));
+      data.push(calculatePayoff(p, legs));
+    }
+
+    // Check edges for infinity
+    const lowestPricePnl = calculatePayoff(0, legs);
+    const highestPricePnl = calculatePayoff(endPrice * 2, legs); // extrapolated way out
+
+    if (highestPricePnl > data[data.length-1] && highestPricePnl > 1000000) hasInfiniteProfit = true;
+    if (highestPricePnl < data[data.length-1] && highestPricePnl < -1000000) hasInfiniteLoss = true;
+
+    // Calculate metrics
+    let maxProfit = Math.max(...data);
+    let maxLoss = Math.min(...data);
+
+    // Find break-evens
+    const breakEvens = [];
+    for (let i = 1; i < data.length; i++) {
+      if ((data[i-1] <= 0 && data[i] > 0) || (data[i-1] >= 0 && data[i] < 0)) {
+        // Linear interpolation for exact zero
+        const p1 = parseFloat(labels[i-1]);
+        const p2 = parseFloat(labels[i]);
+        const v1 = data[i-1];
+        const v2 = data[i];
+
+        const fraction = Math.abs(v1) / (Math.abs(v1) + Math.abs(v2));
+        const be = p1 + fraction * (p2 - p1);
+
+        if (!breakEvens.find(b => Math.abs(b - be) < 0.1)) {
+           breakEvens.push(be);
+        }
+      }
+    }
+
+    // Calculate Net Premium
+    let netPremium = 0;
+    legs.forEach(leg => {
+      const val = leg.premium * 100 * leg.contracts;
+      if (leg.action === 'buy') netPremium -= val;
+      else netPremium += val;
+    });
+
+    // Update Stats
+    document.getElementById('stat-max-profit').innerText = hasInfiniteProfit ? 'Unlimited' : formatCurrency(maxProfit);
+    document.getElementById('stat-max-loss').innerText = hasInfiniteLoss ? 'Unlimited' : formatCurrency(maxLoss);
+
+    document.getElementById('stat-break-even').innerText = breakEvens.length > 0
+      ? breakEvens.map(b => `$${b.toFixed(2)}`).join(', ')
+      : 'None';
+
+    const npEl = document.getElementById('stat-net-premium');
+    if (netPremium > 0) {
+      npEl.innerText = `${formatCurrency(netPremium)} Credit`;
+      npEl.className = 'stat-value profit';
+    } else if (netPremium < 0) {
+      npEl.innerText = `${formatCurrency(Math.abs(netPremium))} Debit`;
+      npEl.className = 'stat-value loss';
+    } else {
+      npEl.innerText = '$0.00';
+      npEl.className = 'stat-value';
+    }
+
+    updateChart(labels, data, startPrice, endPrice);
+    updateTable(legs, minStrike, maxStrike, maxLoss);
+  }
+
+  function formatCurrency(val) {
+    return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(val);
+  }
+
+  function updateChart(labels, data, start, end) {
+    const ctx = document.getElementById('payoffChart').getContext('2d');
+
+    if (payoffChart) {
+      payoffChart.destroy();
+    }
+
+    // Colors based on positive/negative
+    const pointColors = data.map(val => val >= 0 ? '#27ae60' : '#e74c3c');
+    const borderColors = data.map(val => val >= 0 ? '#2ecc71' : '#ff6b6b');
+
+    payoffChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: labels,
+        datasets: [{
+          label: 'Profit/Loss ($)',
+          data: data,
+          borderColor: '#4a8fe7',
+          borderWidth: 2,
+          pointBackgroundColor: pointColors,
+          pointBorderColor: pointColors,
+          pointRadius: 0,
+          pointHoverRadius: 6,
+          fill: {
+            target: 'origin',
+            above: 'rgba(39, 174, 96, 0.2)',
+            below: 'rgba(231, 76, 60, 0.2)'
+          }
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        interaction: {
+          intersect: false,
+          mode: 'index',
+        },
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              label: function(context) {
+                let label = context.dataset.label || '';
+                if (label) label += ': ';
+                if (context.parsed.y !== null) {
+                  label += formatCurrency(context.parsed.y);
+                }
+                return label;
+              }
+            }
+          }
+        },
+        scales: {
+          x: {
+            title: { display: true, text: 'Underlying Price at Expiration', color: '#8a94a6' },
+            grid: { color: '#152040' },
+            ticks: { color: '#8a94a6', maxTicksLimit: 10 }
+          },
+          y: {
+            title: { display: true, text: 'Profit / Loss', color: '#8a94a6' },
+            grid: { color: '#152040', zeroLineColor: '#8ab4f8', zeroLineWidth: 2 },
+            ticks: { color: '#8a94a6' }
+          }
+        }
+      }
+    });
+  }
+
+  function updateTable(legs, minStrike, maxStrike, maxLoss) {
+    const tbody = document.getElementById('pnl-tbody');
+    tbody.innerHTML = '';
+
+    const range = maxStrike - minStrike;
+    const step = Math.max(1, Math.round(range / 10));
+
+    let pricesToTable = [];
+    for(let i = minStrike - (step * 3); i <= maxStrike + (step * 3); i += step) {
+      if (i > 0) pricesToTable.push(i);
+    }
+    // ensure strikes are in there
+    legs.forEach(l => {
+      if (!pricesToTable.includes(l.strike)) pricesToTable.push(l.strike);
+    });
+
+    pricesToTable.sort((a,b) => a - b);
+
+    // Remove duplicates
+    pricesToTable = pricesToTable.filter((item, pos, ary) => !pos || item !== ary[pos - 1]);
+
+    const maxRisk = Math.abs(maxLoss);
+
+    pricesToTable.forEach(p => {
+      const pnl = calculatePayoff(p, legs);
+      const tr = document.createElement('tr');
+
+      const pnlClass = pnl > 0 ? 'val-positive' : (pnl < 0 ? 'val-negative' : '');
+      const ror = maxRisk > 0 && maxRisk !== Infinity ? ((pnl / maxRisk) * 100).toFixed(1) + '%' : '--';
+
+      tr.innerHTML = `
+        <td>$${p.toFixed(2)}</td>
+        <td class="${pnlClass}">${formatCurrency(pnl)}</td>
+        <td class="${pnlClass}">${ror}</td>
+      `;
+      tbody.appendChild(tr);
+    });
+  }
+
+  // Init
+  addLegBtn.addEventListener('click', addLeg);
+  calculateBtn.addEventListener('click', calculateAll);
+
+  // Default leg
+  addLeg();
+  calculateAll();
+</script>
+</body>
+</html>

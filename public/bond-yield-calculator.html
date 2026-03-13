@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bond Yield Calculator: YTM & Duration</title>
+    <meta name="description" content="Calculate bond yield to maturity (YTM), current yield, Macaulay and modified duration with this interactive bond yield calculator.">
+    <link rel="canonical" href="https://westmountfundamentals.com/bond-yield-calculator">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Bond Yield Calculator: YTM & Duration">
+    <meta property="og:description" content="Calculate bond yield to maturity (YTM), current yield, Macaulay and modified duration with this interactive bond yield calculator.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://westmountfundamentals.com/bond-yield-calculator">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Bond Yield Calculator: YTM & Duration">
+    <meta name="twitter:description" content="Calculate bond yield to maturity (YTM), current yield, Macaulay and modified duration with this interactive bond yield calculator.">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VYF72NSC1Q"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-VYF72NSC1Q');
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Bond Yield Calculator: YTM & Duration",
+      "description": "Calculate bond yield to maturity (YTM), current yield, Macaulay and modified duration with this interactive bond yield calculator.",
+      "datePublished": "2026-03-01",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Westmount Research",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://westmountfundamentals.com/favicon.svg"
+        }
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do you calculate yield to maturity on a bond?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yield to maturity (YTM) is calculated by solving the bond pricing equation for the discount rate that equates the present value of all future cash flows (coupons and principal) to the current market price of the bond. This is typically done using numerical methods like the Newton-Raphson or bisection method."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between current yield and yield to maturity?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Current yield is simply the annual coupon payment divided by the current bond price, ignoring capital gains or losses at maturity. Yield to maturity (YTM) accounts for the total return, including interest payments and the difference between the current price and the face value received at maturity."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does bond price affect yield?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Bond prices and yields have an inverse relationship. When a bond's price falls below its face value (discount), its yield increases. When the price rises above its face value (premium), its yield decreases."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is modified duration in bond investing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Modified duration measures a bond's price sensitivity to changes in interest rates. It represents the approximate percentage change in a bond's price for a 1% change in yield. A higher duration means the bond's price is more volatile when interest rates move."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why is bond convexity important?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Convexity measures the curvature in the relationship between bond prices and yields, capturing how duration changes as yields change. It provides a more accurate estimate of price changes for larger shifts in interest rates, showing that bond prices rise more when yields fall than they drop when yields rise by the same amount."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        :root {
+            --bg: #060a12;
+            --card-bg: #0a1020;
+            --border: #152040;
+            --accent: #4a8fe7;
+            --text-main: #c8d0de;
+            --text-muted: #5a6a80;
+            --white: #ffffff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(6, 10, 18, 0.85);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            color: var(--white);
+            font-weight: 800;
+            text-decoration: none;
+            font-size: 1.1rem;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links a {
+            color: var(--text-main);
+            text-decoration: none;
+            margin-left: 24px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover { color: var(--accent); }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 24px;
+        }
+
+        /* Typography */
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 900;
+            letter-spacing: -1.5px;
+            margin-bottom: 16px;
+            background: linear-gradient(90deg, #ffffff, #a0b4d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: var(--white);
+            margin-bottom: 24px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        /* Layout Grid */
+        .calculator-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        @media (max-width: 850px) {
+            .calculator-grid { grid-template-columns: 1fr; }
+        }
+
+        /* Cards */
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 12px;
+        }
+
+        /* Form Controls */
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .form-control {
+            width: 100%;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            color: var(--white);
+            padding: 12px 16px;
+            border-radius: 8px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1rem;
+            transition: border-color 0.2s;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        select.form-control {
+            font-family: 'Inter', sans-serif;
+            cursor: pointer;
+        }
+
+        /* Stats Results */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+
+        .stat-box {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 16px;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--accent);
+            line-height: 1.2;
+            margin-bottom: 4px;
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .stat-box.highlight {
+            border-color: var(--accent);
+            background: rgba(74, 143, 231, 0.05);
+        }
+
+        /* Table */
+        .table-container {
+            overflow-x: auto;
+            margin-bottom: 40px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+
+        th {
+            background: var(--card-bg);
+            color: var(--text-muted);
+            font-weight: 600;
+            text-align: right;
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border);
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.5px;
+        }
+
+        th:first-child { text-align: left; }
+
+        td {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border);
+            text-align: right;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        td:first-child {
+            text-align: left;
+            font-family: 'Inter', sans-serif;
+        }
+
+        tr:hover td {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        /* Content Sections */
+        .content-section {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 32px;
+            margin-bottom: 40px;
+        }
+
+        .content-section p {
+            margin-bottom: 16px;
+            color: var(--text-main);
+        }
+
+        .content-section h3 {
+            color: var(--white);
+            margin: 24px 0 12px;
+            font-size: 1.2rem;
+        }
+
+        .faq-item {
+            margin-bottom: 24px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid var(--border);
+        }
+        .faq-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .faq-q {
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 24px;
+            border-top: 1px solid var(--border);
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .disclaimer {
+            max-width: 600px;
+            margin: 16px auto 0;
+            font-size: 0.75rem;
+        }
+
+        /* Chart container */
+        .chart-container {
+            position: relative;
+            height: 300px;
+            width: 100%;
+            margin-top: 24px;
+        }
+
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="/" class="nav-brand">Westmount Fundamentals</a>
+    <div class="nav-links">
+        <a href="/#studies">Studies</a>
+        <a href="/#tools">Tools</a>
+        <a href="/#guides">Guides</a>
+    </div>
+</nav>
+
+<div class="container">
+    <h1>Bond Yield Calculator: YTM, Current Yield & Duration</h1>
+    <p class="subtitle">Calculate yield to maturity (YTM), current yield, Macaulay duration, and modified duration. Enter your bond's parameters below.</p>
+
+    <div class="calculator-grid">
+        <!-- Input Form -->
+        <div class="card">
+            <div class="card-title">Bond Parameters</div>
+
+            <div class="form-group">
+                <label for="faceValue">Face Value ($)</label>
+                <input type="number" id="faceValue" class="form-control" value="1000" step="100">
+            </div>
+
+            <div class="form-group">
+                <label for="couponRate">Coupon Rate (%)</label>
+                <input type="number" id="couponRate" class="form-control" value="5.00" step="0.125">
+            </div>
+
+            <div class="form-group">
+                <label for="currentPrice">Current Price ($)</label>
+                <input type="number" id="currentPrice" class="form-control" value="950" step="1">
+            </div>
+
+            <div class="form-group">
+                <label for="yearsToMaturity">Years to Maturity</label>
+                <input type="number" id="yearsToMaturity" class="form-control" value="10" step="0.5">
+            </div>
+
+            <div class="form-group">
+                <label for="paymentFrequency">Payment Frequency</label>
+                <select id="paymentFrequency" class="form-control">
+                    <option value="2">Semi-Annual (2/year)</option>
+                    <option value="1">Annual (1/year)</option>
+                    <option value="4">Quarterly (4/year)</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Results -->
+        <div class="card">
+            <div class="card-title">Yield & Risk Metrics</div>
+
+            <div class="stats-grid">
+                <div class="stat-box highlight">
+                    <div class="stat-value" id="resultYTM">--%</div>
+                    <div class="stat-label">Yield to Maturity (YTM)</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value" id="resultCurrentYield">--%</div>
+                    <div class="stat-label">Current Yield</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value" id="resultModDuration">--</div>
+                    <div class="stat-label">Modified Duration</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value" id="resultMacDuration">--</div>
+                    <div class="stat-label">Macaulay Duration (Yrs)</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value" id="resultConvexity">--</div>
+                    <div class="stat-label">Convexity</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value" id="resultAnnualCoupon">$--</div>
+                    <div class="stat-label">Annual Coupon</div>
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <canvas id="priceYieldChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cash Flows Table -->
+    <div class="card table-container">
+        <div class="card-title">Cash Flow Schedule</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Period</th>
+                    <th>Time (Years)</th>
+                    <th>Cash Flow</th>
+                    <th>PV Factor</th>
+                    <th>Present Value</th>
+                </tr>
+            </thead>
+            <tbody id="cashFlowTableBody">
+                <!-- Populated by JS -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Methodology -->
+    <div class="content-section">
+        <h2>Methodology</h2>
+        <p>This bond yield calculator determines essential fixed income metrics using standard financial formulas:</p>
+
+        <h3>Yield to Maturity (YTM)</h3>
+        <p>YTM is the internal rate of return (IRR) of a bond if held to maturity, assuming all coupon payments are reinvested at the same rate. It is found by solving the following equation for <em>y</em> (the discount rate per period) using the Newton-Raphson numerical method:</p>
+        <p><code>Price = &Sigma; [ Coupon / (1 + y)^t ] + [ Face Value / (1 + y)^n ]</code></p>
+        <p>Where <em>t</em> is the period, <em>n</em> is the total number of periods, and <em>y</em> is the periodic yield. The annualized YTM is calculated by multiplying the periodic yield by the payment frequency.</p>
+
+        <h3>Current Yield</h3>
+        <p>Current Yield = Annual Coupon Payment / Current Market Price.</p>
+
+        <h3>Macaulay Duration</h3>
+        <p>Macaulay duration is the weighted average time until all the bond's cash flows are received. The weights are the present value of each cash flow divided by the bond's total price. It is expressed in years.</p>
+
+        <h3>Modified Duration & Convexity</h3>
+        <p>Modified Duration = Macaulay Duration / (1 + Periodic YTM). It measures the approximate percentage change in a bond's price for a 100 basis point (1%) change in yield.</p>
+        <p>Convexity is a second-order derivative measure that accounts for the curvature of the price-yield relationship. It helps predict price changes more accurately than duration alone for larger shifts in interest rates.</p>
+    </div>
+
+    <!-- FAQ -->
+    <div class="content-section">
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+            <div class="faq-q">How do you calculate yield to maturity on a bond?</div>
+            <div class="faq-a">Yield to maturity (YTM) is calculated by solving the bond pricing equation for the discount rate that equates the present value of all future cash flows (coupons and principal) to the current market price of the bond. This is typically done using numerical methods like the Newton-Raphson or bisection method.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">What is the difference between current yield and yield to maturity?</div>
+            <div class="faq-a">Current yield is simply the annual coupon payment divided by the current bond price, ignoring capital gains or losses at maturity. Yield to maturity (YTM) accounts for the total return, including interest payments and the difference between the current price and the face value received at maturity.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">How does bond price affect yield?</div>
+            <div class="faq-a">Bond prices and yields have an inverse relationship. When a bond's price falls below its face value (discount), its yield increases. When the price rises above its face value (premium), its yield decreases.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">What is modified duration in bond investing?</div>
+            <div class="faq-a">Modified duration measures a bond's price sensitivity to changes in interest rates. It represents the approximate percentage change in a bond's price for a 1% change in yield. A higher duration means the bond's price is more volatile when interest rates move.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">Why is bond convexity important?</div>
+            <div class="faq-a">Convexity measures the curvature in the relationship between bond prices and yields, capturing how duration changes as yields change. It provides a more accurate estimate of price changes for larger shifts in interest rates, showing that bond prices rise more when yields fall than they drop when yields rise by the same amount.</div>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    © 2026 <a href="/">Westmount Research</a> · A GAB Ventures property. Not investment advice. All information for educational purposes only.
+    <div class="disclaimer">
+        The calculations provided by this tool are for educational and informational purposes only. They do not account for taxes, trading fees, or specific bond call features. Always consult a qualified financial advisor before making investment decisions.
+    </div>
+</footer>
+
+<script>
+    // DOM Elements
+    const inputs = {
+        faceValue: document.getElementById('faceValue'),
+        couponRate: document.getElementById('couponRate'),
+        currentPrice: document.getElementById('currentPrice'),
+        yearsToMaturity: document.getElementById('yearsToMaturity'),
+        paymentFrequency: document.getElementById('paymentFrequency')
+    };
+
+    const outputs = {
+        ytm: document.getElementById('resultYTM'),
+        currentYield: document.getElementById('resultCurrentYield'),
+        modDuration: document.getElementById('resultModDuration'),
+        macDuration: document.getElementById('resultMacDuration'),
+        convexity: document.getElementById('resultConvexity'),
+        annualCoupon: document.getElementById('resultAnnualCoupon')
+    };
+
+    const tableBody = document.getElementById('cashFlowTableBody');
+    let chartInstance = null;
+
+    // Add event listeners to all inputs
+    Object.values(inputs).forEach(input => {
+        input.addEventListener('input', updateCalculator);
+    });
+
+    // Helper: format number
+    function formatPercent(val) {
+        return (val * 100).toFixed(2) + '%';
+    }
+
+    function formatCurrency(val) {
+        return '$' + val.toFixed(2);
+    }
+
+    function formatNumber(val, decimals = 2) {
+        return val.toFixed(decimals);
+    }
+
+    // Mathematical calculations
+    function calculateBondPrice(yieldPerPeriod, couponPerPeriod, faceValue, numPeriods) {
+        let price = 0;
+        for (let t = 1; t <= numPeriods; t++) {
+            price += couponPerPeriod / Math.pow(1 + yieldPerPeriod, t);
+        }
+        price += faceValue / Math.pow(1 + yieldPerPeriod, numPeriods);
+        return price;
+    }
+
+    function calculateYTM(price, faceValue, couponRate, years, freq) {
+        const numPeriods = years * freq;
+        const couponPerPeriod = (faceValue * (couponRate / 100)) / freq;
+
+        // Newton-Raphson approximation
+        let yieldPerPeriod = (couponRate / 100) / freq; // Initial guess
+        const maxIter = 100;
+        const tolerance = 1e-7;
+
+        for (let i = 0; i < maxIter; i++) {
+            let p = 0;
+            let dp = 0; // derivative of price with respect to yield
+
+            for (let t = 1; t <= numPeriods; t++) {
+                const pvFactor = Math.pow(1 + yieldPerPeriod, t);
+                p += couponPerPeriod / pvFactor;
+                dp -= (t * couponPerPeriod) / (pvFactor * (1 + yieldPerPeriod));
+            }
+            p += faceValue / Math.pow(1 + yieldPerPeriod, numPeriods);
+            dp -= (numPeriods * faceValue) / (Math.pow(1 + yieldPerPeriod, numPeriods + 1));
+
+            const diff = p - price;
+            if (Math.abs(diff) < tolerance) break;
+
+            yieldPerPeriod = yieldPerPeriod - (diff / dp);
+        }
+
+        return yieldPerPeriod * freq; // Annualized YTM
+    }
+
+    function generateCashFlows(faceValue, couponRate, years, freq, ytm) {
+        const numPeriods = years * freq;
+        const couponPerPeriod = (faceValue * (couponRate / 100)) / freq;
+        const yieldPerPeriod = ytm / freq;
+
+        let cashFlows = [];
+        let macDurationNum = 0;
+        let convexityNum = 0;
+        let totalPrice = 0;
+
+        for (let t = 1; t <= numPeriods; t++) {
+            let cf = couponPerPeriod;
+            if (t === numPeriods) cf += faceValue;
+
+            const pvFactor = 1 / Math.pow(1 + yieldPerPeriod, t);
+            const pv = cf * pvFactor;
+
+            cashFlows.push({
+                period: t,
+                time: t / freq,
+                cashFlow: cf,
+                pvFactor: pvFactor,
+                pv: pv
+            });
+
+            totalPrice += pv;
+            macDurationNum += (t / freq) * pv;
+            convexityNum += (cf * t * (t + 1)) / Math.pow(1 + yieldPerPeriod, t + 2);
+        }
+
+        const macDuration = macDurationNum / totalPrice;
+        const modDuration = macDuration / (1 + yieldPerPeriod);
+        const convexity = (convexityNum / totalPrice) / Math.pow(freq, 2);
+
+        return { cashFlows, macDuration, modDuration, convexity, totalPrice };
+    }
+
+    // Main update function
+    function updateCalculator() {
+        const faceValue = parseFloat(inputs.faceValue.value) || 0;
+        const couponRate = parseFloat(inputs.couponRate.value) || 0;
+        const currentPrice = parseFloat(inputs.currentPrice.value) || 0;
+        const years = parseFloat(inputs.yearsToMaturity.value) || 0;
+        const freq = parseInt(inputs.paymentFrequency.value) || 2;
+
+        if (faceValue <= 0 || currentPrice <= 0 || years <= 0) {
+            return; // Wait for valid inputs
+        }
+
+        // Calculate YTM
+        const ytm = calculateYTM(currentPrice, faceValue, couponRate, years, freq);
+
+        // Calculate Metrics & Cash Flows
+        const metrics = generateCashFlows(faceValue, couponRate, years, freq, ytm);
+
+        const annualCoupon = faceValue * (couponRate / 100);
+        const currentYield = annualCoupon / currentPrice;
+
+        // Update UI
+        outputs.ytm.textContent = formatPercent(ytm);
+        outputs.currentYield.textContent = formatPercent(currentYield);
+        outputs.modDuration.textContent = formatNumber(metrics.modDuration, 2);
+        outputs.macDuration.textContent = formatNumber(metrics.macDuration, 2);
+        outputs.convexity.textContent = formatNumber(metrics.convexity, 2);
+        outputs.annualCoupon.textContent = formatCurrency(annualCoupon);
+
+        // Update Table
+        tableBody.innerHTML = '';
+        metrics.cashFlows.forEach(cf => {
+            const tr = document.createElement('tr');
+            tr.innerHTML = `
+                <td>${cf.period}</td>
+                <td>${formatNumber(cf.time, 2)}</td>
+                <td>${formatCurrency(cf.cashFlow)}</td>
+                <td>${formatNumber(cf.pvFactor, 4)}</td>
+                <td>${formatCurrency(cf.pv)}</td>
+            `;
+            tableBody.appendChild(tr);
+        });
+
+        // Update Chart
+        updateChart(faceValue, couponRate, years, freq, ytm, currentPrice);
+    }
+
+    function updateChart(faceValue, couponRate, years, freq, ytm, currentPrice) {
+        const ctx = document.getElementById('priceYieldChart').getContext('2d');
+
+        // Generate plot points (yields from YTM - 3% to YTM + 3%)
+        const minYield = Math.max(0, ytm - 0.03);
+        const maxYield = ytm + 0.03;
+        const step = (maxYield - minYield) / 20;
+
+        let yields = [];
+        let prices = [];
+
+        for (let y = minYield; y <= maxYield; y += step) {
+            yields.push(y);
+            prices.push(calculateBondPrice(y / freq, (faceValue * (couponRate / 100)) / freq, faceValue, years * freq));
+        }
+
+        // Add current YTM point explicitly
+        if (!yields.includes(ytm)) {
+            yields.push(ytm);
+            yields.sort((a,b) => a - b);
+            // rebuild prices to match sorted yields
+            prices = yields.map(y => calculateBondPrice(y / freq, (faceValue * (couponRate / 100)) / freq, faceValue, years * freq));
+        }
+
+        const labels = yields.map(y => (y * 100).toFixed(1) + '%');
+
+        if (chartInstance) {
+            chartInstance.destroy();
+        }
+
+        chartInstance = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Bond Price',
+                    data: prices,
+                    borderColor: '#4a8fe7',
+                    backgroundColor: 'rgba(74, 143, 231, 0.1)',
+                    borderWidth: 2,
+                    pointBackgroundColor: yields.map(y => Math.abs(y - ytm) < 0.0001 ? '#fff' : '#4a8fe7'),
+                    pointRadius: yields.map(y => Math.abs(y - ytm) < 0.0001 ? 6 : 0),
+                    pointHoverRadius: 6,
+                    fill: true,
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return 'Price: $' + context.parsed.y.toFixed(2);
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        grid: { color: '#152040' },
+                        ticks: { color: '#5a6a80' },
+                        title: { display: true, text: 'Yield to Maturity', color: '#5a6a80' }
+                    },
+                    y: {
+                        grid: { color: '#152040' },
+                        ticks: { color: '#5a6a80', callback: value => '$' + value },
+                        title: { display: true, text: 'Price', color: '#5a6a80' }
+                    }
+                }
+            }
+        });
+    }
+
+    // Initial calculation
+    updateCalculator();
+</script>
+
+</body>
+</html>

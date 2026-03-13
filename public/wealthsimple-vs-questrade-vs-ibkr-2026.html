@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wealthsimple vs Questrade vs IBKR (2026 Comparison)</title>
+  <meta name="description" content="Ultimate 2026 broker showdown: Wealthsimple vs Questrade vs Interactive Brokers. Compare commissions, FX fees, margin rates, and TFSA/RRSP support.">
+  <link rel="canonical" href="https://westmountfundamentals.com/wealthsimple-vs-questrade-vs-ibkr-2026">
+
+  <meta property="og:title" content="Wealthsimple vs Questrade vs IBKR (2026 Comparison)">
+  <meta property="og:description" content="Ultimate 2026 broker showdown: Wealthsimple vs Questrade vs Interactive Brokers. Compare commissions, FX fees, margin rates, and TFSA/RRSP support.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://westmountfundamentals.com/wealthsimple-vs-questrade-vs-ibkr-2026">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Wealthsimple vs Questrade vs IBKR (2026 Comparison)">
+  <meta name="twitter:description" content="Ultimate 2026 broker showdown: Wealthsimple vs Questrade vs Interactive Brokers. Compare commissions, FX fees, margin rates, and TFSA/RRSP support.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Wealthsimple vs Questrade vs IBKR Canada (2026)",
+    "description": "Ultimate 2026 broker showdown: Wealthsimple vs Questrade vs Interactive Brokers. Compare commissions, FX fees, margin rates, and TFSA/RRSP support.",
+    "datePublished": "2026-03-13",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Westmount Research",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://westmountfundamentals.com/favicon.svg"
+      }
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Wealthsimple vs Questrade for TFSA?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For a TFSA, Wealthsimple is best if you only buy Canadian stocks and ETFs, as trades are free. Questrade is better if you buy US stocks or options, as you can hold USD directly without forced conversion fees on every trade."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which is the best broker in Canada?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The best broker in Canada depends on your needs: Wealthsimple for beginners and CAD-only investors, Interactive Brokers (IBKR) for active traders and margin users, and Questrade as a middle ground for passive ETF investors holding USD."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Wealthsimple vs Interactive Brokers?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Wealthsimple is completely free for Canadian stocks but charges a hefty 1.5% FX fee on US trades (unless paying for premium). Interactive Brokers is cheaper overall for active traders due to extremely low commissions and the lowest FX rates (0.002%)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do Questrade or IBKR have fractional shares?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Interactive Brokers supports fractional shares for most US and European stocks. Questrade does not currently offer fractional shares. Wealthsimple offers fractional shares on select popular US and Canadian stocks."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Who has the lowest margin rates in Canada?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Interactive Brokers has the lowest margin rates in Canada by a significant margin, typically around 6-7% depending on the benchmark, compared to Questrade's 7-8%. Wealthsimple does not offer traditional margin accounts."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg: #060a12;
+      --card: #0a1020;
+      --border: #152040;
+      --accent: #4a8fe7;
+      --text: #c8d0de;
+      --text-muted: #6a7a90;
+      --wealthsimple: #ffdd00;
+      --questrade: #008341;
+      --ibkr: #d02630;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* Navigation */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(6, 10, 18, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-brand {
+      color: #fff;
+      font-weight: 800;
+      text-decoration: none;
+      font-size: 1.2rem;
+      letter-spacing: -0.5px;
+    }
+
+    .nav-links a {
+      color: var(--text);
+      text-decoration: none;
+      margin-left: 1.5rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--accent); }
+
+    /* Main Content */
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .tag {
+      display: inline-block;
+      background: rgba(74, 143, 231, 0.1);
+      color: var(--accent);
+      padding: 0.25rem 0.75rem;
+      border-radius: 1rem;
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    h1 {
+      font-size: 3.5rem;
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(135deg, #fff 0%, #a0b0c0 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: -1px;
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* Stats Cards */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 4rem;
+    }
+
+    .stat-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: center;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--accent);
+    }
+
+    .stat-title {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-value {
+      font-size: 2rem;
+      font-weight: 900;
+      color: #fff;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .stat-desc {
+      font-size: 0.85rem;
+      color: var(--accent);
+      margin-top: 0.5rem;
+    }
+
+    /* Table Section */
+    .section-title {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 2rem;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 0.5rem;
+    }
+
+    .table-container {
+      overflow-x: auto;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      margin-bottom: 4rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    th, td {
+      padding: 1.2rem 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    th {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-muted);
+      background: rgba(21, 32, 64, 0.3);
+      position: sticky;
+      top: 0;
+    }
+
+    td {
+      font-size: 1rem;
+    }
+
+    td:first-child {
+      font-weight: 700;
+      color: #fff;
+      width: 25%;
+    }
+
+    .check { color: #10b981; font-weight: bold; }
+    .cross { color: #ef4444; font-weight: bold; }
+
+    .broker-logo {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      line-height: 24px;
+      text-align: center;
+      border-radius: 4px;
+      color: #000;
+      font-weight: 900;
+      font-size: 12px;
+      margin-right: 8px;
+    }
+    .w-logo { background: var(--wealthsimple); }
+    .q-logo { background: var(--questrade); color: #fff; }
+    .ib-logo { background: var(--ibkr); color: #fff; }
+
+    /* Chart Section */
+    .chart-container {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 4rem;
+      height: 500px;
+    }
+
+    /* FAQ Section */
+    .faq-grid {
+      display: grid;
+      gap: 1.5rem;
+      margin-bottom: 4rem;
+    }
+
+    .faq-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+    }
+
+    .faq-q {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.75rem;
+    }
+
+    .faq-a {
+      color: var(--text);
+    }
+
+    /* Methodology */
+    .methodology {
+      background: rgba(21, 32, 64, 0.2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 4rem;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .methodology h3 {
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 3rem 1.5rem;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    .disclaimer {
+      max-width: 800px;
+      margin: 1rem auto 0;
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      h1 { font-size: 2.2rem; }
+      nav { flex-direction: column; gap: 1rem; padding: 1rem; }
+      .nav-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; }
+      .nav-links a { margin: 0; }
+      th, td { padding: 0.75rem; font-size: 0.9rem; }
+      .chart-container { height: 350px; padding: 1rem; }
+    }
+  </style>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VYF72NSC1Q"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VYF72NSC1Q');
+  </script>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-brand">Westmount Fundamentals</a>
+  <div class="nav-links">
+    <a href="/#studies">Studies</a>
+    <a href="/#tools">Tools</a>
+    <a href="/#guides">Guides</a>
+  </div>
+</nav>
+
+<main>
+  <header>
+    <div class="tag">Broker Showdown</div>
+    <h1>Wealthsimple vs Questrade vs IBKR (2026)</h1>
+    <p class="subtitle">The ultimate head-to-head comparison of Canada's top online brokerages. Compare real commissions, FX fees, margin rates, and supported accounts.</p>
+  </header>
+
+  <div class="stats-grid" id="stats-grid">
+    <!-- Populated by JS -->
+  </div>
+
+  <h2 class="section-title">Feature Comparison Matrix</h2>
+  <div class="table-container">
+    <table id="comparison-table">
+      <thead>
+        <tr>
+          <th>Feature</th>
+          <th><span class="broker-logo w-logo">W</span>Wealthsimple</th>
+          <th><span class="broker-logo q-logo">Q</span>Questrade</th>
+          <th><span class="broker-logo ib-logo">IB</span>IBKR Canada</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Populated by JS -->
+      </tbody>
+    </table>
+  </div>
+
+  <h2 class="section-title">Cost Simulation: USD Stock Purchase</h2>
+  <p style="margin-bottom: 1.5rem; color: var(--text-muted);">Comparing the true cost of buying $10,000 USD worth of US stock (approx $13,635 CAD) including FX conversion fees.</p>
+  <div class="chart-container">
+    <canvas id="costChart"></canvas>
+  </div>
+
+  <h2 class="section-title">Frequently Asked Questions</h2>
+  <div class="faq-grid">
+    <div class="faq-card">
+      <div class="faq-q">Wealthsimple vs Questrade for TFSA?</div>
+      <div class="faq-a">For a TFSA, Wealthsimple is best if you only buy Canadian stocks and ETFs, as trades are free. Questrade is better if you buy US stocks or options, as you can hold USD directly without forced conversion fees on every trade.</div>
+    </div>
+    <div class="faq-card">
+      <div class="faq-q">Which is the best broker in Canada?</div>
+      <div class="faq-a">The best broker in Canada depends on your needs: Wealthsimple for beginners and CAD-only investors, Interactive Brokers (IBKR) for active traders and margin users, and Questrade as a middle ground for passive ETF investors holding USD.</div>
+    </div>
+    <div class="faq-card">
+      <div class="faq-q">Wealthsimple vs Interactive Brokers?</div>
+      <div class="faq-a">Wealthsimple is completely free for Canadian stocks but charges a hefty 1.5% FX fee on US trades (unless paying for premium). Interactive Brokers is cheaper overall for active traders due to extremely low commissions and the lowest FX rates (0.002%).</div>
+    </div>
+    <div class="faq-card">
+      <div class="faq-q">Do Questrade or IBKR have fractional shares?</div>
+      <div class="faq-a">Interactive Brokers supports fractional shares for most US and European stocks. Questrade does not currently offer fractional shares. Wealthsimple offers fractional shares on select popular US and Canadian stocks.</div>
+    </div>
+    <div class="faq-card">
+      <div class="faq-q">Who has the lowest margin rates in Canada?</div>
+      <div class="faq-a">Interactive Brokers has the lowest margin rates in Canada by a significant margin, typically around 6-7% depending on the benchmark, compared to Questrade's 7-8%. Wealthsimple does not offer traditional margin accounts.</div>
+    </div>
+  </div>
+
+  <div class="methodology">
+    <h3>Methodology & Data Sources</h3>
+    <p>Data was gathered directly from the official fee schedules of Wealthsimple, Questrade, and Interactive Brokers Canada as of early 2026. "True cost" simulations account for base commissions plus published foreign exchange markup spreads. Promotional offers or temporary fee waivers are excluded from the core comparison. Interactive Brokers pricing reflects their tiered/pro structure typical for active Canadian clients.</p>
+  </div>
+
+</main>
+
+<footer>
+  <div>© 2026 <a href="/">Westmount Research</a> · A GAB Ventures property.</div>
+  <div class="disclaimer">Not investment advice. All information for educational purposes only. Fee structures change; verify pricing directly with brokers before opening an account.</div>
+</footer>
+
+<script>
+  // REAL DATA INJECTED
+  const __BROKER_DATA__ = {
+  "metadata": {
+    "lastUpdated": "2026-03-13",
+    "usdCadRate": 1.3635
+  },
+  "brokers": [
+    {
+      "id": "wealthsimple",
+      "name": "Wealthsimple",
+      "logo": "W",
+      "color": "#ffdd00",
+      "commissions": {
+        "cadStocks": "$0",
+        "usdStocks": "$0",
+        "options": "$2.00 per contract",
+        "crypto": "1.5% - 2% spread"
+      },
+      "fxFees": {
+        "standard": "1.5% per trade",
+        "usdAccounts": "$10/mo (Premium free)"
+      },
+      "accounts": {
+        "tfsa": true,
+        "rrsp": true,
+        "fhsa": true,
+        "margin": false,
+        "cash": true
+      },
+      "features": {
+        "fractional": true,
+        "drIp": true,
+        "realTimeData": true,
+        "options": true,
+        "api": false
+      },
+      "marginRates": "N/A"
+    },
+    {
+      "id": "questrade",
+      "name": "Questrade",
+      "logo": "Q",
+      "color": "#008341",
+      "commissions": {
+        "cadStocks": "1¢/sh (min $4.95, max $9.95)",
+        "usdStocks": "1¢/sh (min $4.95, max $9.95)",
+        "options": "$9.95 + $1.00/contract",
+        "crypto": "ETFs only"
+      },
+      "fxFees": {
+        "standard": "1.45% per trade",
+        "usdAccounts": "Free to hold USD"
+      },
+      "accounts": {
+        "tfsa": true,
+        "rrsp": true,
+        "fhsa": true,
+        "margin": true,
+        "cash": true
+      },
+      "features": {
+        "fractional": false,
+        "drIp": true,
+        "realTimeData": true,
+        "options": true,
+        "api": true
+      },
+      "marginRates": "Prime + 1.5% to 2.5%"
+    },
+    {
+      "id": "ibkr",
+      "name": "IBKR Canada",
+      "logo": "IB",
+      "color": "#d02630",
+      "commissions": {
+        "cadStocks": "1¢/sh (min CAD 1.00)",
+        "usdStocks": "0.5¢/sh (min USD 1.00)",
+        "options": "USD 0.65 - 1.25/contract",
+        "crypto": "0.12% - 0.18%"
+      },
+      "fxFees": {
+        "standard": "0.002% (min $2.00 USD)",
+        "usdAccounts": "Free to hold USD"
+      },
+      "accounts": {
+        "tfsa": true,
+        "rrsp": true,
+        "fhsa": false,
+        "margin": true,
+        "cash": true
+      },
+      "features": {
+        "fractional": true,
+        "drIp": true,
+        "realTimeData": true,
+        "options": true,
+        "api": true
+      },
+      "marginRates": "Benchmark + 0.5% to 1.5%"
+    }
+  ]
+};
+
+  document.addEventListener('DOMContentLoaded', () => {
+
+    // 1. Render Stats
+    const statsGrid = document.getElementById('stats-grid');
+    statsGrid.innerHTML = `
+      <div class="stat-card">
+        <div class="stat-title">Lowest FX Fee</div>
+        <div class="stat-value" style="color: var(--ibkr)">0.002%</div>
+        <div class="stat-desc">Interactive Brokers</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-title">Lowest CAD Comm.</div>
+        <div class="stat-value" style="color: var(--wealthsimple)">$0.00</div>
+        <div class="stat-desc">Wealthsimple</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-title">Lowest Margin Rate</div>
+        <div class="stat-value" style="color: var(--ibkr)">~6.8%</div>
+        <div class="stat-desc">Interactive Brokers</div>
+      </div>
+    `;
+
+    // 2. Render Table
+    const tbody = document.querySelector('#comparison-table tbody');
+
+    const rows = [
+      { label: 'CAD Stock Commission', key: 'commissions.cadStocks' },
+      { label: 'USD Stock Commission', key: 'commissions.usdStocks' },
+      { label: 'Options Commission', key: 'commissions.options' },
+      { label: 'Standard FX Fee', key: 'fxFees.standard' },
+      { label: 'Holding USD in Account', key: 'fxFees.usdAccounts' },
+      { label: 'Margin Rates', key: 'marginRates' },
+      { label: 'TFSA / RRSP Support', render: (b) => b.accounts.tfsa && b.accounts.rrsp ? '<span class="check">Yes</span>' : '<span class="cross">No</span>' },
+      { label: 'FHSA Support', render: (b) => b.accounts.fhsa ? '<span class="check">Yes</span>' : '<span class="cross">No</span>' },
+      { label: 'Fractional Shares', render: (b) => b.features.fractional ? '<span class="check">Yes</span>' : '<span class="cross">No</span>' },
+      { label: 'API Access', render: (b) => b.features.api ? '<span class="check">Yes</span>' : '<span class="cross">No</span>' },
+    ];
+
+    rows.forEach(row => {
+      const tr = document.createElement('tr');
+      let html = `<td>${row.label}</td>`;
+
+      __BROKER_DATA__.brokers.forEach(broker => {
+        let val = '';
+        if (row.render) {
+          val = row.render(broker);
+        } else {
+          const keys = row.key.split('.');
+          val = keys.reduce((obj, k) => obj[k], broker);
+        }
+        html += `<td>${val}</td>`;
+      });
+
+      tr.innerHTML = html;
+      tbody.appendChild(tr);
+    });
+
+    // 3. Render Chart
+    // Simulating $10,000 USD purchase from CAD
+    // Trade size: $10,000 USD
+    // WS: $0 comm + 1.5% FX = $150 USD
+    // Questrade: $4.95 comm + 1.45% FX = $149.95 USD
+    // IBKR: $1.00 comm + 0.002% FX ($2 min) = $3.00 USD
+
+    const ctx = document.getElementById('costChart').getContext('2d');
+
+    Chart.defaults.color = '#c8d0de';
+    Chart.defaults.font.family = "'Inter', sans-serif";
+
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Wealthsimple', 'Questrade', 'Interactive Brokers'],
+        datasets: [{
+          label: 'Total Fees (USD) for $10k USD Stock Trade',
+          data: [150.00, 149.95, 3.00],
+          backgroundColor: [
+            'rgba(255, 221, 0, 0.8)',
+            'rgba(0, 131, 65, 0.8)',
+            'rgba(208, 38, 48, 0.8)'
+          ],
+          borderColor: [
+            '#ffdd00',
+            '#008341',
+            '#d02630'
+          ],
+          borderWidth: 1,
+          borderRadius: 6
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              label: function(context) {
+                return '$' + context.raw.toFixed(2) + ' USD in fees';
+              }
+            }
+          }
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+            grid: { color: '#152040' },
+            ticks: {
+              callback: function(value) {
+                return '$' + value;
+              }
+            }
+          },
+          x: {
+            grid: { display: false }
+          }
+        }
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

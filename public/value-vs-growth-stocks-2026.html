@@ -1,0 +1,1918 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Value vs Growth Stocks: Performance Comparison (2026)</title>
+  <meta name="description" content="Value vs growth stock performance comparison for 2026. See historical returns, valuations, and an ETF comparison to decide which strategy wins.">
+  <link rel="canonical" href="https://westmountfundamentals.com/value-vs-growth-stocks-2026">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Value vs Growth Stocks: Performance Comparison (2026)">
+  <meta property="og:description" content="Value vs growth stock performance comparison for 2026. See historical returns, valuations, and an ETF comparison to decide which strategy wins.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://westmountfundamentals.com/value-vs-growth-stocks-2026">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Value vs Growth Stocks: Performance Comparison (2026)">
+  <meta name="twitter:description" content="Value vs growth stock performance comparison for 2026. See historical returns, valuations, and an ETF comparison to decide which strategy wins.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VYF72NSC1Q"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VYF72NSC1Q');
+  </script>
+
+  <style>
+    :root {
+      --bg: #060a12;
+      --card-bg: #0a1020;
+      --border: #152040;
+      --accent: #4a8fe7;
+      --text-main: #c8d0de;
+      --text-muted: #5a6a80;
+      --value-color: #38bdf8;
+      --growth-color: #fbbf24;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    /* Sticky Nav */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(6, 10, 18, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .brand {
+      font-weight: 900;
+      font-size: 1.2rem;
+      color: #fff;
+      text-decoration: none;
+      letter-spacing: -0.5px;
+    }
+    .brand span { color: var(--accent); }
+    .nav-links { display: flex; gap: 24px; }
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: #fff; }
+
+    /* Layout */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 24px;
+    }
+
+    header { text-align: center; margin-bottom: 60px; }
+    h1 {
+      font-size: 3rem;
+      font-weight: 900;
+      letter-spacing: -1.5px;
+      margin-bottom: 16px;
+      background: linear-gradient(90deg, #fff, var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      line-height: 1.2;
+    }
+    .subtitle {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* Stats Row */
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-bottom: 60px;
+    }
+    .stat-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .stat-label {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+    .stat-value {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .stat-sub {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 8px;
+    }
+    .val-color { color: var(--value-color); }
+    .gro-color { color: var(--growth-color); }
+
+    /* Section styling */
+    section { margin-bottom: 60px; }
+    section h2 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 12px;
+    }
+
+    /* Chart Container */
+    .chart-container {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      height: 400px;
+      width: 100%;
+      position: relative;
+    }
+
+    /* Data Table */
+    .table-controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    input[type="text"] {
+      background: #0a1020;
+      border: 1px solid var(--border);
+      color: #fff;
+      padding: 10px 16px;
+      border-radius: 6px;
+      font-family: 'Inter', sans-serif;
+      width: 100%;
+      max-width: 300px;
+    }
+    input[type="text"]:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+    .filter-btn {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text-main);
+      padding: 8px 16px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+    .filter-btn.active {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
+
+    .table-wrapper {
+      overflow-x: auto;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+    th {
+      background: rgba(21, 32, 64, 0.4);
+      padding: 16px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    th:hover { color: #fff; }
+    td {
+      padding: 16px;
+      border-top: 1px solid var(--border);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.95rem;
+    }
+    td.name-col {
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+    }
+    .ticker {
+      display: inline-block;
+      background: rgba(255,255,255,0.05);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      color: var(--accent);
+      margin-right: 8px;
+    }
+    .pos { color: #10b981; }
+    .neg { color: #ef4444; }
+    .type-badge {
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      font-family: 'Inter', sans-serif;
+    }
+    .type-value { background: rgba(56, 189, 248, 0.1); color: var(--value-color); }
+    .type-growth { background: rgba(251, 191, 36, 0.1); color: var(--growth-color); }
+
+    /* FAQ */
+    .faq-item {
+      margin-bottom: 24px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+    }
+    .faq-item h3 {
+      font-size: 1.1rem;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+    .faq-item p { color: var(--text-muted); }
+
+    /* Methodology & Footer */
+    .methodology {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      background: rgba(255,255,255,0.02);
+      padding: 24px;
+      border-radius: 12px;
+      margin-top: 60px;
+    }
+    footer {
+      text-align: center;
+      padding: 40px 24px;
+      border-top: 1px solid var(--border);
+      margin-top: 60px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 2.2rem; }
+      .nav-links { display: none; }
+      .stats-row { grid-template-columns: 1fr; }
+    }
+  </style>
+
+  <!-- JSON-LD FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Are value stocks better than growth stocks?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Historically, value stocks outperformed growth over the very long term (Fama-French model), but growth stocks have dominated the last decade, driven by big tech. The 'better' choice depends entirely on your time horizon and market cycle."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between a value ETF and a growth ETF?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A value ETF (like VTV) holds mature companies with low P/E ratios and higher dividend yields. A growth ETF (like VUG) holds companies with rapidly increasing revenue and earnings, usually trading at high P/E ratios with little to no dividends."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why do growth stocks have higher P/E ratios?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Investors are willing to pay a premium for growth stocks today because they expect their earnings to grow significantly in the future. You are paying for future potential rather than current profits."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is it better to invest in VTV or VUG?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Many investors hold both to create a balanced, blended portfolio (which essentially mimics the S&P 500 or total market). If you want dividend income and lower volatility, VTV is preferable. If you have a long time horizon and can stomach volatility for higher potential returns, VUG is favored."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "When do value stocks perform best?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Value stocks typically perform best during periods of economic recovery, high inflation, or rising interest rates. When rates rise, the 'future cash flows' of growth stocks are discounted more heavily, making the current cash flows of value stocks more attractive."
+        }
+      }
+    ]
+  }
+  </script>
+  <!-- JSON-LD Article Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Value vs Growth Stocks: Performance Comparison (2026)",
+    "description": "Value vs growth stock performance comparison for 2026. See historical returns, valuations, and an ETF comparison to decide which strategy wins.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Westmount Research"
+    },
+    "datePublished": "2026-03-13"
+  }
+  </script>
+</head>
+<body>
+  <nav>
+    <a href="/" class="brand">Westmount<span>Fundamentals</span></a>
+    <div class="nav-links">
+      <a href="/#studies">Studies</a>
+      <a href="/#tools">Tools</a>
+      <a href="/#guides">Guides</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <header>
+      <h1>Value vs Growth Stocks (2026)</h1>
+      <p class="subtitle">Historical performance, current valuations, and a direct comparison between the Vanguard Value ETF (VTV) and Vanguard Growth ETF (VUG).</p>
+    </header>
+
+    <!-- Stats Row will be injected here via JS -->
+    <div class="stats-row" id="etf-stats"></div>
+
+    <section>
+      <h2>Performance Comparison (Since 2016)</h2>
+      <div class="chart-container">
+        <canvas id="performanceChart"></canvas>
+      </div>
+    </section>
+
+    <section>
+      <h2>Top Holdings Comparison</h2>
+      <div class="table-controls">
+        <input type="text" id="searchInput" placeholder="Search ticker or name...">
+        <div class="filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="Value">Value</button>
+          <button class="filter-btn" data-filter="Growth">Growth</button>
+        </div>
+      </div>
+      <div class="table-wrapper">
+        <table id="holdingsTable">
+          <thead>
+            <tr>
+              <th data-sort="symbol">Company ↕</th>
+              <th data-sort="type">Style ↕</th>
+              <th data-sort="peRatio">P/E Ratio ↕</th>
+              <th data-sort="pbRatio">P/B Ratio ↕</th>
+              <th data-sort="yield">Div Yield ↕</th>
+              <th data-sort="ytdReturn">YTD Return ↕</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody">
+            <!-- Table rows injected via JS -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <!-- FAQ injected via JS to keep HTML clean -->
+      </div>
+    </section>
+
+    <div class="methodology">
+      <strong>Methodology:</strong> Data sourced from Yahoo Finance via the <code>yahoo-finance2</code> API. ETF performance tracks Vanguard Value (VTV) and Vanguard Growth (VUG) adjusted close prices from 2016 to current. Valuation metrics (P/E, P/B) are based on current trailing 12-month data. Dividend yield is stated as a forward yield percentage. Top holdings are selected as representative megacap stocks within each style category.
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2026 Westmount Research · A GAB Ventures property. Not investment advice. All information for educational purposes only.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <script>
+
+  const dbData = {
+  "etfs": {
+    "vtv": {
+      "symbol": "VTV",
+      "name": "Vanguard Value ETF",
+      "price": 197,
+      "peRatio": 20.793438,
+      "pbRatio": 2.599665,
+      "yield": 1.88,
+      "ytdReturn": 2.1731250943732494,
+      "expenseRatio": 0.00029999999
+    },
+    "vug": {
+      "symbol": "VUG",
+      "name": "Vanguard Growth ETF",
+      "price": 455.3,
+      "peRatio": 34.55733,
+      "pbRatio": 2.1103227,
+      "yield": 0.44,
+      "ytdReturn": -6.355411647721956,
+      "expenseRatio": 0.00029999999
+    }
+  },
+  "historical": {
+    "vtv": [
+      {
+        "date": "2016-01-01",
+        "close": 60.26644515991211
+      },
+      {
+        "date": "2016-02-01",
+        "close": 60.328521728515625
+      },
+      {
+        "date": "2016-03-01",
+        "close": 63.953529357910156
+      },
+      {
+        "date": "2016-04-01",
+        "close": 65.34639739990234
+      },
+      {
+        "date": "2016-05-01",
+        "close": 66.04171752929688
+      },
+      {
+        "date": "2016-06-01",
+        "close": 66.4011001586914
+      },
+      {
+        "date": "2016-07-01",
+        "close": 68.66300964355469
+      },
+      {
+        "date": "2016-08-01",
+        "close": 69.12662506103516
+      },
+      {
+        "date": "2016-09-01",
+        "close": 68.36441040039062
+      },
+      {
+        "date": "2016-10-01",
+        "close": 68.05130004882812
+      },
+      {
+        "date": "2016-11-01",
+        "close": 72.13198852539062
+      },
+      {
+        "date": "2016-12-01",
+        "close": 73.55548095703125
+      },
+      {
+        "date": "2017-01-01",
+        "close": 74.46654510498047
+      },
+      {
+        "date": "2017-02-01",
+        "close": 77.13546752929688
+      },
+      {
+        "date": "2017-03-01",
+        "close": 75.9802474975586
+      },
+      {
+        "date": "2017-04-01",
+        "close": 76.403076171875
+      },
+      {
+        "date": "2017-05-01",
+        "close": 76.45116424560547
+      },
+      {
+        "date": "2017-06-01",
+        "close": 77.38076782226562
+      },
+      {
+        "date": "2017-07-01",
+        "close": 79.02909851074219
+      },
+      {
+        "date": "2017-08-01",
+        "close": 78.65834045410156
+      },
+      {
+        "date": "2017-09-01",
+        "close": 80.45571899414062
+      },
+      {
+        "date": "2017-10-01",
+        "close": 82.48873138427734
+      },
+      {
+        "date": "2017-11-01",
+        "close": 85.3939208984375
+      },
+      {
+        "date": "2017-12-01",
+        "close": 86.27842712402344
+      },
+      {
+        "date": "2018-01-01",
+        "close": 90.89490509033203
+      },
+      {
+        "date": "2018-02-01",
+        "close": 86.86164855957031
+      },
+      {
+        "date": "2018-03-01",
+        "close": 84.2408676147461
+      },
+      {
+        "date": "2018-04-01",
+        "close": 85.0763931274414
+      },
+      {
+        "date": "2018-05-01",
+        "close": 85.59371948242188
+      },
+      {
+        "date": "2018-06-01",
+        "close": 85.2570571899414
+      },
+      {
+        "date": "2018-07-01",
+        "close": 89.75881958007812
+      },
+      {
+        "date": "2018-08-01",
+        "close": 91.46049499511719
+      },
+      {
+        "date": "2018-09-01",
+        "close": 91.4274673461914
+      },
+      {
+        "date": "2018-10-01",
+        "close": 87.44944763183594
+      },
+      {
+        "date": "2018-11-01",
+        "close": 90.30982971191406
+      },
+      {
+        "date": "2018-12-01",
+        "close": 81.44598388671875
+      },
+      {
+        "date": "2019-01-01",
+        "close": 87.75762939453125
+      },
+      {
+        "date": "2019-02-01",
+        "close": 90.27074432373047
+      },
+      {
+        "date": "2019-03-01",
+        "close": 90.1618423461914
+      },
+      {
+        "date": "2019-04-01",
+        "close": 93.83613586425781
+      },
+      {
+        "date": "2019-05-01",
+        "close": 87.89810943603516
+      },
+      {
+        "date": "2019-06-01",
+        "close": 93.55777740478516
+      },
+      {
+        "date": "2019-07-01",
+        "close": 94.93408203125
+      },
+      {
+        "date": "2019-08-01",
+        "close": 92.1159439086914
+      },
+      {
+        "date": "2019-09-01",
+        "close": 94.74736022949219
+      },
+      {
+        "date": "2019-10-01",
+        "close": 97.11158752441406
+      },
+      {
+        "date": "2019-11-01",
+        "close": 100.44996643066406
+      },
+      {
+        "date": "2019-12-01",
+        "close": 102.32833862304688
+      },
+      {
+        "date": "2020-01-01",
+        "close": 100.52351379394531
+      },
+      {
+        "date": "2020-02-01",
+        "close": 90.75936126708984
+      },
+      {
+        "date": "2020-03-01",
+        "close": 76.61637878417969
+      },
+      {
+        "date": "2020-04-01",
+        "close": 85.54761505126953
+      },
+      {
+        "date": "2020-05-01",
+        "close": 88.01264190673828
+      },
+      {
+        "date": "2020-06-01",
+        "close": 86.44160461425781
+      },
+      {
+        "date": "2020-07-01",
+        "close": 90.37879180908203
+      },
+      {
+        "date": "2020-08-01",
+        "close": 94.15808868408203
+      },
+      {
+        "date": "2020-09-01",
+        "close": 91.42859649658203
+      },
+      {
+        "date": "2020-10-01",
+        "close": 90.39801788330078
+      },
+      {
+        "date": "2020-11-01",
+        "close": 101.93011474609375
+      },
+      {
+        "date": "2020-12-01",
+        "close": 104.80213165283203
+      },
+      {
+        "date": "2021-01-01",
+        "close": 104.6748046875
+      },
+      {
+        "date": "2021-02-01",
+        "close": 109.90766143798828
+      },
+      {
+        "date": "2021-03-01",
+        "close": 116.5950698852539
+      },
+      {
+        "date": "2021-04-01",
+        "close": 121.265625
+      },
+      {
+        "date": "2021-05-01",
+        "close": 124.80604553222656
+      },
+      {
+        "date": "2021-06-01",
+        "close": 122.58549499511719
+      },
+      {
+        "date": "2021-07-01",
+        "close": 124.50080871582031
+      },
+      {
+        "date": "2021-08-01",
+        "close": 127.10112762451172
+      },
+      {
+        "date": "2021-09-01",
+        "close": 121.38045501708984
+      },
+      {
+        "date": "2021-10-01",
+        "close": 128.73736572265625
+      },
+      {
+        "date": "2021-11-01",
+        "close": 124.82311248779297
+      },
+      {
+        "date": "2021-12-01",
+        "close": 132.6786346435547
+      },
+      {
+        "date": "2022-01-01",
+        "close": 132.07064819335938
+      },
+      {
+        "date": "2022-02-01",
+        "close": 130.54605102539062
+      },
+      {
+        "date": "2022-03-01",
+        "close": 134.11256408691406
+      },
+      {
+        "date": "2022-04-01",
+        "close": 128.3711395263672
+      },
+      {
+        "date": "2022-05-01",
+        "close": 131.464111328125
+      },
+      {
+        "date": "2022-06-01",
+        "close": 120.32400512695312
+      },
+      {
+        "date": "2022-07-01",
+        "close": 127.22154235839844
+      },
+      {
+        "date": "2022-08-01",
+        "close": 123.81491088867188
+      },
+      {
+        "date": "2022-09-01",
+        "close": 113.38375854492188
+      },
+      {
+        "date": "2022-10-01",
+        "close": 127.53712463378906
+      },
+      {
+        "date": "2022-11-01",
+        "close": 135.1818084716797
+      },
+      {
+        "date": "2022-12-01",
+        "close": 129.7556610107422
+      },
+      {
+        "date": "2023-01-01",
+        "close": 134.3591766357422
+      },
+      {
+        "date": "2023-02-01",
+        "close": 130.01026916503906
+      },
+      {
+        "date": "2023-03-01",
+        "close": 128.61337280273438
+      },
+      {
+        "date": "2023-04-01",
+        "close": 131.7055206298828
+      },
+      {
+        "date": "2023-05-01",
+        "close": 126.28028869628906
+      },
+      {
+        "date": "2023-06-01",
+        "close": 133.14854431152344
+      },
+      {
+        "date": "2023-07-01",
+        "close": 138.65704345703125
+      },
+      {
+        "date": "2023-08-01",
+        "close": 135.3558807373047
+      },
+      {
+        "date": "2023-09-01",
+        "close": 130.09292602539062
+      },
+      {
+        "date": "2023-10-01",
+        "close": 127.46014404296875
+      },
+      {
+        "date": "2023-11-01",
+        "close": 135.97389221191406
+      },
+      {
+        "date": "2023-12-01",
+        "close": 141.89659118652344
+      },
+      {
+        "date": "2024-01-01",
+        "close": 144.13754272460938
+      },
+      {
+        "date": "2024-02-01",
+        "close": 148.94532775878906
+      },
+      {
+        "date": "2024-03-01",
+        "close": 155.66470336914062
+      },
+      {
+        "date": "2024-04-01",
+        "close": 150.51734924316406
+      },
+      {
+        "date": "2024-05-01",
+        "close": 155.0283660888672
+      },
+      {
+        "date": "2024-06-01",
+        "close": 154.28773498535156
+      },
+      {
+        "date": "2024-07-01",
+        "close": 162.62193298339844
+      },
+      {
+        "date": "2024-08-01",
+        "close": 167.30673217773438
+      },
+      {
+        "date": "2024-09-01",
+        "close": 168.97157287597656
+      },
+      {
+        "date": "2024-10-01",
+        "close": 167.52218627929688
+      },
+      {
+        "date": "2024-11-01",
+        "close": 176.97059631347656
+      },
+      {
+        "date": "2024-12-01",
+        "close": 164.7392578125
+      },
+      {
+        "date": "2025-01-01",
+        "close": 172.9351043701172
+      },
+      {
+        "date": "2025-02-01",
+        "close": 174.3346405029297
+      },
+      {
+        "date": "2025-03-01",
+        "close": 169.05947875976562
+      },
+      {
+        "date": "2025-04-01",
+        "close": 163.8856658935547
+      },
+      {
+        "date": "2025-05-01",
+        "close": 168.71914672851562
+      },
+      {
+        "date": "2025-06-01",
+        "close": 173.98577880859375
+      },
+      {
+        "date": "2025-07-01",
+        "close": 175.23727416992188
+      },
+      {
+        "date": "2025-08-01",
+        "close": 181.35435485839844
+      },
+      {
+        "date": "2025-09-01",
+        "close": 184.59104919433594
+      },
+      {
+        "date": "2025-10-01",
+        "close": 184.80255126953125
+      },
+      {
+        "date": "2025-11-01",
+        "close": 189.49822998046875
+      },
+      {
+        "date": "2025-12-01",
+        "close": 190.00559997558594
+      },
+      {
+        "date": "2026-01-01",
+        "close": 199.75
+      },
+      {
+        "date": "2026-02-01",
+        "close": 207.25999450683594
+      },
+      {
+        "date": "2026-03-01",
+        "close": 197
+      },
+      {
+        "date": "2026-03-12",
+        "close": 197
+      }
+    ],
+    "vug": [
+      {
+        "date": "2016-01-01",
+        "close": 91.81793212890625
+      },
+      {
+        "date": "2016-02-01",
+        "close": 91.45064544677734
+      },
+      {
+        "date": "2016-03-01",
+        "close": 97.7401351928711
+      },
+      {
+        "date": "2016-04-01",
+        "close": 97.26409912109375
+      },
+      {
+        "date": "2016-05-01",
+        "close": 99.6863021850586
+      },
+      {
+        "date": "2016-06-01",
+        "close": 98.72846221923828
+      },
+      {
+        "date": "2016-07-01",
+        "close": 103.765869140625
+      },
+      {
+        "date": "2016-08-01",
+        "close": 103.44256591796875
+      },
+      {
+        "date": "2016-09-01",
+        "close": 103.72888946533203
+      },
+      {
+        "date": "2016-10-01",
+        "close": 101.38297271728516
+      },
+      {
+        "date": "2016-11-01",
+        "close": 102.61570739746094
+      },
+      {
+        "date": "2016-12-01",
+        "close": 103.32943725585938
+      },
+      {
+        "date": "2017-01-01",
+        "close": 107.47325134277344
+      },
+      {
+        "date": "2017-02-01",
+        "close": 112.18527221679688
+      },
+      {
+        "date": "2017-03-01",
+        "close": 113.29344177246094
+      },
+      {
+        "date": "2017-04-01",
+        "close": 116.23770904541016
+      },
+      {
+        "date": "2017-05-01",
+        "close": 119.49794006347656
+      },
+      {
+        "date": "2017-06-01",
+        "close": 118.67588806152344
+      },
+      {
+        "date": "2017-07-01",
+        "close": 122.01612091064453
+      },
+      {
+        "date": "2017-08-01",
+        "close": 123.44921875
+      },
+      {
+        "date": "2017-09-01",
+        "close": 124.33898162841797
+      },
+      {
+        "date": "2017-10-01",
+        "close": 128.33460998535156
+      },
+      {
+        "date": "2017-11-01",
+        "close": 131.44451904296875
+      },
+      {
+        "date": "2017-12-01",
+        "close": 132.14920043945312
+      },
+      {
+        "date": "2018-01-01",
+        "close": 141.64398193359375
+      },
+      {
+        "date": "2018-02-01",
+        "close": 137.50546264648438
+      },
+      {
+        "date": "2018-03-01",
+        "close": 133.7534637451172
+      },
+      {
+        "date": "2018-04-01",
+        "close": 134.4491424560547
+      },
+      {
+        "date": "2018-05-01",
+        "close": 140.3461151123047
+      },
+      {
+        "date": "2018-06-01",
+        "close": 141.57469177246094
+      },
+      {
+        "date": "2018-07-01",
+        "close": 145.52720642089844
+      },
+      {
+        "date": "2018-08-01",
+        "close": 152.3217010498047
+      },
+      {
+        "date": "2018-09-01",
+        "close": 152.60598754882812
+      },
+      {
+        "date": "2018-10-01",
+        "close": 139.17312622070312
+      },
+      {
+        "date": "2018-11-01",
+        "close": 139.971435546875
+      },
+      {
+        "date": "2018-12-01",
+        "close": 127.66404724121094
+      },
+      {
+        "date": "2019-01-01",
+        "close": 139.98443603515625
+      },
+      {
+        "date": "2019-02-01",
+        "close": 145.14707946777344
+      },
+      {
+        "date": "2019-03-01",
+        "close": 149.2696075439453
+      },
+      {
+        "date": "2019-04-01",
+        "close": 156.7303009033203
+      },
+      {
+        "date": "2019-05-01",
+        "close": 146.79708862304688
+      },
+      {
+        "date": "2019-06-01",
+        "close": 156.35708618164062
+      },
+      {
+        "date": "2019-07-01",
+        "close": 160.35379028320312
+      },
+      {
+        "date": "2019-08-01",
+        "close": 159.43275451660156
+      },
+      {
+        "date": "2019-09-01",
+        "close": 159.52867126464844
+      },
+      {
+        "date": "2019-10-01",
+        "close": 164.03817749023438
+      },
+      {
+        "date": "2019-11-01",
+        "close": 170.58663940429688
+      },
+      {
+        "date": "2019-12-01",
+        "close": 175.17343139648438
+      },
+      {
+        "date": "2020-01-01",
+        "close": 181.16009521484375
+      },
+      {
+        "date": "2020-02-01",
+        "close": 169.44403076171875
+      },
+      {
+        "date": "2020-03-01",
+        "close": 151.09365844726562
+      },
+      {
+        "date": "2020-04-01",
+        "close": 174.33883666992188
+      },
+      {
+        "date": "2020-05-01",
+        "close": 186.64657592773438
+      },
+      {
+        "date": "2020-06-01",
+        "close": 195.38671875
+      },
+      {
+        "date": "2020-07-01",
+        "close": 210.60299682617188
+      },
+      {
+        "date": "2020-08-01",
+        "close": 231.85995483398438
+      },
+      {
+        "date": "2020-09-01",
+        "close": 220.5242156982422
+      },
+      {
+        "date": "2020-10-01",
+        "close": 214.2955322265625
+      },
+      {
+        "date": "2020-11-01",
+        "close": 236.52395629882812
+      },
+      {
+        "date": "2020-12-01",
+        "close": 245.91036987304688
+      },
+      {
+        "date": "2021-01-01",
+        "close": 243.8643798828125
+      },
+      {
+        "date": "2021-02-01",
+        "close": 245.92599487304688
+      },
+      {
+        "date": "2021-03-01",
+        "close": 249.9617156982422
+      },
+      {
+        "date": "2021-04-01",
+        "close": 267.6476745605469
+      },
+      {
+        "date": "2021-05-01",
+        "close": 263.820068359375
+      },
+      {
+        "date": "2021-06-01",
+        "close": 279.3348693847656
+      },
+      {
+        "date": "2021-07-01",
+        "close": 288.60894775390625
+      },
+      {
+        "date": "2021-08-01",
+        "close": 299.209716796875
+      },
+      {
+        "date": "2021-09-01",
+        "close": 282.9819641113281
+      },
+      {
+        "date": "2021-10-01",
+        "close": 306.687744140625
+      },
+      {
+        "date": "2021-11-01",
+        "close": 308.8746337890625
+      },
+      {
+        "date": "2021-12-01",
+        "close": 313.2773742675781
+      },
+      {
+        "date": "2022-01-01",
+        "close": 284.2008361816406
+      },
+      {
+        "date": "2022-02-01",
+        "close": 271.1684265136719
+      },
+      {
+        "date": "2022-03-01",
+        "close": 281.1798400878906
+      },
+      {
+        "date": "2022-04-01",
+        "close": 245.23532104492188
+      },
+      {
+        "date": "2022-05-01",
+        "close": 238.63885498046875
+      },
+      {
+        "date": "2022-06-01",
+        "close": 218.14463806152344
+      },
+      {
+        "date": "2022-07-01",
+        "close": 246.95147705078125
+      },
+      {
+        "date": "2022-08-01",
+        "close": 234.60195922851562
+      },
+      {
+        "date": "2022-09-01",
+        "close": 209.69703674316406
+      },
+      {
+        "date": "2022-10-01",
+        "close": 218.7313690185547
+      },
+      {
+        "date": "2022-11-01",
+        "close": 228.8459930419922
+      },
+      {
+        "date": "2022-12-01",
+        "close": 209.274658203125
+      },
+      {
+        "date": "2023-01-01",
+        "close": 231.48204040527344
+      },
+      {
+        "date": "2023-02-01",
+        "close": 228.185546875
+      },
+      {
+        "date": "2023-03-01",
+        "close": 245.45521545410156
+      },
+      {
+        "date": "2023-04-01",
+        "close": 248.45079040527344
+      },
+      {
+        "date": "2023-05-01",
+        "close": 261.2958068847656
+      },
+      {
+        "date": "2023-06-01",
+        "close": 278.9415588378906
+      },
+      {
+        "date": "2023-07-01",
+        "close": 288.7326354980469
+      },
+      {
+        "date": "2023-08-01",
+        "close": 285.5931701660156
+      },
+      {
+        "date": "2023-09-01",
+        "close": 268.8394470214844
+      },
+      {
+        "date": "2023-10-01",
+        "close": 264.457275390625
+      },
+      {
+        "date": "2023-11-01",
+        "close": 295.162841796875
+      },
+      {
+        "date": "2023-12-01",
+        "close": 307.3323669433594
+      },
+      {
+        "date": "2024-01-01",
+        "close": 314.56341552734375
+      },
+      {
+        "date": "2024-02-01",
+        "close": 336.7896423339844
+      },
+      {
+        "date": "2024-03-01",
+        "close": 340.91986083984375
+      },
+      {
+        "date": "2024-04-01",
+        "close": 327.11859130859375
+      },
+      {
+        "date": "2024-05-01",
+        "close": 347.8077392578125
+      },
+      {
+        "date": "2024-06-01",
+        "close": 370.9466247558594
+      },
+      {
+        "date": "2024-07-01",
+        "close": 364.73333740234375
+      },
+      {
+        "date": "2024-08-01",
+        "close": 372.92572021484375
+      },
+      {
+        "date": "2024-09-01",
+        "close": 381.24713134765625
+      },
+      {
+        "date": "2024-10-01",
+        "close": 380.6950378417969
+      },
+      {
+        "date": "2024-11-01",
+        "close": 406.7527770996094
+      },
+      {
+        "date": "2024-12-01",
+        "close": 408.05517578125
+      },
+      {
+        "date": "2025-01-01",
+        "close": 416.4515075683594
+      },
+      {
+        "date": "2025-02-01",
+        "close": 403.8887939453125
+      },
+      {
+        "date": "2025-03-01",
+        "close": 369.1371765136719
+      },
+      {
+        "date": "2025-04-01",
+        "close": 377.0655212402344
+      },
+      {
+        "date": "2025-05-01",
+        "close": 411.802734375
+      },
+      {
+        "date": "2025-06-01",
+        "close": 436.9809265136719
+      },
+      {
+        "date": "2025-07-01",
+        "close": 454.2312316894531
+      },
+      {
+        "date": "2025-08-01",
+        "close": 457.6640319824219
+      },
+      {
+        "date": "2025-09-01",
+        "close": 478.61029052734375
+      },
+      {
+        "date": "2025-10-01",
+        "close": 498.34051513671875
+      },
+      {
+        "date": "2025-11-01",
+        "close": 490.33868408203125
+      },
+      {
+        "date": "2025-12-01",
+        "close": 487.3617248535156
+      },
+      {
+        "date": "2026-01-01",
+        "close": 481.54998779296875
+      },
+      {
+        "date": "2026-02-01",
+        "close": 460.8699951171875
+      },
+      {
+        "date": "2026-03-01",
+        "close": 455.29998779296875
+      },
+      {
+        "date": "2026-03-12",
+        "close": 455.29998779296875
+      }
+    ]
+  },
+  "holdings": [
+    {
+      "symbol": "BRK-B",
+      "name": "Berkshire Hathaway Inc. New",
+      "type": "Value",
+      "price": 491.89,
+      "marketCap": 1061171429376,
+      "peRatio": 15.841868,
+      "pbRatio": 0.0009864178,
+      "yield": null,
+      "ytdReturn": -0.9982904382781173,
+      "sector": "Various"
+    },
+    {
+      "symbol": "JPM",
+      "name": "JP Morgan Chase & Co.",
+      "type": "Value",
+      "price": 282.89,
+      "marketCap": 762963558400,
+      "peRatio": 14.137432,
+      "pbRatio": 2.227691,
+      "yield": 2.09,
+      "ytdReturn": -13.085292352444078,
+      "sector": "Various"
+    },
+    {
+      "symbol": "XOM",
+      "name": "Exxon Mobil Corporation",
+      "type": "Value",
+      "price": 153.53,
+      "marketCap": 639723175936,
+      "peRatio": 22.914927,
+      "pbRatio": 2.4735374,
+      "yield": 2.72,
+      "ytdReturn": 25.1773323195642,
+      "sector": "Various"
+    },
+    {
+      "symbol": "JNJ",
+      "name": "Johnson & Johnson",
+      "type": "Value",
+      "price": 242.04,
+      "marketCap": 583291961344,
+      "peRatio": 21.94379,
+      "pbRatio": 7.1472015,
+      "yield": 2.14,
+      "ytdReturn": 16.73016294929166,
+      "sector": "Various"
+    },
+    {
+      "symbol": "PG",
+      "name": "Procter & Gamble Company (The)",
+      "type": "Value",
+      "price": 150.5,
+      "marketCap": 352243056640,
+      "peRatio": 22.296297,
+      "pbRatio": 6.6909704,
+      "yield": 2.76,
+      "ytdReturn": 6.142892394592583,
+      "sector": "Various"
+    },
+    {
+      "symbol": "HD",
+      "name": "Home Depot, Inc. (The)",
+      "type": "Value",
+      "price": 338.93,
+      "marketCap": 337408688128,
+      "peRatio": 23.801264,
+      "pbRatio": 26.267534,
+      "yield": 2.66,
+      "ytdReturn": -1.9923680464673383,
+      "sector": "Various"
+    },
+    {
+      "symbol": "CVX",
+      "name": "Chevron Corporation",
+      "type": "Value",
+      "price": 196.97,
+      "marketCap": 393812672512,
+      "peRatio": 29.664158,
+      "pbRatio": 2.091976,
+      "yield": 3.71,
+      "ytdReturn": 26.343815081086912,
+      "sector": "Various"
+    },
+    {
+      "symbol": "ABBV",
+      "name": "AbbVie Inc.",
+      "type": "Value",
+      "price": 225.37,
+      "marketCap": 398492237824,
+      "peRatio": 95.09283,
+      "pbRatio": -121.82162,
+      "yield": 3.04,
+      "ytdReturn": -1.7181970260965136,
+      "sector": "Various"
+    },
+    {
+      "symbol": "MRK",
+      "name": "Merck & Company, Inc.",
+      "type": "Value",
+      "price": 115.91,
+      "marketCap": 286574968832,
+      "peRatio": 15.943604,
+      "pbRatio": 5.4525356,
+      "yield": 2.93,
+      "ytdReturn": 8.886804436788688,
+      "sector": "Various"
+    },
+    {
+      "symbol": "BAC",
+      "name": "Bank of America Corporation",
+      "type": "Value",
+      "price": 47.13,
+      "marketCap": 344166629376,
+      "peRatio": 12.370079,
+      "pbRatio": 1.2260346,
+      "yield": 2.31,
+      "ytdReturn": -15.76407621567309,
+      "sector": "Various"
+    },
+    {
+      "symbol": "AAPL",
+      "name": "Apple Inc.",
+      "type": "Growth",
+      "price": 255.76,
+      "marketCap": 3759141289984,
+      "peRatio": 32.374683,
+      "pbRatio": 42.640877,
+      "yield": 0.4,
+      "ytdReturn": -5.627102031697475,
+      "sector": "Tech/Consumer"
+    },
+    {
+      "symbol": "MSFT",
+      "name": "Microsoft Corporation",
+      "type": "Growth",
+      "price": 401.86,
+      "marketCap": 2986775150592,
+      "peRatio": 25.131956,
+      "pbRatio": 7.6377454,
+      "yield": 0.9,
+      "ytdReturn": -15.029391059009123,
+      "sector": "Tech/Consumer"
+    },
+    {
+      "symbol": "NVDA",
+      "name": "NVIDIA Corporation",
+      "type": "Growth",
+      "price": 183.14,
+      "marketCap": 4451217702912,
+      "peRatio": 37.451942,
+      "pbRatio": 28.29728,
+      "yield": 0.02,
+      "ytdReturn": -3.023566809092807,
+      "sector": "Tech/Consumer"
+    },
+    {
+      "symbol": "AMZN",
+      "name": "Amazon.com, Inc.",
+      "type": "Growth",
+      "price": 209.53,
+      "marketCap": 2249287794688,
+      "peRatio": 29.223152,
+      "pbRatio": 5.4699,
+      "yield": null,
+      "ytdReturn": -7.492273730684326,
+      "sector": "Tech/Consumer"
+    },
+    {
+      "symbol": "META",
+      "name": "Meta Platforms, Inc.",
+      "type": "Growth",
+      "price": 638.18,
+      "marketCap": 1614311718912,
+      "peRatio": 27.145044,
+      "pbRatio": 7.432192,
+      "yield": 0.32,
+      "ytdReturn": -1.880348341739466,
+      "sector": "Tech/Consumer"
+    },
+    {
+      "symbol": "GOOGL",
+      "name": "Alphabet Inc.",
+      "type": "Growth",
+      "price": 303.55,
+      "marketCap": 3672044208128,
+      "peRatio": 28.10648,
+      "pbRatio": 8.8362,
+      "yield": 0.27,
+      "ytdReturn": -3.680785061444282,
+      "sector": "Tech/Consumer"
+    },
+    {
+      "symbol": "TSLA",
+      "name": "Tesla, Inc.",
+      "type": "Growth",
+      "price": 395.01,
+      "marketCap": 1482248159232,
+      "peRatio": 372.65097,
+      "pbRatio": 18.03946,
+      "yield": null,
+      "ytdReturn": -9.82948081454701,
+      "sector": "Tech/Consumer"
+    },
+    {
+      "symbol": "AVGO",
+      "name": "Broadcom Inc.",
+      "type": "Growth",
+      "price": 335.97,
+      "marketCap": 1592925749248,
+      "peRatio": 65.61914,
+      "pbRatio": 5.6731563,
+      "yield": 0.76,
+      "ytdReturn": -3.3513593236373236,
+      "sector": "Tech/Consumer"
+    },
+    {
+      "symbol": "COST",
+      "name": "Costco Wholesale Corporation",
+      "type": "Growth",
+      "price": 1003.32,
+      "marketCap": 445165076480,
+      "peRatio": 52.12052,
+      "pbRatio": 13.873724,
+      "yield": 0.52,
+      "ytdReturn": 17.416032767700415,
+      "sector": "Tech/Consumer"
+    },
+    {
+      "symbol": "NFLX",
+      "name": "Netflix, Inc.",
+      "type": "Growth",
+      "price": 94.31,
+      "marketCap": 400052584448,
+      "peRatio": 37.27668,
+      "pbRatio": 14.960342,
+      "yield": null,
+      "ytdReturn": 3.6487550436051084,
+      "sector": "Tech/Consumer"
+    }
+  ]
+};
+
+  // FAQs
+  const faqs = [
+    {
+      q: "Are value stocks better than growth stocks?",
+      a: "Historically, value stocks outperformed growth over the very long term (Fama-French model), but growth stocks have dominated the last decade, driven by big tech. The 'better' choice depends entirely on your time horizon and market cycle."
+    },
+    {
+      q: "What is the difference between a value ETF and a growth ETF?",
+      a: "A value ETF (like VTV) holds mature companies with low P/E ratios and higher dividend yields. A growth ETF (like VUG) holds companies with rapidly increasing revenue and earnings, usually trading at high P/E ratios with little to no dividends."
+    },
+    {
+      q: "Why do growth stocks have higher P/E ratios?",
+      a: "Investors are willing to pay a premium for growth stocks today because they expect their earnings to grow significantly in the future. You are paying for future potential rather than current profits."
+    },
+    {
+      q: "Is it better to invest in VTV or VUG?",
+      a: "Many investors hold both to create a balanced, blended portfolio (which essentially mimics the S&P 500 or total market). If you want dividend income and lower volatility, VTV is preferable. If you have a long time horizon and can stomach volatility for higher potential returns, VUG is favored."
+    },
+    {
+      q: "When do value stocks perform best?",
+      a: "Value stocks typically perform best during periods of economic recovery, high inflation, or rising interest rates. When rates rise, the 'future cash flows' of growth stocks are discounted more heavily, making the current cash flows of value stocks more attractive."
+    }
+  ];
+
+  // Render ETF Stats
+  const etfContainer = document.getElementById('etf-stats');
+  const vtv = dbData.etfs.vtv;
+  const vug = dbData.etfs.vug;
+
+  const formatPct = val => val ? val.toFixed(2) + '%' : 'N/A';
+  const formatNum = val => val ? val.toFixed(2) : 'N/A';
+
+  etfContainer.innerHTML = `
+    <div class="stat-card">
+      <div class="stat-label">VTV (Value) YTD</div>
+      <div class="stat-value ${vtv.ytdReturn >= 0 ? 'pos' : 'neg'}">${formatPct(vtv.ytdReturn)}</div>
+      <div class="stat-sub">P/E: ${formatNum(vtv.peRatio)} | Yield: ${formatPct(vtv.yield)}</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">VUG (Growth) YTD</div>
+      <div class="stat-value ${vug.ytdReturn >= 0 ? 'pos' : 'neg'}">${formatPct(vug.ytdReturn)}</div>
+      <div class="stat-sub">P/E: ${formatNum(vug.peRatio)} | Yield: ${formatPct(vug.yield)}</div>
+    </div>
+  `;
+
+  // Render Table
+  const tableBody = document.getElementById('tableBody');
+  let currentSort = { col: 'symbol', dir: 'asc' };
+  let currentFilter = 'all';
+
+  function renderTable() {
+    let filtered = dbData.holdings;
+    if (currentFilter !== 'all') {
+      filtered = filtered.filter(h => h.type === currentFilter);
+    }
+
+    const term = document.getElementById('searchInput').value.toLowerCase();
+    if (term) {
+      filtered = filtered.filter(h => h.symbol.toLowerCase().includes(term) || h.name.toLowerCase().includes(term));
+    }
+
+    filtered.sort((a, b) => {
+      let valA = a[currentSort.col];
+      let valB = b[currentSort.col];
+
+      if (valA === null || valA === undefined) return 1;
+      if (valB === null || valB === undefined) return -1;
+
+      if (typeof valA === 'string') {
+        return currentSort.dir === 'asc' ? valA.localeCompare(valB) : valB.localeCompare(valA);
+      }
+      return currentSort.dir === 'asc' ? valA - valB : valB - valA;
+    });
+
+    tableBody.innerHTML = filtered.map(h => `
+      <tr>
+        <td class="name-col"><span class="ticker">${h.symbol}</span> ${h.name}</td>
+        <td><span class="type-badge ${h.type === 'Value' ? 'type-value' : 'type-growth'}">${h.type}</span></td>
+        <td>${formatNum(h.peRatio)}</td>
+        <td>${formatNum(h.pbRatio)}</td>
+        <td>${formatPct(h.yield)}</td>
+        <td class="${h.ytdReturn >= 0 ? 'pos' : 'neg'}">${formatPct(h.ytdReturn)}</td>
+      </tr>
+    `).join('');
+  }
+
+  // Events
+  document.getElementById('searchInput').addEventListener('input', renderTable);
+
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      e.target.classList.add('active');
+      currentFilter = e.target.dataset.filter;
+      renderTable();
+    });
+  });
+
+  document.querySelectorAll('th[data-sort]').forEach(th => {
+    th.addEventListener('click', (e) => {
+      const col = e.target.dataset.sort;
+      if (currentSort.col === col) {
+        currentSort.dir = currentSort.dir === 'asc' ? 'desc' : 'asc';
+      } else {
+        currentSort.col = col;
+        currentSort.dir = 'desc'; // Default to desc for numbers
+      }
+      renderTable();
+    });
+  });
+
+  renderTable();
+
+  // Render Chart
+  const ctx = document.getElementById('performanceChart').getContext('2d');
+
+  // Normalize historical data to start at 100
+  const vtvHist = dbData.historical.vtv;
+  const vugHist = dbData.historical.vug;
+
+  // Need matching dates. VTV and VUG should have same dates if fetched together by month.
+  const labels = vtvHist.map(d => d.date.substring(0, 7)); // YYYY-MM
+
+  const vtvStart = vtvHist[0].close;
+  const vugStart = vugHist[0].close;
+
+  const vtvData = vtvHist.map(d => (d.close / vtvStart) * 100);
+  const vugData = vugHist.map(d => (d.close / vugStart) * 100);
+
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: labels,
+      datasets: [
+        {
+          label: 'VTV (Value)',
+          data: vtvData,
+          borderColor: '#38bdf8',
+          backgroundColor: 'rgba(56, 189, 248, 0.1)',
+          borderWidth: 2,
+          pointRadius: 0,
+          fill: true,
+          tension: 0.2
+        },
+        {
+          label: 'VUG (Growth)',
+          data: vugData,
+          borderColor: '#fbbf24',
+          backgroundColor: 'rgba(251, 191, 36, 0.1)',
+          borderWidth: 2,
+          pointRadius: 0,
+          fill: true,
+          tension: 0.2
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      interaction: {
+        mode: 'index',
+        intersect: false,
+      },
+      plugins: {
+        legend: {
+          labels: { color: '#c8d0de', font: { family: 'Inter' } }
+        },
+        tooltip: {
+          backgroundColor: '#0a1020',
+          titleColor: '#fff',
+          bodyColor: '#c8d0de',
+          borderColor: '#152040',
+          borderWidth: 1,
+          callbacks: {
+            label: function(context) {
+              return context.dataset.label + ': ' + context.parsed.y.toFixed(2);
+            }
+          }
+        }
+      },
+      scales: {
+        x: {
+          grid: { color: 'rgba(255,255,255,0.05)' },
+          ticks: { color: '#5a6a80', maxTicksLimit: 10 }
+        },
+        y: {
+          grid: { color: 'rgba(255,255,255,0.05)' },
+          ticks: { color: '#5a6a80' },
+          title: { display: true, text: 'Growth of $100', color: '#5a6a80' }
+        }
+      }
+    }
+  });
+
+  // Render FAQs
+  const faqContainer = document.querySelector('.faq-list');
+  faqContainer.innerHTML = faqs.map(f => `
+    <div class="faq-item">
+      <h3>${f.q}</h3>
+      <p>${f.a}</p>
+    </div>
+  `).join('');
+
+
+  </script>
+</body>
+</html>

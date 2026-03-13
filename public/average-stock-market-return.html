@@ -1,0 +1,1769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Average Stock Market Return: S&P 500 Historical Data 1928...</title>
+  <meta name="description" content="Discover the historical average stock market return. See S&P 500 average returns by 1Y, 5Y, 10Y, 20Y, and 30Y periods, adjusted for inflation and dividends.">
+  <link rel="canonical" href="https://westmountfundamentals.com/average-stock-market-return">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Average Stock Market Return: S&P 500 Historical Data 1928-2026">
+  <meta property="og:description" content="Discover the historical average stock market return. See S&P 500 average returns by 1Y, 5Y, 10Y, 20Y, and 30Y periods, adjusted for inflation and dividends.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://westmountfundamentals.com/average-stock-market-return">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Average Stock Market Return: S&P 500 Historical Data 1928-2026">
+  <meta name="twitter:description" content="Discover the historical average stock market return. See S&P 500 average returns by 1Y, 5Y, 10Y, 20Y, and 30Y periods, adjusted for inflation and dividends.">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js"></script>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VYF72NSC1Q"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VYF72NSC1Q');
+  </script>
+
+  <!-- JSON-LD Schemas -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Average Stock Market Return: S&P 500 Historical Data",
+    "description": "Discover the historical average stock market return. See S&P 500 average returns by 1Y, 5Y, 10Y, 20Y, and 30Y periods, adjusted for inflation and dividends.",
+    "datePublished": "2026-03-13",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Westmount Research"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the average stock market return?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Historically, the average stock market return (measured by the S&P 500) has been roughly 10% per year before inflation, assuming dividends are reinvested. When adjusted for inflation (real return), the historical average is closer to 7% per year."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the average S&P 500 return over 10 years?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Over most 10-year rolling periods, the S&P 500 has delivered positive returns. Historically, the annualized nominal return over a 10-year period typically ranges from 8% to 12%, depending on the starting valuation and economic conditions."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does the average stock market return include dividends?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "When financial professionals cite the 10% historical average return of the S&P 500, they are generally referring to the 'total return,' which includes both price appreciation and the reinvestment of dividends. Without dividends, the average price return is lower."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the inflation-adjusted (real) stock market return?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The inflation-adjusted, or 'real', stock market return accounts for the loss of purchasing power over time. Historically, while the nominal return of the S&P 500 is about 10%, the real return averages roughly 6.5% to 7% per year."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are the best and worst years in stock market history?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The best year for the S&P 500 was 1933 with a nearly 50% return following the Great Depression. The worst year was 1931, when the index lost over 43%. More recently, the 2008 financial crisis saw a drop of roughly 37%."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: #060a12;
+      color: #c8d0de;
+      line-height: 1.6;
+    }
+    nav {
+      position: sticky; top: 0; z-index: 1000;
+      background: rgba(6, 10, 18, 0.85);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #152040;
+      padding: 16px 24px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    nav a { color: #fff; text-decoration: none; font-weight: 600; font-size: 0.95rem; }
+    .nav-links { display: flex; gap: 24px; }
+    .nav-links a { color: #8a9ab0; font-weight: 400; }
+    .nav-links a:hover { color: #4a8fe7; }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 60px 24px; }
+
+    .hero { text-align: center; margin-bottom: 60px; }
+    h1 {
+      font-size: 3rem; font-weight: 900; letter-spacing: -1.5px; margin-bottom: 20px;
+      background: linear-gradient(90deg, #fff, #4a8fe7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .subtitle { color: #5a6a80; font-size: 1.1rem; max-width: 700px; margin: 0 auto; }
+
+    .stats-row {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px; margin-bottom: 60px;
+    }
+    .stat-card {
+      background: #0a1020; border: 1px solid #152040; border-radius: 12px;
+      padding: 24px; text-align: center;
+    }
+    .stat-val { font-size: 2.2rem; font-weight: 900; color: #4a8fe7; margin-bottom: 8px; font-family: 'JetBrains Mono', monospace; }
+    .stat-label { font-size: 0.85rem; color: #8a9ab0; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; }
+
+    .section-title { font-size: 1.8rem; font-weight: 800; color: #fff; margin-bottom: 24px; border-bottom: 1px solid #152040; padding-bottom: 12px; }
+
+    .chart-container {
+      background: #0a1020; border: 1px solid #152040; border-radius: 12px;
+      padding: 24px; margin-bottom: 60px; height: 400px; position: relative;
+    }
+
+    .table-container {
+      background: #0a1020; border: 1px solid #152040; border-radius: 12px;
+      overflow-x: auto; margin-bottom: 60px;
+    }
+    table { width: 100%; border-collapse: collapse; text-align: right; }
+    th, td { padding: 16px; border-bottom: 1px solid #152040; }
+    th { text-transform: uppercase; font-size: 0.75rem; font-weight: 800; color: #8a9ab0; letter-spacing: 1px; background: #0d1428; position: sticky; top: 0; z-index: 10; cursor: pointer; }
+    th:hover { color: #4a8fe7; }
+    th:first-child, td:first-child { text-align: left; }
+    td { font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; }
+    tr:last-child td { border-bottom: none; }
+    .pos { color: #4ade80; }
+    .neg { color: #f87171; }
+
+    .faq, .methodology { background: #0a1020; border: 1px solid #152040; border-radius: 12px; padding: 32px; margin-bottom: 60px; }
+    .faq-item { margin-bottom: 24px; }
+    .faq-item:last-child { margin-bottom: 0; }
+    .faq-q { font-weight: 700; color: #fff; margin-bottom: 8px; font-size: 1.1rem; }
+    .faq-a { color: #8a9ab0; font-size: 0.95rem; }
+
+    .controls { display: flex; gap: 16px; margin-bottom: 16px; align-items: center; }
+    input[type="text"], select {
+      background: #060a12; border: 1px solid #152040; color: #fff;
+      padding: 8px 12px; border-radius: 6px; font-family: 'Inter', sans-serif; font-size: 0.9rem; outline: none;
+    }
+    input[type="text"]:focus, select:focus { border-color: #4a8fe7; }
+
+    .footer { text-align: center; padding: 40px 24px; border-top: 1px solid #152040; font-size: 0.85rem; color: #5a6a80; }
+    .footer a { color: #4a8fe7; text-decoration: none; }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 2.2rem; }
+      .chart-container { height: 300px; padding: 16px; }
+      .stat-val { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/">Westmount Fundamentals</a>
+    <div class="nav-links">
+      <a href="/#studies">Studies</a>
+      <a href="/#tools">Tools</a>
+      <a href="/#guides">Guides</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="hero">
+      <h1>Historical Average Stock Market Return</h1>
+      <p class="subtitle">Complete S&P 500 returns since 1928, including dividends and inflation (real returns). Filter, sort, and analyze trailing historical market performance.</p>
+    </div>
+
+    <h2 class="section-title">Trailing S&P 500 Returns (Annualized)</h2>
+    <div class="stats-row">
+      <div class="stat-card">
+        <div class="stat-val" id="stat-10y">--%</div>
+        <div class="stat-label">10-Year Average</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val" id="stat-20y">--%</div>
+        <div class="stat-label">20-Year Average</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val" id="stat-30y">--%</div>
+        <div class="stat-label">30-Year Average</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val" id="stat-all">--%</div>
+        <div class="stat-label">Since 1928</div>
+      </div>
+    </div>
+
+    <h2 class="section-title">10-Year Rolling Returns</h2>
+    <div class="chart-container">
+      <canvas id="rollingChart"></canvas>
+    </div>
+
+    <h2 class="section-title">Historical S&P 500 Returns (By Year)</h2>
+    <div class="controls">
+      <input type="text" id="yearSearch" placeholder="Search year...">
+    </div>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th data-sort="year">Year ↕</th>
+            <th data-sort="nominal">S&P 500 (Nominal, w/ Div) ↕</th>
+            <th data-sort="inflation">Inflation Rate ↕</th>
+            <th data-sort="real">S&P 500 (Real, w/ Div) ↕</th>
+          </tr>
+        </thead>
+        <tbody id="dataTableBody">
+          <!-- Populated by JS -->
+        </tbody>
+      </table>
+    </div>
+
+    <div class="methodology">
+      <h2 class="section-title">Methodology & Data Sources</h2>
+      <p style="color: #8a9ab0; font-size: 0.95rem; margin-bottom: 16px;">
+        All historical stock market return data is sourced primarily from the datasets maintained by Aswath Damodaran at NYU Stern School of Business.
+        Data covers the period from 1928 to the present. The 'Nominal' returns include both the capital appreciation (price return) of the S&P 500 and the reinvestment of dividends.
+      </p>
+      <p style="color: #8a9ab0; font-size: 0.95rem;">
+        'Real' returns are adjusted for inflation (CPI). For multi-year periods (10Y, 20Y, 30Y), returns are calculated as the geometric mean (annualized return), accurately reflecting the compound annual growth rate (CAGR) over that specific timeframe. Missing recent inflation data utilizes approximated BLS CPI estimates where applicable. Always remember that historical performance does not guarantee future results.
+      </p>
+    </div>
+
+    <div class="faq">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <div class="faq-q">What is the average stock market return?</div>
+        <div class="faq-a">Historically, the average stock market return (measured by the S&P 500) has been roughly 10% per year before inflation, assuming dividends are reinvested. When adjusted for inflation (real return), the historical average is closer to 7% per year.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">What is the average S&P 500 return over 10 years?</div>
+        <div class="faq-a">Over most 10-year rolling periods, the S&P 500 has delivered positive returns. Historically, the annualized nominal return over a 10-year period typically ranges from 8% to 12%, depending on the starting valuation and economic conditions.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Does the average stock market return include dividends?</div>
+        <div class="faq-a">When financial professionals cite the 10% historical average return of the S&P 500, they are generally referring to the 'total return,' which includes both price appreciation and the reinvestment of dividends. Without dividends, the average price return is lower.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">What is the inflation-adjusted (real) stock market return?</div>
+        <div class="faq-a">The inflation-adjusted, or 'real', stock market return accounts for the loss of purchasing power over time. Historically, while the nominal return of the S&P 500 is about 10%, the real return averages roughly 6.5% to 7% per year.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">What are the best and worst years in stock market history?</div>
+        <div class="faq-a">The best year for the S&P 500 was 1933 with a nearly 50% return following the Great Depression. The worst year was 1931, when the index lost over 43%. More recently, the 2008 financial crisis saw a drop of roughly 37%.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    © 2026 <a href="/">Westmount Research</a> · A GAB Ventures property. Not investment advice. All information for educational purposes only.
+  </div>
+
+  <script>
+    // Data will be injected here during build
+    window.__INITIAL_DATA__ = {
+  "historical": [
+    {
+      "year": 1928,
+      "returnWithDiv": 0.43810000000000004,
+      "inflation": -0.0116,
+      "realReturnWithDiv": 0.4549777418049372,
+      "returnWithoutDiv": 0.39310000000000006,
+      "realReturnWithoutDiv": 0.40944961554026715
+    },
+    {
+      "year": 1929,
+      "returnWithDiv": -0.083,
+      "inflation": 0.0058,
+      "realReturnWithDiv": -0.08828793000596535,
+      "returnWithoutDiv": -0.128,
+      "realReturnWithoutDiv": -0.13302843507655604
+    },
+    {
+      "year": 1930,
+      "returnWithDiv": -0.25120000000000003,
+      "inflation": -0.064,
+      "realReturnWithDiv": -0.20000000000000007,
+      "returnWithoutDiv": -0.2962,
+      "realReturnWithoutDiv": -0.24807692307692308
+    },
+    {
+      "year": 1931,
+      "returnWithDiv": -0.4384,
+      "inflation": -0.0932,
+      "realReturnWithDiv": -0.3806793118659021,
+      "returnWithoutDiv": -0.4834,
+      "realReturnWithoutDiv": -0.4303043670048523
+    },
+    {
+      "year": 1932,
+      "returnWithDiv": -0.0864,
+      "inflation": -0.1027,
+      "realReturnWithDiv": 0.01816560793491573,
+      "returnWithoutDiv": -0.13140000000000002,
+      "realReturnWithoutDiv": -0.031984843419146314
+    },
+    {
+      "year": 1933,
+      "returnWithDiv": 0.49979999999999997,
+      "inflation": 0.0076,
+      "realReturnWithDiv": 0.4884874950377134,
+      "returnWithoutDiv": 0.4548,
+      "realReturnWithoutDiv": 0.44382691544263597
+    },
+    {
+      "year": 1934,
+      "returnWithDiv": -0.011899999999999999,
+      "inflation": 0.0152,
+      "realReturnWithDiv": -0.026694247438928453,
+      "returnWithoutDiv": -0.0569,
+      "realReturnWithoutDiv": -0.07102048857368015
+    },
+    {
+      "year": 1935,
+      "returnWithDiv": 0.46740000000000004,
+      "inflation": 0.029900000000000003,
+      "realReturnWithDiv": 0.4247985241285561,
+      "returnWithoutDiv": 0.42240000000000005,
+      "realReturnWithoutDiv": 0.3811049616467619
+    },
+    {
+      "year": 1936,
+      "returnWithDiv": 0.3194,
+      "inflation": 0.014499999999999999,
+      "realReturnWithDiv": 0.3005421389847216,
+      "returnWithoutDiv": 0.27440000000000003,
+      "realReturnWithoutDiv": 0.2561853129620504
+    },
+    {
+      "year": 1937,
+      "returnWithDiv": -0.35340000000000005,
+      "inflation": 0.0286,
+      "realReturnWithDiv": -0.3713785728174217,
+      "returnWithoutDiv": -0.39840000000000003,
+      "realReturnWithoutDiv": -0.4151273575734008
+    },
+    {
+      "year": 1938,
+      "returnWithDiv": 0.2928,
+      "inflation": -0.0278,
+      "realReturnWithDiv": 0.32976753754371524,
+      "returnWithoutDiv": 0.24780000000000002,
+      "realReturnWithoutDiv": 0.28348076527463495
+    },
+    {
+      "year": 1939,
+      "returnWithDiv": -0.011000000000000001,
+      "inflation": 0,
+      "realReturnWithDiv": -0.01100000000000001,
+      "returnWithoutDiv": -0.056,
+      "realReturnWithoutDiv": -0.05600000000000005
+    },
+    {
+      "year": 1940,
+      "returnWithDiv": -0.1067,
+      "inflation": 0.0070999999999999995,
+      "realReturnWithDiv": -0.11299771621487453,
+      "returnWithoutDiv": -0.1517,
+      "realReturnWithoutDiv": -0.1576804686724258
+    },
+    {
+      "year": 1941,
+      "returnWithDiv": -0.1277,
+      "inflation": 0.0993,
+      "realReturnWithDiv": -0.20649504229964522,
+      "returnWithoutDiv": -0.17270000000000002,
+      "realReturnWithoutDiv": -0.24743018284362783
+    },
+    {
+      "year": 1942,
+      "returnWithDiv": 0.1917,
+      "inflation": 0.09029999999999999,
+      "realReturnWithDiv": 0.09300192607539204,
+      "returnWithoutDiv": 0.1467,
+      "realReturnWithoutDiv": 0.05172888195909375
+    },
+    {
+      "year": 1943,
+      "returnWithDiv": 0.2506,
+      "inflation": 0.0296,
+      "realReturnWithDiv": 0.21464646464646453,
+      "returnWithoutDiv": 0.2056,
+      "realReturnWithoutDiv": 0.17094017094017078
+    },
+    {
+      "year": 1944,
+      "returnWithDiv": 0.19030000000000002,
+      "inflation": 0.023,
+      "realReturnWithDiv": 0.16353861192570895,
+      "returnWithoutDiv": 0.14530000000000004,
+      "realReturnWithoutDiv": 0.11955034213098736
+    },
+    {
+      "year": 1945,
+      "returnWithDiv": 0.3582,
+      "inflation": 0.0225,
+      "realReturnWithDiv": 0.328312958435208,
+      "returnWithoutDiv": 0.31320000000000003,
+      "realReturnWithoutDiv": 0.2843031784841077
+    },
+    {
+      "year": 1946,
+      "returnWithDiv": -0.0843,
+      "inflation": 0.1813,
+      "realReturnWithDiv": -0.22483704393464832,
+      "returnWithoutDiv": -0.1293,
+      "realReturnWithoutDiv": -0.26293066960128675
+    },
+    {
+      "year": 1947,
+      "returnWithDiv": 0.052000000000000005,
+      "inflation": 0.08839999999999999,
+      "realReturnWithDiv": -0.033443586916574786,
+      "returnWithoutDiv": 0.007000000000000006,
+      "realReturnWithoutDiv": -0.07478868063212052
+    },
+    {
+      "year": 1948,
+      "returnWithDiv": 0.057,
+      "inflation": 0.0273,
+      "realReturnWithDiv": 0.028910736883091426,
+      "returnWithoutDiv": 0.012000000000000004,
+      "realReturnWithoutDiv": -0.014893409909471522
+    },
+    {
+      "year": 1949,
+      "returnWithDiv": 0.183,
+      "inflation": -0.0183,
+      "realReturnWithDiv": 0.20505246001833566,
+      "returnWithoutDiv": 0.138,
+      "realReturnWithoutDiv": 0.15921360904553317
+    },
+    {
+      "year": 1950,
+      "returnWithDiv": 0.3081,
+      "inflation": 0.057999999999999996,
+      "realReturnWithDiv": 0.23638941398865776,
+      "returnWithoutDiv": 0.2631,
+      "realReturnWithoutDiv": 0.19385633270321367
+    },
+    {
+      "year": 1951,
+      "returnWithDiv": 0.2368,
+      "inflation": 0.0596,
+      "realReturnWithDiv": 0.16723291808229512,
+      "returnWithoutDiv": 0.19180000000000003,
+      "realReturnWithoutDiv": 0.12476406191015466
+    },
+    {
+      "year": 1952,
+      "returnWithDiv": 0.1815,
+      "inflation": 0.0091,
+      "realReturnWithDiv": 0.17084530769993056,
+      "returnWithoutDiv": 0.1365,
+      "realReturnWithoutDiv": 0.1262511148548211
+    },
+    {
+      "year": 1953,
+      "returnWithDiv": -0.0121,
+      "inflation": 0.006,
+      "realReturnWithDiv": -0.01799204771371765,
+      "returnWithoutDiv": -0.0571,
+      "realReturnWithoutDiv": -0.06272365805168989
+    },
+    {
+      "year": 1954,
+      "returnWithDiv": 0.5256000000000001,
+      "inflation": -0.0037,
+      "realReturnWithDiv": 0.5312656830272007,
+      "returnWithoutDiv": 0.4806000000000001,
+      "realReturnWithoutDiv": 0.48609856468935075
+    },
+    {
+      "year": 1955,
+      "returnWithDiv": 0.326,
+      "inflation": 0.0037,
+      "realReturnWithDiv": 0.3211118860217197,
+      "returnWithoutDiv": 0.281,
+      "realReturnWithoutDiv": 0.2762777722427021
+    },
+    {
+      "year": 1956,
+      "returnWithDiv": 0.07440000000000001,
+      "inflation": 0.028300000000000002,
+      "realReturnWithDiv": 0.04483127491977057,
+      "returnWithoutDiv": 0.02940000000000001,
+      "realReturnWithoutDiv": 0.0010697267334436322
+    },
+    {
+      "year": 1957,
+      "returnWithDiv": -0.10460000000000001,
+      "inflation": 0.0304,
+      "realReturnWithDiv": -0.13101708074534157,
+      "returnWithoutDiv": -0.1496,
+      "realReturnWithoutDiv": -0.1746894409937888
+    },
+    {
+      "year": 1958,
+      "returnWithDiv": 0.4372,
+      "inflation": 0.0176,
+      "realReturnWithDiv": 0.4123427672955975,
+      "returnWithoutDiv": 0.3922,
+      "realReturnWithoutDiv": 0.36812106918238974
+    },
+    {
+      "year": 1959,
+      "returnWithDiv": 0.1206,
+      "inflation": 0.0152,
+      "realReturnWithDiv": 0.10382190701339633,
+      "returnWithoutDiv": 0.0756,
+      "realReturnWithoutDiv": 0.05949566587864452
+    },
+    {
+      "year": 1960,
+      "returnWithDiv": 0.0034000000000000002,
+      "inflation": 0.013600000000000001,
+      "divYield": 0.0341,
+      "realReturnWithDiv": -0.010063141278610854,
+      "returnWithoutDiv": -0.030699999999999998,
+      "realReturnWithoutDiv": -0.043705603788476766
+    },
+    {
+      "year": 1961,
+      "returnWithDiv": 0.2664,
+      "inflation": 0.0067,
+      "divYield": 0.0285,
+      "realReturnWithDiv": 0.25797159034469064,
+      "returnWithoutDiv": 0.23790000000000003,
+      "realReturnWithoutDiv": 0.2296612694943876
+    },
+    {
+      "year": 1962,
+      "returnWithDiv": -0.08810000000000001,
+      "inflation": 0.0123,
+      "divYield": 0.034,
+      "realReturnWithDiv": -0.09918008495505293,
+      "returnWithoutDiv": -0.12210000000000001,
+      "realReturnWithoutDiv": -0.1327669663143337
+    },
+    {
+      "year": 1963,
+      "returnWithDiv": 0.2261,
+      "inflation": 0.0165,
+      "divYield": 0.0313,
+      "realReturnWithDiv": 0.20619773733398916,
+      "returnWithoutDiv": 0.1948,
+      "realReturnWithoutDiv": 0.1754058042302018
+    },
+    {
+      "year": 1964,
+      "returnWithDiv": 0.1642,
+      "inflation": 0.012,
+      "divYield": 0.0305,
+      "realReturnWithDiv": 0.15039525691699618,
+      "returnWithoutDiv": 0.1337,
+      "realReturnWithoutDiv": 0.12025691699604746
+    },
+    {
+      "year": 1965,
+      "returnWithDiv": 0.124,
+      "inflation": 0.0192,
+      "divYield": 0.030600000000000002,
+      "realReturnWithDiv": 0.10282574568288849,
+      "returnWithoutDiv": 0.0934,
+      "realReturnWithoutDiv": 0.07280219780219754
+    },
+    {
+      "year": 1966,
+      "returnWithDiv": -0.09970000000000001,
+      "inflation": 0.0336,
+      "divYield": 0.0359,
+      "realReturnWithDiv": -0.12896671826625394,
+      "returnWithoutDiv": -0.1356,
+      "realReturnWithoutDiv": -0.16369969040247678
+    },
+    {
+      "year": 1967,
+      "returnWithDiv": 0.23800000000000002,
+      "inflation": 0.032799999999999996,
+      "divYield": 0.030899999999999997,
+      "realReturnWithDiv": 0.1986831913245546,
+      "returnWithoutDiv": 0.2071,
+      "realReturnWithoutDiv": 0.16876452362509697
+    },
+    {
+      "year": 1968,
+      "returnWithDiv": 0.1081,
+      "inflation": 0.0471,
+      "divYield": 0.029300000000000003,
+      "realReturnWithDiv": 0.05825613599465207,
+      "returnWithoutDiv": 0.0788,
+      "realReturnWithoutDiv": 0.030274090344761806
+    },
+    {
+      "year": 1969,
+      "returnWithDiv": -0.0824,
+      "inflation": 0.059000000000000004,
+      "divYield": 0.0352,
+      "realReturnWithDiv": -0.1335221907459868,
+      "returnWithoutDiv": -0.11760000000000001,
+      "realReturnWithoutDiv": -0.16676109537299333
+    },
+    {
+      "year": 1970,
+      "returnWithDiv": 0.0356,
+      "inflation": 0.0557,
+      "divYield": 0.0346,
+      "realReturnWithDiv": -0.0190394998579142,
+      "returnWithoutDiv": 0.0010000000000000009,
+      "realReturnWithoutDiv": -0.05181396229989599
+    },
+    {
+      "year": 1971,
+      "returnWithDiv": 0.1422,
+      "inflation": 0.0327,
+      "divYield": 0.031,
+      "realReturnWithDiv": 0.10603272973758093,
+      "returnWithoutDiv": 0.1112,
+      "realReturnWithoutDiv": 0.07601433136438462
+    },
+    {
+      "year": 1972,
+      "returnWithDiv": 0.18760000000000002,
+      "inflation": 0.0341,
+      "divYield": 0.027000000000000003,
+      "realReturnWithDiv": 0.14843825548786382,
+      "returnWithoutDiv": 0.16060000000000002,
+      "realReturnWithoutDiv": 0.12232859491345138
+    },
+    {
+      "year": 1973,
+      "returnWithDiv": -0.1431,
+      "inflation": 0.0894,
+      "divYield": 0.037000000000000005,
+      "realReturnWithDiv": -0.21342023131999266,
+      "returnWithoutDiv": -0.1801,
+      "realReturnWithoutDiv": -0.2473838810354323
+    },
+    {
+      "year": 1974,
+      "returnWithDiv": -0.259,
+      "inflation": 0.121,
+      "divYield": 0.054299999999999994,
+      "realReturnWithDiv": -0.3389830508474576,
+      "returnWithoutDiv": -0.3133,
+      "realReturnWithoutDiv": -0.3874219446922391
+    },
+    {
+      "year": 1975,
+      "returnWithDiv": 0.37,
+      "inflation": 0.0713,
+      "divYield": 0.0414,
+      "realReturnWithDiv": 0.27882012508167664,
+      "returnWithoutDiv": 0.3286,
+      "realReturnWithoutDiv": 0.24017548772519381
+    },
+    {
+      "year": 1976,
+      "returnWithDiv": 0.23829999999999998,
+      "inflation": 0.0504,
+      "divYield": 0.0393,
+      "realReturnWithDiv": 0.17888423457730385,
+      "returnWithoutDiv": 0.19899999999999998,
+      "realReturnWithoutDiv": 0.14146991622239158
+    },
+    {
+      "year": 1977,
+      "returnWithDiv": -0.0698,
+      "inflation": 0.0668,
+      "divYield": 0.051100000000000007,
+      "realReturnWithDiv": -0.12804649418822645,
+      "returnWithoutDiv": -0.12090000000000001,
+      "realReturnWithoutDiv": -0.17594675665541804
+    },
+    {
+      "year": 1978,
+      "returnWithDiv": 0.06509999999999999,
+      "inflation": 0.08990000000000001,
+      "divYield": 0.053899999999999997,
+      "realReturnWithDiv": -0.022754381135884127,
+      "returnWithoutDiv": 0.011199999999999995,
+      "realReturnWithoutDiv": -0.07220845949169652
+    },
+    {
+      "year": 1979,
+      "returnWithDiv": 0.1852,
+      "inflation": 0.1325,
+      "divYield": 0.0553,
+      "realReturnWithDiv": 0.04653421633554089,
+      "returnWithoutDiv": 0.12990000000000002,
+      "realReturnWithoutDiv": -0.0022958057395142673
+    },
+    {
+      "year": 1980,
+      "returnWithDiv": 0.31739999999999996,
+      "inflation": 0.1235,
+      "divYield": 0.047400000000000005,
+      "realReturnWithDiv": 0.17258566978193146,
+      "returnWithoutDiv": 0.26999999999999996,
+      "realReturnWithoutDiv": 0.13039608366711186
+    },
+    {
+      "year": 1981,
+      "returnWithDiv": -0.047,
+      "inflation": 0.0891,
+      "divYield": 0.0557,
+      "realReturnWithDiv": -0.12496556790010105,
+      "returnWithoutDiv": -0.1027,
+      "realReturnWithoutDiv": -0.17610871361674774
+    },
+    {
+      "year": 1982,
+      "returnWithDiv": 0.20420000000000002,
+      "inflation": 0.0383,
+      "divYield": 0.0493,
+      "realReturnWithDiv": 0.1597804102860445,
+      "returnWithoutDiv": 0.15490000000000004,
+      "realReturnWithoutDiv": 0.11229895020706926
+    },
+    {
+      "year": 1983,
+      "returnWithDiv": 0.2234,
+      "inflation": 0.0379,
+      "divYield": 0.0432,
+      "realReturnWithDiv": 0.1787262742075344,
+      "returnWithoutDiv": 0.18019999999999997,
+      "realReturnWithoutDiv": 0.13710376722227569
+    },
+    {
+      "year": 1984,
+      "returnWithDiv": 0.061500000000000006,
+      "inflation": 0.0404,
+      "divYield": 0.046799999999999994,
+      "realReturnWithDiv": 0.020280661284121537,
+      "returnWithoutDiv": 0.014700000000000012,
+      "realReturnWithoutDiv": -0.024702037677816313
+    },
+    {
+      "year": 1985,
+      "returnWithDiv": 0.3124,
+      "inflation": 0.0379,
+      "divYield": 0.0388,
+      "realReturnWithDiv": 0.26447634646883134,
+      "returnWithoutDiv": 0.2736,
+      "realReturnWithoutDiv": 0.22709316889873787
+    },
+    {
+      "year": 1986,
+      "returnWithDiv": 0.18489999999999998,
+      "inflation": 0.011899999999999999,
+      "divYield": 0.0338,
+      "realReturnWithDiv": 0.17096551042593156,
+      "returnWithoutDiv": 0.15109999999999998,
+      "realReturnWithoutDiv": 0.13756300029647206
+    },
+    {
+      "year": 1987,
+      "returnWithDiv": 0.0581,
+      "inflation": 0.0433,
+      "divYield": 0.0371,
+      "realReturnWithDiv": 0.014185756733442023,
+      "returnWithoutDiv": 0.020999999999999998,
+      "realReturnWithoutDiv": -0.021374484807821337
+    },
+    {
+      "year": 1988,
+      "returnWithDiv": 0.1654,
+      "inflation": 0.0441,
+      "divYield": 0.0368,
+      "realReturnWithDiv": 0.11617661143568614,
+      "returnWithoutDiv": 0.1286,
+      "realReturnWithoutDiv": 0.08093094531175171
+    },
+    {
+      "year": 1989,
+      "returnWithDiv": 0.3148,
+      "inflation": 0.0464,
+      "divYield": 0.0332,
+      "realReturnWithDiv": 0.25649847094801226,
+      "returnWithoutDiv": 0.2816,
+      "realReturnWithoutDiv": 0.22477064220183496
+    },
+    {
+      "year": 1990,
+      "returnWithDiv": -0.030600000000000002,
+      "inflation": 0.0625,
+      "divYield": 0.0374,
+      "realReturnWithDiv": -0.08762352941176466,
+      "returnWithoutDiv": -0.068,
+      "realReturnWithoutDiv": -0.12282352941176478
+    },
+    {
+      "year": 1991,
+      "returnWithDiv": 0.3023,
+      "inflation": 0.0298,
+      "divYield": 0.0311,
+      "realReturnWithDiv": 0.26461448825014555,
+      "returnWithoutDiv": 0.2712,
+      "realReturnWithoutDiv": 0.23441444940765188
+    },
+    {
+      "year": 1992,
+      "returnWithDiv": 0.07490000000000001,
+      "inflation": 0.0297,
+      "divYield": 0.028999999999999998,
+      "realReturnWithDiv": 0.043896280470039795,
+      "returnWithoutDiv": 0.04590000000000001,
+      "realReturnWithoutDiv": 0.015732737690589582
+    },
+    {
+      "year": 1993,
+      "returnWithDiv": 0.09970000000000001,
+      "inflation": 0.0281,
+      "divYield": 0.027200000000000002,
+      "realReturnWithDiv": 0.06964303083357648,
+      "returnWithoutDiv": 0.07250000000000001,
+      "realReturnWithoutDiv": 0.043186460461044573
+    },
+    {
+      "year": 1994,
+      "returnWithDiv": 0.013300000000000001,
+      "inflation": 0.026000000000000002,
+      "divYield": 0.0291,
+      "realReturnWithDiv": -0.012378167641325488,
+      "returnWithoutDiv": -0.0158,
+      "realReturnWithoutDiv": -0.040740740740740744
+    },
+    {
+      "year": 1995,
+      "returnWithDiv": 0.37200000000000005,
+      "inflation": 0.0253,
+      "divYield": 0.023,
+      "realReturnWithDiv": 0.3381449331902857,
+      "returnWithoutDiv": 0.34900000000000003,
+      "realReturnWithoutDiv": 0.3157124743977371
+    },
+    {
+      "year": 1996,
+      "returnWithDiv": 0.2268,
+      "inflation": 0.0338,
+      "divYield": 0.020099999999999996,
+      "realReturnWithDiv": 0.186689881988779,
+      "returnWithoutDiv": 0.2067,
+      "realReturnWithoutDiv": 0.16724704971948157
+    },
+    {
+      "year": 1997,
+      "returnWithDiv": 0.331,
+      "inflation": 0.017,
+      "divYield": 0.016,
+      "realReturnWithDiv": 0.30875122910521147,
+      "returnWithoutDiv": 0.315,
+      "realReturnWithoutDiv": 0.29301868239921336
+    },
+    {
+      "year": 1998,
+      "returnWithDiv": 0.2834,
+      "inflation": 0.0161,
+      "divYield": 0.0132,
+      "realReturnWithDiv": 0.26306465899025677,
+      "returnWithoutDiv": 0.2702,
+      "realReturnWithoutDiv": 0.25007381163271325
+    },
+    {
+      "year": 1999,
+      "returnWithDiv": 0.2089,
+      "inflation": 0.0268,
+      "divYield": 0.011399999999999999,
+      "realReturnWithDiv": 0.1773470977795093,
+      "returnWithoutDiv": 0.1975,
+      "realReturnWithoutDiv": 0.16624464355278534
+    },
+    {
+      "year": 2000,
+      "returnWithDiv": -0.09029999999999999,
+      "inflation": 0.0344,
+      "divYield": 0.0123,
+      "realReturnWithDiv": -0.12055297757153904,
+      "returnWithoutDiv": -0.1026,
+      "realReturnWithoutDiv": -0.1324439288476411
+    },
+    {
+      "year": 2001,
+      "returnWithDiv": -0.1185,
+      "inflation": 0.016,
+      "divYield": 0.0137,
+      "realReturnWithDiv": -0.13238188976377963,
+      "returnWithoutDiv": -0.13219999999999998,
+      "realReturnWithoutDiv": -0.14586614173228352
+    },
+    {
+      "year": 2002,
+      "returnWithDiv": -0.21969999999999998,
+      "inflation": 0.0248,
+      "divYield": 0.0183,
+      "realReturnWithDiv": -0.238583138173302,
+      "returnWithoutDiv": -0.238,
+      "realReturnWithoutDiv": -0.2564402810304449
+    },
+    {
+      "year": 2003,
+      "returnWithDiv": 0.2836,
+      "inflation": 0.0204,
+      "divYield": 0.0161,
+      "realReturnWithDiv": 0.2579380635045081,
+      "returnWithoutDiv": 0.2675,
+      "realReturnWithoutDiv": 0.24215993727949825
+    },
+    {
+      "year": 2004,
+      "returnWithDiv": 0.1074,
+      "inflation": 0.0334,
+      "divYield": 0.016,
+      "realReturnWithDiv": 0.07160828333655878,
+      "returnWithoutDiv": 0.0914,
+      "realReturnWithoutDiv": 0.05612541126378923
+    },
+    {
+      "year": 2005,
+      "returnWithDiv": 0.0483,
+      "inflation": 0.0334,
+      "divYield": 0.0179,
+      "realReturnWithDiv": 0.014418424617766545,
+      "returnWithoutDiv": 0.030400000000000003,
+      "realReturnWithoutDiv": -0.0029030385136443737
+    },
+    {
+      "year": 2006,
+      "returnWithDiv": 0.1561,
+      "inflation": 0.0252,
+      "divYield": 0.0177,
+      "realReturnWithDiv": 0.12768240343347648,
+      "returnWithoutDiv": 0.1384,
+      "realReturnWithoutDiv": 0.11041747951619207
+    },
+    {
+      "year": 2007,
+      "returnWithDiv": 0.0548,
+      "inflation": 0.041100000000000005,
+      "divYield": 0.0189,
+      "realReturnWithDiv": 0.013159158582268793,
+      "returnWithoutDiv": 0.0359,
+      "realReturnWithoutDiv": -0.0049947171261164325
+    },
+    {
+      "year": 2008,
+      "returnWithDiv": -0.3655,
+      "inflation": -0.0002,
+      "divYield": 0.0311,
+      "realReturnWithDiv": -0.36537307461492297,
+      "returnWithoutDiv": -0.3966,
+      "realReturnWithoutDiv": -0.39647929585917197
+    },
+    {
+      "year": 2009,
+      "returnWithDiv": 0.2594,
+      "inflation": 0.0281,
+      "divYield": 0.02,
+      "realReturnWithDiv": 0.22497811496936104,
+      "returnWithoutDiv": 0.23940000000000003,
+      "realReturnWithoutDiv": 0.20552475440132278
+    },
+    {
+      "year": 2010,
+      "returnWithDiv": 0.1482,
+      "inflation": 0.0144,
+      "divYield": 0.0184,
+      "realReturnWithDiv": 0.13190063091482673,
+      "returnWithoutDiv": 0.1298,
+      "realReturnWithoutDiv": 0.11376182965299675
+    },
+    {
+      "year": 2011,
+      "returnWithDiv": 0.021,
+      "inflation": 0.030600000000000002,
+      "divYield": 0.0207,
+      "realReturnWithDiv": -0.009314962157966233,
+      "returnWithoutDiv": 0.00030000000000000165,
+      "realReturnWithoutDiv": -0.02940034931108093
+    },
+    {
+      "year": 2012,
+      "returnWithDiv": 0.1589,
+      "inflation": 0.0176,
+      "divYield": 0.0213,
+      "realReturnWithDiv": 0.13885613207547176,
+      "returnWithoutDiv": 0.1376,
+      "realReturnWithoutDiv": 0.1179245283018866
+    },
+    {
+      "year": 2013,
+      "returnWithDiv": 0.3215,
+      "inflation": 0.0151,
+      "divYield": 0.0196,
+      "realReturnWithDiv": 0.3018421830361542,
+      "returnWithoutDiv": 0.3019,
+      "realReturnWithoutDiv": 0.2825337405181758
+    },
+    {
+      "year": 2014,
+      "returnWithDiv": 0.1352,
+      "inflation": 0.006500000000000001,
+      "divYield": 0.0192,
+      "realReturnWithDiv": 0.12786885245901636,
+      "returnWithoutDiv": 0.11599999999999999,
+      "realReturnWithoutDiv": 0.10879284649776477
+    },
+    {
+      "year": 2015,
+      "returnWithDiv": 0.0138,
+      "inflation": 0.0064,
+      "divYield": 0.021099999999999997,
+      "realReturnWithDiv": 0.007352941176470562,
+      "returnWithoutDiv": -0.0072999999999999975,
+      "realReturnWithoutDiv": -0.013612877583465743
+    },
+    {
+      "year": 2016,
+      "returnWithDiv": 0.1177,
+      "inflation": 0.020499999999999997,
+      "divYield": 0.020099999999999996,
+      "realReturnWithDiv": 0.09524742773150408,
+      "returnWithoutDiv": 0.0976,
+      "realReturnWithoutDiv": 0.07555120039196472
+    },
+    {
+      "year": 2017,
+      "returnWithDiv": 0.2161,
+      "inflation": 0.0213,
+      "divYield": 0.018600000000000002,
+      "realReturnWithDiv": 0.19073729560364217,
+      "returnWithoutDiv": 0.19749999999999998,
+      "realReturnWithoutDiv": 0.17252521296386947
+    },
+    {
+      "year": 2018,
+      "returnWithDiv": -0.042300000000000004,
+      "inflation": 0.02,
+      "divYield": 0.021400000000000002,
+      "realReturnWithDiv": -0.06107843137254909,
+      "returnWithoutDiv": -0.0637,
+      "realReturnWithoutDiv": -0.08205882352941174
+    },
+    {
+      "year": 2019,
+      "returnWithDiv": 0.3121,
+      "inflation": 0.0231,
+      "divYield": 0.0182,
+      "realReturnWithDiv": 0.2824748313947807,
+      "returnWithoutDiv": 0.2939,
+      "realReturnWithoutDiv": 0.2646857589678431
+    },
+    {
+      "year": 2020,
+      "returnWithDiv": 0.1802,
+      "inflation": 0.0132,
+      "divYield": 0.0151,
+      "realReturnWithDiv": 0.16482431898934058,
+      "returnWithoutDiv": 0.1651,
+      "realReturnWithoutDiv": 0.14992104224240022
+    },
+    {
+      "year": 2021,
+      "returnWithDiv": 0.2847,
+      "inflation": 0.0719,
+      "divYield": 0.0124,
+      "realReturnWithDiv": 0.19852598190129656,
+      "returnWithoutDiv": 0.2723,
+      "realReturnWithoutDiv": 0.18695773859501807
+    },
+    {
+      "year": 2022,
+      "returnWithDiv": -0.1804,
+      "inflation": 0.0644,
+      "divYield": 0.0178,
+      "realReturnWithDiv": -0.22998872604284104,
+      "returnWithoutDiv": -0.19820000000000002,
+      "realReturnWithoutDiv": -0.24671176249530258
+    },
+    {
+      "year": 2023,
+      "returnWithDiv": 0.2606,
+      "inflation": 0.031200000000000002,
+      "divYield": 0.0147,
+      "realReturnWithDiv": 0.22245927075252148,
+      "returnWithoutDiv": 0.2459,
+      "realReturnWithoutDiv": 0.20820403413498845
+    },
+    {
+      "year": 2024,
+      "returnWithDiv": 0.2488,
+      "divYield": 0.0125,
+      "inflation": 0.024,
+      "realReturnWithDiv": 0.21953124999999996,
+      "returnWithoutDiv": 0.23629999999999998,
+      "realReturnWithoutDiv": 0.20732421874999996
+    },
+    {
+      "year": 2025,
+      "returnWithDiv": 0.1778,
+      "divYield": 0.0115,
+      "inflation": 0.025,
+      "realReturnWithDiv": 0.14907317073170745,
+      "returnWithoutDiv": 0.1663,
+      "realReturnWithoutDiv": 0.1378536585365855
+    }
+  ],
+  "stats": {
+    "returnWithDiv": {
+      "r1": 0.17779999999999996,
+      "r5": 0.14316543178135976,
+      "r10": 0.14683040605526076,
+      "r20": 0.10903868572005604,
+      "r30": 0.10257464871442146,
+      "r98": 0.10018279180243561
+    },
+    "realReturnWithDiv": {
+      "r1": 0.14907317073170745,
+      "r5": 0.09593276377018745,
+      "r10": 0.11203545677726456,
+      "r20": 0.08216990252318301,
+      "r30": 0.07559858742878367,
+      "r98": 0.06779418451937724
+    },
+    "returnWithoutDiv": {
+      "r1": 0.16630000000000011,
+      "r5": 0.1287937132062602,
+      "r10": 0.13017877494878283,
+      "r20": 0.08956743014617818,
+      "r30": 0.08434741034608084,
+      "r98": 0.06529616616291412
+    },
+    "realReturnWithoutDiv": {
+      "r1": 0.1378536585365855,
+      "r5": 0.08215484780084892,
+      "r10": 0.09588903782481273,
+      "r20": 0.06317037886571297,
+      "r30": 0.057817304443024575,
+      "r98": 0.03393459659185116
+    }
+  },
+  "rolling10Year": [
+    {
+      "year": 1937,
+      "returnWithDiv10Y": -0.006174263757706022
+    },
+    {
+      "year": 1938,
+      "returnWithDiv10Y": -0.016703564518270042
+    },
+    {
+      "year": 1939,
+      "returnWithDiv10Y": -0.009242974974138396
+    },
+    {
+      "year": 1940,
+      "returnWithDiv10Y": 0.008394133045152241
+    },
+    {
+      "year": 1941,
+      "returnWithDiv10Y": 0.05379027801426295
+    },
+    {
+      "year": 1942,
+      "returnWithDiv10Y": 0.08216945728127656
+    },
+    {
+      "year": 1943,
+      "returnWithDiv10Y": 0.06268311452624986
+    },
+    {
+      "year": 1944,
+      "returnWithDiv10Y": 0.08265312390850932
+    },
+    {
+      "year": 1945,
+      "returnWithDiv10Y": 0.07431305797832644
+    },
+    {
+      "year": 1946,
+      "returnWithDiv10Y": 0.035782401713504663
+    },
+    {
+      "year": 1947,
+      "returnWithDiv10Y": 0.0874430748237458
+    },
+    {
+      "year": 1948,
+      "returnWithDiv10Y": 0.06576363184834122
+    },
+    {
+      "year": 1949,
+      "returnWithDiv10Y": 0.08502499182463819
+    },
+    {
+      "year": 1950,
+      "returnWithDiv10Y": 0.12720810478110756
+    },
+    {
+      "year": 1951,
+      "returnWithDiv10Y": 0.1672596234743544
+    },
+    {
+      "year": 1952,
+      "returnWithDiv10Y": 0.1662566733931965
+    },
+    {
+      "year": 1953,
+      "returnWithDiv10Y": 0.1390783511841489
+    },
+    {
+      "year": 1954,
+      "returnWithDiv10Y": 0.1677019960230015
+    },
+    {
+      "year": 1955,
+      "returnWithDiv10Y": 0.16490364013639303
+    },
+    {
+      "year": 1956,
+      "returnWithDiv10Y": 0.18367174518072504
+    },
+    {
+      "year": 1957,
+      "returnWithDiv10Y": 0.16474650495531717
+    },
+    {
+      "year": 1958,
+      "returnWithDiv10Y": 0.20109024036539003
+    },
+    {
+      "year": 1959,
+      "returnWithDiv10Y": 0.19459921606086694
+    },
+    {
+      "year": 1960,
+      "returnWithDiv10Y": 0.16333699850168681
+    },
+    {
+      "year": 1961,
+      "returnWithDiv10Y": 0.16609164334337012
+    },
+    {
+      "year": 1962,
+      "returnWithDiv10Y": 0.13627651869241397
+    },
+    {
+      "year": 1963,
+      "returnWithDiv10Y": 0.16108849760632893
+    },
+    {
+      "year": 1964,
+      "returnWithDiv10Y": 0.1301185776523015
+    },
+    {
+      "year": 1965,
+      "returnWithDiv10Y": 0.1115942533528953
+    },
+    {
+      "year": 1966,
+      "returnWithDiv10Y": 0.09211511535191508
+    },
+    {
+      "year": 1967,
+      "returnWithDiv10Y": 0.12807707483887731
+    },
+    {
+      "year": 1968,
+      "returnWithDiv10Y": 0.09911958885903971
+    },
+    {
+      "year": 1969,
+      "returnWithDiv10Y": 0.07737086466851073
+    },
+    {
+      "year": 1970,
+      "returnWithDiv10Y": 0.08077930780328035
+    },
+    {
+      "year": 1971,
+      "returnWithDiv10Y": 0.06968066712001275
+    },
+    {
+      "year": 1972,
+      "returnWithDiv10Y": 0.09831380897984587
+    },
+    {
+      "year": 1973,
+      "returnWithDiv10Y": 0.05966080054346112
+    },
+    {
+      "year": 1974,
+      "returnWithDiv10Y": 0.012851860803733794
+    },
+    {
+      "year": 1975,
+      "returnWithDiv10Y": 0.03309760779292947
+    },
+    {
+      "year": 1976,
+      "returnWithDiv10Y": 0.06655981877231243
+    },
+    {
+      "year": 1977,
+      "returnWithDiv10Y": 0.03650353413947238
+    },
+    {
+      "year": 1978,
+      "returnWithDiv10Y": 0.032409352721400886
+    },
+    {
+      "year": 1979,
+      "returnWithDiv10Y": 0.059170201746773676
+    },
+    {
+      "year": 1980,
+      "returnWithDiv10Y": 0.08497146363123953
+    },
+    {
+      "year": 1981,
+      "returnWithDiv10Y": 0.06549984340524428
+    },
+    {
+      "year": 1982,
+      "returnWithDiv10Y": 0.06697988882152317
+    },
+    {
+      "year": 1983,
+      "returnWithDiv10Y": 0.10565610165066475
+    },
+    {
+      "year": 1984,
+      "returnWithDiv10Y": 0.14612040876127264
+    },
+    {
+      "year": 1985,
+      "returnWithDiv10Y": 0.14120801053270138
+    },
+    {
+      "year": 1986,
+      "returnWithDiv10Y": 0.13618851278756772
+    },
+    {
+      "year": 1987,
+      "returnWithDiv10Y": 0.15092078176642798
+    },
+    {
+      "year": 1988,
+      "returnWithDiv10Y": 0.16132532004812372
+    },
+    {
+      "year": 1989,
+      "returnWithDiv10Y": 0.17343949182221596
+    },
+    {
+      "year": 1990,
+      "returnWithDiv10Y": 0.13799207027334126
+    },
+    {
+      "year": 1991,
+      "returnWithDiv10Y": 0.17408908283737912
+    },
+    {
+      "year": 1992,
+      "returnWithDiv10Y": 0.16082831747341841
+    },
+    {
+      "year": 1993,
+      "returnWithDiv10Y": 0.14852001701931994
+    },
+    {
+      "year": 1994,
+      "returnWithDiv10Y": 0.14319514956100066
+    },
+    {
+      "year": 1995,
+      "returnWithDiv10Y": 0.1482835997326617
+    },
+    {
+      "year": 1996,
+      "returnWithDiv10Y": 0.15228091517437514
+    },
+    {
+      "year": 1997,
+      "returnWithDiv10Y": 0.17902632762114612
+    },
+    {
+      "year": 1998,
+      "returnWithDiv10Y": 0.1904528665253289
+    },
+    {
+      "year": 1999,
+      "returnWithDiv10Y": 0.18049804808321057
+    },
+    {
+      "year": 2000,
+      "returnWithDiv10Y": 0.17301831014065705
+    },
+    {
+      "year": 2001,
+      "returnWithDiv10Y": 0.12812161085237572
+    },
+    {
+      "year": 2002,
+      "returnWithDiv10Y": 0.0925599417997156
+    },
+    {
+      "year": 2003,
+      "returnWithDiv10Y": 0.10958562477215916
+    },
+    {
+      "year": 2004,
+      "returnWithDiv10Y": 0.11948291314262494
+    },
+    {
+      "year": 2005,
+      "returnWithDiv10Y": 0.08975938211728773
+    },
+    {
+      "year": 2006,
+      "returnWithDiv10Y": 0.08331006974899346
+    },
+    {
+      "year": 2007,
+      "returnWithDiv10Y": 0.058405253016188485
+    },
+    {
+      "year": 2008,
+      "returnWithDiv10Y": -0.013586639822537605
+    },
+    {
+      "year": 2009,
+      "returnWithDiv10Y": -0.009541514763216519
+    },
+    {
+      "year": 2010,
+      "returnWithDiv10Y": 0.01379048712981401
+    },
+    {
+      "year": 2011,
+      "returnWithDiv10Y": 0.02879431153772516
+    },
+    {
+      "year": 2012,
+      "returnWithDiv10Y": 0.0703036090349769
+    },
+    {
+      "year": 2013,
+      "returnWithDiv10Y": 0.07342260250752775
+    },
+    {
+      "year": 2014,
+      "returnWithDiv10Y": 0.07608734017692464
+    },
+    {
+      "year": 2015,
+      "returnWithDiv10Y": 0.07249232312768172
+    },
+    {
+      "year": 2016,
+      "returnWithDiv10Y": 0.06887563432251365
+    },
+    {
+      "year": 2017,
+      "returnWithDiv10Y": 0.08419423559412831
+    },
+    {
+      "year": 2018,
+      "returnWithDiv10Y": 0.12976178416893958
+    },
+    {
+      "year": 2019,
+      "returnWithDiv10Y": 0.13440257763267716
+    },
+    {
+      "year": 2020,
+      "returnWithDiv10Y": 0.13752516050690056
+    },
+    {
+      "year": 2021,
+      "returnWithDiv10Y": 0.1639614842303212
+    },
+    {
+      "year": 2022,
+      "returnWithDiv10Y": 0.12433105993769744
+    },
+    {
+      "year": 2023,
+      "returnWithDiv10Y": 0.11903899826450148
+    },
+    {
+      "year": 2024,
+      "returnWithDiv10Y": 0.1297628055004807
+    },
+    {
+      "year": 2025,
+      "returnWithDiv10Y": 0.146830406055261
+    }
+  ],
+  "bestYears": [
+    {
+      "year": 1954,
+      "returnWithDiv": 0.5256000000000001,
+      "inflation": -0.0037,
+      "realReturnWithDiv": 0.5312656830272007,
+      "returnWithoutDiv": 0.4806000000000001,
+      "realReturnWithoutDiv": 0.48609856468935075
+    },
+    {
+      "year": 1933,
+      "returnWithDiv": 0.49979999999999997,
+      "inflation": 0.0076,
+      "realReturnWithDiv": 0.4884874950377134,
+      "returnWithoutDiv": 0.4548,
+      "realReturnWithoutDiv": 0.44382691544263597
+    },
+    {
+      "year": 1935,
+      "returnWithDiv": 0.46740000000000004,
+      "inflation": 0.029900000000000003,
+      "realReturnWithDiv": 0.4247985241285561,
+      "returnWithoutDiv": 0.42240000000000005,
+      "realReturnWithoutDiv": 0.3811049616467619
+    },
+    {
+      "year": 1928,
+      "returnWithDiv": 0.43810000000000004,
+      "inflation": -0.0116,
+      "realReturnWithDiv": 0.4549777418049372,
+      "returnWithoutDiv": 0.39310000000000006,
+      "realReturnWithoutDiv": 0.40944961554026715
+    },
+    {
+      "year": 1958,
+      "returnWithDiv": 0.4372,
+      "inflation": 0.0176,
+      "realReturnWithDiv": 0.4123427672955975,
+      "returnWithoutDiv": 0.3922,
+      "realReturnWithoutDiv": 0.36812106918238974
+    }
+  ],
+  "worstYears": [
+    {
+      "year": 1931,
+      "returnWithDiv": -0.4384,
+      "inflation": -0.0932,
+      "realReturnWithDiv": -0.3806793118659021,
+      "returnWithoutDiv": -0.4834,
+      "realReturnWithoutDiv": -0.4303043670048523
+    },
+    {
+      "year": 2008,
+      "returnWithDiv": -0.3655,
+      "inflation": -0.0002,
+      "divYield": 0.0311,
+      "realReturnWithDiv": -0.36537307461492297,
+      "returnWithoutDiv": -0.3966,
+      "realReturnWithoutDiv": -0.39647929585917197
+    },
+    {
+      "year": 1937,
+      "returnWithDiv": -0.35340000000000005,
+      "inflation": 0.0286,
+      "realReturnWithDiv": -0.3713785728174217,
+      "returnWithoutDiv": -0.39840000000000003,
+      "realReturnWithoutDiv": -0.4151273575734008
+    },
+    {
+      "year": 1974,
+      "returnWithDiv": -0.259,
+      "inflation": 0.121,
+      "divYield": 0.054299999999999994,
+      "realReturnWithDiv": -0.3389830508474576,
+      "returnWithoutDiv": -0.3133,
+      "realReturnWithoutDiv": -0.3874219446922391
+    },
+    {
+      "year": 1930,
+      "returnWithDiv": -0.25120000000000003,
+      "inflation": -0.064,
+      "realReturnWithDiv": -0.20000000000000007,
+      "returnWithoutDiv": -0.2962,
+      "realReturnWithoutDiv": -0.24807692307692308
+    }
+  ]
+};
+  </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const data = window.__INITIAL_DATA__;
+      if (!data) return;
+
+      // Formatting utils
+      const pct = (val) => {
+          if (val === null || val === undefined) return '--';
+          return (val * 100).toFixed(2) + '%';
+      };
+
+      const formatCell = (val) => {
+          if (val === null || val === undefined) return '<td>--</td>';
+          const cssClass = val >= 0 ? 'pos' : 'neg';
+          const sign = val > 0 ? '+' : '';
+          return `<td class="${cssClass}">${sign}${pct(val)}</td>`;
+      };
+
+      // Populate Stats
+      if (data.stats && data.stats.returnWithDiv) {
+          const s = data.stats.returnWithDiv;
+          document.getElementById('stat-10y').innerText = pct(s.r10);
+          document.getElementById('stat-20y').innerText = pct(s.r20);
+          document.getElementById('stat-30y').innerText = pct(s.r30);
+          document.getElementById('stat-all').innerText = pct(s[`r${data.historical.length}`]);
+      }
+
+      // Populate Table
+      let tableData = [...data.historical].reverse();
+      const tbody = document.getElementById('dataTableBody');
+      let currentSort = { col: 'year', desc: true };
+
+      const renderTable = (items) => {
+          tbody.innerHTML = '';
+          items.forEach(row => {
+              const tr = document.createElement('tr');
+              tr.innerHTML = `
+                  <td>${row.year}</td>
+                  ${formatCell(row.returnWithDiv)}
+                  <td>${pct(row.inflation)}</td>
+                  ${formatCell(row.realReturnWithDiv)}
+              `;
+              tbody.appendChild(tr);
+          });
+      };
+
+      renderTable(tableData);
+
+      // Search
+      document.getElementById('yearSearch').addEventListener('input', (e) => {
+          const q = e.target.value.trim();
+          if (!q) {
+              renderTable(tableData);
+              return;
+          }
+          const filtered = tableData.filter(d => d.year.toString().includes(q));
+          renderTable(filtered);
+      });
+
+      // Sort
+      const headers = document.querySelectorAll('th[data-sort]');
+      headers.forEach(th => {
+          th.addEventListener('click', () => {
+              const col = th.dataset.sort;
+              if (currentSort.col === col) {
+                  currentSort.desc = !currentSort.desc;
+              } else {
+                  currentSort.col = col;
+                  currentSort.desc = true;
+              }
+
+              tableData.sort((a, b) => {
+                  let valA, valB;
+                  if (col === 'year') { valA = a.year; valB = b.year; }
+                  if (col === 'nominal') { valA = a.returnWithDiv; valB = b.returnWithDiv; }
+                  if (col === 'inflation') { valA = a.inflation; valB = b.inflation; }
+                  if (col === 'real') { valA = a.realReturnWithDiv; valB = b.realReturnWithDiv; }
+
+                  if (valA === undefined || valA === null) valA = -Infinity;
+                  if (valB === undefined || valB === null) valB = -Infinity;
+
+                  return currentSort.desc ? valB - valA : valA - valB;
+              });
+
+              renderTable(tableData);
+          });
+      });
+
+      // Render Chart
+      if (data.rolling10Year && data.rolling10Year.length > 0) {
+          const ctx = document.getElementById('rollingChart').getContext('2d');
+          const labels = data.rolling10Year.map(d => d.year);
+          const values = data.rolling10Year.map(d => d.returnWithDiv10Y * 100);
+
+          new Chart(ctx, {
+              type: 'line',
+              data: {
+                  labels,
+                  datasets: [{
+                      label: '10-Year Annualized Return (%)',
+                      data: values,
+                      borderColor: '#4a8fe7',
+                      backgroundColor: 'rgba(74, 143, 231, 0.1)',
+                      borderWidth: 2,
+                      pointRadius: 0,
+                      pointHoverRadius: 4,
+                      fill: true,
+                      tension: 0.3
+                  }]
+              },
+              options: {
+                  responsive: true,
+                  maintainAspectRatio: false,
+                  interaction: { mode: 'index', intersect: false },
+                  plugins: {
+                      legend: { display: false },
+                      tooltip: {
+                          callbacks: {
+                              label: function(context) {
+                                  return context.parsed.y.toFixed(2) + '%';
+                              }
+                          }
+                      }
+                  },
+                  scales: {
+                      y: {
+                          grid: { color: '#152040' },
+                          ticks: { color: '#8a9ab0', callback: val => val + '%' }
+                      },
+                      x: {
+                          grid: { display: false },
+                          ticks: { color: '#8a9ab0', maxTicksLimit: 10 }
+                      }
+                  }
+              }
+          });
+      }
+    });
+  </script>
+</body>
+</html>
