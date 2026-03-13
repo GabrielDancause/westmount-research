@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Return Calculator: Inflation-Adjusted Returns</title>
+    <meta name="description" content="Calculate your true investment return after inflation. See how purchasing power erodes over time with our real vs nominal return calculator.">
+
+    <link rel="canonical" href="https://westmountfundamentals.com/real-return-calculator">
+    <meta property="og:title" content="Real Return Calculator: Inflation-Adjusted Returns">
+    <meta property="og:description" content="Calculate your true investment return after inflation. See how purchasing power erodes over time with our real vs nominal return calculator.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://westmountfundamentals.com/real-return-calculator">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Real Return Calculator: Inflation-Adjusted Returns">
+    <meta name="twitter:description" content="Calculate your true investment return after inflation. See how purchasing power erodes over time with our real vs nominal return calculator.">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VYF72NSC1Q"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-VYF72NSC1Q');
+    </script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap');
+
+        :root {
+            --bg: #060a12;
+            --card-bg: #0a1020;
+            --border: #152040;
+            --accent: #4a8fe7;
+            --text-main: #c8d0de;
+            --text-muted: #5a6a80;
+            --success: #34d399;
+            --danger: #ef4444;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* Nav */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(6, 10, 18, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-brand {
+            color: #fff;
+            font-weight: 800;
+            text-decoration: none;
+            font-size: 1.2rem;
+            letter-spacing: -0.5px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+        .nav-links a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--accent); }
+
+        /* Header */
+        header {
+            padding: 60px 24px 40px;
+            text-align: center;
+            background: linear-gradient(180deg, #0a1628 0%, #060a12 100%);
+            border-bottom: 1px solid var(--border);
+        }
+        .header-tag {
+            color: var(--accent);
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            display: inline-block;
+            background: rgba(74,143,231,0.1);
+            padding: 4px 12px;
+            border-radius: 12px;
+        }
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 900;
+            margin-bottom: 16px;
+            letter-spacing: -1px;
+            background: linear-gradient(to right, #fff, #a0aec0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .header-desc {
+            color: var(--text-muted);
+            max-width: 650px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 24px;
+        }
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+        @media (min-width: 768px) {
+            .grid-2 { grid-template-columns: 350px 1fr; }
+        }
+
+        /* Cards */
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        }
+        .card h2 {
+            font-size: 1.2rem;
+            color: #fff;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Form Elements */
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+        .input-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+        .input-prefix, .input-suffix {
+            position: absolute;
+            color: var(--text-muted);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+        }
+        .input-prefix { left: 12px; }
+        .input-suffix { right: 12px; }
+
+        input {
+            width: 100%;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            color: #fff;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1rem;
+            padding: 12px;
+            border-radius: 8px;
+            outline: none;
+            transition: all 0.2s;
+        }
+        input:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 2px rgba(74,143,231,0.2);
+        }
+        input.has-prefix { padding-left: 28px; }
+        input.has-suffix { padding-right: 28px; }
+
+        .btn {
+            width: 100%;
+            background: var(--accent);
+            color: #fff;
+            border: none;
+            padding: 14px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .btn:hover {
+            background: #3b7bd4;
+        }
+
+        /* Stats Row */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        .stat-card {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+        }
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+        .stat-value {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #fff;
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .stat-value.positive { color: var(--success); }
+        .stat-value.negative { color: var(--danger); }
+
+        /* Chart */
+        .chart-container {
+            position: relative;
+            height: 350px;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        /* Table */
+        .table-container {
+            overflow-x: auto;
+            margin-top: 20px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+        }
+        th, td {
+            padding: 12px 16px;
+            text-align: right;
+            border-bottom: 1px solid var(--border);
+        }
+        th:first-child, td:first-child { text-align: left; }
+        th {
+            background: rgba(21,32,64,0.3);
+            color: var(--text-muted);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.75rem;
+            font-family: 'Inter', sans-serif;
+        }
+        tr:last-child td { border-bottom: none; }
+        tr:hover td { background: rgba(255,255,255,0.02); }
+
+        /* Table Controls */
+        .table-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+            gap: 16px;
+        }
+        .search-box {
+            max-width: 300px;
+            flex-grow: 1;
+        }
+
+        /* Typography & Content Sections */
+        .content-section {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid var(--border);
+        }
+        .content-section h2 {
+            font-size: 1.8rem;
+            color: #fff;
+            margin-bottom: 24px;
+        }
+        .content-section h3 {
+            font-size: 1.3rem;
+            color: #fff;
+            margin-top: 32px;
+            margin-bottom: 16px;
+        }
+        .content-section p {
+            margin-bottom: 16px;
+            color: var(--text-main);
+        }
+        .content-section ul {
+            margin-left: 24px;
+            margin-bottom: 24px;
+            color: var(--text-main);
+        }
+        .content-section li { margin-bottom: 8px; }
+
+        /* FAQ */
+        .faq-item {
+            margin-bottom: 24px;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+        }
+        .faq-item h3 {
+            margin-top: 0;
+            color: var(--accent);
+            font-size: 1.1rem;
+        }
+        .faq-item p:last-child { margin-bottom: 0; }
+
+        /* Footer */
+        footer {
+            margin-top: 60px;
+            padding: 40px 24px;
+            text-align: center;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Real Return Calculator: Inflation-Adjusted Returns",
+      "description": "Calculate your true investment return after inflation. See how purchasing power erodes over time with our real vs nominal return calculator.",
+      "datePublished": "2026-03-13",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Westmount Research",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://westmountfundamentals.com/favicon.svg"
+        }
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do you calculate real return?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Real return is calculated using the Fisher equation: ((1 + Nominal Return) / (1 + Inflation Rate)) - 1. For example, a 10% nominal return with 3% inflation yields a real return of 6.8% (1.10 / 1.03 - 1), not 7%."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between real and nominal return?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nominal return is the raw percentage increase in your investment's value. Real return is the true increase in your purchasing power, adjusted for the effects of inflation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a good real rate of return?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Historically, the stock market (S&P 500) has provided an annualized real rate of return of about 6% to 7% after inflation over long periods. A real return of 4% to 5% is generally considered a conservative target for a diversified portfolio."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does inflation matter for investments?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Inflation erodes the purchasing power of your money over time. If your investment grows at 5% but inflation is 6%, you have actually lost 1% in purchasing power, making your true (real) return negative."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What investments historically beat inflation?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Equities (stocks), real estate, and TIPS (Treasury Inflation-Protected Securities) have historically been the most effective asset classes for beating inflation over the long term."
+          }
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+
+<nav>
+    <a href="/" class="nav-brand">Westmount Fundamentals</a>
+    <div class="nav-links">
+        <a href="/#studies">Studies</a>
+        <a href="/#tools">Tools</a>
+        <a href="/#guides">Guides</a>
+    </div>
+</nav>
+
+<header>
+    <span class="header-tag">Interactive Calculator</span>
+    <h1>Real Return Calculator</h1>
+    <p class="header-desc">Calculate your true investment return after adjusting for inflation. See exactly how much purchasing power your money has gained or lost over time.</p>
+</header>
+
+<div class="container">
+    <div class="grid-2">
+        <!-- Input Form -->
+        <div class="card">
+            <h2>⚙️ Calculator Inputs</h2>
+            <div class="form-group">
+                <label>Initial Investment</label>
+                <div class="input-wrapper">
+                    <span class="input-prefix">$</span>
+                    <input type="number" id="input-principal" class="has-prefix" value="10000" step="100">
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Annual Nominal Return</label>
+                <div class="input-wrapper">
+                    <input type="number" id="input-return" class="has-suffix" value="10.0" step="0.1">
+                    <span class="input-suffix">%</span>
+                </div>
+                <p style="font-size:0.8rem; color:var(--text-muted); margin-top:4px;">Historical S&P 500 avg is ~10%</p>
+            </div>
+            <div class="form-group">
+                <label>Annual Inflation Rate</label>
+                <div class="input-wrapper">
+                    <input type="number" id="input-inflation" class="has-suffix" value="2.4" step="0.1">
+                    <span class="input-suffix">%</span>
+                </div>
+                <p style="font-size:0.8rem; color:var(--text-muted); margin-top:4px;">Current US CPI is 2.4%</p>
+            </div>
+            <div class="form-group">
+                <label>Investment Period (Years)</label>
+                <div class="input-wrapper">
+                    <input type="number" id="input-years" value="10" step="1" min="1" max="100">
+                </div>
+            </div>
+            <button class="btn" onclick="calculate()">Calculate Real Returns</button>
+        </div>
+
+        <!-- Results Dashboard -->
+        <div class="card">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-label">Nominal Balance</div>
+                    <div class="stat-value" id="val-nominal">$0</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Real Balance (Purchasing Power)</div>
+                    <div class="stat-value positive" id="val-real">$0</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Annualized Real Return</div>
+                    <div class="stat-value" id="val-real-rate">0.00%</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Lost to Inflation</div>
+                    <div class="stat-value negative" id="val-lost">$0</div>
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <canvas id="growthChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <!-- Historical Data Section -->
+    <div class="card">
+        <h2>📈 Historical Inflation & S&P 500 Real Returns</h2>
+        <p style="color:var(--text-muted); margin-bottom:20px;">Explore the relationship between inflation (CPI) and stock market returns since 1928.</p>
+
+        <div class="chart-container" style="height: 400px; margin-bottom: 40px;">
+            <canvas id="historyChart"></canvas>
+        </div>
+
+        <div class="table-controls">
+            <input type="text" id="searchInput" class="search-box" placeholder="Search year..." onkeyup="filterTable()">
+            <span style="color:var(--text-muted); font-size:0.9rem;">Data source: NYU Stern</span>
+        </div>
+
+        <div class="table-container">
+            <table id="dataTable">
+                <thead>
+                    <tr>
+                        <th onclick="sortTable(0)" style="cursor:pointer">Year ↕</th>
+                        <th onclick="sortTable(1)" style="cursor:pointer">S&P 500 Nominal ↕</th>
+                        <th onclick="sortTable(2)" style="cursor:pointer">Inflation (CPI) ↕</th>
+                        <th onclick="sortTable(3)" style="cursor:pointer">Real Return ↕</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    <!-- Populated by JS -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Methodology & FAQ -->
+    <div class="content-section">
+        <h2>Methodology: Calculating Real Returns</h2>
+        <p>While many investors simply subtract the inflation rate from their nominal return (e.g., 10% return - 3% inflation = 7% real return), this is technically an approximation.</p>
+        <p>The precise mathematical formula, known as the <strong>Fisher Equation</strong>, calculates the exact compounding effect:</p>
+        <div style="background:var(--card-bg); border:1px solid var(--border); padding:16px; border-radius:8px; font-family:'JetBrains Mono',monospace; margin:16px 0; text-align:center;">
+            Real Return = [ (1 + Nominal Return) / (1 + Inflation Rate) ] - 1
+        </div>
+        <p>For example, if your investment grows by 10% nominally and inflation is 3%:</p>
+        <ul>
+            <li>Approximate method: 10% - 3% = 7%</li>
+            <li>Exact method: (1.10 / 1.03) - 1 = 6.796%</li>
+        </ul>
+        <p>Over long periods of time, this compounding difference can have a significant impact on your calculated final purchasing power. Our calculator uses the exact Fisher formula to project your true real balance.</p>
+
+        <h3>Data Sources</h3>
+        <p>Historical S&P 500 returns (including dividends) and annual CPI inflation data are sourced from Aswath Damodaran's NYU Stern dataset. The default current inflation rate is pulled from the Bureau of Labor Statistics (BLS) Consumer Price Index.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <h3>How do you calculate real return?</h3>
+            <p>Real return is calculated using the Fisher equation: <code>((1 + Nominal Return) / (1 + Inflation Rate)) - 1</code>. For example, a 10% nominal return with 3% inflation yields a real return of 6.8% (1.10 / 1.03 - 1), not 7%.</p>
+        </div>
+        <div class="faq-item">
+            <h3>What is the difference between real and nominal return?</h3>
+            <p>Nominal return is the raw percentage increase in your investment's value before fees and inflation. Real return is the true increase in your purchasing power, adjusted for the effects of inflation.</p>
+        </div>
+        <div class="faq-item">
+            <h3>What is a good real rate of return?</h3>
+            <p>Historically, the stock market (S&P 500) has provided an annualized real rate of return of about 6% to 7% after inflation over long periods. A real return of 4% to 5% is generally considered a conservative target for a diversified retirement portfolio.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Why does inflation matter for investments?</h3>
+            <p>Inflation erodes the purchasing power of your money over time. If your investment grows at 5% but inflation is 6%, you have actually lost 1% in purchasing power, making your true (real) return negative.</p>
+        </div>
+        <div class="faq-item">
+            <h3>What investments historically beat inflation?</h3>
+            <p>Equities (stocks), real estate, and TIPS (Treasury Inflation-Protected Securities) have historically been the most effective asset classes for beating inflation over the long term, whereas cash and fixed-rate bonds often underperform during high inflation periods.</p>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2026 Westmount Research &middot; A GAB Ventures property. Not investment advice. All information for educational purposes only.
+    </footer>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    // Embedded Historical Data
+    const marketData = [{"year":1928,"sp500":43.81,"cpi":1.49},{"year":1929,"sp500":-8.3,"cpi":-2.06},{"year":1930,"sp500":-25.12,"cpi":-4.3},{"year":1931,"sp500":-43.84,"cpi":-8.15},{"year":1932,"sp500":-8.64,"cpi":-10.47},{"year":1933,"sp500":49.98,"cpi":-3.81},{"year":1934,"sp500":-1.19,"cpi":2.91},{"year":1935,"sp500":46.74,"cpi":9.77},{"year":1936,"sp500":31.94,"cpi":3.22},{"year":1937,"sp500":-35.34,"cpi":2.56},{"year":1938,"sp500":29.28,"cpi":-0.87},{"year":1939,"sp500":-1.1,"cpi":-1.3},{"year":1940,"sp500":-10.67,"cpi":3.31},{"year":1941,"sp500":-12.77,"cpi":-8.38},{"year":1942,"sp500":19.17,"cpi":3.33},{"year":1943,"sp500":25.06,"cpi":11.45},{"year":1944,"sp500":19.03,"cpi":16.58},{"year":1945,"sp500":35.82,"cpi":11.78},{"year":1946,"sp500":-8.43,"cpi":24.1},{"year":1947,"sp500":5.2,"cpi":21.26},{"year":1948,"sp500":5.7,"cpi":2.06},{"year":1949,"sp500":18.3,"cpi":0.09},{"year":1950,"sp500":30.81,"cpi":3.64},{"year":1951,"sp500":23.68,"cpi":6.05},{"year":1952,"sp500":18.15,"cpi":4.41},{"year":1953,"sp500":-1.21,"cpi":11.52},{"year":1954,"sp500":52.56,"cpi":0.92},{"year":1955,"sp500":32.6,"cpi":0},{"year":1956,"sp500":7.44,"cpi":0.91},{"year":1957,"sp500":-10.46,"cpi":2.72},{"year":1958,"sp500":43.72,"cpi":0.66},{"year":1959,"sp500":12.06,"cpi":0.11},{"year":1960,"sp500":0.34,"cpi":0.77},{"year":1961,"sp500":26.64,"cpi":0.98},{"year":1962,"sp500":-8.81,"cpi":0.32},{"year":1963,"sp500":22.61,"cpi":2.14},{"year":1964,"sp500":16.42,"cpi":1.26},{"year":1965,"sp500":12.4,"cpi":1.66},{"year":1966,"sp500":-9.97,"cpi":1.22},{"year":1967,"sp500":23.8,"cpi":2.32},{"year":1968,"sp500":10.81,"cpi":4.13},{"year":1969,"sp500":-8.24,"cpi":6.99},{"year":1970,"sp500":3.56,"cpi":8.22},{"year":1971,"sp500":14.22,"cpi":4.24},{"year":1972,"sp500":18.76,"cpi":2.98},{"year":1973,"sp500":-14.31,"cpi":3.42},{"year":1974,"sp500":-25.9,"cpi":10.07},{"year":1975,"sp500":37,"cpi":6.77},{"year":1976,"sp500":23.83,"cpi":8.18},{"year":1977,"sp500":-6.98,"cpi":14.65},{"year":1978,"sp500":6.51,"cpi":15.72},{"year":1979,"sp500":18.52,"cpi":13.74},{"year":1980,"sp500":31.74,"cpi":7.4},{"year":1981,"sp500":-4.7,"cpi":5.1},{"year":1982,"sp500":20.42,"cpi":0.56},{"year":1983,"sp500":22.34,"cpi":4.75},{"year":1984,"sp500":6.15,"cpi":4.68},{"year":1985,"sp500":31.24,"cpi":7.47},{"year":1986,"sp500":18.49,"cpi":9.61},{"year":1987,"sp500":5.81,"cpi":7.85},{"year":1988,"sp500":16.54,"cpi":7.22},{"year":1989,"sp500":31.48,"cpi":4.39},{"year":1990,"sp500":-3.06,"cpi":-0.69},{"year":1991,"sp500":30.23,"cpi":-0.17},{"year":1992,"sp500":7.49,"cpi":0.82},{"year":1993,"sp500":9.97,"cpi":2.16},{"year":1994,"sp500":1.33,"cpi":2.52},{"year":1995,"sp500":37.2,"cpi":1.79},{"year":1996,"sp500":22.68,"cpi":2.43},{"year":1997,"sp500":33.1,"cpi":4.02},{"year":1998,"sp500":28.34,"cpi":6.44},{"year":1999,"sp500":20.89,"cpi":7.68},{"year":2000,"sp500":-9.03,"cpi":9.29},{"year":2001,"sp500":-11.85,"cpi":6.68},{"year":2002,"sp500":-21.97,"cpi":9.56},{"year":2003,"sp500":28.36,"cpi":9.81},{"year":2004,"sp500":10.74,"cpi":13.64},{"year":2005,"sp500":4.83,"cpi":13.51},{"year":2006,"sp500":15.61,"cpi":1.73},{"year":2007,"sp500":5.48,"cpi":-5.4},{"year":2008,"sp500":-36.55,"cpi":-12},{"year":2009,"sp500":25.94,"cpi":-3.85},{"year":2010,"sp500":14.82,"cpi":-4.12},{"year":2011,"sp500":2.1,"cpi":-3.89},{"year":2012,"sp500":15.89,"cpi":6.44},{"year":2013,"sp500":32.15,"cpi":10.72},{"year":2014,"sp500":13.52,"cpi":4.5},{"year":2015,"sp500":1.38,"cpi":5.19},{"year":2016,"sp500":11.77,"cpi":5.31},{"year":2017,"sp500":21.61,"cpi":6.21},{"year":2018,"sp500":-4.23,"cpi":4.52},{"year":2019,"sp500":31.21,"cpi":3.69},{"year":2020,"sp500":18.02,"cpi":10.43},{"year":2021,"sp500":28.47,"cpi":18.86},{"year":2022,"sp500":-18.04,"cpi":5.65},{"year":2023,"sp500":26.06,"cpi":5.68},{"year":2024,"sp500":24.88,"cpi":3.96},{"year":2025,"sp500":17.78,"cpi":1.58}];
+
+    // Formatting utilities
+    const formatCurrency = (val) => new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(val);
+    const formatPercent = (val) => new Intl.NumberFormat('en-US', { style: 'percent', minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(val / 100);
+
+    let growthChartInstance = null;
+    let historyChartInstance = null;
+
+    function calculate() {
+        const principal = parseFloat(document.getElementById('input-principal').value);
+        const nominalRate = parseFloat(document.getElementById('input-return').value) / 100;
+        const inflationRate = parseFloat(document.getElementById('input-inflation').value) / 100;
+        const years = parseInt(document.getElementById('input-years').value);
+
+        if(isNaN(principal) || isNaN(nominalRate) || isNaN(inflationRate) || isNaN(years)) return;
+
+        // Calculate Real Rate using Fisher Equation
+        const realRate = ((1 + nominalRate) / (1 + inflationRate)) - 1;
+
+        let labels = [];
+        let nominalData = [];
+        let realData = [];
+        let principalData = [];
+
+        let currentNominal = principal;
+        let currentReal = principal;
+
+        for(let i = 0; i <= years; i++) {
+            labels.push('Year ' + i);
+            nominalData.push(currentNominal);
+            realData.push(currentReal);
+            principalData.push(principal);
+
+            if(i < years) {
+                currentNominal = currentNominal * (1 + nominalRate);
+                currentReal = currentReal * (1 + realRate);
+            }
+        }
+
+        const finalNominal = nominalData[years];
+        const finalReal = realData[years];
+        const lostValue = finalNominal - finalReal;
+
+        // Update DOM
+        document.getElementById('val-nominal').innerText = formatCurrency(finalNominal);
+
+        const elReal = document.getElementById('val-real');
+        elReal.innerText = formatCurrency(finalReal);
+        elReal.className = 'stat-value ' + (finalReal >= principal ? 'positive' : 'negative');
+
+        const elRate = document.getElementById('val-real-rate');
+        elRate.innerText = formatPercent(realRate * 100);
+        elRate.className = 'stat-value ' + (realRate >= 0 ? 'positive' : 'negative');
+
+        document.getElementById('val-lost').innerText = formatCurrency(lostValue);
+
+        updateGrowthChart(labels, nominalData, realData, principalData);
+    }
+
+    function updateGrowthChart(labels, nominal, real, principal) {
+        const ctx = document.getElementById('growthChart').getContext('2d');
+
+        if(growthChartInstance) {
+            growthChartInstance.destroy();
+        }
+
+        growthChartInstance = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [
+                    {
+                        label: 'Nominal Balance',
+                        data: nominal,
+                        borderColor: '#94a3b8',
+                        backgroundColor: 'transparent',
+                        borderWidth: 2,
+                        tension: 0.1,
+                        pointRadius: 0
+                    },
+                    {
+                        label: 'Real Balance (Purchasing Power)',
+                        data: real,
+                        borderColor: '#4a8fe7',
+                        backgroundColor: 'rgba(74,143,231,0.1)',
+                        borderWidth: 3,
+                        tension: 0.1,
+                        fill: true,
+                        pointRadius: 0
+                    },
+                    {
+                        label: 'Initial Principal',
+                        data: principal,
+                        borderColor: '#ef4444',
+                        borderDash: [5, 5],
+                        borderWidth: 1,
+                        pointRadius: 0
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                interaction: {
+                    mode: 'index',
+                    intersect: false,
+                },
+                plugins: {
+                    legend: {
+                        labels: { color: '#c8d0de', font: { family: 'Inter' } }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return context.dataset.label + ': ' + formatCurrency(context.raw);
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        grid: { color: '#152040' },
+                        ticks: { color: '#5a6a80' }
+                    },
+                    y: {
+                        grid: { color: '#152040' },
+                        ticks: {
+                            color: '#5a6a80',
+                            callback: function(value) {
+                                return '$' + (value / 1000) + 'k';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    }
+
+    function initHistoricalData() {
+        const tbody = document.getElementById('tableBody');
+        let html = '';
+
+        let years = [];
+        let sp500Data = [];
+        let cpiData = [];
+        let realReturnsData = [];
+
+        marketData.forEach(row => {
+            const sp500 = row.sp500;
+            const cpi = row.cpi;
+
+            // Fisher equation for historical real return
+            const realReturn = (((1 + (sp500/100)) / (1 + (cpi/100))) - 1) * 100;
+
+            years.push(row.year);
+            sp500Data.push(sp500);
+            cpiData.push(cpi);
+            realReturnsData.push(realReturn);
+
+            const realClass = realReturn >= 0 ? 'color: var(--success)' : 'color: var(--danger)';
+
+            html += `
+                <tr>
+                    <td style="text-align: left;">${row.year}</td>
+                    <td>${formatPercent(sp500)}</td>
+                    <td>${formatPercent(cpi)}</td>
+                    <td style="${realClass}; font-weight:600;">${formatPercent(realReturn)}</td>
+                </tr>
+            `;
+        });
+
+        tbody.innerHTML = html;
+
+        // Render History Chart
+        const ctx = document.getElementById('historyChart').getContext('2d');
+        historyChartInstance = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: years,
+                datasets: [
+                    {
+                        label: 'S&P 500 Nominal',
+                        data: sp500Data,
+                        backgroundColor: '#4a8fe7',
+                        order: 2
+                    },
+                    {
+                        label: 'Inflation (CPI)',
+                        data: cpiData,
+                        type: 'line',
+                        borderColor: '#ef4444',
+                        borderWidth: 2,
+                        pointRadius: 1,
+                        tension: 0.1,
+                        order: 1
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                interaction: {
+                    mode: 'index',
+                    intersect: false,
+                },
+                plugins: {
+                    legend: { labels: { color: '#c8d0de' } },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return context.dataset.label + ': ' + formatPercent(context.raw);
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: { grid: { display: false }, ticks: { color: '#5a6a80', maxTicksLimit: 15 } },
+                    y: { grid: { color: '#152040' }, ticks: { color: '#5a6a80', callback: function(v) { return v + '%'; } } }
+                }
+            }
+        });
+    }
+
+    // Table sorting and filtering
+    function filterTable() {
+        const input = document.getElementById('searchInput');
+        const filter = input.value.toUpperCase();
+        const tbody = document.getElementById('tableBody');
+        const tr = tbody.getElementsByTagName('tr');
+
+        for (let i = 0; i < tr.length; i++) {
+            const td = tr[i].getElementsByTagName('td')[0]; // Filter by year
+            if (td) {
+                const txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+
+    let sortDir = false;
+    function sortTable(n) {
+        const table = document.getElementById("dataTable");
+        let rows, switching, i, x, y, shouldSwitch, switchcount = 0;
+        switching = true;
+        sortDir = !sortDir;
+
+        while (switching) {
+            switching = false;
+            rows = table.rows;
+            for (i = 1; i < (rows.length - 1); i++) {
+                shouldSwitch = false;
+                x = rows[i].getElementsByTagName("TD")[n];
+                y = rows[i + 1].getElementsByTagName("TD")[n];
+
+                let valX = parseFloat(x.innerHTML.replace(/[^0-9.-]+/g,""));
+                let valY = parseFloat(y.innerHTML.replace(/[^0-9.-]+/g,""));
+
+                if(isNaN(valX)) valX = x.innerHTML.toLowerCase();
+                if(isNaN(valY)) valY = y.innerHTML.toLowerCase();
+
+                if (sortDir) {
+                    if (valX > valY) { shouldSwitch = true; break; }
+                } else {
+                    if (valX < valY) { shouldSwitch = true; break; }
+                }
+            }
+            if (shouldSwitch) {
+                rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                switching = true;
+                switchcount ++;
+            }
+        }
+    }
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', () => {
+        initHistoricalData();
+        calculate();
+    });
+
+</script>
+</body>
+</html>
