@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Growth ETFs 2026: VUG, QQQ & Top Funds Compared</title>
+    <meta name="description" content="Compare the best growth ETFs of 2026 including VUG, QQQ, SCHG, and more. Analyze 3-year returns, expense ratios, and risk to find the top growth funds.">
+    <link rel="canonical" href="https://westmountfundamentals.com/best-growth-etfs-2026">
+    <meta property="og:title" content="Best Growth ETFs 2026: VUG, QQQ & Top Funds Compared">
+    <meta property="og:description" content="Compare the best growth ETFs of 2026 including VUG, QQQ, SCHG, and more. Analyze 3-year returns, expense ratios, and risk to find the top growth funds.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://westmountfundamentals.com/best-growth-etfs-2026">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Best Growth ETFs 2026: VUG, QQQ & Top Funds Compared">
+    <meta name="twitter:description" content="Compare the best growth ETFs of 2026 including VUG, QQQ, SCHG, and more. Analyze 3-year returns, expense ratios, and risk to find the top growth funds.">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VYF72NSC1Q"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-VYF72NSC1Q');
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        :root {
+            --bg-color: #060a12;
+            --card-bg: #0a1020;
+            --border-color: #152040;
+            --accent: #4a8fe7;
+            --text-main: #e2e8f0;
+            --text-muted: #94a3b8;
+            --positive: #10b981;
+            --negative: #ef4444;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: rgba(6, 10, 18, 0.85);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, #60a5fa, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+            letter-spacing: -0.02em;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            max-width: 800px;
+            margin-inline: auto;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .stat-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent);
+        }
+
+        .stat-label {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 0.25rem;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .stat-sub {
+            color: var(--accent);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .content-section {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .search-box {
+            background: var(--bg-color);
+            border: 1px solid var(--border-color);
+            color: white;
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 300px;
+            font-family: 'Inter', sans-serif;
+            outline: none;
+        }
+
+        .search-box:focus {
+            border-color: var(--accent);
+        }
+
+        .table-container {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        th, td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            font-weight: 600;
+            color: var(--text-muted);
+            cursor: pointer;
+            user-select: none;
+            white-space: nowrap;
+            transition: color 0.2s;
+        }
+
+        th:hover {
+            color: white;
+        }
+
+        td {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.95rem;
+        }
+
+        .ticker {
+            font-weight: 700;
+            color: var(--accent);
+            background: rgba(74, 143, 231, 0.1);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+        }
+
+        .fund-name {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            display: block;
+            margin-top: 0.2rem;
+        }
+
+        .positive { color: var(--positive); }
+        .negative { color: var(--negative); }
+
+        .chart-container {
+            height: 400px;
+            width: 100%;
+            margin-top: 2rem;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+            padding: 1.5rem 0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-q {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+
+        .faq-a {
+            color: var(--text-muted);
+        }
+
+        .methodology p {
+            margin-bottom: 1rem;
+            color: var(--text-muted);
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1.5rem;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            .nav-links { display: none; }
+            .stats-grid { grid-template-columns: 1fr; }
+            .content-section { padding: 1.5rem; }
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "What is the best growth ETF to buy and hold?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The best growth ETF depends on your goals, but popular choices include Vanguard Growth ETF (VUG) and Invesco QQQ Trust (QQQ). VUG offers broader exposure to large-cap growth stocks with a very low expense ratio, while QQQ focuses heavily on the tech-heavy Nasdaq-100."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Is VUG better than QQQ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "VUG and QQQ serve different purposes. VUG tracks the CRSP US Large Cap Growth Index and has a lower expense ratio (0.04%), providing broader diversification. QQQ tracks the Nasdaq-100, which has historically offered higher returns but with more volatility and a heavier concentration in the technology sector."
+        }
+      }, {
+        "@type": "Question",
+        "name": "What is the highest returning growth ETF?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Historically, technology-focused growth ETFs like QQQ (Invesco QQQ Trust) and SCHG (Schwab U.S. Large-Cap Growth ETF) have been among the highest returning over the last 5 to 10 years, driven largely by the outperformance of mega-cap tech companies."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Are growth ETFs a good investment?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Growth ETFs can be excellent investments for long-term investors willing to accept higher volatility in exchange for potentially higher returns. They perform best during economic expansions and periods of low interest rates, but may underperform value stocks during economic downturns."
+        }
+      }, {
+        "@type": "Question",
+        "name": "How do I choose a growth index fund?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "When choosing a growth index fund, compare the expense ratio (lower is better), the underlying index it tracks (e.g., Russell 1000 Growth vs. Nasdaq-100), the fund's historical performance, its top holdings to understand sector concentration, and its total assets under management (AUM) for liquidity."
+        }
+      }]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Best Growth ETFs 2026: VUG, QQQ & Top Funds Compared",
+      "description": "Compare the best growth ETFs of 2026 including VUG, QQQ, SCHG, and more. Analyze 3-year returns, expense ratios, and risk to find the top growth funds.",
+      "datePublished": "2026-03-13T06:23:33.339Z",
+      "author": {
+        "@type": "Organization",
+        "name": "Westmount Research"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Westmount Research",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://westmountfundamentals.com/logo.png"
+        }
+      }
+    }
+    </script>
+</head>
+<body>
+
+    <nav>
+        <a href="/" class="nav-brand">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--accent);"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+            Westmount Fundamentals
+        </a>
+        <div class="nav-links">
+            <a href="/#studies">Studies</a>
+            <a href="/#tools">Tools</a>
+            <a href="/#guides">Guides</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Best Growth ETFs 2026</h1>
+        <p class="subtitle">A ranked comparison of top U.S. growth-focused ETFs. Analyze historical total returns, expense ratios, and fund scale to make informed investment decisions.</p>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-label">Top 5Y Performer</div>
+                <div class="stat-value">QQQ</div>
+                <div class="stat-sub">+81.86%</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Lowest Expense Ratio</div>
+                <div class="stat-value">VUG</div>
+                <div class="stat-sub">0.03% ER</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Largest AUM</div>
+                <div class="stat-value">QQQ</div>
+                <div class="stat-sub">$395.03B</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Top 3Y Performer</div>
+                <div class="stat-value">QQQ</div>
+                <div class="stat-sub">+88.21%</div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <div class="section-title">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg>
+                ETF Comparison Data
+            </div>
+
+            <div class="controls">
+                <input type="text" id="searchInput" class="search-box" placeholder="Search by ticker or name...">
+            </div>
+
+            <div class="table-container">
+                <table id="etfTable">
+                    <thead>
+                        <tr>
+                            <th onclick="sortTable('symbol')">Ticker ↕</th>
+                            <th onclick="sortTable('price')">Price ↕</th>
+                            <th onclick="sortTable('expenseRatio')">Exp Ratio ↕</th>
+                            <th onclick="sortTable('yield')">Yield ↕</th>
+                            <th onclick="sortTable('aum')">AUM ↕</th>
+                            <th onclick="sortTable('return3y')">3Y Return ↕</th>
+                            <th onclick="sortTable('return5y')">5Y Return ↕</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                        <!-- Populated by JS -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <div class="section-title">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                Performance Visualization (3Y vs 5Y)
+            </div>
+            <div class="chart-container">
+                <canvas id="returnsChart"></canvas>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <div class="section-title">Frequently Asked Questions</div>
+            <div class="faq-item">
+                <div class="faq-q">What is the best growth ETF to buy and hold?</div>
+                <div class="faq-a">The best growth ETF depends on your goals, but popular choices include Vanguard Growth ETF (VUG) and Invesco QQQ Trust (QQQ). VUG offers broader exposure to large-cap growth stocks with a very low expense ratio, while QQQ focuses heavily on the tech-heavy Nasdaq-100.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">Is VUG better than QQQ?</div>
+                <div class="faq-a">VUG and QQQ serve different purposes. VUG tracks the CRSP US Large Cap Growth Index and has a lower expense ratio (0.04%), providing broader diversification. QQQ tracks the Nasdaq-100, which has historically offered higher returns but with more volatility and a heavier concentration in the technology sector.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">What is the highest returning growth ETF?</div>
+                <div class="faq-a">Historically, technology-focused growth ETFs like QQQ (Invesco QQQ Trust) and SCHG (Schwab U.S. Large-Cap Growth ETF) have been among the highest returning over the last 5 to 10 years, driven largely by the outperformance of mega-cap tech companies.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">Are growth ETFs a good investment?</div>
+                <div class="faq-a">Growth ETFs can be excellent investments for long-term investors willing to accept higher volatility in exchange for potentially higher returns. They perform best during economic expansions and periods of low interest rates, but may underperform value stocks during economic downturns.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">How do I choose a growth index fund?</div>
+                <div class="faq-a">When choosing a growth index fund, compare the expense ratio (lower is better), the underlying index it tracks (e.g., Russell 1000 Growth vs. Nasdaq-100), the fund's historical performance, its top holdings to understand sector concentration, and its total assets under management (AUM) for liquidity.</div>
+            </div>
+        </div>
+
+        <div class="content-section methodology">
+            <div class="section-title">Methodology & Data Sources</div>
+            <p>Financial data on this page is sourced directly from live market feeds representing adjusted close prices (which account for dividends and splits). Returns are calculated using the percentage change over 3-year and 5-year periods.</p>
+            <p>Expense ratios and assets under management (AUM) reflect the most recent available fund profiles. Yield calculations represent trailing twelve-month (TTM) distribution yields. The ETFs selected represent the largest and most widely traded funds explicitly targeting U.S. large-cap growth equities.</p>
+        </div>
+
+        <footer>
+            <p>© 2026 Westmount Research · A GAB Ventures property. Not investment advice. All information for educational purposes only.</p>
+            <p style="margin-top: 0.5rem;">Data is provided "as is" for informational purposes only and is not intended for trading purposes or advice.</p>
+        </footer>
+    </div>
+
+    <script>
+        const etfData = [{"symbol":"QQQ","name":"Invesco QQQ Trust, Series 1","price":597.26,"expenseRatio":0.18000001,"yield":0.45999999999999996,"aum":395032887296,"return3y":88.20957553298675,"return5y":81.86455668889505},{"symbol":"SCHG","name":"Schwab U.S. Large-Cap Growth ET","price":30.24,"expenseRatio":0.04,"yield":0.38,"aum":50521731072,"return3y":85.31547465844355,"return5y":77.05058355504018},{"symbol":"MGK","name":"Vanguard Mega Cap Growth ETF","price":383.41,"expenseRatio":0.05,"yield":0.37,"aum":29308968960,"return3y":86.57220229030844,"return5y":76.9214910627291},{"symbol":"VONG","name":"Vanguard Russell 1000 Growth ET","price":114.07,"expenseRatio":0.059999997,"yield":0.47999998000000005,"aum":47037652992,"return3y":82.65913911853555,"return5y":76.47757378175343},{"symbol":"IWF","name":"iShares Russell 1000 Growth Fun","price":443.3,"expenseRatio":0.18000001,"yield":0.38,"aum":116506607616,"return3y":82.19288756780236,"return5y":75.68790126729819},{"symbol":"VUG","name":"Vanguard Growth ETF","price":455.3,"expenseRatio":0.029999999000000003,"yield":0.44,"aum":335907094528,"return3y":83.25560045523804,"return5y":70.1116919997642}];
+
+        let currentSort = { column: 'return5y', asc: false };
+
+        function formatVal(val, type) {
+            if (val === null || val === undefined) return 'N/A';
+            if (type === 'currency') return '$' + val.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
+            if (type === 'percent') {
+                return val.toFixed(2) + '%';
+            }
+            if (type === 'return') {
+                const prefix = val > 0 ? '+' : '';
+                return prefix + val.toFixed(2) + '%';
+            }
+            if (type === 'aum') {
+                if (val >= 1e12) return '$' + (val / 1e12).toFixed(2) + 'T';
+                if (val >= 1e9) return '$' + (val / 1e9).toFixed(2) + 'B';
+                if (val >= 1e6) return '$' + (val / 1e6).toFixed(2) + 'M';
+                return '$' + val.toLocaleString();
+            }
+            return val;
+        }
+
+        function renderTable(data) {
+            const tbody = document.getElementById('tableBody');
+            tbody.innerHTML = '';
+
+            data.forEach(etf => {
+                const tr = document.createElement('tr');
+
+                const return3yClass = etf.return3y > 0 ? 'positive' : (etf.return3y < 0 ? 'negative' : '');
+                const return5yClass = etf.return5y > 0 ? 'positive' : (etf.return5y < 0 ? 'negative' : '');
+
+                tr.innerHTML = `
+                    <td>
+                        <span class="ticker">${etf.symbol}</span>
+                        <span class="fund-name">${etf.name}</span>
+                    </td>
+                    <td>${formatVal(etf.price, 'currency')}</td>
+                    <td>${formatVal(etf.expenseRatio, 'percent')}</td>
+                    <td>${formatVal(etf.yield, 'percent')}</td>
+                    <td>${formatVal(etf.aum, 'aum')}</td>
+                    <td class="${return3yClass}">${formatVal(etf.return3y, 'percent')}</td>
+                    <td class="${return5yClass}">${formatVal(etf.return5y, 'percent')}</td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        function sortTable(column, keepSort = false) {
+            if (currentSort.column === column && !keepSort) {
+                currentSort.asc = !currentSort.asc;
+            } else if (!keepSort) {
+                currentSort.column = column;
+                currentSort.asc = column === 'symbol' || column === 'name';
+            }
+
+            const sorted = [...etfData].sort((a, b) => {
+                let valA = a[column];
+                let valB = b[column];
+
+                if (valA === null) valA = currentSort.asc ? Infinity : -Infinity;
+                if (valB === null) valB = currentSort.asc ? Infinity : -Infinity;
+
+                if (typeof valA === 'string') {
+                    return currentSort.asc ? valA.localeCompare(valB) : valB.localeCompare(valA);
+                }
+                return currentSort.asc ? valA - valB : valB - valA;
+            });
+
+            const searchInput = document.getElementById('searchInput').value.toLowerCase();
+            const filtered = sorted.filter(etf =>
+                etf.symbol.toLowerCase().includes(searchInput) ||
+                etf.name.toLowerCase().includes(searchInput)
+            );
+
+            renderTable(filtered);
+        }
+
+        document.getElementById('searchInput').addEventListener('input', (e) => {
+            sortTable(currentSort.column, true);
+        });
+
+        // Initialize table
+        sortTable('return5y');
+
+        // Initialize Chart
+        const ctx = document.getElementById('returnsChart').getContext('2d');
+
+        // Prepare chart data sorted by 5y return
+        const chartData = [...etfData].sort((a, b) => (b.return5y || 0) - (a.return5y || 0));
+
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: chartData.map(d => d.symbol),
+                datasets: [
+                    {
+                        label: '3-Year Return (%)',
+                        data: chartData.map(d => d.return3y),
+                        backgroundColor: '#3b82f6',
+                        borderRadius: 4
+                    },
+                    {
+                        label: '5-Year Return (%)',
+                        data: chartData.map(d => d.return5y),
+                        backgroundColor: '#8b5cf6',
+                        borderRadius: 4
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                        labels: { color: '#94a3b8', font: { family: 'Inter' } }
+                    },
+                    tooltip: {
+                        mode: 'index',
+                        intersect: false,
+                        backgroundColor: '#0a1020',
+                        titleColor: '#fff',
+                        bodyColor: '#e2e8f0',
+                        borderColor: '#152040',
+                        borderWidth: 1,
+                        callbacks: {
+                            label: function(context) {
+                                return context.dataset.label + ': ' + context.parsed.y.toFixed(2) + '%';
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        grid: { color: '#152040' },
+                        ticks: {
+                            color: '#94a3b8',
+                            font: { family: 'JetBrains Mono' },
+                            callback: function(value) { return value + '%'; }
+                        }
+                    },
+                    x: {
+                        grid: { display: false },
+                        ticks: {
+                            color: '#94a3b8',
+                            font: { family: 'Inter', weight: 'bold' }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
