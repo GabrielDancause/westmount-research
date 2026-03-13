@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tax-Efficient Investing: Complete Strategy Guide</title>
+    <meta name="description" content="Discover proven tax-efficient investing strategies, asset location rules, and ways to minimize investment taxes in your portfolio.">
+    <link rel="canonical" href="https://westmountfundamentals.com/guide-tax-efficient-investing">
+    <meta property="og:title" content="Tax-Efficient Investing: Complete Strategy Guide">
+    <meta property="og:description" content="Discover proven tax-efficient investing strategies, asset location rules, and ways to minimize investment taxes in your portfolio.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://westmountfundamentals.com/guide-tax-efficient-investing">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Tax-Efficient Investing: Complete Strategy Guide">
+    <meta name="twitter:description" content="Discover proven tax-efficient investing strategies, asset location rules, and ways to minimize investment taxes in your portfolio.">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VYF72NSC1Q"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-VYF72NSC1Q');
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        :root {
+            --bg-color: #060a12;
+            --card-bg: #0a1020;
+            --border-color: #152040;
+            --accent-color: #4a8fe7;
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(6, 10, 18, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--text-main);
+            text-decoration: none;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin-left: 1.5rem;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, #60a5fa, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .stat-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        section {
+            margin-bottom: 4rem;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-main);
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            padding: 2rem;
+        }
+
+        .table-controls {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            gap: 1rem;
+        }
+
+        input[type="text"] {
+            background: var(--bg-color);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 0.75rem;
+            border-radius: 0.25rem;
+            font-family: 'Inter', sans-serif;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .table-container {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+        }
+
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            font-weight: 600;
+            color: var(--text-muted);
+            cursor: pointer;
+            user-select: none;
+        }
+
+        th:hover {
+            color: var(--accent-color);
+        }
+
+        tbody tr:hover {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            background: rgba(74, 143, 231, 0.1);
+            color: var(--accent-color);
+        }
+
+        .chart-container {
+            height: 400px;
+            width: 100%;
+            margin-top: 2rem;
+        }
+
+        .content-block {
+            margin-bottom: 2rem;
+        }
+
+        .content-block h3 {
+            margin-bottom: 0.75rem;
+            color: var(--accent-color);
+        }
+
+        .content-block p {
+            margin-bottom: 1rem;
+            color: var(--text-muted);
+        }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1.5rem;
+        }
+
+        .faq-item h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-main);
+        }
+
+        .faq-item p {
+            color: var(--text-muted);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .stats-grid { grid-template-columns: 1fr 1fr; }
+            h1 { font-size: 2rem; }
+            main { padding: 1rem; }
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is tax-loss harvesting and how does it work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tax-loss harvesting involves selling securities at a loss to offset capital gains tax liability. If your losses exceed your gains, you can use up to $3,000 of those losses to offset ordinary income per year. It requires navigating the wash-sale rule, which prevents claiming the loss if you buy a substantially identical asset within 30 days."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is asset location strategy?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Asset location is the strategy of placing different types of investments into specific accounts (taxable, tax-deferred, or tax-free) based on their tax efficiency. Highly taxed assets like REITs and bonds belong in tax-advantaged accounts, while tax-efficient index funds go in taxable accounts."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the wash sale rules?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The IRS wash-sale rule prohibits you from claiming a loss on the sale of an investment if you purchase a 'substantially identical' stock or security within 30 days before or after the sale. If triggered, the loss is disallowed and added to the cost basis of the new purchase."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How are qualified dividends taxed?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Qualified dividends are taxed at long-term capital gains rates (0%, 15%, or 20% depending on income), which are lower than ordinary income tax rates. To qualify, the dividend must be paid by a U.S. corporation or qualifying foreign entity, and you must hold the stock for more than 60 days during the 121-day period surrounding the ex-dividend date."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Long-term vs short-term capital gains tax rates?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Short-term capital gains (assets held one year or less) are taxed as ordinary income, up to 37%. Long-term capital gains (assets held more than one year) benefit from lower tax rates of 0%, 15%, or 20%, depending on your taxable income and filing status."
+          }
+        }
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Tax-Efficient Investing: Complete Strategy Guide",
+      "description": "Discover proven tax-efficient investing strategies, asset location rules, and ways to minimize investment taxes in your portfolio.",
+      "datePublished": "2026-03-13T06:25:13.928Z",
+      "author": {
+        "@type": "Organization",
+        "name": "Westmount Research"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Westmount Research",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://westmountfundamentals.com/logo.png"
+        }
+      }
+    }
+    </script>
+</head>
+<body>
+
+    <nav>
+        <a href="/" class="nav-brand">Westmount Fundamentals</a>
+        <div class="nav-links">
+            <a href="/#studies">Studies</a>
+            <a href="/#tools">Tools</a>
+            <a href="/#guides">Guides</a>
+        </div>
+    </nav>
+
+    <main>
+        <header>
+            <h1>Tax-Efficient Investing Guide</h1>
+            <p class="subtitle">Minimize investment taxes through strategic asset location, tax-loss harvesting, and understanding capital gains.</p>
+        </header>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-value">20%</div>
+                <div class="stat-label">Top Federal LTCG Rate</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">37%</div>
+                <div class="stat-label">Top Ordinary Income Rate</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">3.8%</div>
+                <div class="stat-label">Net Investment Income Tax</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">30 Days</div>
+                <div class="stat-label">Wash Sale Window</div>
+            </div>
+        </div>
+
+        <section>
+            <h2>The Principles of Tax-Efficient Investing</h2>
+            <div class="card">
+                <div class="content-block">
+                    <h3>1. Asset Location Strategy</h3>
+                    <p>Asset location involves deliberately placing specific assets in taxable vs. tax-advantaged accounts to minimize tax drag. Not all investments are taxed equally. For instance, ordinary dividends from REITs and interest from corporate bonds are taxed at high ordinary income rates, making them ideal for tax-deferred accounts (like an IRA or RRSP). Conversely, broad market index funds generate minimal taxable events and are highly efficient in taxable accounts.</p>
+                </div>
+
+                <div class="content-block">
+                    <h3>2. Tax-Loss Harvesting (TLH)</h3>
+                    <p>TLH involves strategically selling positions at a loss to offset capital gains realized elsewhere in your portfolio. If your losses exceed your gains, up to $3,000 can be used to offset ordinary income each year (in the US). The excess is carried forward to future years. However, you must avoid the "wash sale" rule, which invalidates the loss if you repurchase a substantially identical asset within 30 days.</p>
+                </div>
+
+                <div class="content-block">
+                    <h3>3. Canadians: TFSA & RRSP Considerations</h3>
+                    <p>For Canadian investors, the TFSA offers entirely tax-free growth and withdrawals, ideal for high-growth assets. The RRSP defers taxes until withdrawal, providing a tax deduction today. Interestingly, US dividend-paying stocks held in an RRSP are exempt from the 15% US withholding tax due to tax treaties, making the RRSP the optimal location for US dividend ETFs.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Asset Location Data Table</h2>
+            <p style="margin-bottom: 1rem; color: var(--text-muted);">Compare asset classes, proxy ETFs, and their optimal tax location based on current yield data.</p>
+
+            <div class="card">
+                <div class="table-controls">
+                    <input type="text" id="searchInput" placeholder="Search assets, ETFs, or locations...">
+                </div>
+                <div class="table-container">
+                    <table id="dataTable">
+                        <thead>
+                            <tr>
+                                <th onclick="sortTable(0)">Asset Class ↕</th>
+                                <th onclick="sortTable(1)">Proxy ETF ↕</th>
+                                <th onclick="sortTable(2)">Est. Yield ↕</th>
+                                <th onclick="sortTable(3)">Tax Efficiency ↕</th>
+                                <th onclick="sortTable(4)">Optimal Location ↕</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBody">
+                            <!-- Populated by JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>The Impact of Tax Drag Over Time</h2>
+            <p style="margin-bottom: 1rem; color: var(--text-muted);">This chart simulates the growth of $10,000 in a broad market ETF (VTI) over the last 10 years, comparing a tax-deferred account versus a taxable account experiencing an estimated 0.5% annual tax drag from dividend distributions.</p>
+            <div class="card">
+                <div class="chart-container">
+                    <canvas id="growthChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Frequently Asked Questions</h2>
+            <div class="card">
+                <div class="faq-item">
+                    <h3>What is tax-loss harvesting and how does it work?</h3>
+                    <p>Tax-loss harvesting involves selling securities at a loss to offset capital gains tax liability. If your losses exceed your gains, you can use up to $3,000 of those losses to offset ordinary income per year. It requires navigating the wash-sale rule, which prevents claiming the loss if you buy a substantially identical asset within 30 days.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What is asset location strategy?</h3>
+                    <p>Asset location is the strategy of placing different types of investments into specific accounts (taxable, tax-deferred, or tax-free) based on their tax efficiency. Highly taxed assets like REITs and bonds belong in tax-advantaged accounts, while tax-efficient index funds go in taxable accounts.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What are the wash sale rules?</h3>
+                    <p>The IRS wash-sale rule prohibits you from claiming a loss on the sale of an investment if you purchase a 'substantially identical' stock or security within 30 days before or after the sale. If triggered, the loss is disallowed and added to the cost basis of the new purchase.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>How are qualified dividends taxed?</h3>
+                    <p>Qualified dividends are taxed at long-term capital gains rates (0%, 15%, or 20% depending on income), which are lower than ordinary income tax rates. To qualify, the dividend must be paid by a U.S. corporation or qualifying foreign entity, and you must hold the stock for more than 60 days during the 121-day period surrounding the ex-dividend date.</p>
+                </div>
+                <div class="faq-item" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0;">
+                    <h3>Long-term vs short-term capital gains tax rates?</h3>
+                    <p>Short-term capital gains (assets held one year or less) are taxed as ordinary income, up to 37%. Long-term capital gains (assets held more than one year) benefit from lower tax rates of 0%, 15%, or 20%, depending on your taxable income and filing status.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Methodology & Data Sources</h2>
+            <div class="card">
+                <p style="color: var(--text-muted); font-size: 0.9rem;">
+                    Dividend yield and historical price data for proxy ETFs (VTI, VYM, VNQ, LQD, MUB, GOVT) were sourced using the Yahoo Finance API (yahoo-finance2) to calculate current yield approximations and 10-year historical growth simulations. Tax rates referenced are based on 2024 IRS federal brackets (excluding state taxes). The simulated 0.5% annual tax drag on the taxable portfolio chart is a generalized estimate meant to illustrate the compound effect of taxes on non-qualified dividends and capital gain distributions over time. Realized tax drag will vary significantly based on an individual's tax bracket, state of residence, and the specific composition of their portfolio.
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Westmount Research &middot; A GAB Ventures property. Not investment advice. All information for educational purposes only.</p>
+    </footer>
+
+    <script>
+        // Data injected during build
+        const tableData = [{"ticker":"VTI","name":"Vanguard Total Stock Market ETF","yield":1.11,"assetClass":"Broad Market Equity","taxEfficiency":"High","location":"Taxable"},{"ticker":"VYM","name":"Vanguard High Dividend Yield ET","yield":2.26,"assetClass":"Dividend Equity","taxEfficiency":"Medium","location":"Tax-Advantaged"},{"ticker":"VNQ","name":"Vanguard Real Estate ETF","yield":3.63,"assetClass":"Real Estate (REITs)","taxEfficiency":"Low (Ordinary Income)","location":"Tax-Advantaged"},{"ticker":"LQD","name":"iShares iBoxx $ Investment Grad","yield":4.44,"assetClass":"Corporate Bonds","taxEfficiency":"Low (Ordinary Income)","location":"Tax-Advantaged"},{"ticker":"MUB","name":"iShares National Muni Bond ETF","yield":3.1,"assetClass":"Municipal Bonds","taxEfficiency":"Very High (Tax-Exempt)","location":"Taxable"},{"ticker":"GOVT","name":"iShares U.S. Treasury Bond ETF","yield":3.45,"assetClass":"Treasury Bonds","taxEfficiency":"High (State Tax-Exempt)","location":"Taxable"}];
+        const chartData = [{"date":"2017-04-01","noTax":11855,"tax":11797},{"date":"2018-04-01","noTax":13419,"tax":13287},{"date":"2019-04-01","noTax":15106,"tax":14883},{"date":"2020-04-01","noTax":14925,"tax":14631},{"date":"2021-04-01","noTax":22576,"tax":22025},{"date":"2022-04-01","noTax":21792,"tax":21154},{"date":"2023-04-01","noTax":22105,"tax":21351},{"date":"2024-04-01","noTax":27048,"tax":25997},{"date":"2025-04-01","noTax":30081,"tax":28769},{"date":"2026-03-12","noTax":36469,"tax":34707}];
+
+        // Table Rendering
+        const tableBody = document.getElementById('tableBody');
+
+        function renderTable(data) {
+            tableBody.innerHTML = '';
+            data.forEach(row => {
+                const tr = document.createElement('tr');
+
+                const tdClass = document.createElement('td');
+                tdClass.textContent = row.assetClass;
+
+                const tdETF = document.createElement('td');
+                tdETF.innerHTML = '<span class="tag mono">' + row.ticker + '</span> <span style="font-size: 0.8rem; color: #9ca3af;">' + row.name + '</span>';
+
+                const tdYield = document.createElement('td');
+                tdYield.className = 'mono';
+                tdYield.textContent = row.yield !== null ? row.yield.toFixed(2) + '%' : 'N/A';
+
+                const tdTaxEff = document.createElement('td');
+                tdTaxEff.textContent = row.taxEfficiency;
+
+                const tdLoc = document.createElement('td');
+                tdLoc.textContent = row.location;
+
+                tr.appendChild(tdClass);
+                tr.appendChild(tdETF);
+                tr.appendChild(tdYield);
+                tr.appendChild(tdTaxEff);
+                tr.appendChild(tdLoc);
+                tableBody.appendChild(tr);
+            });
+        }
+
+        renderTable(tableData);
+
+        // Search functionality
+        document.getElementById('searchInput').addEventListener('keyup', (e) => {
+            const term = e.target.value.toLowerCase();
+            const filtered = tableData.filter(row =>
+                row.assetClass.toLowerCase().includes(term) ||
+                row.ticker.toLowerCase().includes(term) ||
+                row.name.toLowerCase().includes(term) ||
+                row.location.toLowerCase().includes(term)
+            );
+            renderTable(filtered);
+        });
+
+        // Sort functionality
+        let currentSort = { col: -1, asc: true };
+        window.sortTable = function(colIndex) {
+            const cols = ['assetClass', 'ticker', 'yield', 'taxEfficiency', 'location'];
+            const key = cols[colIndex];
+
+            if (currentSort.col === colIndex) {
+                currentSort.asc = !currentSort.asc;
+            } else {
+                currentSort.col = colIndex;
+                currentSort.asc = true;
+            }
+
+            const sorted = [...tableData].sort((a, b) => {
+                let valA = a[key];
+                let valB = b[key];
+
+                if (valA === null) valA = '';
+                if (valB === null) valB = '';
+
+                if (typeof valA === 'string') valA = valA.toLowerCase();
+                if (typeof valB === 'string') valB = valB.toLowerCase();
+
+                if (valA < valB) return currentSort.asc ? -1 : 1;
+                if (valA > valB) return currentSort.asc ? 1 : -1;
+                return 0;
+            });
+
+            renderTable(sorted);
+        };
+
+        // Chart.js rendering
+        if (chartData && chartData.length > 0) {
+            const ctx = document.getElementById('growthChart').getContext('2d');
+
+            const chartLabels = chartData.map(d => d.date);
+            const chartDeferred = chartData.map(d => d.noTax);
+            const chartTaxable = chartData.map(d => d.tax);
+
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: chartLabels,
+                    datasets: [
+                        {
+                            label: 'Tax-Deferred (No Drag)',
+                            data: chartDeferred,
+                            borderColor: '#4a8fe7',
+                            backgroundColor: 'rgba(74, 143, 231, 0.1)',
+                            borderWidth: 2,
+                            fill: true,
+                            pointRadius: 0,
+                            pointHitRadius: 10
+                        },
+                        {
+                            label: 'Taxable (0.5% Annual Drag)',
+                            data: chartTaxable,
+                            borderColor: '#f59e0b',
+                            backgroundColor: 'rgba(245, 158, 11, 0.1)',
+                            borderWidth: 2,
+                            borderDash: [5, 5],
+                            fill: true,
+                            pointRadius: 0,
+                            pointHitRadius: 10
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    interaction: {
+                        mode: 'index',
+                        intersect: false,
+                    },
+                    plugins: {
+                        legend: {
+                            labels: {
+                                color: '#9ca3af',
+                                font: { family: 'Inter' }
+                            }
+                        },
+                        tooltip: {
+                            backgroundColor: '#0a1020',
+                            titleColor: '#f3f4f6',
+                            bodyColor: '#9ca3af',
+                            borderColor: '#152040',
+                            borderWidth: 1,
+                            callbacks: {
+                                label: function(context) {
+                                    let label = context.dataset.label || '';
+                                    if (label) {
+                                        label += ': ';
+                                    }
+                                    if (context.parsed.y !== null) {
+                                        label += new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(context.parsed.y);
+                                    }
+                                    return label;
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            grid: {
+                                color: 'rgba(21, 32, 64, 0.5)'
+                            },
+                            ticks: {
+                                color: '#9ca3af',
+                                maxTicksLimit: 10,
+                                callback: function(value, index, values) {
+                                    return new Date(chartLabels[index]).getFullYear();
+                                }
+                            }
+                        },
+                        y: {
+                            grid: {
+                                color: 'rgba(21, 32, 64, 0.5)'
+                            },
+                            ticks: {
+                                color: '#9ca3af',
+                                callback: function(value, index, values) {
+                                    if(value >= 1000) {
+                                        return '$' + value/1000 + 'k';
+                                    }
+                                    return '$' + value;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>
