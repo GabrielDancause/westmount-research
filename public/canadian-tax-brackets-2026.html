@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026 Canadian Tax Brackets & Income Calculator</title>
+    <meta name="description" content="Complete 2026 Canadian federal and provincial tax brackets. Interactive calculator: see your marginal rate, total tax, and take-home pay instantly.">
+    <link rel="canonical" href="https://westmountfundamentals.com/canadian-tax-brackets-2026">
+    <meta property="og:title" content="2026 Canadian Tax Brackets & Income Calculator">
+    <meta property="og:description" content="Complete 2026 Canadian federal and provincial tax brackets. Interactive calculator: see your marginal rate, total tax, and take-home pay instantly.">
+    <meta property="og:url" content="https://westmountfundamentals.com/canadian-tax-brackets-2026">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="2026 Canadian Tax Brackets & Income Calculator">
+    <meta name="twitter:description" content="Complete 2026 Canadian federal and provincial tax brackets. Interactive calculator: see your marginal rate, total tax, and take-home pay instantly.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.js"></script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VYF72NSC1Q"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-VYF72NSC1Q');
+    </script>
+
+    <style>
+        :root {
+            --bg: #060a12;
+            --card-bg: #0a1020;
+            --border: #152040;
+            --accent: #4a8fe7;
+            --accent-glow: rgba(74, 143, 231, 0.2);
+            --text: #c8d0de;
+            --text-muted: #6a7a90;
+            --text-heading: #ffffff;
+            --font-sans: 'Inter', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+            --red: #e74c3c;
+            --green: #2ecc71;
+            --yellow: #f1c40f;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(6, 10, 18, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .brand {
+            font-weight: 900;
+            font-size: 1.2rem;
+            color: var(--text-heading);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+        .brand span { color: var(--accent); }
+        .nav-links { display: flex; gap: 24px; }
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--accent); }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 24px;
+        }
+
+        .hero {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            letter-spacing: -1.5px;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, #ffffff 0%, #a0b0c0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.1;
+        }
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .calculator-grid {
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 32px;
+            margin-bottom: 60px;
+        }
+
+        .panel {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 32px;
+        }
+
+        .panel-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-heading);
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .input-group {
+            margin-bottom: 24px;
+        }
+        label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+        input, select {
+            width: 100%;
+            background: rgba(0,0,0,0.2);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 14px 16px;
+            font-family: var(--font-mono);
+            font-size: 1.1rem;
+            color: var(--text-heading);
+            transition: all 0.2s;
+        }
+        input:focus, select:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px var(--accent-glow);
+        }
+        select option {
+            background: var(--card-bg);
+            color: var(--text-heading);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+        .stat-card {
+            background: rgba(0,0,0,0.2);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+        }
+        .stat-value {
+            font-family: var(--font-mono);
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-heading);
+            margin-bottom: 4px;
+        }
+        .stat-value.highlight { color: var(--accent); }
+        .stat-value.deduction { color: var(--red); }
+        .stat-value.takehome { color: var(--green); }
+        .stat-label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .chart-container {
+            height: 300px;
+            margin-top: 24px;
+            position: relative;
+        }
+
+        .breakdown-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 32px;
+        }
+        .breakdown-table th {
+            text-align: left;
+            padding: 12px 16px;
+            border-bottom: 2px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .breakdown-table td {
+            padding: 16px;
+            border-bottom: 1px solid var(--border);
+            font-family: var(--font-mono);
+            font-size: 0.95rem;
+        }
+        .breakdown-table tr:last-child td { border-bottom: none; }
+        .row-total td {
+            font-weight: 700;
+            color: var(--text-heading);
+            border-top: 2px solid var(--border);
+        }
+        .text-right { text-align: right; }
+
+        .brackets-section {
+            margin-top: 60px;
+        }
+        .tabs {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 24px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 16px;
+            overflow-x: auto;
+        }
+        .tab {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            font-family: var(--font-sans);
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            padding: 8px 16px;
+            border-radius: 8px;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+        .tab:hover { background: rgba(255,255,255,0.05); color: var(--text); }
+        .tab.active {
+            background: rgba(74, 143, 231, 0.1);
+            color: var(--accent);
+        }
+
+        .brackets-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+        }
+
+        .bracket-table-wrapper {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        .bracket-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .bracket-table th, .bracket-table td {
+            padding: 16px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        .bracket-table th {
+            background: rgba(0,0,0,0.2);
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+        .bracket-table td { font-family: var(--font-mono); font-size: 0.95rem; }
+        .bracket-table tr:last-child td { border-bottom: none; }
+
+        .faq-section { margin-top: 80px; }
+        .faq-item {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 16px;
+        }
+        .faq-item h3 { font-size: 1.2rem; color: var(--text-heading); margin-bottom: 12px; }
+        .faq-item p { color: var(--text); }
+
+        .methodology {
+            margin-top: 80px;
+            padding: 32px;
+            background: rgba(74, 143, 231, 0.05);
+            border: 1px solid var(--accent);
+            border-radius: 12px;
+        }
+        .methodology h2 { color: var(--accent); margin-bottom: 16px; font-size: 1.5rem; }
+
+        footer {
+            text-align: center;
+            padding: 40px 24px;
+            border-top: 1px solid var(--border);
+            margin-top: 80px;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 900px) {
+            .calculator-grid { grid-template-columns: 1fr; }
+            .stats-grid { grid-template-columns: 1fr; }
+            h1 { font-size: 2.5rem; }
+            .brackets-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "What are the Canadian federal tax brackets for 2026?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For 2026, the projected federal tax brackets are: 15% up to $58,809; 20.5% between $58,809 and $117,619; 26% between $117,619 and $182,329; 29% between $182,329 and $259,749; and 33% on income over $259,749."
+        }
+      }, {
+        "@type": "Question",
+        "name": "How much is the Basic Personal Amount (BPA) for 2026?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The projected federal Basic Personal Amount for 2026 is approximately $16,611. This is the amount of income you can earn before paying any federal income tax."
+        }
+      }, {
+        "@type": "Question",
+        "name": "What is the difference between marginal tax rate and average tax rate?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Your marginal tax rate is the percentage of tax applied to your last dollar earned. Your average tax rate is the total tax you pay divided by your total income, which is always lower than your marginal rate due to progressive tax brackets."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Are Canadian tax brackets adjusted for inflation?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, both federal and provincial tax brackets (in most provinces) are indexed to inflation annually using the Consumer Price Index (CPI). This prevents 'bracket creep' where inflation pushes individuals into higher tax brackets without a real increase in purchasing power."
+        }
+      }, {
+        "@type": "Question",
+        "name": "How much are the CPP and EI deductions in 2026?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For 2026, CPP base contributions are roughly 5.95% up to the max pensionable earnings limit, plus the CPP2 second ceiling contribution of 4%. EI premiums are 1.66% up to the maximum insurable earnings limit."
+        }
+      }]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "2026 Canadian Tax Brackets & Income Calculator",
+      "description": "Complete 2026 Canadian federal and provincial tax brackets. Interactive calculator to calculate your marginal rate, total tax, and take-home pay.",
+      "datePublished": "2024-11-20T08:00:00Z",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Westmount Research",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://westmountfundamentals.com/logo.png"
+        }
+      }
+    }
+    </script>
+</head>
+<body>
+
+<nav>
+    <a href="/" class="brand">westmount<span>fundamentals</span></a>
+    <div class="nav-links">
+        <a href="/#studies">Studies</a>
+        <a href="/#tools">Tools</a>
+        <a href="/#guides">Guides</a>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="hero">
+        <h1>2026 Canadian Tax Calculator</h1>
+        <p class="subtitle">Complete federal and provincial income tax rates, CPP/EI deductions, and take-home pay analysis.</p>
+    </div>
+
+    <div class="calculator-grid">
+        <div class="panel">
+            <h2 class="panel-title">Your Income Details</h2>
+
+            <div class="input-group">
+                <label for="income">Annual Employment Income ($)</label>
+                <input type="number" id="income" value="85000" min="0" step="1000">
+            </div>
+
+            <div class="input-group">
+                <label for="province">Province / Territory</label>
+                <select id="province">
+                    <option value="ON">Ontario (ON)</option>
+                    <option value="BC">British Columbia (BC)</option>
+                    <option value="AB">Alberta (AB)</option>
+                    <option value="QC">Quebec (QC)</option>
+                    <option value="MB">Manitoba (MB)</option>
+                    <option value="SK">Saskatchewan (SK)</option>
+                    <option value="NS">Nova Scotia (NS)</option>
+                    <option value="NB">New Brunswick (NB)</option>
+                    <option value="NL">Newfoundland & Labrador (NL)</option>
+                    <option value="PE">Prince Edward Island (PE)</option>
+                    <option value="YT">Yukon (YT)</option>
+                    <option value="NT">Northwest Territories (NT)</option>
+                    <option value="NU">Nunavut (NU)</option>
+                </select>
+            </div>
+
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 16px;">
+                Note: Assumes standard basic personal amounts. Does not include specific regional tax credits or RRSP deductions.
+            </p>
+        </div>
+
+        <div class="panel">
+            <h2 class="panel-title">Tax Summary & Take-Home Pay</h2>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value takehome" id="takeHomePay">$0</div>
+                    <div class="stat-label">Net Take-Home Pay</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value deduction" id="totalTax">$0</div>
+                    <div class="stat-label">Total Income Tax</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value highlight" id="avgRate">0%</div>
+                    <div class="stat-label">Average Tax Rate</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="marginalRate">0%</div>
+                    <div class="stat-label">Marginal Tax Rate</div>
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <canvas id="taxChart"></canvas>
+            </div>
+
+            <table class="breakdown-table">
+                <thead>
+                    <tr>
+                        <th>Deduction</th>
+                        <th class="text-right">Amount</th>
+                        <th class="text-right">% of Income</th>
+                    </tr>
+                </thead>
+                <tbody id="breakdownBody">
+                    <!-- JS injected -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="brackets-section">
+        <h2 class="panel-title">2026 Tax Brackets Table</h2>
+        <div class="tabs" id="bracketTabs">
+            <button class="tab active" data-target="federal">Federal</button>
+            <button class="tab" data-target="provincial">Provincial</button>
+        </div>
+
+        <div class="brackets-grid" id="bracketsDisplay">
+            <!-- JS injected -->
+        </div>
+    </div>
+
+    <div class="faq-section">
+        <h2 class="panel-title" style="font-size: 2rem;">Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+            <h3>What are the Canadian federal tax brackets for 2026?</h3>
+            <p>For 2026, the projected federal tax brackets are: 15% up to $58,809; 20.5% between $58,809 and $117,619; 26% between $117,619 and $182,329; 29% between $182,329 and $259,749; and 33% on income over $259,749.</p>
+        </div>
+        <div class="faq-item">
+            <h3>How much is the Basic Personal Amount (BPA) for 2026?</h3>
+            <p>The projected federal Basic Personal Amount for 2026 is approximately $16,611. This is the amount of income you can earn before paying any federal income tax.</p>
+        </div>
+        <div class="faq-item">
+            <h3>What is the difference between marginal tax rate and average tax rate?</h3>
+            <p>Your marginal tax rate is the percentage of tax applied to your last dollar earned. Your average tax rate is the total tax you pay divided by your total income, which is always lower than your marginal rate due to progressive tax brackets.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Are Canadian tax brackets adjusted for inflation?</h3>
+            <p>Yes, both federal and provincial tax brackets (in most provinces) are indexed to inflation annually using the Consumer Price Index (CPI). This prevents 'bracket creep' where inflation pushes individuals into higher tax brackets without a real increase in purchasing power.</p>
+        </div>
+        <div class="faq-item">
+            <h3>How much are the CPP and EI deductions in 2026?</h3>
+            <p>For 2026, CPP base contributions are roughly 5.95% up to the max pensionable earnings limit, plus the CPP2 second ceiling contribution of 4%. EI premiums are 1.66% up to the maximum insurable earnings limit.</p>
+        </div>
+    </div>
+
+    <div class="methodology">
+        <h2>Data & Methodology</h2>
+        <p>The 2026 tax brackets, basic personal amounts, and payroll limits presented here are <strong>projected estimates</strong>. The Canada Revenue Agency (CRA) traditionally announces official indexation factors in November of the preceding year. We have applied a standard historical inflation indexation factor (~2.5%) to the finalized 2024/2025 CRA and provincial limits to generate these forward-looking estimates. Actual limits may vary slightly when officially finalized. This calculator focuses on standard employment income and standard basic personal amounts; it does not factor in RRSP contributions, self-employment, capital gains, or specific regional tax credits.</p>
+    </div>
+
+</div>
+
+<footer>
+    © <span id="year">2026</span> Westmount Research · A GAB Ventures property. Not investment advice. All information for educational purposes only.
+</footer>
+
+<script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const taxData = {
+      federal: [
+        { rate: 0.15, threshold: 0 },
+        { rate: 0.205, threshold: 58809 },
+        { rate: 0.26, threshold: 117619 },
+        { rate: 0.29, threshold: 182329 },
+        { rate: 0.33, threshold: 259749 }
+      ],
+      ON: [
+        { rate: 0.0505, threshold: 0 },
+        { rate: 0.0915, threshold: 52732 },
+        { rate: 0.1116, threshold: 105464 },
+        { rate: 0.1216, threshold: 150000 },
+        { rate: 0.1316, threshold: 220000 }
+      ],
+      BC: [
+        { rate: 0.0506, threshold: 0 },
+        { rate: 0.0770, threshold: 49152 },
+        { rate: 0.1050, threshold: 98305 },
+        { rate: 0.1229, threshold: 112870 },
+        { rate: 0.1470, threshold: 137997 },
+        { rate: 0.1680, threshold: 183858 },
+        { rate: 0.2050, threshold: 247915 }
+      ],
+      AB: [
+        { rate: 0.10, threshold: 0 },
+        { rate: 0.12, threshold: 152000 },
+        { rate: 0.13, threshold: 182400 },
+        { rate: 0.14, threshold: 243200 },
+        { rate: 0.15, threshold: 304000 }
+      ],
+      QC: [
+        { rate: 0.14, threshold: 0 },
+        { rate: 0.19, threshold: 51069 },
+        { rate: 0.24, threshold: 102137 },
+        { rate: 0.2575, threshold: 125568 }
+      ],
+      MB: [
+        { rate: 0.108, threshold: 0 },
+        { rate: 0.1275, threshold: 48350 },
+        { rate: 0.174, threshold: 102434 }
+      ],
+      SK: [
+        { rate: 0.105, threshold: 0 },
+        { rate: 0.125, threshold: 53139 },
+        { rate: 0.145, threshold: 152865 }
+      ],
+      NS: [
+        { rate: 0.0879, threshold: 0 },
+        { rate: 0.1495, threshold: 29590 },
+        { rate: 0.1667, threshold: 59180 },
+        { rate: 0.175, threshold: 93000 },
+        { rate: 0.21, threshold: 150000 }
+      ],
+      NB: [
+        { rate: 0.094, threshold: 0 },
+        { rate: 0.14, threshold: 49451 },
+        { rate: 0.16, threshold: 98901 },
+        { rate: 0.195, threshold: 189726 },
+        { rate: 0.203, threshold: 199623 }
+      ],
+      PE: [
+        { rate: 0.0965, threshold: 0 },
+        { rate: 0.1363, threshold: 33328 },
+        { rate: 0.1665, threshold: 64656 },
+        { rate: 0.18, threshold: 105000 },
+        { rate: 0.1875, threshold: 140000 }
+      ],
+      NL: [
+        { rate: 0.087, threshold: 0 },
+        { rate: 0.145, threshold: 44040 },
+        { rate: 0.158, threshold: 88081 },
+        { rate: 0.178, threshold: 148107 },
+        { rate: 0.198, threshold: 209761 },
+        { rate: 0.208, threshold: 262201 },
+        { rate: 0.213, threshold: 524401 },
+        { rate: 0.218, threshold: 1048803 }
+      ],
+      YT: [
+        { rate: 0.064, threshold: 0 },
+        { rate: 0.09, threshold: 58809 },
+        { rate: 0.109, threshold: 117619 },
+        { rate: 0.128, threshold: 182329 },
+        { rate: 0.15, threshold: 500000 }
+      ],
+      NT: [
+        { rate: 0.059, threshold: 0 },
+        { rate: 0.086, threshold: 52206 },
+        { rate: 0.122, threshold: 104412 },
+        { rate: 0.1405, threshold: 169824 }
+      ],
+      NU: [
+        { rate: 0.04, threshold: 0 },
+        { rate: 0.07, threshold: 55653 },
+        { rate: 0.09, threshold: 111306 },
+        { rate: 0.115, threshold: 181313 }
+      ]
+    };
+
+    const payrollData = {
+        bpaFederal: 16611,
+        eiRate: 0.0166,
+        eiMax: 1087.30,
+        cppRate: 0.0595,
+        cppExemption: 3500,
+        cppMax: 4034.10,
+        cpp2Rate: 0.04,
+        cpp2Threshold: 71300,
+        cpp2Max: 204
+    };
+
+    const provNames = {
+        ON: "Ontario", BC: "British Columbia", AB: "Alberta", QC: "Quebec",
+        MB: "Manitoba", SK: "Saskatchewan", NS: "Nova Scotia", NB: "New Brunswick",
+        PE: "Prince Edward Island", NL: "Newfoundland & Labrador", YT: "Yukon",
+        NT: "Northwest Territories", NU: "Nunavut"
+    };
+
+    let currentChart = null;
+
+    function formatMoney(amount) {
+        return new Intl.NumberFormat('en-CA', { style: 'currency', currency: 'CAD', maximumFractionDigits: 0 }).format(amount);
+    }
+
+    function formatPct(rate) {
+        return (rate * 100).toFixed(1) + '%';
+    }
+
+    function calculateTax(income, brackets, bpa) {
+        let tax = 0;
+        let marginalRate = brackets[0].rate;
+        let taxableIncome = Math.max(0, income - bpa);
+
+        for (let i = 0; i < brackets.length; i++) {
+            const b = brackets[i];
+            const nextThreshold = brackets[i+1] ? brackets[i+1].threshold : Infinity;
+
+            if (taxableIncome > b.threshold) {
+                const incomeInBracket = Math.min(taxableIncome - b.threshold, nextThreshold - b.threshold);
+                tax += incomeInBracket * b.rate;
+                marginalRate = b.rate;
+            }
+        }
+        return { tax, marginalRate };
+    }
+
+    function calculate() {
+        const income = parseFloat(document.getElementById('income').value) || 0;
+        const prov = document.getElementById('province').value;
+
+        // Payroll deductions
+        const ei = Math.min(income * payrollData.eiRate, payrollData.eiMax);
+        const cppIncome = Math.max(0, income - payrollData.cppExemption);
+        const cppBase = Math.min(cppIncome * payrollData.cppRate, payrollData.cppMax);
+
+        let cpp2 = 0;
+        if (income > payrollData.cpp2Threshold) {
+             cpp2 = Math.min((income - payrollData.cpp2Threshold) * payrollData.cpp2Rate, payrollData.cpp2Max);
+        }
+        const totalCppEi = ei + cppBase + cpp2;
+
+        // Tax
+        const federalBPA = payrollData.bpaFederal;
+        const provBPA = federalBPA * 0.8; // Rough estimate for prov BPA
+
+        const fed = calculateTax(income, taxData.federal, federalBPA);
+        const prv = calculateTax(income, taxData[prov], provBPA);
+
+        const totalTax = fed.tax + prv.tax;
+        const takeHome = income - totalTax - totalCppEi;
+
+        const marginalTotal = fed.marginalRate + prv.marginalRate;
+        const avgTotal = income > 0 ? (totalTax / income) : 0;
+
+        // Update DOM
+        document.getElementById('takeHomePay').textContent = formatMoney(takeHome);
+        document.getElementById('totalTax').textContent = formatMoney(totalTax);
+        document.getElementById('avgRate').textContent = formatPct(avgTotal);
+        document.getElementById('marginalRate').textContent = formatPct(marginalTotal);
+
+        // Breakdown table
+        document.getElementById('breakdownBody').innerHTML = `
+            <tr>
+                <td>Federal Income Tax</td>
+                <td class="text-right">${formatMoney(fed.tax)}</td>
+                <td class="text-right">${formatPct(income > 0 ? fed.tax / income : 0)}</td>
+            </tr>
+            <tr>
+                <td>Provincial Income Tax (${provNames[prov]})</td>
+                <td class="text-right">${formatMoney(prv.tax)}</td>
+                <td class="text-right">${formatPct(income > 0 ? prv.tax / income : 0)}</td>
+            </tr>
+            <tr>
+                <td>CPP / QPP Premiums</td>
+                <td class="text-right">${formatMoney(cppBase + cpp2)}</td>
+                <td class="text-right">${formatPct(income > 0 ? (cppBase + cpp2) / income : 0)}</td>
+            </tr>
+            <tr>
+                <td>EI Premiums</td>
+                <td class="text-right">${formatMoney(ei)}</td>
+                <td class="text-right">${formatPct(income > 0 ? ei / income : 0)}</td>
+            </tr>
+            <tr class="row-total">
+                <td>Total Deductions</td>
+                <td class="text-right" style="color: var(--red)">${formatMoney(totalTax + totalCppEi)}</td>
+                <td class="text-right">${formatPct(income > 0 ? (totalTax + totalCppEi) / income : 0)}</td>
+            </tr>
+            <tr class="row-total">
+                <td>Net Take-Home Pay</td>
+                <td class="text-right" style="color: var(--green)">${formatMoney(takeHome)}</td>
+                <td class="text-right">${formatPct(income > 0 ? takeHome / income : 0)}</td>
+            </tr>
+        `;
+
+        updateChart(takeHome, fed.tax, prv.tax, cppBase + cpp2 + ei);
+    }
+
+    function updateChart(takeHome, fed, prv, cppEi) {
+        if (!window.Chart) return;
+        const ctx = document.getElementById('taxChart').getContext('2d');
+        if (currentChart) currentChart.destroy();
+
+        currentChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Take-Home Pay', 'Federal Tax', 'Provincial Tax', 'CPP & EI'],
+                datasets: [{
+                    data: [takeHome, fed, prv, cppEi],
+                    backgroundColor: ['#2ecc71', '#3498db', '#9b59b6', '#f1c40f'],
+                    borderWidth: 0,
+                    hoverOffset: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'right',
+                        labels: { color: '#c8d0de', font: { family: 'Inter', size: 12 } }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                let label = context.label || '';
+                                if (label) label += ': ';
+                                label += formatMoney(context.raw);
+                                return label;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    }
+
+    function renderBrackets(type) {
+        const container = document.getElementById('bracketsDisplay');
+        let html = '';
+
+        function renderTable(title, brackets) {
+            let t = `<div class="bracket-table-wrapper"><table class="bracket-table">
+                <thead><tr><th colspan="2" style="font-size:1.1rem; color:var(--text-heading); background:var(--card-bg);">${title}</th></tr>
+                <tr><th>Income Threshold</th><th>Tax Rate</th></tr></thead><tbody>`;
+
+            for (let i = 0; i < brackets.length; i++) {
+                const start = formatMoney(brackets[i].threshold);
+                const end = brackets[i+1] ? ' to ' + formatMoney(brackets[i+1].threshold) : ' and up';
+                const range = i === 0 ? `Up to ${brackets[i+1] ? formatMoney(brackets[i+1].threshold) : 'and up'}` : `${start}${end}`;
+                t += `<tr><td>${range}</td><td>${formatPct(brackets[i].rate)}</td></tr>`;
+            }
+            t += `</tbody></table></div>`;
+            return t;
+        }
+
+        if (type === 'federal') {
+            html += renderTable('2026 Federal Tax Brackets', taxData.federal);
+        } else {
+            const prov = document.getElementById('province').value;
+            html += renderTable(`2026 Provincial Brackets (${provNames[prov]})`, taxData[prov]);
+        }
+
+        container.innerHTML = html;
+    }
+
+    document.getElementById('income').addEventListener('input', calculate);
+    document.getElementById('province').addEventListener('change', () => {
+        calculate();
+        const activeTab = document.querySelector('.tab.active').dataset.target;
+        if (activeTab === 'provincial') renderBrackets('provincial');
+    });
+
+    document.querySelectorAll('.tab').forEach(tab => {
+        tab.addEventListener('click', (e) => {
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            e.target.classList.add('active');
+            renderBrackets(e.target.dataset.target);
+        });
+    });
+
+    // Init
+    setTimeout(() => {
+        calculate();
+        renderBrackets('federal');
+    }, 100);
+</script>
+</body>
+</html>
