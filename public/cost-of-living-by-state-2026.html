@@ -1,0 +1,1277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cost of Living by State 2026: Affordability Ranked</title>
+    <meta name="description" content="Discover the complete 2026 cost of living by state ranking. Compare all 50 US states by housing, groceries, effective tax burden, and true affordability.">
+    <link rel="canonical" href="https://westmountfundamentals.com/cost-of-living-by-state-2026">
+
+    <meta property="og:title" content="Cost of Living by State 2026: Affordability Ranked">
+    <meta property="og:description" content="Discover the complete 2026 cost of living by state ranking. Compare all 50 US states by housing, groceries, effective tax burden, and true affordability.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://westmountfundamentals.com/cost-of-living-by-state-2026">
+    <meta property="og:site_name" content="Westmount Fundamentals">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Cost of Living by State 2026: Affordability Ranked">
+    <meta name="twitter:description" content="Discover the complete 2026 cost of living by state ranking. Compare all 50 US states by housing, groceries, effective tax burden, and true affordability.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VYF72NSC1Q"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-VYF72NSC1Q');
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Cost of Living by State 2026",
+      "description": "Discover the complete 2026 cost of living by state ranking. Compare all 50 US states by housing, groceries, effective tax burden, and true affordability.",
+      "datePublished": "2024-03-05T08:00:00+08:00",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Westmount Fundamentals"
+      }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "What are the cheapest states to live in 2026?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The cheapest states typically include those in the South and Midwest, such as Oklahoma, Mississippi, and West Virginia, driven by low housing and utility costs."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Which states have the highest cost of living?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Hawaii, Massachusetts, California, and New York consistently rank among the most expensive states due to severe housing shortages and high state taxes."
+        }
+      }, {
+        "@type": "Question",
+        "name": "How is the cost of living index calculated?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The index compares state-level prices for housing, groceries, utilities, transportation, and healthcare to a national baseline average set at 100."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Does cost of living include taxes?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standard cost of living indexes often exclude taxes. However, true affordability must factor in state income, property, and sales taxes to calculate effective take-home pay."
+        }
+      }, {
+        "@type": "Question",
+        "name": "How does median income affect state affordability?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A high cost of living can be offset by higher median incomes. Affordability is best measured by dividing post-tax effective income by the regional cost of living index."
+        }
+      }]
+    }
+    </script>
+
+    <style>
+        :root {
+            --bg: #060a12;
+            --card-bg: #0a1020;
+            --border: #152040;
+            --accent: #4a8fe7;
+            --text-main: #e2e8f0;
+            --text-muted: #94a3b8;
+            --font-sans: 'Inter', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            font-family: var(--font-sans);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Sticky Nav */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(6, 10, 18, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            padding: 16px 0;
+        }
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-brand {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #fff;
+            letter-spacing: -0.02em;
+        }
+        .nav-links {
+            display: flex;
+            gap: 24px;
+        }
+        .nav-links a {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        .nav-links a:hover { color: #fff; text-decoration: none; }
+
+        /* Typography */
+        h1, h2, h3 { color: #fff; line-height: 1.2; font-weight: 700; }
+        .gradient-text {
+            background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        h1 { font-size: 2.5rem; margin-bottom: 1rem; letter-spacing: -0.03em; }
+        h2 { font-size: 1.75rem; margin: 3rem 0 1.5rem; }
+        p { margin-bottom: 1.5rem; color: var(--text-muted); }
+
+        header { padding: 4rem 0 2rem; text-align: center; }
+        .header-desc { max-width: 700px; margin: 0 auto; font-size: 1.1rem; }
+
+        /* Footer */
+        footer {
+            margin-top: 5rem;
+            padding: 3rem 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+        footer p { margin-bottom: 0.5rem; }
+
+        /* Utils */
+        .text-center { text-align: center; }
+        .mb-2 { margin-bottom: 0.5rem; }
+        .mb-4 { margin-bottom: 1rem; }
+        .mb-8 { margin-bottom: 2rem; }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            .nav-links { display: none; }
+        }
+
+        /* Stat Cards */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        .stat-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #fff;
+            margin: 0.5rem 0;
+            font-family: var(--font-mono);
+        }
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Table */
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        input[type="text"] {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            color: var(--text-main);
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 300px;
+            font-family: var(--font-sans);
+        }
+        input[type="text"]:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        .table-container {
+            overflow-x: auto;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            background: var(--card-bg);
+            margin-bottom: 3rem;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            min-width: 800px;
+        }
+        th, td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+        th {
+            background: rgba(255, 255, 255, 0.02);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            cursor: pointer;
+            user-select: none;
+            white-space: nowrap;
+        }
+        th:hover { color: #fff; }
+        td { font-family: var(--font-mono); font-size: 0.95rem; }
+        .col-state { font-family: var(--font-sans); font-weight: 600; color: #fff; }
+        .badge-good { color: #4ade80; }
+        .badge-bad { color: #f87171; }
+        tr:last-child td { border-bottom: none; }
+        tr:hover { background: rgba(255,255,255,0.02); }
+
+        /* Chart */
+        .chart-container {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 3rem;
+            position: relative;
+            height: 400px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="container nav-content">
+            <a href="/" class="nav-brand">Westmount Fundamentals</a>
+            <div class="nav-links">
+                <a href="/#studies">Studies</a>
+                <a href="/#tools">Tools</a>
+                <a href="/#guides">Guides</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <header>
+            <h1 class="gradient-text">Cost of Living by State 2026</h1>
+            <p class="header-desc">
+                A complete breakdown of the cheapest and most expensive US states. We analyze the traditional cost of living index alongside median income and state tax burdens to reveal the true affordability of all 50 states.
+            </p>
+        </header>
+
+        <div class="stats-grid" id="statsGrid">
+            <div class="stat-card">
+                <div class="stat-label">Cheapest State</div>
+                <div class="stat-value" id="statCheapest">--</div>
+                <div class="stat-label" style="font-size:0.75rem" id="statCheapestVal">Index: --</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Most Expensive</div>
+                <div class="stat-value" id="statExpensive">--</div>
+                <div class="stat-label" style="font-size:0.75rem" id="statExpensiveVal">Index: --</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Highest Median Income</div>
+                <div class="stat-value" id="statIncome">--</div>
+                <div class="stat-label" style="font-size:0.75rem" id="statIncomeVal">$ --</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Most Affordable Overall</div>
+                <div class="stat-value" id="statAffordable">--</div>
+                <div class="stat-label" style="font-size:0.75rem">Best Income/Cost Ratio</div>
+            </div>
+        </div>
+
+        <h2 style="margin-top:0">The Data</h2>
+        <div class="controls">
+            <input type="text" id="searchInput" placeholder="Search states...">
+        </div>
+
+        <div class="table-container">
+            <table id="dataTable">
+                <thead>
+                    <tr>
+                        <th data-sort="rank">Rank ▼</th>
+                        <th data-sort="state">State</th>
+                        <th data-sort="index">COL Index</th>
+                        <th data-sort="housing">Housing</th>
+                        <th data-sort="grocery">Groceries</th>
+                        <th data-sort="taxBurden">Tax Burden</th>
+                        <th data-sort="income">Median Income</th>
+                        <th data-sort="affordabilityScore">Affordability Score</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    <!-- Data injected via JS -->
+                </tbody>
+            </table>
+        </div>
+
+        <h2>Cost vs Income Analysis</h2>
+        <div class="chart-container">
+            <canvas id="scatterChart"></canvas>
+        </div>
+
+        <section id="methodology" style="margin-top: 4rem;">
+            <h2>Data & Methodology</h2>
+            <p>
+                To provide a comprehensive view of state affordability, this analysis combines three major datasets:
+            </p>
+            <ul style="color: var(--text-muted); margin-left: 1.5rem; margin-bottom: 1.5rem;">
+                <li style="margin-bottom: 0.5rem;"><strong>Cost of Living Index:</strong> Sourced from the Missouri Economic Research and Information Center (MERIC), representing an average of prices for housing, groceries, utilities, transportation, and healthcare. A baseline of 100 represents the national average.</li>
+                <li style="margin-bottom: 0.5rem;"><strong>Median Income:</strong> Data is derived from the latest available Census Bureau figures, reflecting median household income per state.</li>
+                <li style="margin-bottom: 0.5rem;"><strong>Effective Tax Burden:</strong> Represents the total percentage of income paid in state and local taxes (including property, income, and sales taxes), aggregated by WalletHub.</li>
+                <li style="margin-bottom: 0.5rem;"><strong>True Affordability Score:</strong> An estimated metric calculated by adjusting the state median income for the effective tax burden, and dividing the resulting "take-home" income by the state's cost of living index. A higher score indicates better overall purchasing power.</li>
+            </ul>
+        </section>
+
+        <section id="faq">
+            <h2>Frequently Asked Questions</h2>
+
+            <div style="margin-bottom: 1.5rem;">
+                <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">What are the cheapest states to live in 2026?</h3>
+                <p>The cheapest states typically include those in the South and Midwest, such as Oklahoma, Mississippi, and West Virginia, driven by significantly lower housing and utility costs compared to coastal states.</p>
+            </div>
+
+            <div style="margin-bottom: 1.5rem;">
+                <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Which states have the highest cost of living?</h3>
+                <p>Hawaii, Massachusetts, California, and New York consistently rank among the most expensive states due to severe housing shortages, high utility rates, and elevated state taxes.</p>
+            </div>
+
+            <div style="margin-bottom: 1.5rem;">
+                <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">How is the cost of living index calculated?</h3>
+                <p>The index compares state-level prices for key expenses—housing, groceries, utilities, transportation, and healthcare—to a national baseline average, which is always set to 100.</p>
+            </div>
+
+            <div style="margin-bottom: 1.5rem;">
+                <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Does cost of living include taxes?</h3>
+                <p>Standard cost of living indexes often exclude taxes. However, true affordability must factor in state income, property, and sales taxes to calculate effective take-home pay, which is why our affordability score includes tax burdens.</p>
+            </div>
+
+            <div style="margin-bottom: 1.5rem;">
+                <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">How does median income affect state affordability?</h3>
+                <p>A high cost of living can sometimes be offset by higher median incomes. Affordability is best measured by dividing post-tax effective income by the regional cost of living index to understand local purchasing power.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 Westmount Research · A GAB Ventures property. Not investment advice.</p>
+            <p>All information for educational purposes only.</p>
+        </div>
+    </footer>
+
+    <script id="data-script">
+    const COL_DATA = [
+  {
+    "state": "Oklahoma",
+    "index": 84.7,
+    "grocery": 95.4,
+    "housing": 68.8,
+    "utilities": 98.2,
+    "transportation": 88.8,
+    "health": 97.1,
+    "misc": 87.6,
+    "income": 62138,
+    "taxBurden": 7.01,
+    "effectiveIncome": 57782,
+    "affordabilityScore": 682.2
+  },
+  {
+    "state": "Mississippi",
+    "index": 86,
+    "grocery": 95.5,
+    "housing": 71.6,
+    "utilities": 89.4,
+    "transportation": 88.3,
+    "health": 94.3,
+    "misc": 91.8,
+    "income": 54203,
+    "taxBurden": 9.06,
+    "effectiveIncome": 49292,
+    "affordabilityScore": 573.17
+  },
+  {
+    "state": "West Virginia",
+    "index": 88,
+    "grocery": 96.3,
+    "housing": 71.2,
+    "utilities": 90.7,
+    "transportation": 97.8,
+    "health": 95.2,
+    "misc": 94.7,
+    "income": 55948,
+    "taxBurden": 8.85,
+    "effectiveIncome": 50997,
+    "affordabilityScore": 579.51
+  },
+  {
+    "state": "Alabama",
+    "index": 88.1,
+    "grocery": 97.5,
+    "housing": 71.2,
+    "utilities": 98,
+    "transportation": 90.5,
+    "health": 91.2,
+    "misc": 95.1,
+    "income": 62212,
+    "taxBurden": 7.99,
+    "effectiveIncome": 57241,
+    "affordabilityScore": 649.73
+  },
+  {
+    "state": "Kansas",
+    "index": 88.4,
+    "grocery": 95.9,
+    "housing": 76.9,
+    "utilities": 98.1,
+    "transportation": 90.7,
+    "health": 94.5,
+    "misc": 91.4,
+    "income": 70333,
+    "taxBurden": 9.33,
+    "effectiveIncome": 63771,
+    "affordabilityScore": 721.39
+  },
+  {
+    "state": "Missouri",
+    "index": 88.9,
+    "grocery": 95.9,
+    "housing": 77.5,
+    "utilities": 92,
+    "transportation": 87.2,
+    "health": 100.3,
+    "misc": 93.7,
+    "income": 68545,
+    "taxBurden": 7.83,
+    "effectiveIncome": 63178,
+    "affordabilityScore": 710.66
+  },
+  {
+    "state": "Iowa",
+    "index": 89.8,
+    "grocery": 96.6,
+    "housing": 77.7,
+    "utilities": 88,
+    "transportation": 99.5,
+    "health": 95.9,
+    "misc": 94.5,
+    "income": 71433,
+    "taxBurden": 9.23,
+    "effectiveIncome": 64840,
+    "affordabilityScore": 722.05
+  },
+  {
+    "state": "Arkansas",
+    "index": 90.1,
+    "grocery": 94.3,
+    "housing": 78.8,
+    "utilities": 94.3,
+    "transportation": 90.7,
+    "health": 87.3,
+    "misc": 97.5,
+    "income": 58700,
+    "taxBurden": 8.61,
+    "effectiveIncome": 53646,
+    "affordabilityScore": 595.4
+  },
+  {
+    "state": "Tennessee",
+    "index": 90.1,
+    "grocery": 96.8,
+    "housing": 82.4,
+    "utilities": 88.1,
+    "transportation": 88.7,
+    "health": 86.4,
+    "misc": 95.3,
+    "income": 67631,
+    "taxBurden": 6.38,
+    "effectiveIncome": 63316,
+    "affordabilityScore": 702.73
+  },
+  {
+    "state": "Indiana",
+    "index": 90.7,
+    "grocery": 99.2,
+    "housing": 75.4,
+    "utilities": 95,
+    "transportation": 101,
+    "health": 96.3,
+    "misc": 95.8,
+    "income": 69477,
+    "taxBurden": 9.09,
+    "effectiveIncome": 63162,
+    "affordabilityScore": 696.38
+  },
+  {
+    "state": "Texas",
+    "index": 91.1,
+    "grocery": 95.3,
+    "housing": 79.4,
+    "utilities": 102.9,
+    "transportation": 92.9,
+    "health": 96.8,
+    "misc": 95.2,
+    "income": 75780,
+    "taxBurden": 7.77,
+    "effectiveIncome": 69892,
+    "affordabilityScore": 767.2
+  },
+  {
+    "state": "North Dakota",
+    "index": 91.1,
+    "grocery": 96.8,
+    "housing": 75.7,
+    "utilities": 83.2,
+    "transportation": 99.9,
+    "health": 108.8,
+    "misc": 99.2,
+    "income": 76525,
+    "taxBurden": 6.61,
+    "effectiveIncome": 71467,
+    "affordabilityScore": 784.49
+  },
+  {
+    "state": "Kentucky",
+    "index": 91.5,
+    "grocery": 99.8,
+    "housing": 74.8,
+    "utilities": 88,
+    "transportation": 96,
+    "health": 93.5,
+    "misc": 101.9,
+    "income": 61118,
+    "taxBurden": 8.93,
+    "effectiveIncome": 55660,
+    "affordabilityScore": 608.31
+  },
+  {
+    "state": "Nebraska",
+    "index": 91.8,
+    "grocery": 98.6,
+    "housing": 78.7,
+    "utilities": 89.6,
+    "transportation": 93.8,
+    "health": 99.6,
+    "misc": 99.1,
+    "income": 74590,
+    "taxBurden": 8.78,
+    "effectiveIncome": 68041,
+    "affordabilityScore": 741.19
+  },
+  {
+    "state": "South Dakota",
+    "index": 91.8,
+    "grocery": 97.7,
+    "housing": 85.9,
+    "utilities": 85.2,
+    "transportation": 93.6,
+    "health": 106.5,
+    "misc": 93.4,
+    "income": 71810,
+    "taxBurden": 6.46,
+    "effectiveIncome": 67171,
+    "affordabilityScore": 731.71
+  },
+  {
+    "state": "Michigan",
+    "index": 91.9,
+    "grocery": 99.3,
+    "housing": 78.3,
+    "utilities": 99.1,
+    "transportation": 100.2,
+    "health": 90,
+    "misc": 97,
+    "income": 69183,
+    "taxBurden": 8.25,
+    "effectiveIncome": 63475,
+    "affordabilityScore": 690.7
+  },
+  {
+    "state": "Georgia",
+    "index": 92.2,
+    "grocery": 97.8,
+    "housing": 79.7,
+    "utilities": 100.6,
+    "transportation": 95.7,
+    "health": 97.2,
+    "misc": 97,
+    "income": 74632,
+    "taxBurden": 8.47,
+    "effectiveIncome": 68311,
+    "affordabilityScore": 740.9
+  },
+  {
+    "state": "South Carolina",
+    "index": 92.7,
+    "grocery": 99,
+    "housing": 80.6,
+    "utilities": 96.9,
+    "transportation": 96.4,
+    "health": 94.2,
+    "misc": 98.2,
+    "income": 67804,
+    "taxBurden": 8.15,
+    "effectiveIncome": 62278,
+    "affordabilityScore": 671.82
+  },
+  {
+    "state": "Louisiana",
+    "index": 92.9,
+    "grocery": 96.4,
+    "housing": 84.5,
+    "utilities": 83.6,
+    "transportation": 97.3,
+    "health": 93.4,
+    "misc": 100,
+    "income": 58229,
+    "taxBurden": 8.94,
+    "effectiveIncome": 53023,
+    "affordabilityScore": 570.76
+  },
+  {
+    "state": "Minnesota",
+    "index": 93.6,
+    "grocery": 100.6,
+    "housing": 80.6,
+    "utilities": 95,
+    "transportation": 96.2,
+    "health": 102.4,
+    "misc": 99.8,
+    "income": 85086,
+    "taxBurden": 9.72,
+    "effectiveIncome": 76816,
+    "affordabilityScore": 820.68
+  },
+  {
+    "state": "New Mexico",
+    "index": 93.7,
+    "grocery": 97,
+    "housing": 88.6,
+    "utilities": 83.8,
+    "transportation": 93.6,
+    "health": 108.3,
+    "misc": 97.2,
+    "income": 62268,
+    "taxBurden": 9.62,
+    "effectiveIncome": 56278,
+    "affordabilityScore": 600.62
+  },
+  {
+    "state": "Wyoming",
+    "index": 94.6,
+    "grocery": 99.8,
+    "housing": 87.1,
+    "utilities": 97.2,
+    "transportation": 91.9,
+    "health": 99,
+    "misc": 98.3,
+    "income": 72415,
+    "taxBurden": 5.79,
+    "effectiveIncome": 68222,
+    "affordabilityScore": 721.16
+  },
+  {
+    "state": "Ohio",
+    "index": 94.6,
+    "grocery": 99.4,
+    "housing": 87.6,
+    "utilities": 98.3,
+    "transportation": 97.6,
+    "health": 97,
+    "misc": 96.7,
+    "income": 67769,
+    "taxBurden": 9.36,
+    "effectiveIncome": 61426,
+    "affordabilityScore": 649.32
+  },
+  {
+    "state": "Illinois",
+    "index": 95,
+    "grocery": 99.8,
+    "housing": 84.3,
+    "utilities": 99,
+    "transportation": 100.5,
+    "health": 104.1,
+    "misc": 98.7,
+    "income": 80306,
+    "taxBurden": 10.22,
+    "effectiveIncome": 72099,
+    "affordabilityScore": 758.93
+  },
+  {
+    "state": "Montana",
+    "index": 96.8,
+    "grocery": 101.6,
+    "housing": 94.4,
+    "utilities": 81.5,
+    "transportation": 99.5,
+    "health": 106.5,
+    "misc": 98.6,
+    "income": 70804,
+    "taxBurden": 7.87,
+    "effectiveIncome": 65232,
+    "affordabilityScore": 673.88
+  },
+  {
+    "state": "Pennsylvania",
+    "index": 97.1,
+    "grocery": 98.5,
+    "housing": 86.8,
+    "utilities": 108.7,
+    "transportation": 104,
+    "health": 93.7,
+    "misc": 101.2,
+    "income": 73824,
+    "taxBurden": 8.58,
+    "effectiveIncome": 67490,
+    "affordabilityScore": 695.06
+  },
+  {
+    "state": "North Carolina",
+    "index": 97.9,
+    "grocery": 99,
+    "housing": 94,
+    "utilities": 94.7,
+    "transportation": 92.2,
+    "health": 110.2,
+    "misc": 101.4,
+    "income": 70804,
+    "taxBurden": 8.18,
+    "effectiveIncome": 65012,
+    "affordabilityScore": 664.07
+  },
+  {
+    "state": "Wisconsin",
+    "index": 98.5,
+    "grocery": 99.5,
+    "housing": 99,
+    "utilities": 91.2,
+    "transportation": 99,
+    "health": 99.8,
+    "misc": 99.3,
+    "income": 74631,
+    "taxBurden": 8.31,
+    "effectiveIncome": 68429,
+    "affordabilityScore": 694.71
+  },
+  {
+    "state": "Idaho",
+    "index": 99.3,
+    "grocery": 98.9,
+    "housing": 100.3,
+    "utilities": 73,
+    "transportation": 106.5,
+    "health": 106.9,
+    "misc": 102.4,
+    "income": 74942,
+    "taxBurden": 7.54,
+    "effectiveIncome": 69291,
+    "affordabilityScore": 697.8
+  },
+  {
+    "state": "Utah",
+    "index": 99.5,
+    "grocery": 96.9,
+    "housing": 108.8,
+    "utilities": 82.4,
+    "transportation": 104.1,
+    "health": 90.9,
+    "misc": 96.9,
+    "income": 93421,
+    "taxBurden": 9.46,
+    "effectiveIncome": 84583,
+    "affordabilityScore": 850.08
+  },
+  {
+    "state": "Nevada",
+    "index": 99.7,
+    "grocery": 102.7,
+    "housing": 110.7,
+    "utilities": 85.6,
+    "transportation": 115.3,
+    "health": 89.3,
+    "misc": 89.6,
+    "income": 76364,
+    "taxBurden": 8.62,
+    "effectiveIncome": 69781,
+    "affordabilityScore": 699.91
+  },
+  {
+    "state": "Florida",
+    "index": 101.4,
+    "grocery": 104.3,
+    "housing": 103.5,
+    "utilities": 98.1,
+    "transportation": 99.8,
+    "health": 92.7,
+    "misc": 100.7,
+    "income": 73311,
+    "taxBurden": 6.49,
+    "effectiveIncome": 68553,
+    "affordabilityScore": 676.07
+  },
+  {
+    "state": "Virginia",
+    "index": 102.2,
+    "grocery": 99.7,
+    "housing": 106.7,
+    "utilities": 97.5,
+    "transportation": 95.5,
+    "health": 107.6,
+    "misc": 101.5,
+    "income": 89931,
+    "taxBurden": 8.86,
+    "effectiveIncome": 81963,
+    "affordabilityScore": 801.99
+  },
+  {
+    "state": "Delaware",
+    "index": 103.1,
+    "grocery": 101.3,
+    "housing": 102.3,
+    "utilities": 97.6,
+    "transportation": 100.6,
+    "health": 103.9,
+    "misc": 106.3,
+    "income": 82174,
+    "taxBurden": 6.52,
+    "effectiveIncome": 76816,
+    "affordabilityScore": 745.07
+  },
+  {
+    "state": "Colorado",
+    "index": 103.1,
+    "grocery": 101.2,
+    "housing": 108.8,
+    "utilities": 88.4,
+    "transportation": 97.5,
+    "health": 106.3,
+    "misc": 103.8,
+    "income": 92911,
+    "taxBurden": 8.73,
+    "effectiveIncome": 84800,
+    "affordabilityScore": 822.5
+  },
+  {
+    "state": "Arizona",
+    "index": 110.3,
+    "grocery": 101.9,
+    "housing": 127.3,
+    "utilities": 104,
+    "transportation": 102.1,
+    "health": 93.4,
+    "misc": 105.2,
+    "income": 77315,
+    "taxBurden": 8.22,
+    "effectiveIncome": 70960,
+    "affordabilityScore": 643.33
+  },
+  {
+    "state": "New Hampshire",
+    "index": 110.5,
+    "grocery": 99.4,
+    "housing": 115.6,
+    "utilities": 115.9,
+    "transportation": 104,
+    "health": 107.9,
+    "misc": 111.6,
+    "income": 96838,
+    "taxBurden": 5.94,
+    "effectiveIncome": 91086,
+    "affordabilityScore": 824.31
+  },
+  {
+    "state": "Rhode Island",
+    "index": 110.7,
+    "grocery": 101.4,
+    "housing": 115.1,
+    "utilities": 131.6,
+    "transportation": 99.7,
+    "health": 100.8,
+    "misc": 110,
+    "income": 84972,
+    "taxBurden": 10.08,
+    "effectiveIncome": 76407,
+    "affordabilityScore": 690.22
+  },
+  {
+    "state": "Oregon",
+    "index": 112.8,
+    "grocery": 106.8,
+    "housing": 127.4,
+    "utilities": 95.6,
+    "transportation": 119.1,
+    "health": 117.9,
+    "misc": 104.4,
+    "income": 80160,
+    "taxBurden": 9.06,
+    "effectiveIncome": 72898,
+    "affordabilityScore": 646.25
+  },
+  {
+    "state": "Washington",
+    "index": 112.9,
+    "grocery": 108,
+    "housing": 118.3,
+    "utilities": 98.8,
+    "transportation": 124,
+    "health": 110.2,
+    "misc": 111.2,
+    "income": 94605,
+    "taxBurden": 8.61,
+    "effectiveIncome": 86460,
+    "affordabilityScore": 765.81
+  },
+  {
+    "state": "Vermont",
+    "index": 113.5,
+    "grocery": 105.5,
+    "housing": 129,
+    "utilities": 113.5,
+    "transportation": 103.3,
+    "health": 111.8,
+    "misc": 106.3,
+    "income": 81211,
+    "taxBurden": 11.53,
+    "effectiveIncome": 71847,
+    "affordabilityScore": 633.02
+  },
+  {
+    "state": "Connecticut",
+    "index": 114,
+    "grocery": 103.6,
+    "housing": 122.3,
+    "utilities": 131.9,
+    "transportation": 104,
+    "health": 111.5,
+    "misc": 109.8,
+    "income": 91665,
+    "taxBurden": 9.9,
+    "effectiveIncome": 82590,
+    "affordabilityScore": 724.48
+  },
+  {
+    "state": "Maine",
+    "index": 114,
+    "grocery": 101,
+    "housing": 135.7,
+    "utilities": 118.9,
+    "transportation": 103.6,
+    "health": 115.3,
+    "misc": 102,
+    "income": 73733,
+    "taxBurden": 10.64,
+    "effectiveIncome": 65888,
+    "affordabilityScore": 577.96
+  },
+  {
+    "state": "New Jersey",
+    "index": 115.3,
+    "grocery": 103.5,
+    "housing": 141.9,
+    "utilities": 102.2,
+    "transportation": 102.1,
+    "health": 110.8,
+    "misc": 104.5,
+    "income": 99781,
+    "taxBurden": 10.3,
+    "effectiveIncome": 89504,
+    "affordabilityScore": 776.27
+  },
+  {
+    "state": "Maryland",
+    "index": 117.4,
+    "grocery": 105.4,
+    "housing": 141.3,
+    "utilities": 114.2,
+    "transportation": 100.7,
+    "health": 106.6,
+    "misc": 108.4,
+    "income": 98678,
+    "taxBurden": 10.04,
+    "effectiveIncome": 88771,
+    "affordabilityScore": 756.14
+  },
+  {
+    "state": "New York",
+    "index": 125.8,
+    "grocery": 103.3,
+    "housing": 174.7,
+    "utilities": 101.5,
+    "transportation": 108.1,
+    "health": 110.9,
+    "misc": 105.8,
+    "income": 82095,
+    "taxBurden": 13.56,
+    "effectiveIncome": 70963,
+    "affordabilityScore": 564.09
+  },
+  {
+    "state": "Alaska",
+    "index": 126.7,
+    "grocery": 125,
+    "housing": 123.6,
+    "utilities": 156.5,
+    "transportation": 120.2,
+    "health": 139.2,
+    "misc": 122.6,
+    "income": 88121,
+    "taxBurden": 4.93,
+    "effectiveIncome": 83777,
+    "affordabilityScore": 661.22
+  },
+  {
+    "state": "California",
+    "index": 143.1,
+    "grocery": 109.3,
+    "housing": 199.4,
+    "utilities": 140.5,
+    "transportation": 136.8,
+    "health": 104.2,
+    "misc": 116.6,
+    "income": 95521,
+    "taxBurden": 11,
+    "effectiveIncome": 85014,
+    "affordabilityScore": 594.09
+  },
+  {
+    "state": "Massachusetts",
+    "index": 148.5,
+    "grocery": 102.7,
+    "housing": 221,
+    "utilities": 154.8,
+    "transportation": 105.2,
+    "health": 134.2,
+    "misc": 116.8,
+    "income": 99858,
+    "taxBurden": 9.57,
+    "effectiveIncome": 90302,
+    "affordabilityScore": 608.09
+  },
+  {
+    "state": "Hawaii",
+    "index": 183.9,
+    "grocery": 131.4,
+    "housing": 299,
+    "utilities": 194.1,
+    "transportation": 141.5,
+    "health": 127.8,
+    "misc": 122.5,
+    "income": 95322,
+    "taxBurden": 13.92,
+    "effectiveIncome": 82053,
+    "affordabilityScore": 446.18
+  }
+];
+    </script>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        if (!COL_DATA) return;
+
+        let sortCol = 'index';
+        let sortAsc = true;
+        let tableData = [...COL_DATA];
+
+        const tbody = document.getElementById('tableBody');
+        const searchInput = document.getElementById('searchInput');
+
+        // Stats
+        const cheapest = [...COL_DATA].sort((a,b) => a.index - b.index)[0];
+        const expensive = [...COL_DATA].sort((a,b) => b.index - a.index)[0];
+        const incomeRank = [...COL_DATA].sort((a,b) => (b.income||0) - (a.income||0))[0];
+        const affordRank = [...COL_DATA].sort((a,b) => (b.affordabilityScore||0) - (a.affordabilityScore||0))[0];
+
+        document.getElementById('statCheapest').textContent = cheapest.state;
+        document.getElementById('statCheapestVal').textContent = 'Index: ' + cheapest.index;
+
+        document.getElementById('statExpensive').textContent = expensive.state;
+        document.getElementById('statExpensiveVal').textContent = 'Index: ' + expensive.index;
+
+        document.getElementById('statIncome').textContent = incomeRank.state;
+        document.getElementById('statIncomeVal').textContent = incomeRank.income ? '$' + incomeRank.income.toLocaleString() : 'N/A';
+
+        document.getElementById('statAffordable').textContent = affordRank.state;
+
+        // Render Table
+        function renderTable(data) {
+            tbody.innerHTML = '';
+            data.forEach((row, i) => {
+                const tr = document.createElement('tr');
+
+                // Formatters
+                const fIndex = val => val ? val.toFixed(1) : '--';
+                const fCurrency = val => val ? '$' + val.toLocaleString() : '--';
+                const fPct = val => val ? val.toFixed(2) + '%' : '--';
+                const fScore = val => val ? val.toLocaleString() : '--';
+
+                // Rank logic. If sorting by index asc, rank is just original index. Otherwise show dash.
+                const rank = (sortCol === 'index' && sortAsc) ? (i + 1) : '-';
+
+                tr.innerHTML = `
+                    <td>${rank}</td>
+                    <td class="col-state">${row.state}</td>
+                    <td>${fIndex(row.index)}</td>
+                    <td>${fIndex(row.housing)}</td>
+                    <td>${fIndex(row.grocery)}</td>
+                    <td>${fPct(row.taxBurden)}</td>
+                    <td>${fCurrency(row.income)}</td>
+                    <td>${fScore(row.affordabilityScore)}</td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        function sortData() {
+            tableData.sort((a, b) => {
+                let valA = a[sortCol];
+                let valB = b[sortCol];
+
+                if (sortCol === 'rank') {
+                   valA = a.index;
+                   valB = b.index;
+                }
+
+                if (typeof valA === 'string') {
+                    return sortAsc ? valA.localeCompare(valB) : valB.localeCompare(valA);
+                } else {
+                    valA = valA || 0;
+                    valB = valB || 0;
+                    return sortAsc ? valA - valB : valB - valA;
+                }
+            });
+            renderTable(tableData);
+        }
+
+        // Headers
+        document.querySelectorAll('th[data-sort]').forEach(th => {
+            th.addEventListener('click', () => {
+                const col = th.getAttribute('data-sort');
+                if (sortCol === col) {
+                    sortAsc = !sortAsc;
+                } else {
+                    sortCol = col;
+                    sortAsc = true;
+                }
+
+                // Reset arrows
+                document.querySelectorAll('th').forEach(h => h.textContent = h.textContent.replace(' ▼', '').replace(' ▲', ''));
+                th.textContent += sortAsc ? ' ▼' : ' ▲';
+
+                sortData();
+            });
+        });
+
+        // Search
+        searchInput.addEventListener('keyup', (e) => {
+            const term = e.target.value.toLowerCase();
+            tableData = COL_DATA.filter(row => row.state.toLowerCase().includes(term));
+            sortData();
+        });
+
+        // Init Table
+        sortData();
+
+        // Chart.js Setup
+        const ctx = document.getElementById('scatterChart').getContext('2d');
+        const chartData = COL_DATA.map(d => ({
+            x: d.index,
+            y: d.effectiveIncome || d.income,
+            state: d.state
+        }));
+
+        new Chart(ctx, {
+            type: 'scatter',
+            data: {
+                datasets: [{
+                    label: 'States',
+                    data: chartData,
+                    backgroundColor: '#4a8fe7',
+                    pointRadius: 6,
+                    pointHoverRadius: 8
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        callbacks: {
+                            label: function(ctx) {
+                                const d = ctx.raw;
+                                return `${d.state}: Index ${d.x}, Income $${d.y.toLocaleString()}`;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        title: { display: true, text: 'Cost of Living Index (100 = Avg)', color: '#94a3b8' },
+                        grid: { color: '#152040' },
+                        ticks: { color: '#94a3b8' }
+                    },
+                    y: {
+                        title: { display: true, text: 'Effective Take-Home Income', color: '#94a3b8' },
+                        grid: { color: '#152040' },
+                        ticks: { color: '#94a3b8', callback: val => '$' + val.toLocaleString() }
+                    }
+                }
+            }
+        });
+    });
+    </script>
+</body>
+</html>
