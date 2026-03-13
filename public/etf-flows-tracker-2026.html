@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ETF Fund Flows Tracker: Inflows & Outflows (2026)</title>
+    <meta name="description" content="Track 2026 ETF fund flows, inflows, and outflows across major categories. See where institutional money is moving with biggest weekly and monthly rankings.">
+    <link rel="canonical" href="https://westmountfundamentals.com/etf-flows-tracker-2026">
+    <meta property="og:title" content="ETF Fund Flows Tracker: Inflows & Outflows (2026)">
+    <meta property="og:description" content="Track 2026 ETF fund flows, inflows, and outflows across major categories. See where institutional money is moving with biggest weekly and monthly rankings.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://westmountfundamentals.com/etf-flows-tracker-2026">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="ETF Fund Flows Tracker: Inflows & Outflows (2026)">
+    <meta name="twitter:description" content="Track 2026 ETF fund flows, inflows, and outflows across major categories. See where institutional money is moving with biggest weekly and monthly rankings.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        :root {
+            --bg-color: #060a12;
+            --card-bg: #0a1020;
+            --border-color: #152040;
+            --accent-color: #4a8fe7;
+            --text-main: #c8d0de;
+            --text-muted: #5a6a80;
+            --success: #10b981;
+            --danger: #ef4444;
+            --font-sans: 'Inter', system-ui, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(6, 10, 18, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 1.2rem;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 24px;
+        }
+
+        .header-section {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            letter-spacing: -1.5px;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, #fff 0%, #a0b0c0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+            margin-bottom: 48px;
+        }
+
+        .stat-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 24px;
+            text-align: center;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent-color);
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .stat-value {
+            font-size: 2.2rem;
+            font-weight: 900;
+            font-family: var(--font-mono);
+        }
+
+        .value-positive { color: var(--success); }
+        .value-negative { color: var(--danger); }
+
+        .charts-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-bottom: 48px;
+        }
+
+        .chart-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 24px;
+        }
+
+        .chart-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: #fff;
+        }
+
+        .controls {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+
+        .search-input {
+            flex: 1;
+            min-width: 200px;
+            background: var(--bg-color);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 12px 16px;
+            border-radius: 8px;
+            font-family: var(--font-sans);
+            font-size: 0.95rem;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--accent-color);
+        }
+
+        .filter-select {
+            background: var(--bg-color);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 12px 16px;
+            border-radius: 8px;
+            font-family: var(--font-sans);
+            font-size: 0.95rem;
+            cursor: pointer;
+        }
+
+        .table-container {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            overflow-x: auto;
+            margin-bottom: 48px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        th {
+            background: rgba(21, 32, 64, 0.4);
+            padding: 16px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            border-bottom: 1px solid var(--border-color);
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        th:hover { color: var(--accent-color); }
+
+        td {
+            padding: 16px;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 0.95rem;
+        }
+
+        tr:last-child td { border-bottom: none; }
+
+        tr:hover { background: rgba(255, 255, 255, 0.02); }
+
+        .ticker-badge {
+            display: inline-block;
+            background: rgba(74, 143, 231, 0.1);
+            color: var(--accent-color);
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-family: var(--font-mono);
+            font-weight: 700;
+            font-size: 0.85rem;
+        }
+
+        .mono-val { font-family: var(--font-mono); font-weight: 500; }
+
+        .category-badge {
+            font-size: 0.75rem;
+            padding: 4px 8px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            background: var(--bg-color);
+        }
+
+        .content-section {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 40px;
+            margin-bottom: 48px;
+        }
+
+        .content-section h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 24px;
+            color: #fff;
+        }
+
+        .content-section h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-top: 32px;
+            margin-bottom: 16px;
+            color: #fff;
+        }
+
+        .content-section p {
+            margin-bottom: 16px;
+            color: #a0b0c0;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+            padding: 24px 0;
+        }
+
+        .faq-item:last-child { border-bottom: none; }
+
+        .faq-q {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 12px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 24px;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.2rem; }
+            .charts-container { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+            .content-section { padding: 24px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/" class="nav-brand">Westmount Fundamentals</a>
+        <div class="nav-links">
+            <a href="/#studies">Studies</a>
+            <a href="/#tools">Tools</a>
+            <a href="/#guides">Guides</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="header-section">
+            <h1>ETF Fund Flows Tracker</h1>
+            <p class="subtitle">Track 1-Month and 3-Month ETF inflows and outflows across major categories to see where institutional money is moving in 2026.</p>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-label">Total 1-Month Net Flow</div>
+                <div class="stat-value mono-val value-negative">
+                    -985.7B
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Gross 1M Inflows</div>
+                <div class="stat-value mono-val value-positive">
+                    +1223.8B
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Gross 1M Outflows</div>
+                <div class="stat-value mono-val value-negative">
+                    -2209.5B
+                </div>
+            </div>
+        </div>
+
+        <div class="charts-container">
+            <div class="chart-card">
+                <div class="chart-title">Largest 1-Month Inflows</div>
+                <canvas id="inflowsChart"></canvas>
+            </div>
+            <div class="chart-card">
+                <div class="chart-title">Largest 1-Month Outflows</div>
+                <canvas id="outflowsChart"></canvas>
+            </div>
+        </div>
+
+        <div class="controls">
+            <input type="text" id="searchInput" class="search-input" placeholder="Search by ticker or name...">
+            <select id="categoryFilter" class="filter-select">
+                <option value="all">All Categories</option>
+                <option value="US Equity">US Equity</option>
+                <option value="International">International</option>
+                <option value="Fixed Income">Fixed Income</option>
+                <option value="Commodities">Commodities</option>
+            </select>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th data-sort="ticker">Ticker</th>
+                        <th data-sort="name">Fund Name</th>
+                        <th data-sort="category">Category</th>
+                        <th data-sort="aum">AUM</th>
+                        <th data-sort="ytdReturn">YTD Return</th>
+                        <th data-sort="flow1m">1M Net Flow</th>
+                        <th data-sort="flow3m">3M Net Flow</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    <!-- Dynamic Rows -->
+                </tbody>
+            </table>
+        </div>
+
+        <div class="content-section">
+            <h2>Methodology: How We Track ETF Flows</h2>
+            <p>Traditional "fund flow" data tracking creations and redemptions of ETF shares is often delayed or locked behind expensive institutional paywalls. At Westmount Research, our ETF Fund Flows Tracker uses a data-driven volume and price-action methodology to proxy net money flow for the largest ETFs on the market.</p>
+
+            <h3>The Money Flow Calculation</h3>
+            <p>We analyze the daily trading volume combined with the Typical Price (Average of High, Low, and Close) over the specified periods (1-month and 3-months). When the daily Typical Price is higher than the previous day's, the volume is classified as an inflow (buying pressure). Conversely, a lower Typical Price classifies the volume as an outflow (selling pressure).</p>
+            <p>This proxy—similar to Chaikin Money Flow (CMF)—allows investors to spot institutional accumulation or distribution in real-time, providing a transparent look at where big money is moving across US Equity, International, Fixed Income, and Commodity ETFs.</p>
+        </div>
+
+        <div class="content-section">
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <div class="faq-q">What are ETF fund flows?</div>
+                <div class="faq-a">ETF fund flows refer to the net amount of money moving into or out of an Exchange Traded Fund over a specific period. Positive flows (inflows) indicate investors are buying and creating new shares, while negative flows (outflows) indicate selling and redemption of shares.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">How do ETF inflows and outflows affect the stock market?</div>
+                <div class="faq-a">Massive ETF inflows typically signal bullish sentiment in a specific sector or index, driving up the prices of the underlying stocks held by the ETF as the fund managers must purchase them. Conversely, large outflows can indicate bearish sentiment and create downward pressure on those stocks.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">Which ETFs have the biggest inflows in 2026?</div>
+                <div class="faq-a">The biggest inflows in 2026 fluctuate weekly, but typically target broad-market funds like SPY, VOO, and IVV during bull markets, or rotate into fixed-income ETFs like BND and AGG during times of economic uncertainty. You can track the top daily and monthly inflows in our tracker above.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">How to track where institutional money is moving?</div>
+                <div class="faq-a">Institutional money is best tracked by monitoring block trades, dark pool activity, and net ETF fund flows. By observing which asset classes (like US Equities vs. Commodities) are experiencing sustained inflows over 3-month periods, investors can identify institutional rotation.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">Why is ETF flow data important for investors?</div>
+                <div class="faq-a">ETF flow data acts as a contrarian or trend-following indicator. Sustained inflows confirm an established trend, while extreme inflows or outflows can sometimes indicate a crowded trade or an impending market reversal, helping investors position their portfolios accordingly.</div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        © 2026 Westmount Research · A GAB Ventures property. Not investment advice. All information for educational purposes only.
+    </footer>
+
+    <!-- JSON-LD Schemas -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What are ETF fund flows?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ETF fund flows refer to the net amount of money moving into or out of an Exchange Traded Fund over a specific period. Positive flows (inflows) indicate investors are buying and creating new shares, while negative flows (outflows) indicate selling and redemption of shares."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do ETF inflows and outflows affect the stock market?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Massive ETF inflows typically signal bullish sentiment in a specific sector or index, driving up the prices of the underlying stocks held by the ETF as the fund managers must purchase them. Conversely, large outflows can indicate bearish sentiment and create downward pressure on those stocks."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which ETFs have the biggest inflows in 2026?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The biggest inflows in 2026 fluctuate weekly, but typically target broad-market funds like SPY, VOO, and IVV during bull markets, or rotate into fixed-income ETFs like BND and AGG during times of economic uncertainty. You can track the top daily and monthly inflows in our tracker above."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How to track where institutional money is moving?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Institutional money is best tracked by monitoring block trades, dark pool activity, and net ETF fund flows. By observing which asset classes (like US Equities vs. Commodities) are experiencing sustained inflows over 3-month periods, investors can identify institutional rotation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why is ETF flow data important for investors?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ETF flow data acts as a contrarian or trend-following indicator. Sustained inflows confirm an established trend, while extreme inflows or outflows can sometimes indicate a crowded trade or an impending market reversal, helping investors position their portfolios accordingly."
+          }
+        }
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "ETF Fund Flows Tracker: Inflows & Outflows (2026)",
+      "description": "Track 2026 ETF fund flows, inflows, and outflows across major categories. See where institutional money is moving with biggest weekly and monthly rankings.",
+      "datePublished": "2026-01-01T08:00:00+00:00",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Westmount Research",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://westmountfundamentals.com/logo.png"
+        }
+      }
+    }
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VYF72NSC1Q"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-VYF72NSC1Q');
+    </script>
+
+    <script>
+        window.__INITIAL_DATA__ = [{"ticker":"SPY","name":"SPDR S&P 500 ETF Trust","category":"US Equity","aum":698270220288,"ytdReturn":-0.0081974,"flow1m":-413737999592.334,"inflows1m":387402785688.67804,"outflows1m":801140785281.0121,"flow3m":-352158011960.02},{"ticker":"IVV","name":"iShares Core S&P 500 ETF","category":"US Equity","aum":750651899904,"ytdReturn":-0.008102899,"flow1m":-55066685458.4505,"inflows1m":37893654437.854004,"outflows1m":92960339896.3045,"flow3m":-50358148518.19985},{"ticker":"VOO","name":"Vanguard S&P 500 ETF","category":"US Equity","aum":1512901836800,"ytdReturn":-0.008132299,"flow1m":-34513881932.7657,"inflows1m":49652207176.057945,"outflows1m":84166089108.82365,"flow3m":526383301.7293377},{"ticker":"QQQ","name":"Invesco QQQ Trust","category":"US Equity","aum":395032887296,"ytdReturn":-0.0107763,"flow1m":-349971694583.55145,"inflows1m":289720815439.67084,"outflows1m":639692510023.2223,"flow3m":-279092126752.6678},{"ticker":"VTI","name":"Vanguard Total Stock Market ETF","category":"US Equity","aum":2088924610560,"ytdReturn":-0.0060548,"flow1m":-21438776848.869873,"inflows1m":14183992611.521404,"outflows1m":35622769460.39128,"flow3m":-23116516037.087036},{"ticker":"VUG","name":"Vanguard Growth ETF","category":"US Equity","aum":335907094528,"ytdReturn":-0.0499119,"flow1m":-6703990811.208293,"inflows1m":5850306526.65507,"outflows1m":12554297337.863361,"flow3m":-9267685660.889893},{"ticker":"VTV","name":"Vanguard Value ETF","category":"US Equity","aum":238547156992,"ytdReturn":0.0439814,"flow1m":-8446513551.971386,"inflows1m":7247440950.679016,"outflows1m":15693954502.650402,"flow3m":2332177290.5080643},{"ticker":"IWM","name":"iShares Russell 2000 ETF","category":"US Equity","aum":73953288192,"ytdReturn":0.0271774,"flow1m":-59324011107.03218,"inflows1m":98978796341.1321,"outflows1m":158302807448.16428,"flow3m":2079497310.130886},{"ticker":"ARKK","name":"ARK Innovation ETF","category":"US Equity","aum":6515731968,"ytdReturn":-0.050052,"flow1m":-798325769.4140015,"inflows1m":7777387677.863831,"outflows1m":8575713447.277832,"flow3m":-6092321654.756662},{"ticker":"IEFA","name":"iShares Core MSCI EAFE ETF","category":"International","aum":182588440576,"ytdReturn":0.0325285,"flow1m":-8654030138.900402,"inflows1m":16055961131.61621,"outflows1m":24709991270.516613,"flow3m":10323505024.116365},{"ticker":"EFA","name":"iShares MSCI EAFE ETF","category":"International","aum":77836582912,"ytdReturn":0.031032,"flow1m":-19687756154.234524,"inflows1m":19889325088.033806,"outflows1m":39577081242.26832,"flow3m":7269883733.459769},{"ticker":"VWO","name":"Vanguard FTSE Emerging Markets ETF","category":"International","aum":158398922752,"ytdReturn":0.0334821,"flow1m":-1161545318.6303966,"inflows1m":6828708653.566945,"outflows1m":7990253972.197343,"flow3m":3842300381.148858},{"ticker":"VEA","name":"Vanguard FTSE Developed Markets ETF","category":"International","aum":307323502592,"ytdReturn":0.054266,"flow1m":-3312267786.312995,"inflows1m":12571583785.061008,"outflows1m":15883851571.374002,"flow3m":15253538941.440838},{"ticker":"BND","name":"Vanguard Total Bond Market ETF","category":"Fixed Income","aum":395346083840,"ytdReturn":0.0039379997,"flow1m":-3314144467.6754003,"inflows1m":5762986837.376149,"outflows1m":9077131305.05155,"flow3m":-2976619247.091294},{"ticker":"AGG","name":"iShares Core US Aggregate Bond ETF","category":"Fixed Income","aum":141223149568,"ytdReturn":0.0041925,"flow1m":-2090852868.224306,"inflows1m":8274770641.797383,"outflows1m":10365623510.02169,"flow3m":-236793735.52446628},{"ticker":"TLT","name":"iShares 20+ Year Treasury Bond ETF","category":"Fixed Income","aum":45428621312,"ytdReturn":0.0069713,"flow1m":-23339189672.469837,"inflows1m":29546612021.10189,"outflows1m":52885801693.571724,"flow3m":-24659313333.227535},{"ticker":"LQD","name":"iShares iBoxx $ Inv Grade Corp Bond ETF","category":"Fixed Income","aum":31986212864,"ytdReturn":-0.0022446,"flow1m":-35714973061.832245,"inflows1m":38776355160.88079,"outflows1m":74491328222.71303,"flow3m":-32160793715.147724},{"ticker":"GLD","name":"SPDR Gold Shares","category":"Commodities","aum":184864325632,"ytdReturn":0.2016855,"flow1m":11506502218.348183,"inflows1m":67508106690.06551,"outflows1m":56001604471.71732,"flow3m":141734648555.54407},{"ticker":"SLV","name":"iShares Silver Trust","category":"Commodities","aum":46246498304,"ytdReturn":0.209407,"flow1m":-5840937936.87642,"inflows1m":44817032558.49279,"outflows1m":50657970495.36921,"flow3m":81656449352.09541},{"ticker":"USO","name":"United States Oil Fund","category":"Commodities","aum":1136775552,"ytdReturn":0.5623193,"flow1m":54147075620.45695,"inflows1m":72653396840.70688,"outflows1m":18506321220.24994,"flow3m":59616689407.38932},{"ticker":"PDBC","name":"Invesco Optimum Yield Diversified Commodity","category":"Commodities","aum":5473554944,"ytdReturn":0.2649057,"flow1m":1792785161.1743612,"inflows1m":2452298257.8013735,"outflows1m":659513096.6270128,"flow3m":2327621533.75597}];
+
+        const formatMoney = (val) => {
+            if (!val) return '$0.00';
+            const abs = Math.abs(val);
+            if (abs >= 1e9) return '$' + (val / 1e9).toFixed(2) + 'B';
+            if (abs >= 1e6) return '$' + (val / 1e6).toFixed(2) + 'M';
+            return '$' + val.toLocaleString(undefined, { maximumFractionDigits: 0 });
+        };
+
+        const formatPercent = (val) => {
+            return (val * 100).toFixed(2) + '%';
+        };
+
+        let currentData = [...window.__INITIAL_DATA__];
+        let currentSort = { column: 'flow1m', direction: 'asc' };
+
+        const tbody = document.getElementById('tableBody');
+        const searchInput = document.getElementById('searchInput');
+        const categoryFilter = document.getElementById('categoryFilter');
+
+        function renderTable() {
+            tbody.innerHTML = currentData.map(d => {
+                const f1mClass = d.flow1m > 0 ? 'value-positive' : 'value-negative';
+                const f3mClass = d.flow3m > 0 ? 'value-positive' : 'value-negative';
+                const ytdClass = d.ytdReturn > 0 ? 'value-positive' : 'value-negative';
+
+                return `
+                    <tr>
+                        <td><span class="ticker-badge">${d.ticker}</span></td>
+                        <td style="font-weight:600">${d.name}</td>
+                        <td><span class="category-badge">${d.category}</span></td>
+                        <td class="mono-val">${formatMoney(d.aum)}</td>
+                        <td class="mono-val ${ytdClass}">${d.ytdReturn > 0 ? '+' : ''}${formatPercent(d.ytdReturn)}</td>
+                        <td class="mono-val ${f1mClass}">${d.flow1m > 0 ? '+' : ''}${formatMoney(d.flow1m)}</td>
+                        <td class="mono-val ${f3mClass}">${d.flow3m > 0 ? '+' : ''}${formatMoney(d.flow3m)}</td>
+                    </tr>
+                `;
+            }).join('');
+        }
+
+        function filterAndSort() {
+            const query = searchInput.value.toLowerCase();
+            const cat = categoryFilter.value;
+
+            currentData = window.__INITIAL_DATA__.filter(d => {
+                const matchQuery = d.ticker.toLowerCase().includes(query) || d.name.toLowerCase().includes(query);
+                const matchCat = cat === 'all' || d.category === cat;
+                return matchQuery && matchCat;
+            });
+
+            currentData.sort((a, b) => {
+                let valA = a[currentSort.column];
+                let valB = b[currentSort.column];
+
+                if (typeof valA === 'string') valA = valA.toLowerCase();
+                if (typeof valB === 'string') valB = valB.toLowerCase();
+
+                if (valA < valB) return currentSort.direction === 'asc' ? -1 : 1;
+                if (valA > valB) return currentSort.direction === 'asc' ? 1 : -1;
+                return 0;
+            });
+
+            renderTable();
+        }
+
+        document.querySelectorAll('th[data-sort]').forEach(th => {
+            th.addEventListener('click', () => {
+                const col = th.dataset.sort;
+                if (currentSort.column === col) {
+                    currentSort.direction = currentSort.direction === 'asc' ? 'desc' : 'asc';
+                } else {
+                    currentSort.column = col;
+                    currentSort.direction = col.includes('flow') || col === 'aum' || col === 'ytdReturn' ? 'desc' : 'asc';
+                }
+                filterAndSort();
+            });
+        });
+
+        searchInput.addEventListener('input', filterAndSort);
+        categoryFilter.addEventListener('change', filterAndSort);
+
+        // Render Charts
+        function renderCharts() {
+            const sortedByFlow = [...window.__INITIAL_DATA__].sort((a,b) => b.flow1m - a.flow1m);
+            const topInflows = sortedByFlow.slice(0, 5);
+            const topOutflows = [...window.__INITIAL_DATA__].sort((a,b) => a.flow1m - b.flow1m).slice(0, 5);
+
+            const ctxIn = document.getElementById('inflowsChart').getContext('2d');
+            new Chart(ctxIn, {
+                type: 'bar',
+                data: {
+                    labels: topInflows.map(d => d.ticker),
+                    datasets: [{
+                        label: '1M Net Flow ($B)',
+                        data: topInflows.map(d => d.flow1m / 1e9),
+                        backgroundColor: '#10b981',
+                        borderRadius: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        y: {
+                            grid: { color: 'rgba(255,255,255,0.05)' },
+                            ticks: { color: '#a0b0c0' }
+                        },
+                        x: {
+                            grid: { display: false },
+                            ticks: { color: '#a0b0c0' }
+                        }
+                    }
+                }
+            });
+
+            const ctxOut = document.getElementById('outflowsChart').getContext('2d');
+            new Chart(ctxOut, {
+                type: 'bar',
+                data: {
+                    labels: topOutflows.map(d => d.ticker),
+                    datasets: [{
+                        label: '1M Net Flow ($B)',
+                        data: topOutflows.map(d => Math.abs(d.flow1m) / 1e9),
+                        backgroundColor: '#ef4444',
+                        borderRadius: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        y: {
+                            grid: { color: 'rgba(255,255,255,0.05)' },
+                            ticks: { color: '#a0b0c0' }
+                        },
+                        x: {
+                            grid: { display: false },
+                            ticks: { color: '#a0b0c0' }
+                        }
+                    }
+                }
+            });
+        }
+
+        filterAndSort();
+        renderCharts();
+    </script>
+</body>
+</html>
