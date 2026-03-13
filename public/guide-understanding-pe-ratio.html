@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Understanding P/E Ratio: What Investors Need to Know</title>
+  <meta name="description" content="Master the P/E ratio. Learn trailing vs forward, PEG ratio, and sector norms to evaluate stocks and find true value.">
+  <link rel="canonical" href="https://westmountfundamentals.com/guide-understanding-pe-ratio">
+
+  <meta property="og:title" content="Understanding P/E Ratio: What Investors Need to Know">
+  <meta property="og:description" content="Master the P/E ratio. Learn trailing vs forward, PEG ratio, and sector norms to evaluate stocks and find true value.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://westmountfundamentals.com/guide-understanding-pe-ratio">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Understanding P/E Ratio: What Investors Need to Know">
+  <meta name="twitter:description" content="Master the P/E ratio. Learn trailing vs forward, PEG ratio, and sector norms to evaluate stocks and find true value.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VYF72NSC1Q"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VYF72NSC1Q');
+  </script>
+
+  <style>
+    :root {
+      --bg: #060a12;
+      --card: #0a1020;
+      --border: #152040;
+      --accent: #4a8fe7;
+      --text: #e2e8f0;
+      --text-muted: #94a3b8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(6, 10, 18, 0.85);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav .brand {
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    nav .links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      margin-left: 1.5rem;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+
+    nav .links a:hover {
+      color: var(--accent);
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      background: linear-gradient(to right, #ffffff, #4a8fe7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      line-height: 1.2;
+    }
+
+    .lead {
+      font-size: 1.25rem;
+      color: var(--text-muted);
+      margin-bottom: 3rem;
+      max-width: 800px;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 4rem;
+    }
+
+    .stat-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+    }
+
+    .stat-card h3 {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-card .value {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .stat-card .desc {
+      font-size: 0.875rem;
+      margin-top: 0.5rem;
+      color: var(--text-muted);
+    }
+
+    section {
+      margin-bottom: 4rem;
+    }
+
+    h2 {
+      font-size: 1.75rem;
+      margin-bottom: 1.5rem;
+      color: #fff;
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+      color: #fff;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    .chart-container {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      height: 400px;
+      position: relative;
+    }
+
+    .table-container {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      overflow-x: auto;
+    }
+
+    .table-header {
+      padding: 1.5rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .search-input {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 0.5rem 1rem;
+      border-radius: 0.375rem;
+      font-family: 'Inter', sans-serif;
+      width: 100%;
+      max-width: 300px;
+    }
+
+    .search-input:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    th, td {
+      padding: 1rem 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    th {
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      user-select: none;
+    }
+
+    th:hover {
+      color: #fff;
+    }
+
+    td {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.95rem;
+    }
+
+    .symbol {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .text-sm {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+
+    .faq-item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .faq-q {
+      font-weight: 600;
+      color: #fff;
+      font-size: 1.125rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .methodology {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.875rem;
+      margin-top: 4rem;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      nav .links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+      }
+      nav .links a {
+        margin: 0;
+      }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Understanding P/E Ratio: What Investors Need to Know",
+    "description": "Master the P/E ratio. Learn trailing vs forward, PEG ratio, and sector norms to evaluate stocks and find true value.",
+    "datePublished": "2026-03-13T06:24:34.208Z",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Westmount Research",
+      "url": "https://westmountfundamentals.com"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is P/E ratio?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The Price-to-Earnings (P/E) ratio measures a company's current share price relative to its per-share earnings. It is calculated by dividing the current market price of a stock by its earnings per share (EPS). It helps investors determine the relative value of a company's shares in an apples-to-apples comparison."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is a good P/E ratio for stocks?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "There is no single 'good' P/E ratio, as the ideal number varies greatly by industry. A P/E of 15 might be high for a bank but very low for a software company. Investors should compare a company's P/E to its historical average, its competitors, and the broader market."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How to use P/E ratio?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can use the P/E ratio to compare similar companies within the same industry to see which is trading at a premium or discount. You can also compare a company's current P/E to its historical P/E to see if it is currently overvalued or undervalued relative to its own past."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between trailing vs forward P/E?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Trailing P/E uses earnings from the past 12 months, making it an objective measure based on actual data. Forward P/E uses projected earnings for the next 12 months, making it forward-looking but reliant on analyst estimates which may be inaccurate."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What does a negative P/E ratio mean?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A negative P/E ratio means the company is currently losing money (has negative earnings or a net loss). Typically, financial platforms will report this as 'N/A' rather than showing a negative number."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <nav>
+    <a href="/" class="brand">Westmount Fundamentals</a>
+    <div class="links">
+      <a href="/#studies">Studies</a>
+      <a href="/#tools">Tools</a>
+      <a href="/#guides">Guides</a>
+    </div>
+  </nav>
+
+  <main>
+    <h1>Understanding P/E Ratio: What Investors Need to Know</h1>
+    <p class="lead">The Price-to-Earnings ratio is the most popular valuation metric in finance. Learn how to calculate it, trailing vs forward multiples, and why sector context is everything.</p>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <h3>Sample Average P/E</h3>
+        <div class="value">39.0</div>
+        <div class="desc">Average across 39 large-cap stocks</div>
+      </div>
+      <div class="stat-card">
+        <h3>Highest P/E Sector</h3>
+        <div class="value">Consumer Cyclical</div>
+        <div class="desc">Avg P/E: 96.2</div>
+      </div>
+      <div class="stat-card">
+        <h3>Lowest P/E Sector</h3>
+        <div class="value">Communication Services</div>
+        <div class="desc">Avg P/E: 20.9</div>
+      </div>
+      <div class="stat-card">
+        <h3>Lowest Valuation Stock</h3>
+        <div class="value">CMCSA</div>
+        <div class="desc">Trailing P/E: 5.6</div>
+      </div>
+    </div>
+
+    <section>
+      <h2>Trailing vs Forward P/E vs PEG Ratio</h2>
+      <p>The standard P/E ratio uses <strong>Trailing Twelve Months (TTM)</strong> earnings. This is objective because it uses real, reported data. However, markets are forward-looking. A company's stock might look expensive on a trailing basis, but cheap if earnings are expected to double next year.</p>
+      <p>The <strong>Forward P/E</strong> uses estimated earnings for the next 12 months. This helps adjust for growth, but estimates can be wrong.</p>
+      <p>The <strong>PEG Ratio</strong> (Price/Earnings-to-Growth) divides the P/E ratio by the expected earnings growth rate. A PEG ratio under 1.0 is traditionally considered undervalued, while over 1.0 suggests overvaluation relative to growth.</p>
+    </section>
+
+    <section>
+      <h2>P/E Ratios by Sector</h2>
+      <p>A "good" P/E ratio depends entirely on the sector. Tech companies command high multiples because of high margins and fast growth. Energy and Financials typically trade at lower multiples due to cyclicality and capital intensity.</p>
+      <div class="chart-container">
+        <canvas id="sectorChart"></canvas>
+      </div>
+    </section>
+
+    <section>
+      <h2>Interactive Stock Valuations</h2>
+      <p>Explore real-time valuations of major large-cap stocks across different sectors.</p>
+      <div class="table-container">
+        <div class="table-header">
+          <input type="text" id="searchInput" class="search-input" placeholder="Search by ticker, name, or sector...">
+        </div>
+        <table id="dataTable">
+          <thead>
+            <tr>
+              <th data-sort="symbol">Symbol &#8597;</th>
+              <th data-sort="name">Company &#8597;</th>
+              <th data-sort="sector">Sector &#8597;</th>
+              <th data-sort="price">Price &#8597;</th>
+              <th data-sort="trailingPE">Trailing P/E &#8597;</th>
+              <th data-sort="forwardPE">Forward P/E &#8597;</th>
+              <th data-sort="pegRatio">PEG Ratio &#8597;</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody">
+            <!-- Data injected via JS -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2>When Does P/E Mislead Investors?</h2>
+      <p>The P/E ratio has blind spots. Investors must be cautious in these scenarios:</p>
+      <ul>
+        <li><strong>Cyclical Stocks:</strong> Auto manufacturers and homebuilders often look cheapest right before a recession (peak earnings) and most expensive during a recession (depressed earnings). This is called the "cyclical P/E trap."</li>
+        <li><strong>Hyper-Growth Companies:</strong> Companies reinvesting heavily might have near-zero earnings, resulting in P/E ratios in the hundreds or thousands (e.g., Amazon in its early days). P/E is nearly useless here; Price-to-Sales or EV/EBITDA is better.</li>
+        <li><strong>One-Time Gains/Losses:</strong> If a company sells off a division for a huge profit, its earnings will spike, artificially depressing the P/E ratio. Always look at "adjusted" or "operating" earnings to strip out one-time events.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <div class="faq-q">What is P/E ratio?</div>
+        <div>The Price-to-Earnings (P/E) ratio measures a company's current share price relative to its per-share earnings. It is calculated by dividing the current market price of a stock by its earnings per share (EPS). It helps investors determine the relative value of a company's shares in an apples-to-apples comparison.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What is a good P/E ratio for stocks?</div>
+        <div>There is no single "good" P/E ratio, as the ideal number varies greatly by industry. A P/E of 15 might be high for a bank but very low for a software company. Investors should compare a company's P/E to its historical average, its competitors, and the broader market.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How to use P/E ratio?</div>
+        <div>You can use the P/E ratio to compare similar companies within the same industry to see which is trading at a premium or discount. You can also compare a company's current P/E to its historical P/E to see if it is currently overvalued or undervalued relative to its own past.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What is the difference between trailing vs forward P/E?</div>
+        <div>Trailing P/E uses earnings from the past 12 months, making it an objective measure based on actual data. Forward P/E uses projected earnings for the next 12 months, making it forward-looking but reliant on analyst estimates which may be inaccurate.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What does a negative P/E ratio mean?</div>
+        <div>A negative P/E ratio means the company is currently losing money (has negative earnings or a net loss). Typically, financial platforms will report this as "N/A" rather than showing a negative number.</div>
+      </div>
+    </section>
+
+    <section class="methodology">
+      <h3>Methodology & Data Sources</h3>
+      <p>Valuation metrics (Trailing P/E, Forward P/E, PEG Ratio) are sourced from standard financial market data for educational purposes. Sector categorizations map to GICS standards. The data shown in the interactive table is generated at the time of publication and represents a snapshot of large-cap U.S. equities. This page contains no client-side external data fetching.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Westmount Research · A GAB Ventures property. Not investment advice. All information for educational purposes only.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <script>
+    // Embedded Data
+    const stockData = [{"symbol":"AAPL","name":"Apple Inc.","price":255.76,"trailingPE":32.374683,"forwardPE":27.513294,"pegRatio":null,"sector":"Technology"},{"symbol":"MSFT","name":"Microsoft Corporation","price":401.86,"trailingPE":25.131956,"forwardPE":21.32561,"pegRatio":null,"sector":"Technology"},{"symbol":"NVDA","name":"NVIDIA Corporation","price":183.14,"trailingPE":37.29939,"forwardPE":16.955194,"pegRatio":null,"sector":"Technology"},{"symbol":"AMZN","name":"Amazon.com, Inc.","price":209.53,"trailingPE":29.223152,"forwardPE":22.429176,"pegRatio":null,"sector":"Consumer Cyclical"},{"symbol":"META","name":"Meta Platforms, Inc.","price":638.18,"trailingPE":27.168156,"forwardPE":17.78651,"pegRatio":null,"sector":"Communication Services"},{"symbol":"GOOGL","name":"Alphabet Inc.","price":303.55,"trailingPE":28.080479,"forwardPE":22.633762,"pegRatio":null,"sector":"Communication Services"},{"symbol":"TSLA","name":"Tesla, Inc.","price":395.01,"trailingPE":369.1682,"forwardPE":140.55145,"pegRatio":null,"sector":"Consumer Cyclical"},{"symbol":"BRK-B","name":"Berkshire Hathaway Inc. New","price":491.89,"trailingPE":15.8469715,"forwardPE":22.685934,"pegRatio":null,"sector":"Financial Services"},{"symbol":"UNH","name":"UnitedHealth Group Incorporated","price":277.05,"trailingPE":20.925226,"forwardPE":13.882611,"pegRatio":null,"sector":"Healthcare"},{"symbol":"JPM","name":"JP Morgan Chase & Co.","price":282.89,"trailingPE":14.123315,"forwardPE":12.041809,"pegRatio":null,"sector":"Financial Services"},{"symbol":"V","name":"Visa Inc.","price":306.5,"trailingPE":28.80639,"forwardPE":21.100126,"pegRatio":null,"sector":"Financial Services"},{"symbol":"JNJ","name":"Johnson & Johnson","price":242.04,"trailingPE":21.923912,"forwardPE":19.265514,"pegRatio":null,"sector":"Healthcare"},{"symbol":"XOM","name":"Exxon Mobil Corporation","price":153.53,"trailingPE":22.949177,"forwardPE":17.898445,"pegRatio":null,"sector":"Energy"},{"symbol":"HD","name":"Home Depot, Inc. (The)","price":338.93,"trailingPE":23.801264,"forwardPE":20.778591,"pegRatio":null,"sector":"Consumer Cyclical"},{"symbol":"PG","name":"Procter & Gamble Company (The)","price":150.5,"trailingPE":22.263313,"forwardPE":20.530155,"pegRatio":null,"sector":"Consumer Defensive"},{"symbol":"MA","name":"Mastercard Incorporated","price":497.31,"trailingPE":30.121744,"forwardPE":21.974161,"pegRatio":null,"sector":"Financial Services"},{"symbol":"COST","name":"Costco Wholesale Corporation","price":1003.32,"trailingPE":52.093456,"forwardPE":44.73731,"pegRatio":null,"sector":"Consumer Defensive"},{"symbol":"MRK","name":"Merck & Company, Inc.","price":115.91,"trailingPE":15.921703,"forwardPE":11.892828,"pegRatio":null,"sector":"Healthcare"},{"symbol":"ABBV","name":"AbbVie Inc.","price":225.37,"trailingPE":95.09283,"forwardPE":13.982218,"pegRatio":null,"sector":"Healthcare"},{"symbol":"CVX","name":"Chevron Corporation","price":196.97,"trailingPE":29.664158,"forwardPE":21.154799,"pegRatio":null,"sector":"Energy"},{"symbol":"PEP","name":"Pepsico, Inc.","price":158.86,"trailingPE":26.476667,"forwardPE":17.3962,"pegRatio":null,"sector":"Consumer Defensive"},{"symbol":"KO","name":"Coca-Cola Company (The)","price":77.61,"trailingPE":25.529606,"forwardPE":22.395102,"pegRatio":null,"sector":"Consumer Defensive"},{"symbol":"WMT","name":"Walmart Inc.","price":125.33,"trailingPE":45.908424,"forwardPE":38.121685,"pegRatio":null,"sector":"Consumer Defensive"},{"symbol":"TMO","name":"Thermo Fisher Scientific Inc","price":475.89,"trailingPE":26.810705,"forwardPE":17.697145,"pegRatio":null,"sector":"Healthcare"},{"symbol":"MCD","name":"McDonald's Corporation","price":323.91,"trailingPE":27.10544,"forwardPE":22.623064,"pegRatio":null,"sector":"Consumer Cyclical"},{"symbol":"DIS","name":"Walt Disney Company (The)","price":99.43,"trailingPE":14.643594,"forwardPE":13.51603,"pegRatio":null,"sector":"Communication Services"},{"symbol":"NFLX","name":"Netflix, Inc.","price":94.31,"trailingPE":37.27668,"forwardPE":24.601217,"pegRatio":null,"sector":"Communication Services"},{"symbol":"CMCSA","name":"Comcast Corporation","price":30.16,"trailingPE":5.595547,"forwardPE":7.5608487,"pegRatio":null,"sector":"Communication Services"},{"symbol":"PFE","name":"Pfizer, Inc.","price":26.86,"trailingPE":19.75,"forwardPE":9.491804,"pegRatio":null,"sector":"Healthcare"},{"symbol":"CSCO","name":"Cisco Systems, Inc.","price":77.74,"trailingPE":27.964027,"forwardPE":17.215034,"pegRatio":null,"sector":"Technology"},{"symbol":"VZ","name":"Verizon Communications Inc.","price":50.63,"trailingPE":12.470444,"forwardPE":9.650151,"pegRatio":null,"sector":"Communication Services"},{"symbol":"NKE","name":"Nike, Inc.","price":54.13,"trailingPE":31.65497,"forwardPE":23.539696,"pegRatio":null,"sector":"Consumer Cyclical"},{"symbol":"BA","name":"Boeing Company (The)","price":204.76,"trailingPE":82.564514,"forwardPE":43.531685,"pegRatio":null,"sector":"Industrials"},{"symbol":"MDT","name":"Medtronic plc.","price":87.38,"trailingPE":24.407822,"forwardPE":14.333142,"pegRatio":null,"sector":"Healthcare"},{"symbol":"CAT","name":"Caterpillar, Inc.","price":700.69,"trailingPE":37.310436,"forwardPE":25.30728,"pegRatio":null,"sector":"Industrials"},{"symbol":"HON","name":"Honeywell International Inc.","price":233.4,"trailingPE":33.679653,"forwardPE":20.31733,"pegRatio":null,"sector":"Industrials"},{"symbol":"DE","name":"Deere & Company","price":585.83,"trailingPE":33.00451,"forwardPE":25.33066,"pegRatio":null,"sector":"Industrials"},{"symbol":"LMT","name":"Lockheed Martin Corporation","price":652.83,"trailingPE":30.39246,"forwardPE":20.422829,"pegRatio":null,"sector":"Industrials"},{"symbol":"GE","name":"GE Aerospace","price":306.7,"trailingPE":38.146767,"forwardPE":35.851974,"pegRatio":null,"sector":"Industrials"}];
+    const sectorAverages = [{"sector":"Consumer Cyclical","avgPE":96.1906052},{"sector":"Industrials","avgPE":42.51639},{"sector":"Consumer Defensive","avgPE":34.4542932},{"sector":"Healthcare","avgPE":32.11888542857143},{"sector":"Technology","avgPE":30.692514},{"sector":"Energy","avgPE":26.3066675},{"sector":"Financial Services","avgPE":22.224605125},{"sector":"Communication Services","avgPE":20.87248333333333}];
+
+    // --- Chart Initialization ---
+    const ctx = document.getElementById('sectorChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: sectorAverages.map(s => s.sector),
+        datasets: [{
+          label: 'Average Trailing P/E',
+          data: sectorAverages.map(s => s.avgPE),
+          backgroundColor: '#4a8fe7',
+          borderRadius: 4
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false }
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+            grid: { color: '#152040' },
+            ticks: { color: '#94a3b8' }
+          },
+          x: {
+            grid: { display: false },
+            ticks: { color: '#94a3b8', maxRotation: 45, minRotation: 45 }
+          }
+        }
+      }
+    });
+
+    // --- Table Interactivity ---
+    const tbody = document.getElementById('tableBody');
+    const searchInput = document.getElementById('searchInput');
+    const headers = document.querySelectorAll('th[data-sort]');
+
+    let currentData = [...stockData];
+    let sortColumn = 'trailingPE';
+    let sortAsc = true;
+
+    function renderTable() {
+      tbody.innerHTML = '';
+      currentData.forEach(row => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td class="symbol">${row.symbol}</td>
+          <td>
+            <div class="text-sm">${row.name}</div>
+          </td>
+          <td><span class="text-sm">${row.sector}</span></td>
+          <td>$${row.price ? row.price.toFixed(2) : 'N/A'}</td>
+          <td>${row.trailingPE ? row.trailingPE.toFixed(2) : 'N/A'}</td>
+          <td>${row.forwardPE ? row.forwardPE.toFixed(2) : 'N/A'}</td>
+          <td>${row.pegRatio ? row.pegRatio.toFixed(2) : 'N/A'}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    function sortData() {
+      currentData.sort((a, b) => {
+        let valA = a[sortColumn];
+        let valB = b[sortColumn];
+
+        if (valA === null) valA = sortAsc ? Infinity : -Infinity;
+        if (valB === null) valB = sortAsc ? Infinity : -Infinity;
+
+        if (typeof valA === 'string') {
+          return sortAsc ? valA.localeCompare(valB) : valB.localeCompare(valA);
+        } else {
+          return sortAsc ? valA - valB : valB - valA;
+        }
+      });
+    }
+
+    headers.forEach(th => {
+      th.addEventListener('click', () => {
+        const col = th.getAttribute('data-sort');
+        if (sortColumn === col) {
+          sortAsc = !sortAsc;
+        } else {
+          sortColumn = col;
+          sortAsc = true;
+        }
+        sortData();
+        renderTable();
+      });
+    });
+
+    searchInput.addEventListener('input', (e) => {
+      const term = e.target.value.toLowerCase();
+      currentData = stockData.filter(row =>
+        row.symbol.toLowerCase().includes(term) ||
+        row.name.toLowerCase().includes(term) ||
+        row.sector.toLowerCase().includes(term)
+      );
+      sortData();
+      renderTable();
+    });
+
+    sortData();
+    renderTable();
+  </script>
+</body>
+</html>
