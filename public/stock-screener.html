@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S&P 500 Stock Screener Tool | Westmount Research</title>
+    <meta name="description" content="Free interactive stock screener for the S&P 500. Filter stocks by P/E ratio, dividend yield, market cap, sector, beta, ROE, debt, and revenue growth.">
+    <link rel="canonical" href="https://westmountfundamentals.com/stock-screener">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="S&P 500 Stock Screener Tool | Westmount Research">
+    <meta property="og:description" content="Free interactive stock screener for the S&P 500. Filter stocks by P/E ratio, dividend yield, market cap, sector, beta, ROE, debt, and revenue growth.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://westmountfundamentals.com/stock-screener">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="S&P 500 Stock Screener Tool | Westmount Research">
+    <meta name="twitter:description" content="Free interactive stock screener for the S&P 500. Filter stocks by P/E ratio, dividend yield, market cap, sector, beta, ROE, debt, and revenue growth.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VYF72NSC1Q"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-VYF72NSC1Q');
+    </script>
+
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "S&P 500 Stock Screener Tool",
+      "description": "Free interactive stock screener for the S&P 500. Filter stocks by P/E ratio, dividend yield, market cap, sector, beta, ROE, debt, and revenue growth.",
+      "datePublished": "2026-03-13T06:21:24.929Z",
+      "author": {
+        "@type": "Organization",
+        "name": "Westmount Research"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Westmount Research",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://westmountfundamentals.com/favicon.svg"
+        }
+      }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is a stock screener?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A stock screener is a tool that allows investors to filter through thousands of stocks based on specific criteria like market capitalization, price-to-earnings (P/E) ratio, dividend yield, and sector."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you screen stocks by dividend yield?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "To screen stocks by dividend yield, set a minimum percentage threshold in the screener's dividend yield filter. For example, setting the minimum to 3% will only show stocks that pay a 3% or higher annualized dividend relative to their current share price."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a good P/E ratio for screening stocks?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A 'good' P/E ratio depends on the industry, but generally, value investors look for P/E ratios under 15-20. Growth stocks may have much higher P/E ratios because investors are willing to pay a premium for future earnings growth."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How to filter S&P 500 stocks?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our S&P 500 stock screener comes pre-loaded with companies from the index. You can further narrow down the list by adjusting the sliders for metrics like P/E, beta, and revenue growth, or by selecting specific sectors like Technology or Healthcare."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this S&P 500 stock screener free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, our interactive stock screener is completely free to use and provides real-time or end-of-day data for fundamental metrics without requiring a subscription."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        :root {
+            --bg-color: #060a12;
+            --card-bg: #0a1020;
+            --border-color: #152040;
+            --accent-color: #4a8fe7;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --success: #10b981;
+            --danger: #ef4444;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding-bottom: 4rem;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(6, 10, 18, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--text-main);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-main);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #fff, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        /* Stats Cards */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+
+        .stat-card-title {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-card-value {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-color);
+        }
+
+        /* Screener Layout */
+        .screener-container {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        @media (max-width: 900px) {
+            .screener-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Filters */
+        .filters-panel {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            height: fit-content;
+        }
+
+        .filter-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .filter-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .filter-label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: var(--text-main);
+        }
+
+        .filter-input {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 0.5rem;
+            border-radius: 4px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.875rem;
+        }
+
+        .filter-input:focus {
+            outline: none;
+            border-color: var(--accent-color);
+        }
+
+        .range-inputs {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .range-inputs input {
+            width: 100%;
+        }
+
+        .range-separator {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+
+        .reset-btn {
+            width: 100%;
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            padding: 0.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 1rem;
+            transition: all 0.2s;
+        }
+
+        .reset-btn:hover {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-main);
+        }
+
+        /* Table */
+        .table-container {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow-x: auto;
+        }
+
+        .table-header-row {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.875rem;
+        }
+
+        th, td {
+            padding: 1rem;
+            text-align: right;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th:first-child, td:first-child {
+            text-align: left;
+        }
+
+        th:nth-child(2), td:nth-child(2) {
+            text-align: left;
+        }
+
+        th {
+            color: var(--text-muted);
+            font-weight: 500;
+            white-space: nowrap;
+            cursor: pointer;
+            user-select: none;
+            position: relative;
+        }
+
+        th:hover {
+            color: var(--text-main);
+        }
+
+        th.sort-asc::after {
+            content: ' ↑';
+            color: var(--accent-color);
+        }
+
+        th.sort-desc::after {
+            content: ' ↓';
+            color: var(--accent-color);
+        }
+
+        td {
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        td:first-child, td:nth-child(2) {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .symbol {
+            color: var(--accent-color);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .sector-badge {
+            display: inline-block;
+            padding: 0.1rem 0.4rem;
+            border-radius: 4px;
+            background: rgba(255,255,255,0.05);
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            white-space: nowrap;
+        }
+
+        .positive { color: var(--success); }
+        .negative { color: var(--danger); }
+
+        .null-val { color: var(--text-muted); font-style: italic; }
+
+        /* Typography Content */
+        .content-section {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .content-section h2 {
+            margin-bottom: 1.5rem;
+            color: var(--text-main);
+        }
+
+        .content-section h3 {
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+
+        .content-section p {
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+        }
+
+        .faq-answer {
+            color: var(--text-muted);
+        }
+
+        footer {
+            margin-top: 4rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            border-top: 1px solid var(--border-color);
+            padding-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/" class="nav-brand">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--accent-color);"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+            Westmount Fundamentals
+        </a>
+        <div class="nav-links">
+            <a href="/#studies">Studies</a>
+            <a href="/#tools">Tools</a>
+            <a href="/#guides">Guides</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>S&P 500 Stock Screener</h1>
+        <p class="subtitle">Filter and analyze top US stocks by fundamentals, valuation, and dividend yield.</p>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-card-title">Stocks Loaded</div>
+                <div class="stat-card-value" id="stat-total">0</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-card-title">Avg P/E Ratio</div>
+                <div class="stat-card-value" id="stat-pe">-</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-card-title">Avg Dividend Yield</div>
+                <div class="stat-card-value" id="stat-div">-</div>
+            </div>
+        </div>
+
+        <div class="screener-container">
+            <!-- Filters Sidebar -->
+            <div class="filters-panel">
+                <h3 style="margin-bottom: 1.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">Filters</h3>
+
+                <div class="filter-group">
+                    <label class="filter-label" for="search">Search Symbol or Name</label>
+                    <input type="text" id="search" class="filter-input" placeholder="e.g. AAPL or Apple">
+                </div>
+
+                <div class="filter-group">
+                    <label class="filter-label" for="sector">Sector</label>
+                    <select id="sector" class="filter-input">
+                        <option value="">All Sectors</option>
+                        <!-- Populated by JS -->
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label class="filter-label">P/E Ratio</label>
+                    <div class="range-inputs">
+                        <input type="number" id="pe-min" class="filter-input" placeholder="Min">
+                        <span class="range-separator">-</span>
+                        <input type="number" id="pe-max" class="filter-input" placeholder="Max">
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <label class="filter-label">Dividend Yield (%)</label>
+                    <div class="range-inputs">
+                        <input type="number" id="div-min" class="filter-input" placeholder="Min" step="0.1">
+                        <span class="range-separator">-</span>
+                        <input type="number" id="div-max" class="filter-input" placeholder="Max" step="0.1">
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <label class="filter-label">Market Cap ($B)</label>
+                    <div class="range-inputs">
+                        <input type="number" id="cap-min" class="filter-input" placeholder="Min">
+                        <span class="range-separator">-</span>
+                        <input type="number" id="cap-max" class="filter-input" placeholder="Max">
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <label class="filter-label">ROE (%)</label>
+                    <div class="range-inputs">
+                        <input type="number" id="roe-min" class="filter-input" placeholder="Min">
+                        <span class="range-separator">-</span>
+                        <input type="number" id="roe-max" class="filter-input" placeholder="Max">
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <label class="filter-label">Beta</label>
+                    <div class="range-inputs">
+                        <input type="number" id="beta-min" class="filter-input" placeholder="Min" step="0.1">
+                        <span class="range-separator">-</span>
+                        <input type="number" id="beta-max" class="filter-input" placeholder="Max" step="0.1">
+                    </div>
+                </div>
+
+                <button class="reset-btn" id="reset-filters">Reset All Filters</button>
+            </div>
+
+            <!-- Table Area -->
+            <div class="table-container">
+                <div class="table-header-row">
+                    <span style="color: var(--text-muted); font-size: 0.875rem;" id="results-count">Showing 0 results</span>
+                </div>
+                <table id="screener-table">
+                    <thead>
+                        <tr>
+                            <th data-sort="symbol">Symbol</th>
+                            <th data-sort="name">Company</th>
+                            <th data-sort="sector">Sector</th>
+                            <th data-sort="price">Price</th>
+                            <th data-sort="marketCap">Mkt Cap ($B)</th>
+                            <th data-sort="pe">P/E</th>
+                            <th data-sort="dividendYield">Div Yield</th>
+                            <th data-sort="roe">ROE</th>
+                            <th data-sort="beta">Beta</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body">
+                        <!-- Populated by JS -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>Methodology & Data Sources</h2>
+            <p>The Stock Screener Tool aggregates end-of-day market data to help investors filter equities based on fundamental metrics and valuation ratios.</p>
+            <ul>
+                <li><strong style="color:var(--text-main);">Data Timing:</strong> Data is gathered at the close of the most recent trading day. Intraday price movements are not reflected.</li>
+                <li><strong style="color:var(--text-main);">Market Cap:</strong> Expressed in billions of USD. Calculated as outstanding shares multiplied by current price.</li>
+                <li><strong style="color:var(--text-main);">P/E Ratio:</strong> Represents trailing price-to-earnings unless only forward P/E is available. Missing values indicate negative earnings or missing data.</li>
+                <li><strong style="color:var(--text-main);">Dividend Yield:</strong> Annualized dividend relative to current share price.</li>
+                <li><strong style="color:var(--text-main);">Null Handling:</strong> We strict adhere to displaying accurate data. If a specific metric is unavailable for a company, it is displayed as '-' rather than an estimated or synthetic value.</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <div class="faq-question">What is a stock screener?</div>
+                <div class="faq-answer">A stock screener is a tool that allows investors to filter through thousands of stocks based on specific criteria like market capitalization, price-to-earnings (P/E) ratio, dividend yield, and sector.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">How do you screen stocks by dividend yield?</div>
+                <div class="faq-answer">To screen stocks by dividend yield, set a minimum percentage threshold in the screener's dividend yield filter. For example, setting the minimum to 3% will only show stocks that pay a 3% or higher annualized dividend relative to their current share price.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">What is a good P/E ratio for screening stocks?</div>
+                <div class="faq-answer">A "good" P/E ratio depends on the industry, but generally, value investors look for P/E ratios under 15-20. Growth stocks may have much higher P/E ratios because investors are willing to pay a premium for future earnings growth.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">How to filter S&P 500 stocks?</div>
+                <div class="faq-answer">Our S&P 500 stock screener comes pre-loaded with companies from the index. You can further narrow down the list by adjusting the sliders for metrics like P/E, beta, and revenue growth, or by selecting specific sectors like Technology or Healthcare.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Is this S&P 500 stock screener free?</div>
+                <div class="faq-answer">Yes, our interactive stock screener is completely free to use and provides real-time or end-of-day data for fundamental metrics without requiring a subscription.</div>
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2026 Westmount Research · A GAB Ventures property. Not investment advice. All information for educational purposes only.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Data injected at build time
+        const stocksData = [{"symbol":"MMM","name":"3M Company","sector":"Industrials","price":149.1,"pe":24.891487,"dividendYield":2.09,"marketCap":78530969600,"beta":1.131,"roe":75.50099999999999,"debtEquity":276.638,"revGrowth":2},{"symbol":"AOS","name":"A.O. Smith Corporation","sector":"Industrials","price":66.57,"pe":17.290909,"dividendYield":2.1,"marketCap":9205959680,"beta":1.304,"roe":29.197,"debtEquity":10.974,"revGrowth":null},{"symbol":"ABT","name":"Abbott Laboratories","sector":"Healthcare","price":108.14,"pe":29.069893,"dividendYield":2.33,"marketCap":187913027584,"beta":0.744,"roe":12.961,"debtEquity":26.787,"revGrowth":4.3999999999999995},{"symbol":"ABBV","name":"AbbVie Inc.","sector":"Healthcare","price":225.37,"pe":95.09283,"dividendYield":3.0700000000000003,"marketCap":398492237824,"beta":0.334,"roe":6225,"debtEquity":null,"revGrowth":10},{"symbol":"ACN","name":"Accenture plc","sector":"Technology","price":196.05,"pe":16.202478,"dividendYield":3.3299996999999997,"marketCap":121578225664,"beta":1.251,"roe":25.016,"debtEquity":25.694,"revGrowth":6},{"symbol":"AES","name":"The AES Corporation","sector":"Utilities","price":14.22,"pe":10.854962,"dividendYield":4.95,"marketCap":10132587520,"beta":0.941,"roe":1.9539999999999997,"debtEquity":259.393,"revGrowth":4.7},{"symbol":"AFL","name":"AFLAC Incorporated","sector":"Financial Services","price":109.63,"pe":16.07478,"dividendYield":2.23,"marketCap":56609579008,"beta":0.65,"roe":13.117999999999999,"debtEquity":42.682,"revGrowth":-9.9},{"symbol":"A","name":"Agilent Technologies, Inc.","sector":"Healthcare","price":111.63,"pe":24.642382,"dividendYield":0.91,"marketCap":31573389312,"beta":1.312,"roe":19.945998,"debtEquity":51.39,"revGrowth":7.000000000000001},{"symbol":"APD","name":"Air Products and Chemicals, Inc","sector":"Basic Materials","price":290.48,"pe":20.71228,"dividendYield":2.4899999999999998,"marketCap":64677117952,"beta":0.864,"roe":-1.667,"debtEquity":101.991,"revGrowth":5.800000000000001},{"symbol":"ALB","name":"Albemarle Corporation","sector":"Basic Materials","price":163.89,"pe":18.86999,"dividendYield":0.9900000000000001,"marketCap":19313979392,"beta":1.476,"roe":-4.656,"debtEquity":33.954,"revGrowth":15.9},{"symbol":"ARE","name":"Alexandria Real Estate Equities","sector":"Real Estate","price":50.25,"pe":-628.125,"dividendYield":8.1199996,"marketCap":8708343808,"beta":1.319,"roe":-5.856,"debtEquity":66.615,"revGrowth":-5.2},{"symbol":"ALLE","name":"Allegion plc","sector":"Industrials","price":145.85,"pe":19.603495,"dividendYield":1.43,"marketCap":12564320256,"beta":1.008,"roe":36.083999999999996,"debtEquity":104,"revGrowth":9.3},{"symbol":"ALL","name":"Allstate Corporation (The)","sector":"Financial Services","price":205.03,"pe":5.3884363,"dividendYield":2.11,"marketCap":53212631040,"beta":0.206,"roe":39.518002,"debtEquity":25.091,"revGrowth":5.1},{"symbol":"MO","name":"Altria Group, Inc.","sector":"Consumer Defensive","price":67.72,"pe":16.436893,"dividendYield":6.260000000000001,"marketCap":113679646720,"beta":0.434,"roe":null,"debtEquity":null,"revGrowth":-0.5},{"symbol":"AMCR","name":"Amcor plc","sector":"Consumer Cyclical","price":40.33,"pe":30.323309,"dividendYield":6.45,"marketCap":18634303488,"beta":0.635,"roe":7.734000000000001,"debtEquity":138.731,"revGrowth":68.10000000000001},{"symbol":"AEE","name":"Ameren Corporation","sector":"Utilities","price":110,"pe":20.560747,"dividendYield":2.73,"marketCap":30406696960,"beta":0.531,"roe":11.337,"debtEquity":147.125,"revGrowth":-8.799999999999999},{"symbol":"AXP","name":"American Express Company","sector":"Financial Services","price":301.89,"pe":19.64151,"dividendYield":1.26,"marketCap":207957426176,"beta":1.152,"roe":33.992,"debtEquity":190.921,"revGrowth":10.6},{"symbol":"AIG","name":"American International Group, I","sector":"Financial Services","price":76.48,"pe":14.084716,"dividendYield":2.35,"marketCap":41266778112,"beta":0.58,"roe":7.399,"debtEquity":24.408,"revGrowth":-7.199999999999999},{"symbol":"AMT","name":"American Tower Corporation (REI","sector":"Real Estate","price":179.86,"pe":33.307407,"dividendYield":3.83,"marketCap":84200849408,"beta":0.907,"roe":26.279999999999998,"debtEquity":434.211,"revGrowth":7.5},{"symbol":"AWK","name":"American Water Works Company, I","sector":"Utilities","price":138.25,"pe":24.254387,"dividendYield":2.39,"marketCap":26987599872,"beta":0.759,"roe":10.496,"debtEquity":146.987,"revGrowth":5.800000000000001},{"symbol":"AMP","name":"Ameriprise Financial, Inc.","sector":"Financial Services","price":440.29,"pe":12.135888,"dividendYield":1.45000005,"marketCap":40905457664,"beta":1.271,"roe":60.507999999999996,"debtEquity":57.597,"revGrowth":8.6},{"symbol":"AME","name":"AMETEK, Inc.","sector":"Industrials","price":215.57,"pe":33.68281,"dividendYield":0.63,"marketCap":49625051136,"beta":1.013,"roe":14.594,"debtEquity":24.194,"revGrowth":13.4},{"symbol":"APH","name":"Amphenol Corporation","sector":"Technology","price":131.47,"pe":39.362278,"dividendYield":0.76,"marketCap":161604894720,"beta":1.214,"roe":36.851,"debtEquity":118.935,"revGrowth":49.1},{"symbol":"AON","name":"Aon plc","sector":"Financial Services","price":315.91,"pe":18.550205,"dividendYield":0.9400000000000001,"marketCap":67900198912,"beta":0.828,"roe":46.94,"debtEquity":168.318,"revGrowth":3.6999999999999997},{"symbol":"APO","name":"Apollo Global Management, Inc. ","sector":"Financial Services","price":100.3,"pe":18.104694,"dividendYield":2.0299999,"marketCap":58216386560,"beta":1.638,"roe":14.698,"debtEquity":99.468,"revGrowth":87.7},{"symbol":"APTV","name":"Aptiv PLC","sector":"Consumer Cyclical","price":70.07,"pe":93.42667,"dividendYield":null,"marketCap":15140683776,"beta":1.534,"roe":1.9480000000000002,"debtEquity":85.209,"revGrowth":5},{"symbol":"ADM","name":"Archer-Daniels-Midland Company","sector":"Consumer Defensive","price":72.5,"pe":32.51121,"dividendYield":2.87,"marketCap":34887135232,"beta":0.683,"roe":4.721,"debtEquity":42.376,"revGrowth":-13.700000000000001},{"symbol":"ARES","name":"Ares Management Corporation","sector":"Financial Services","price":96.5,"pe":56.432747,"dividendYield":5.5999998,"marketCap":31933720576,"beta":1.565,"roe":13.520001,"debtEquity":163.448,"revGrowth":19.5},{"symbol":"ANET","name":"Arista Networks, Inc.","sector":"Technology","price":134.03,"pe":48.738182,"dividendYield":null,"marketCap":168781987840,"beta":1.46,"roe":31.4,"debtEquity":0.179,"revGrowth":28.9},{"symbol":"AJG","name":"Arthur J. Gallagher & Co.","sector":"Financial Services","price":204.21,"pe":35.576656,"dividendYield":1.37,"marketCap":52502392832,"beta":0.672,"roe":6.906,"debtEquity":58.354,"revGrowth":36.7},{"symbol":"AIZ","name":"Assurant, Inc.","sector":"Financial Services","price":215.3,"pe":12.7245865,"dividendYield":1.5599999999999998,"marketCap":10782464000,"beta":0.547,"roe":15.899,"debtEquity":38.845,"revGrowth":7.9},{"symbol":"T","name":"AT&T Inc.","sector":"Communication Services","price":27.39,"pe":9.009869,"dividendYield":4.05,"marketCap":194180022272,"beta":0.576,"roe":18.805,"debtEquity":124.179,"revGrowth":3.5999999999999996},{"symbol":"ATO","name":"Atmos Energy Corporation","sector":"Utilities","price":186.79,"pe":24.321613,"dividendYield":2.1399999999999997,"marketCap":30902339584,"beta":0.698,"roe":9.237,"debtEquity":67.443,"revGrowth":14.2},{"symbol":"AZO","name":"AutoZone, Inc.","sector":"Consumer Cyclical","price":3614.27,"pe":25.317106,"dividendYield":null,"marketCap":59704127488,"beta":0.355,"roe":null,"debtEquity":null,"revGrowth":null},{"symbol":"AVB","name":"AvalonBay Communities, Inc.","sector":"Real Estate","price":171.04,"pe":23.082321,"dividendYield":4.16,"marketCap":24218398720,"beta":0.745,"roe":8.887999500000001,"debtEquity":80.256,"revGrowth":3.6999999999999997},{"symbol":"AVY","name":"Avery Dennison Corporation","sector":"Consumer Cyclical","price":171.01,"pe":19.455063,"dividendYield":2.1999999999999997,"marketCap":13146895360,"beta":0.97,"roe":30.212998000000002,"debtEquity":176.335,"revGrowth":3.9},{"symbol":"BALL","name":"Ball Corporation","sector":"Consumer Cyclical","price":61.69,"pe":18.69394,"dividendYield":1.2999999,"marketCap":16532130816,"beta":1.115,"roe":16.122,"debtEquity":136.027,"revGrowth":16.2},{"symbol":"BAC","name":"Bank of America Corporation","sector":"Financial Services","price":47.13,"pe":12.370079,"dividendYield":2.3800000000000003,"marketCap":344166629376,"beta":1.263,"roe":10.217,"debtEquity":null,"revGrowth":7.199999999999999},{"symbol":"BAX","name":"Baxter International Inc.","sector":"Healthcare","price":18.01,"pe":8.743653,"dividendYield":2,"marketCap":9265966080,"beta":0.553,"roe":-13.713000000000001,"debtEquity":160.275,"revGrowth":8},{"symbol":"BDX","name":"Becton, Dickinson and Company","sector":"Healthcare","price":159.63,"pe":26.126022,"dividendYield":2.6300002,"marketCap":57833168896,"beta":0.307,"roe":6.959999999999999,"debtEquity":77.284,"revGrowth":1.6},{"symbol":"BBY","name":"Best Buy Co., Inc.","sector":"Consumer Cyclical","price":62.6,"pe":12.420634,"dividendYield":6.1300002,"marketCap":13152338944,"beta":1.444,"roe":37.041000000000004,"debtEquity":139.44,"revGrowth":-1},{"symbol":"BLK","name":"BlackRock, Inc.","sector":"Financial Services","price":922.9,"pe":26.107498,"dividendYield":2.48,"marketCap":143549284352,"beta":1.487,"roe":10.715999499999999,"debtEquity":24.367,"revGrowth":23.400000000000002},{"symbol":"BX","name":"Blackstone Inc.","sector":"Financial Services","price":102.12,"pe":26.387598,"dividendYield":4.64,"marketCap":125570703360,"beta":1.794,"roe":29.228001999999996,"debtEquity":66.531,"revGrowth":50.6},{"symbol":"XYZ","name":"Block, Inc.","sector":"Technology","price":59.9,"pe":28.523811,"dividendYield":null,"marketCap":36399136768,"beta":2.675,"roe":6.0100004,"debtEquity":40.444,"revGrowth":3.5999999999999996},{"symbol":"BK","name":"The Bank of New York Mellon Cor","sector":"Financial Services","price":117.12,"pe":15.827027,"dividendYield":1.8099998999999998,"marketCap":81673527296,"beta":1.076,"roe":12.898000000000001,"debtEquity":null,"revGrowth":7.8},{"symbol":"BA","name":"Boeing Company (The)","sector":"Industrials","price":204.76,"pe":82.564514,"dividendYield":null,"marketCap":160909443072,"beta":1.096,"roe":290.084,"debtEquity":1032.894,"revGrowth":57.099999999999994},{"symbol":"BSX","name":"Boston Scientific Corporation","sector":"Healthcare","price":68.55,"pe":35.335052,"dividendYield":null,"marketCap":101720350720,"beta":0.7,"roe":12.445,"debtEquity":48.921,"revGrowth":15.9},{"symbol":"BMY","name":"Bristol-Myers Squibb Company","sector":"Healthcare","price":58.95,"pe":17.037573,"dividendYield":4.2700000000000005,"marketCap":120050130944,"beta":0.266,"roe":40.442002,"debtEquity":254.982,"revGrowth":1.3},{"symbol":"BR","name":"Broadridge Financial Solutions,","sector":"Technology","price":177.39,"pe":19.601105,"dividendYield":2.1999999999999997,"marketCap":20710053888,"beta":0.977,"roe":41.793,"debtEquity":117.175,"revGrowth":7.8},{"symbol":"BRO","name":"Brown & Brown, Inc.","sector":"Financial Services","price":67.65,"pe":21.408228,"dividendYield":0.9299999999999999,"marketCap":23097116672,"beta":0.798,"roe":11.225999999999999,"debtEquity":62.976,"revGrowth":36.199999999999996},{"symbol":"BLDR","name":"Builders FirstSource, Inc.","sector":"Industrials","price":86.6,"pe":22.262209,"dividendYield":null,"marketCap":9578398720,"beta":1.564,"roe":10.064,"debtEquity":117.187,"revGrowth":-12.1},{"symbol":"BG","name":"Bunge Limited","sector":"Consumer Defensive","price":125.83,"pe":25.523329,"dividendYield":2.23,"marketCap":24349249536,"beta":0.743,"roe":5.9639999999999995,"debtEquity":91.006,"revGrowth":75.5},{"symbol":"BXP","name":"BXP, Inc.","sector":"Real Estate","price":52.73,"pe":30.304598,"dividendYield":5.3100000000000005,"marketCap":9336214528,"beta":1.032,"roe":4.916,"debtEquity":225.995,"revGrowth":-31.900000000000002},{"symbol":"CPT","name":"Camden Property Trust","sector":"Real Estate","price":101.74,"pe":28.740112,"dividendYield":4.17,"marketCap":10824659968,"beta":0.821,"roe":8.598,"debtEquity":88.402,"revGrowth":2.1999999999999997},{"symbol":"CPB","name":"The Campbell's Company","sector":"Consumer Defensive","price":21.65,"pe":11.159793,"dividendYield":7.21,"marketCap":6454606336,"beta":-0.064,"roe":13.891,"debtEquity":176.566,"revGrowth":-4.5},{"symbol":"COF","name":"Capital One Financial Corporati","sector":"Financial Services","price":177.45,"pe":52.97015,"dividendYield":1.7999999999999998,"marketCap":110361755648,"beta":1.139,"roe":2.394,"debtEquity":null,"revGrowth":51.6},{"symbol":"CAH","name":"Cardinal Health, Inc.","sector":"Healthcare","price":219.09,"pe":31.52374,"dividendYield":0.9299999999999999,"marketCap":51555385344,"beta":0.616,"roe":null,"debtEquity":null,"revGrowth":18.8},{"symbol":"CCL","name":"Carnival Corporation","sector":"Consumer Cyclical","price":23.92,"pe":11.841584,"dividendYield":0.63,"marketCap":33132539904,"beta":2.459,"roe":25.632998,"debtEquity":227.882,"revGrowth":6.6000000000000005},{"symbol":"CARR","name":"Carrier Global Corporation","sector":"Industrials","price":56.49,"pe":33.426037,"dividendYield":1.7000000000000002,"marketCap":47216824320,"beta":1.289,"roe":10.925,"debtEquity":87.719,"revGrowth":-6},{"symbol":"CVNA","name":"Carvana Co.","sector":"Consumer Cyclical","price":292.64,"pe":34.59102,"dividendYield":null,"marketCap":64129912832,"beta":3.673,"roe":67.946,"debtEquity":133.119,"revGrowth":57.99999999999999},{"symbol":"CAT","name":"Caterpillar, Inc.","sector":"Industrials","price":700.69,"pe":37.310436,"dividendYield":0.86,"marketCap":327908622336,"beta":1.531,"roe":43.525999999999996,"debtEquity":206.67,"revGrowth":18},{"symbol":"CBRE","name":"CBRE Group Inc","sector":"Real Estate","price":131.84,"pe":34.244156,"dividendYield":null,"marketCap":39234658304,"beta":1.341,"roe":13.572000000000001,"debtEquity":106.244,"revGrowth":11.799999999999999},{"symbol":"COR","name":"Cencora, Inc.","sector":"Healthcare","price":352.65,"pe":42.38582,"dividendYield":0.6799999999999999,"marketCap":68601245696,"beta":0.646,"roe":133.467,"debtEquity":472.584,"revGrowth":5.5},{"symbol":"CNC","name":"Centene Corporation","sector":"Healthcare","price":34.57,"pe":8.445571,"dividendYield":null,"marketCap":17000523776,"beta":0.459,"roe":-28.677999999999997,"debtEquity":90.556,"revGrowth":23.200000000000003},{"symbol":"CNP","name":"CenterPoint Energy, Inc (Holdin","sector":"Utilities","price":43.4,"pe":27.125,"dividendYield":2.12,"marketCap":28390686720,"beta":0.539,"roe":9.6429996,"debtEquity":206.599,"revGrowth":10.7},{"symbol":"CF","name":"CF Industries Holdings, Inc.","sector":"Basic Materials","price":136,"pe":15.144767,"dividendYield":1.47,"marketCap":21212551168,"beta":0.689,"roe":23.401,"debtEquity":46.765,"revGrowth":22.8},{"symbol":"CRL","name":"Charles River Laboratories Inte","sector":"Healthcare","price":152.66,"pe":12.463079,"dividendYield":null,"marketCap":7515116032,"beta":1.652,"roe":-4.232,"debtEquity":81.947,"revGrowth":-0.8},{"symbol":"SCHW","name":"Charles Schwab Corporation (The","sector":"Financial Services","price":91.24,"pe":19.621504,"dividendYield":1.39999995,"marketCap":162127708160,"beta":0.919,"roe":18.101999,"debtEquity":115.32,"revGrowth":18.9},{"symbol":"CVX","name":"Chevron Corporation","sector":"Energy","price":196.97,"pe":29.664158,"dividendYield":3.61,"marketCap":393812672512,"beta":0.658,"roe":7.231,"debtEquity":24.323,"revGrowth":-8.200000000000001},{"symbol":"CMG","name":"Chipotle Mexican Grill, Inc.","sector":"Consumer Cyclical","price":32.56,"pe":28.561405,"dividendYield":null,"marketCap":43053375488,"beta":1.019,"roe":47.355000000000004,"debtEquity":179.319,"revGrowth":4.9},{"symbol":"CB","name":"Chubb Limited","sector":"Financial Services","price":329.56,"pe":12.838332,"dividendYield":1.17999995,"marketCap":129698619392,"beta":0.489,"roe":14.337,"debtEquity":30.944,"revGrowth":5.5},{"symbol":"CHD","name":"Church & Dwight Company, Inc.","sector":"Consumer Defensive","price":99.16,"pe":32.83444,"dividendYield":1.24,"marketCap":23811299328,"beta":0.426,"roe":17.62,"debtEquity":59.517,"revGrowth":3.9},{"symbol":"CIEN","name":"Ciena Corporation","sector":"Technology","price":336.83,"pe":213.18353,"dividendYield":null,"marketCap":47649132544,"beta":1.09,"roe":8.201,"debtEquity":56.931,"revGrowth":33.1},{"symbol":"CI","name":"The Cigna Group","sector":"Healthcare","price":265.88,"pe":11.992784,"dividendYield":2.35,"marketCap":71023419392,"beta":0.234,"roe":15.129999999999999,"debtEquity":75.137,"revGrowth":10.4},{"symbol":"C","name":"Citigroup, Inc.","sector":"Financial Services","price":105.5,"pe":15.092991,"dividendYield":2.27,"marketCap":184553160704,"beta":1.131,"roe":6.8309999999999995,"debtEquity":null,"revGrowth":4.3999999999999995},{"symbol":"CFG","name":"Citizens Financial Group, Inc.","sector":"Financial Services","price":56.94,"pe":14.751295,"dividendYield":3.2300000000000004,"marketCap":24454944768,"beta":1.085,"roe":7.2410000000000005,"debtEquity":null,"revGrowth":10.7},{"symbol":"CLX","name":"Clorox Company (The)","sector":"Consumer Defensive","price":108.73,"pe":17.795418,"dividendYield":4.5600000000000005,"marketCap":13262926848,"beta":0.568,"roe":987.1790000000001,"debtEquity":9191.429,"revGrowth":-0.8},{"symbol":"CMS","name":"CMS Energy Corporation","sector":"Utilities","price":76.78,"pe":21.8125,"dividendYield":2.97,"marketCap":23526995968,"beta":0.432,"roe":10.8559996,"debtEquity":194.861,"revGrowth":12.3},{"symbol":"KO","name":"Coca-Cola Company (The)","sector":"Consumer Defensive","price":77.61,"pe":25.529606,"dividendYield":2.6500002,"marketCap":333847887872,"beta":0.332,"roe":43.323,"debtEquity":139.793,"revGrowth":2.4},{"symbol":"CL","name":"Colgate-Palmolive Company","sector":"Consumer Defensive","price":87.95,"pe":33.441063,"dividendYield":2.3599999,"marketCap":70496149504,"beta":0.264,"roe":497.47,"debtEquity":2343.562,"revGrowth":5.800000000000001},{"symbol":"FIX","name":"Comfort Systems USA, Inc.","sector":"Industrials","price":1373.76,"pe":47.617332,"dividendYield":0.16,"marketCap":48455196672,"beta":1.602,"roe":49.238998,"debtEquity":19.739,"revGrowth":41.699999999999996},{"symbol":"CAG","name":"ConAgra Brands, Inc.","sector":"Consumer Defensive","price":16.17,"pe":8.983133,"dividendYield":8.66,"marketCap":7735234560,"beta":-0.061,"roe":-1.16,"debtEquity":94.229,"revGrowth":-6.800000000000001},{"symbol":"COP","name":"ConocoPhillips","sector":"Energy","price":120.26,"pe":18.938583,"dividendYield":2.79,"marketCap":146998509568,"beta":0.279,"roe":12.357,"debtEquity":37.828,"revGrowth":-6.800000000000001},{"symbol":"ED","name":"Consolidated Edison, Inc.","sector":"Utilities","price":113.13,"pe":20.023008,"dividendYield":3.04,"marketCap":40874172416,"beta":0.345,"roe":8.767,"debtEquity":117.317,"revGrowth":8.9},{"symbol":"STZ","name":"Constellation Brands, Inc.","sector":"Consumer Defensive","price":148.32,"pe":23.320755,"dividendYield":2.75,"marketCap":25821603840,"beta":0.422,"roe":14.454001,"debtEquity":133.293,"revGrowth":-9.8},{"symbol":"GLW","name":"Corning Incorporated","sector":"Technology","price":129.77,"pe":70.91257,"dividendYield":0.86,"marketCap":111335931904,"beta":1.022,"roe":14.904,"debtEquity":76.192,"revGrowth":20.4},{"symbol":"CPAY","name":"Corpay, Inc.","sector":"Technology","price":321.56,"pe":21.408787,"dividendYield":null,"marketCap":22495713280,"beta":0.819,"roe":29.071,"debtEquity":243.348,"revGrowth":20.7},{"symbol":"CTVA","name":"Corteva, Inc.","sector":"Basic Materials","price":79.75,"pe":45.57143,"dividendYield":0.8999999999999999,"marketCap":53889626112,"beta":0.721,"roe":4.974,"debtEquity":12.282,"revGrowth":-1.7000000000000002},{"symbol":"CTRA","name":"Coterra Energy Inc.","sector":"Energy","price":31.98,"pe":14.276786,"dividendYield":2.75,"marketCap":24281540608,"beta":0.353,"roe":12.275,"debtEquity":26.984,"revGrowth":23.400000000000002},{"symbol":"CRH","name":"CRH PLC","sector":"Basic Materials","price":99.73,"pe":18.09982,"dividendYield":1.5,"marketCap":66783051776,"beta":1.203,"roe":15.684000000000001,"debtEquity":77.341,"revGrowth":6.2},{"symbol":"CCI","name":"Crown Castle Inc.","sector":"Real Estate","price":86.11,"pe":34.170635,"dividendYield":4.9399999999999995,"marketCap":37550026752,"beta":0.951,"roe":null,"debtEquity":null,"revGrowth":-4.3},{"symbol":"CMI","name":"Cummins Inc.","sector":"Industrials","price":538.75,"pe":26.242085,"dividendYield":1.45000005,"marketCap":74436640768,"beta":1.127,"roe":23.928,"debtEquity":60.516,"revGrowth":1.0999999999999999},{"symbol":"CVS","name":"CVS Health Corporation","sector":"Healthcare","price":76.07,"pe":54.72662,"dividendYield":3.5000000000000004,"marketCap":96777093120,"beta":0.464,"roe":2.2869998999999996,"debtEquity":106.06,"revGrowth":8.4},{"symbol":"DHR","name":"Danaher Corporation","sector":"Healthcare","price":186.26,"pe":37.02982,"dividendYield":0.86,"marketCap":131711770624,"beta":0.964,"roe":7.053,"debtEquity":37.487,"revGrowth":4.6},{"symbol":"DRI","name":"Darden Restaurants, Inc.","sector":"Consumer Cyclical","price":198.43,"pe":20.79979,"dividendYield":3.0199999,"marketCap":23080138752,"beta":0.599,"roe":54.104,"debtEquity":401.269,"revGrowth":7.3},{"symbol":"DVA","name":"DaVita Inc.","sector":"Healthcare","price":153.06,"pe":16.094637,"dividendYield":null,"marketCap":10231907328,"beta":0.931,"roe":64.848,"debtEquity":1111.353,"revGrowth":9.9},{"symbol":"DECK","name":"Deckers Outdoor Corporation","sector":"Consumer Cyclical","price":100.69,"pe":14.302557,"dividendYield":null,"marketCap":14675047424,"beta":1.161,"roe":39.688,"debtEquity":13.14,"revGrowth":7.1},{"symbol":"DE","name":"Deere & Company","sector":"Industrials","price":585.83,"pe":33.00451,"dividendYield":1.11,"marketCap":158236966912,"beta":0.961,"roe":19.566,"debtEquity":239.633,"revGrowth":13},{"symbol":"DELL","name":"Dell Technologies Inc.","sector":"Technology","price":149.91,"pe":17.270737,"dividendYield":1.68,"marketCap":100469710848,"beta":1.036,"roe":null,"debtEquity":null,"revGrowth":39.5},{"symbol":"DAL","name":"Delta Air Lines, Inc.","sector":"Industrials","price":57.94,"pe":7.5639687,"dividendYield":1.2899999500000001,"marketCap":37842391040,"beta":1.35,"roe":27.693,"debtEquity":102.498,"revGrowth":2.9000000000000004},{"symbol":"DVN","name":"Devon Energy Corporation","sector":"Energy","price":46.19,"pe":11.076738,"dividendYield":2.08,"marketCap":28650008576,"beta":0.619,"roe":17.736,"debtEquity":55.951,"revGrowth":-12.1},{"symbol":"DLR","name":"Digital Realty Trust, Inc.","sector":"Real Estate","price":180.4,"pe":50.53221,"dividendYield":2.71,"marketCap":63104720896,"beta":1.133,"roe":5.469,"debtEquity":81.655,"revGrowth":17.1},{"symbol":"DG","name":"Dollar General Corporation","sector":"Consumer Defensive","price":135.95,"pe":23.480137,"dividendYield":1.7399999999999998,"marketCap":29925158912,"beta":0.22,"roe":18.992001,"debtEquity":184.665,"revGrowth":5.8999999999999995},{"symbol":"D","name":"Dominion Energy, Inc.","sector":"Utilities","price":62.84,"pe":18.10951,"dividendYield":4.25,"marketCap":55222886400,"beta":0.67,"roe":9.741,"debtEquity":150.094,"revGrowth":20.4},{"symbol":"DPZ","name":"Domino's Pizza Inc","sector":"Consumer Cyclical","price":395.98,"pe":22.52446,"dividendYield":2.01,"marketCap":13316370432,"beta":1.162,"roe":null,"debtEquity":null,"revGrowth":3.1},{"symbol":"DOV","name":"Dover Corporation","sector":"Industrials","price":203.8,"pe":25.570892,"dividendYield":1.0199999,"marketCap":27951824896,"beta":1.249,"roe":15.285000000000002,"debtEquity":48.404,"revGrowth":8.799999999999999},{"symbol":"DOW","name":"Dow Inc.","sector":"Basic Materials","price":37.58,"pe":51.195427,"dividendYield":4.66,"marketCap":27043297280,"beta":0.71,"roe":-13.818,"debtEquity":111.871,"revGrowth":-9.1},{"symbol":"DHI","name":"D.R. Horton, Inc.","sector":"Consumer Cyclical","price":139.04,"pe":12.663024,"dividendYield":1.2899999500000001,"marketCap":40474480640,"beta":1.407,"roe":13.477,"debtEquity":22.872,"revGrowth":-9.5},{"symbol":"DTE","name":"DTE Energy Company","sector":"Utilities","price":147.64,"pe":21.001421,"dividendYield":3.05,"marketCap":30680147968,"beta":0.434,"roe":12.177,"debtEquity":213.601,"revGrowth":28.9},{"symbol":"DUK","name":"Duke Energy Corporation (Holdin","sector":"Utilities","price":131.82,"pe":20.890652,"dividendYield":3.2300000000000004,"marketCap":102512574464,"beta":0.466,"roe":9.724,"debtEquity":171.838,"revGrowth":8},{"symbol":"DD","name":"DuPont de Nemours, Inc.","sector":"Basic Materials","price":45.34,"pe":215.90477,"dividendYield":1.76,"marketCap":18996340736,"beta":1.115,"roe":0.5170000299999999,"debtEquity":24.484,"revGrowth":null},{"symbol":"ETN","name":"Eaton Corporation, PLC","sector":"Industrials","price":348.64,"pe":33.330784,"dividendYield":1.26,"marketCap":135237459968,"beta":1.167,"roe":21.525997999999998,"debtEquity":54.877,"revGrowth":13.100000000000001},{"symbol":"ECL","name":"Ecolab Inc.","sector":"Basic Materials","price":275.89,"pe":37.89698,"dividendYield":1,"marketCap":78141890560,"beta":0.979,"roe":22.516,"debtEquity":103.915,"revGrowth":17.8},{"symbol":"EIX","name":"Edison International","sector":"Utilities","price":70.96,"pe":6.1437225,"dividendYield":4.95,"marketCap":27304763392,"beta":0.777,"roe":24.103001,"debtEquity":215.738,"revGrowth":30.8},{"symbol":"EW","name":"Edwards Lifesciences Corporatio","sector":"Healthcare","price":84.61,"pe":46.745857,"dividendYield":null,"marketCap":49141489664,"beta":0.934,"roe":10.353,"debtEquity":6.824,"revGrowth":13.3},{"symbol":"ELV","name":"Elevance Health, Inc.","sector":"Healthcare","price":287.89,"pe":11.415148,"dividendYield":2.39,"marketCap":63538671616,"beta":0.468,"roe":13.25,"debtEquity":74.388,"revGrowth":9.5},{"symbol":"EME","name":"EMCOR Group, Inc.","sector":"Industrials","price":710.53,"pe":25.18717,"dividendYield":0.22999999999999998,"marketCap":31807490048,"beta":1.14,"roe":38.49,"debtEquity":12.913,"revGrowth":19.7},{"symbol":"EMR","name":"Emerson Electric Company","sector":"Industrials","price":132.18,"pe":32.397057,"dividendYield":1.68,"marketCap":74325082112,"beta":1.243,"roe":9.646,"debtEquity":69.283,"revGrowth":4.1000000000000005},{"symbol":"ETR","name":"Entergy Corporation","sector":"Utilities","price":104.52,"pe":26.731457,"dividendYield":2.3699999,"marketCap":47346495488,"beta":0.602,"roe":10.774000000000001,"debtEquity":181.79,"revGrowth":7.9},{"symbol":"EOG","name":"EOG Resources, Inc.","sector":"Energy","price":133.04,"pe":14.57174,"dividendYield":3.0700000000000003,"marketCap":72187297792,"beta":0.427,"roe":16.829,"debtEquity":30.62,"revGrowth":null},{"symbol":"EPAM","name":"EPAM Systems, Inc.","sector":"Technology","price":135.81,"pe":20.209822,"dividendYield":null,"marketCap":7502499840,"beta":1.768,"roe":10.334999999999999,"debtEquity":3.907,"revGrowth":12.8},{"symbol":"EQT","name":"EQT Corporation","sector":"Energy","price":64.64,"pe":19.528702,"dividendYield":1.0199999,"marketCap":40353071104,"beta":0.722,"roe":9.007,"debtEquity":28.932,"revGrowth":26.900000000000002},{"symbol":"EFX","name":"Equifax, Inc.","sector":"Industrials","price":182.46,"pe":34.232647,"dividendYield":1.13,"marketCap":22332016640,"beta":1.532,"roe":13.757,"debtEquity":110.637,"revGrowth":9.2},{"symbol":"EQR","name":"Equity Residential","sector":"Real Estate","price":60.27,"pe":20.5,"dividendYield":4.6,"marketCap":23634190336,"beta":0.735,"roe":10.0200005,"debtEquity":74.323,"revGrowth":2},{"symbol":"ESS","name":"Essex Property Trust, Inc.","sector":"Real Estate","price":251.38,"pe":24.147936,"dividendYield":4.099999700000001,"marketCap":17380401152,"beta":0.722,"roe":12.235,"debtEquity":119.433,"revGrowth":3.2},{"symbol":"EL","name":"Estee Lauder Companies, Inc. (T","sector":"Consumer Defensive","price":84.29,"pe":27.800867,"dividendYield":1.66,"marketCap":30489972736,"beta":1.112,"roe":-4.340999999999999,"debtEquity":232.945,"revGrowth":5.6000000000000005},{"symbol":"EG","name":"Everest Group, Ltd.","sector":"Financial Services","price":322.34,"pe":8.525257,"dividendYield":2.48,"marketCap":13019361280,"beta":0.326,"roe":10.847,"debtEquity":24.481,"revGrowth":-2.9000000000000004},{"symbol":"EVRG","name":"Evergy, Inc.","sector":"Utilities","price":81.74,"pe":22.333332,"dividendYield":3.4000000000000004,"marketCap":18823217152,"beta":0.604,"roe":8.569,"debtEquity":149.917,"revGrowth":6.6000000000000005},{"symbol":"ES","name":"Eversource Energy (D/B/A)","sector":"Utilities","price":73.21,"pe":16.054825,"dividendYield":4.3,"marketCap":27490105344,"beta":0.753,"roe":10.777000000000001,"debtEquity":184.946,"revGrowth":13.4},{"symbol":"EXR","name":"Extra Space Storage Inc","sector":"Real Estate","price":140.18,"pe":30.606985,"dividendYield":4.62,"marketCap":31063244800,"beta":1.242,"roe":7.008,"debtEquity":98.679,"revGrowth":4.6},{"symbol":"XOM","name":"Exxon Mobil Corporation","sector":"Energy","price":153.53,"pe":22.949177,"dividendYield":2.6800001,"marketCap":639723175936,"beta":0.348,"roe":11.0810004,"debtEquity":18.936,"revGrowth":-1.3},{"symbol":"FDS","name":"FactSet Research Systems Inc.","sector":"Financial Services","price":203.6,"pe":12.951654,"dividendYield":2.16,"marketCap":7618699264,"beta":0.751,"roe":28.831,"debtEquity":71.961,"revGrowth":6.800000000000001},{"symbol":"FICO","name":"Fair Isaac Corporation","sector":"Technology","price":1093.62,"pe":40.48945,"dividendYield":null,"marketCap":25943001088,"beta":1.277,"roe":null,"debtEquity":null,"revGrowth":16.400000000000002},{"symbol":"FRT","name":"Federal Realty Investment Trust","sector":"Real Estate","price":105.35,"pe":22.510685,"dividendYield":4.2600001999999995,"marketCap":9144932352,"beta":1.011,"roe":12.235,"debtEquity":143.64,"revGrowth":7.5},{"symbol":"FDX","name":"FedEx Corporation","sector":"Industrials","price":353.13,"pe":19.531527,"dividendYield":1.6400000000000001,"marketCap":83322953728,"beta":1.281,"roe":15.886,"debtEquity":null,"revGrowth":13.900000000000002},{"symbol":"FIS","name":"Fidelity National Information S","sector":"Technology","price":49.26,"pe":67.47945,"dividendYield":3.3299996999999997,"marketCap":25509326848,"beta":0.909,"roe":2.6010001000000003,"debtEquity":95.893,"revGrowth":8.200000000000001},{"symbol":"FE","name":"FirstEnergy Corp.","sector":"Utilities","price":50.82,"pe":28.875,"dividendYield":3.66,"marketCap":29370548224,"beta":0.601,"roe":9.195,"debtEquity":192.755,"revGrowth":20.7},{"symbol":"F","name":"Ford Motor Company","sector":"Consumer Cyclical","price":12.04,"pe":6.557127,"dividendYield":4.9799999999999995,"marketCap":48033284096,"beta":1.665,"roe":-20.193,"debtEquity":460.639,"revGrowth":-4.8},{"symbol":"FTV","name":"Fortive Corporation","sector":"Technology","price":54.89,"pe":34.52201,"dividendYield":0.47000000000000003,"marketCap":17433702400,"beta":0.998,"roe":6.396,"debtEquity":51.177,"revGrowth":4.6},{"symbol":"BEN","name":"Franklin Resources, Inc.","sector":"Financial Services","price":23.77,"pe":22.009258,"dividendYield":5.55,"marketCap":12393456640,"beta":1.461,"roe":4.4639999999999995,"debtEquity":24.587,"revGrowth":3.4000000000000004},{"symbol":"FCX","name":"Freeport-McMoRan, Inc.","sector":"Basic Materials","price":59.21,"pe":38.95395,"dividendYield":1.01,"marketCap":85096710144,"beta":1.438,"roe":13.946,"debtEquity":34.103,"revGrowth":-1.5},{"symbol":"GRMN","name":"Garmin Ltd.","sector":"Technology","price":235.73,"pe":27.47436,"dividendYield":1.78,"marketCap":45373505536,"beta":0.949,"roe":19.783,"debtEquity":2.184,"revGrowth":16.6},{"symbol":"IT","name":"Gartner, Inc.","sector":"Technology","price":160.59,"pe":16.64145,"dividendYield":null,"marketCap":11574867968,"beta":1.083,"roe":86.861,"debtEquity":1046.535,"revGrowth":2.1999999999999997},{"symbol":"GE","name":"GE Aerospace","sector":"Industrials","price":306.7,"pe":38.146767,"dividendYield":0.61000003,"marketCap":323511418880,"beta":1.369,"roe":44.692,"debtEquity":114.07,"revGrowth":17.599999999999998},{"symbol":"GEV","name":"GE Vernova Inc.","sector":"Industrials","price":832.11,"pe":46.958805,"dividendYield":0.18000001,"marketCap":225768456192,"beta":null,"roe":42.641,"debtEquity":9.727,"revGrowth":3.8},{"symbol":"GNRC","name":"Generac Holdlings Inc.","sector":"Industrials","price":204.1,"pe":75.873604,"dividendYield":null,"marketCap":11977418752,"beta":1.769,"roe":6.2829999999999995,"debtEquity":52.479,"revGrowth":-11.600000000000001},{"symbol":"GD","name":"General Dynamics Corporation","sector":"Industrials","price":355.23,"pe":22.992233,"dividendYield":1.71,"marketCap":96050561024,"beta":0.372,"roe":17.658001000000002,"debtEquity":38.205,"revGrowth":7.8},{"symbol":"GIS","name":"General Mills, Inc.","sector":"Consumer Defensive","price":39.4,"pe":8.473119,"dividendYield":6.1899999999999995,"marketCap":21023135744,"beta":-0.095,"roe":27.173000000000002,"debtEquity":147.23,"revGrowth":-7.199999999999999},{"symbol":"GM","name":"General Motors Company","sector":"Consumer Cyclical","price":73.45,"pe":22.461773,"dividendYield":0.98,"marketCap":68518662144,"beta":1.356,"roe":4.3180000000000005,"debtEquity":208.299,"revGrowth":-5.1},{"symbol":"GPC","name":"Genuine Parts Company","sector":"Consumer Cyclical","price":107.01,"pe":227.68086,"dividendYield":3.9699999999999998,"marketCap":14887457792,"beta":0.734,"roe":1.5,"debtEquity":156.063,"revGrowth":4.1000000000000005}];
+
+        // State
+        let filteredData = [...stocksData];
+        let currentSort = { column: 'marketCap', direction: 'desc' };
+
+        // DOM Elements
+        const tbody = document.getElementById('table-body');
+        const searchInput = document.getElementById('search');
+        const sectorSelect = document.getElementById('sector');
+        const headers = document.querySelectorAll('th');
+
+        // Formatters
+        const formatNumber = (num, decimals = 2) => {
+            if (num === null || num === undefined) return '<span class="null-val">-</span>';
+            return num.toLocaleString('en-US', { minimumFractionDigits: decimals, maximumFractionDigits: decimals });
+        };
+
+        const formatBillion = (num) => {
+            if (num === null || num === undefined) return '<span class="null-val">-</span>';
+            return (num / 1e9).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        };
+
+        const formatPercent = (num) => {
+            if (num === null || num === undefined) return '<span class="null-val">-</span>';
+            return num.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + '%';
+        };
+
+        // Initialize
+        function init() {
+            // Populate Sectors
+            const sectors = [...new Set(stocksData.map(s => s.sector).filter(Boolean))].sort();
+            sectors.forEach(s => {
+                const opt = document.createElement('option');
+                opt.value = s;
+                opt.textContent = s;
+                sectorSelect.appendChild(opt);
+            });
+
+            // Event Listeners
+            searchInput.addEventListener('input', applyFilters);
+            sectorSelect.addEventListener('change', applyFilters);
+
+            const numInputs = ['pe', 'div', 'cap', 'roe', 'beta'];
+            numInputs.forEach(prefix => {
+                document.getElementById(prefix + '-min').addEventListener('input', applyFilters);
+                document.getElementById(prefix + '-max').addEventListener('input', applyFilters);
+            });
+
+            document.getElementById('reset-filters').addEventListener('click', () => {
+                searchInput.value = '';
+                sectorSelect.value = '';
+                numInputs.forEach(prefix => {
+                    document.getElementById(prefix + '-min').value = '';
+                    document.getElementById(prefix + '-max').value = '';
+                });
+                applyFilters();
+            });
+
+            headers.forEach(th => {
+                th.addEventListener('click', () => {
+                    const column = th.dataset.sort;
+                    if (currentSort.column === column) {
+                        currentSort.direction = currentSort.direction === 'asc' ? 'desc' : 'asc';
+                    } else {
+                        currentSort.column = column;
+                        currentSort.direction = 'desc';
+                    }
+                    updateSortIndicators();
+                    renderTable();
+                });
+            });
+
+            updateStats();
+            renderTable();
+        }
+
+        function getFilterValue(id) {
+            const val = document.getElementById(id).value;
+            return val === '' ? null : parseFloat(val);
+        }
+
+        function applyFilters() {
+            const search = searchInput.value.toLowerCase();
+            const sector = sectorSelect.value;
+
+            const peMin = getFilterValue('pe-min');
+            const peMax = getFilterValue('pe-max');
+            const divMin = getFilterValue('div-min');
+            const divMax = getFilterValue('div-max');
+            const capMin = getFilterValue('cap-min');
+            const capMax = getFilterValue('cap-max');
+            const roeMin = getFilterValue('roe-min');
+            const roeMax = getFilterValue('roe-max');
+            const betaMin = getFilterValue('beta-min');
+            const betaMax = getFilterValue('beta-max');
+
+            filteredData = stocksData.filter(stock => {
+                // Search
+                if (search && !stock.symbol.toLowerCase().includes(search) && !stock.name.toLowerCase().includes(search)) return false;
+
+                // Sector
+                if (sector && stock.sector !== sector) return false;
+
+                // Numerics
+                if (peMin !== null && (stock.pe === null || stock.pe < peMin)) return false;
+                if (peMax !== null && (stock.pe === null || stock.pe > peMax)) return false;
+
+                if (divMin !== null && (stock.dividendYield === null || stock.dividendYield < divMin)) return false;
+                if (divMax !== null && (stock.dividendYield === null || stock.dividendYield > divMax)) return false;
+
+                const capB = stock.marketCap ? stock.marketCap / 1e9 : null;
+                if (capMin !== null && (capB === null || capB < capMin)) return false;
+                if (capMax !== null && (capB === null || capB > capMax)) return false;
+
+                if (roeMin !== null && (stock.roe === null || stock.roe < roeMin)) return false;
+                if (roeMax !== null && (stock.roe === null || stock.roe > roeMax)) return false;
+
+                if (betaMin !== null && (stock.beta === null || stock.beta < betaMin)) return false;
+                if (betaMax !== null && (stock.beta === null || stock.beta > betaMax)) return false;
+
+                return true;
+            });
+
+            updateStats();
+            renderTable();
+        }
+
+        function sortData() {
+            const { column, direction } = currentSort;
+            filteredData.sort((a, b) => {
+                let valA = a[column];
+                let valB = b[column];
+
+                // Handle nulls
+                if (valA === null && valB === null) return 0;
+                if (valA === null) return 1; // Nulls always at bottom
+                if (valB === null) return -1;
+
+                if (typeof valA === 'string') {
+                    valA = valA.toLowerCase();
+                    valB = valB.toLowerCase();
+                }
+
+                if (valA < valB) return direction === 'asc' ? -1 : 1;
+                if (valA > valB) return direction === 'asc' ? 1 : -1;
+                return 0;
+            });
+        }
+
+        function updateSortIndicators() {
+            headers.forEach(th => {
+                th.classList.remove('sort-asc', 'sort-desc');
+                if (th.dataset.sort === currentSort.column) {
+                    th.classList.add('sort-' + currentSort.direction);
+                }
+            });
+        }
+
+        function updateStats() {
+            document.getElementById('results-count').textContent = 'Showing ' + filteredData.length + ' results';
+            document.getElementById('stat-total').textContent = filteredData.length;
+
+            const peSum = filteredData.reduce((acc, s) => s.pe ? acc + s.pe : acc, 0);
+            const peCount = filteredData.filter(s => s.pe).length;
+            document.getElementById('stat-pe').textContent = peCount > 0 ? (peSum / peCount).toFixed(2) : '-';
+
+            const divSum = filteredData.reduce((acc, s) => s.dividendYield ? acc + s.dividendYield : acc, 0);
+            const divCount = filteredData.filter(s => s.dividendYield).length;
+            document.getElementById('stat-div').textContent = divCount > 0 ? (divSum / divCount).toFixed(2) + '%' : '-';
+        }
+
+        function renderTable() {
+            sortData();
+            tbody.innerHTML = '';
+
+            filteredData.forEach(stock => {
+                const tr = document.createElement('tr');
+
+                // Truncate name
+                const shortName = stock.name.length > 25 ? stock.name.substring(0, 25) + '...' : stock.name;
+
+                tr.innerHTML = `
+                    <td><span class="symbol">${stock.symbol}</span></td>
+                    <td title="${stock.name}">${shortName}</td>
+                    <td><span class="sector-badge">${stock.sector}</span></td>
+                    <td>$${formatNumber(stock.price)}</td>
+                    <td>${formatBillion(stock.marketCap)}</td>
+                    <td>${formatNumber(stock.pe)}</td>
+                    <td>${formatPercent(stock.dividendYield)}</td>
+                    <td>${formatPercent(stock.roe)}</td>
+                    <td>${formatNumber(stock.beta)}</td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        // Run
+        init();
+        updateSortIndicators();
+    </script>
+</body>
+</html>

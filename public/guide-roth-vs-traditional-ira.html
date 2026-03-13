@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roth vs Traditional IRA: Complete Decision Guide</title>
+    <meta name="description" content="Comprehensive comparison of Roth vs Traditional IRAs. Learn about contribution limits, tax benefits, and how to choose the right account for retirement.">
+    <link rel="canonical" href="https://westmountfundamentals.com/guide-roth-vs-traditional-ira">
+
+    <meta property="og:title" content="Roth vs Traditional IRA: Complete Decision Guide">
+    <meta property="og:description" content="Comprehensive comparison of Roth vs Traditional IRAs. Learn about contribution limits, tax benefits, and how to choose the right account for retirement.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://westmountfundamentals.com/guide-roth-vs-traditional-ira">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Roth vs Traditional IRA: Complete Decision Guide">
+    <meta name="twitter:description" content="Comprehensive comparison of Roth vs Traditional IRAs. Learn about contribution limits, tax benefits, and how to choose the right account for retirement.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VYF72NSC1Q"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-VYF72NSC1Q');
+    </script>
+
+    <style>
+        :root {
+            --bg-color: #060a12;
+            --card-bg: #0a1020;
+            --border-color: #152040;
+            --accent-color: #4a8fe7;
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --font-main: 'Inter', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* Sticky Nav */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: rgba(6, 10, 18, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Typography */
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(90deg, #4a8fe7, #8bb8f8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+        }
+        h2 {
+            font-size: 1.8rem;
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+
+        /* Stats Cards */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .stat-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+        .stat-value {
+            font-family: var(--font-mono);
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+        }
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Table Styles */
+        .table-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        input[type="text"] {
+            background-color: var(--bg-color);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-family: var(--font-main);
+            width: 300px;
+        }
+        input[type="text"]:focus {
+            outline: none;
+            border-color: var(--accent-color);
+        }
+        .table-container {
+            overflow-x: auto;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+        th, td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+        th {
+            font-weight: 600;
+            color: var(--text-muted);
+            cursor: pointer;
+            user-select: none;
+            white-space: nowrap;
+        }
+        th:hover {
+            color: var(--text-main);
+            background-color: rgba(255,255,255,0.05);
+        }
+        td {
+            font-family: var(--font-mono);
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Chart Container */
+        .chart-container {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            position: relative;
+            height: 400px;
+            width: 100%;
+        }
+
+        /* Methodology & FAQ */
+        .section-box {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+        .faq-item {
+            margin-bottom: 1.5rem;
+        }
+        .faq-question {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--accent-color);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            margin-top: 4rem;
+        }
+
+        .calculator-inputs {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .input-group {
+            display: flex;
+            flex-direction: column;
+        }
+        .input-group label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 0.3rem;
+        }
+        .input-group input, .input-group select {
+            background-color: var(--bg-color);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 0.5rem;
+            border-radius: 4px;
+            font-family: var(--font-mono);
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Should I choose a Roth or Traditional IRA in 2026?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The choice between a Roth and Traditional IRA depends primarily on your current tax bracket versus your expected tax bracket in retirement. If you expect your tax rate to be higher in retirement, a Roth IRA is generally better. If you expect it to be lower, a Traditional IRA may offer better upfront tax savings."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the IRA contribution limits for 2024, 2025, and 2026?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For 2024 and 2025, the contribution limit for both Roth and Traditional IRAs is $7,000, with an additional $1,000 catch-up contribution for those age 50 or older. Limits for 2026 have not yet been officially announced by the IRS."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the income phase-outs for a Roth IRA?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For 2024, the income phase-out range for single filers is $146,000 to $161,000, and for married filing jointly, it is $230,000 to $240,000. For 2025, the ranges increased to $150,000-$165,000 for singles and $236,000-$246,000 for married couples."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I convert a Traditional IRA to a Roth IRA?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, you can convert funds from a Traditional IRA to a Roth IRA at any time. This is often called a Roth conversion. However, you will have to pay ordinary income tax on the pre-tax amount you convert in the year of the conversion."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the RMD rules for Roth vs Traditional IRAs?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Traditional IRAs are subject to Required Minimum Distributions (RMDs) starting at age 73 (or 75 for those born in 1960 or later). Roth IRAs do not have RMDs during the original owner's lifetime."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Roth vs Traditional IRA: Complete Decision Guide",
+      "description": "Comprehensive comparison of Roth vs Traditional IRAs. Learn about contribution limits, tax benefits, and how to choose the right account for retirement.",
+      "datePublished": "2024-03-20T08:00:00+08:00",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Westmount Research",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://westmountfundamentals.com/favicon.svg"
+        }
+      }
+    }
+    </script>
+</head>
+<body>
+    <nav>
+        <a href="/">Westmount Fundamentals</a>
+        <div class="nav-links">
+            <a href="/#studies">Studies</a>
+            <a href="/#tools">Tools</a>
+            <a href="/#guides">Guides</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Roth vs Traditional IRA: Complete Decision Guide</h1>
+        <p style="text-align: center; color: var(--text-muted); max-width: 800px; margin: 0 auto 2rem;">
+            Deciding between a Roth and Traditional IRA is one of the most important retirement planning choices you'll make.
+            This guide breaks down contribution limits, income phase-outs, and tax implications to help you optimize your savings.
+        </p>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-value">$7,000</div>
+                <div class="stat-label">2024/2025 Contribution Limit</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">$1,000</div>
+                <div class="stat-label">Age 50+ Catch-up</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">Tax-Free</div>
+                <div class="stat-label">Roth Growth & Withdrawals</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">Tax-Deferred</div>
+                <div class="stat-label">Traditional Growth</div>
+            </div>
+        </div>
+
+        <h2>Historical Contribution Limits & Income Phase-outs</h2>
+        <div class="table-controls">
+            <input type="text" id="searchInput" placeholder="Search by year, limit, or phase-out...">
+        </div>
+        <div class="table-container">
+            <table id="dataTable">
+                <thead>
+                    <tr>
+                        <th onclick="sortTable(0)">Year ↕</th>
+                        <th onclick="sortTable(1)">Base Limit ↕</th>
+                        <th onclick="sortTable(2)">Catch-up Limit ↕</th>
+                        <th onclick="sortTable(3)">Roth Phase-out (Single) ↕</th>
+                        <th onclick="sortTable(4)">Roth Phase-out (MFJ) ↕</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    <!-- Data will be populated here -->
+                </tbody>
+            </table>
+        </div>
+
+        <h2>Break-Even Tax Rate Calculator</h2>
+        <p>Compare the projected ending balance of a Roth vs Traditional IRA. The traditional calculation assumes tax savings are invested in a taxable brokerage account.</p>
+
+        <div class="section-box">
+            <div class="calculator-inputs">
+                <div class="input-group">
+                    <label>Annual Contribution ($)</label>
+                    <input type="number" id="calcContrib" value="7000" step="500">
+                </div>
+                <div class="input-group">
+                    <label>Years to Retirement</label>
+                    <input type="number" id="calcYears" value="30" step="1">
+                </div>
+                <div class="input-group">
+                    <label>Expected Annual Return (%)</label>
+                    <input type="number" id="calcReturn" value="7" step="0.5">
+                </div>
+                <div class="input-group">
+                    <label>Current Tax Rate (%)</label>
+                    <input type="number" id="calcCurrentTax" value="24" step="1">
+                </div>
+                <div class="input-group">
+                    <label>Retirement Tax Rate (%)</label>
+                    <input type="number" id="calcRetireTax" value="22" step="1">
+                </div>
+            </div>
+            <button onclick="updateChart()" style="background: var(--accent-color); color: #fff; border: none; padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer; font-family: var(--font-main);">Calculate Projection</button>
+        </div>
+
+        <div class="chart-container">
+            <canvas id="projectionChart"></canvas>
+        </div>
+
+        <h2>Methodology & Data Sources</h2>
+        <div class="section-box">
+            <p><strong>Contribution Limits & Phase-outs:</strong> Data is sourced directly from the Internal Revenue Service (IRS). Historical limits are factual, while projected limits (e.g., 2026) are listed as 'N/A' or 'Null' until officially announced by the IRS.</p>
+            <p><strong>Break-Even Calculator:</strong> The calculator assumes annual contributions made at the beginning of the year. For the Traditional IRA, we assume the upfront tax savings (Contribution * Current Tax Rate) are invested in a taxable brokerage account growing at the same rate, but subject to an assumed 15% long-term capital gains tax upon withdrawal. The final Traditional IRA balance is reduced by the Retirement Tax Rate to simulate after-tax value.</p>
+        </div>
+
+        <h2>Frequently Asked Questions</h2>
+        <div class="section-box">
+            <div class="faq-item">
+                <div class="faq-question">Should I choose a Roth or Traditional IRA in 2026?</div>
+                <div>The choice between a Roth and Traditional IRA depends primarily on your current tax bracket versus your expected tax bracket in retirement. If you expect your tax rate to be higher in retirement, a Roth IRA is generally better. If you expect it to be lower, a Traditional IRA may offer better upfront tax savings.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">What are the IRA contribution limits for 2024, 2025, and 2026?</div>
+                <div>For 2024 and 2025, the contribution limit for both Roth and Traditional IRAs is $7,000, with an additional $1,000 catch-up contribution for those age 50 or older. Limits for 2026 have not yet been officially announced by the IRS.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">What are the income phase-outs for a Roth IRA?</div>
+                <div>For 2024, the income phase-out range for single filers is $146,000 to $161,000, and for married filing jointly, it is $230,000 to $240,000. For 2025, the ranges increased to $150,000-$165,000 for singles and $236,000-$246,000 for married couples.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Can I convert a Traditional IRA to a Roth IRA?</div>
+                <div>Yes, you can convert funds from a Traditional IRA to a Roth IRA at any time. This is often called a Roth conversion. However, you will have to pay ordinary income tax on the pre-tax amount you convert in the year of the conversion.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">What are the RMD rules for Roth vs Traditional IRAs?</div>
+                <div>Traditional IRAs are subject to Required Minimum Distributions (RMDs) starting at age 73 (or 75 for those born in 1960 or later). Roth IRAs do not have RMDs during the original owner's lifetime.</div>
+            </div>
+        </div>
+
+        <footer>
+            © 2024 Westmount Research · A GAB Ventures property. Not investment advice. All information for educational purposes only.
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Real IRS Data
+        const irsData = [
+            { year: 2026, limit: null, catchUp: null, phaseOutSingle: null, phaseOutMFJ: null },
+            { year: 2025, limit: "$7,000", catchUp: "$1,000", phaseOutSingle: "$150k - $165k", phaseOutMFJ: "$236k - $246k" },
+            { year: 2024, limit: "$7,000", catchUp: "$1,000", phaseOutSingle: "$146k - $161k", phaseOutMFJ: "$230k - $240k" },
+            { year: 2023, limit: "$6,500", catchUp: "$1,000", phaseOutSingle: "$138k - $153k", phaseOutMFJ: "$218k - $228k" },
+            { year: 2022, limit: "$6,000", catchUp: "$1,000", phaseOutSingle: "$129k - $144k", phaseOutMFJ: "$204k - $214k" },
+            { year: 2021, limit: "$6,000", catchUp: "$1,000", phaseOutSingle: "$125k - $140k", phaseOutMFJ: "$198k - $208k" }
+        ];
+
+        let currentSort = { col: 0, asc: true };
+
+        function renderTable(data) {
+            const tbody = document.getElementById('tableBody');
+            tbody.innerHTML = '';
+
+            data.forEach(row => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td>${row.year}</td>
+                    <td>${row.limit || 'N/A'}</td>
+                    <td>${row.catchUp || 'N/A'}</td>
+                    <td>${row.phaseOutSingle || 'N/A'}</td>
+                    <td>${row.phaseOutMFJ || 'N/A'}</td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        function sortTable(colIndex) {
+            const keys = ['year', 'limit', 'catchUp', 'phaseOutSingle', 'phaseOutMFJ'];
+            const key = keys[colIndex];
+
+            if (currentSort.col === colIndex) {
+                currentSort.asc = !currentSort.asc;
+            } else {
+                currentSort.col = colIndex;
+                currentSort.asc = true;
+            }
+
+            const sortedData = [...irsData].sort((a, b) => {
+                let valA = a[key] === null ? -1 : a[key];
+                let valB = b[key] === null ? -1 : b[key];
+
+                if (typeof valA === 'string') {
+                    let numA = parseFloat(valA.replace(/[\$,k\s]/g, ''));
+                    if (!isNaN(numA)) valA = numA;
+                }
+                if (typeof valB === 'string') {
+                    let numB = parseFloat(valB.replace(/[\$,k\s]/g, ''));
+                    if (!isNaN(numB)) valB = numB;
+                }
+
+                if (valA < valB) return currentSort.asc ? -1 : 1;
+                if (valA > valB) return currentSort.asc ? 1 : -1;
+                return 0;
+            });
+
+            renderTable(sortedData);
+        }
+
+        document.getElementById('searchInput').addEventListener('keyup', (e) => {
+            const term = e.target.value.toLowerCase();
+            const filtered = irsData.filter(row => {
+                return Object.values(row).some(val =>
+                    val !== null && val.toString().toLowerCase().includes(term)
+                );
+            });
+            renderTable(filtered);
+        });
+
+        // Initialize Table
+        renderTable(irsData);
+
+        // Chart.js Setup
+        let chartInstance = null;
+
+        function updateChart() {
+            const contrib = parseFloat(document.getElementById('calcContrib').value);
+            const years = parseInt(document.getElementById('calcYears').value);
+            const returnRate = parseFloat(document.getElementById('calcReturn').value) / 100;
+            const currentTax = parseFloat(document.getElementById('calcCurrentTax').value) / 100;
+            const retireTax = parseFloat(document.getElementById('calcRetireTax').value) / 100;
+            const cgTax = 0.15; // Capital gains tax rate
+
+            let labels = [];
+            let rothData = [];
+            let tradData = [];
+
+            let rothBal = 0;
+            let tradBal = 0;
+            let taxSavingsBal = 0;
+            let taxSavingsBasis = 0;
+
+            for (let i = 1; i <= years; i++) {
+                labels.push(`Year ${i}`);
+
+                // Roth: Pay taxes upfront, invest after-tax amount? No, assume standard contribution is the max
+                // Actually standard comparison:
+                // Roth: Invest $Contrib after tax.
+                // Traditional: Invest $Contrib pre-tax. You get a tax deduction of $Contrib * currentTax.
+                // We assume this tax savings is invested in a taxable account.
+
+                // End of year compounding
+                rothBal = (rothBal + contrib) * (1 + returnRate);
+                tradBal = (tradBal + contrib) * (1 + returnRate);
+
+                const taxSavings = contrib * currentTax;
+                taxSavingsBal = (taxSavingsBal + taxSavings) * (1 + returnRate);
+                taxSavingsBasis += taxSavings;
+
+                // After-tax value if withdrawn at this year
+                const afterTaxRoth = rothBal;
+                const afterTaxTrad = tradBal * (1 - retireTax);
+
+                // Taxable account after-tax value
+                const taxableGains = taxSavingsBal - taxSavingsBasis;
+                const afterTaxTaxable = taxSavingsBal - (taxableGains > 0 ? taxableGains * cgTax : 0);
+
+                rothData.push(Math.round(afterTaxRoth));
+                tradData.push(Math.round(afterTaxTrad + afterTaxTaxable));
+            }
+
+            const ctx = document.getElementById('projectionChart').getContext('2d');
+
+            if (chartInstance) {
+                chartInstance.destroy();
+            }
+
+            chartInstance = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [
+                        {
+                            label: 'Roth IRA (After-Tax)',
+                            data: rothData,
+                            borderColor: '#4a8fe7',
+                            backgroundColor: 'rgba(74, 143, 231, 0.1)',
+                            borderWidth: 2,
+                            fill: true,
+                            tension: 0.1
+                        },
+                        {
+                            label: 'Traditional IRA + Taxable Account (After-Tax)',
+                            data: tradData,
+                            borderColor: '#e74a4a',
+                            backgroundColor: 'rgba(231, 74, 74, 0.1)',
+                            borderWidth: 2,
+                            fill: true,
+                            tension: 0.1
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            labels: {
+                                color: '#f3f4f6',
+                                font: { family: "'Inter', sans-serif" }
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    let label = context.dataset.label || '';
+                                    if (label) {
+                                        label += ': ';
+                                    }
+                                    if (context.parsed.y !== null) {
+                                        label += new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(context.parsed.y);
+                                    }
+                                    return label;
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            ticks: { color: '#9ca3af', font: { family: "'Inter', sans-serif" } },
+                            grid: { color: '#152040' }
+                        },
+                        y: {
+                            ticks: {
+                                color: '#9ca3af',
+                                font: { family: "'Inter', sans-serif" },
+                                callback: function(value, index, values) {
+                                    if(value >= 1000000) return '$' + (value/1000000).toFixed(1) + 'M';
+                                    if(value >= 1000) return '$' + (value/1000).toFixed(0) + 'k';
+                                    return '$' + value;
+                                }
+                            },
+                            grid: { color: '#152040' }
+                        }
+                    }
+                }
+            });
+        }
+
+        // Initial Chart Render
+        updateChart();
+    </script>
+</body>
+</html>

@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debt-to-Income Ratio Calculator | Westmount</title>
+    <meta name="description" content="Interactive debt-to-income (DTI) ratio calculator. Calculate front-end and back-end DTI to check if you meet mortgage requirements for your next loan.">
+    <link rel="canonical" href="https://westmountfundamentals.com/debt-to-income-ratio-calculator">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Debt-to-Income Ratio Calculator | Westmount">
+    <meta property="og:description" content="Interactive debt-to-income (DTI) ratio calculator. Calculate front-end and back-end DTI to check if you meet mortgage requirements for your next loan.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://westmountfundamentals.com/debt-to-income-ratio-calculator">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Debt-to-Income Ratio Calculator | Westmount">
+    <meta name="twitter:description" content="Interactive debt-to-income (DTI) ratio calculator. Calculate front-end and back-end DTI to check if you meet mortgage requirements for your next loan.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VYF72NSC1Q"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-VYF72NSC1Q');
+    </script>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Debt-to-Income Ratio Calculator | Westmount",
+      "description": "Interactive debt-to-income (DTI) ratio calculator. Calculate front-end and back-end DTI to check if you meet mortgage requirements for your next loan.",
+      "datePublished": "2024-05-24",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Westmount Research",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://westmountfundamentals.com/logo.png"
+        }
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is a good DTI ratio?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A good debt-to-income (DTI) ratio is generally considered to be 36% or lower. Most lenders prefer your back-end DTI (all monthly debt payments divided by gross monthly income) to be under 36%, though some loan programs allow up to 43% or even 50% with compensating factors."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How to calculate debt to income?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "To calculate your debt-to-income ratio, add up all your monthly debt payments (such as mortgage, car loans, student loans, and minimum credit card payments) and divide that total by your gross monthly income (your income before taxes). Multiply the result by 100 to get a percentage."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are mortgage DTI requirements?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Mortgage DTI requirements vary by loan type. Conventional loans typically require a back-end DTI of 36% to 43%. FHA loans generally allow a DTI up to 43%, though they can go up to 50% in certain cases. VA loans usually look for a DTI of 41% or lower, and USDA loans typically cap DTI at 41%."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is front-end vs back-end DTI?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Front-end DTI, also known as the housing ratio, calculates only your housing-related expenses (mortgage principal, interest, taxes, and insurance) as a percentage of your gross monthly income. Back-end DTI includes your housing expenses plus all other minimum monthly debt payments."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does DTI affect credit score?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Your debt-to-income ratio does not directly affect your credit score, as your income is not reported to credit bureaus. However, credit utilization (how much credit you are using compared to your limits) does impact your score, and high debt levels can affect both DTI and credit utilization."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        :root {
+            --bg-color: #060a12;
+            --card-bg: #0a1020;
+            --border-color: #152040;
+            --accent-color: #4a8fe7;
+            --text-main: #e2e8f0;
+            --text-muted: #a0aec0;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+        }
+
+        /* Nav */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(6, 10, 18, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            font-weight: 700;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.25rem;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin-left: 1.5rem;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #fff;
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            background: linear-gradient(90deg, var(--accent-color), #8bb4f5);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #fff;
+            font-weight: 600;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: var(--text-muted);
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            text-align: center;
+            margin-bottom: 0;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            font-family: 'JetBrains Mono', monospace;
+            color: #fff;
+            margin-top: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+        }
+
+        /* Calculator Layout */
+        .calc-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .input-group {
+            margin-bottom: 1.25rem;
+            position: relative;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-main);
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .input-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .currency-symbol {
+            position: absolute;
+            left: 1rem;
+            color: var(--text-muted);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        input {
+            width: 100%;
+            background: var(--bg-color);
+            border: 1px solid var(--border-color);
+            color: #fff;
+            padding: 0.75rem 1rem 0.75rem 2rem;
+            border-radius: 8px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1rem;
+            transition: border-color 0.2s;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: var(--accent-color);
+        }
+
+        .calc-section-title {
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--accent-color);
+        }
+
+        /* Results & Chart */
+        .results-panel {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chart-container {
+            position: relative;
+            height: 300px;
+            width: 100%;
+            margin-bottom: 1.5rem;
+        }
+
+        .status-box {
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            border: 1px solid var(--border-color);
+            background: var(--bg-color);
+        }
+
+        .status-box.good { border-color: var(--success); }
+        .status-box.warning { border-color: var(--warning); }
+        .status-box.danger { border-color: var(--danger); }
+
+        .status-title {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            color: #fff;
+        }
+
+        .status-desc {
+            font-size: 0.9rem;
+            margin-bottom: 0;
+        }
+
+        /* Table */
+        .table-container {
+            overflow-x: auto;
+            margin-bottom: 3rem;
+        }
+
+        .table-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .search-box {
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            background: var(--bg-color);
+            color: #fff;
+            width: 300px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        th, td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background: var(--bg-color);
+            color: var(--text-muted);
+            font-weight: 500;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        th:hover {
+            color: #fff;
+        }
+
+        td {
+            color: var(--text-main);
+        }
+
+        .table-row:hover td {
+            background: rgba(74, 143, 231, 0.05);
+        }
+
+        /* Content Sections */
+        .content-section {
+            margin-bottom: 3rem;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+            padding: 1.5rem 0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-q {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border-color);
+            padding: 3rem 2rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            margin-top: 4rem;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .calc-container {
+                grid-template-columns: 1fr;
+            }
+            .nav-links {
+                display: none;
+            }
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="/" class="nav-brand">Westmount Fundamentals</a>
+        <div class="nav-links">
+            <a href="/#studies">Studies</a>
+            <a href="/#tools">Tools</a>
+            <a href="/#guides">Guides</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Debt-to-Income (DTI) Ratio Calculator</h1>
+        <p class="subtitle">Calculate your front-end and back-end DTI to see if you qualify for a mortgage.</p>
+
+        <!-- Stats Grid -->
+        <div class="stats-grid">
+            <div class="card stat-card">
+                <div class="stat-label">Gross Monthly Income</div>
+                <div class="stat-value" id="stat-income">$0</div>
+            </div>
+            <div class="card stat-card">
+                <div class="stat-label">Total Monthly Debt</div>
+                <div class="stat-value" id="stat-debt">$0</div>
+            </div>
+            <div class="card stat-card">
+                <div class="stat-label">Front-End DTI</div>
+                <div class="stat-value" id="stat-frontend">0.0%</div>
+            </div>
+            <div class="card stat-card">
+                <div class="stat-label">Back-End DTI</div>
+                <div class="stat-value" id="stat-backend">0.0%</div>
+            </div>
+        </div>
+
+        <!-- Calculator Area -->
+        <div class="calc-container">
+            <!-- Inputs -->
+            <div class="card">
+                <h2>Monthly Finances</h2>
+
+                <h3 class="calc-section-title">Income</h3>
+                <div class="input-group">
+                    <label for="gross-income">Gross Monthly Income (Before Taxes)</label>
+                    <div class="input-wrapper">
+                        <span class="currency-symbol">$</span>
+                        <input type="number" id="gross-income" value="6000" min="0" step="100">
+                    </div>
+                </div>
+
+                <h3 class="calc-section-title">Proposed Housing Expenses</h3>
+                <div class="input-group">
+                    <label for="mortgage-payment">Mortgage Principal & Interest</label>
+                    <div class="input-wrapper">
+                        <span class="currency-symbol">$</span>
+                        <input type="number" id="mortgage-payment" value="1200" min="0" step="10">
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="property-tax">Property Taxes, Insurance & HOA</label>
+                    <div class="input-wrapper">
+                        <span class="currency-symbol">$</span>
+                        <input type="number" id="property-tax" value="400" min="0" step="10">
+                    </div>
+                </div>
+
+                <h3 class="calc-section-title">Other Monthly Debts</h3>
+                <div class="input-group">
+                    <label for="auto-loans">Auto Loans</label>
+                    <div class="input-wrapper">
+                        <span class="currency-symbol">$</span>
+                        <input type="number" id="auto-loans" value="350" min="0" step="10">
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="student-loans">Student Loans</label>
+                    <div class="input-wrapper">
+                        <span class="currency-symbol">$</span>
+                        <input type="number" id="student-loans" value="200" min="0" step="10">
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="credit-cards">Credit Cards (Minimum Payments)</label>
+                    <div class="input-wrapper">
+                        <span class="currency-symbol">$</span>
+                        <input type="number" id="credit-cards" value="150" min="0" step="10">
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="other-debt">Other Debt (Personal loans, Alimony, etc.)</label>
+                    <div class="input-wrapper">
+                        <span class="currency-symbol">$</span>
+                        <input type="number" id="other-debt" value="0" min="0" step="10">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Visuals & Results -->
+            <div class="card results-panel">
+                <h2>DTI Analysis</h2>
+                <div class="chart-container">
+                    <canvas id="dtiChart"></canvas>
+                </div>
+
+                <div id="status-container" class="status-box">
+                    <div class="status-title" id="status-title">Evaluating your ratio...</div>
+                    <p class="status-desc" id="status-desc">Enter your details to see if your DTI is within typical lender limits.</p>
+                </div>
+
+                <div style="margin-top: 1.5rem;">
+                    <h3>What lenders look for:</h3>
+                    <ul style="color: var(--text-muted); margin-left: 1.5rem; margin-top: 0.5rem; font-size: 0.95rem;">
+                        <li><strong>&le; 36%:</strong> Excellent. Ideal for most conventional loans.</li>
+                        <li><strong>37% - 43%:</strong> Good. Acceptable for many FHA and conventional loans.</li>
+                        <li><strong>44% - 50%:</strong> High. May require compensating factors (e.g., high credit score, large reserves).</li>
+                        <li><strong>&gt; 50%:</strong> Very High. Extremely difficult to get approved for a new mortgage.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Data Table Section -->
+        <div class="content-section">
+            <h2>Mortgage DTI Requirements by Loan Program</h2>
+            <p>Compare the maximum allowable front-end and back-end DTI ratios across standard US mortgage programs. Note that lenders may have "overlays" (stricter internal requirements) above these baseline guidelines.</p>
+
+            <div class="card table-container">
+                <div class="table-controls">
+                    <input type="text" id="tableSearch" class="search-box" placeholder="Search loan types...">
+                </div>
+                <table id="dataTable">
+                    <thead>
+                        <tr>
+                            <th data-sort="program">Loan Program &#x21D5;</th>
+                            <th data-sort="front">Max Front-End DTI &#x21D5;</th>
+                            <th data-sort="back">Max Back-End DTI &#x21D5;</th>
+                            <th data-sort="credit">Min. Credit Score &#x21D5;</th>
+                            <th data-sort="notes">Notes &#x21D5;</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                        <!-- Data populated by JS -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Methodology Section -->
+        <div class="content-section card">
+            <h2>Methodology & Data Sources</h2>
+            <p>The maximum DTI ratios and credit score minimums provided in the table are sourced directly from the official selling guides and handbooks of the respective agencies as of 2024:</p>
+            <ul style="color: var(--text-muted); margin-left: 1.5rem; font-size: 0.95rem;">
+                <li><strong>Conventional Loans:</strong> Fannie Mae Single Family Selling Guide and Freddie Mac Single-Family Seller/Servicer Guide. Standard max DTI is 36%, but can go up to 45-50% with an automated underwriting system (AUS) approval.</li>
+                <li><strong>FHA Loans:</strong> U.S. Department of Housing and Urban Development (HUD) Handbook 4000.1. Standard max is 31/43, but allows up to 40/50 with compensating factors.</li>
+                <li><strong>VA Loans:</strong> Department of Veterans Affairs Lenders Handbook (VA Pamphlet 26-7). The VA does not strictly enforce a maximum DTI but uses 41% as a benchmark for requiring additional justification.</li>
+                <li><strong>USDA Loans:</strong> USDA Rural Development Single Family Housing Guaranteed Loan Program guidelines. Standard ratios are 29/41.</li>
+            </ul>
+            <p style="margin-top: 1rem; font-size: 0.95rem;">Calculations performed by this tool assume gross income is monthly and before taxes. Results are estimates for educational purposes and do not constitute loan approval or financial advice.</p>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="content-section card">
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <div class="faq-q">What is a good DTI ratio?</div>
+                <p>A good debt-to-income (DTI) ratio is generally considered to be 36% or lower. Most lenders prefer your back-end DTI (all monthly debt payments divided by gross monthly income) to be under 36%, though some loan programs allow up to 43% or even 50% with compensating factors.</p>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">How to calculate debt to income?</div>
+                <p>To calculate your debt-to-income ratio, add up all your monthly debt payments (such as mortgage, car loans, student loans, and minimum credit card payments) and divide that total by your gross monthly income (your income before taxes). Multiply the result by 100 to get a percentage.</p>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">What are mortgage DTI requirements?</div>
+                <p>Mortgage DTI requirements vary by loan type. Conventional loans typically require a back-end DTI of 36% to 43%. FHA loans generally allow a DTI up to 43%, though they can go up to 50% in certain cases. VA loans usually look for a DTI of 41% or lower, and USDA loans typically cap DTI at 41%.</p>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">What is front-end vs back-end DTI?</div>
+                <p>Front-end DTI, also known as the housing ratio, calculates only your housing-related expenses (mortgage principal, interest, taxes, and insurance) as a percentage of your gross monthly income. Back-end DTI includes your housing expenses plus all other minimum monthly debt payments.</p>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">Does DTI affect credit score?</div>
+                <p>Your debt-to-income ratio does not directly affect your credit score, as your income is not reported to credit bureaus. However, credit utilization (how much credit you are using compared to your limits) does impact your score, and high debt levels can affect both DTI and credit utilization.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Westmount Research &middot; A GAB Ventures property. Not investment advice. All information for educational purposes only.</p>
+    </footer>
+
+    <!-- Interactive Logic -->
+    <script>
+        // Real Data for the Table
+        const tableData = [
+            { program: "Conventional (Fannie Mae/Freddie Mac)", front: "28%", back: "36% - 45% (Up to 50% with AUS)", credit: "620", notes: "Stricter DTI limits for manual underwriting." },
+            { program: "FHA Loan", front: "31% (Up to 40% with factors)", back: "43% (Up to 50% with factors)", credit: "500 - 580", notes: "More lenient on credit; high DTI allowed with strong compensating factors." },
+            { program: "VA Loan", front: "No set limit", back: "41% (Benchmark)", credit: "No strict min (Lenders overlay 620)", notes: "Relies heavily on residual income calculations rather than just DTI." },
+            { program: "USDA Loan", front: "29%", back: "41% (Up to 44% with AUS)", credit: "640", notes: "Strict income limits apply; property must be in eligible rural area." },
+            { program: "Jumbo Loan", front: "Varies", back: "43% (Strictly enforced)", credit: "700+", notes: "Non-conforming loans; stricter requirements and reserve demands." },
+            { program: "FHA Energy Efficient Mortgage (EEM)", front: "33%", back: "45%", credit: "580", notes: "Allows higher DTI to accommodate energy efficiency improvements." },
+            { program: "Fannie Mae HomeReady", front: "N/A", back: "Up to 50% with AUS", credit: "620", notes: "Designed for low-to-moderate income borrowers." }
+        ];
+
+        // Format Currency
+        const formatCurrency = (val) => new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(val);
+
+        // Chart setup
+        let dtiChart;
+        function initChart() {
+            const ctx = document.getElementById('dtiChart').getContext('2d');
+            Chart.defaults.color = '#a0aec0';
+            Chart.defaults.font.family = "'Inter', sans-serif";
+
+            dtiChart = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Housing Expenses', 'Other Debt', 'Remaining Income'],
+                    datasets: [{
+                        data: [0, 0, 100],
+                        backgroundColor: [
+                            '#4a8fe7', // Housing
+                            '#f59e0b', // Other Debt
+                            '#10b981'  // Remaining
+                        ],
+                        borderWidth: 0,
+                        hoverOffset: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    cutout: '70%',
+                    plugins: {
+                        legend: { position: 'bottom' },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    let label = context.label || '';
+                                    if (label) label += ': ';
+                                    if (context.parsed !== null) label += formatCurrency(context.parsed);
+                                    return label;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        // Calculator Logic
+        function calculateDTI() {
+            const inputs = {
+                income: parseFloat(document.getElementById('gross-income').value) || 0,
+                mortgage: parseFloat(document.getElementById('mortgage-payment').value) || 0,
+                taxes: parseFloat(document.getElementById('property-tax').value) || 0,
+                auto: parseFloat(document.getElementById('auto-loans').value) || 0,
+                student: parseFloat(document.getElementById('student-loans').value) || 0,
+                cards: parseFloat(document.getElementById('credit-cards').value) || 0,
+                other: parseFloat(document.getElementById('other-debt').value) || 0
+            };
+
+            const housingDebt = inputs.mortgage + inputs.taxes;
+            const otherDebt = inputs.auto + inputs.student + inputs.cards + inputs.other;
+            const totalDebt = housingDebt + otherDebt;
+            const remainingIncome = Math.max(0, inputs.income - totalDebt);
+
+            const frontEndDTI = inputs.income > 0 ? (housingDebt / inputs.income) * 100 : 0;
+            const backEndDTI = inputs.income > 0 ? (totalDebt / inputs.income) * 100 : 0;
+
+            // Update DOM
+            document.getElementById('stat-income').innerText = formatCurrency(inputs.income);
+            document.getElementById('stat-debt').innerText = formatCurrency(totalDebt);
+            document.getElementById('stat-frontend').innerText = frontEndDTI.toFixed(1) + '%';
+            document.getElementById('stat-backend').innerText = backEndDTI.toFixed(1) + '%';
+
+            // Update Chart
+            if(dtiChart) {
+                dtiChart.data.datasets[0].data = [housingDebt, otherDebt, remainingIncome];
+                dtiChart.update();
+            }
+
+            // Update Status
+            const statusBox = document.getElementById('status-container');
+            const statusTitle = document.getElementById('status-title');
+            const statusDesc = document.getElementById('status-desc');
+
+            statusBox.className = 'status-box'; // reset
+
+            if (inputs.income === 0) {
+                statusTitle.innerText = "Please enter income";
+                statusDesc.innerText = "Gross monthly income is required to calculate DTI.";
+            } else if (backEndDTI <= 36) {
+                statusBox.classList.add('good');
+                statusTitle.innerText = "Excellent (≤ 36%)";
+                statusDesc.innerText = "Your DTI is in the ideal range. You should have strong approval odds for most mortgage types, assuming other credit factors are healthy.";
+            } else if (backEndDTI <= 43) {
+                statusBox.classList.add('warning');
+                statusTitle.innerText = "Good (37% - 43%)";
+                statusDesc.innerText = "Your DTI is acceptable for many loan programs, including FHA and conventional loans, though you are nearing the maximum limits.";
+            } else if (backEndDTI <= 50) {
+                statusBox.classList.add('danger');
+                statusTitle.innerText = "High (44% - 50%)";
+                statusDesc.innerText = "Your DTI is high. You may still qualify for some loans (like FHA) if you have compensating factors like a high credit score or large cash reserves.";
+            } else {
+                statusBox.classList.add('danger');
+                statusTitle.innerText = "Very High (> 50%)";
+                statusDesc.innerText = "Your DTI exceeds the maximum limits for nearly all standard mortgage programs. You will likely need to pay down debt or increase income to qualify.";
+            }
+        }
+
+        // Table Logic
+        let currentSort = { column: null, asc: true };
+
+        function renderTable(data) {
+            const tbody = document.getElementById('tableBody');
+            tbody.innerHTML = '';
+
+            if (data.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="5" style="text-align:center;">No loan programs found matching your search.</td></tr>';
+                return;
+            }
+
+            data.forEach(row => {
+                const tr = document.createElement('tr');
+                tr.className = 'table-row';
+                tr.innerHTML = `
+                    <td><strong>${row.program}</strong></td>
+                    <td>${row.front}</td>
+                    <td>${row.back}</td>
+                    <td>${row.credit}</td>
+                    <td>${row.notes}</td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        function filterAndSortTable() {
+            const searchTerm = document.getElementById('tableSearch').value.toLowerCase();
+
+            let filtered = tableData.filter(row =>
+                row.program.toLowerCase().includes(searchTerm) ||
+                row.notes.toLowerCase().includes(searchTerm) ||
+                row.back.toLowerCase().includes(searchTerm)
+            );
+
+            if (currentSort.column) {
+                filtered.sort((a, b) => {
+                    const valA = a[currentSort.column].toString().toLowerCase();
+                    const valB = b[currentSort.column].toString().toLowerCase();
+                    if (valA < valB) return currentSort.asc ? -1 : 1;
+                    if (valA > valB) return currentSort.asc ? 1 : -1;
+                    return 0;
+                });
+            }
+
+            renderTable(filtered);
+        }
+
+        // Event Listeners
+        document.addEventListener('DOMContentLoaded', () => {
+            initChart();
+            calculateDTI();
+            renderTable(tableData);
+
+            // Calculator Inputs
+            const inputs = document.querySelectorAll('.calc-container input');
+            inputs.forEach(input => {
+                input.addEventListener('input', calculateDTI);
+            });
+
+            // Table Search
+            document.getElementById('tableSearch').addEventListener('keyup', filterAndSortTable);
+
+            // Table Sort
+            document.querySelectorAll('th[data-sort]').forEach(th => {
+                th.addEventListener('click', () => {
+                    const column = th.getAttribute('data-sort');
+                    if (currentSort.column === column) {
+                        currentSort.asc = !currentSort.asc;
+                    } else {
+                        currentSort.column = column;
+                        currentSort.asc = true;
+                    }
+                    filterAndSortTable();
+                });
+            });
+        });
+
+    </script>
+</body>
+</html>

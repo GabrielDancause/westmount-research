@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VYF72NSC1Q"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VYF72NSC1Q');
+  </script>
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Monte Carlo Portfolio Simulator | Westmount Fundamentals</title>
+  <meta name="description" content="Run 1000+ Monte Carlo simulations on your retirement portfolio. Calculate the probability of success for your investment strategy and expected returns." />
+
+  <link rel="canonical" href="https://westmountfundamentals.com/monte-carlo-portfolio-simulator" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Monte Carlo Portfolio Simulator | Westmount Fundamentals" />
+  <meta property="og:description" content="Run 1000+ Monte Carlo simulations on your retirement portfolio. Calculate the probability of success for your investment strategy and expected returns." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://westmountfundamentals.com/monte-carlo-portfolio-simulator" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Monte Carlo Portfolio Simulator | Westmount Fundamentals" />
+  <meta name="twitter:description" content="Run 1000+ Monte Carlo simulations on your retirement portfolio. Calculate the probability of success for your investment strategy and expected returns." />
+
+  <!-- Preconnect and Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Monte Carlo Portfolio Simulator",
+    "description": "Run 1000+ Monte Carlo simulations on your retirement portfolio. Calculate the probability of success for your investment strategy and expected returns.",
+    "datePublished": "2024-03-01T08:00:00+08:00",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Westmount Research",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://westmountfundamentals.com/favicon.svg"
+      }
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a Monte Carlo simulation for retirement?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A Monte Carlo simulation uses random sampling and statistical modeling to generate thousands of possible future return scenarios. This allows you to estimate the probability of success for your retirement plan under varying market conditions rather than assuming a fixed annual return."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does this portfolio Monte Carlo simulator work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The simulator takes your starting balance, annual contribution, withdrawal expectations, and asset allocation, then runs 1000+ simulations. It uses historical mean returns and standard deviation (volatility) of stocks and bonds to project future percentile outcomes."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is considered a good probability of success?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most financial planners consider a probability of success between 80% and 90% as acceptable. A 100% success rate may mean you are over-saving or under-spending, while anything below 70% suggests you may need to adjust your savings rate, retirement age, or spending expectations."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are Monte Carlo simulations accurate for stock markets?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Monte Carlo simulations provide a range of probabilities, not a guaranteed forecast. They are highly dependent on the assumptions used for average return and volatility. Real markets experience 'fat tails' (extreme events) more often than a normal distribution predicts, so simulations should be used as a guide, not a certainty."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why is sequence of returns risk important in retirement?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sequence of returns risk refers to the danger of experiencing poor market performance early in retirement. Because you are simultaneously withdrawing funds, early losses deplete your portfolio faster, leaving less capital to benefit from future market recoveries. Monte Carlo simulations help measure this risk."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* Reset & Base Settings */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: #060a12;
+      color: #e2e8f0;
+      line-height: 1.6;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: #4a8fe7; text-decoration: none; transition: color 0.2s; }
+    a:hover { color: #8bb4f6; }
+
+    /* Navigation */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(6, 10, 18, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid #152040;
+      padding: 1rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .nav-brand {
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .nav-brand span { color: #4a8fe7; }
+    .nav-links { display: flex; gap: 1.5rem; }
+    .nav-links a { color: #94a3b8; font-weight: 500; font-size: 0.95rem; }
+    .nav-links a:hover { color: #fff; }
+
+    /* Layout */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem;
+    }
+
+    /* Typography */
+    .header-section {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, #fff 0%, #94a3b8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: -0.02em;
+    }
+    .subtitle {
+      font-size: 1.25rem;
+      color: #94a3b8;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    h2 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #fff;
+      margin: 2.5rem 0 1.5rem;
+      border-bottom: 1px solid #152040;
+      padding-bottom: 0.5rem;
+    }
+    h3 { font-size: 1.25rem; color: #fff; margin-bottom: 0.75rem; }
+
+    /* Stats Grid */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+    .stat-card {
+      background: #0a1020;
+      border: 1px solid #152040;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      position: relative;
+      overflow: hidden;
+    }
+    .stat-label {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+    }
+    .stat-value {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .stat-subtext {
+      font-size: 0.875rem;
+      color: #64748b;
+      margin-top: 0.25rem;
+    }
+    .stat-card.success .stat-value { color: #10b981; }
+    .stat-card.warning .stat-value { color: #f59e0b; }
+    .stat-card.danger .stat-value { color: #ef4444; }
+
+    /* Simulator Layout */
+    .simulator-layout {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+
+    /* Controls Form */
+    .controls-panel {
+      background: #0a1020;
+      border: 1px solid #152040;
+      border-radius: 12px;
+      padding: 1.5rem;
+      align-self: start;
+    }
+    .form-group { margin-bottom: 1.25rem; }
+    .form-group label {
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: #cbd5e1;
+      margin-bottom: 0.5rem;
+    }
+    .input-with-prefix, .input-with-suffix {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+    .input-prefix {
+      position: absolute;
+      left: 1rem;
+      color: #64748b;
+      font-weight: 500;
+    }
+    .input-suffix {
+      position: absolute;
+      right: 1rem;
+      color: #64748b;
+      font-weight: 500;
+    }
+    input[type="number"], input[type="text"] {
+      width: 100%;
+      background: #060a12;
+      border: 1px solid #152040;
+      border-radius: 8px;
+      color: #fff;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1rem;
+      padding: 0.75rem 1rem;
+      transition: border-color 0.2s;
+    }
+    input[type="number"]:focus, input[type="text"]:focus {
+      outline: none;
+      border-color: #4a8fe7;
+    }
+    .input-with-prefix input { padding-left: 2rem; }
+    .input-with-suffix input { padding-right: 2.5rem; }
+
+    /* Range Slider */
+    .range-slider-container {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    input[type="range"] {
+      flex: 1;
+      accent-color: #4a8fe7;
+    }
+    .allocation-display {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.875rem;
+      color: #94a3b8;
+      margin-top: 0.5rem;
+    }
+
+    button.run-btn {
+      width: 100%;
+      background: #4a8fe7;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 1rem;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+      margin-top: 1rem;
+    }
+    button.run-btn:hover { background: #3b82f6; }
+
+    /* Chart Area */
+    .chart-panel {
+      background: #0a1020;
+      border: 1px solid #152040;
+      border-radius: 12px;
+      padding: 1.5rem;
+      min-height: 400px;
+      display: flex;
+      flex-direction: column;
+    }
+    .chart-container {
+      position: relative;
+      flex: 1;
+      width: 100%;
+      min-height: 450px;
+    }
+
+    /* Content Sections */
+    .content-box {
+      background: #0a1020;
+      border: 1px solid #152040;
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+    .faq-item { margin-bottom: 1.5rem; }
+    .faq-item:last-child { margin-bottom: 0; }
+    .faq-item h4 {
+      font-size: 1.1rem;
+      color: #fff;
+      margin-bottom: 0.5rem;
+    }
+    .faq-item p { color: #94a3b8; }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid #152040;
+      padding: 3rem 1.5rem;
+      text-align: center;
+      margin-top: 4rem;
+    }
+    .disclaimer {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 0.85rem;
+      color: #64748b;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .simulator-layout { grid-template-columns: 1fr; }
+      h1 { font-size: 2.25rem; }
+    }
+    @media (max-width: 600px) {
+      .nav-links { display: none; }
+      .container { padding: 1.5rem 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-brand"><span>Westmount</span> Fundamentals</div>
+    <div class="nav-links">
+      <a href="/#studies">Original Research</a>
+      <a href="/#tools">Tools & Calculators</a>
+      <a href="/#guides">Investing Guides</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <div class="header-section">
+      <h1>Monte Carlo Portfolio Simulator</h1>
+      <p class="subtitle">Run thousands of simulations to calculate the probability of success for your retirement portfolio based on historical market volatility and drift.</p>
+    </div>
+
+    <div class="stats-grid">
+      <div class="stat-card" id="stat-prob">
+        <div class="stat-label">Probability of Success</div>
+        <div class="stat-value" id="val-prob">--%</div>
+        <div class="stat-subtext">Simulations ending > $0</div>
+      </div>
+      <div class="stat-card" id="stat-median">
+        <div class="stat-label">Median Outcome (50th %)</div>
+        <div class="stat-value" id="val-median">$0</div>
+        <div class="stat-subtext">Expected average scenario</div>
+      </div>
+      <div class="stat-card" id="stat-worst">
+        <div class="stat-label">Worst Case (10th %)</div>
+        <div class="stat-value" id="val-worst">$0</div>
+        <div class="stat-subtext">If markets severely underperform</div>
+      </div>
+      <div class="stat-card" id="stat-best">
+        <div class="stat-label">Best Case (90th %)</div>
+        <div class="stat-value" id="val-best">$0</div>
+        <div class="stat-subtext">If markets strongly outperform</div>
+      </div>
+    </div>
+
+    <div class="simulator-layout">
+      <!-- Input Form -->
+      <aside class="controls-panel">
+        <h3 style="margin-bottom: 1.5rem; border-bottom: 1px solid #152040; padding-bottom: 0.5rem;">Simulation Parameters</h3>
+
+        <div class="form-group">
+          <label for="input-balance">Starting Balance</label>
+          <div class="input-with-prefix">
+            <span class="input-prefix">$</span>
+            <input type="number" id="input-balance" value="500000" min="0" step="1000">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="input-contribution">Annual Contribution / Withdrawal</label>
+          <div class="input-with-prefix">
+            <span class="input-prefix">$</span>
+            <input type="number" id="input-contribution" value="-40000" step="1000">
+          </div>
+          <p style="font-size: 0.75rem; color: #64748b; margin-top: 0.25rem;">Use negative numbers for withdrawals.</p>
+        </div>
+
+        <div class="form-group">
+          <label for="input-years">Time Horizon (Years)</label>
+          <div class="input-with-suffix">
+            <input type="number" id="input-years" value="30" min="1" max="60" step="1">
+            <span class="input-suffix">yrs</span>
+          </div>
+        </div>
+
+        <div class="form-group" style="margin-top: 2rem;">
+          <label for="input-stocks">Asset Allocation (Stocks/Bonds)</label>
+          <input type="range" id="input-stocks" min="0" max="100" value="60" step="5">
+          <div class="allocation-display">
+            <span id="alloc-stocks" style="color: #4a8fe7; font-weight: 600;">60% Stocks</span>
+            <span id="alloc-bonds" style="color: #94a3b8;">40% Bonds</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="input-inflation">Annual Inflation Assumption</label>
+          <div class="input-with-suffix">
+            <input type="number" id="input-inflation" value="2.5" min="0" max="15" step="0.1">
+            <span class="input-suffix">%</span>
+          </div>
+        </div>
+
+        <button class="run-btn" id="run-btn">Run 1,000 Simulations</button>
+      </aside>
+
+      <!-- Chart Panel -->
+      <section class="chart-panel">
+        <div class="chart-header" style="margin-bottom: 1rem; display: flex; justify-content: space-between; align-items: center;">
+          <h3 style="margin: 0;">Projected Portfolio Value Over Time</h3>
+          <span style="font-size: 0.85rem; color: #64748b;">Inflation Adjusted</span>
+        </div>
+        <div class="chart-container">
+          <canvas id="monteCarloChart"></canvas>
+        </div>
+      </section>
+    </div>
+
+    <!-- Data Table -->
+    <div class="content-box">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+        <h2 style="margin: 0; border: none; padding: 0;">Year-by-Year Projections</h2>
+        <div style="position: relative; min-width: 250px;">
+          <input type="text" id="table-search" placeholder="Search year..." style="width: 100%; background: #060a12; border: 1px solid #152040; border-radius: 8px; color: #fff; padding: 0.5rem 1rem;">
+        </div>
+      </div>
+      <div style="overflow-x: auto;">
+        <table style="width: 100%; border-collapse: collapse; text-align: right; font-family: 'JetBrains Mono', monospace; font-size: 0.9rem;">
+          <thead>
+            <tr style="border-bottom: 1px solid #152040; color: #94a3b8;">
+              <th style="padding: 1rem; text-align: left; cursor: pointer;" onclick="sortTable(0)">Year ↕</th>
+              <th style="padding: 1rem; cursor: pointer;" onclick="sortTable(1)">10th Percentile ↕</th>
+              <th style="padding: 1rem; cursor: pointer;" onclick="sortTable(2)">25th Percentile ↕</th>
+              <th style="padding: 1rem; cursor: pointer; color: #4a8fe7;" onclick="sortTable(3)">Median (50th) ↕</th>
+              <th style="padding: 1rem; cursor: pointer;" onclick="sortTable(4)">75th Percentile ↕</th>
+              <th style="padding: 1rem; cursor: pointer;" onclick="sortTable(5)">90th Percentile ↕</th>
+            </tr>
+          </thead>
+          <tbody id="projection-table-body">
+            <!-- Table rows populated by JS -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Methodology & Data Sources -->
+    <div class="content-box">
+      <h2>Methodology & Data Sources</h2>
+      <p style="margin-bottom: 1rem; color: #94a3b8;">This Monte Carlo simulator models future portfolio performance by drawing random annual returns from a normal distribution based on historical market data. It runs 1,000 independent trials to construct a probability distribution of potential outcomes.</p>
+
+      <h4 style="color: #fff; margin: 1.5rem 0 0.5rem;">Asset Class Parameters (Last 20 Years)</h4>
+      <ul style="color: #94a3b8; margin-left: 1.5rem; margin-bottom: 1.5rem;">
+        <li><strong>US Equities (SPY proxy):</strong> The model uses historical annualized return and volatility (standard deviation) over the last 20 years to simulate stock performance.</li>
+        <li><strong>US Aggregate Bonds (AGG proxy):</strong> The model uses historical annualized return and volatility over the last 20 years to simulate bond performance.</li>
+        <li><strong>Correlation:</strong> The model assumes a standard historical correlation between stocks and bonds when calculating the blended portfolio return and volatility.</li>
+      </ul>
+
+      <p style="color: #94a3b8; font-size: 0.9rem;"><em>Note: Real market returns are not perfectly normally distributed and exhibit "fat tails" (extreme events happen more frequently than predicted by a normal distribution). This tool is for educational purposes and should not replace a comprehensive financial plan.</em></p>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="content-box">
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <h4>What is a Monte Carlo simulation for retirement?</h4>
+        <p>A Monte Carlo simulation uses random sampling and statistical modeling to generate thousands of possible future return scenarios. This allows you to estimate the probability of success for your retirement plan under varying market conditions rather than assuming a fixed annual return.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>How does this portfolio Monte Carlo simulator work?</h4>
+        <p>The simulator takes your starting balance, annual contribution, withdrawal expectations, and asset allocation, then runs 1,000 simulations. It uses historical mean returns and standard deviation (volatility) of stocks and bonds to project future percentile outcomes.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>What is considered a good probability of success?</h4>
+        <p>Most financial planners consider a probability of success between 80% and 90% as acceptable. A 100% success rate may mean you are over-saving or under-spending, while anything below 70% suggests you may need to adjust your savings rate, retirement age, or spending expectations.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>Are Monte Carlo simulations accurate for stock markets?</h4>
+        <p>Monte Carlo simulations provide a range of probabilities, not a guaranteed forecast. They are highly dependent on the assumptions used for average return and volatility. Real markets experience "fat tails" (extreme events) more often than a normal distribution predicts, so simulations should be used as a guide, not a certainty.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>Why is sequence of returns risk important in retirement?</h4>
+        <p>Sequence of returns risk refers to the danger of experiencing poor market performance early in retirement. Because you are simultaneously withdrawing funds, early losses deplete your portfolio faster, leaving less capital to benefit from future market recoveries. Monte Carlo simulations help measure this risk by randomly varying the order of good and bad return years.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="disclaimer">
+      <p>© 2026 Westmount Research · A GAB Ventures property.</p>
+      <p style="margin-top: 0.5rem;">This simulator provides mathematical projections for educational purposes only and does not constitute investment, financial, or tax advice. Past performance of asset classes does not guarantee future results. Your actual outcomes will vary based on fees, taxes, and exact market timing.</p>
+    </div>
+  </footer>
+
+<script>
+  // Historical Asset Data (Gathered from Yahoo Finance)
+  const assetData = {
+    stocks: {
+      ticker: "SPY",
+      meanAnnual: 0.11163228857423181,
+      stdAnnual: 0.15293468465131893
+    },
+    bonds: {
+      ticker: "AGG",
+      meanAnnual: 0.032726388315620025,
+      stdAnnual: 0.04650921802353446
+    }
+  };
+
+  // Assumed Stock-Bond Correlation
+  const correlation = 0.1;
+
+  // Box-Muller transform for standard normal random numbers
+  function randn_bm() {
+    let u = 0, v = 0;
+    while(u === 0) u = Math.random();
+    while(v === 0) v = Math.random();
+    return Math.sqrt(-2.0 * Math.log(u)) * Math.cos(2.0 * Math.PI * v);
+  }
+
+  // Format currency
+  const formatCurrency = (val) => {
+    if (val < 0) return "-$" + Math.abs(val).toLocaleString(undefined, { maximumFractionDigits: 0 });
+    return "$" + val.toLocaleString(undefined, { maximumFractionDigits: 0 });
+  };
+
+  let chartInstance = null;
+
+  function runSimulation() {
+    // 1. Get Inputs
+    const initialBalance = parseFloat(document.getElementById('input-balance').value) || 0;
+    const annualContribution = parseFloat(document.getElementById('input-contribution').value) || 0;
+    const years = parseInt(document.getElementById('input-years').value) || 30;
+    const inflation = (parseFloat(document.getElementById('input-inflation').value) || 0) / 100;
+
+    const stockWeight = (parseFloat(document.getElementById('input-stocks').value) || 60) / 100;
+    const bondWeight = 1 - stockWeight;
+
+    // 2. Calculate Portfolio Mean and StdDev (Blended)
+    const portMean = (stockWeight * assetData.stocks.meanAnnual) + (bondWeight * assetData.bonds.meanAnnual);
+
+    // Portfolio Variance = w1^2*o1^2 + w2^2*o2^2 + 2*w1*w2*o1*o2*p
+    const portVar = (Math.pow(stockWeight, 2) * Math.pow(assetData.stocks.stdAnnual, 2)) +
+                    (Math.pow(bondWeight, 2) * Math.pow(assetData.bonds.stdAnnual, 2)) +
+                    (2 * stockWeight * bondWeight * assetData.stocks.stdAnnual * assetData.bonds.stdAnnual * correlation);
+    const portStdDev = Math.sqrt(portVar);
+
+    // 3. Monte Carlo Simulation
+    const NUM_SIMULATIONS = 1000;
+    const results = []; // stores final balances
+    const paths = []; // stores full year-by-year paths for all simulations
+
+    let successCount = 0;
+
+    for (let s = 0; s < NUM_SIMULATIONS; s++) {
+      let balance = initialBalance;
+      let currentPath = [balance];
+
+      let isSuccess = true;
+
+      for (let y = 1; y <= years; y++) {
+        // Generate random nominal return for the year
+        const nominalReturn = portMean + (randn_bm() * portStdDev);
+
+        // Convert to real return (inflation-adjusted)
+        const realReturn = (1 + nominalReturn) / (1 + inflation) - 1;
+
+        // Apply return to balance
+        balance = balance * (1 + realReturn);
+
+        // Apply contribution/withdrawal (adjusting for inflation simplistically by keeping it constant in real terms)
+        balance += annualContribution;
+
+        if (balance < 0) {
+          balance = 0;
+          isSuccess = false;
+        }
+
+        currentPath.push(balance);
+      }
+
+      results.push(balance);
+      paths.push(currentPath);
+      if (isSuccess && balance > 0) successCount++;
+    }
+
+    // 4. Calculate Percentiles
+    // Calculate percentiles at each year across all paths
+    const yearPercentiles = {
+      p10: [],
+      p25: [],
+      p50: [],
+      p75: [],
+      p90: []
+    };
+
+    for (let y = 0; y <= years; y++) {
+      const yearValues = paths.map(p => p[y]).sort((a, b) => a - b);
+      yearPercentiles.p10.push(yearValues[Math.floor(NUM_SIMULATIONS * 0.10)]);
+      yearPercentiles.p25.push(yearValues[Math.floor(NUM_SIMULATIONS * 0.25)]);
+      yearPercentiles.p50.push(yearValues[Math.floor(NUM_SIMULATIONS * 0.50)]);
+      yearPercentiles.p75.push(yearValues[Math.floor(NUM_SIMULATIONS * 0.75)]);
+      yearPercentiles.p90.push(yearValues[Math.floor(NUM_SIMULATIONS * 0.90)]);
+    }
+
+    // Sort final results for summary stats
+    results.sort((a, b) => a - b);
+    const final_p10 = results[Math.floor(NUM_SIMULATIONS * 0.10)];
+    const final_p50 = results[Math.floor(NUM_SIMULATIONS * 0.50)];
+    const final_p90 = results[Math.floor(NUM_SIMULATIONS * 0.90)];
+    const probSuccess = (successCount / NUM_SIMULATIONS) * 100;
+
+    // 5. Update UI Stats
+    document.getElementById('val-prob').innerText = probSuccess.toFixed(1) + "%";
+    document.getElementById('val-worst').innerText = formatCurrency(final_p10);
+    document.getElementById('val-median').innerText = formatCurrency(final_p50);
+    document.getElementById('val-best').innerText = formatCurrency(final_p90);
+
+    // Color code probability
+    const statProb = document.getElementById('stat-prob');
+    statProb.className = 'stat-card'; // reset
+    if (probSuccess >= 80) statProb.classList.add('success');
+    else if (probSuccess >= 50) statProb.classList.add('warning');
+    else statProb.classList.add('danger');
+
+    // 6. Draw Chart
+    drawChart(years, yearPercentiles);
+
+    // 7. Render Table
+    renderTable(years, yearPercentiles);
+  }
+
+  let tableData = [];
+  let sortCol = 0;
+  let sortAsc = true;
+
+  function renderTable(years, percentiles) {
+    tableData = [];
+    for (let i = 0; i <= years; i++) {
+      tableData.push({
+        year: i,
+        p10: percentiles.p10[i],
+        p25: percentiles.p25[i],
+        p50: percentiles.p50[i],
+        p75: percentiles.p75[i],
+        p90: percentiles.p90[i]
+      });
+    }
+    updateTableUI();
+  }
+
+  function updateTableUI() {
+    const tbody = document.getElementById('projection-table-body');
+    const searchTerm = document.getElementById('table-search').value.toLowerCase();
+
+    // Filter
+    let filteredData = tableData.filter(row => {
+      return row.year.toString().includes(searchTerm);
+    });
+
+    // Sort
+    filteredData.sort((a, b) => {
+      let valA, valB;
+      switch(sortCol) {
+        case 0: valA = a.year; valB = b.year; break;
+        case 1: valA = a.p10; valB = b.p10; break;
+        case 2: valA = a.p25; valB = b.p25; break;
+        case 3: valA = a.p50; valB = b.p50; break;
+        case 4: valA = a.p75; valB = b.p75; break;
+        case 5: valA = a.p90; valB = b.p90; break;
+      }
+      return sortAsc ? valA - valB : valB - valA;
+    });
+
+    // Render
+    tbody.innerHTML = '';
+    filteredData.forEach(row => {
+      const tr = document.createElement('tr');
+      tr.style.borderBottom = '1px solid #152040';
+      if (row.year % 5 === 0 && row.year !== 0) {
+        tr.style.backgroundColor = 'rgba(74, 143, 231, 0.05)';
+      }
+
+      tr.innerHTML = `
+        <td style="padding: 1rem; text-align: left; color: #94a3b8;">Year ${row.year}</td>
+        <td style="padding: 1rem; color: #ef4444;">${formatCurrency(row.p10)}</td>
+        <td style="padding: 1rem; color: #f59e0b;">${formatCurrency(row.p25)}</td>
+        <td style="padding: 1rem; color: #4a8fe7; font-weight: 700;">${formatCurrency(row.p50)}</td>
+        <td style="padding: 1rem; color: #10b981;">${formatCurrency(row.p75)}</td>
+        <td style="padding: 1rem; color: #10b981;">${formatCurrency(row.p90)}</td>
+      `;
+      tbody.appendChild(tr);
+    });
+  }
+
+  function sortTable(colIndex) {
+    if (sortCol === colIndex) {
+      sortAsc = !sortAsc;
+    } else {
+      sortCol = colIndex;
+      sortAsc = true;
+    }
+    updateTableUI();
+  }
+
+  document.getElementById('table-search').addEventListener('input', updateTableUI);
+
+  function drawChart(years, percentiles) {
+    const ctx = document.getElementById('monteCarloChart').getContext('2d');
+
+    if (chartInstance) {
+      chartInstance.destroy();
+    }
+
+    const labels = Array.from({length: years + 1}, (_, i) => "Year " + i);
+
+    chartInstance = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: labels,
+        datasets: [
+          {
+            label: '10th Percentile (Worst Case)',
+            data: percentiles.p10,
+            borderColor: '#ef4444',
+            backgroundColor: 'transparent',
+            borderWidth: 2,
+            borderDash: [5, 5],
+            pointRadius: 0,
+            tension: 0.1
+          },
+          {
+            label: '25th Percentile',
+            data: percentiles.p25,
+            borderColor: 'rgba(245, 158, 11, 0.5)',
+            backgroundColor: 'transparent',
+            borderWidth: 1,
+            pointRadius: 0,
+            tension: 0.1
+          },
+          {
+            label: '50th Percentile (Median)',
+            data: percentiles.p50,
+            borderColor: '#4a8fe7',
+            backgroundColor: 'rgba(74, 143, 231, 0.1)',
+            borderWidth: 3,
+            fill: false,
+            pointRadius: 0,
+            tension: 0.1
+          },
+          {
+            label: '75th Percentile',
+            data: percentiles.p75,
+            borderColor: 'rgba(16, 185, 129, 0.5)',
+            backgroundColor: 'transparent',
+            borderWidth: 1,
+            pointRadius: 0,
+            tension: 0.1
+          },
+          {
+            label: '90th Percentile (Best Case)',
+            data: percentiles.p90,
+            borderColor: '#10b981',
+            backgroundColor: 'transparent',
+            borderWidth: 2,
+            borderDash: [5, 5],
+            pointRadius: 0,
+            tension: 0.1
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        interaction: {
+          mode: 'index',
+          intersect: false,
+        },
+        plugins: {
+          legend: {
+            position: 'bottom',
+            labels: { color: '#94a3b8', font: { family: 'Inter' } }
+          },
+          tooltip: {
+            backgroundColor: 'rgba(10, 16, 32, 0.9)',
+            titleColor: '#fff',
+            bodyColor: '#e2e8f0',
+            borderColor: '#152040',
+            borderWidth: 1,
+            callbacks: {
+              label: function(context) {
+                let label = context.dataset.label || '';
+                if (label) { label += ': '; }
+                if (context.parsed.y !== null) {
+                  label += formatCurrency(context.parsed.y);
+                }
+                return label;
+              }
+            }
+          }
+        },
+        scales: {
+          x: {
+            grid: { color: '#152040' },
+            ticks: { color: '#94a3b8', maxTicksLimit: 10 }
+          },
+          y: {
+            grid: { color: '#152040' },
+            ticks: {
+              color: '#94a3b8',
+              callback: function(value) {
+                if (value >= 1000000) return '$' + (value / 1000000).toFixed(1) + 'M';
+                if (value >= 1000) return '$' + (value / 1000).toFixed(0) + 'k';
+                return '$' + value;
+              }
+            }
+          }
+        }
+      }
+    });
+  }
+
+  // Event Listeners
+  document.getElementById('input-stocks').addEventListener('input', function(e) {
+    const val = e.target.value;
+    document.getElementById('alloc-stocks').innerText = val + "% Stocks";
+    document.getElementById('alloc-bonds').innerText = (100 - val) + "% Bonds";
+  });
+
+  document.getElementById('run-btn').addEventListener('click', runSimulation);
+
+  // Initial Run
+  window.addEventListener('DOMContentLoaded', runSimulation);
+
+</script>
+</body>
+</html>

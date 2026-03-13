@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ETF Comparison Tool: Side-by-Side Analysis | Westmount</title>
+    <meta name="description" content="Compare 30+ popular ETFs side by side. Analyze expense ratios, AUM, dividend yield, historical returns, sector weights, and top holdings overlap.">
+
+    <link rel="canonical" href="https://westmountfundamentals.com/etf-comparison-tool">
+
+    <meta property="og:title" content="ETF Comparison Tool: Side-by-Side Analysis | Westmount">
+    <meta property="og:description" content="Compare 30+ popular ETFs side by side. Analyze expense ratios, AUM, dividend yield, historical returns, sector weights, and top holdings overlap.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://westmountfundamentals.com/etf-comparison-tool">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="ETF Comparison Tool: Side-by-Side Analysis | Westmount">
+    <meta name="twitter:description" content="Compare 30+ popular ETFs side by side. Analyze expense ratios, AUM, dividend yield, historical returns, sector weights, and top holdings overlap.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VYF72NSC1Q"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-VYF72NSC1Q');
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "ETF Comparison Tool: Side-by-Side Analysis",
+      "description": "Compare 30+ popular ETFs side by side. Analyze expense ratios, AUM, dividend yield, historical returns, sector weights, and top holdings overlap.",
+      "datePublished": "2026-03-13T06:24:53.168Z",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Westmount Research",
+        "url": "https://westmountfundamentals.com"
+      }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How does VOO compare to VTI?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "VOO tracks the S&P 500, holding roughly 500 of the largest U.S. companies. VTI tracks the entire U.S. stock market, holding over 3,000 large, mid, and small-cap stocks. Both have extremely low expense ratios, and historically, their returns have been highly correlated because VTI's performance is heavily weighted by the same large-cap companies that make up VOO."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between SPY, VOO, and IVV?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "SPY, VOO, and IVV all track the S&P 500 index. Their primary differences are their ETF sponsors (State Street, Vanguard, and BlackRock, respectively) and their expense ratios. VOO and IVV typically have slightly lower expense ratios than SPY, while SPY generally has higher daily trading volume, making it popular for options trading."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How to compare ETF overlap?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can compare ETF overlap by examining the underlying top holdings and sector weightings. Our tool allows you to select multiple ETFs and directly compare their top 10 holdings and sector allocations side-by-side to identify potential concentration risks."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which ETF has the highest dividend yield?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Among popular ETFs, those focused on dividend strategies (like SCHD or VYM) or covered call strategies (like JEPI or JEPQ) typically offer higher dividend yields compared to broad market ETFs like VOO or VTI. Yields fluctuate based on market prices and recent distributions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is it better to have QQQ or VOO?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It depends on your investment goals and risk tolerance. QQQ tracks the tech-heavy Nasdaq-100 index, which has historically provided higher growth but comes with greater volatility and concentration in the technology sector. VOO provides broader diversification across 500 large-cap companies in various sectors."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        :root {
+            --bg: #060a12;
+            --card-bg: #0a1020;
+            --border: #152040;
+            --accent: #4a8fe7;
+            --text-main: #e2e8f0;
+            --text-muted: #94a3b8;
+            --green: #10b981;
+            --red: #ef4444;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* Sticky Nav */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: rgba(6, 10, 18, 0.85);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 0;
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--text-main);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        header {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, #60a5fa, #3b82f6, #4a8fe7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ETF Selector */
+        .selector-container {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .selector-title {
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .select-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        select {
+            background-color: var(--bg);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            flex: 1;
+            min-width: 150px;
+            outline: none;
+        }
+
+        select:focus {
+            border-color: var(--accent);
+        }
+
+        /* Comparison Grid */
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 200px repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1px;
+            background-color: var(--border);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 3rem;
+        }
+
+        .grid-cell {
+            background-color: var(--card-bg);
+            padding: 1rem;
+        }
+
+        .grid-header {
+            font-weight: 700;
+            font-size: 1.2rem;
+            text-align: center;
+            background-color: rgba(74, 143, 231, 0.1);
+            color: var(--accent);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .grid-label {
+            font-weight: 600;
+            color: var(--text-muted);
+            background-color: rgba(255, 255, 255, 0.02);
+            display: flex;
+            align-items: center;
+        }
+
+        .grid-value {
+            font-family: 'JetBrains Mono', monospace;
+            text-align: right;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .value-green { color: var(--green); }
+        .value-red { color: var(--red); }
+
+        .section-header {
+            grid-column: 1 / -1;
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 0.75rem 1rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+        }
+
+        /* Charts */
+        .charts-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .chart-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+
+        .chart-title {
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        /* Holdings List */
+        .holdings-list {
+            list-style: none;
+            font-size: 0.9rem;
+        }
+        .holdings-list li {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .holdings-list li:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        .h-symbol { font-weight: 600; }
+        .h-percent { font-family: 'JetBrains Mono', monospace; color: var(--text-muted); }
+
+        /* Content Sections */
+        .content-section {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-main);
+        }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .faq-item h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--accent);
+        }
+
+        .faq-item p {
+            color: var(--text-muted);
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1.5rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .charts-container {
+                grid-template-columns: 1fr;
+            }
+            .comparison-grid {
+                overflow-x: auto;
+            }
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-content">
+            <a href="/" class="brand">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--accent);"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+                Westmount Fundamentals
+            </a>
+            <div class="nav-links">
+                <a href="/#studies">Studies</a>
+                <a href="/#tools">Tools</a>
+                <a href="/#guides">Guides</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>ETF Comparison Tool</h1>
+            <p class="subtitle">Side-by-side analysis of popular ETFs. Compare performance, fees, yields, and underlying holdings overlap.</p>
+        </header>
+
+        <div class="selector-container">
+            <div class="selector-title">Select ETFs to Compare</div>
+            <div class="select-group">
+                <select id="etf1" onchange="updateComparison()"></select>
+                <select id="etf2" onchange="updateComparison()"></select>
+                <select id="etf3" onchange="updateComparison()">
+                    <option value="">-- None --</option>
+                </select>
+            </div>
+        </div>
+
+        <div id="comparison-container">
+            <!-- Grid will be injected here -->
+        </div>
+
+        <div class="charts-container">
+            <div class="chart-card">
+                <div class="chart-title">Historical Returns</div>
+                <canvas id="returnsChart"></canvas>
+            </div>
+            <div class="chart-card">
+                <div class="chart-title">Sector Allocation</div>
+                <canvas id="sectorsChart"></canvas>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>Methodology & Data Sources</h2>
+            <p style="color: var(--text-muted); margin-bottom: 1rem;">
+                This tool provides a side-by-side comparison of exchange-traded funds (ETFs). The data presented is updated periodically and is sourced from Yahoo Finance API.
+            </p>
+            <ul style="color: var(--text-muted); margin-left: 1.5rem; margin-bottom: 1rem;">
+                <li><strong>Expense Ratio:</strong> The annual fee charged by the fund, expressed as a percentage of assets.</li>
+                <li><strong>AUM (Assets Under Management):</strong> Total market value of assets the fund manages.</li>
+                <li><strong>Yield:</strong> Trailing 12-month dividend yield.</li>
+                <li><strong>Returns:</strong> Trailing total returns (including dividends) as of the most recent month-end.</li>
+                <li><strong>Holdings:</strong> The top 10 individual stock components of the ETF.</li>
+            </ul>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">
+                Note: All metrics are approximations and should be verified via the fund sponsor's official prospectus before making investment decisions.
+            </p>
+        </div>
+
+        <div class="content-section">
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <h3>How does VOO compare to VTI?</h3>
+                <p>VOO tracks the S&P 500, holding roughly 500 of the largest U.S. companies. VTI tracks the entire U.S. stock market, holding over 3,000 large, mid, and small-cap stocks. Both have extremely low expense ratios, and historically, their returns have been highly correlated because VTI's performance is heavily weighted by the same large-cap companies that make up VOO.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>What is the difference between SPY, VOO, and IVV?</h3>
+                <p>SPY, VOO, and IVV all track the S&P 500 index. Their primary differences are their ETF sponsors (State Street, Vanguard, and BlackRock, respectively) and their expense ratios. VOO and IVV typically have slightly lower expense ratios than SPY, while SPY generally has higher daily trading volume, making it popular for options trading.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>How to compare ETF overlap?</h3>
+                <p>You can compare ETF overlap by examining the underlying top holdings and sector weightings. Our tool allows you to select multiple ETFs and directly compare their top 10 holdings and sector allocations side-by-side to identify potential concentration risks.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Which ETF has the highest dividend yield?</h3>
+                <p>Among popular ETFs, those focused on dividend strategies (like SCHD or VYM) or covered call strategies (like JEPI or JEPQ) typically offer higher dividend yields compared to broad market ETFs like VOO or VTI. Yields fluctuate based on market prices and recent distributions.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Is it better to have QQQ or VOO?</h3>
+                <p>It depends on your investment goals and risk tolerance. QQQ tracks the tech-heavy Nasdaq-100 index, which has historically provided higher growth but comes with greater volatility and concentration in the technology sector. VOO provides broader diversification across 500 large-cap companies in various sectors.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Westmount Research &middot; A GAB Ventures property. Not investment advice. All information for educational purposes only.</p>
+    </footer>
+
+    <script>
+        // Data injected via build script
+        const etfData = {"VOO":{"name":"Vanguard S&P 500 ETF","expenseRatio":0.029999999000000003,"aum":1512901836800,"yield":1.12,"price":612.5,"returns":{"oneYear":16.95286,"threeYear":21.76567,"fiveYear":14.146360999999999},"sectors":{"realestate":0.0185,"consumer_cyclical":0.10609999,"basic_materials":0.0177,"consumer_defensive":0.05,"technology":0.3413,"communication_services":0.1125,"financial_services":0.1254,"utilities":0.0225,"industrials":0.0796,"energy":0.0318,"healthcare":0.0945},"holdings":[{"symbol":"NVDA","name":"NVIDIA Corp","percent":0.0782758},{"symbol":"AAPL","name":"Apple Inc","percent":0.0646199},{"symbol":"MSFT","name":"Microsoft Corp","percent":0.053899},{"symbol":"AMZN","name":"Amazon.com Inc","percent":0.0392343},{"symbol":"GOOGL","name":"Alphabet Inc Class A","percent":0.033143},{"symbol":"GOOG","name":"Alphabet Inc Class C","percent":0.026530199},{"symbol":"AVGO","name":"Broadcom Inc","percent":0.0263679},{"symbol":"META","name":"Meta Platforms Inc Class A","percent":0.0262994},{"symbol":"TSLA","name":"Tesla Inc","percent":0.020383101},{"symbol":"BRK-B","name":"Berkshire Hathaway Inc Class B","percent":0.0148507}]},"VTI":{"name":"Vanguard Total Stock Market Index Fund ETF Shares","expenseRatio":0.029999999000000003,"aum":2088924610560,"yield":1.11,"price":327.92,"returns":{"oneYear":17.041339999999998,"threeYear":20.921369000000002,"fiveYear":12.67602},"sectors":{"realestate":0.023599999,"consumer_cyclical":0.105,"basic_materials":0.0202,"consumer_defensive":0.0473,"technology":0.32119998,"communication_services":0.1035,"financial_services":0.1285,"utilities":0.0223,"industrials":0.0943,"energy":0.0332,"healthcare":0.1009},"holdings":[{"symbol":"NVDA","name":"NVIDIA Corp","percent":0.0661532},{"symbol":"AAPL","name":"Apple Inc","percent":0.057487402},{"symbol":"MSFT","name":"Microsoft Corp","percent":0.0479509},{"symbol":"AMZN","name":"Amazon.com Inc","percent":0.034518298},{"symbol":"GOOGL","name":"Alphabet Inc Class A","percent":0.0294768},{"symbol":"AVGO","name":"Broadcom Inc","percent":0.0234558},{"symbol":"META","name":"Meta Platforms Inc Class A","percent":0.023395099},{"symbol":"GOOG","name":"Alphabet Inc Class C","percent":0.023333099},{"symbol":"TSLA","name":"Tesla Inc","percent":0.0182412},{"symbol":"LLY","name":"Eli Lilly and Co","percent":0.0132287005}]},"SPY":{"name":"State Street SPDR S&P 500 ETF Trust","expenseRatio":0.0945,"aum":698270220288,"yield":1.06,"price":666.06,"returns":{"oneYear":16.865510999999998,"threeYear":21.662621,"fiveYear":14.083039999999999},"sectors":{"realestate":0.0198,"consumer_cyclical":0.1011,"basic_materials":0.019299999,"consumer_defensive":0.0543,"technology":0.33080003,"communication_services":0.1073,"financial_services":0.122600004,"utilities":0.0249,"industrials":0.0866,"energy":0.0348,"healthcare":0.098400004},"holdings":[{"symbol":"NVDA","name":"NVIDIA Corp","percent":0.0731524},{"symbol":"AAPL","name":"Apple Inc","percent":0.0663206},{"symbol":"MSFT","name":"Microsoft Corp","percent":0.049592},{"symbol":"AMZN","name":"Amazon.com Inc","percent":0.0347069},{"symbol":"GOOGL","name":"Alphabet Inc Class A","percent":0.0308148},{"symbol":"AVGO","name":"Broadcom Inc","percent":0.025636699},{"symbol":"GOOG","name":"Alphabet Inc Class C","percent":0.0246022},{"symbol":"META","name":"Meta Platforms Inc Class A","percent":0.023982301},{"symbol":"TSLA","name":"Tesla Inc","percent":0.0192143},{"symbol":"BRK-B","name":"Berkshire Hathaway Inc Class B","percent":0.015729701}]},"IVV":{"name":"iShares Core S&P 500 ETF","expenseRatio":0.029999999000000003,"aum":750651899904,"yield":1.17,"price":668.95,"returns":{"oneYear":16.96139,"threeYear":21.770709999999998,"fiveYear":14.15716},"sectors":{"realestate":0.0199,"consumer_cyclical":0.1011,"basic_materials":0.019299999,"consumer_defensive":0.0543,"technology":0.33080003,"communication_services":0.1073,"financial_services":0.122600004,"utilities":0.0249,"industrials":0.0866,"energy":0.0348,"healthcare":0.098400004},"holdings":[{"symbol":"NVDA","name":"NVIDIA Corp","percent":0.0731196},{"symbol":"AAPL","name":"Apple Inc","percent":0.0662912},{"symbol":"MSFT","name":"Microsoft Corp","percent":0.0495703},{"symbol":"AMZN","name":"Amazon.com Inc","percent":0.0346925},{"symbol":"GOOGL","name":"Alphabet Inc Class A","percent":0.0308022},{"symbol":"AVGO","name":"Broadcom Inc","percent":0.025626399},{"symbol":"GOOG","name":"Alphabet Inc Class C","percent":0.0245926},{"symbol":"META","name":"Meta Platforms Inc Class A","percent":0.0239729},{"symbol":"TSLA","name":"Tesla Inc","percent":0.0192071},{"symbol":"BRK-B","name":"Berkshire Hathaway Inc Class B","percent":0.0157244}]},"QQQ":{"name":"Invesco QQQ Trust","expenseRatio":0.18000001,"aum":395032887296,"yield":46,"price":597.26,"returns":{"oneYear":20.09118,"threeYear":28.19465,"fiveYear":14.749780000000001},"sectors":{"realestate":0.001,"consumer_cyclical":0.1251,"basic_materials":0.0128,"consumer_defensive":0.0859,"technology":0.5,"communication_services":0.16440001,"financial_services":0.0023,"utilities":0.015700001,"industrials":0.0339,"energy":0.0062,"healthcare":0.052600004},"holdings":[{"symbol":"NVDA","name":"NVIDIA Corp","percent":0.0839326},{"symbol":"AAPL","name":"Apple Inc","percent":0.0760943},{"symbol":"MSFT","name":"Microsoft Corp","percent":0.056900803},{"symbol":"AMZN","name":"Amazon.com Inc","percent":0.0437613},{"symbol":"TSLA","name":"Tesla Inc","percent":0.039161302},{"symbol":"META","name":"Meta Platforms Inc Class A","percent":0.0371074},{"symbol":"GOOGL","name":"Alphabet Inc Class A","percent":0.0353573},{"symbol":"WMT","name":"Walmart Inc","percent":0.0336516},{"symbol":"GOOG","name":"Alphabet Inc Class C","percent":0.0328247},{"symbol":"AVGO","name":"Broadcom Inc","percent":0.029416}]},"SCHD":{"name":"Schwab U.S. Dividend Equity ETF","expenseRatio":0.059999997,"aum":85904449536,"yield":3.3,"price":30.82,"returns":{"oneYear":15.71764,"threeYear":12.636159999999999,"fiveYear":11.026709499999999},"sectors":{"realestate":0,"consumer_cyclical":0.0955,"basic_materials":0.0123000005,"consumer_defensive":0.18879999,"technology":0.0908,"communication_services":0.0458,"financial_services":0.0802,"utilities":0.0004,"industrials":0.113800004,"energy":0.21200001,"healthcare":0.1603},"holdings":[{"symbol":"LMT","name":"Lockheed Martin Corp","percent":0.048141498},{"symbol":"COP","name":"ConocoPhillips","percent":0.0432244},{"symbol":"VZ","name":"Verizon Communications Inc","percent":0.0431209},{"symbol":"CVX","name":"Chevron Corp","percent":0.0430914},{"symbol":"BMY","name":"Bristol-Myers Squibb Co","percent":0.0428079},{"symbol":"MRK","name":"Merck & Co Inc","percent":0.0423466},{"symbol":"MO","name":"Altria Group Inc","percent":0.0413419},{"symbol":"TXN","name":"Texas Instruments Inc","percent":0.0406291},{"symbol":"KO","name":"Coca-Cola Co","percent":0.040286496},{"symbol":"PEP","name":"PepsiCo Inc","percent":0.0400981}]},"VIG":{"name":"Vanguard Dividend Appreciation Index Fund ETF Shares","expenseRatio":0.04,"aum":123750858752,"yield":1.56,"price":218.09,"returns":{"oneYear":14.07831,"threeYear":16.5386,"fiveYear":12.39523},"sectors":{"realestate":0,"consumer_cyclical":0.052199997,"basic_materials":0.0317,"consumer_defensive":0.0994,"technology":0.26790002,"communication_services":0.0052,"financial_services":0.21180001,"utilities":0.026099999,"industrials":0.109799996,"energy":0.0318,"healthcare":0.16420001},"holdings":[{"symbol":"AVGO","name":"Broadcom Inc","percent":0.062438503},{"symbol":"AAPL","name":"Apple Inc","percent":0.0388022},{"symbol":"MSFT","name":"Microsoft Corp","percent":0.0384459},{"symbol":"LLY","name":"Eli Lilly and Co","percent":0.0370627},{"symbol":"JPM","name":"JPMorgan Chase & Co","percent":0.0363004},{"symbol":"XOM","name":"Exxon Mobil Corp","percent":0.027091999},{"symbol":"JNJ","name":"Johnson & Johnson","percent":0.0246421},{"symbol":"WMT","name":"Walmart Inc","percent":0.0235219},{"symbol":"V","name":"Visa Inc Class A","percent":0.0228046},{"symbol":"MA","name":"Mastercard Inc Class A","percent":0.020008098}]},"VYM":{"name":"Vanguard High Dividend Yield Index Fund ETF Shares","expenseRatio":0.04,"aum":92321120256,"yield":2.26,"price":148.74,"returns":{"oneYear":18.728901,"threeYear":16.516359,"fiveYear":13.556019999999998},"sectors":{"realestate":0.0002,"consumer_cyclical":0.070199996,"basic_materials":0.0215,"consumer_defensive":0.11310001,"technology":0.16049999,"communication_services":0.0252,"financial_services":0.2086,"utilities":0.0577,"industrials":0.121700004,"energy":0.092,"healthcare":0.1294},"holdings":[{"symbol":"AVGO","name":"Broadcom Inc","percent":0.069454595},{"symbol":"JPM","name":"JPMorgan Chase & Co","percent":0.036301002},{"symbol":"XOM","name":"Exxon Mobil Corp","percent":0.0271172},{"symbol":"JNJ","name":"Johnson & Johnson","percent":0.0248245},{"symbol":"WMT","name":"Walmart Inc","percent":0.023529898},{"symbol":"ABBV","name":"AbbVie Inc","percent":0.0179339},{"symbol":"HD","name":"The Home Depot Inc","percent":0.016929999},{"symbol":"PG","name":"Procter & Gamble Co","percent":0.0161825},{"symbol":"BAC","name":"Bank of America Corp","percent":0.0156356},{"symbol":"CVX","name":"Chevron Corp","percent":0.0150439}]},"JEPI":{"name":"JPMorgan Equity Premium Income ETF","expenseRatio":0.34999999,"aum":44961914880,"yield":7.91,"price":57.18,"returns":{"oneYear":9.552529999999999,"threeYear":12.23697,"fiveYear":10.721169999999999},"sectors":{"realestate":0.035,"consumer_cyclical":0.1241,"basic_materials":0.0215,"consumer_defensive":0.088,"technology":0.18360001,"communication_services":0.059,"financial_services":0.1107,"utilities":0.059899997,"industrials":0.1442,"energy":0.028099999,"healthcare":0.146},"holdings":[{"symbol":"JNJ","name":"Johnson & Johnson","percent":0.0173718},{"symbol":"HWM","name":"Howmet Aerospace Inc","percent":0.017226},{"symbol":"ADI","name":"Analog Devices Inc","percent":0.0164271},{"symbol":"ROST","name":"Ross Stores Inc","percent":0.0163396},{"symbol":"ABBV","name":"AbbVie Inc","percent":0.0158238},{"symbol":"NEE","name":"NextEra Energy Inc","percent":0.0157692},{"symbol":"RTX","name":"RTX Corp","percent":0.015050599},{"symbol":"TT","name":"Trane Technologies PLC Class A","percent":0.015014499},{"symbol":"PEP","name":"PepsiCo Inc","percent":0.014878},{"symbol":"YUM","name":"Yum Brands Inc","percent":0.014496}]},"JEPQ":{"name":"JPMorgan Nasdaq Equity Premium Income ETF","expenseRatio":0.34999999,"aum":34604126208,"yield":10.58,"price":56.86,"returns":{"oneYear":15.763399999999999,"threeYear":23.242371000000002,"fiveYear":0},"sectors":{"realestate":0.0025,"consumer_cyclical":0.1296,"basic_materials":0.0108,"consumer_defensive":0.0795,"technology":0.5058,"communication_services":0.16129999,"financial_services":0.0045,"utilities":0.0137,"industrials":0.0349,"energy":0.0034,"healthcare":0.054},"holdings":[{"symbol":"NVDA","name":"NVIDIA Corp","percent":0.0718077},{"symbol":"AAPL","name":"Apple Inc","percent":0.0638896},{"symbol":"GOOG","name":"Alphabet Inc Class C","percent":0.053175103},{"symbol":"MSFT","name":"Microsoft Corp","percent":0.049119603},{"symbol":"AMZN","name":"Amazon.com Inc","percent":0.0389786},{"symbol":"META","name":"Meta Platforms Inc Class A","percent":0.0328984},{"symbol":"TSLA","name":"Tesla Inc","percent":0.0270612},{"symbol":"WMT","name":"Walmart Inc","percent":0.0244804},{"symbol":"MU","name":"Micron Technology Inc","percent":0.0240012},{"symbol":"AVGO","name":"Broadcom Inc","percent":0.0221759}]},"BND":{"name":"Vanguard Total Bond Market Index Fund","expenseRatio":0.029999999000000003,"aum":395346083840,"yield":3.82,"price":73.62,"returns":{"oneYear":6.15646,"threeYear":5.11572,"fiveYear":0.4149},"sectors":{},"holdings":[]},"AGG":{"name":"iShares Core U.S. Aggregate Bond ETF","expenseRatio":0.029999999000000003,"aum":141223149568,"yield":3.83,"price":99.29,"returns":{"oneYear":6.24391,"threeYear":5.11405,"fiveYear":0.41472000000000003},"sectors":{},"holdings":[{"symbol":"BISXX","name":"BlackRock Cash Funds Instl SL Agency","percent":0.0320031}]},"TLT":{"name":"iShares 20+ Year Treasury Bond ETF","expenseRatio":0.15,"aum":45428621312,"yield":4.28,"price":86.97,"returns":{"oneYear":2.5611501,"threeYear":0.22957,"fiveYear":-5.75809},"sectors":{},"holdings":[]},"BIL":{"name":"State Street SPDR Bloomberg 1-3 Month T-Bill ETF","expenseRatio":0.13529999,"aum":43266318336,"yield":4.06,"price":91.48,"returns":{"oneYear":4.0327903,"threeYear":4.74443,"fiveYear":3.21593},"sectors":{},"holdings":[]},"SGOV":{"name":"iShares 0-3 Month Treasury Bond ETF","expenseRatio":0.09000000400000001,"aum":75028905984,"yield":4.04,"price":100.49,"returns":{"oneYear":4.11306,"threeYear":4.8458000000000006,"fiveYear":3.34751},"sectors":{},"holdings":[]},"VNQ":{"name":"Vanguard Real Estate Index Fund ETF Shares","expenseRatio":0.13,"aum":69605638144,"yield":3.63,"price":92.01,"returns":{"oneYear":5.9438802,"threeYear":7.97017,"fiveYear":5.5681899999999995},"sectors":{"realestate":0.9899,"consumer_cyclical":0,"basic_materials":0,"consumer_defensive":0,"technology":0,"communication_services":0.0091,"financial_services":0,"utilities":0,"industrials":0.0002,"energy":0.0007,"healthcare":0},"holdings":[{"symbol":"VRTPX","name":"Vanguard Real Estate II Index","percent":0.1447489},{"symbol":"WELL","name":"Welltower Inc","percent":0.0705308},{"symbol":"PLD","name":"Prologis Inc","percent":0.068600796},{"symbol":"AMT","name":"American Tower Corp","percent":0.047497302},{"symbol":"EQIX","name":"Equinix Inc","percent":0.0454558},{"symbol":"SPG","name":"Simon Property Group Inc","percent":0.0353396},{"symbol":"DLR","name":"Digital Realty Trust Inc","percent":0.0320226},{"symbol":"O","name":"Realty Income Corp","percent":0.0313884},{"symbol":"CBRE","name":"CBRE Group Inc Class A","percent":0.028675599},{"symbol":"PSA","name":"Public Storage","percent":0.024675801}]},"XLRE":{"name":"State Street Real Estate Select Sector SPDR ETF","expenseRatio":0.08,"aum":7705807872,"yield":3.18,"price":42.14,"returns":{"oneYear":5.00559,"threeYear":8.35917,"fiveYear":6.781610000000001},"sectors":{"realestate":1,"consumer_cyclical":0,"basic_materials":0,"consumer_defensive":0,"technology":0,"communication_services":0,"financial_services":0,"utilities":0,"industrials":0,"energy":0,"healthcare":0},"holdings":[{"symbol":"WELL","name":"Welltower Inc","percent":0.1030356},{"symbol":"PLD","name":"Prologis Inc","percent":0.0959893},{"symbol":"EQIX","name":"Equinix Inc","percent":0.0693383},{"symbol":"AMT","name":"American Tower Corp","percent":0.0651063},{"symbol":"O","name":"Realty Income Corp","percent":0.0489392},{"symbol":"SPG","name":"Simon Property Group Inc","percent":0.0482391},{"symbol":"PSA","name":"Public Storage","percent":0.0474949},{"symbol":"DLR","name":"Digital Realty Trust Inc","percent":0.0459851},{"symbol":"VTR","name":"Ventas Inc","percent":0.040896002},{"symbol":"CCI","name":"Crown Castle Inc","percent":0.0394018}]},"GLD":{"name":"SPDR Gold Shares","expenseRatio":0.4,"aum":184864325632,"yield":0,"price":466.88,"returns":{"oneYear":83.53495,"threeYear":41.42899,"fiveYear":24.05348},"sectors":{},"holdings":[]},"IAU":{"name":"iShares Gold Trust","expenseRatio":0.25,"aum":83820666880,"yield":0,"price":95.65,"returns":{"oneYear":83.789617,"threeYear":41.632518000000005,"fiveYear":24.23499},"sectors":{},"holdings":[]},"SLV":{"name":"iShares Silver Trust","expenseRatio":0.5,"aum":46246498304,"yield":0,"price":76.48,"returns":{"oneYear":187.60136,"threeYear":62.859410000000004,"fiveYear":26.88526},"sectors":{},"holdings":[]},"ARKK":{"name":"ARK Innovation ETF","expenseRatio":0.75,"aum":6515731968,"yield":0,"price":70.64,"returns":{"oneYear":31.154168,"threeYear":22.62608,"fiveYear":-10.8102106},"sectors":{"realestate":0,"consumer_cyclical":0.128,"basic_materials":0,"consumer_defensive":0,"technology":0.2472,"communication_services":0.1161,"financial_services":0.14479999,"utilities":0,"industrials":0.0618,"energy":0,"healthcare":0.3022},"holdings":[{"symbol":"TSLA","name":"Tesla Inc","percent":0.1036238},{"symbol":"CRSP","name":"CRISPR Therapeutics AG","percent":0.0695589},{"symbol":"TEM","name":"Tempus AI Inc Class A common stock","percent":0.0532396},{"symbol":"ROKU","name":"Roku Inc Class A","percent":0.0468861},{"symbol":"SHOP","name":"Shopify Inc Registered Shs -A- Subord Vtg","percent":0.0450208},{"symbol":"COIN","name":"Coinbase Global Inc Ordinary Shares - Class A","percent":0.0409447},{"symbol":"HOOD","name":"Robinhood Markets Inc Class A","percent":0.040844698},{"symbol":"BEAM","name":"Beam Therapeutics Inc","percent":0.0379659},{"symbol":"RBLX","name":"Roblox Corp Ordinary Shares - Class A","percent":0.037756},{"symbol":"AMD","name":"Advanced Micro Devices Inc","percent":0.0373167}]},"SMH":{"name":"VanEck Semiconductor ETF","expenseRatio":0.34999999,"aum":46249938944,"yield":27,"price":388.13,"returns":{"oneYear":74.98790600000001,"threeYear":50.923680000000004,"fiveYear":28.302258000000002},"sectors":{"realestate":0,"consumer_cyclical":0,"basic_materials":0,"consumer_defensive":0,"technology":1,"communication_services":0,"financial_services":0,"utilities":0,"industrials":0,"energy":0,"healthcare":0},"holdings":[{"symbol":"NVDA","name":"NVIDIA Corp","percent":0.1773397},{"symbol":"TSM","name":"Taiwan Semiconductor Manufacturing Co Ltd ADR","percent":0.1144209},{"symbol":"AVGO","name":"Broadcom Inc","percent":0.0690207},{"symbol":"MU","name":"Micron Technology Inc","percent":0.064715296},{"symbol":"ASML","name":"ASML Holding NV ADR","percent":0.0595933},{"symbol":"LRCX","name":"Lam Research Corp","percent":0.0575278},{"symbol":"AMAT","name":"Applied Materials Inc","percent":0.0559981},{"symbol":"KLAC","name":"KLA Corp","percent":0.050928503},{"symbol":"ADI","name":"Analog Devices Inc","percent":0.049693197},{"symbol":"TXN","name":"Texas Instruments Inc","percent":0.0483199}]},"SOXX":{"name":"iShares Semiconductor ETF","expenseRatio":0.33999999999999997,"aum":21675081728,"yield":49,"price":330.19,"returns":{"oneYear":70.09773,"threeYear":38.169039999999995,"fiveYear":21.46086},"sectors":{"realestate":0,"consumer_cyclical":0,"basic_materials":0,"consumer_defensive":0,"technology":1,"communication_services":0,"financial_services":0,"utilities":0,"industrials":0,"energy":0,"healthcare":0},"holdings":[{"symbol":"MU","name":"Micron Technology Inc","percent":0.0860985},{"symbol":"AMAT","name":"Applied Materials Inc","percent":0.0728741},{"symbol":"NVDA","name":"NVIDIA Corp","percent":0.0671222},{"symbol":"AMD","name":"Advanced Micro Devices Inc","percent":0.061711203},{"symbol":"AVGO","name":"Broadcom Inc","percent":0.0531713},{"symbol":"LRCX","name":"Lam Research Corp","percent":0.0502638},{"symbol":"ADI","name":"Analog Devices Inc","percent":0.0449538},{"symbol":"KLAC","name":"KLA Corp","percent":0.043480203},{"symbol":"ASML","name":"ASML Holding NV ADR","percent":0.0431477},{"symbol":"TER","name":"Teradyne Inc","percent":0.0429415}]},"XLK":{"name":"State Street Technology Select Sector SPDR ETF","expenseRatio":0.08,"aum":87685668864,"yield":56.00000000000001,"price":137.84,"returns":{"oneYear":23.768800000000002,"threeYear":27.58737,"fiveYear":17.15408},"sectors":{"realestate":0,"consumer_cyclical":0,"basic_materials":0,"consumer_defensive":0,"technology":0.9895,"communication_services":0.0105,"financial_services":0,"utilities":0,"industrials":0,"energy":0,"healthcare":0},"holdings":[{"symbol":"NVDA","name":"NVIDIA Corp","percent":0.1466547},{"symbol":"AAPL","name":"Apple Inc","percent":0.1329585},{"symbol":"MSFT","name":"Microsoft Corp","percent":0.099422105},{"symbol":"AVGO","name":"Broadcom Inc","percent":0.0513984},{"symbol":"MU","name":"Micron Technology Inc","percent":0.041146997},{"symbol":"AMD","name":"Advanced Micro Devices Inc","percent":0.028975599},{"symbol":"PLTR","name":"Palantir Technologies Inc Ordinary Shares - Class A","percent":0.0278586},{"symbol":"CSCO","name":"Cisco Systems Inc","percent":0.0278357},{"symbol":"AMAT","name":"Applied Materials Inc","percent":0.026365299},{"symbol":"LRCX","name":"Lam Research Corp","percent":0.0261151}]},"XLF":{"name":"State Street Financial Select Sector SPDR ETF","expenseRatio":0.08,"aum":49680445440,"yield":1.4,"price":48.83,"returns":{"oneYear":-0.05742,"threeYear":14.76162,"fiveYear":11.66744},"sectors":{"realestate":0,"consumer_cyclical":0,"basic_materials":0,"consumer_defensive":0,"technology":0.0176,"communication_services":0,"financial_services":0.98,"utilities":0,"industrials":0.0025,"energy":0,"healthcare":0},"holdings":[{"symbol":"BRK-B","name":"Berkshire Hathaway Inc Class B","percent":0.1255126},{"symbol":"JPM","name":"JPMorgan Chase & Co","percent":0.1108129},{"symbol":"V","name":"Visa Inc Class A","percent":0.0732371},{"symbol":"MA","name":"Mastercard Inc Class A","percent":0.0574828},{"symbol":"BAC","name":"Bank of America Corp","percent":0.0453785},{"symbol":"GS","name":"The Goldman Sachs Group Inc","percent":0.0349437},{"symbol":"WFC","name":"Wells Fargo & Co","percent":0.034656998},{"symbol":"MS","name":"Morgan Stanley","percent":0.027261501},{"symbol":"C","name":"Citigroup Inc","percent":0.0267249},{"symbol":"AXP","name":"American Express Co","percent":0.022497302}]},"XLV":{"name":"State Street Health Care Select Sector SPDR ETF","expenseRatio":0.08,"aum":43115044864,"yield":1.55,"price":150.16,"returns":{"oneYear":9.38754,"threeYear":9.792159999999999,"fiveYear":9.01497},"sectors":{"realestate":0,"consumer_cyclical":0,"basic_materials":0,"consumer_defensive":0,"technology":0,"communication_services":0,"financial_services":0,"utilities":0,"industrials":0,"energy":0,"healthcare":1},"holdings":[{"symbol":"LLY","name":"Eli Lilly and Co","percent":0.1439925},{"symbol":"JNJ","name":"Johnson & Johnson","percent":0.1031662},{"symbol":"ABBV","name":"AbbVie Inc","percent":0.0706989},{"symbol":"MRK","name":"Merck & Co Inc","percent":0.052971},{"symbol":"UNH","name":"UnitedHealth Group Inc","percent":0.045789},{"symbol":"AMGN","name":"Amgen Inc","percent":0.0360267},{"symbol":"ABT","name":"Abbott Laboratories","percent":0.0348719},{"symbol":"TMO","name":"Thermo Fisher Scientific Inc","percent":0.0337457},{"symbol":"GILD","name":"Gilead Sciences Inc","percent":0.0318523},{"symbol":"ISRG","name":"Intuitive Surgical Inc","percent":0.0307655}]},"XLE":{"name":"State Street Energy Select Sector SPDR ETF","expenseRatio":0.08,"aum":37876244480,"yield":2.62,"price":57.51,"returns":{"oneYear":26.954230000000003,"threeYear":13.90492,"fiveYear":22.87287},"sectors":{"realestate":0,"consumer_cyclical":0,"basic_materials":0,"consumer_defensive":0,"technology":0,"communication_services":0,"financial_services":0,"utilities":0,"industrials":0,"energy":1,"healthcare":0},"holdings":[{"symbol":"XOM","name":"Exxon Mobil Corp","percent":0.24052441},{"symbol":"CVX","name":"Chevron Corp","percent":0.17270651},{"symbol":"COP","name":"ConocoPhillips","percent":0.0685018},{"symbol":"WMB","name":"Williams Companies Inc","percent":0.0455585},{"symbol":"SLB","name":"SLB Ltd","percent":0.043773998},{"symbol":"EOG","name":"EOG Resources Inc","percent":0.038424898},{"symbol":"KMI","name":"Kinder Morgan Inc Class P","percent":0.0371748},{"symbol":"BKR","name":"Baker Hughes Co Class A","percent":0.0367534},{"symbol":"VLO","name":"Valero Energy Corp","percent":0.035623502},{"symbol":"PSX","name":"Phillips 66","percent":0.0354896}]},"XLY":{"name":"State Street Consumer Discretionary Select Sector SPDR ETF","expenseRatio":0.08,"aum":22737530880,"yield":81,"price":111.52,"returns":{"oneYear":9.1686696,"threeYear":18.09474,"fiveYear":8.55836},"sectors":{"realestate":0,"consumer_cyclical":0.9885,"basic_materials":0,"consumer_defensive":0,"technology":0.0097,"communication_services":0,"financial_services":0,"utilities":0,"industrials":0.0017,"energy":0,"healthcare":0},"holdings":[{"symbol":"AMZN","name":"Amazon.com Inc","percent":0.2130604},{"symbol":"TSLA","name":"Tesla Inc","percent":0.18958941},{"symbol":"HD","name":"The Home Depot Inc","percent":0.0635245},{"symbol":"MCD","name":"McDonald's Corp","percent":0.0505328},{"symbol":"TJX","name":"TJX Companies Inc","percent":0.042168297},{"symbol":"LOW","name":"Lowe's Companies Inc","percent":0.0347759},{"symbol":"BKNG","name":"Booking Holdings Inc","percent":0.0320266},{"symbol":"SBUX","name":"Starbucks Corp","percent":0.0261188},{"symbol":"ORLY","name":"O'Reilly Automotive Inc","percent":0.0185732},{"symbol":"RCL","name":"Royal Caribbean Group","percent":0.0184847}]},"XLP":{"name":"State Street Consumer Staples Select Sector SPDR ETF","expenseRatio":0.08,"aum":17557141504,"yield":2.38,"price":84.25,"returns":{"oneYear":11.362681,"threeYear":10.6366396,"fiveYear":10.13416},"sectors":{"realestate":0,"consumer_cyclical":0,"basic_materials":0,"consumer_defensive":1,"technology":0,"communication_services":0,"financial_services":0,"utilities":0,"industrials":0,"energy":0,"healthcare":0},"holdings":[{"symbol":"WMT","name":"Walmart Inc","percent":0.1135737},{"symbol":"COST","name":"Costco Wholesale Corp","percent":0.090678},{"symbol":"PG","name":"Procter & Gamble Co","percent":0.0790873},{"symbol":"KO","name":"Coca-Cola Co","percent":0.0639163},{"symbol":"PM","name":"Philip Morris International Inc","percent":0.0588702},{"symbol":"CL","name":"Colgate-Palmolive Co","percent":0.0475853},{"symbol":"PEP","name":"PepsiCo Inc","percent":0.046980903},{"symbol":"MO","name":"Altria Group Inc","percent":0.0457237},{"symbol":"MDLZ","name":"Mondelez International Inc Class A","percent":0.044415697},{"symbol":"MNST","name":"Monster Beverage Corp","percent":0.0362267}]},"XLU":{"name":"State Street Utilities Select Sector SPDR ETF","expenseRatio":0.08,"aum":24356755456,"yield":2.42,"price":46.5,"returns":{"oneYear":23.960890000000003,"threeYear":17.18639,"fiveYear":13.74011},"sectors":{"realestate":0,"consumer_cyclical":0,"basic_materials":0,"consumer_defensive":0,"technology":0,"communication_services":0,"financial_services":0,"utilities":1,"industrials":0,"energy":0,"healthcare":0},"holdings":[{"symbol":"NEE","name":"NextEra Energy Inc","percent":0.1330719},{"symbol":"SO","name":"Southern Co","percent":0.0730655},{"symbol":"CEG","name":"Constellation Energy Corp","percent":0.0701994},{"symbol":"DUK","name":"Duke Energy Corp","percent":0.0693392},{"symbol":"AEP","name":"American Electric Power Co Inc","percent":0.0488096},{"symbol":"SRE","name":"Sempra","percent":0.042816},{"symbol":"VST","name":"Vistra Corp","percent":0.0377394},{"symbol":"D","name":"Dominion Energy Inc","percent":0.0367395},{"symbol":"EXC","name":"Exelon Corp","percent":0.034056798},{"symbol":"XEL","name":"Xcel Energy Inc","percent":0.0336014}]},"VEA":{"name":"Vanguard FTSE Developed Markets Index Fund ETF Shares","expenseRatio":0.029999999000000003,"aum":307323502592,"yield":2.86,"price":64.57,"returns":{"oneYear":42.26635,"threeYear":20.738419999999998,"fiveYear":11.46403},"sectors":{"realestate":0.0286,"consumer_cyclical":0.0837,"basic_materials":0.074,"consumer_defensive":0.0585,"technology":0.1228,"communication_services":0.0359,"financial_services":0.2368,"utilities":0.0321,"industrials":0.1903,"energy":0.045700002,"healthcare":0.091400005},"holdings":[{"symbol":"ASML.AS","name":"ASML Holding NV","percent":0.0185692},{"symbol":"005930.KS","name":"Samsung Electronics Co Ltd","percent":0.017076401},{"symbol":"000660.KS","name":"SK Hynix Inc","percent":0.0111143},{"symbol":"ROG.SW","name":"Roche Holding AG","percent":0.0104965},{"symbol":"HSBA.L","name":"HSBC Holdings PLC","percent":0.0099658},{"symbol":"NOVN.SW","name":"Novartis AG Registered Shares","percent":0.00937},{"symbol":"AZN.L","name":"AstraZeneca PLC","percent":0.0091878995},{"symbol":"NESN.SW","name":"Nestle SA","percent":0.0079426},{"symbol":"7203.T","name":"Toyota Motor Corp","percent":0.007924},{"symbol":"RY","name":"Royal Bank of Canada","percent":0.0077554}]},"VWO":{"name":"Vanguard Emerging Markets Stock Index Fund","expenseRatio":0.059999997,"aum":158398922752,"yield":2.58,"price":54.31,"returns":{"oneYear":33.83887,"threeYear":17.41922,"fiveYear":5.36178},"sectors":{"realestate":0.024400001,"consumer_cyclical":0.122,"basic_materials":0.0846,"consumer_defensive":0.038599998,"technology":0.2458,"communication_services":0.0866,"financial_services":0.20989999,"utilities":0.0278,"industrials":0.0766,"energy":0.0433,"healthcare":0.0405},"holdings":[{"symbol":"2330.TW","name":"Taiwan Semiconductor Manufacturing Co Ltd","percent":0.1172261},{"symbol":"0700.HK","name":"Tencent Holdings Ltd","percent":0.0414989},{"symbol":"9988.HK","name":"Alibaba Group Holding Ltd Ordinary Shares","percent":0.0331919},{"symbol":"HDFCBANK.NS","name":"HDFC Bank Ltd","percent":0.010001301},{"symbol":"RELIANCE.NS","name":"Reliance Industries Ltd","percent":0.0090388},{"symbol":"00939","name":"China Construction Bank Corp Class H","percent":0.0076987},{"symbol":"2317.TW","name":"Hon Hai Precision Industry Co Ltd","percent":0.007338},{"symbol":"2454.TW","name":"MediaTek Inc","percent":0.0070967},{"symbol":"1810.HK","name":"Xiaomi Corp Class B","percent":0.0068079},{"symbol":"ICICIBANK.NS","name":"ICICI Bank Ltd","percent":0.0067894}]},"VXUS":{"name":"Vanguard Total International Stock Index Fund ETF Shares","expenseRatio":0.05,"aum":636672409600,"yield":2.86,"price":77.47,"returns":{"oneYear":39.9127,"threeYear":19.86599,"fiveYear":9.8513},"sectors":{"realestate":0.0275,"consumer_cyclical":0.0941,"basic_materials":0.076799996,"consumer_defensive":0.053200003,"technology":0.1559,"communication_services":0.0497,"financial_services":0.2296,"utilities":0.0309,"industrials":0.1596,"energy":0.045100003,"healthcare":0.0777},"holdings":[{"symbol":"2330.TW","name":"Taiwan Semiconductor Manufacturing Co Ltd","percent":0.0317875},{"symbol":"ASML.AS","name":"ASML Holding NV","percent":0.013386199},{"symbol":"005930.KS","name":"Samsung Electronics Co Ltd","percent":0.012279},{"symbol":"0700.HK","name":"Tencent Holdings Ltd","percent":0.0112817},{"symbol":"9988.HK","name":"Alibaba Group Holding Ltd Ordinary Shares","percent":0.0090229},{"symbol":"000660.KS","name":"SK Hynix Inc","percent":0.007992201},{"symbol":"ROG.SW","name":"Roche Holding AG","percent":0.0075840997},{"symbol":"HSBA.L","name":"HSBC Holdings PLC","percent":0.0071825},{"symbol":"NOVN.SW","name":"Novartis AG Registered Shares","percent":0.0067395996},{"symbol":"AZN.L","name":"AstraZeneca PLC","percent":0.0066226}]},"VT":{"name":"Vanguard Total World Stock Index Fund ETF Shares","expenseRatio":0.059999997,"aum":83530907648,"yield":1.74,"price":140.55,"returns":{"oneYear":25.047190000000004,"threeYear":20.500429,"fiveYear":11.55201},"sectors":{"realestate":0.0247,"consumer_cyclical":0.1027,"basic_materials":0.042,"consumer_defensive":0.0499,"technology":0.2597,"communication_services":0.0844,"financial_services":0.1672,"utilities":0.0257,"industrials":0.1167,"energy":0.0374,"healthcare":0.0896},"holdings":[{"symbol":"NVDA","name":"NVIDIA Corp","percent":0.0413803},{"symbol":"AAPL","name":"Apple Inc","percent":0.0349884},{"symbol":"MSFT","name":"Microsoft Corp","percent":0.029514698},{"symbol":"AMZN","name":"Amazon.com Inc","percent":0.0212359},{"symbol":"GOOGL","name":"Alphabet Inc Class A","percent":0.018237099},{"symbol":"GOOG","name":"Alphabet Inc Class C","percent":0.0147575},{"symbol":"META","name":"Meta Platforms Inc Class A","percent":0.0144699},{"symbol":"AVGO","name":"Broadcom Inc","percent":0.0141542},{"symbol":"2330.TW","name":"Taiwan Semiconductor Manufacturing Co Ltd","percent":0.0124433},{"symbol":"TSLA","name":"Tesla Inc","percent":0.011236}]},"URTH":{"name":"iShares MSCI World ETF","expenseRatio":0.23999999000000002,"aum":6917912576,"yield":1.44,"price":183.15,"returns":{"oneYear":21.301189,"threeYear":20.754520000000003,"fiveYear":12.601879999999998},"sectors":{"realestate":0.019,"consumer_cyclical":0.0943,"basic_materials":0.0358,"consumer_defensive":0.056999996,"technology":0.25959998,"communication_services":0.0879,"financial_services":0.16049999,"utilities":0.0276,"industrials":0.119899996,"energy":0.0397,"healthcare":0.0987},"holdings":[{"symbol":"NVDA","name":"NVIDIA Corp","percent":0.050436303},{"symbol":"AAPL","name":"Apple Inc","percent":0.0454835},{"symbol":"MSFT","name":"Microsoft Corp","percent":0.0324829},{"symbol":"AMZN","name":"Amazon.com Inc","percent":0.0236672},{"symbol":"GOOGL","name":"Alphabet Inc Class A","percent":0.0212532},{"symbol":"GOOG","name":"Alphabet Inc Class C","percent":0.017780699},{"symbol":"AVGO","name":"Broadcom Inc","percent":0.0168599},{"symbol":"META","name":"Meta Platforms Inc Class A","percent":0.0165387},{"symbol":"TSLA","name":"Tesla Inc","percent":0.013286199},{"symbol":"LLY","name":"Eli Lilly and Co","percent":0.009893101}]}};
+
+        const formatMoney = (val) => {
+            if (!val) return 'N/A';
+            if (val >= 1e12) return '$' + (val / 1e12).toFixed(2) + 'T';
+            if (val >= 1e9) return '$' + (val / 1e9).toFixed(2) + 'B';
+            if (val >= 1e6) return '$' + (val / 1e6).toFixed(2) + 'M';
+            return '$' + val.toLocaleString();
+        };
+
+        const formatPct = (val) => {
+            if (val === null || val === undefined) return 'N/A';
+            return val.toFixed(2) + '%';
+        };
+
+        const getColorClass = (val) => {
+            if (val === null || val === undefined) return '';
+            return val >= 0 ? 'value-green' : 'value-red';
+        };
+
+        const chartColors = ['#4a8fe7', '#10b981', '#f59e0b'];
+        let returnsChartObj = null;
+        let sectorsChartObj = null;
+
+        function init() {
+            const select1 = document.getElementById('etf1');
+            const select2 = document.getElementById('etf2');
+            const select3 = document.getElementById('etf3');
+
+            const tickers = Object.keys(etfData).sort();
+
+            tickers.forEach(t => {
+                const name = etfData[t].name || t;
+                const optText = `${t} - ${name.length > 30 ? name.substring(0,30)+'...' : name}`;
+
+                select1.add(new Option(optText, t));
+                select2.add(new Option(optText, t));
+                select3.add(new Option(optText, t));
+            });
+
+            // Defaults
+            select1.value = 'VOO';
+            select2.value = 'VTI';
+            select3.value = 'QQQ';
+
+            updateComparison();
+        }
+
+        function updateComparison() {
+            const t1 = document.getElementById('etf1').value;
+            const t2 = document.getElementById('etf2').value;
+            const t3 = document.getElementById('etf3').value;
+
+            const selected = [t1, t2, t3].filter(t => t !== '');
+            renderGrid(selected);
+            renderCharts(selected);
+        }
+
+        function renderGrid(tickers) {
+            const container = document.getElementById('comparison-container');
+
+            // Calculate grid columns based on number of selected ETFs
+            const gridTemplate = `200px repeat(${tickers.length}, minmax(200px, 1fr))`;
+
+            let html = `<div class="comparison-grid" style="grid-template-columns: ${gridTemplate}">`;
+
+            // Headers
+            html += `<div class="grid-cell grid-header" style="background:transparent; border-bottom: none;"></div>`;
+            tickers.forEach(t => {
+                html += `<div class="grid-cell grid-header">${t}</div>`;
+            });
+
+            // Fundamentals Section
+            html += `<div class="section-header">Key Fundamentals</div>`;
+
+            // Name
+            html += `<div class="grid-cell grid-label">Fund Name</div>`;
+            tickers.forEach(t => html += `<div class="grid-cell grid-value" style="font-family:'Inter',sans-serif;font-size:0.9rem;">${etfData[t].name}</div>`);
+
+            // Expense Ratio
+            html += `<div class="grid-cell grid-label">Expense Ratio</div>`;
+            tickers.forEach(t => html += `<div class="grid-cell grid-value">${formatPct(etfData[t].expenseRatio)}</div>`);
+
+            // Yield
+            html += `<div class="grid-cell grid-label">Dividend Yield</div>`;
+            tickers.forEach(t => html += `<div class="grid-cell grid-value">${formatPct(etfData[t].yield)}</div>`);
+
+            // AUM
+            html += `<div class="grid-cell grid-label">AUM</div>`;
+            tickers.forEach(t => html += `<div class="grid-cell grid-value">${formatMoney(etfData[t].aum)}</div>`);
+
+            // Performance Section
+            html += `<div class="section-header">Trailing Returns</div>`;
+
+            ['oneYear', 'threeYear', 'fiveYear'].forEach(period => {
+                const label = period === 'oneYear' ? '1 Year' : period === 'threeYear' ? '3 Year' : '5 Year';
+                html += `<div class="grid-cell grid-label">${label} Return</div>`;
+                tickers.forEach(t => {
+                    const val = etfData[t].returns[period];
+                    html += `<div class="grid-cell grid-value ${getColorClass(val)}">${formatPct(val)}</div>`;
+                });
+            });
+
+            // Top Holdings Section
+            html += `<div class="section-header">Top 10 Holdings</div>`;
+            html += `<div class="grid-cell grid-label" style="align-items:flex-start; padding-top:1.5rem;">Largest Positions</div>`;
+            tickers.forEach(t => {
+                const holdings = etfData[t].holdings || [];
+                let hHtml = '<ul class="holdings-list">';
+                holdings.forEach(h => {
+                    hHtml += `<li><span class="h-symbol">${h.symbol}</span> <span class="h-percent">${(h.percent*100).toFixed(2)}%</span></li>`;
+                });
+                hHtml += '</ul>';
+                if(holdings.length === 0) hHtml = '<div style="text-align:right;color:#94a3b8;">Data unavailable</div>';
+                html += `<div class="grid-cell">${hHtml}</div>`;
+            });
+
+            html += `</div>`;
+            container.innerHTML = html;
+        }
+
+        function renderCharts(tickers) {
+            // Returns Chart
+            const returnsCtx = document.getElementById('returnsChart').getContext('2d');
+            if (returnsChartObj) returnsChartObj.destroy();
+
+            const datasets = tickers.map((t, i) => ({
+                label: t,
+                data: [
+                    etfData[t].returns.oneYear || 0,
+                    etfData[t].returns.threeYear || 0,
+                    etfData[t].returns.fiveYear || 0
+                ],
+                backgroundColor: chartColors[i % chartColors.length]
+            }));
+
+            returnsChartObj = new Chart(returnsCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['1 Year', '3 Year', '5 Year'],
+                    datasets: datasets
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            ticks: {
+                                callback: function(value) { return value + '%'; },
+                                color: '#94a3b8'
+                            },
+                            grid: { color: '#152040' }
+                        },
+                        x: {
+                            ticks: { color: '#94a3b8' },
+                            grid: { display: false }
+                        }
+                    },
+                    plugins: {
+                        legend: { labels: { color: '#e2e8f0' } }
+                    }
+                }
+            });
+
+            // Sectors Chart (Radar)
+            const sectorsCtx = document.getElementById('sectorsChart').getContext('2d');
+            if (sectorsChartObj) sectorsChartObj.destroy();
+
+            // Collect all unique sectors across selected ETFs
+            const allSectors = new Set();
+            tickers.forEach(t => {
+                Object.keys(etfData[t].sectors || {}).forEach(s => allSectors.add(s));
+            });
+            const sectorLabels = Array.from(allSectors).map(s => {
+                // Formatting sector names: 'technology' -> 'Technology'
+                return s.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+            });
+
+            const sectorDatasets = tickers.map((t, i) => {
+                const data = Array.from(allSectors).map(s => {
+                    return (etfData[t].sectors && etfData[t].sectors[s]) ? etfData[t].sectors[s] * 100 : 0;
+                });
+
+                // Convert hex to rgba for radar fill
+                let hex = chartColors[i % chartColors.length];
+                let r = parseInt(hex.slice(1, 3), 16),
+                    g = parseInt(hex.slice(3, 5), 16),
+                    b = parseInt(hex.slice(5, 7), 16);
+
+                return {
+                    label: t,
+                    data: data,
+                    backgroundColor: `rgba(${r}, ${g}, ${b}, 0.2)`,
+                    borderColor: hex,
+                    pointBackgroundColor: hex,
+                    borderWidth: 2
+                };
+            });
+
+            sectorsChartObj = new Chart(sectorsCtx, {
+                type: 'radar',
+                data: {
+                    labels: sectorLabels,
+                    datasets: sectorDatasets
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        r: {
+                            angleLines: { color: '#152040' },
+                            grid: { color: '#152040' },
+                            pointLabels: { color: '#94a3b8', font: { size: 11 } },
+                            ticks: { display: false, min: 0 }
+                        }
+                    },
+                    plugins: {
+                        legend: { labels: { color: '#e2e8f0' } }
+                    }
+                }
+            });
+        }
+
+        // Initialize on load
+        window.onload = init;
+    </script>
+</body>
+</html>

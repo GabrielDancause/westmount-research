@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>S&P 500 Annual Returns by Year (1928-2026)</title>
+  <meta name="description" content="Complete S&P 500 returns by year (1928-2026). Analyze historical stock market performance, inflation-adjusted returns, and decade averages.">
+  <link rel="canonical" href="https://westmountfundamentals.com/sp500-historical-returns-by-year">
+
+  <meta property="og:title" content="S&P 500 Annual Returns by Year (1928-2026)">
+  <meta property="og:description" content="Complete S&P 500 returns by year (1928-2026). Analyze historical stock market performance, inflation-adjusted returns, and decade averages.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://westmountfundamentals.com/sp500-historical-returns-by-year">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="S&P 500 Annual Returns by Year (1928-2026)">
+  <meta name="twitter:description" content="Complete S&P 500 returns by year (1928-2026). Analyze historical stock market performance, inflation-adjusted returns, and decade averages.">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VYF72NSC1Q"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VYF72NSC1Q');
+  </script>
+
+  <style>
+    :root {
+      --bg: #060a12;
+      --card: #0a1020;
+      --border: #152040;
+      --accent: #4a8fe7;
+      --text: #e2e8f0;
+      --text-muted: #94a3b8;
+      --green: #10b981;
+      --red: #ef4444;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(6, 10, 18, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .brand { font-weight: 700; color: white; text-decoration: none; font-size: 1.25rem; }
+    .nav-links a { color: var(--text-muted); text-decoration: none; margin-left: 1.5rem; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--accent); }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 3rem 1.5rem; }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      background: linear-gradient(to right, #60a5fa, #a78bfa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      line-height: 1.2;
+    }
+    .subtitle { color: var(--text-muted); font-size: 1.125rem; margin-bottom: 2.5rem; }
+
+    .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; margin-bottom: 3rem; }
+    .stat-card { background: var(--card); border: 1px solid var(--border); border-radius: 0.75rem; padding: 1.5rem; }
+    .stat-label { color: var(--text-muted); font-size: 0.875rem; font-weight: 500; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    .stat-value { font-size: 2rem; font-weight: 700; font-family: 'JetBrains Mono', monospace; }
+    .stat-desc { color: var(--text-muted); font-size: 0.875rem; margin-top: 0.5rem; }
+
+    .chart-container { background: var(--card); border: 1px solid var(--border); border-radius: 0.75rem; padding: 1.5rem; margin-bottom: 3rem; height: 500px; }
+
+    .table-controls { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 1rem; }
+    input[type="text"] { background: var(--card); border: 1px solid var(--border); color: var(--text); padding: 0.5rem 1rem; border-radius: 0.375rem; font-family: 'Inter', sans-serif; }
+    input[type="text"]:focus { outline: none; border-color: var(--accent); }
+
+    .table-wrapper { overflow-x: auto; background: var(--card); border: 1px solid var(--border); border-radius: 0.75rem; margin-bottom: 3rem; }
+    table { width: 100%; border-collapse: collapse; text-align: left; }
+    th { background: rgba(255,255,255,0.02); padding: 1rem; font-weight: 600; color: var(--text-muted); border-bottom: 1px solid var(--border); cursor: pointer; user-select: none; }
+    th:hover { color: var(--text); }
+    td { padding: 1rem; border-bottom: 1px solid var(--border); font-family: 'JetBrains Mono', monospace; }
+    tr:last-child td { border-bottom: none; }
+    .pos { color: var(--green); }
+    .neg { color: var(--red); }
+
+    .content-section { background: var(--card); border: 1px solid var(--border); border-radius: 0.75rem; padding: 2rem; margin-bottom: 3rem; }
+    h2 { font-size: 1.5rem; margin-bottom: 1rem; color: white; }
+    h3 { font-size: 1.25rem; margin-top: 1.5rem; margin-bottom: 0.75rem; color: white; }
+    p { margin-bottom: 1rem; color: var(--text-muted); }
+
+    .faq-item { border-bottom: 1px solid var(--border); padding: 1.5rem 0; }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-q { font-weight: 600; font-size: 1.125rem; margin-bottom: 0.5rem; color: white; }
+    .faq-a { color: var(--text-muted); }
+
+    footer { text-align: center; padding: 3rem 1.5rem; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 0.875rem; margin-top: 3rem; }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      h1 { font-size: 2rem; }
+      .stats-grid { grid-template-columns: 1fr; }
+      .chart-container { height: 350px; }
+    }
+  </style>
+
+
+  <script>
+    window.SP500_DATA = [{"year":2025,"sp500Total":17.78,"sp500Price":null,"inflation":null,"realReturn":null},{"year":2024,"sp500Total":24.88,"sp500Price":23.30900234342402,"inflation":2.7,"realReturn":21.59688412852969},{"year":2023,"sp500Total":26.06,"sp500Price":24.2305007976299,"inflation":3.35,"realReturn":21.97387518142233},{"year":2022,"sp500Total":-18.04,"sp500Price":-16.308638288316406,"inflation":6.456241032998565,"realReturn":-23.010619946091637},{"year":2021,"sp500Total":28.47,"sp500Price":26.505563194230707,"inflation":7.037278765308858,"realReturn":20.023604375896696},{"year":2020,"sp500Total":18.02,"sp500Price":16.323618601463547,"inflation":1.362026695723236,"realReturn":16.434135984950295},{"year":2019,"sp500Total":31.21,"sp500Price":23.738447005212596,"inflation":2.284758985789929,"realReturn":28.27913102696811},{"year":2018,"sp500Total":-4.23,"sp500Price":-3.641802472657401,"inflation":1.910595489209792,"realReturn":-6.025473072483378},{"year":2017,"sp500Total":21.61,"sp500Price":18.59273667671134,"inflation":2.1082715486890624,"realReturn":19.09906822975822},{"year":2016,"sp500Total":11.77,"sp500Price":9.374026328088496,"inflation":2.0716188221367293,"realReturn":9.501545375471142},{"year":2015,"sp500Total":1.38,"sp500Price":-0.009249027635123648,"inflation":0.7325071334270257,"realReturn":0.6427844248086956},{"year":2014,"sp500Total":13.52,"sp500Price":13.634955580878206,"inflation":0.7552027461918004,"realReturn":12.669119713811172},{"year":2013,"sp500Total":32.15,"sp500Price":27.103473975068376,"inflation":1.5026132404181258,"realReturn":30.193692340699418},{"year":2012,"sp500Total":15.89,"sp500Price":14.39452433806261,"inflation":1.7414809234723299,"realReturn":13.90634277003484},{"year":2011,"sp500Total":2.1,"sp500Price":0.14417694296553152,"inflation":2.9610365909298206,"realReturn":-0.8362742056985728},{"year":2010,"sp500Total":14.82,"sp500Price":11.811271816855477,"inflation":1.4957166010650698,"realReturn":13.127926818140345},{"year":2009,"sp500Total":25.94,"sp500Price":26.530379689138083,"inflation":2.72082956761642,"realReturn":22.604150034730285},{"year":2008,"sp500Total":-36.55,"sp500Price":-40.67413907329539,"inflation":0.09045896019805644,"realReturn":-36.60734433715454},{"year":2007,"sp500Total":5.48,"sp500Price":4.433713164174464,"inflation":4.083250743310198,"realReturn":1.3419539135402836},{"year":2006,"sp500Total":15.61,"sp500Price":12.229908008272137,"inflation":2.540650406504065,"realReturn":12.745530227948464},{"year":2005,"sp500Total":4.83,"sp500Price":5.241784174581591,"inflation":3.415659485023647,"realReturn":1.3676270325203355},{"year":2004,"sp500Total":10.74,"sp500Price":10.972201658276571,"inflation":3.2555615843733046,"realReturn":7.248460325801354},{"year":2003,"sp500Total":28.36,"sp500Price":20.1806089993105,"inflation":1.879491431730241,"realReturn":25.99199131850243},{"year":2002,"sp500Total":-21.97,"sp500Price":-21.46419431755654,"inflation":2.3769100169779387,"realReturn":-23.781641791044773},{"year":2001,"sp500Total":-11.85,"sp500Price":-13.975190280480565,"inflation":1.5517241379310278,"realReturn":-13.196943972835317},{"year":2000,"sp500Total":-9.03,"sp500Price":-6.8419800095192755,"inflation":3.386809269162203,"realReturn":-12.010051724137927},{"year":1999,"sp500Total":20.89,"sp500Price":20.05209865131718,"inflation":2.684563758389265,"realReturn":17.729477124183024},{"year":1998,"sp500Total":28.34,"sp500Price":23.658260336461023,"inflation":1.6119032858028484,"realReturn":26.304100061012804},{"year":1997,"sp500Total":33.1,"sp500Price":29.481331987891018,"inflation":1.7023959646910576,"realReturn":30.872039677619313},{"year":1996,"sp500Total":22.68,"sp500Price":20.93821696470702,"inflation":3.3224755700325694,"realReturn":18.73505674653213},{"year":1995,"sp500Total":37.2,"sp500Price":35.013950218590054,"inflation":2.5384101536406223,"realReturn":33.80351791530944},{"year":1994,"sp500Total":1.33,"sp500Price":-2.3092606502843633,"inflation":2.6748971193415483,"realReturn":-1.309859719438855},{"year":1993,"sp500Total":9.97,"sp500Price":6.957579652924434,"inflation":2.748414376321357,"realReturn":7.028415637860053},{"year":1992,"sp500Total":7.49,"sp500Price":12.130961880003088,"inflation":2.9006526468455403,"realReturn":4.459978858350944},{"year":1991,"sp500Total":30.23,"sp500Price":18.177946768060835,"inflation":3.064275037369203,"realReturn":26.358042059463372},{"year":1990,"sp500Total":-3.06,"sp500Price":-5.69420539300058,"inflation":6.106264869151481,"realReturn":-8.63875934230196},{"year":1989,"sp500Total":31.48,"sp500Price":26.07594936708861,"inflation":4.64730290456431,"realReturn":25.64107850911974},{"year":1988,"sp500Total":16.54,"sp500Price":14.730290456431536,"inflation":4.4194107452339635,"realReturn":11.607601659751055},{"year":1987,"sp500Total":5.81,"sp500Price":-3.057119871279161,"inflation":4.434389140271498,"realReturn":1.3172010398613487},{"year":1986,"sp500Total":18.49,"sp500Price":19.92281717317896,"inflation":1.0978956999085112,"realReturn":17.20323076923078},{"year":1985,"sp500Total":31.24,"sp500Price":26.018237082066875,"inflation":3.798670465337132,"realReturn":26.437072278133588},{"year":1984,"sp500Total":6.15,"sp500Price":0.060827250608269046,"inflation":3.948667324777887,"realReturn":2.1177113010446558},{"year":1983,"sp500Total":22.34,"sp500Price":17.93400286944046,"inflation":3.79098360655738,"realReturn":17.87151036525172},{"year":1982,"sp500Total":20.42,"sp500Price":12.600969305331185,"inflation":3.8297872340425467,"realReturn":15.978278688524593},{"year":1981,"sp500Total":-4.7,"sp500Price":-7.265917602996256,"inflation":8.922363847045196,"realReturn":-12.506489361702133},{"year":1980,"sp500Total":31.74,"sp500Price":23.8404452690167,"inflation":12.516297262059966,"realReturn":17.08526071842411},{"year":1979,"sp500Total":18.52,"sp500Price":12.163146394756007,"inflation":13.293943870014772,"realReturn":4.612829204693614},{"year":1978,"sp500Total":6.51,"sp500Price":2.440844169686641,"inflation":9.017713365539455,"realReturn":-2.3002806499261452},{"year":1977,"sp500Total":-6.98,"sp500Price":-10.391595033428853,"inflation":6.701030927835048,"realReturn":-12.821835748792266},{"year":1976,"sp500Total":23.83,"sp500Price":18.038331454340472,"inflation":4.86486486486487,"realReturn":18.085309278350525},{"year":1975,"sp500Total":37,"sp500Price":32.249888176532,"inflation":6.936416184971102,"realReturn":28.11351351351352},{"year":1974,"sp500Total":-25.9,"sp500Price":-29.236125764929316,"inflation":12.337662337662328,"realReturn":-34.038150289017345},{"year":1973,"sp500Total":-14.31,"sp500Price":-19.336170212765957,"inflation":8.705882352941183,"realReturn":-21.172619047619058},{"year":1972,"sp500Total":18.76,"sp500Price":18.48341232227488,"inflation":3.406326034063257,"realReturn":14.84790588235294},{"year":1971,"sp500Total":14.22,"sp500Price":10.12770682953915,"inflation":3.266331658291468,"realReturn":10.607201946472},{"year":1970,"sp500Total":3.56,"sp500Price":-1.1634288223027134,"inflation":5.570291777188313,"realReturn":-1.9042211055276148},{"year":1969,"sp500Total":-8.24,"sp500Price":-14.450704225352112,"inflation":6.197183098591557,"realReturn":-13.594694960212216},{"year":1968,"sp500Total":10.81,"sp500Price":11.752360965372512,"inflation":4.719764011799414,"realReturn":5.8157464788732405},{"year":1967,"sp500Total":23.8,"sp500Price":17.176933480880365,"inflation":3.0395136778115504,"realReturn":20.14808259587022},{"year":1966,"sp500Total":-9.97,"sp500Price":-11.337621279843022,"inflation":3.459119496855339,"realReturn":-12.980121580547099},{"year":1965,"sp500Total":12.4,"sp500Price":9.254406860409732,"inflation":1.9230769230769278,"realReturn":10.279245283018867},{"year":1964,"sp500Total":16.42,"sp500Price":13.199406768235125,"inflation":0.9708737864077693,"realReturn":15.300576923076935},{"year":1963,"sp500Total":22.61,"sp500Price":18.406768837803323,"inflation":1.644736842105263,"realReturn":20.626019417475728},{"year":1962,"sp500Total":-8.81,"sp500Price":-12.68469473097295,"inflation":1.3333333333333286,"realReturn":-10.009868421052627},{"year":1961,"sp500Total":26.64,"sp500Price":26.30281690140845,"inflation":0.671140939597313,"realReturn":25.795733333333338},{"year":1960,"sp500Total":0.34,"sp500Price":-3.8266169996613697,"inflation":1.3605442176870821,"realReturn":-1.0068456375838863},{"year":1959,"sp500Total":12.06,"sp500Price":10.413161338567956,"inflation":1.7301038062283738,"realReturn":10.15421768707483},{"year":1958,"sp500Total":43.72,"sp500Price":32.63079593354824,"inflation":1.7605633802816902,"realReturn":41.233494809688565},{"year":1957,"sp500Total":-10.46,"sp500Price":-13.156761412575365,"inflation":2.898550724637671,"realReturn":-12.982253521126752},{"year":1956,"sp500Total":7.44,"sp500Price":2.358386599074279,"inflation":2.9850746268656745,"realReturn":4.325797101449269},{"year":1955,"sp500Total":32.6,"sp500Price":29.73977695167286,"inflation":0.37453183520599787,"realReturn":32.10522388059702},{"year":1954,"sp500Total":52.56,"sp500Price":40.83769633507854,"inflation":-0.743494423791819,"realReturn":53.70277153558054},{"year":1953,"sp500Total":-1.21,"sp500Price":-4.646697388632877,"inflation":0.7490636704119823,"realReturn":-1.9444981412639395},{"year":1952,"sp500Total":18.15,"sp500Price":11.234515164459628,"inflation":0.7547169811320728,"realReturn":17.26498127340823},{"year":1951,"sp500Total":23.68,"sp500Price":18.531645569620252,"inflation":6,"realReturn":16.679245283018872},{"year":1950,"sp500Total":30.81,"sp500Price":19.4074969770254,"inflation":5.932203389830502,"realReturn":23.484640000000013},{"year":1949,"sp500Total":18.3,"sp500Price":8.88742593811718,"inflation":-2.0746887966804977,"realReturn":20.80635593220339},{"year":1948,"sp500Total":5.7,"sp500Price":1.0645375914837003,"inflation":2.991452991453004,"realReturn":2.6298755186721756},{"year":1947,"sp500Total":5.2,"sp500Price":-0.6609385327164667,"inflation":8.837209302325574,"realReturn":-3.341880341880321},{"year":1946,"sp500Total":-8.43,"sp500Price":-12.694748990190408,"inflation":18.13186813186814,"realReturn":-22.484930232558142},{"year":1945,"sp500Total":35.82,"sp500Price":32.290076335877856,"inflation":2.2471910112359472,"realReturn":32.83494505494509},{"year":1944,"sp500Total":19.03,"sp500Price":14.111498257839713,"inflation":2.298850574712656,"realReturn":16.355168539325838},{"year":1943,"sp500Total":25.06,"sp500Price":20.588235294117656,"inflation":2.9585798816568047,"realReturn":21.46632183908046},{"year":1942,"sp500Total":19.17,"sp500Price":8.675799086757989,"inflation":9.032258064516121,"realReturn":9.297928994082838},{"year":1941,"sp500Total":-12.77,"sp500Price":-16.809116809116805,"inflation":9.9290780141844,"realReturn":-20.64883870967742},{"year":1940,"sp500Total":-10.67,"sp500Price":-14.874696847210995,"inflation":0.7142857142857117,"realReturn":-11.303546099290784},{"year":1939,"sp500Total":-1.1,"sp500Price":-2.521670606776992,"inflation":0,"realReturn":-1.100000000000001},{"year":1938,"sp500Total":29.28,"sp500Price":15.154264972776769,"inflation":-2.77777777777778,"realReturn":32.97371428571427},{"year":1937,"sp500Total":-35.34,"sp500Price":-35.40445486518171,"inflation":2.85714285714286,"realReturn":-37.13611111111113},{"year":1936,"sp500Total":31.94,"sp500Price":30.828220858895705,"inflation":1.4492753623188355,"realReturn":30.055142857142858},{"year":1935,"sp500Total":46.74,"sp500Price":40.820734341252695,"inflation":2.9850746268656745,"realReturn":42.48666666666665},{"year":1934,"sp500Total":-1.19,"sp500Price":-7.121364092276838,"inflation":1.5151515151515234,"realReturn":-2.6647761194029895},{"year":1933,"sp500Total":49.98,"sp500Price":46.18768328445748,"inflation":0.7633587786259515,"realReturn":48.84378787878789},{"year":1932,"sp500Total":-8.64,"sp500Price":-19.194312796208525,"inflation":-10.273972602739727,"realReturn":1.821068702290063},{"year":1931,"sp500Total":-43.84,"sp500Price":-45.58349451966473,"inflation":-9.316770186335415,"realReturn":-38.070136986301364},{"year":1930,"sp500Total":-25.12,"sp500Price":-27.523364485981304,"inflation":-6.39534883720929,"realReturn":-20.00397515527952},{"year":1929,"sp500Total":-8.3,"sp500Price":-7.559395248380129,"inflation":0.5847953216374144,"realReturn":-8.833139534883717},{"year":1928,"sp500Total":43.81,"sp500Price":32.588774341351645,"inflation":-1.1560693641618456,"realReturn":45.49198830409355}];
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "S&P 500 Annual Returns by Year (1928-2026)",
+    "description": "Complete S&P 500 returns by year (1928-2026). Analyze historical stock market performance, inflation-adjusted returns, and decade averages.",
+    "datePublished": "2024-03-01T08:00:00+00:00",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Westmount Research"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the average S&P 500 return per year?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The historical average annual return of the S&P 500 is approximately 10% before inflation, and around 7% when adjusted for inflation, assuming dividends are reinvested."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What was the worst year for the S&P 500?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The worst year for the S&P 500 was 1931, when the market fell 43.34% during the Great Depression. In recent history, 2008 was the worst year with a decline of 38.49%."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How often does the S&P 500 have a negative year?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Historically, the S&P 500 has a negative annual return roughly once every four years, meaning it is positive about 73% of the time."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does the S&P 500 return include dividends?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The standard quoted S&P 500 price return does not include dividends. However, the S&P 500 Total Return index, which is often cited for long-term performance, includes the reinvestment of all dividends."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the inflation-adjusted return of the S&P 500?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The inflation-adjusted (or real) return of the S&P 500 is the total return minus the inflation rate. Over the long term, the real return of the S&P 500 has averaged around 6.5% to 7% annualized."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <nav>
+    <a href="/" class="brand">Westmount Fundamentals</a>
+    <div class="nav-links">
+      <a href="/#studies">Studies</a>
+      <a href="/#tools">Tools</a>
+      <a href="/#guides">Guides</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <h1>S&P 500 Annual Returns by Year</h1>
+    <p class="subtitle">Comprehensive historical performance data including total returns, price returns, and inflation adjustments since 1928.</p>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-label">Avg Annual Return</div>
+        <div class="stat-value" id="stat-avg-return">--</div>
+        <div class="stat-desc">Historical nominal total return</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Positive Years</div>
+        <div class="stat-value" id="stat-positive">--</div>
+        <div class="stat-desc">Percentage of years with gains</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Best Year</div>
+        <div class="stat-value pos" id="stat-best">--</div>
+        <div class="stat-desc" id="stat-best-desc">--</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Worst Year</div>
+        <div class="stat-value neg" id="stat-worst">--</div>
+        <div class="stat-desc" id="stat-worst-desc">--</div>
+      </div>
+    </div>
+
+    <div class="chart-container">
+      <canvas id="returnsChart"></canvas>
+    </div>
+
+    <div class="table-controls">
+      <h2>Complete Year-by-Year History</h2>
+      <input type="text" id="searchInput" placeholder="Filter by decade (e.g., 1990)...">
+    </div>
+
+    <div class="table-wrapper">
+      <table id="dataTable">
+        <thead>
+          <tr>
+            <th data-sort="year">Year ↕</th>
+            <th data-sort="sp500Total">Total Return ↕</th>
+            <th data-sort="sp500Price">Price Return ↕</th>
+            <th data-sort="inflation">Inflation ↕</th>
+            <th data-sort="realReturn">Real Return ↕</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody">
+          <!-- Rows injected via JS -->
+        </tbody>
+      </table>
+    </div>
+
+    <div class="content-section">
+      <h2>Methodology & Data Sources</h2>
+      <p>This historical dataset compiles S&P 500 performance metrics from multiple authoritative sources to provide a complete picture of market returns since 1928. The data represents calendar year performance (January 1 to December 31).</p>
+
+      <h3>Data Sources</h3>
+      <ul>
+        <li><strong style="color:var(--text)">S&P 500 Total Returns:</strong> Sourced from Aswath Damodaran's NYU Stern historical dataset, which includes reinvested dividends.</li>
+        <li><strong style="color:var(--text)">Price Returns & Inflation:</strong> Compiled using data from the Robert Shiller / Cowles Commission dataset (via public GitHub datasets) and recent data from Yahoo Finance.</li>
+        <li><strong style="color:var(--text)">Inflation Rate:</strong> Calculated based on Consumer Price Index (CPI) changes from December of the prior year to December of the current year.</li>
+      </ul>
+
+      <h3>Calculations</h3>
+      <p>The <strong>Real Return</strong> is calculated using the exact formula: <code>((1 + Total Return) / (1 + Inflation)) - 1</code>, rather than simply subtracting inflation from the total return, to ensure mathematical accuracy over time.</p>
+    </div>
+
+    <div class="content-section">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <div class="faq-q">What is the average S&P 500 return per year?</div>
+        <div class="faq-a">The historical average annual return of the S&P 500 is approximately 10% before inflation, and around 7% when adjusted for inflation, assuming dividends are reinvested.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What was the worst year for the S&P 500?</div>
+        <div class="faq-a">The worst year for the S&P 500 was 1931, when the market fell 43.34% during the Great Depression. In recent history, 2008 was the worst year with a decline of 38.49%.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How often does the S&P 500 have a negative year?</div>
+        <div class="faq-a">Historically, the S&P 500 has a negative annual return roughly once every four years, meaning it is positive about 73% of the time.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Does the S&P 500 return include dividends?</div>
+        <div class="faq-a">The standard quoted S&P 500 price return does not include dividends. However, the S&P 500 Total Return index, which is often cited for long-term performance, includes the reinvestment of all dividends.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What is the inflation-adjusted return of the S&P 500?</div>
+        <div class="faq-a">The inflation-adjusted (or real) return of the S&P 500 is the total return minus the inflation rate. Over the long term, the real return of the S&P 500 has averaged around 6.5% to 7% annualized.</div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>© <script>document.write(new Date().getFullYear())</script> Westmount Research · A GAB Ventures property. Not investment advice. All information for educational purposes only.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    // App Logic will go here.
+    function formatPct(val) {
+      if (val === null || val === undefined) return '--';
+      return val.toFixed(2) + '%';
+    }
+
+    function getColorClass(val) {
+      if (val === null || val === undefined) return '';
+      return val > 0 ? 'pos' : (val < 0 ? 'neg' : '');
+    }
+
+    function renderApp() {
+      if (!window.SP500_DATA) return;
+
+      const data = window.SP500_DATA;
+
+      // Calculate Stats
+      let sumReturns = 0;
+      let posYears = 0;
+      let bestYear = data[0];
+      let worstYear = data[0];
+
+      let validReturnsCount = 0;
+
+      data.forEach(d => {
+        if (d.sp500Total !== null) {
+          sumReturns += d.sp500Total;
+          validReturnsCount++;
+          if (d.sp500Total > 0) posYears++;
+          if (d.sp500Total > bestYear.sp500Total) bestYear = d;
+          if (d.sp500Total < worstYear.sp500Total) worstYear = d;
+        }
+      });
+
+      const avgReturn = sumReturns / validReturnsCount;
+      const posPct = (posYears / validReturnsCount) * 100;
+
+      document.getElementById('stat-avg-return').textContent = formatPct(avgReturn);
+      document.getElementById('stat-positive').textContent = posPct.toFixed(0) + '%';
+
+      const bestEl = document.getElementById('stat-best');
+      bestEl.textContent = formatPct(bestYear.sp500Total);
+      document.getElementById('stat-best-desc').textContent = `Occurred in ${bestYear.year}`;
+
+      const worstEl = document.getElementById('stat-worst');
+      worstEl.textContent = formatPct(worstYear.sp500Total);
+      document.getElementById('stat-worst-desc').textContent = `Occurred in ${worstYear.year}`;
+
+      // Table Rendering
+      const tbody = document.getElementById('tableBody');
+      const searchInput = document.getElementById('searchInput');
+
+      let currentSort = { col: 'year', asc: false };
+
+      function renderTable() {
+        const query = searchInput.value.toLowerCase();
+
+        let filtered = data.filter(d => d.year.toString().includes(query));
+
+        filtered.sort((a, b) => {
+          let valA = a[currentSort.col];
+          let valB = b[currentSort.col];
+          if (valA === null) valA = -999999;
+          if (valB === null) valB = -999999;
+          return currentSort.asc ? valA - valB : valB - valA;
+        });
+
+        tbody.innerHTML = '';
+        filtered.forEach(d => {
+          const tr = document.createElement('tr');
+          tr.innerHTML = `
+            <td>${d.year}</td>
+            <td class="${getColorClass(d.sp500Total)}">${formatPct(d.sp500Total)}</td>
+            <td class="${getColorClass(d.sp500Price)}">${formatPct(d.sp500Price)}</td>
+            <td class="${getColorClass(d.inflation)}">${formatPct(d.inflation)}</td>
+            <td class="${getColorClass(d.realReturn)}">${formatPct(d.realReturn)}</td>
+          `;
+          tbody.appendChild(tr);
+        });
+      }
+
+      document.querySelectorAll('th[data-sort]').forEach(th => {
+        th.addEventListener('click', () => {
+          const col = th.getAttribute('data-sort');
+          if (currentSort.col === col) {
+            currentSort.asc = !currentSort.asc;
+          } else {
+            currentSort.col = col;
+            currentSort.asc = false;
+          }
+          renderTable();
+        });
+      });
+
+      searchInput.addEventListener('keyup', renderTable);
+      renderTable();
+
+      // Chart Rendering
+      const ctx = document.getElementById('returnsChart').getContext('2d');
+
+      // We'll chart from oldest to newest
+      const chartData = [...data].sort((a,b) => a.year - b.year);
+      const labels = chartData.map(d => d.year);
+      const totalReturns = chartData.map(d => d.sp500Total);
+
+      const bgColors = totalReturns.map(v => v >= 0 ? 'rgba(16, 185, 129, 0.8)' : 'rgba(239, 68, 68, 0.8)');
+
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: labels,
+          datasets: [{
+            label: 'Total Return (%)',
+            data: totalReturns,
+            backgroundColor: bgColors,
+            borderWidth: 0,
+            borderRadius: 2
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              mode: 'index',
+              intersect: false,
+              callbacks: {
+                label: function(context) {
+                  return context.parsed.y.toFixed(2) + '%';
+                }
+              }
+            }
+          },
+          scales: {
+            y: {
+              grid: { color: 'rgba(255, 255, 255, 0.05)' },
+              ticks: { color: '#94a3b8', callback: function(value) { return value + '%'; } }
+            },
+            x: {
+              grid: { display: false },
+              ticks: { color: '#94a3b8', maxTicksLimit: 20 }
+            }
+          }
+        }
+      });
+    }
+
+    // Call after DOM is fully loaded or data injected
+    document.addEventListener('DOMContentLoaded', () => {
+      // The injected script will call renderApp() directly or provide window.SP500_DATA
+      if (window.SP500_DATA) renderApp();
+    });
+  </script>
+</body>
+</html>

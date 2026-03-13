@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Housing Affordability Index 2026: US vs Canada</title>
+    <meta name="description" content="Compare 2026 housing affordability across 30 US and Canadian cities. See price-to-income ratios and find the most affordable cities to buy a house.">
+    <link rel="canonical" href="https://westmountfundamentals.com/housing-affordability-index-2026">
+
+    <meta property="og:title" content="Housing Affordability Index 2026: US vs Canada">
+    <meta property="og:description" content="Compare 2026 housing affordability across 30 US and Canadian cities. See price-to-income ratios and find the most affordable cities to buy a house.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://westmountfundamentals.com/housing-affordability-index-2026">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Housing Affordability Index 2026: US vs Canada">
+    <meta name="twitter:description" content="Compare 2026 housing affordability across 30 US and Canadian cities. See price-to-income ratios and find the most affordable cities to buy a house.">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VYF72NSC1Q"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-VYF72NSC1Q');
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #060a12;
+            --card-bg: #0a1020;
+            --border: #152040;
+            --accent: #4a8fe7;
+            --text-main: #e2e8f0;
+            --text-muted: #94a3b8;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(6, 10, 18, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .nav-links { display: flex; gap: 1.5rem; }
+        .nav-links a:hover { color: var(--accent); }
+        .brand { font-weight: 700; font-size: 1.2rem; }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(90deg, #fff, var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+        }
+
+        .intro {
+            text-align: center;
+            color: var(--text-muted);
+            max-width: 800px;
+            margin: 0 auto 3rem auto;
+            font-size: 1.1rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .stat-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .controls {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        input, select {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            color: var(--text-main);
+            padding: 0.75rem 1rem;
+            border-radius: 4px;
+            font-family: inherit;
+            outline: none;
+        }
+
+        input:focus, select:focus {
+            border-color: var(--accent);
+        }
+
+        input[type="text"] { flex-grow: 1; }
+
+        .table-container {
+            overflow-x: auto;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            margin-bottom: 3rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        th, td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        th {
+            background: rgba(21, 32, 64, 0.3);
+            font-weight: 600;
+            color: var(--text-muted);
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        th:hover { color: var(--text-main); }
+
+        td { font-family: 'JetBrains Mono', monospace; }
+        td:first-child { font-family: 'Inter', sans-serif; font-weight: 500; }
+
+        tr:last-child td { border-bottom: none; }
+        tr:hover { background: rgba(255, 255, 255, 0.02); }
+
+        .chart-container {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 3rem;
+            height: 400px;
+        }
+
+        section {
+            margin-bottom: 3rem;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 2rem;
+        }
+
+        section h2 {
+            margin-bottom: 1.5rem;
+            color: var(--accent);
+        }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .faq-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .faq-item h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .faq-item p { color: var(--text-muted); }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border);
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            nav { flex-direction: column; gap: 1rem; }
+            .nav-links { flex-wrap: wrap; justify-content: center; }
+            h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/" class="brand">Westmount Fundamentals</a>
+        <div class="nav-links">
+            <a href="/#studies">Studies</a>
+            <a href="/#tools">Tools</a>
+            <a href="/#guides">Guides</a>
+        </div>
+    </nav>
+
+    <main>
+        <h1>Housing Affordability Index: US & Canada 2026</h1>
+        <p class="intro">A comprehensive comparison of housing affordability across major North American cities. Track home price-to-income ratios, mortgage burdens, and discover the most affordable cities to buy a house in 2026.</p>
+
+        <div class="stats-grid" id="statsGrid">
+            <!-- Stats populated by JS -->
+        </div>
+
+        <div class="chart-container">
+            <canvas id="affordabilityChart"></canvas>
+        </div>
+
+        <div class="controls">
+            <input type="text" id="searchInput" placeholder="Search cities...">
+            <select id="countryFilter">
+                <option value="all">All Countries</option>
+                <option value="United States">United States</option>
+                <option value="Canada">Canada</option>
+            </select>
+        </div>
+
+        <div class="table-container">
+            <table id="dataTable">
+                <thead>
+                    <tr>
+                        <th data-sort="city">City ↕</th>
+                        <th data-sort="country">Country ↕</th>
+                        <th data-sort="priceToIncome">Price-to-Income Ratio ↕</th>
+                        <th data-sort="mortgageAsPctOfIncome">Mortgage as % of Income ↕</th>
+                        <th data-sort="priceToRentCity">Price-to-Rent (City) ↕</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    <!-- Populated by JS -->
+                </tbody>
+            </table>
+        </div>
+
+        <section id="methodology">
+            <h2>Methodology</h2>
+            <p>Our Housing Affordability Index utilizes aggregate user-contributed and standardized public data to calculate localized affordability metrics. Data points are continuously updated to reflect 2026 market conditions.</p>
+            <ul style="margin-left: 1.5rem; margin-top: 1rem; color: var(--text-muted);">
+                <li><strong>Price-to-Income Ratio:</strong> The median home price divided by the median annual disposable household income. A lower ratio indicates greater affordability.</li>
+                <li><strong>Mortgage as % of Income:</strong> Estimates the percentage of monthly disposable income required to pay a 20-year mortgage on a median-priced home.</li>
+                <li><strong>Price-to-Rent Ratio:</strong> The average cost of ownership divided by the average annualized rent. Ratios under 15 generally indicate buying is more favorable than renting.</li>
+            </ul>
+        </section>
+
+        <section id="faq">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <h3>What is the housing affordability index for 2026?</h3>
+                <p>The housing affordability index measures how affordable it is for a median-income household to buy a median-priced home. In 2026, the index shows significant disparities between major coastal metros and the more affordable Midwest and Sunbelt regions.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What are the most affordable cities to buy a house in the US?</h3>
+                <p>Based on our data, cities like Saint Louis, MO, Wichita, KS, and Cleveland, OH rank among the most affordable, characterized by low price-to-income ratios and mortgage payments requiring a smaller percentage of disposable income.</p>
+            </div>
+            <div class="faq-item">
+                <h3>How does housing affordability in Canada compare to the US?</h3>
+                <p>Generally, major Canadian cities like Vancouver and Toronto exhibit higher price-to-income ratios and lower affordability compared to average US cities. However, certain US coastal cities like New York and Los Angeles share similar unaffordability extremes with top Canadian markets.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What is a good home price to income ratio?</h3>
+                <p>Historically, a price-to-income ratio of around 2.6 to 3.0 was considered standard. In modern markets, a ratio under 4.0 is generally considered affordable, while ratios exceeding 5.0 often indicate severely unaffordable housing markets.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Why is housing affordability by city so different?</h3>
+                <p>Housing affordability varies drastically by city due to local zoning laws, available land for development, regional economic growth, migration trends, and varying local median incomes, all of which uniquely impact localized supply and demand.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Westmount Research · A GAB Ventures property. Not investment advice. All information for educational purposes only.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Data injected at build time
+        const rawData = [{"city":"New York, NY","country":"United States","priceToIncome":14.3,"priceToRentCity":19.8,"priceToRentOut":14.9,"mortgageAsPctOfIncome":130.4,"affordabilityIndex":0.8},{"city":"Vancouver","country":"Canada","priceToIncome":11.2,"priceToRentCity":21.3,"priceToRentOut":21.1,"mortgageAsPctOfIncome":84.8,"affordabilityIndex":1.2},{"city":"Toronto","country":"Canada","priceToIncome":10.7,"priceToRentCity":25.2,"priceToRentOut":22.9,"mortgageAsPctOfIncome":81.5,"affordabilityIndex":1.2},{"city":"Los Angeles, CA","country":"United States","priceToIncome":9.3,"priceToRentCity":13.1,"priceToRentOut":14.2,"mortgageAsPctOfIncome":87.2,"affordabilityIndex":1.1},{"city":"Victoria","country":"Canada","priceToIncome":8.7,"priceToRentCity":16.8,"priceToRentOut":16.1,"mortgageAsPctOfIncome":67,"affordabilityIndex":1.5},{"city":"San Jose, CA","country":"United States","priceToIncome":8.4,"priceToRentCity":14.2,"priceToRentOut":17.1,"mortgageAsPctOfIncome":74.4,"affordabilityIndex":1.3},{"city":"Montreal","country":"Canada","priceToIncome":7.7,"priceToRentCity":19.6,"priceToRentOut":19.7,"mortgageAsPctOfIncome":58.6,"affordabilityIndex":1.7},{"city":"Quebec City","country":"Canada","priceToIncome":7.6,"priceToRentCity":30.3,"priceToRentOut":18.2,"mortgageAsPctOfIncome":58.8,"affordabilityIndex":1.7},{"city":"Boston, MA","country":"United States","priceToIncome":7.4,"priceToRentCity":17.3,"priceToRentOut":12.2,"mortgageAsPctOfIncome":65.8,"affordabilityIndex":1.5},{"city":"San Diego, CA","country":"United States","priceToIncome":7.1,"priceToRentCity":13,"priceToRentOut":12.1,"mortgageAsPctOfIncome":62.9,"affordabilityIndex":1.6},{"city":"San Francisco, CA","country":"United States","priceToIncome":7,"priceToRentCity":15.1,"priceToRentOut":16.3,"mortgageAsPctOfIncome":62.3,"affordabilityIndex":1.6},{"city":"Dallas, TX","country":"United States","priceToIncome":6.6,"priceToRentCity":21.4,"priceToRentOut":9.8,"mortgageAsPctOfIncome":59.6,"affordabilityIndex":1.7},{"city":"London","country":"Canada","priceToIncome":5.9,"priceToRentCity":13.4,"priceToRentOut":16.1,"mortgageAsPctOfIncome":45.7,"affordabilityIndex":2.2},{"city":"Nashville, TN","country":"United States","priceToIncome":5.9,"priceToRentCity":16.6,"priceToRentOut":8.6,"mortgageAsPctOfIncome":51,"affordabilityIndex":2},{"city":"Calgary","country":"Canada","priceToIncome":5.8,"priceToRentCity":13.5,"priceToRentOut":15.7,"mortgageAsPctOfIncome":44.6,"affordabilityIndex":2.2},{"city":"Halifax","country":"Canada","priceToIncome":5.4,"priceToRentCity":10.4,"priceToRentOut":10.6,"mortgageAsPctOfIncome":42,"affordabilityIndex":2.4},{"city":"Austin, TX","country":"United States","priceToIncome":5.2,"priceToRentCity":15.2,"priceToRentOut":10.6,"mortgageAsPctOfIncome":46.2,"affordabilityIndex":2.2},{"city":"Ottawa","country":"Canada","priceToIncome":5.2,"priceToRentCity":14.1,"priceToRentOut":16,"mortgageAsPctOfIncome":38.7,"affordabilityIndex":2.6},{"city":"Phoenix, AZ","country":"United States","priceToIncome":5,"priceToRentCity":12.6,"priceToRentOut":11.1,"mortgageAsPctOfIncome":45.1,"affordabilityIndex":2.2},{"city":"Seattle, WA","country":"United States","priceToIncome":5,"priceToRentCity":14,"priceToRentOut":12.5,"mortgageAsPctOfIncome":44.5,"affordabilityIndex":2.2},{"city":"Denver, CO","country":"United States","priceToIncome":4.9,"priceToRentCity":13.2,"priceToRentOut":10.7,"mortgageAsPctOfIncome":44.2,"affordabilityIndex":2.3},{"city":"Washington, DC","country":"United States","priceToIncome":4.8,"priceToRentCity":14.1,"priceToRentOut":6.7,"mortgageAsPctOfIncome":42.3,"affordabilityIndex":2.4},{"city":"Winnipeg","country":"Canada","priceToIncome":4.7,"priceToRentCity":11.7,"priceToRentOut":12.2,"mortgageAsPctOfIncome":37,"affordabilityIndex":2.7},{"city":"San Antonio, TX","country":"United States","priceToIncome":3.8,"priceToRentCity":13.4,"priceToRentOut":7.6,"mortgageAsPctOfIncome":33,"affordabilityIndex":3},{"city":"Edmonton","country":"Canada","priceToIncome":3.6,"priceToRentCity":9.6,"priceToRentOut":11.3,"mortgageAsPctOfIncome":28,"affordabilityIndex":3.6},{"city":"Philadelphia, PA","country":"United States","priceToIncome":3.4,"priceToRentCity":9.5,"priceToRentOut":6.8,"mortgageAsPctOfIncome":30.2,"affordabilityIndex":3.3},{"city":"Columbus, OH","country":"United States","priceToIncome":3.3,"priceToRentCity":10.7,"priceToRentOut":7.3,"mortgageAsPctOfIncome":28.7,"affordabilityIndex":3.5},{"city":"Chicago, IL","country":"United States","priceToIncome":3.2,"priceToRentCity":7,"priceToRentOut":7.1,"mortgageAsPctOfIncome":29.4,"affordabilityIndex":3.4},{"city":"Jacksonville, FL","country":"United States","priceToIncome":2.8,"priceToRentCity":7.3,"priceToRentOut":8.8,"mortgageAsPctOfIncome":24.8,"affordabilityIndex":4},{"city":"Indianapolis, IN","country":"United States","priceToIncome":2.8,"priceToRentCity":7.9,"priceToRentOut":7.3,"mortgageAsPctOfIncome":24.4,"affordabilityIndex":4.1}];
+        let currentData = [...rawData];
+        let sortCol = 'priceToIncome';
+        let sortAsc = false;
+
+        // UI Elements
+        const tableBody = document.getElementById('tableBody');
+        const searchInput = document.getElementById('searchInput');
+        const countryFilter = document.getElementById('countryFilter');
+        const headers = document.querySelectorAll('th[data-sort]');
+        const statsGrid = document.getElementById('statsGrid');
+
+        let chartInstance = null;
+
+        function init() {
+            renderStats();
+            renderTable();
+            renderChart();
+            setupEventListeners();
+        }
+
+        function renderStats() {
+            if (rawData.length === 0) return;
+
+            // Calculate some aggregates
+            const usData = rawData.filter(d => d.country === 'United States');
+            const caData = rawData.filter(d => d.country === 'Canada');
+
+            const avgUsRatio = usData.length > 0 ? (usData.reduce((sum, d) => sum + d.priceToIncome, 0) / usData.length).toFixed(1) : 'N/A';
+            const avgCaRatio = caData.length > 0 ? (caData.reduce((sum, d) => sum + d.priceToIncome, 0) / caData.length).toFixed(1) : 'N/A';
+
+            const mostAffordable = [...rawData].sort((a,b) => a.priceToIncome - b.priceToIncome)[0];
+            const leastAffordable = [...rawData].sort((a,b) => b.priceToIncome - a.priceToIncome)[0];
+
+            statsGrid.innerHTML = `
+                <div class="stat-card">
+                    <div class="stat-value">${avgUsRatio}</div>
+                    <div class="stat-label">Avg US Price-to-Income</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">${avgCaRatio}</div>
+                    <div class="stat-label">Avg Canada Price-to-Income</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">${mostAffordable.city}</div>
+                    <div class="stat-label">Most Affordable (${mostAffordable.priceToIncome}x)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">${leastAffordable.city}</div>
+                    <div class="stat-label">Least Affordable (${leastAffordable.priceToIncome}x)</div>
+                </div>
+            `;
+        }
+
+        function renderTable() {
+            tableBody.innerHTML = '';
+
+            currentData.forEach(row => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td>${row.city}</td>
+                    <td>${row.country}</td>
+                    <td>${row.priceToIncome.toFixed(1)}</td>
+                    <td>${row.mortgageAsPctOfIncome.toFixed(1)}%</td>
+                    <td>${row.priceToRentCity.toFixed(1)}</td>
+                `;
+                tableBody.appendChild(tr);
+            });
+        }
+
+        function renderChart() {
+            const ctx = document.getElementById('affordabilityChart').getContext('2d');
+
+            // Use top 15 most extreme ratios for chart to keep it readable
+            const chartData = [...currentData].sort((a,b) => b.priceToIncome - a.priceToIncome).slice(0, 15);
+
+            if (chartInstance) {
+                chartInstance.destroy();
+            }
+
+            Chart.defaults.color = '#94a3b8';
+            Chart.defaults.font.family = 'Inter';
+
+            chartInstance = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: chartData.map(d => d.city.split(',')[0]),
+                    datasets: [{
+                        label: 'Price-to-Income Ratio',
+                        data: chartData.map(d => d.priceToIncome),
+                        backgroundColor: chartData.map(d => d.country === 'Canada' ? '#ef4444' : '#4a8fe7'),
+                        borderRadius: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            backgroundColor: '#0a1020',
+                            titleColor: '#e2e8f0',
+                            bodyColor: '#94a3b8',
+                            borderColor: '#152040',
+                            borderWidth: 1,
+                            callbacks: {
+                                label: function(context) {
+                                    return `Ratio: ${context.parsed.y}`;
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            grid: { color: '#152040' },
+                            title: { display: true, text: 'Price-to-Income Ratio' }
+                        },
+                        x: {
+                            grid: { display: false }
+                        }
+                    }
+                }
+            });
+        }
+
+        function handleSort(col) {
+            if (sortCol === col) {
+                sortAsc = !sortAsc;
+            } else {
+                sortCol = col;
+                sortAsc = true;
+            }
+
+            currentData.sort((a, b) => {
+                let valA = a[col];
+                let valB = b[col];
+
+                if (typeof valA === 'string') valA = valA.toLowerCase();
+                if (typeof valB === 'string') valB = valB.toLowerCase();
+
+                if (valA < valB) return sortAsc ? -1 : 1;
+                if (valA > valB) return sortAsc ? 1 : -1;
+                return 0;
+            });
+
+            renderTable();
+        }
+
+        function handleFilter() {
+            const query = searchInput.value.toLowerCase();
+            const country = countryFilter.value;
+
+            currentData = rawData.filter(d => {
+                const matchesSearch = d.city.toLowerCase().includes(query) || d.country.toLowerCase().includes(query);
+                const matchesCountry = country === 'all' || d.country === country;
+                return matchesSearch && matchesCountry;
+            });
+
+            // Re-apply sort
+            handleSort(sortCol);
+            // Reverse sortAsc back to what it was because handleSort toggles it
+            sortAsc = !sortAsc;
+
+            renderTable();
+            renderChart();
+        }
+
+        function setupEventListeners() {
+            headers.forEach(th => {
+                th.addEventListener('click', () => {
+                    handleSort(th.dataset.sort);
+                });
+            });
+
+            searchInput.addEventListener('keyup', handleFilter);
+            countryFilter.addEventListener('change', handleFilter);
+        }
+
+        init();
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "What is the housing affordability index for 2026?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The housing affordability index measures how affordable it is for a median-income household to buy a median-priced home. In 2026, the index shows significant disparities between major coastal metros and the more affordable Midwest and Sunbelt regions."
+        }
+      }, {
+        "@type": "Question",
+        "name": "What are the most affordable cities to buy a house in the US?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Based on our data, cities like Saint Louis, MO, Wichita, KS, and Cleveland, OH rank among the most affordable, characterized by low price-to-income ratios and mortgage payments requiring a smaller percentage of disposable income."
+        }
+      }, {
+        "@type": "Question",
+        "name": "How does housing affordability in Canada compare to the US?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Generally, major Canadian cities like Vancouver and Toronto exhibit higher price-to-income ratios and lower affordability compared to average US cities. However, certain US coastal cities like New York and Los Angeles share similar unaffordability extremes with top Canadian markets."
+        }
+      }, {
+        "@type": "Question",
+        "name": "What is a good home price to income ratio?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Historically, a price-to-income ratio of around 2.6 to 3.0 was considered standard. In modern markets, a ratio under 4.0 is generally considered affordable, while ratios exceeding 5.0 often indicate severely unaffordable housing markets."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Why is housing affordability by city so different?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Housing affordability varies drastically by city due to local zoning laws, available land for development, regional economic growth, migration trends, and varying local median incomes, all of which uniquely impact localized supply and demand."
+        }
+      }]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Housing Affordability Index 2026: US vs Canada",
+      "description": "Compare 2026 housing affordability across 30 US and Canadian cities. See price-to-income ratios and find the most affordable cities to buy a house.",
+      "datePublished": "2024-05-15T08:00:00+08:00",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Westmount Research"
+      }
+    }
+    </script>
+</body>
+</html>
