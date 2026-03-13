@@ -1,0 +1,38 @@
+[
+  {
+    "ticker": "SPY",
+    "name": "State Street SPDR S&P 500 ETF T",
+    "price": 666.06,
+    "atr": 9.76
+  },
+  {
+    "ticker": "QQQ",
+    "name": "Invesco QQQ Trust, Series 1",
+    "price": 597.26,
+    "atr": 10.67
+  },
+  {
+    "ticker": "DIA",
+    "name": "State Street SPDR Dow Jones Ind",
+    "price": 467.48,
+    "atr": 7.53
+  },
+  {
+    "ticker": "AAPL",
+    "name": "Apple Inc.",
+    "price": 255.76,
+    "atr": 5.9
+  },
+  {
+    "ticker": "NVDA",
+    "name": "NVIDIA Corporation",
+    "price": 183.14,
+    "atr": 6.07
+  },
+  {
+    "ticker": "TSLA",
+    "name": "Tesla, Inc.",
+    "price": 395.01,
+    "atr": 13.55
+  }
+]
