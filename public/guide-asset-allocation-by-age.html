@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Analytics gtag -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VYF72NSC1Q"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-VYF72NSC1Q');
+    </script>
+
+    <!-- SEO Requirements -->
+    <title>Asset Allocation by Age: Portfolios</title>
+    <meta name="description" content="Learn how to adjust your asset allocation by age. Discover portfolio strategies, the 100-minus-age rule, and model ETF portfolios.">
+    <link rel="canonical" href="https://westmountfundamentals.com/guide-asset-allocation-by-age">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Asset Allocation by Age: Portfolios">
+    <meta property="og:description" content="Learn how to adjust your asset allocation by age. Discover portfolio strategies, the 100-minus-age rule, and model ETF portfolios.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://westmountfundamentals.com/guide-asset-allocation-by-age">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Asset Allocation by Age: Portfolios">
+    <meta name="twitter:description" content="Learn how to adjust your asset allocation by age. Discover portfolio strategies, the 100-minus-age rule, and model ETF portfolios.">
+
+    <!-- JSON-LD Schemas -->
+    <script type="application/ld+json">
+        {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How to allocate portfolio by age?","acceptedAnswer":{"@type":"Answer","text":"A common rule of thumb is the 100-minus-age rule, which suggests subtracting your age from 100 to determine the percentage of your portfolio that should be allocated to equities. The remainder is typically allocated to fixed-income assets like bonds to reduce risk as you near retirement."}},{"@type":"Question","name":"What is the 100 minus age rule?","acceptedAnswer":{"@type":"Answer","text":"The 100-minus-age rule is a simplified portfolio allocation strategy. By subtracting your current age from 100, you find the target percentage for stock investments. For example, a 30-year-old would hold 70% in stocks and 30% in bonds."}},{"@type":"Question","name":"How much risk should I take in my 20s vs 60s?","acceptedAnswer":{"@type":"Answer","text":"Investors in their 20s have a higher risk capacity due to a longer time horizon, allowing for a higher allocation to growth-oriented assets like stocks (e.g., 80-90%). In your 60s, capital preservation becomes paramount, so fixed-income allocations usually increase to 40-60%."}},{"@type":"Question","name":"What are target-date funds and how do they work?","acceptedAnswer":{"@type":"Answer","text":"Target-date funds automatically adjust your asset allocation over time based on an expected retirement year. They start with a stock-heavy glide path and gradually shift toward more conservative bond allocations as the target year approaches."}},{"@type":"Question","name":"Should I include real estate or gold in my age based portfolio?","acceptedAnswer":{"@type":"Answer","text":"Yes, adding alternative assets like real estate (REITs) or commodities (gold) can improve diversification and act as an inflation hedge. Typically, these are allocated in small portions (5-10%) alongside core equity and bond holdings."}}]}
+    </script>
+    <script type="application/ld+json">
+        {"@context":"https://schema.org","@type":"Article","headline":"Asset Allocation by Age: How to Adjust Your Portfolio","description":"Learn how to adjust your asset allocation by age. Discover portfolio strategies, the 100-minus-age rule, and model ETF portfolios.","datePublished":"2026-03-13","publisher":{"@type":"Organization","name":"Westmount Research","logo":{"@type":"ImageObject","url":"https://westmountfundamentals.com/logo.png"}}}
+    </script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        :root {
+            --bg: #060a12;
+            --card-bg: #0a1020;
+            --border: #152040;
+            --accent: #4a8fe7;
+            --text-main: #e2e8f0;
+            --text-muted: #94a3b8;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* Sticky Nav */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(6, 10, 18, 0.85);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-brand { font-weight: 700; font-size: 1.25rem; color: #fff; text-decoration: none; }
+        .nav-links { display: flex; gap: 1.5rem; }
+        .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+        .nav-links a:hover { color: var(--accent); }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Typography */
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(90deg, #ffffff, var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+        }
+        h2 { font-size: 1.75rem; margin: 2rem 0 1rem; color: #fff; }
+        h3 { font-size: 1.25rem; margin: 1.5rem 0 0.5rem; color: #fff; }
+        p { margin-bottom: 1rem; color: var(--text-muted); }
+        code, .mono { font-family: 'JetBrains Mono', monospace; }
+
+        /* Stats Cards */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .stat-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+        .stat-value { font-size: 2rem; font-weight: 700; color: var(--accent); font-family: 'JetBrains Mono', monospace; }
+        .stat-label { font-size: 0.875rem; color: var(--text-muted); margin-top: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em; }
+
+        /* Interactive Section */
+        .interactive-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 3rem 0;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 2rem;
+        }
+        @media(max-width: 768px) { .interactive-container { grid-template-columns: 1fr; } }
+
+        .controls { display: flex; flex-direction: column; gap: 1rem; }
+        label { font-weight: 600; font-size: 0.9rem; }
+        input[type="range"] { width: 100%; cursor: pointer; }
+        .age-display { font-size: 1.5rem; font-weight: bold; color: var(--accent); }
+
+        /* Chart container */
+        .chart-wrapper { position: relative; height: 300px; width: 100%; display: flex; justify-content: center; }
+
+        /* Data Table */
+        .table-controls { display: flex; justify-content: space-between; margin-bottom: 1rem; gap: 1rem; flex-wrap: wrap; }
+        input[type="text"] {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            width: 100%;
+            max-width: 300px;
+            font-family: inherit;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        th { background: rgba(255,255,255,0.02); font-weight: 600; cursor: pointer; user-select: none; }
+        th:hover { background: rgba(255,255,255,0.05); }
+        .sort-icon { margin-left: 0.5rem; font-size: 0.8rem; color: var(--text-muted); }
+        .ticker { font-weight: bold; color: var(--accent); }
+
+        /* FAQ */
+        .faq-item { margin-bottom: 1.5rem; background: var(--card-bg); border: 1px solid var(--border); padding: 1.5rem; border-radius: 8px; }
+        .faq-item h3 { margin-top: 0; color: var(--accent); }
+
+        /* Methodology */
+        .methodology { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border); font-size: 0.9rem; color: var(--text-muted); }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+            border-top: 1px solid var(--border);
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="/" class="nav-brand">Westmount Fundamentals</a>
+        <div class="nav-links">
+            <a href="/#studies">Studies</a>
+            <a href="/#tools">Tools</a>
+            <a href="/#guides">Guides</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Asset Allocation by Age: How to Adjust Your Portfolio</h1>
+        <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem;">
+            A strategic approach to investing requires balancing risk and reward throughout your life. Discover age-based investing strategies, glide paths, and build model portfolios using real ETF data.
+        </p>
+
+        <!-- Stats Row -->
+        <div class="stats-grid" id="stats-grid">
+            <!-- Populated via JS -->
+        </div>
+
+        <h2>Interactive Model Portfolio Builder</h2>
+        <p>Adjust the slider to see how asset allocation shifts based on age. This tool uses a modified 110-minus-age rule, incorporating international exposure and alternative assets.</p>
+
+        <div class="interactive-container">
+            <div class="controls">
+                <label for="ageSlider">Your Age:</label>
+                <input type="range" id="ageSlider" min="20" max="80" value="35" step="5">
+                <div style="display:flex; justify-content:space-between; align-items:center;">
+                    <span class="age-display" id="ageDisplay">35 Years Old</span>
+                    <span style="font-size: 0.875rem; color: var(--text-muted);">Risk Profile: <span id="riskProfile" style="color:var(--accent);">Aggressive</span></span>
+                </div>
+
+                <div style="margin-top: 1.5rem;">
+                    <h3>Target Allocation</h3>
+                    <ul style="list-style:none; margin-top: 0.5rem;" id="allocationList">
+                        <!-- Populated via JS -->
+                    </ul>
+                </div>
+            </div>
+
+            <div class="chart-wrapper">
+                <canvas id="allocationChart"></canvas>
+            </div>
+        </div>
+
+        <h2>Core Portfolio ETFs</h2>
+        <p>A diversified portfolio requires building blocks. Below is real, current data for benchmark ETFs used to construct age-based asset allocations.</p>
+
+        <div class="table-controls">
+            <input type="text" id="searchInput" placeholder="Search by ticker or name...">
+        </div>
+
+        <div style="overflow-x: auto;">
+            <table id="dataTable">
+                <thead>
+                    <tr>
+                        <th data-sort="ticker">Ticker <span class="sort-icon">↕</span></th>
+                        <th data-sort="name">Name <span class="sort-icon">↕</span></th>
+                        <th data-sort="assetClass">Asset Class <span class="sort-icon">↕</span></th>
+                        <th data-sort="price">Price <span class="sort-icon">↕</span></th>
+                        <th data-sort="yield">Yield <span class="sort-icon">↕</span></th>
+                        <th data-sort="expenseRatio">Exp. Ratio <span class="sort-icon">↕</span></th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    <!-- Populated via JS -->
+                </tbody>
+            </table>
+        </div>
+
+        <h2 style="margin-top: 4rem;">Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <h3>How to allocate portfolio by age?</h3>
+            <p>A common rule of thumb is the 100-minus-age rule, which suggests subtracting your age from 100 to determine the percentage of your portfolio that should be allocated to equities. The remainder is typically allocated to fixed-income assets like bonds to reduce risk as you near retirement.</p>
+        </div>
+        <div class="faq-item">
+            <h3>What is the 100 minus age rule?</h3>
+            <p>The 100-minus-age rule is a simplified portfolio allocation strategy. By subtracting your current age from 100, you find the target percentage for stock investments. For example, a 30-year-old would hold 70% in stocks and 30% in bonds.</p>
+        </div>
+        <div class="faq-item">
+            <h3>How much risk should I take in my 20s vs 60s?</h3>
+            <p>Investors in their 20s have a higher risk capacity due to a longer time horizon, allowing for a higher allocation to growth-oriented assets like stocks (e.g., 80-90%). In your 60s, capital preservation becomes paramount, so fixed-income allocations usually increase to 40-60%.</p>
+        </div>
+        <div class="faq-item">
+            <h3>What are target-date funds and how do they work?</h3>
+            <p>Target-date funds automatically adjust your asset allocation over time based on an expected retirement year. They start with a stock-heavy glide path and gradually shift toward more conservative bond allocations as the target year approaches.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Should I include real estate or gold in my age based portfolio?</h3>
+            <p>Yes, adding alternative assets like real estate (REITs) or commodities (gold) can improve diversification and act as an inflation hedge. Typically, these are allocated in small portions (5-10%) alongside core equity and bond holdings.</p>
+        </div>
+
+        <div class="methodology">
+            <strong>Methodology & Data Sources:</strong> ETF financial data is sourced dynamically using the Yahoo Finance API (yahoo-finance2) at build time to reflect accurate market conditions. Yield represents the trailing annual dividend yield. Expense ratios are pulled directly from the fund profile. Model portfolios are illustrative and constructed using a modified 110-minus-age rule incorporating global diversification.
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Westmount Research &middot; A GAB Ventures property. Not investment advice. All information for educational purposes only.</p>
+    </footer>
+
+    <script>
+        // Inline Real Data
+        const ETF_DATA = [{"ticker":"VTI","name":"Vanguard Total Stock Market ETF","assetClass":"US Equities","desc":"Broad exposure to US large, mid, and small-cap stocks.","price":327.92,"yield":0.84,"expenseRatio":0.03,"ytdReturn":1.05},{"ticker":"VXUS","name":"Vanguard Total International Stock ETF","assetClass":"Intl Equities","desc":"Non-US global equity markets.","price":77.47,"yield":null,"expenseRatio":0.05,"ytdReturn":11.36},{"ticker":"BND","name":"Vanguard Total Bond Market ETF","assetClass":"US Bonds","desc":"Investment-grade US fixed income.","price":73.62,"yield":null,"expenseRatio":0.03,"ytdReturn":1.79},{"ticker":"BNDX","name":"Vanguard Total Intl Bond ETF","assetClass":"Intl Bonds","desc":"Non-US investment-grade bonds.","price":48.08,"yield":0,"expenseRatio":0.07,"ytdReturn":1.87},{"ticker":"VNQ","name":"Vanguard Real Estate Index Fund","assetClass":"Real Estate","desc":"US Real Estate Investment Trusts (REITs).","price":92.01,"yield":3.6,"expenseRatio":0.13,"ytdReturn":8.15},{"ticker":"GLD","name":"SPDR Gold Shares","assetClass":"Commodities","desc":"Physical gold bullion.","price":466.88,"yield":0,"expenseRatio":0.4,"ytdReturn":21.15}];
+
+        // --- Stats Setup ---
+        const statsGrid = document.getElementById('stats-grid');
+        const vti = ETF_DATA.find(e => e.ticker === 'VTI') || {};
+        const bnd = ETF_DATA.find(e => e.ticker === 'BND') || {};
+
+        let statsHTML = '';
+        if (vti.yield !== null) {
+            statsHTML += `<div class="stat-card"><div class="stat-value">${vti.yield}%</div><div class="stat-label">US Equity Yield (VTI)</div></div>`;
+        }
+        if (bnd.yield !== null) {
+            statsHTML += `<div class="stat-card"><div class="stat-value">${bnd.yield}%</div><div class="stat-label">US Bond Yield (BND)</div></div>`;
+        }
+        if (vti.ytdReturn !== null) {
+            statsHTML += `<div class="stat-card"><div class="stat-value" style="color: ${vti.ytdReturn >= 0 ? 'var(--accent)' : '#ef4444'}">${vti.ytdReturn}%</div><div class="stat-label">US Equity YTD Return</div></div>`;
+        }
+        if(statsHTML) {
+            statsGrid.innerHTML = statsHTML;
+        } else {
+            statsGrid.style.display = 'none';
+        }
+
+        // --- Table Setup ---
+        const tableBody = document.getElementById('tableBody');
+        const searchInput = document.getElementById('searchInput');
+        let currentSort = { column: 'ticker', dir: 'asc' };
+        let filteredData = [...ETF_DATA];
+
+        function renderTable() {
+            tableBody.innerHTML = '';
+            filteredData.forEach(row => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td class="ticker mono">${row.ticker}</td>
+                    <td>${row.name}</td>
+                    <td><span style="background: rgba(74,143,231,0.1); color: var(--accent); padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.8rem;">${row.assetClass}</span></td>
+                    <td class="mono">${row.price !== null ? '$' + row.price.toFixed(2) : 'N/A'}</td>
+                    <td class="mono">${row.yield !== null ? row.yield + '%' : 'N/A'}</td>
+                    <td class="mono">${row.expenseRatio !== null ? row.expenseRatio + '%' : 'N/A'}</td>
+                `;
+                tableBody.appendChild(tr);
+            });
+        }
+
+        function handleSort(column) {
+            if (currentSort.column === column) {
+                currentSort.dir = currentSort.dir === 'asc' ? 'desc' : 'asc';
+            } else {
+                currentSort.column = column;
+                currentSort.dir = 'asc';
+            }
+
+            filteredData.sort((a, b) => {
+                let valA = a[column];
+                let valB = b[column];
+
+                if (valA === null) valA = currentSort.dir === 'asc' ? Infinity : -Infinity;
+                if (valB === null) valB = currentSort.dir === 'asc' ? Infinity : -Infinity;
+
+                if (typeof valA === 'string') {
+                    return currentSort.dir === 'asc' ? valA.localeCompare(valB) : valB.localeCompare(valA);
+                }
+                return currentSort.dir === 'asc' ? valA - valB : valB - valA;
+            });
+            renderTable();
+        }
+
+        document.querySelectorAll('th[data-sort]').forEach(th => {
+            th.addEventListener('click', () => {
+                handleSort(th.getAttribute('data-sort'));
+            });
+        });
+
+        searchInput.addEventListener('input', (e) => {
+            const term = e.target.value.toLowerCase();
+            filteredData = ETF_DATA.filter(row =>
+                row.ticker.toLowerCase().includes(term) ||
+                row.name.toLowerCase().includes(term) ||
+                row.assetClass.toLowerCase().includes(term)
+            );
+            // Re-apply current sort
+            const tmpDir = currentSort.dir;
+            currentSort.dir = tmpDir === 'asc' ? 'desc' : 'asc'; // toggle to force sort
+            handleSort(currentSort.column);
+        });
+
+        // Initial render
+        handleSort('ticker');
+
+        // --- Interactive Chart Setup ---
+        const ageSlider = document.getElementById('ageSlider');
+        const ageDisplay = document.getElementById('ageDisplay');
+        const riskProfile = document.getElementById('riskProfile');
+        const allocationList = document.getElementById('allocationList');
+        const ctx = document.getElementById('allocationChart').getContext('2d');
+
+        let chart;
+
+        function calculateAllocation(age) {
+            // Modified 110-minus-age rule
+            let equityTotal = 110 - age;
+            if (equityTotal < 20) equityTotal = 20; // Minimum equity exposure
+            if (equityTotal > 90) equityTotal = 90; // Maximum equity exposure
+
+            const fixedIncomeTotal = 100 - equityTotal;
+
+            // Sub-allocations
+            const usEquity = Math.round(equityTotal * 0.65);
+            const intlEquity = Math.round(equityTotal * 0.25);
+            const alternatives = Math.round(equityTotal * 0.10); // REITs/Gold
+
+            const usBond = Math.round(fixedIncomeTotal * 0.70);
+            const intlBond = Math.round(fixedIncomeTotal * 0.30);
+
+            // Correct rounding errors to ensure sum is exactly 100
+            const sum = usEquity + intlEquity + alternatives + usBond + intlBond;
+            const diff = 100 - sum;
+
+            return {
+                usEquity: usEquity + diff, // dump diff in US equity
+                intlEquity,
+                usBond,
+                intlBond,
+                alternatives
+            };
+        }
+
+        function getRiskLabel(age) {
+            if (age < 35) return 'Aggressive';
+            if (age < 45) return 'Growth';
+            if (age < 55) return 'Moderate';
+            if (age < 65) return 'Conservative';
+            return 'Income Focused';
+        }
+
+        function updateChartAndUI() {
+            const age = parseInt(ageSlider.value);
+            ageDisplay.textContent = age + ' Years Old';
+            riskProfile.textContent = getRiskLabel(age);
+
+            const alloc = calculateAllocation(age);
+
+            // Update List
+            allocationList.innerHTML = `
+                <li style="margin-bottom:0.5rem; display:flex; justify-content:space-between;">
+                    <span><span style="color:#4a8fe7;">■</span> US Equities (VTI)</span> <strong>${alloc.usEquity}%</strong>
+                </li>
+                <li style="margin-bottom:0.5rem; display:flex; justify-content:space-between;">
+                    <span><span style="color:#60a5fa;">■</span> Intl Equities (VXUS)</span> <strong>${alloc.intlEquity}%</strong>
+                </li>
+                <li style="margin-bottom:0.5rem; display:flex; justify-content:space-between;">
+                    <span><span style="color:#facc15;">■</span> Alternatives (VNQ/GLD)</span> <strong>${alloc.alternatives}%</strong>
+                </li>
+                <li style="margin-bottom:0.5rem; display:flex; justify-content:space-between;">
+                    <span><span style="color:#94a3b8;">■</span> US Bonds (BND)</span> <strong>${alloc.usBond}%</strong>
+                </li>
+                <li style="margin-bottom:0.5rem; display:flex; justify-content:space-between;">
+                    <span><span style="color:#cbd5e1;">■</span> Intl Bonds (BNDX)</span> <strong>${alloc.intlBond}%</strong>
+                </li>
+            `;
+
+            const dataValues = [alloc.usEquity, alloc.intlEquity, alloc.alternatives, alloc.usBond, alloc.intlBond];
+            const bgColors = ['#4a8fe7', '#60a5fa', '#facc15', '#94a3b8', '#cbd5e1'];
+            const labels = ['US Equities', 'Intl Equities', 'Alternatives', 'US Bonds', 'Intl Bonds'];
+
+            if (chart) {
+                chart.data.datasets[0].data = dataValues;
+                chart.update();
+            } else {
+                Chart.defaults.color = '#94a3b8';
+                chart = new Chart(ctx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            data: dataValues,
+                            backgroundColor: bgColors,
+                            borderWidth: 0,
+                            hoverOffset: 4
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                position: 'right',
+                                labels: { color: '#e2e8f0' }
+                            },
+                            tooltip: {
+                                callbacks: {
+                                    label: function(context) {
+                                        return ' ' + context.label + ': ' + context.raw + '%';
+                                    }
+                                }
+                            }
+                        },
+                        cutout: '70%'
+                    }
+                });
+            }
+        }
+
+        ageSlider.addEventListener('input', updateChartAndUI);
+
+        // Initial init
+        updateChartAndUI();
+    </script>
+</body>
+</html>
