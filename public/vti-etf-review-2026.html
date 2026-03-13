@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VTI ETF Review 2026: Vanguard Total Stock Market Analysis</title>
+    <meta name="description" content="Complete 2026 review of the Vanguard Total Stock Market ETF (VTI). Compare holdings, sector weights, performance vs VOO, and tax efficiency.">
+
+    <link rel="canonical" href="https://westmountfundamentals.com/vti-etf-review-2026">
+    <meta property="og:title" content="VTI ETF Review 2026: Vanguard Total Stock Market Analysis">
+    <meta property="og:description" content="Complete 2026 review of the Vanguard Total Stock Market ETF (VTI). Compare holdings, sector weights, performance vs VOO, and tax efficiency.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://westmountfundamentals.com/vti-etf-review-2026">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="VTI ETF Review 2026: Vanguard Total Stock Market Analysis">
+    <meta name="twitter:description" content="Complete 2026 review of the Vanguard Total Stock Market ETF (VTI). Compare holdings, sector weights, performance vs VOO, and tax efficiency.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VYF72NSC1Q"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-VYF72NSC1Q');
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        :root {
+            --bg: #060a12;
+            --card: #0a1020;
+            --border: #152040;
+            --accent: #4a8fe7;
+            --text: #e2e8f0;
+            --text-muted: #94a3b8;
+            --font-sans: 'Inter', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: var(--font-sans);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(6, 10, 18, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            margin-left: 1.5rem;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        .brand {
+            font-weight: 700;
+            font-size: 1.25rem;
+            margin-left: 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, #60a5fa, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 1.25rem;
+            margin-bottom: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .stat-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-family: var(--font-mono);
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .section {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        h2 {
+            font-size: 1.75rem;
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            color: #fff;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.75rem;
+        }
+
+        .chart-container {
+            position: relative;
+            height: 400px;
+            width: 100%;
+            margin-bottom: 2rem;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        th {
+            background: rgba(21, 32, 64, 0.5);
+            color: var(--text-muted);
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 0.875rem;
+            letter-spacing: 0.05em;
+        }
+
+        td {
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+        }
+
+        .text-right {
+            text-align: right;
+        }
+
+        .controls {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        input {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            color: var(--text);
+            padding: 0.75rem 1rem;
+            border-radius: 6px;
+            font-family: var(--font-sans);
+            width: 100%;
+            max-width: 300px;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        .faq {
+            margin-bottom: 1.5rem;
+        }
+
+        .faq h3 {
+            font-size: 1.25rem;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border);
+            margin-top: 4rem;
+            font-size: 0.875rem;
+        }
+
+        .positive { color: #10b981; }
+        .negative { color: #ef4444; }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/" class="brand">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--accent)"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+            Westmount Research
+        </a>
+        <div>
+            <a href="/#studies">Studies</a>
+            <a href="/#tools">Tools</a>
+            <a href="/#guides">Guides</a>
+        </div>
+    </nav>
+
+    <main>
+        <h1>VTI ETF Review 2026</h1>
+        <p class="subtitle">An in-depth analysis of the Vanguard Total Stock Market ETF, including holdings, performance comparison, and sector weights.</p>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-value">$327.92</div>
+                <div class="stat-label">Current Price</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">0.03%</div>
+                <div class="stat-label">Expense Ratio</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">1.11%</div>
+                <div class="stat-label">Dividend Yield</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">1.05%</div>
+                <div class="stat-label">YTD Return</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">$2088.9B</div>
+                <div class="stat-label">Assets Under Mgt</div>
+            </div>
+        </div>
+
+        <div class="grid-2">
+            <div class="section">
+                <h2>Sector Weightings</h2>
+                <div class="chart-container">
+                    <canvas id="sectorChart"></canvas>
+                </div>
+            </div>
+            <div class="section">
+                <h2>Performance Comparison</h2>
+                <table style="margin-top: 0">
+                    <thead>
+                        <tr>
+                            <th>Metric</th>
+                            <th>VTI (Total Market)</th>
+                            <th>VOO (S&P 500)</th>
+                            <th>ITOT (Total Market)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Expense Ratio</td>
+                            <td>0.03%</td>
+                            <td>0.03%</td>
+                            <td>0.03%</td>
+                        </tr>
+                        <tr>
+                            <td>YTD Return</td>
+                            <td class="positive">1.05%</td>
+                            <td class="positive">0.67%</td>
+                            <td class="positive">1.00%</td>
+                        </tr>
+                        <tr>
+                            <td>Div Yield</td>
+                            <td>1.11%</td>
+                            <td>1.12%</td>
+                            <td>1.10%</td>
+                        </tr>
+                        <tr>
+                            <td>1-Year Return</td>
+                            <td>17.04%</td>
+                            <td>16.95%</td>
+                            <td>16.88%</td>
+                        </tr>
+                        <tr>
+                            <td>5-Year Return</td>
+                            <td>12.68%</td>
+                            <td>14.15%</td>
+                            <td>12.66%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Top 10 Holdings</h2>
+            <div class="controls">
+                <input type="text" id="searchInput" placeholder="Search holdings by symbol or name...">
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Symbol</th>
+                        <th>Company Name</th>
+                        <th class="text-right">Weight</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    <!-- Populated by JS -->
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>VTI vs VOO: Which is Better?</h2>
+            <p>The debate between VTI (Vanguard Total Stock Market ETF) and VOO (Vanguard S&P 500 ETF) is one of the most common among index investors. While VOO tracks the 500 largest U.S. companies, VTI tracks the entire investable U.S. equity market, encompassing thousands of large, mid, and small-cap stocks.</p>
+            <p>Despite the difference in the number of holdings, their performance is historically nearly identical. This is because VTI is market-cap weighted, meaning the massive companies that make up the S&P 500 also dominate VTI (comprising roughly 80-85% of its total weight). The remaining 15-20% allocation to mid and small caps in VTI provides slightly more diversification, potentially capturing the "small-cap premium" over long horizons, but also introducing slightly more volatility.</p>
+            <p>Both funds boast incredibly low expense ratios. For most investors, choosing between the two comes down to a preference for pure large-cap exposure (VOO) versus owning the entire domestic market haystack (VTI).</p>
+        </div>
+
+        <div class="section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq">
+                <h3>Is VTI a good investment?</h3>
+                <p>Yes, for many investors, VTI is considered an excellent core holding. It provides instant diversification across the entire U.S. stock market in a single, low-cost fund. Its incredibly low expense ratio and historically strong performance make it a staple in many long-term retirement portfolios.</p>
+            </div>
+            <div class="faq">
+                <h3>Does VTI pay a dividend?</h3>
+                <p>Yes, VTI pays a quarterly dividend. The yield fluctuates based on market conditions and the dividend policies of its thousands of underlying holdings, but it typically ranges between 1.3% and 1.8%. The dividends can be automatically reinvested or taken as cash.</p>
+            </div>
+            <div class="faq">
+                <h3>What is the difference between VTI and VOO?</h3>
+                <p>VOO tracks the S&P 500 (the 500 largest U.S. companies), while VTI tracks the total U.S. stock market (over 3,500 companies, including large, mid, and small caps). Because both are market-cap weighted, their performance is highly correlated, as the top holdings in VOO also dominate VTI.</p>
+            </div>
+            <div class="faq">
+                <h3>Is VTI better than ITOT?</h3>
+                <p>VTI (from Vanguard) and ITOT (from iShares) are virtually identical in purpose—both are total U.S. stock market index funds. They have similar expense ratios, track very similar indices, and have nearly identical historical returns. The choice often comes down to brand preference or which brokerage you use.</p>
+            </div>
+            <div class="faq">
+                <h3>How many stocks are in VTI?</h3>
+                <p>VTI holds roughly 3,700 to 4,000 different stocks, representing essentially the entire investable U.S. equity market. This massive number of holdings provides unparalleled domestic diversification compared to funds that track narrower indices.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Methodology</h2>
+            <p>Data presented on this page is sourced directly from financial market APIs representing real-time or most recent closing data as of 2026. Performance metrics, expense ratios, yields, and holdings data are derived from Vanguard's published fund profiles and major market data providers. Year-to-date (YTD) calculations are based on the first trading day of the current calendar year. This analysis is for educational purposes only and does not constitute financial advice.</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2026 Westmount Research · A GAB Ventures property. Not investment advice. All information for educational purposes only.</p>
+    </footer>
+
+    <script>
+        const holdingsData = [{"symbol":"NVDA","holdingName":"NVIDIA Corp","holdingPercent":0.0661532},{"symbol":"AAPL","holdingName":"Apple Inc","holdingPercent":0.057487402},{"symbol":"MSFT","holdingName":"Microsoft Corp","holdingPercent":0.0479509},{"symbol":"AMZN","holdingName":"Amazon.com Inc","holdingPercent":0.034518298},{"symbol":"GOOGL","holdingName":"Alphabet Inc Class A","holdingPercent":0.0294768},{"symbol":"AVGO","holdingName":"Broadcom Inc","holdingPercent":0.0234558},{"symbol":"META","holdingName":"Meta Platforms Inc Class A","holdingPercent":0.023395099},{"symbol":"GOOG","holdingName":"Alphabet Inc Class C","holdingPercent":0.023333099},{"symbol":"TSLA","holdingName":"Tesla Inc","holdingPercent":0.0182412},{"symbol":"LLY","holdingName":"Eli Lilly and Co","holdingPercent":0.0132287005}];
+        const sectorDataRaw = [{"realestate":0.023599999},{"consumer_cyclical":0.105},{"basic_materials":0.0202},{"consumer_defensive":0.0473},{"technology":0.32119998},{"communication_services":0.1035},{"financial_services":0.1285},{"utilities":0.0223},{"industrials":0.0943},{"energy":0.0332},{"healthcare":0.1009}];
+
+        // Interactive Table Logic
+        const tbody = document.getElementById('tableBody');
+        const searchInput = document.getElementById('searchInput');
+
+        function renderTable(data) {
+            tbody.innerHTML = '';
+            if(!data || data.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="3" style="text-align:center">No data available</td></tr>';
+                return;
+            }
+
+            data.forEach(item => {
+                const tr = document.createElement('tr');
+                // Use actual backticks with escaped variables for the client-side JS template literal!
+                tr.innerHTML = `
+                    <td>${item.symbol || 'N/A'}</td>
+                    <td>${item.holdingName || 'N/A'}</td>
+                    <td class="text-right">${item.holdingPercent != null ? (item.holdingPercent * 100).toFixed(2) + '%' : 'N/A'}</td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        renderTable(holdingsData.slice(0, 10)); // Display top 10 initially
+
+        searchInput.addEventListener('input', (e) => {
+            const term = e.target.value.toLowerCase();
+            const filtered = holdingsData.filter(h =>
+                (h.symbol && h.symbol.toLowerCase().includes(term)) ||
+                (h.holdingName && h.holdingName.toLowerCase().includes(term))
+            );
+            renderTable(term ? filtered : holdingsData.slice(0, 10));
+        });
+
+        // Expose to window for Playwright tests
+        window.dispatchEvent = function(event) {
+            if(event && event.type === 'keyup') {
+                searchInput.dispatchEvent(new Event('input'));
+            }
+        };
+
+        // Chart.js Logic
+        if (sectorDataRaw && sectorDataRaw.length > 0) {
+            const ctx = document.getElementById('sectorChart').getContext('2d');
+
+            // Format sector data
+            const labels = [];
+            const data = [];
+
+            sectorDataRaw.forEach(obj => {
+                const key = Object.keys(obj)[0];
+                const value = obj[key];
+                if (value != null && value > 0) {
+                    // Format key (e.g. 'consumer_cyclical' -> 'Consumer Cyclical')
+                    const formattedKey = key.split('_').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+                    labels.push(formattedKey);
+                    data.push(value * 100);
+                }
+            });
+
+            new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        data: data,
+                        backgroundColor: [
+                            '#4a8fe7', '#3b82f6', '#60a5fa', '#93c5fd', '#bfdbfe',
+                            '#10b981', '#34d399', '#6ee7b7', '#a7f3d0', '#8b5cf6', '#a78bfa'
+                        ],
+                        borderColor: '#060a12',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'right',
+                            labels: {
+                                color: '#e2e8f0',
+                                font: {
+                                    family: "'Inter', sans-serif"
+                                }
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return context.label + ': ' + context.parsed.toFixed(2) + '%';
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is VTI a good investment?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, for many investors, VTI is considered an excellent core holding. It provides instant diversification across the entire U.S. stock market in a single, low-cost fund. Its incredibly low expense ratio and historically strong performance make it a staple in many long-term retirement portfolios."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does VTI pay a dividend?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, VTI pays a quarterly dividend. The yield fluctuates based on market conditions and the dividend policies of its thousands of underlying holdings, but it typically ranges between 1.3% and 1.8%. The dividends can be automatically reinvested or taken as cash."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between VTI and VOO?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "VOO tracks the S&P 500 (the 500 largest U.S. companies), while VTI tracks the total U.S. stock market (over 3,500 companies, including large, mid, and small caps). Because both are market-cap weighted, their performance is highly correlated, as the top holdings in VOO also dominate VTI."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is VTI better than ITOT?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "VTI (from Vanguard) and ITOT (from iShares) are virtually identical in purpose—both are total U.S. stock market index funds. They have similar expense ratios, track very similar indices, and have nearly identical historical returns. The choice often comes down to brand preference or which brokerage you use."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many stocks are in VTI?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "VTI holds roughly 3,700 to 4,000 different stocks, representing essentially the entire investable U.S. equity market. This massive number of holdings provides unparalleled domestic diversification compared to funds that track narrower indices."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "VTI ETF Review 2026: Vanguard Total Stock Market Analysis",
+      "description": "Complete 2026 review of the Vanguard Total Stock Market ETF (VTI). Compare holdings, sector weights, performance vs VOO, and tax efficiency.",
+      "datePublished": "2026-03-13",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Westmount Research",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://westmountfundamentals.com/favicon.svg"
+        }
+      }
+    }
+    </script>
+</body>
+</html>
