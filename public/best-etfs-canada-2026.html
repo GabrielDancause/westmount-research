@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best ETFs in Canada (2026): Top Picks by Category</title>
+    <meta name="description" content="Discover the best ETFs in Canada for 2026. Compare XEQT, VFV, XIC and more by category, including MER, historical returns, and AUM to build your portfolio.">
+    <link rel="canonical" href="https://westmountfundamentals.com/best-etfs-canada-2026">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Best ETFs in Canada (2026): Top Picks by Category">
+    <meta property="og:description" content="Discover the best ETFs in Canada for 2026. Compare XEQT, VFV, XIC and more by category, including MER, historical returns, and AUM to build your portfolio.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://westmountfundamentals.com/best-etfs-canada-2026">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Best ETFs in Canada (2026): Top Picks by Category">
+    <meta name="twitter:description" content="Discover the best ETFs in Canada for 2026. Compare XEQT, VFV, XIC and more by category, including MER, historical returns, and AUM to build your portfolio.">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VYF72NSC1Q"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-VYF72NSC1Q');
+    </script>
+
+    <!-- JSON-LD FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the best ETF in Canada?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The 'best' ETF depends on your goals. For a globally diversified, all-in-one portfolio, XEQT and VEQT are top choices. For US exposure, VFV is highly popular."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are Canadian ETFs a good investment?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, ETFs offer instant diversification, low fees (MERs), and easy access to global and domestic markets, making them excellent long-term investments."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the best Canadian dividend ETF?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "VDY is consistently ranked as one of the best Canadian dividend ETFs, offering high yield from top Canadian banks and energy companies."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between XEQT and VEQT?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Both are 100% equity all-in-one ETFs. XEQT has slightly higher US exposure and a slightly lower MER, while VEQT holds more Canadian equities. Performance is historically very similar."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which ETF tracks the S&P 500 in Canada?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "VFV is the most popular Canadian-listed ETF that tracks the S&P 500 (unhedged), offering direct exposure to the largest US companies."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- JSON-LD Article Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Best ETFs in Canada (2026): Top Picks by Category",
+      "description": "Discover the best ETFs in Canada for 2026. Compare XEQT, VFV, XIC and more by category, including MER, historical returns, and AUM to build your portfolio.",
+      "datePublished": "2026-03-13",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Westmount Research",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://westmountfundamentals.com/favicon.ico"
+        }
+      }
+    }
+    </script>
+
+    <style>
+        :root {
+            --bg: #060a12;
+            --card: #0a1020;
+            --border: #152040;
+            --accent: #4a8fe7;
+            --text: #c8d0de;
+            --text-muted: #6a7a90;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* Nav */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(6, 10, 18, 0.85);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav a { color: var(--text); text-decoration: none; font-weight: 600; font-size: 0.9rem; margin-left: 20px; transition: color 0.2s;}
+        nav a:hover { color: var(--accent); }
+        .brand { font-weight: 900; color: #fff; font-size: 1.2rem; margin-left: 0; }
+        .nav-links { display: flex; }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Header */
+        header { text-align: center; margin-bottom: 50px; }
+        h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            letter-spacing: -1px;
+            margin-bottom: 16px;
+            background: linear-gradient(90deg, #fff, var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.2;
+        }
+        .subtitle { color: var(--text-muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+
+        /* Stats Row */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+        .stat-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+        }
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--accent);
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 8px;
+        }
+
+        /* Controls */
+        .controls {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+        input, select {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            color: var(--text);
+            padding: 12px 16px;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 0.95rem;
+        }
+        input:focus, select:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+        input { flex: 1; min-width: 250px; }
+
+        /* Table */
+        .table-container {
+            overflow-x: auto;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            margin-bottom: 50px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+        th, td {
+            padding: 16px;
+            border-bottom: 1px solid var(--border);
+        }
+        th {
+            font-weight: 600;
+            color: #fff;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+        th:hover { color: var(--accent); }
+        td { font-size: 0.95rem; }
+        .ticker { font-weight: 700; color: #fff; }
+        .name { color: var(--text-muted); font-size: 0.8rem; display: block; }
+        .mono { font-family: 'JetBrains Mono', monospace; }
+        .pos { color: #4ade80; }
+        .neg { color: #f87171; }
+        tr:last-child td { border-bottom: none; }
+        tr:hover td { background: rgba(74, 143, 231, 0.05); }
+
+        /* Chart */
+        .chart-container {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 50px;
+            height: 400px;
+        }
+
+        /* Sections */
+        .section {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 32px;
+            margin-bottom: 40px;
+        }
+        h2 { font-size: 1.8rem; color: #fff; margin-bottom: 20px; }
+        .section p { margin-bottom: 16px; color: var(--text-muted); }
+
+        /* FAQ */
+        .faq-item { margin-bottom: 24px; }
+        .faq-q { font-weight: 700; color: #fff; margin-bottom: 8px; font-size: 1.1rem; }
+        .faq-a { color: var(--text-muted); }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.2rem; }
+            .nav-links { display: none; }
+            .controls { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="/" class="brand">Westmount Fundamentals</a>
+        <div class="nav-links">
+            <a href="/#studies">Studies</a>
+            <a href="/#tools">Tools</a>
+            <a href="/#guides">Guides</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>Best ETFs in Canada (2026)</h1>
+            <p class="subtitle">Top Canadian, US, International, Dividend, and All-in-One ETFs ranked by category, AUM, and historical performance.</p>
+        </header>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-value">$122.4B</div>
+                <div class="stat-label">Total AUM Analyzed</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">0.15%</div>
+                <div class="stat-label">Average MER</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">VDY.TO</div>
+                <div class="stat-label">Top Performer YTD (6.29%)</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">7</div>
+                <div class="stat-label">Top ETFs Ranked</div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <input type="text" id="searchInput" placeholder="Search by ticker or name...">
+            <select id="categoryFilter">
+                <option value="all">All Categories</option>
+                <option value="All-in-One / Asset Allocation">All-in-One</option>
+                <option value="US Equity">US Equity</option>
+                <option value="Canadian Equity">Canadian Equity</option>
+                <option value="Canadian Dividend">Canadian Dividend</option>
+                <option value="Canadian Bonds">Canadian Bonds</option>
+            </select>
+        </div>
+
+        <div class="table-container">
+            <table id="etfTable">
+                <thead>
+                    <tr>
+                        <th data-sort="ticker">Ticker ↕</th>
+                        <th data-sort="category">Category ↕</th>
+                        <th data-sort="mer">MER ↕</th>
+                        <th data-sort="dividendYield">Yield ↕</th>
+                        <th data-sort="ytdReturn">YTD Return ↕</th>
+                        <th data-sort="fiveYearReturn">5Y Return ↕</th>
+                        <th data-sort="aum">AUM ↕</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    <!-- Rows rendered via JS -->
+                </tbody>
+            </table>
+        </div>
+
+        <h2>Historical 5-Year Return Comparison</h2>
+        <div class="chart-container">
+            <canvas id="returnChart"></canvas>
+        </div>
+
+        <div class="section">
+            <h2>Methodology</h2>
+            <p>This study curates the best ETFs available to Canadian investors in 2026 across various core portfolio categories (All-in-One, US Equity, Canadian Equity, Dividend, and Bonds). We prioritize ETFs with high liquidity (Assets Under Management), low Management Expense Ratios (MER), and strong track records.</p>
+            <p>Data is sourced in real-time from financial APIs and includes top Canadian listings from providers like Vanguard, iShares, and BMO. Returns shown are based on historical price changes.</p>
+        </div>
+
+        <div class="section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <div class="faq-q">What is the best ETF in Canada?</div>
+                <div class="faq-a">The "best" ETF depends on your goals. For a globally diversified, all-in-one portfolio, XEQT and VEQT are top choices. For US exposure, VFV is highly popular.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">Are Canadian ETFs a good investment?</div>
+                <div class="faq-a">Yes, ETFs offer instant diversification, low fees (MERs), and easy access to global and domestic markets, making them excellent long-term investments.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">What is the best Canadian dividend ETF?</div>
+                <div class="faq-a">VDY is consistently ranked as one of the best Canadian dividend ETFs, offering high yield from top Canadian banks and energy companies.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">What is the difference between XEQT and VEQT?</div>
+                <div class="faq-a">Both are 100% equity all-in-one ETFs. XEQT has slightly higher US exposure and a slightly lower MER, while VEQT holds more Canadian equities. Performance is historically very similar.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">Which ETF tracks the S&P 500 in Canada?</div>
+                <div class="faq-a">VFV is the most popular Canadian-listed ETF that tracks the S&P 500 (unhedged), offering direct exposure to the largest US companies.</div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>© 2026 Westmount Research · A GAB Ventures property. Not investment advice. All information for educational purposes only.</p>
+    </footer>
+
+    <script>
+        window.__INITIAL_DATA__ = [{"ticker":"XEQT.TO","name":"ISHARES CORE EQUITY ETF","price":39.97,"currency":"CAD","aum":14832646144,"mer":0.2,"category":"All-in-One / Asset Allocation","ytdReturn":-0.47310415196933275,"fiveYearReturn":72.32776447734935,"dividendYield":1.58,"trailingPE":21.48289},{"ticker":"VEQT.TO","name":"VANGUARD ALL EQUITY ETF PORTFOL","price":53.85,"currency":"CAD","aum":12165570560,"mer":0.24,"category":"All-in-One / Asset Allocation","ytdReturn":-0.4805066222466995,"fiveYearReturn":73.78722644642343,"dividendYield":1.34,"trailingPE":21.714373},{"ticker":"VFV.TO","name":"VANGUARD SP 500 INDEX ETF","price":161.58,"currency":"CAD","aum":28286175232,"mer":0.09,"category":"US Equity","ytdReturn":-3.291836210033923,"fiveYearReturn":87.27151247647679,"dividendYield":0.92,"trailingPE":26.864264},{"ticker":"XIC.TO","name":"iSHARES CORE SP TSX CAPPED COMP","price":52.56,"currency":"CAD","aum":26922676224,"mer":0.06,"category":"Canadian Equity","ytdReturn":3.3425103077829124,"fiveYearReturn":94.85405450354376,"dividendYield":2.05,"trailingPE":19.51086},{"ticker":"ZAG.TO","name":"BMO AGGREGATE BOND INDEX ETF","price":13.665,"currency":"CAD","aum":12312939520,"mer":0.09,"category":"Canadian Bonds","ytdReturn":0.08624348336779719,"fiveYearReturn":2.740314671450625,"dividendYield":3.41,"trailingPE":null},{"ticker":"VDY.TO","name":"VANGUARD FTSE CDN HIGH DIV YLD ","price":66,"currency":"CAD","aum":6604111872,"mer":0.22,"category":"Canadian Dividend","ytdReturn":6.289904780510461,"fiveYearReturn":109.35464055632187,"dividendYield":3.55,"trailingPE":16.681976},{"ticker":"XIU.TO","name":"iSHARES SP TSX 60 INDEX ETF","price":48.03,"currency":"CAD","aum":21275277312,"mer":0.18,"category":"Canadian Equity","ytdReturn":2.223877766288562,"fiveYearReturn":92.54212115428845,"dividendYield":2.27,"trailingPE":19.401686}];
+
+        const formatMoneyJS = (val) => val != null ? '$' + (val / 1e9).toFixed(1) + 'B' : 'N/A';
+        const formatPctJS = (val) => val != null ? val.toFixed(2) + '%' : 'N/A';
+        const getColorClass = (val) => {
+            if (val == null) return '';
+            return val >= 0 ? 'pos' : 'neg';
+        };
+
+        let currentSort = { col: 'aum', asc: false };
+
+        const renderTable = () => {
+            const search = document.getElementById('searchInput').value.toLowerCase();
+            const category = document.getElementById('categoryFilter').value;
+
+            let filtered = window.__INITIAL_DATA__.filter(d => {
+                const matchSearch = d.ticker.toLowerCase().includes(search) || d.name.toLowerCase().includes(search);
+                const matchCat = category === 'all' || d.category === category;
+                return matchSearch && matchCat;
+            });
+
+            filtered.sort((a, b) => {
+                let valA = a[currentSort.col];
+                let valB = b[currentSort.col];
+                if (valA == null) valA = -Infinity;
+                if (valB == null) valB = -Infinity;
+
+                if (typeof valA === 'string') {
+                    return currentSort.asc ? valA.localeCompare(valB) : valB.localeCompare(valA);
+                }
+                return currentSort.asc ? valA - valB : valB - valA;
+            });
+
+            const tbody = document.getElementById('tableBody');
+            tbody.innerHTML = filtered.map(d => `
+                <tr>
+                    <td>
+                        <span class="ticker">${d.ticker}</span>
+                        <span class="name">${d.name}</span>
+                    </td>
+                    <td>${d.category || 'N/A'}</td>
+                    <td class="mono">${formatPctJS(d.mer)}</td>
+                    <td class="mono">${formatPctJS(d.dividendYield)}</td>
+                    <td class="mono ${getColorClass(d.ytdReturn)}">${d.ytdReturn != null ? (d.ytdReturn > 0 ? '+' : '') + formatPctJS(d.ytdReturn) : 'N/A'}</td>
+                    <td class="mono ${getColorClass(d.fiveYearReturn)}">${d.fiveYearReturn != null ? (d.fiveYearReturn > 0 ? '+' : '') + formatPctJS(d.fiveYearReturn) : 'N/A'}</td>
+                    <td class="mono">${formatMoneyJS(d.aum)}</td>
+                </tr>
+            `).join('');
+        };
+
+        document.getElementById('searchInput').addEventListener('input', renderTable);
+        document.getElementById('categoryFilter').addEventListener('change', renderTable);
+
+        document.querySelectorAll('th').forEach(th => {
+            th.addEventListener('click', () => {
+                const col = th.dataset.sort;
+                if (currentSort.col === col) {
+                    currentSort.asc = !currentSort.asc;
+                } else {
+                    currentSort.col = col;
+                    currentSort.asc = false;
+                }
+                renderTable();
+            });
+        });
+
+        renderTable();
+
+        // Chart
+        const ctx = document.getElementById('returnChart').getContext('2d');
+
+        // Only chart items with 5y returns
+        const chartData = window.__INITIAL_DATA__.filter(d => d.fiveYearReturn != null).sort((a, b) => b.fiveYearReturn - a.fiveYearReturn);
+
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: chartData.map(d => d.ticker),
+                datasets: [{
+                    label: '5-Year Return (%)',
+                    data: chartData.map(d => d.fiveYearReturn),
+                    backgroundColor: '#4a8fe7',
+                    borderRadius: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    y: {
+                        grid: { color: '#152040' },
+                        ticks: { color: '#6a7a90' }
+                    },
+                    x: {
+                        grid: { display: false },
+                        ticks: { color: '#c8d0de', font: { family: "'JetBrains Mono', monospace" } }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
