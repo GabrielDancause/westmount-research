@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Bond ETFs 2026: Compare Yields & Performance</title>
+    <meta name="description" content="Discover the best bond ETFs for 2026. Compare yields, expense ratios, and historical returns across Treasury, Corporate, Municipal, and Total Bond funds.">
+    <link rel="canonical" href="https://westmountfundamentals.com/best-bond-etfs-2026">
+
+    <meta property="og:title" content="Best Bond ETFs 2026: Compare Yields & Performance">
+    <meta property="og:description" content="Discover the best bond ETFs for 2026. Compare yields, expense ratios, and historical returns across Treasury, Corporate, Municipal, and Total Bond funds.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://westmountfundamentals.com/best-bond-etfs-2026">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Best Bond ETFs 2026: Compare Yields & Performance">
+    <meta name="twitter:description" content="Discover the best bond ETFs for 2026. Compare yields, expense ratios, and historical returns across Treasury, Corporate, Municipal, and Total Bond funds.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VYF72NSC1Q"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-VYF72NSC1Q');
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Best Bond ETFs 2026: Compare Yields & Performance",
+      "description": "Discover the best bond ETFs for 2026. Compare yields, expense ratios, and historical returns across Treasury, Corporate, Municipal, and Total Bond funds.",
+      "datePublished": "2026-01-01",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Westmount Research"
+      }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the best bond ETF for 2026?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The best bond ETF depends on your goals. BND and AGG offer broad total bond market exposure, while SHY or IEF are better for conservative Treasury holdings. For higher income, HYG or JNK provide high-yield exposure."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "BND vs AGG: Which is better?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "BND (Vanguard) and AGG (iShares) track similar broad bond indices and have nearly identical expense ratios. Performance is typically very close, making them largely interchangeable for most portfolios."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the best treasury ETF?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For short-term Treasuries, SHY is highly popular. For intermediate-term, IEF is a strong choice. For long-term duration, TLT provides significant exposure, though with higher price volatility."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the best corporate bond ETF?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "LQD is the most liquid and popular ETF for investment-grade corporate bonds. VCIT is another excellent choice for intermediate-term corporate bonds with a low expense ratio."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are bond ETFs a good investment right now?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Bond ETFs can provide steady income and portfolio diversification. Yields fluctuate with Fed policy, but bonds generally offer stability compared to equities, making them a staple in balanced portfolios."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        :root {
+            --bg: #060a12;
+            --card: #0a1020;
+            --border: #152040;
+            --accent: #4a8fe7;
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+        }
+
+        body {
+            margin: 0;
+            background-color: var(--bg);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(6, 10, 18, 0.85);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 500;
+            margin-left: 1.5rem;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        .brand {
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-left: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            background: linear-gradient(90deg, #fff, var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .stat-card {
+            background-color: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent);
+            font-family: 'JetBrains Mono', monospace;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        input[type="text"] {
+            background-color: var(--card);
+            border: 1px solid var(--border);
+            color: var(--text-main);
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-family: 'Inter', sans-serif;
+            width: 300px;
+            max-width: 100%;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: var(--card);
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 3rem;
+            border: 1px solid var(--border);
+        }
+
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        th {
+            background-color: rgba(21, 32, 64, 0.5);
+            font-weight: 600;
+            color: var(--text-muted);
+            cursor: pointer;
+        }
+
+        th:hover {
+            color: var(--text-main);
+        }
+
+        td {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.95rem;
+        }
+
+        .td-name {
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+        }
+
+        .td-symbol {
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        .chart-container {
+            background-color: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        section {
+            margin-bottom: 3rem;
+            background-color: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 2rem;
+        }
+
+        h2 {
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            color: var(--accent);
+        }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .faq-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .faq-q {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .faq-a {
+            color: var(--text-muted);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border);
+            font-size: 0.9rem;
+            margin-top: 3rem;
+        }
+
+        .positive { color: #4ade80; }
+        .negative { color: #f87171; }
+
+        @media (max-width: 768px) {
+            nav { flex-direction: column; gap: 1rem; padding: 1rem; }
+            nav a { margin: 0 0.5rem; }
+            table { display: block; overflow-x: auto; }
+            .controls { flex-direction: column; align-items: stretch; }
+            input[type="text"] { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="/" class="brand">Westmount Fundamentals</a>
+        <div>
+            <a href="/#studies">Studies</a>
+            <a href="/#tools">Tools</a>
+            <a href="/#guides">Guides</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Best Bond ETFs 2026</h1>
+        <p class="subtitle">Comprehensive comparison of yields, expenses, and historical performance across top bond funds.</p>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-value" id="stat-avg-yield">--%</div>
+                <div class="stat-label">Avg Yield (Top 12)</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="stat-highest-yield">--%</div>
+                <div class="stat-label">Highest Yield (<span id="stat-high-ticker">--</span>)</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="stat-avg-exp">--%</div>
+                <div class="stat-label">Avg Expense Ratio</div>
+            </div>
+        </div>
+
+        <div class="chart-container">
+            <canvas id="yieldChart" height="100"></canvas>
+        </div>
+
+        <div class="controls">
+            <input type="text" id="searchInput" placeholder="Search by ticker or name...">
+        </div>
+
+        <table id="etfTable">
+            <thead>
+                <tr>
+                    <th data-sort="symbol">Ticker ↕</th>
+                    <th data-sort="name">Name ↕</th>
+                    <th data-sort="category">Category ↕</th>
+                    <th data-sort="yield">Yield ↕</th>
+                    <th data-sort="duration">Duration ↕</th>
+                    <th data-sort="expenseRatio">Exp Ratio ↕</th>
+                    <th data-sort="ytdReturn">YTD Ret ↕</th>
+                    <th data-sort="fiveYearReturn">5Y Ret ↕</th>
+                    <th data-sort="aum">AUM ↕</th>
+                </tr>
+            </thead>
+            <tbody id="etfBody">
+                <!-- Data populated by JS -->
+            </tbody>
+        </table>
+
+        <section id="methodology">
+            <h2>Methodology</h2>
+            <p>Our bond ETF comparison uses real-time and historical pricing data gathered from financial market APIs. We curated a list of the most popular and highly-traded ETFs across various bond sectors: Total Bond Market (BND, AGG), Corporate (LQD, VCIT), Treasuries (SHY, IEF, TLT), TIPS (TIP, SCHP), Municipals (MUB), and High-Yield (HYG, JNK).</p>
+            <p><strong>Yield:</strong> Represents the trailing 12-month dividend yield.<br>
+            <strong>Performance Returns:</strong> Calculated using adjusted close prices to account for dividends and splits.<br>
+            <strong>AUM:</strong> Total Assets Under Management, providing a proxy for liquidity and fund stability.</p>
+        </section>
+
+        <section id="faq">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <div class="faq-q">What is the best bond ETF for 2026?</div>
+                <div class="faq-a">The best bond ETF depends on your goals. BND and AGG offer broad total bond market exposure, while SHY or IEF are better for conservative Treasury holdings. For higher income, HYG or JNK provide high-yield exposure.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">BND vs AGG: Which is better?</div>
+                <div class="faq-a">BND (Vanguard) and AGG (iShares) track similar broad bond indices and have nearly identical expense ratios. Performance is typically very close, making them largely interchangeable for most portfolios.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">What is the best treasury ETF?</div>
+                <div class="faq-a">For short-term Treasuries, SHY is highly popular. For intermediate-term, IEF is a strong choice. For long-term duration, TLT provides significant exposure, though with higher price volatility.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">What is the best corporate bond ETF?</div>
+                <div class="faq-a">LQD is the most liquid and popular ETF for investment-grade corporate bonds. VCIT is another excellent choice for intermediate-term corporate bonds with a low expense ratio.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">Are bond ETFs a good investment right now?</div>
+                <div class="faq-a">Bond ETFs can provide steady income and portfolio diversification. Yields fluctuate with Fed policy, but bonds generally offer stability compared to equities, making them a staple in balanced portfolios.</div>
+            </div>
+        </section>
+
+        <footer>
+            © 2026 Westmount Research · A GAB Ventures property. Not investment advice. All information for educational purposes only.
+        </footer>
+    </div>
+
+    <script>
+        const etfData = [{"symbol":"BND","name":"Vanguard Total Bond Market ETF","category":"Total Bond","price":73.62,"aum":395346083840,"yield":3.82,"expenseRatio":0.03,"duration":9.544,"ytdReturn":1.79494,"oneYearReturn":4.522744953358878,"fiveYearReturn":1.6764379237167586},{"symbol":"AGG","name":"iShares Core U.S. Aggregate Bon","category":"Total Bond","price":99.29,"aum":141223149568,"yield":3.83,"expenseRatio":0.03,"duration":9.612,"ytdReturn":1.81302,"oneYearReturn":4.702587568007885,"fiveYearReturn":1.6673930591769934},{"symbol":"LQD","name":"iShares iBoxx $ Investment Grad","category":"Corporate (Inv Grade)","price":108.57,"aum":31986212864,"yield":4.44,"expenseRatio":0.14,"duration":9.58,"ytdReturn":1.63604,"oneYearReturn":4.866671343624015,"fiveYearReturn":0.9003863650592856},{"symbol":"VCIT","name":"Vanguard Intermediate-Term Corp","category":"Corporate (Inv Grade)","price":82.69,"aum":68527529984,"yield":4.59,"expenseRatio":0.03,"duration":10.047,"ytdReturn":1.5579,"oneYearReturn":6.372040449928261,"fiveYearReturn":7.735282990472718},{"symbol":"SHY","name":"iShares 1-3 Year Treasury Bond ","category":"Treasury (Short)","price":82.5,"aum":24914546688,"yield":3.76,"expenseRatio":0.15,"duration":9.908,"ytdReturn":0.71757,"oneYearReturn":3.8437327292274173,"fiveYearReturn":8.734199591788222},{"symbol":"IEF","name":"iShares 7-10 Year Treasury Bond","category":"Treasury (Interm)","price":95.69,"aum":48742821888,"yield":3.72,"expenseRatio":0.15,"duration":10.201,"ytdReturn":2.24538,"oneYearReturn":4.521586909276005,"fiveYearReturn":-3.013789643446378},{"symbol":"TLT","name":"iShares 20+ Year Treasury Bond ","category":"Treasury (Long)","price":86.97,"aum":45428621312,"yield":4.28,"expenseRatio":0.15,"duration":8.119,"ytdReturn":4.44017,"oneYearReturn":0.1494686627566843,"fiveYearReturn":-24.46188196093072},{"symbol":"TIP","name":"iShares TIPS Bond ETF","category":"TIPS","price":110.93,"aum":14353089536,"yield":3.4,"expenseRatio":0.18,"duration":9.753,"ytdReturn":1.73513,"oneYearReturn":3.3518331178129057,"fiveYearReturn":7.230336094635281},{"symbol":"SCHP","name":"Schwab U.S. TIPs ETF","category":"TIPS","price":26.75,"aum":15634319360,"yield":3.99,"expenseRatio":0.03,"duration":9.752,"ytdReturn":1.77425,"oneYearReturn":3.561750209103155,"fiveYearReturn":7.980800339016823},{"symbol":"MUB","name":"iShares National Muni Bond ETF","category":"Municipal","price":106.98,"aum":43211128832,"yield":3.1,"expenseRatio":0.05,"duration":10.59,"ytdReturn":1.97251,"oneYearReturn":5.029679959486438,"fiveYearReturn":5.124996944930631},{"symbol":"HYG","name":"iShares iBoxx $ High Yield Corp","category":"High Yield","price":79.35,"aum":16744919040,"yield":5.77,"expenseRatio":0.49,"duration":9.984,"ytdReturn":0.53006,"oneYearReturn":7.109138716127539,"fiveYearReturn":19.765927862207548},{"symbol":"JNK","name":"State Street SPDR Bloomberg Hig","category":"High Yield","price":95.47,"aum":7783684096,"yield":6.57,"expenseRatio":0.4,"duration":10.054,"ytdReturn":0.64374,"oneYearReturn":7.601348954709721,"fiveYearReturn":19.134209783967542}];
+
+        function formatPercent(val) {
+            if (val === null || val === undefined) return 'N/A';
+            return val.toFixed(2) + '%';
+        }
+
+        function formatCurrency(val) {
+            if (val === null || val === undefined) return 'N/A';
+            if (val >= 1e9) return '$' + (val / 1e9).toFixed(1) + 'B';
+            if (val >= 1e6) return '$' + (val / 1e6).toFixed(1) + 'M';
+            return '$' + val.toLocaleString();
+        }
+
+        function getColorClass(val) {
+            if (val === null || val === undefined) return '';
+            if (val > 0) return 'positive';
+            if (val < 0) return 'negative';
+            return '';
+        }
+
+        let currentSort = { column: 'yield', asc: false };
+
+        function renderTable(data) {
+            const tbody = document.getElementById('etfBody');
+            tbody.innerHTML = '';
+
+            data.forEach(etf => {
+                const tr = document.createElement('tr');
+                const durStr = etf.duration !== null ? etf.duration.toFixed(1) + ' yrs' : 'N/A';
+                tr.innerHTML = `
+                    <td class="td-symbol">${etf.symbol}</td>
+                    <td class="td-name">${etf.name}</td>
+                    <td>${etf.category}</td>
+                    <td>${formatPercent(etf.yield)}</td>
+                    <td>${durStr}</td>
+                    <td>${formatPercent(etf.expenseRatio)}</td>
+                    <td class="${getColorClass(etf.ytdReturn)}">${formatPercent(etf.ytdReturn)}</td>
+                    <td class="${getColorClass(etf.fiveYearReturn)}">${formatPercent(etf.fiveYearReturn)}</td>
+                    <td>${formatCurrency(etf.aum)}</td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        function sortData(column) {
+            if (currentSort.column === column) {
+                currentSort.asc = !currentSort.asc;
+            } else {
+                currentSort.column = column;
+                currentSort.asc = true;
+            }
+
+            const sorted = [...etfData].sort((a, b) => {
+                let valA = a[column];
+                let valB = b[column];
+
+                if (valA === null) valA = currentSort.asc ? Infinity : -Infinity;
+                if (valB === null) valB = currentSort.asc ? Infinity : -Infinity;
+
+                if (typeof valA === 'string') {
+                    return currentSort.asc ? valA.localeCompare(valB) : valB.localeCompare(valA);
+                }
+
+                return currentSort.asc ? valA - valB : valB - valA;
+            });
+
+            filterAndRender(sorted);
+        }
+
+        function filterAndRender(data) {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            const filtered = data.filter(etf =>
+                etf.symbol.toLowerCase().includes(query) ||
+                etf.name.toLowerCase().includes(query) ||
+                etf.category.toLowerCase().includes(query)
+            );
+            renderTable(filtered);
+        }
+
+        document.getElementById('searchInput').addEventListener('keyup', () => filterAndRender(etfData));
+
+        document.querySelectorAll('th[data-sort]').forEach(th => {
+            th.addEventListener('click', () => {
+                sortData(th.getAttribute('data-sort'));
+            });
+        });
+
+        // Initialize Stats
+        const validYields = etfData.filter(d => d.yield !== null);
+        if (validYields.length > 0) {
+            const avgYield = validYields.reduce((sum, d) => sum + d.yield, 0) / validYields.length;
+            document.getElementById('stat-avg-yield').innerText = avgYield.toFixed(2) + '%';
+
+            const highestYield = validYields.reduce((prev, curr) => (prev.yield > curr.yield) ? prev : curr);
+            document.getElementById('stat-highest-yield').innerText = highestYield.yield.toFixed(2) + '%';
+            document.getElementById('stat-high-ticker').innerText = highestYield.symbol;
+        }
+
+        const validExps = etfData.filter(d => d.expenseRatio !== null);
+        if (validExps.length > 0) {
+            const avgExp = validExps.reduce((sum, d) => sum + d.expenseRatio, 0) / validExps.length;
+            document.getElementById('stat-avg-exp').innerText = avgExp.toFixed(2) + '%';
+        }
+
+        // Initialize Chart
+        const ctx = document.getElementById('yieldChart').getContext('2d');
+        const sortedForChart = [...etfData].sort((a,b) => (b.yield || 0) - (a.yield || 0));
+
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: sortedForChart.map(d => d.symbol),
+                datasets: [{
+                    label: 'Dividend Yield (%)',
+                    data: sortedForChart.map(d => d.yield || 0),
+                    backgroundColor: '#4a8fe7',
+                    borderRadius: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        labels: { color: '#f3f4f6' }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: { color: '#152040' },
+                        ticks: { color: '#9ca3af' }
+                    },
+                    x: {
+                        grid: { display: false },
+                        ticks: { color: '#9ca3af' }
+                    }
+                }
+            }
+        });
+
+        // Initial Sort and Render
+        sortData('yield'); // Default sort by yield descending
+
+    </script>
+</body>
+</html>
