@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S&P 500 Earnings Calendar 2026: Upcoming Reports</title>
+    <meta name="description" content="Interactive 2026 S&P 500 earnings calendar. Track upcoming report dates, expected EPS, and previous results by sector. Filter, sort, and search realtime.">
+    <link rel="canonical" href="https://westmountfundamentals.com/sp500-earnings-calendar-2026">
+    <meta property="og:title" content="S&P 500 Earnings Calendar 2026: Upcoming Reports">
+    <meta property="og:description" content="Interactive 2026 S&P 500 earnings calendar. Track upcoming report dates, expected EPS, and previous results by sector. Filter, sort, and search realtime.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://westmountfundamentals.com/sp500-earnings-calendar-2026">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="S&P 500 Earnings Calendar 2026: Upcoming Reports">
+    <meta name="twitter:description" content="Interactive 2026 S&P 500 earnings calendar. Track upcoming report dates, expected EPS, and previous results by sector. Filter, sort, and search realtime.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js"></script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "When do stocks report earnings?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Publicly traded companies in the S&P 500 typically report earnings four times a year, roughly 2-6 weeks after the end of their fiscal quarter. This period is known as 'earnings season'."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How to use an earnings calendar 2026?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "An earnings calendar tracks when companies will release their quarterly financial results. You can use it to anticipate market volatility, compare expected EPS versus previous EPS, and filter by sector to see industry trends."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What time are earnings reports released?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Earnings reports are generally released outside of regular trading hours to avoid excessive market volatility. They usually occur Before Market Open (BMO) around 7:00 AM - 8:30 AM EST, or After Market Close (AMC) around 4:00 PM - 4:30 PM EST."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where to find sp500 earnings calendar?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can find comprehensive S&P 500 earnings calendars on financial data sites like Westmount Fundamentals, Yahoo Finance, or the NASDAQ website. This page provides a complete, filterable view of all 500 companies."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens to stock price after earnings?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Stock prices often react to the 'earnings surprise'—the difference between the expected EPS and the actual reported EPS. Additionally, future forward guidance provided during the earnings call heavily influences the stock's direction."
+          }
+        }
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "S&P 500 Earnings Calendar 2026: Upcoming Reports",
+      "description": "Interactive 2026 S&P 500 earnings calendar. Track upcoming report dates, expected EPS, and previous results by sector. Filter, sort, and search realtime.",
+      "datePublished": "2026-03-12T00:00:00Z",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Westmount Fundamentals",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://westmountfundamentals.com/logo.png"
+        }
+      }
+    }
+    </script>
+
+    <style>
+        :root {
+            --bg: #060a12;
+            --card: #0a1020;
+            --border: #152040;
+            --accent: #4a8fe7;
+            --text: #c8d0de;
+            --text-dim: #5a6a80;
+            --positive: #22c55e;
+            --negative: #ef4444;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* Sticky Nav */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(6, 10, 18, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-brand {
+            font-weight: 800;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            letter-spacing: -0.5px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 24px;
+        }
+        .nav-links a {
+            color: var(--text-dim);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--accent); }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 24px;
+        }
+
+        /* Header */
+        header { text-align: center; margin-bottom: 50px; }
+        .tag {
+            display: inline-block;
+            background: rgba(74,143,231,0.1);
+            color: var(--accent);
+            font-size: 0.75rem;
+            font-weight: 800;
+            padding: 6px 16px;
+            border-radius: 20px;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+        }
+        h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            letter-spacing: -1px;
+            margin-bottom: 16px;
+            background: linear-gradient(90deg, #fff, #a0b0c0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--text-dim);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Stats Cards */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+        .stat-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+        }
+        .stat-value {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 4px;
+        }
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Controls */
+        .controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-bottom: 24px;
+            background: var(--card);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+        .control-group {
+            flex: 1;
+            min-width: 200px;
+        }
+        .control-group label {
+            display: block;
+            font-size: 0.8rem;
+            color: var(--text-dim);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        input, select {
+            width: 100%;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--border);
+            color: #fff;
+            padding: 10px 14px;
+            border-radius: 6px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+        }
+        input:focus, select:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        /* Chart */
+        .chart-container {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 40px;
+            height: 300px;
+        }
+
+        /* Table */
+        .table-container {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow-x: auto;
+            margin-bottom: 60px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+        th, td {
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--border);
+        }
+        th {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-dim);
+            font-weight: 600;
+            background: rgba(255,255,255,0.02);
+            cursor: pointer;
+            user-select: none;
+        }
+        th:hover { color: #fff; }
+        .ticker {
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 700;
+            color: var(--accent);
+        }
+        .mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .sector-tag {
+            font-size: 0.75rem;
+            padding: 4px 8px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 4px;
+            color: #a0b0c0;
+            white-space: nowrap;
+        }
+
+        /* Text Sections */
+        .text-section {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 40px;
+        }
+        .text-section h2 {
+            font-size: 1.8rem;
+            color: #fff;
+            margin-bottom: 24px;
+            letter-spacing: -0.5px;
+        }
+        .text-section h3 {
+            font-size: 1.2rem;
+            color: #fff;
+            margin: 24px 0 12px;
+        }
+        .text-section p, .text-section ul {
+            margin-bottom: 16px;
+            color: #a0b0c0;
+        }
+        .text-section ul {
+            padding-left: 24px;
+        }
+        .text-section li {
+            margin-bottom: 8px;
+        }
+
+        /* FAQ */
+        .faq-item {
+            margin-bottom: 24px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 24px;
+        }
+        .faq-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        .faq-question {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+        .faq-answer {
+            color: #a0b0c0;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 24px;
+            border-top: 1px solid var(--border);
+            color: var(--text-dim);
+            font-size: 0.85rem;
+            background: #040810;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.2rem; }
+            .nav-links { display: none; }
+            .controls { flex-direction: column; }
+            .text-section { padding: 24px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/" class="nav-brand">Westmount Fundamentals</a>
+        <div class="nav-links">
+            <a href="/#studies">Studies</a>
+            <a href="/#tools">Tools</a>
+            <a href="/#guides">Guides</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header>
+            <span class="tag">CALENDAR TOOL</span>
+            <h1>S&P 500 Earnings Calendar 2026</h1>
+            <p class="subtitle">Upcoming earnings reports, expected EPS estimates, and historical performance for all S&P 500 companies.</p>
+        </header>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-value" id="stat-total">500</div>
+                <div class="stat-label">Companies Tracked</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="stat-upcoming">10</div>
+                <div class="stat-label">Reporting Next 7 Days</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="stat-sector">Technology</div>
+                <div class="stat-label">Most Active Sector</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="stat-eps">$2.48</div>
+                <div class="stat-label">Avg Expected EPS</div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <div class="control-group">
+                <label>Search Ticker or Company</label>
+                <input type="text" id="searchInput" placeholder="e.g. AAPL, Microsoft...">
+            </div>
+            <div class="control-group">
+                <label>Filter by Sector</label>
+                <select id="sectorFilter">
+                    <option value="all">All Sectors</option>
+                    <option value="Basic Materials">Basic Materials</option>
+                    <option value="Communication Services">Communication Services</option>
+                    <option value="Consumer Cyclical">Consumer Cyclical</option>
+                    <option value="Consumer Defensive">Consumer Defensive</option>
+                    <option value="Energy">Energy</option>
+                    <option value="Financial Services">Financial Services</option>
+                    <option value="Healthcare">Healthcare</option>
+                    <option value="Industrials">Industrials</option>
+                    <option value="Real Estate">Real Estate</option>
+                    <option value="Technology">Technology</option>
+                    <option value="Utilities">Utilities</option>
+                </select>
+            </div>
+            <div class="control-group">
+                <label>Date Range</label>
+                <select id="dateFilter">
+                    <option value="all">All Upcoming</option>
+                    <option value="7">Next 7 Days</option>
+                    <option value="30">Next 30 Days</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="chart-container">
+            <canvas id="sectorChart"></canvas>
+        </div>
+
+        <div class="table-container">
+            <table id="earningsTable">
+                <thead>
+                    <tr>
+                        <th data-sort="ticker">Ticker ↕</th>
+                        <th data-sort="name">Company ↕</th>
+                        <th data-sort="sector">Sector ↕</th>
+                        <th data-sort="date">Report Date ↕</th>
+                        <th data-sort="time">Time ↕</th>
+                        <th data-sort="expected">Expected EPS ↕</th>
+                        <th data-sort="previous">Previous EPS ↕</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    <!-- Populated by JS -->
+                </tbody>
+            </table>
+        </div>
+
+        <div class="text-section">
+            <h2>Methodology & Data Sources</h2>
+            <p>This earnings calendar tracks the anticipated reporting dates and consensus EPS estimates for the S&P 500 index components. Data is dynamically aggregated using the <code>yahoo-finance2</code> API, pulling from multiple modules including <code>calendarEvents</code> and <code>earningsTrend</code>.</p>
+            <ul>
+                <li><strong>Report Date:</strong> Extracted from the primary <code>earningsDate</code> array. These dates are subject to change as companies officially confirm their schedules.</li>
+                <li><strong>Time:</strong> Inferred based on historical reporting patterns and standard market hours (BMO vs. AMC). If specific time data is absent, a default indicator is used.</li>
+                <li><strong>Expected EPS:</strong> The consensus average estimate for the current un-reported quarter (<code>0q</code> period).</li>
+                <li><strong>Previous EPS:</strong> Trailing twelve months (TTM) diluted EPS from default key statistics, serving as a baseline performance metric.</li>
+            </ul>
+            <p><strong>Note:</strong> Null values indicate that consensus analyst estimates or confirmed reporting dates were not available at the time of data aggregation. We strictly display available real data rather than interpolating estimates.</p>
+        </div>
+
+        <div class="text-section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <div class="faq-question">When do stocks report earnings?</div>
+                <div class="faq-answer">Publicly traded companies in the S&P 500 typically report earnings four times a year, roughly 2-6 weeks after the end of their fiscal quarter. This concentrated period is known as "earnings season." Most companies adhere to standard calendar quarters, meaning earnings seasons heavily concentrate in January, April, July, and October.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">How to use an earnings calendar 2026?</div>
+                <div class="faq-answer">An earnings calendar allows investors to track when specific companies will release their quarterly financial results. You can use this tool to anticipate market volatility, compare expected EPS versus previous EPS, and filter by sector to gauge broader industry trends and economic health before the reports are publicized.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">What time are earnings reports released?</div>
+                <div class="faq-answer">Earnings reports are generally released outside of regular trading hours to avoid excessive mid-day market volatility. They usually occur Before Market Open (BMO) between 7:00 AM and 8:30 AM EST, or After Market Close (AMC) between 4:00 PM and 4:30 PM EST.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Where to find sp500 earnings calendar?</div>
+                <div class="faq-answer">You can find comprehensive S&P 500 earnings calendars on financial data platforms like Westmount Fundamentals, Yahoo Finance, or the NASDAQ website. This page provides a complete, filterable, and sortable view of all 500 companies in a single interface without paywalls.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">What happens to stock price after earnings?</div>
+                <div class="faq-answer">Stock prices often react sharply to the "earnings surprise"—the difference between the expected EPS (consensus estimate) and the actual reported EPS. Additionally, future forward guidance provided by management during the subsequent earnings call often heavily influences the stock's short-term direction, sometimes overriding the actual earnings beat or miss.</div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>© 2026 Westmount Research · A GAB Ventures property. Not investment advice. All information for educational purposes only.</p>
+    </footer>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VYF72NSC1Q"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-VYF72NSC1Q');
+    </script>
+
+    <script>
+        // Inline Data
+        const earningsData = window.__INITIAL_DATA__ || JSON.parse('[{"ticker":"MMM","name":"3M Company","sector":"Industrials","reportDate":"2026-04-21T12:30:00.000Z","expectedEps":1.98654,"previousEps":6.01},{"ticker":"AOS","name":"A.O. Smith Corporation","sector":"Industrials","reportDate":"2026-05-05T12:30:00.000Z","expectedEps":0.95373,"previousEps":3.85},{"ticker":"ABT","name":"Abbott Laboratories","sector":"Healthcare","reportDate":"2026-04-15T12:30:00.000Z","expectedEps":1.15228,"previousEps":3.72},{"ticker":"ABBV","name":"AbbVie Inc.","sector":"Healthcare","reportDate":"2026-05-01T12:30:00.000Z","expectedEps":3.01491,"previousEps":2.37},{"ticker":"ACN","name":"Accenture plc","sector":"Technology","reportDate":"2026-03-19T12:30:00.000Z","expectedEps":2.84608,"previousEps":12.11},{"ticker":"AES","name":"The AES Corporation","sector":"Utilities","reportDate":"2026-04-30T20:00:00.000Z","expectedEps":0.256,"previousEps":1.31},{"ticker":"AFL","name":"AFLAC Incorporated","sector":"Financial Services","reportDate":"2026-04-29T20:00:00.000Z","expectedEps":1.82161,"previousEps":6.82},{"ticker":"A","name":"Agilent Technologies, Inc.","sector":"Healthcare","reportDate":"2026-05-27T20:00:00.000Z","expectedEps":1.40757,"previousEps":4.52},{"ticker":"APD","name":"Air Products and Chemicals, Inc","sector":"Basic Materials","reportDate":"2026-04-30T12:30:00.000Z","expectedEps":3.05006,"previousEps":-1.47},{"ticker":"ALB","name":"Albemarle Corporation","sector":"Basic Materials","reportDate":"2026-04-29T20:00:00.000Z","expectedEps":1.09172,"previousEps":-5.76},{"ticker":"ARE","name":"Alexandria Real Estate Equities","sector":"Real Estate","reportDate":"2026-04-27T20:00:00.000Z","expectedEps":0.1472,"previousEps":-8.44},{"ticker":"ALLE","name":"Allegion plc","sector":"Industrials","reportDate":"2026-04-23T12:30:00.000Z","expectedEps":1.89996,"previousEps":7.43},{"ticker":"ALL","name":"Allstate Corporation (The)","sector":"Financial Services","reportDate":"2026-04-29T20:00:00.000Z","expectedEps":7.06841,"previousEps":38.05},{"ticker":"MO","name":"Altria Group, Inc.","sector":"Consumer Defensive","reportDate":"2026-04-30T12:30:00.000Z","expectedEps":1.24641,"previousEps":4.12},{"ticker":"AMCR","name":"Amcor plc","sector":"Consumer Cyclical","reportDate":"2026-04-30T20:00:00.000Z","expectedEps":0.96714,"previousEps":1.33},{"ticker":"AEE","name":"Ameren Corporation","sector":"Utilities","reportDate":"2026-04-30T20:00:00.000Z","expectedEps":1.06556,"previousEps":5.35},{"ticker":"AXP","name":"American Express Company","sector":"Financial Services","reportDate":"2026-04-23T12:30:00.000Z","expectedEps":3.99056,"previousEps":15.39},{"ticker":"AIG","name":"American International Group, I","sector":"Financial Services","reportDate":"2026-04-30T20:00:00.000Z","expectedEps":1.9267,"previousEps":5.43},{"ticker":"AMT","name":"American Tower Corporation (REI","sector":"Real Estate","reportDate":"2026-04-28T12:30:00.000Z","expectedEps":1.56706,"previousEps":5.39},{"ticker":"AWK","name":"American Water Works Company, I","sector":"Utilities","reportDate":"2026-04-29T20:00:00.000Z","expectedEps":1.15268,"previousEps":5.7},{"ticker":"AMP","name":"Ameriprise Financial, Inc.","sector":"Financial Services","reportDate":"2026-04-23T12:30:00.000Z","expectedEps":10.335,"previousEps":36.28},{"ticker":"AME","name":"AMETEK, Inc.","sector":"Industrials","reportDate":"2026-04-30T12:30:00.000Z","expectedEps":1.89499,"previousEps":6.39},{"ticker":"APH","name":"Amphenol Corporation","sector":"Technology","reportDate":"2026-04-29T12:30:00.000Z","expectedEps":0.94149,"previousEps":3.34},{"ticker":"AON","name":"Aon plc","sector":"Financial Services","reportDate":"2026-05-01T12:30:00.000Z","expectedEps":6.43681,"previousEps":17.02},{"ticker":"APO","name":"Apollo Global Management, Inc. ","sector":"Financial Services","reportDate":"2026-05-01T12:30:00.000Z","expectedEps":2.14292,"previousEps":5.54},{"ticker":"APTV","name":"Aptiv PLC","sector":"Consumer Cyclical","reportDate":"2026-04-30T12:30:00.000Z","expectedEps":1.63643,"previousEps":0.75},{"ticker":"ADM","name":"Archer-Daniels-Midland Company","sector":"Consumer Defensive","reportDate":"2026-05-05T12:30:00.000Z","expectedEps":0.71395,"previousEps":2.23},{"ticker":"ARES","name":"Ares Management Corporation","sector":"Financial Services","reportDate":"2026-05-05T12:30:00.000Z","expectedEps":1.44033,"previousEps":1.71},{"ticker":"ANET","name":"Arista Networks, Inc.","sector":"Technology","reportDate":"2026-05-05T20:00:00.000Z","expectedEps":0.8063,"previousEps":2.75},{"ticker":"AJG","name":"Arthur J. Gallagher & Co.","sector":"Financial Services","reportDate":"2026-04-30T20:00:00.000Z","expectedEps":4.44853,"previousEps":5.75},{"ticker":"AIZ","name":"Assurant, Inc.","sector":"Financial Services","reportDate":"2026-05-05T20:00:00.000Z","expectedEps":5.3476,"previousEps":16.92},{"ticker":"T","name":"AT&T Inc.","sector":"Communication Services","reportDate":"2026-04-22T12:30:00.000Z","expectedEps":0.55251,"previousEps":3.04},{"ticker":"ATO","name":"Atmos Energy Corporation","sector":"Utilities","reportDate":"2026-05-06T20:00:00.000Z","expectedEps":3.33572,"previousEps":7.67},{"ticker":"AZO","name":"AutoZone, Inc.","sector":"Consumer Cyclical","reportDate":"2026-05-26T12:30:00.000Z","expectedEps":35.99226,"previousEps":142.56},{"ticker":"AVB","name":"AvalonBay Communities, Inc.","sector":"Real Estate","reportDate":"2026-04-29T20:00:00.000Z","expectedEps":1.17746,"previousEps":7.41},{"ticker":"AVY","name":"Avery Dennison Corporation","sector":"Consumer Cyclical","reportDate":"2026-04-22T12:30:00.000Z","expectedEps":2.425,"previousEps":8.8},{"ticker":"BALL","name":"Ball Corporation","sector":"Consumer Cyclical","reportDate":"2026-05-05T12:30:00.000Z","expectedEps":0.85172,"previousEps":3.3},{"ticker":"BAC","name":"Bank of America Corporation","sector":"Financial Services","reportDate":"2026-04-15T12:30:00.000Z","expectedEps":0.99278,"previousEps":3.81},{"ticker":"BAX","name":"Baxter International Inc.","sector":"Healthcare","reportDate":"2026-04-30T12:30:00.000Z","expectedEps":0.31113,"previousEps":-1.75},{"ticker":"BDX","name":"Becton, Dickinson and Company","sector":"Healthcare","reportDate":"2026-05-07T12:30:00.000Z","expectedEps":2.7773,"previousEps":6.12},{"ticker":"BBY","name":"Best Buy Co., Inc.","sector":"Consumer Cyclical","reportDate":"2026-05-28T12:30:00.000Z","expectedEps":1.23301,"previousEps":5.04},{"ticker":"BLK","name":"BlackRock, Inc.","sector":"Financial Services","reportDate":"2026-04-10T12:30:00.000Z","expectedEps":12.39445,"previousEps":35.29},{"ticker":"BX","name":"Blackstone Inc.","sector":"Financial Services","reportDate":"2026-04-16T12:30:00.000Z","expectedEps":1.38312,"previousEps":3.87},{"ticker":"XYZ","name":"Block, Inc.","sector":"Technology","reportDate":"2026-04-30T20:00:00.000Z","expectedEps":0.67385,"previousEps":2.1},{"ticker":"BK","name":"The Bank of New York Mellon Cor","sector":"Financial Services","reportDate":"2026-04-16T12:30:00.000Z","expectedEps":1.903,"previousEps":7.4},{"ticker":"BA","name":"Boeing Company (The)","sector":"Industrials","reportDate":"2026-04-22T12:30:00.000Z","expectedEps":-0.38011,"previousEps":2.48},{"ticker":"BSX","name":"Boston Scientific Corporation","sector":"Healthcare","reportDate":"2026-04-22T12:30:00.000Z","expectedEps":0.79216,"previousEps":1.94},{"ticker":"BMY","name":"Bristol-Myers Squibb Company","sector":"Healthcare","reportDate":"2026-04-30T12:30:00.000Z","expectedEps":1.44869,"previousEps":3.46},{"ticker":"BR","name":"Broadridge Financial Solutions,","sector":"Technology","reportDate":"2026-04-30T12:30:00.000Z","expectedEps":2.62974,"previousEps":9.05},{"ticker":"BRO","name":"Brown & Brown, Inc.","sector":"Financial Services","reportDate":"2026-04-27T20:00:00.000Z","expectedEps":1.37068,"previousEps":3.16},{"ticker":"BLDR","name":"Builders FirstSource, Inc.","sector":"Industrials","reportDate":"2026-04-30T12:30:00.000Z","expectedEps":0.38233,"previousEps":3.89},{"ticker":"BG","name":"Bunge Limited","sector":"Consumer Defensive","reportDate":"2026-05-11T12:30:00.000Z","expectedEps":0.83014,"previousEps":4.93},{"ticker":"BXP","name":"BXP, Inc.","sector":"Real Estate","reportDate":"2026-04-28T20:00:00.000Z","expectedEps":0.28,"previousEps":1.74},{"ticker":"CPT","name":"Camden Property Trust","sector":"Real Estate","reportDate":"2026-04-30T20:00:00.000Z","expectedEps":0.28124,"previousEps":3.54},{"ticker":"CPB","name":"The Campbell\'s Company","sector":"Consumer Defensive","reportDate":"2026-06-08T12:30:00.000Z","expectedEps":0.54586,"previousEps":1.94},{"ticker":"COF","name":"Capital One Financial Corporati","sector":"Financial Services","reportDate":"2026-04-21T20:00:00.000Z","expectedEps":4.72144,"previousEps":3.37},{"ticker":"CAH","name":"Cardinal Health, Inc.","sector":"Healthcare","reportDate":"2026-05-07T12:30:00.000Z","expectedEps":2.77884,"previousEps":6.96},{"ticker":"CCL","name":"Carnival Corporation","sector":"Consumer Cyclical","reportDate":"2026-03-19T12:30:00.000Z","expectedEps":0.18171,"previousEps":2.02},{"ticker":"CARR","name":"Carrier Global Corporation","sector":"Industrials","reportDate":"2026-04-30T12:30:00.000Z","expectedEps":0.50957,"previousEps":1.69},{"ticker":"CVNA","name":"Carvana Co.","sector":"Consumer Cyclical","reportDate":"2026-05-06T20:00:00.000Z","expectedEps":1.45997,"previousEps":8.45},{"ticker":"CAT","name":"Caterpillar, Inc.","sector":"Industrials","reportDate":"2026-04-30T12:30:00.000Z","expectedEps":4.59653,"previousEps":18.82},{"ticker":"CBRE","name":"CBRE Group Inc","sector":"Real Estate","reportDate":"2026-04-23T12:30:00.000Z","expectedEps":1.10801,"previousEps":3.86},{"ticker":"COR","name":"Cencora, Inc.","sector":"Healthcare","reportDate":"2026-05-06T12:30:00.000Z","expectedEps":4.74944,"previousEps":8.34},{"ticker":"CNC","name":"Centene Corporation","sector":"Healthcare","reportDate":"2026-04-28T12:30:00.000Z","expectedEps":2.2076,"previousEps":-13.53},{"ticker":"CNP","name":"CenterPoint Energy, Inc (Holdin","sector":"Utilities","reportDate":"2026-04-23T12:30:00.000Z","expectedEps":0.58204,"previousEps":1.6},{"ticker":"CF","name":"CF Industries Holdings, Inc.","sector":"Basic Materials","reportDate":"2026-05-06T20:00:00.000Z","expectedEps":2.41132,"previousEps":8.97},{"ticker":"CRL","name":"Charles River Laboratories Inte","sector":"Healthcare","reportDate":"2026-05-06T12:30:00.000Z","expectedEps":1.93009,"previousEps":-2.91},{"ticker":"SCHW","name":"Charles Schwab Corporation (The","sector":"Financial Services","reportDate":"2026-04-16T12:30:00.000Z","expectedEps":1.34992,"previousEps":4.65},{"ticker":"CVX","name":"Chevron Corporation","sector":"Energy","reportDate":"2026-05-01T12:30:00.000Z","expectedEps":1.51723,"previousEps":6.64},{"ticker":"CMG","name":"Chipotle Mexican Grill, Inc.","sector":"Consumer Cyclical","reportDate":"2026-04-22T20:00:00.000Z","expectedEps":0.23456,"previousEps":1.14},{"ticker":"CB","name":"Chubb Limited","sector":"Financial Services","reportDate":"2026-04-28T20:00:00.000Z","expectedEps":6.57289,"previousEps":25.69},{"ticker":"CHD","name":"Church & Dwight Company, Inc.","sector":"Consumer Defensive","reportDate":"2026-05-01T12:30:00.000Z","expectedEps":0.92651,"previousEps":3.02},{"ticker":"CIEN","name":"Ciena Corporation","sector":"Technology","reportDate":"2026-06-04T12:30:00.000Z","expectedEps":1.45731,"previousEps":1.56},{"ticker":"CI","name":"The Cigna Group","sector":"Healthcare","reportDate":"2026-04-30T12:30:00.000Z","expectedEps":7.64758,"previousEps":22.17},{"ticker":"C","name":"Citigroup, Inc.","sector":"Financial Services","reportDate":"2026-04-14T12:30:00.000Z","expectedEps":2.57974,"previousEps":6.99},{"ticker":"CFG","name":"Citizens Financial Group, Inc.","sector":"Financial Services","reportDate":"2026-04-16T12:30:00.000Z","expectedEps":1.08676,"previousEps":3.86},{"ticker":"CLX","name":"Clorox Company (The)","sector":"Consumer Defensive","reportDate":"2026-05-05T20:00:00.000Z","expectedEps":1.57087,"previousEps":6.11},{"ticker":"CMS","name":"CMS Energy Corporation","sector":"Utilities","reportDate":"2026-04-23T12:30:00.000Z","expectedEps":1.09556,"previousEps":3.53},{"ticker":"KO","name":"Coca-Cola Company (The)","sector":"Consumer Defensive","reportDate":"2026-04-28T12:30:00.000Z","expectedEps":0.81398,"previousEps":3.04},{"ticker":"CL","name":"Colgate-Palmolive Company","sector":"Consumer Defensive","reportDate":"2026-05-01T12:30:00.000Z","expectedEps":0.94554,"previousEps":2.63},{"ticker":"FIX","name":"Comfort Systems USA, Inc.","sector":"Industrials","reportDate":"2026-04-23T20:00:00.000Z","expectedEps":6.81292,"previousEps":28.85},{"ticker":"CAG","name":"ConAgra Brands, Inc.","sector":"Consumer Defensive","reportDate":"2026-04-01T12:30:00.000Z","expectedEps":0.40019,"previousEps":-0.21},{"ticker":"COP","name":"ConocoPhillips","sector":"Energy","reportDate":"2026-05-07T12:30:00.000Z","expectedEps":1.24205,"previousEps":6.35},{"ticker":"ED","name":"Consolidated Edison, Inc.","sector":"Utilities","reportDate":"2026-04-30T20:00:00.000Z","expectedEps":2.32844,"previousEps":5.64},{"ticker":"STZ","name":"Constellation Brands, Inc.","sector":"Consumer Defensive","reportDate":"2026-04-09T20:00:00.000Z","expectedEps":1.68462,"previousEps":6.37},{"ticker":"GLW","name":"Corning Incorporated","sector":"Technology","reportDate":"2026-04-28T12:30:00.000Z","expectedEps":0.68843,"previousEps":1.83},{"ticker":"CPAY","name":"Corpay, Inc.","sector":"Technology","reportDate":"2026-05-06T20:00:00.000Z","expectedEps":5.46012,"previousEps":15.04},{"ticker":"CTVA","name":"Corteva, Inc.","sector":"Basic Materials","reportDate":"2026-05-05T20:00:00.000Z","expectedEps":1.17493,"previousEps":1.75},{"ticker":"CTRA","name":"Coterra Energy Inc.","sector":"Energy","reportDate":"2026-05-04T20:00:00.000Z","expectedEps":0.7101,"previousEps":2.24},{"ticker":"CRH","name":"CRH PLC","sector":"Basic Materials","reportDate":"2026-04-29T20:00:00.000Z","expectedEps":-0.20217,"previousEps":5.51},{"ticker":"CCI","name":"Crown Castle Inc.","sector":"Real Estate","reportDate":"2026-04-22T20:00:00.000Z","expectedEps":0.45365,"previousEps":2.52},{"ticker":"CMI","name":"Cummins Inc.","sector":"Industrials","reportDate":"2026-05-04T12:30:00.000Z","expectedEps":5.66368,"previousEps":20.52},{"ticker":"CVS","name":"CVS Health Corporation","sector":"Healthcare","reportDate":"2026-05-06T12:30:00.000Z","expectedEps":2.23398,"previousEps":1.39},{"ticker":"DHR","name":"Danaher Corporation","sector":"Healthcare","reportDate":"2026-04-21T12:30:00.000Z","expectedEps":1.93829,"previousEps":5.03},{"ticker":"DRI","name":"Darden Restaurants, Inc.","sector":"Consumer Cyclical","reportDate":"2026-03-19T12:30:00.000Z","expectedEps":2.94829,"previousEps":9.54},{"ticker":"DVA","name":"DaVita Inc.","sector":"Healthcare","reportDate":"2026-05-04T20:00:00.000Z","expectedEps":2.31827,"previousEps":9.51},{"ticker":"DECK","name":"Deckers Outdoor Corporation","sector":"Consumer Cyclical","reportDate":"2026-05-21T20:00:00.000Z","expectedEps":0.81991,"previousEps":7.04},{"ticker":"DE","name":"Deere & Company","sector":"Industrials","reportDate":"2026-05-21T12:30:00.000Z","expectedEps":5.82971,"previousEps":17.7},{"ticker":"DELL","name":"Dell Technologies Inc.","sector":"Technology","reportDate":"2026-05-28T20:00:00.000Z","expectedEps":2.92584,"previousEps":8.68},{"ticker":"DAL","name":"Delta Air Lines, Inc.","sector":"Industrials","reportDate":"2026-04-08T12:30:00.000Z","expectedEps":0.68737,"previousEps":7.66},{"ticker":"DVN","name":"Devon Energy Corporation","sector":"Energy","reportDate":"2026-05-05T20:00:00.000Z","expectedEps":0.80322,"previousEps":4.17},{"ticker":"DLR","name":"Digital Realty Trust, Inc.","sector":"Real Estate","reportDate":"2026-04-23T20:00:00.000Z","expectedEps":0.45236,"previousEps":3.58},{"ticker":"DG","name":"Dollar General Corporation","sector":"Consumer Defensive","reportDate":"2026-03-12T12:30:00.000Z","expectedEps":1.99053,"previousEps":5.79},{"ticker":"D","name":"Dominion Energy, Inc.","sector":"Utilities","reportDate":"2026-04-30T12:30:00.000Z","expectedEps":0.83033,"previousEps":3.47},{"ticker":"DPZ","name":"Domino\'s Pizza Inc","sector":"Consumer Cyclical","reportDate":"2026-04-27T12:30:00.000Z","expectedEps":4.31399,"previousEps":17.58},{"ticker":"DOV","name":"Dover Corporation","sector":"Industrials","reportDate":"2026-04-23T12:30:00.000Z","expectedEps":2.26637,"previousEps":7.97},{"ticker":"DOW","name":"Dow Inc.","sector":"Basic Materials","reportDate":"2026-04-23T12:30:00.000Z","expectedEps":-0.33912,"previousEps":-3.7},{"ticker":"DHI","name":"D.R. Horton, Inc.","sector":"Consumer Cyclical","reportDate":"2026-04-21T12:30:00.000Z","expectedEps":2.15131,"previousEps":10.99},{"ticker":"DTE","name":"DTE Energy Company","sector":"Utilities","reportDate":"2026-04-30T12:30:00.000Z","expectedEps":2.02913,"previousEps":7.03},{"ticker":"DUK","name":"Duke Energy Corporation (Holdin","sector":"Utilities","reportDate":"2026-05-05T12:30:00.000Z","expectedEps":1.72663,"previousEps":6.31},{"ticker":"DD","name":"DuPont de Nemours, Inc.","sector":"Basic Materials","reportDate":"2026-05-01T12:30:00.000Z","expectedEps":0.49108,"previousEps":0.21},{"ticker":"ETN","name":"Eaton Corporation, PLC","sector":"Industrials","reportDate":"2026-04-30T12:30:00.000Z","expectedEps":2.7474,"previousEps":10.46},{"ticker":"ECL","name":"Ecolab Inc.","sector":"Basic Materials","reportDate":"2026-04-28T12:30:00.000Z","expectedEps":1.70482,"previousEps":7.29},{"ticker":"EIX","name":"Edison International","sector":"Utilities","reportDate":"2026-04-28T20:00:00.000Z","expectedEps":1.26616,"previousEps":11.55},{"ticker":"EW","name":"Edwards Lifesciences Corporatio","sector":"Healthcare","reportDate":"2026-04-22T20:00:00.000Z","expectedEps":0.72605,"previousEps":1.81},{"ticker":"ELV","name":"Elevance Health, Inc.","sector":"Healthcare","reportDate":"2026-04-21T12:30:00.000Z","expectedEps":10.68152,"previousEps":25.21},{"ticker":"EME","name":"EMCOR Group, Inc.","sector":"Industrials","reportDate":"2026-04-29T12:30:00.000Z","expectedEps":5.90498,"previousEps":28.16},{"ticker":"EMR","name":"Emerson Electric Company","sector":"Industrials","reportDate":"2026-05-06T20:00:00.000Z","expectedEps":1.5414,"previousEps":4.08},{"ticker":"ETR","name":"Entergy Corporation","sector":"Utilities","reportDate":"2026-04-29T12:30:00.000Z","expectedEps":0.88918,"previousEps":3.91},{"ticker":"EOG","name":"EOG Resources, Inc.","sector":"Energy","reportDate":"2026-04-30T20:00:00.000Z","expectedEps":2.29875,"previousEps":9.12},{"ticker":"EPAM","name":"EPAM Systems, Inc.","sector":"Technology","reportDate":"2026-05-07T12:30:00.000Z","expectedEps":2.75167,"previousEps":6.72},{"ticker":"EQT","name":"EQT Corporation","sector":"Energy","reportDate":"2026-04-21T20:00:00.000Z","expectedEps":1.95319,"previousEps":3.31},{"ticker":"EFX","name":"Equifax, Inc.","sector":"Industrials","reportDate":"2026-04-21T12:30:00.000Z","expectedEps":1.69208,"previousEps":5.33},{"ticker":"EQR","name":"Equity Residential","sector":"Real Estate","reportDate":"2026-04-28T20:00:00.000Z","expectedEps":0.28966,"previousEps":2.94},{"ticker":"ESS","name":"Essex Property Trust, Inc.","sector":"Real Estate","reportDate":"2026-04-28T20:00:00.000Z","expectedEps":1.42247,"previousEps":10.41},{"ticker":"EL","name":"Estee Lauder Companies, Inc. (T","sector":"Consumer Defensive","reportDate":"2026-05-01T12:30:00.000Z","expectedEps":0.64805,"previousEps":-0.51},{"ticker":"EG","name":"Everest Group, Ltd.","sector":"Financial Services","reportDate":"2026-04-29T20:00:00.000Z","expectedEps":15.1922,"previousEps":37.81},{"ticker":"EVRG","name":"Evergy, Inc.","sector":"Utilities","reportDate":"2026-05-07T12:30:00.000Z","expectedEps":0.68735,"previousEps":3.66},{"ticker":"ES","name":"Eversource Energy (D/B/A)","sector":"Utilities","reportDate":"2026-04-30T20:00:00.000Z","expectedEps":1.45719,"previousEps":4.56},{"ticker":"EXR","name":"Extra Space Storage Inc","sector":"Real Estate","reportDate":"2026-04-28T20:00:00.000Z","expectedEps":1.10758,"previousEps":4.59},{"ticker":"XOM","name":"Exxon Mobil Corporation","sector":"Energy","reportDate":"2026-05-01T12:30:00.000Z","expectedEps":1.57206,"previousEps":6.7},{"ticker":"FDS","name":"FactSet Research Systems Inc.","sector":"Financial Services","reportDate":"2026-03-31T12:30:00.000Z","expectedEps":4.37379,"previousEps":15.72},{"ticker":"FICO","name":"Fair Isaac Corporation","sector":"Technology","reportDate":"2026-04-28T20:00:00.000Z","expectedEps":10.6582,"previousEps":27.03},{"ticker":"FRT","name":"Federal Realty Investment Trust","sector":"Real Estate","reportDate":"2026-05-07T20:00:00.000Z","expectedEps":0.6851,"previousEps":4.68},{"ticker":"FDX","name":"FedEx Corporation","sector":"Industrials","reportDate":"2026-03-19T20:00:00.000Z","expectedEps":4.09315,"previousEps":18.07},{"ticker":"FIS","name":"Fidelity National Information S","sector":"Technology","reportDate":"2026-05-05T12:30:00.000Z","expectedEps":1.28636,"previousEps":0.73},{"ticker":"FE","name":"FirstEnergy Corp.","sector":"Utilities","reportDate":"2026-04-22T20:00:00.000Z","expectedEps":0.71789,"previousEps":1.76},{"ticker":"F","name":"Ford Motor Company","sector":"Consumer Cyclical","reportDate":"2026-04-28T20:00:00.000Z","expectedEps":0.17398,"previousEps":-2.06},{"ticker":"FTV","name":"Fortive Corporation","sector":"Technology","reportDate":"2026-04-29T12:30:00.000Z","expectedEps":0.64402,"previousEps":1.59},{"ticker":"BEN","name":"Franklin Resources, Inc.","sector":"Financial Services","reportDate":"2026-05-08T12:30:00.000Z","expectedEps":0.56411,"previousEps":1.08},{"ticker":"FCX","name":"Freeport-McMoRan, Inc.","sector":"Basic Materials","reportDate":"2026-04-23T12:30:00.000Z","expectedEps":0.45274,"previousEps":1.52},{"ticker":"GRMN","name":"Garmin Ltd.","sector":"Technology","reportDate":"2026-04-29T12:30:00.000Z","expectedEps":1.83005,"previousEps":8.59},{"ticker":"IT","name":"Gartner, Inc.","sector":"Technology","reportDate":"2026-05-05T12:30:00.000Z","expectedEps":2.90591,"previousEps":9.66},{"ticker":"GE","name":"GE Aerospace","sector":"Industrials","reportDate":"2026-04-21T12:30:00.000Z","expectedEps":1.57623,"previousEps":8.06},{"ticker":"GEV","name":"GE Vernova Inc.","sector":"Industrials","reportDate":"2026-04-22T12:30:00.000Z","expectedEps":1.96551,"previousEps":17.72},{"ticker":"GNRC","name":"Generac Holdlings Inc.","sector":"Industrials","reportDate":"2026-04-29T12:30:00.000Z","expectedEps":1.30099,"previousEps":2.7},{"ticker":"GD","name":"General Dynamics Corporation","sector":"Industrials","reportDate":"2026-04-22T12:30:00.000Z","expectedEps":3.65679,"previousEps":15.46},{"ticker":"GIS","name":"General Mills, Inc.","sector":"Consumer Defensive","reportDate":"2026-03-18T12:30:00.000Z","expectedEps":0.72845,"previousEps":4.65},{"ticker":"GM","name":"General Motors Company","sector":"Consumer Cyclical","reportDate":"2026-04-28T12:30:00.000Z","expectedEps":2.56765,"previousEps":3.27},{"ticker":"GPC","name":"Genuine Parts Company","sector":"Consumer Cyclical","reportDate":"2026-04-21T12:30:00.000Z","expectedEps":1.76131,"previousEps":0.47},{"ticker":"GPN","name":"Global Payments Inc.","sector":"Industrials","reportDate":"2026-05-05T12:30:00.000Z","expectedEps":2.96967,"previousEps":4.43},{"ticker":"GL","name":"Globe Life Inc.","sector":"Financial Services","reportDate":"2026-04-29T20:00:00.000Z","expectedEps":3.52375,"previousEps":14.07},{"ticker":"GDDY","name":"GoDaddy Inc.","sector":"Technology","reportDate":"2026-05-07T20:00:00.000Z","expectedEps":1.51709,"previousEps":6.22},{"ticker":"GS","name":"Goldman Sachs Group, Inc. (The)","sector":"Financial Services","reportDate":"2026-04-13T12:30:00.000Z","expectedEps":15.79985,"previousEps":51.32},{"ticker":"HAL","name":"Halliburton Company","sector":"Energy","reportDate":"2026-04-21T12:30:00.000Z","expectedEps":0.50754,"previousEps":1.5},{"ticker":"HIG","name":"The Hartford Insurance Group, I","sector":"Financial Services","reportDate":"2026-04-23T20:00:00.000Z","expectedEps":3.35912,"previousEps":13.32},{"ticker":"HCA","name":"HCA Healthcare, Inc.","sector":"Healthcare","reportDate":"2026-04-24T12:30:00.000Z","expectedEps":7.17378,"previousEps":28.31},{"ticker":"DOC","name":"Healthpeak Properties, Inc.","sector":"Real Estate","reportDate":"2026-04-23T20:00:00.000Z","expectedEps":0.0498,"previousEps":0.1},{"ticker":"HSY","name":"The Hershey Company","sector":"Consumer Defensive","reportDate":"2026-04-30T12:30:00.000Z","expectedEps":2.04413,"previousEps":4.34},{"ticker":"HPE","name":"Hewlett Packard Enterprise Comp","sector":"Technology","reportDate":"2026-06-02T20:00:00.000Z","expectedEps":0.53452,"previousEps":-0.04},{"ticker":"HLT","name":"Hilton Worldwide Holdings Inc.","sector":"Consumer Cyclical","reportDate":"2026-05-06T12:30:00.000Z","expectedEps":1.95579,"previousEps":6.12},{"ticker":"HD","name":"Home Depot, Inc. (The)","sector":"Consumer Cyclical","reportDate":"2026-05-19T12:30:00.000Z","expectedEps":3.41835,"previousEps":14.24},{"ticker":"HRL","name":"Hormel Foods Corporation","sector":"Consumer Defensive","reportDate":"2026-05-28T12:30:00.000Z","expectedEps":0.357,"previousEps":0.89},{"ticker":"HWM","name":"Howmet Aerospace Inc.","sector":"Industrials","reportDate":"2026-04-30T12:30:00.000Z","expectedEps":1.10602,"previousEps":3.7},{"ticker":"HPQ","name":"HP Inc.","sector":"Technology","reportDate":"2026-05-27T20:00:00.000Z","expectedEps":0.71437,"previousEps":2.64},{"ticker":"HUBB","name":"Hubbell Inc","sector":"Industrials","reportDate":"2026-04-30T12:30:00.000Z","expectedEps":3.88253,"previousEps":16.54},{"ticker":"HUM","name":"Humana Inc.","sector":"Healthcare","reportDate":"2026-04-29T12:30:00.000Z","expectedEps":9.88953,"previousEps":9.85},{"ticker":"HII","name":"Huntington Ingalls Industries, ","sector":"Industrials","reportDate":"2026-04-30T12:30:00.000Z","expectedEps":3.7757,"previousEps":15.39},{"ticker":"IBM","name":"International Business Machines","sector":"Technology","reportDate":"2026-04-22T20:00:00.000Z","expectedEps":1.80925,"previousEps":11.15},{"ticker":"IEX","name":"IDEX Corporation","sector":"Industrials","reportDate":"2026-04-30T12:30:00.000Z","expectedEps":1.76887,"previousEps":6.42},{"ticker":"ITW","name":"Illinois Tool Works Inc.","sector":"Industrials","reportDate":"2026-04-29T12:30:00.000Z","expectedEps":2.56346,"previousEps":10.48},{"ticker":"IR","name":"Ingersoll Rand Inc.","sector":"Industrials","reportDate":"2026-04-30T20:00:00.000Z","expectedEps":0.74836,"previousEps":1.45},{"ticker":"ICE","name":"Intercontinental Exchange Inc.","sector":"Financial Services","reportDate":"2026-04-30T12:30:00.000Z","expectedEps":1.9467,"previousEps":5.76},{"ticker":"IFF","name":"International Flavors & Fragran","sector":"Basic Materials","reportDate":"2026-05-05T20:00:00.000Z","expectedEps":1.08422,"previousEps":-1.41},{"ticker":"IP","name":"International Paper Company","sector":"Consumer Cyclical","reportDate":"2026-04-30T12:30:00.000Z","expectedEps":0.18505,"previousEps":-5.61},{"ticker":"IVZ","name":"Invesco Ltd","sector":"Financial Services","reportDate":"2026-04-21T12:30:00.000Z","expectedEps":0.58991,"previousEps":-1.6},{"ticker":"INVH","name":"Invitation Homes Inc.","sector":"Real Estate","reportDate":"2026-04-29T20:00:00.000Z","expectedEps":0.15248,"previousEps":0.96},{"ticker":"IQV","name":"IQVIA Holdings, Inc.","sector":"Healthcare","reportDate":"2026-05-06T12:30:00.000Z","expectedEps":2.82047,"previousEps":7.84},{"ticker":"IRM","name":"Iron Mountain Incorporated (Del","sector":"Real Estate","reportDate":"2026-04-30T12:30:00.000Z","expectedEps":0.51636,"previousEps":0.49},{"ticker":"JBL","name":"Jabil Inc.","sector":"Technology","reportDate":"2026-03-18T12:30:00.000Z","expectedEps":2.49206,"previousEps":6.39},{"ticker":"J","name":"Jacobs Solutions Inc.","sector":"Industrials","reportDate":"2026-05-05T20:00:00.000Z","expectedEps":1.64094,"previousEps":3.79},{"ticker":"JNJ","name":"Johnson & Johnson","sector":"Healthcare","reportDate":"2026-04-14T12:30:00.000Z","expectedEps":2.68593,"previousEps":11.03},{"ticker":"JCI","name":"Johnson Controls International ","sector":"Industrials","reportDate":"2026-05-06T12:30:00.000Z","expectedEps":1.11488,"previousEps":2.98},{"ticker":"JPM","name":"JP Morgan Chase & Co.","sector":"Financial Services","reportDate":"2026-04-14T12:30:00.000Z","expectedEps":5.49765,"previousEps":20.01},{"ticker":"KVUE","name":"Kenvue Inc.","sector":"Consumer Defensive","reportDate":"2026-05-07T12:30:00.000Z","expectedEps":0.26089,"previousEps":0.76},{"ticker":"KEY","name":"KeyCorp","sector":"Financial Services","reportDate":"2026-04-16T12:30:00.000Z","expectedEps":0.40637,"previousEps":1.52},{"ticker":"KEYS","name":"Keysight Technologies Inc.","sector":"Technology","reportDate":"2026-05-19T20:00:00.000Z","expectedEps":2.31403,"previousEps":5.69},{"ticker":"KIM","name":"Kimco Realty Corporation (HC)","sector":"Real Estate","reportDate":"2026-04-30T12:30:00.000Z","expectedEps":0.19333,"previousEps":0.82},{"ticker":"KMI","name":"Kinder Morgan, Inc.","sector":"Energy","reportDate":"2026-04-15T20:00:00.000Z","expectedEps":0.37214,"previousEps":1.37},{"ticker":"KKR","name":"KKR & Co. Inc.","sector":"Financial Services","reportDate":"2026-04-30T12:30:00.000Z","expectedEps":1.43134,"previousEps":2.34},{"ticker":"KR","name":"Kroger Company (The)","sector":"Consumer Defensive","reportDate":"2026-03-05T13:30:00.000Z","expectedEps":1.58398,"previousEps":1.54},{"ticker":"LHX","name":"L3Harris Technologies, Inc.","sector":"Industrials","reportDate":"2026-04-30T12:30:00.000Z","expectedEps":2.5865,"previousEps":8.52},{"ticker":"LH","name":"Labcorp Holdings Inc.","sector":"Healthcare","reportDate":"2026-04-28T12:30:00.000Z","expectedEps":4.13706,"previousEps":10.47},{"ticker":"LW","name":"Lamb Weston Holdings, Inc.","sector":"Consumer Defensive","reportDate":"2026-04-01T12:30:00.000Z","expectedEps":0.62358,"previousEps":2.76},{"ticker":"LVS","name":"Las Vegas Sands Corp.","sector":"Consumer Cyclical","reportDate":"2026-04-22T20:00:00.000Z","expectedEps":0.76164,"previousEps":2.35},{"ticker":"LDOS","name":"Leidos Holdings, Inc.","sector":"Technology","reportDate":"2026-04-28T12:30:00.000Z","expectedEps":2.91818,"previousEps":11.15},{"ticker":"LEN","name":"Lennar Corporation","sector":"Consumer Cyclical","reportDate":"2026-03-12T20:00:00.000Z","expectedEps":0.94573,"previousEps":7.98},{"ticker":"LII","name":"Lennox International, Inc.","sector":"Industrials","reportDate":"2026-04-22T12:30:00.000Z","expectedEps":3.1901,"previousEps":22.79},{"ticker":"LLY","name":"Eli Lilly and Company","sector":"Healthcare","reportDate":"2026-04-30T12:30:00.000Z","expectedEps":7.25493,"previousEps":23},{"ticker":"LYV","name":"Live Nation Entertainment, Inc.","sector":"Communication Services","reportDate":"2026-05-07T20:00:00.000Z","expectedEps":-0.34157,"previousEps":-0.23},{"ticker":"LMT","name":"Lockheed Martin Corporation","sector":"Industrials","reportDate":"2026-04-21T12:30:00.000Z","expectedEps":6.85591,"previousEps":21.5},{"ticker":"L","name":"Loews Corporation","sector":"Financial Services","reportDate":"2026-05-04T12:30:00.000Z","expectedEps":null,"previousEps":7.97},{"ticker":"LOW","name":"Lowe\'s Companies, Inc.","sector":"Consumer Cyclical","reportDate":"2026-05-20T12:30:00.000Z","expectedEps":2.9694,"previousEps":11.85},{"ticker":"LYB","name":"LyondellBasell Industries NV","sector":"Basic Materials","reportDate":"2026-04-24T12:30:00.000Z","expectedEps":0.16112,"previousEps":-2.48},{"ticker":"MTB","name":"M&T Bank Corporation","sector":"Financial Services","reportDate":"2026-04-15T12:30:00.000Z","expectedEps":4.0165,"previousEps":17.01},{"ticker":"MPC","name":"Marathon Petroleum Corporation","sector":"Energy","reportDate":"2026-05-05T12:30:00.000Z","expectedEps":1.82032,"previousEps":13.22},{"ticker":"MRSH","name":"Marsh","sector":"Financial Services","reportDate":"2026-04-16T12:30:00.000Z","expectedEps":3.25275,"previousEps":8.44},{"ticker":"MLM","name":"Martin Marietta Materials, Inc.","sector":"Basic Materials","reportDate":"2026-04-29T12:30:00.000Z","expectedEps":2.05454,"previousEps":16.31},{"ticker":"MAS","name":"Masco Corporation","sector":"Industrials","reportDate":"2026-04-30T12:30:00.000Z","expectedEps":0.88375,"previousEps":3.86},{"ticker":"MA","name":"Mastercard Incorporated","sector":"Financial Services","reportDate":"2026-04-30T12:30:00.000Z","expectedEps":4.39842,"previousEps":16.53},{"ticker":"MKC","name":"McCormick & Company, Incorporat","sector":"Consumer Defensive","reportDate":"2026-03-31T12:30:00.000Z","expectedEps":0.60622,"previousEps":2.93},{"ticker":"MCD","name":"McDonald\'s Corporation","sector":"Consumer Cyclical","reportDate":"2026-04-30T20:00:00.000Z","expectedEps":2.7615,"previousEps":11.94},{"ticker":"MCK","name":"McKesson Corporation","sector":"Healthcare","reportDate":"2026-05-07T20:00:00.000Z","expectedEps":11.58286,"previousEps":34.66},{"ticker":"MDT","name":"Medtronic plc.","sector":"Healthcare","reportDate":"2026-05-20T12:30:00.000Z","expectedEps":1.66653,"previousEps":3.58},{"ticker":"MRK","name":"Merck & Company, Inc.","sector":"Healthcare","reportDate":"2026-04-30T12:30:00.000Z","expectedEps":-1.31098,"previousEps":7.27},{"ticker":"MET","name":"MetLife, Inc.","sector":"Financial Services","reportDate":"2026-04-29T20:00:00.000Z","expectedEps":2.19556,"previousEps":4.71},{"ticker":"MTD","name":"Mettler-Toledo International, I","sector":"Healthcare","reportDate":"2026-04-30T20:00:00.000Z","expectedEps":8.69967,"previousEps":42.03},{"ticker":"MGM","name":"MGM Resorts International","sector":"Consumer Cyclical","reportDate":"2026-04-29T20:00:00.000Z","expectedEps":0.59493,"previousEps":0.76},{"ticker":"MAA","name":"Mid-America Apartment Communiti","sector":"Real Estate","reportDate":"2026-04-29T20:00:00.000Z","expectedEps":0.82586,"previousEps":3.77},{"ticker":"MOH","name":"Molina Healthcare Inc","sector":"Healthcare","reportDate":"2026-04-22T20:00:00.000Z","expectedEps":2.41646,"previousEps":8.93},{"ticker":"TAP","name":"Molson Coors Beverage Company","sector":"Consumer Defensive","reportDate":"2026-05-07T20:00:00.000Z","expectedEps":0.38828,"previousEps":-10.75},{"ticker":"MCO","name":"Moody\'s Corporation","sector":"Financial Services","reportDate":"2026-04-21T12:30:00.000Z","expectedEps":4.36357,"previousEps":13.69},{"ticker":"MS","name":"Morgan Stanley","sector":"Financial Services","reportDate":"2026-04-15T12:30:00.000Z","expectedEps":2.96365,"previousEps":10.22},{"ticker":"MOS","name":"Mosaic Company (The)","sector":"Basic Materials","reportDate":"2026-05-05T20:00:00.000Z","expectedEps":0.21281,"previousEps":1.7},{"ticker":"MSI","name":"Motorola Solutions, Inc.","sector":"Technology","reportDate":"2026-04-30T20:00:00.000Z","expectedEps":3.24054,"previousEps":12.77},{"ticker":"MSCI","name":"MSCI Inc.","sector":"Financial Services","reportDate":"2026-04-21T12:30:00.000Z","expectedEps":4.42239,"previousEps":15.7},{"ticker":"NEM","name":"Newmont Corporation","sector":"Basic Materials","reportDate":"2026-04-22T20:00:00.000Z","expectedEps":2.07333,"previousEps":6.39},{"ticker":"NEE","name":"NextEra Energy, Inc.","sector":"Utilities","reportDate":"2026-04-22T12:30:00.000Z","expectedEps":0.93634,"previousEps":3.3},{"ticker":"NKE","name":"Nike, Inc.","sector":"Consumer Cyclical","reportDate":"2026-03-31T20:00:00.000Z","expectedEps":0.29006,"previousEps":1.71},{"ticker":"NI","name":"NiSource Inc","sector":"Utilities","reportDate":"2026-05-06T12:30:00.000Z","expectedEps":1.05628,"previousEps":1.95},{"ticker":"NSC","name":"Norfolk Southern Corporation","sector":"Industrials","reportDate":"2026-04-23T12:30:00.000Z","expectedEps":2.6348,"previousEps":12.74},{"ticker":"NOC","name":"Northrop Grumman Corporation","sector":"Industrials","reportDate":"2026-04-21T12:30:00.000Z","expectedEps":6.01007,"previousEps":29.11},{"ticker":"NCLH","name":"Norwegian Cruise Line Holdings ","sector":"Consumer Cyclical","reportDate":"2026-04-30T12:30:00.000Z","expectedEps":0.1597,"previousEps":0.92},{"ticker":"NRG","name":"NRG Energy, Inc.","sector":"Utilities","reportDate":"2026-05-11T12:30:00.000Z","expectedEps":2.2774,"previousEps":4.01},{"ticker":"NUE","name":"Nucor Corporation","sector":"Basic Materials","reportDate":"2026-04-27T20:00:00.000Z","expectedEps":2.73613,"previousEps":7.53},{"ticker":"NVR","name":"NVR, Inc.","sector":"Consumer Cyclical","reportDate":"2026-04-21T12:30:00.000Z","expectedEps":78.59147,"previousEps":436.32},{"ticker":"OXY","name":"Occidental Petroleum Corporatio","sector":"Energy","reportDate":"2026-05-06T20:00:00.000Z","expectedEps":0.30317,"previousEps":1.35},{"ticker":"OMC","name":"Omnicom Group Inc.","sector":"Communication Services","reportDate":"2026-04-21T20:00:00.000Z","expectedEps":1.91765,"previousEps":-0.27},{"ticker":"OKE","name":"ONEOK, Inc.","sector":"Energy","reportDate":"2026-04-28T20:00:00.000Z","expectedEps":1.2855,"previousEps":5.42},{"ticker":"ORCL","name":"Oracle Corporation","sector":"Technology","reportDate":"2026-06-10T20:00:00.000Z","expectedEps":1.96081,"previousEps":5.32},{"ticker":"OTIS","name":"Otis Worldwide Corporation","sector":"Industrials","reportDate":"2026-04-22T12:30:00.000Z","expectedEps":0.95471,"previousEps":3.5},{"ticker":"PKG","name":"Packaging Corporation of Americ","sector":"Consumer Cyclical","reportDate":"2026-04-21T20:00:00.000Z","expectedEps":2.16696,"previousEps":8.57},{"ticker":"PH","name":"Parker-Hannifin Corporation","sector":"Industrials","reportDate":"2026-04-30T12:30:00.000Z","expectedEps":7.82096,"previousEps":27.37},{"ticker":"PAYC","name":"Paycom Software, Inc.","sector":"Technology","reportDate":"2026-05-06T20:00:00.000Z","expectedEps":2.95737,"previousEps":8.08},{"ticker":"PNR","name":"Pentair plc.","sector":"Industrials","reportDate":"2026-04-21T12:30:00.000Z","expectedEps":1.16811,"previousEps":3.93},{"ticker":"PFE","name":"Pfizer, Inc.","sector":"Healthcare","reportDate":"2026-04-28T12:30:00.000Z","expectedEps":0.72751,"previousEps":1.37},{"ticker":"PCG","name":"Pacific Gas & Electric Co.","sector":"Utilities","reportDate":"2026-04-30T12:30:00.000Z","expectedEps":0.3896,"previousEps":1.18},{"ticker":"PM","name":"Philip Morris International Inc","sector":"Consumer Defensive","reportDate":"2026-04-22T12:30:00.000Z","expectedEps":1.83505,"previousEps":7.26},{"ticker":"PSX","name":"Phillips 66","sector":"Energy","reportDate":"2026-04-24T12:30:00.000Z","expectedEps":1.82735,"previousEps":10.8},{"ticker":"PNW","name":"Pinnacle West Capital Corporati","sector":"Utilities","reportDate":"2026-04-30T12:30:00.000Z","expectedEps":-0.03098,"previousEps":5.05},{"ticker":"PNC","name":"PNC Financial Services Group, I","sector":"Financial Services","reportDate":"2026-04-15T12:30:00.000Z","expectedEps":3.9227,"previousEps":16.6},{"ticker":"PPG","name":"PPG Industries, Inc.","sector":"Basic Materials","reportDate":"2026-04-28T20:00:00.000Z","expectedEps":1.70386,"previousEps":6.92},{"ticker":"PPL","name":"PPL Corporation","sector":"Utilities","reportDate":"2026-04-30T12:30:00.000Z","expectedEps":0.60842,"previousEps":1.59},{"ticker":"PG","name":"Procter & Gamble Company (The)","sector":"Consumer Defensive","reportDate":"2026-04-24T12:30:00.000Z","expectedEps":1.56808,"previousEps":6.75},{"ticker":"PGR","name":"Progressive Corporation (The)","sector":"Financial Services","reportDate":"2026-04-15T12:30:00.000Z","expectedEps":4.66312,"previousEps":19.24},{"ticker":"PLD","name":"Prologis, Inc.","sector":"Real Estate","reportDate":"2026-04-16T12:30:00.000Z","expectedEps":0.7422,"previousEps":3.56},{"ticker":"PRU","name":"Prudential Financial, Inc.","sector":"Financial Services","reportDate":"2026-04-29T20:00:00.000Z","expectedEps":3.33378,"previousEps":9.99},{"ticker":"PEG","name":"Public Service Enterprise Group","sector":"Utilities","reportDate":"2026-05-06T12:30:00.000Z","expectedEps":1.46044,"previousEps":4.22},{"ticker":"PSA","name":"Public Storage","sector":"Real Estate","reportDate":"2026-04-29T20:00:00.000Z","expectedEps":2.42154,"previousEps":9},{"ticker":"PHM","name":"PulteGroup, Inc.","sector":"Consumer Cyclical","reportDate":"2026-04-23T12:30:00.000Z","expectedEps":1.81996,"previousEps":11.12},{"ticker":"PWR","name":"Quanta Services, Inc.","sector":"Industrials","reportDate":"2026-04-30T12:30:00.000Z","expectedEps":2.10195,"previousEps":6.81},{"ticker":"DGX","name":"Quest Diagnostics Incorporated","sector":"Healthcare","reportDate":"2026-04-21T12:30:00.000Z","expectedEps":2.36114,"previousEps":8.74},{"ticker":"Q","name":"Qnity Electronics, Inc.","sector":"Technology","reportDate":"2026-05-15T20:00:00.000Z","expectedEps":0.91167,"previousEps":3.3},{"ticker":"RL","name":"Ralph Lauren Corporation","sector":"Consumer Cyclical","reportDate":"2026-05-21T12:30:00.000Z","expectedEps":2.4811,"previousEps":14.71},{"ticker":"RJF","name":"Raymond James Financial, Inc.","sector":"Financial Services","reportDate":"2026-04-22T20:00:00.000Z","expectedEps":2.89315,"previousEps":10.23},{"ticker":"RTX","name":"RTX Corporation","sector":"Industrials","reportDate":"2026-04-21T12:30:00.000Z","expectedEps":1.50966,"previousEps":4.95},{"ticker":"O","name":"Realty Income Corporation","sector":"Real Estate","reportDate":"2026-05-04T20:00:00.000Z","expectedEps":0.40059,"previousEps":1.17},{"ticker":"RF","name":"Regions Financial Corporation","sector":"Financial Services","reportDate":"2026-04-17T12:30:00.000Z","expectedEps":0.6017,"previousEps":2.3},{"ticker":"RSG","name":"Republic Services, Inc.","sector":"Industrials","reportDate":"2026-04-23T20:00:00.000Z","expectedEps":1.67317,"previousEps":6.85},{"ticker":"RMD","name":"ResMed Inc.","sector":"Healthcare","reportDate":"2026-04-30T20:00:00.000Z","expectedEps":2.80897,"previousEps":10.11},{"ticker":"RVTY","name":"Revvity, Inc.","sector":"Healthcare","reportDate":"2026-04-27T12:30:00.000Z","expectedEps":1.01918,"previousEps":2.06},{"ticker":"ROK","name":"Rockwell Automation, Inc.","sector":"Industrials","reportDate":"2026-05-06T12:30:00.000Z","expectedEps":2.87361,"previousEps":8.73},{"ticker":"ROL","name":"Rollins, Inc.","sector":"Consumer Cyclical","reportDate":"2026-04-29T20:00:00.000Z","expectedEps":0.23845,"previousEps":1.09},{"ticker":"RCL","name":"Royal Caribbean Cruises Ltd.","sector":"Consumer Cyclical","reportDate":"2026-04-28T12:30:00.000Z","expectedEps":3.23382,"previousEps":15.62},{"ticker":"SPGI","name":"S&P Global Inc.","sector":"Financial Services","reportDate":"2026-04-28T12:30:00.000Z","expectedEps":4.82697,"previousEps":14.67},{"ticker":"CRM","name":"Salesforce, Inc.","sector":"Technology","reportDate":"2026-05-27T20:00:00.000Z","expectedEps":3.12248,"previousEps":7.8},{"ticker":"SLB","name":"SLB Limited","sector":"Energy","reportDate":"2026-05-01T12:30:00.000Z","expectedEps":0.58976,"previousEps":2.35},{"ticker":"SRE","name":"DBA Sempra","sector":"Utilities","reportDate":"2026-05-07T12:30:00.000Z","expectedEps":1.48478,"previousEps":2.75},{"ticker":"NOW","name":"ServiceNow, Inc.","sector":"Technology","reportDate":"2026-04-22T20:00:00.000Z","expectedEps":0.96686,"previousEps":1.67},{"ticker":"SHW","name":"Sherwin-Williams Company (The)","sector":"Basic Materials","reportDate":"2026-04-28T12:30:00.000Z","expectedEps":2.27284,"previousEps":10.26},{"ticker":"SPG","name":"Simon Property Group, Inc.","sector":"Real Estate","reportDate":"2026-05-11T20:00:00.000Z","expectedEps":1.48667,"previousEps":14.18},{"ticker":"SJM","name":"The J.M. Smucker Company","sector":"Consumer Defensive","reportDate":"2026-02-26T13:30:00.000Z","expectedEps":2.66256,"previousEps":-11.8},{"ticker":"SW","name":"Smurfit WestRock plc","sector":"Consumer Cyclical","reportDate":"2026-04-30T12:30:00.000Z","expectedEps":0.4233,"previousEps":1.33},{"ticker":"SNA","name":"Snap-On Incorporated","sector":"Industrials","reportDate":"2026-04-16T12:30:00.000Z","expectedEps":4.75375,"previousEps":19.19},{"ticker":"SOLV","name":"Solventum Corporation","sector":"Healthcare","reportDate":"2026-05-07T20:00:00.000Z","expectedEps":1.34939,"previousEps":8.88},{"ticker":"SO","name":"Southern Company (The)","sector":"Utilities","reportDate":"2026-04-30T12:30:00.000Z","expectedEps":1.23309,"previousEps":3.92},{"ticker":"LUV","name":"Southwest Airlines Company","sector":"Industrials","reportDate":"2026-04-22T20:00:00.000Z","expectedEps":0.51979,"previousEps":0.79},{"ticker":"SWK","name":"Stanley Black & Decker, Inc.","sector":"Industrials","reportDate":"2026-04-29T12:30:00.000Z","expectedEps":0.58092,"previousEps":2.65},{"ticker":"STT","name":"State Street Corporation","sector":"Financial Services","reportDate":"2026-04-16T12:30:00.000Z","expectedEps":2.51388,"previousEps":9.4},{"ticker":"STE","name":"STERIS plc (Ireland)","sector":"Healthcare","reportDate":"2026-05-13T20:00:00.000Z","expectedEps":2.84875,"previousEps":7.18},{"ticker":"SYK","name":"Stryker Corporation","sector":"Healthcare","reportDate":"2026-04-30T20:00:00.000Z","expectedEps":2.99703,"previousEps":8.4},{"ticker":"SYF","name":"Synchrony Financial","sector":"Financial Services","reportDate":"2026-04-21T12:30:00.000Z","expectedEps":2.06186,"previousEps":9.28},{"ticker":"SYY","name":"Sysco Corporation","sector":"Consumer Defensive","reportDate":"2026-04-28T12:30:00.000Z","expectedEps":0.94513,"previousEps":3.71},{"ticker":"TPR","name":"Tapestry, Inc.","sector":"Consumer Cyclical","reportDate":"2026-05-07T12:30:00.000Z","expectedEps":1.27799,"previousEps":2.57},{"ticker":"TRGP","name":"Targa Resources, Inc.","sector":"Energy","reportDate":"2026-04-30T12:30:00.000Z","expectedEps":2.48266,"previousEps":8.49},{"ticker":"TGT","name":"Target Corporation","sector":"Consumer Defensive","reportDate":"2026-05-20T12:30:00.000Z","expectedEps":1.3408,"previousEps":8.12},{"ticker":"TEL","name":"TE Connectivity plc","sector":"Technology","reportDate":"2026-04-22T12:30:00.000Z","expectedEps":2.68475,"previousEps":6.93},{"ticker":"TDY","name":"Teledyne Technologies Incorpora","sector":"Technology","reportDate":"2026-04-22T12:30:00.000Z","expectedEps":5.47177,"previousEps":18.87},{"ticker":"TPL","name":"Texas Pacific Land Corporation","sector":"Energy","reportDate":"2026-05-06T20:00:00.000Z","expectedEps":1.87796,"previousEps":6.98},{"ticker":"TXT","name":"Textron Inc.","sector":"Industrials","reportDate":"2026-04-23T12:30:00.000Z","expectedEps":1.35134,"previousEps":5.12},{"ticker":"TMO","name":"Thermo Fisher Scientific Inc","sector":"Healthcare","reportDate":"2026-04-22T12:30:00.000Z","expectedEps":5.27653,"previousEps":17.75},{"ticker":"TJX","name":"TJX Companies, Inc. (The)","sector":"Consumer Cyclical","reportDate":"2026-05-20T12:30:00.000Z","expectedEps":0.998,"previousEps":4.86},{"ticker":"TKO","name":"TKO Group Holdings, Inc.","sector":"Communication Services","reportDate":"2026-05-07T20:00:00.000Z","expectedEps":1.20763,"previousEps":2.26},{"ticker":"TT","name":"Trane Technologies plc","sector":"Industrials","reportDate":"2026-04-29T12:30:00.000Z","expectedEps":2.52126,"previousEps":13.15},{"ticker":"TDG","name":"Transdigm Group Incorporated","sector":"Industrials","reportDate":"2026-05-05T12:30:00.000Z","expectedEps":9.25523,"previousEps":31.08},{"ticker":"TRV","name":"The Travelers Companies, Inc.","sector":"Financial Services","reportDate":"2026-04-16T12:30:00.000Z","expectedEps":6.89612,"previousEps":27.43},{"ticker":"TFC","name":"Truist Financial Corporation","sector":"Financial Services","reportDate":"2026-04-17T12:30:00.000Z","expectedEps":1.00152,"previousEps":3.82},{"ticker":"TYL","name":"Tyler Technologies, Inc.","sector":"Technology","reportDate":"2026-04-29T20:00:00.000Z","expectedEps":3.00237,"previousEps":7.21},{"ticker":"TSN","name":"Tyson Foods, Inc.","sector":"Consumer Defensive","reportDate":"2026-05-04T12:30:00.000Z","expectedEps":0.82481,"previousEps":0.56},{"ticker":"USB","name":"U.S. Bancorp","sector":"Financial Services","reportDate":"2026-04-16T12:30:00.000Z","expectedEps":1.12767,"previousEps":4.62},{"ticker":"UBER","name":"Uber Technologies, Inc.","sector":"Technology","reportDate":"2026-05-06T12:30:00.000Z","expectedEps":0.71583,"previousEps":4.73},{"ticker":"UDR","name":"UDR, Inc.","sector":"Real Estate","reportDate":"2026-04-29T20:00:00.000Z","expectedEps":0.13,"previousEps":1.13},{"ticker":"UNP","name":"Union Pacific Corporation","sector":"Industrials","reportDate":"2026-04-23T12:30:00.000Z","expectedEps":2.81786,"previousEps":11.98},{"ticker":"UPS","name":"United Parcel Service, Inc.","sector":"Industrials","reportDate":"2026-04-28T12:30:00.000Z","expectedEps":1.10793,"previousEps":6.56},{"ticker":"URI","name":"United Rentals, Inc.","sector":"Industrials","reportDate":"2026-04-22T20:00:00.000Z","expectedEps":9.0581,"previousEps":38.64},{"ticker":"UNH","name":"UnitedHealth Group Incorporated","sector":"Healthcare","reportDate":"2026-04-16T12:30:00.000Z","expectedEps":6.8598,"previousEps":13.24},{"ticker":"UHS","name":"Universal Health Services, Inc.","sector":"Healthcare","reportDate":"2026-04-28T20:00:00.000Z","expectedEps":5.41134,"previousEps":23.09},{"ticker":"VLO","name":"Valero Energy Corporation","sector":"Energy","reportDate":"2026-04-30T12:30:00.000Z","expectedEps":2.09762,"previousEps":7.58},{"ticker":"VTR","name":"Ventas, Inc.","sector":"Real Estate","reportDate":"2026-04-29T20:00:00.000Z","expectedEps":0.1,"previousEps":0.54},{"ticker":"VLTO","name":"Veralto Corp","sector":"Industrials","reportDate":"2026-04-28T20:00:00.000Z","expectedEps":0.99998,"previousEps":3.76},{"ticker":"VZ","name":"Verizon Communications Inc.","sector":"Communication Services","reportDate":"2026-04-21T12:30:00.000Z","expectedEps":1.21453,"previousEps":4.06},{"ticker":"VICI","name":"VICI Properties Inc.","sector":"Real Estate","reportDate":"2026-04-29T20:00:00.000Z","expectedEps":0.71,"previousEps":2.61},{"ticker":"V","name":"Visa Inc.","sector":"Financial Services","reportDate":"2026-04-28T20:00:00.000Z","expectedEps":3.09159,"previousEps":10.66},{"ticker":"VST","name":"Vistra Corp.","sector":"Utilities","reportDate":"2026-05-06T12:30:00.000Z","expectedEps":1.3975,"previousEps":2.18},{"ticker":"VMC","name":"Vulcan Materials Company (Holdi","sector":"Basic Materials","reportDate":"2026-04-30T12:30:00.000Z","expectedEps":1.15139,"previousEps":8.16},{"ticker":"WRB","name":"W.R. Berkley Corporation","sector":"Financial Services","reportDate":"2026-04-20T20:00:00.000Z","expectedEps":1.15525,"previousEps":4.45},{"ticker":"GWW","name":"W.W. Grainger, Inc.","sector":"Industrials","reportDate":"2026-05-07T12:30:00.000Z","expectedEps":10.20643,"previousEps":35.42},{"ticker":"WAB","name":"Westinghouse Air Brake Technolo","sector":"Industrials","reportDate":"2026-04-22T12:30:00.000Z","expectedEps":2.51422,"previousEps":6.84},{"ticker":"DIS","name":"Walt Disney Company (The)","sector":"Communication Services","reportDate":"2026-05-06T12:30:00.000Z","expectedEps":1.49689,"previousEps":6.79},{"ticker":"WM","name":"Waste Management, Inc.","sector":"Industrials","reportDate":"2026-04-27T20:00:00.000Z","expectedEps":1.75315,"previousEps":6.69},{"ticker":"WAT","name":"Waters Corporation","sector":"Healthcare","reportDate":"2026-05-05T12:30:00.000Z","expectedEps":2.31276,"previousEps":10.77},{"ticker":"WEC","name":"WEC Energy Group, Inc.","sector":"Utilities","reportDate":"2026-05-05T12:30:00.000Z","expectedEps":2.27929,"previousEps":4.82},{"ticker":"WFC","name":"Wells Fargo & Company","sector":"Financial Services","reportDate":"2026-04-14T12:30:00.000Z","expectedEps":1.571,"previousEps":6.26},{"ticker":"WELL","name":"Welltower Inc.","sector":"Real Estate","reportDate":"2026-04-27T20:00:00.000Z","expectedEps":0.495,"previousEps":1.42},{"ticker":"WST","name":"West Pharmaceutical Services, I","sector":"Healthcare","reportDate":"2026-04-23T12:30:00.000Z","expectedEps":1.67895,"previousEps":6.79},{"ticker":"WY","name":"Weyerhaeuser Company","sector":"Real Estate","reportDate":"2026-04-23T20:00:00.000Z","expectedEps":0.028,"previousEps":0.45},{"ticker":"WSM","name":"Williams-Sonoma, Inc.","sector":"Consumer Cyclical","reportDate":"2026-03-18T12:30:00.000Z","expectedEps":2.91014,"previousEps":9.07},{"ticker":"WMB","name":"Williams Companies, Inc. (The)","sector":"Energy","reportDate":"2026-05-04T12:30:00.000Z","expectedEps":0.61381,"previousEps":2.14},{"ticker":"XYL","name":"Xylem Inc.","sector":"Industrials","reportDate":"2026-05-05T12:30:00.000Z","expectedEps":1.085,"previousEps":3.92},{"ticker":"YUM","name":"Yum! Brands, Inc.","sector":"Consumer Cyclical","reportDate":"2026-04-29T12:30:00.000Z","expectedEps":1.37876,"previousEps":5.54},{"ticker":"ZBH","name":"Zimmer Biomet Holdings, Inc.","sector":"Healthcare","reportDate":"2026-05-04T12:30:00.000Z","expectedEps":1.85632,"previousEps":3.55},{"ticker":"ZTS","name":"Zoetis Inc.","sector":"Healthcare","reportDate":"2026-05-05T12:30:00.000Z","expectedEps":1.62087,"previousEps":6.03},{"ticker":"ADBE","name":"Adobe Inc.","sector":"Technology","reportDate":"2026-03-12T20:00:00.000Z","expectedEps":5.87314,"previousEps":16.7},{"ticker":"AMD","name":"Advanced Micro Devices, Inc.","sector":"Technology","reportDate":"2026-05-05T20:00:00.000Z","expectedEps":1.27064,"previousEps":2.6},{"ticker":"ABNB","name":"Airbnb, Inc.","sector":"Consumer Cyclical","reportDate":"2026-04-30T20:00:00.000Z","expectedEps":0.30593,"previousEps":4.03},{"ticker":"AKAM","name":"Akamai Technologies, Inc.","sector":"Technology","reportDate":"2026-05-07T20:00:00.000Z","expectedEps":1.60335,"previousEps":3.07},{"ticker":"ALGN","name":"Align Technology, Inc.","sector":"Healthcare","reportDate":"2026-04-29T20:00:00.000Z","expectedEps":2.26282,"previousEps":5.65},{"ticker":"LNT","name":"Alliant Energy Corporation","sector":"Utilities","reportDate":"2026-05-07T20:00:00.000Z","expectedEps":0.84664,"previousEps":3.14},{"ticker":"GOOGL","name":"Alphabet Inc.","sector":"Communication Services","reportDate":"2026-04-23T20:00:00.000Z","expectedEps":2.60377,"previousEps":10.8},{"ticker":"GOOG","name":"Alphabet Inc.","sector":"Communication Services","reportDate":"2026-04-23T20:00:00.000Z","expectedEps":2.61638,"previousEps":10.79},{"ticker":"AMZN","name":"Amazon.com, Inc.","sector":"Consumer Cyclical","reportDate":"2026-04-30T20:00:00.000Z","expectedEps":1.64494,"previousEps":7.17},{"ticker":"AEP","name":"American Electric Power Company","sector":"Utilities","reportDate":"2026-05-06T12:30:00.000Z","expectedEps":1.57252,"previousEps":6.65},{"ticker":"AMGN","name":"Amgen Inc.","sector":"Healthcare","reportDate":"2026-04-30T20:00:00.000Z","expectedEps":4.80376,"previousEps":14.24},{"ticker":"ADI","name":"Analog Devices, Inc.","sector":"Technology","reportDate":"2026-05-21T12:30:00.000Z","expectedEps":2.89937,"previousEps":5.46},{"ticker":"APA","name":"APA Corporation","sector":"Energy","reportDate":"2026-05-06T20:00:00.000Z","expectedEps":0.57452,"previousEps":3.99},{"ticker":"AAPL","name":"Apple Inc.","sector":"Technology","reportDate":"2026-04-30T20:00:00.000Z","expectedEps":1.9542,"previousEps":7.9},{"ticker":"AMAT","name":"Applied Materials, Inc.","sector":"Technology","reportDate":"2026-05-14T20:00:00.000Z","expectedEps":2.67792,"previousEps":9.76},{"ticker":"APP","name":"Applovin Corporation","sector":"Communication Services","reportDate":"2026-05-06T20:00:00.000Z","expectedEps":3.44782,"previousEps":10.06},{"ticker":"ACGL","name":"Arch Capital Group Ltd.","sector":"Financial Services","reportDate":"2026-04-29T20:00:00.000Z","expectedEps":2.4655,"previousEps":11.6},{"ticker":"ADSK","name":"Autodesk, Inc.","sector":"Technology","reportDate":"2026-05-21T20:00:00.000Z","expectedEps":2.84298,"previousEps":5.24},{"ticker":"ADP","name":"Automatic Data Processing, Inc.","sector":"Technology","reportDate":"2026-04-29T12:30:00.000Z","expectedEps":3.29737,"previousEps":10.42},{"ticker":"AXON","name":"Axon Enterprise, Inc.","sector":"Industrials","reportDate":"2026-05-06T20:00:00.000Z","expectedEps":1.59894,"previousEps":1.5},{"ticker":"BKR","name":"Baker Hughes Company","sector":"Energy","reportDate":"2026-04-21T20:00:00.000Z","expectedEps":0.53122,"previousEps":2.6},{"ticker":"TECH","name":"Bio-Techne Corp","sector":"Healthcare","reportDate":"2026-05-06T12:30:00.000Z","expectedEps":0.53523,"previousEps":0.53},{"ticker":"BIIB","name":"Biogen Inc.","sector":"Healthcare","reportDate":"2026-04-30T12:30:00.000Z","expectedEps":3.04288,"previousEps":8.78},{"ticker":"BKNG","name":"Booking Holdings Inc. Common St","sector":"Consumer Cyclical","reportDate":"2026-04-28T20:00:00.000Z","expectedEps":27.47135,"previousEps":165.55},{"ticker":"AVGO","name":"Broadcom Inc.","sector":"Technology","reportDate":"2026-06-03T20:00:00.000Z","expectedEps":2.38799,"previousEps":5.12},{"ticker":"CHRW","name":"C.H. Robinson Worldwide, Inc.","sector":"Industrials","reportDate":"2026-04-29T20:00:00.000Z","expectedEps":1.26278,"previousEps":4.83},{"ticker":"CDNS","name":"Cadence Design Systems, Inc.","sector":"Technology","reportDate":"2026-04-27T20:00:00.000Z","expectedEps":1.872,"previousEps":4.06},{"ticker":"CDW","name":"CDW Corporation","sector":"Technology","reportDate":"2026-05-06T12:30:00.000Z","expectedEps":2.26359,"previousEps":8.09},{"ticker":"CHTR","name":"Charter Communications, Inc.","sector":"Communication Services","reportDate":"2026-04-24T12:30:00.000Z","expectedEps":10.26713,"previousEps":36.21},{"ticker":"CINF","name":"Cincinnati Financial Corporatio","sector":"Financial Services","reportDate":"2026-04-27T20:00:00.000Z","expectedEps":1.99514,"previousEps":15.17},{"ticker":"CTAS","name":"Cintas Corporation","sector":"Industrials","reportDate":"2026-03-25T12:30:00.000Z","expectedEps":1.23212,"previousEps":4.62},{"ticker":"CSCO","name":"Cisco Systems, Inc.","sector":"Technology","reportDate":"2026-05-13T20:00:00.000Z","expectedEps":1.03488,"previousEps":2.78},{"ticker":"CME","name":"CME Group Inc.","sector":"Financial Services","reportDate":"2026-04-22T12:30:00.000Z","expectedEps":3.0599,"previousEps":11.16},{"ticker":"CTSH","name":"Cognizant Technology Solutions ","sector":"Technology","reportDate":"2026-04-29T12:30:00.000Z","expectedEps":1.3351,"previousEps":4.56},{"ticker":"COIN","name":"Coinbase Global, Inc. - 3","sector":"Financial Services","reportDate":"2026-05-07T20:00:00.000Z","expectedEps":0.4983,"previousEps":4.45},{"ticker":"CMCSA","name":"Comcast Corporation","sector":"Communication Services","reportDate":"2026-04-23T12:30:00.000Z","expectedEps":0.84288,"previousEps":5.39},{"ticker":"CEG","name":"Constellation Energy Corporatio","sector":"Utilities","reportDate":"2026-05-11T12:30:00.000Z","expectedEps":2.25862,"previousEps":7.4},{"ticker":"COO","name":"The Cooper Companies, Inc.","sector":"Healthcare","reportDate":"2026-05-28T20:00:00.000Z","expectedEps":1.09868,"previousEps":2.01},{"ticker":"CPRT","name":"Copart, Inc.","sector":"Industrials","reportDate":"2026-05-21T20:00:00.000Z","expectedEps":0.40852,"previousEps":1.59},{"ticker":"CSGP","name":"CoStar Group, Inc.","sector":"Real Estate","reportDate":"2026-04-28T20:00:00.000Z","expectedEps":0.18911,"previousEps":0.02},{"ticker":"COST","name":"Costco Wholesale Corporation","sector":"Consumer Defensive","reportDate":"2026-05-28T20:00:00.000Z","expectedEps":4.89417,"previousEps":19.25},{"ticker":"CRWD","name":"CrowdStrike Holdings, Inc.","sector":"Technology","reportDate":"2026-06-09T20:00:00.000Z","expectedEps":1.06805,"previousEps":-0.66},{"ticker":"CSX","name":"CSX Corporation","sector":"Industrials","reportDate":"2026-04-15T20:00:00.000Z","expectedEps":0.39845,"previousEps":1.54},{"ticker":"DDOG","name":"Datadog, Inc.","sector":"Technology","reportDate":"2026-05-05T12:30:00.000Z","expectedEps":0.5065,"previousEps":0.31},{"ticker":"DXCM","name":"DexCom, Inc.","sector":"Healthcare","reportDate":"2026-04-30T20:00:00.000Z","expectedEps":0.47381,"previousEps":2.09},{"ticker":"FANG","name":"Diamondback Energy, Inc.","sector":"Energy","reportDate":"2026-05-04T20:00:00.000Z","expectedEps":2.51461,"previousEps":5.72},{"ticker":"DLTR","name":"Dollar Tree, Inc.","sector":"Consumer Defensive","reportDate":"2026-03-16T12:30:00.000Z","expectedEps":2.53148,"previousEps":5.28},{"ticker":"DASH","name":"DoorDash, Inc.","sector":"Consumer Cyclical","reportDate":"2026-05-11T20:00:00.000Z","expectedEps":0.36249,"previousEps":2.14},{"ticker":"EBAY","name":"eBay Inc.","sector":"Consumer Cyclical","reportDate":"2026-04-29T20:00:00.000Z","expectedEps":1.57484,"previousEps":4.26},{"ticker":"EA","name":"Electronic Arts Inc.","sector":"Communication Services","reportDate":"2026-05-06T20:00:00.000Z","expectedEps":1.27467,"previousEps":2.68},{"ticker":"EQIX","name":"Equinix, Inc.","sector":"Real Estate","reportDate":"2026-04-29T20:00:00.000Z","expectedEps":4.3325,"previousEps":13.73},{"ticker":"ERIE","name":"Erie Indemnity Company","sector":"Financial Services","reportDate":"2026-04-23T20:00:00.000Z","expectedEps":3.06,"previousEps":10.68},{"ticker":"EXC","name":"Exelon Corporation","sector":"Utilities","reportDate":"2026-04-30T12:30:00.000Z","expectedEps":0.87922,"previousEps":2.73},{"ticker":"EXE","name":"Expand Energy Corporation","sector":"Energy","reportDate":"2026-04-28T20:00:00.000Z","expectedEps":3.3573,"previousEps":7.57},{"ticker":"EXPE","name":"Expedia Group, Inc.","sector":"Consumer Cyclical","reportDate":"2026-05-07T20:00:00.000Z","expectedEps":1.36749,"previousEps":9.81},{"ticker":"EXPD","name":"Expeditors International of Was","sector":"Industrials","reportDate":"2026-05-05T12:30:00.000Z","expectedEps":1.33633,"previousEps":5.96},{"ticker":"FFIV","name":"F5, Inc.","sector":"Technology","reportDate":"2026-04-27T20:00:00.000Z","expectedEps":3.44108,"previousEps":12.07},{"ticker":"FAST","name":"Fastenal Company","sector":"Industrials","reportDate":"2026-04-13T12:30:00.000Z","expectedEps":0.29827,"previousEps":1.09},{"ticker":"FITB","name":"Fifth Third Bancorp","sector":"Financial Services","reportDate":"2026-04-17T12:30:00.000Z","expectedEps":0.34585,"previousEps":3.53},{"ticker":"FSLR","name":"First Solar, Inc.","sector":"Technology","reportDate":"2026-04-28T20:00:00.000Z","expectedEps":2.84384,"previousEps":14.22},{"ticker":"FISV","name":"Fiserv, Inc.","sector":"Unknown","reportDate":"2026-04-23T12:30:00.000Z","expectedEps":1.59421,"previousEps":null},{"ticker":"FTNT","name":"Fortinet, Inc.","sector":"Technology","reportDate":"2026-05-07T20:00:00.000Z","expectedEps":0.61872,"previousEps":2.42},{"ticker":"FOXA","name":"Fox Corporation","sector":"Communication Services","reportDate":"2026-05-11T12:30:00.000Z","expectedEps":0.97921,"previousEps":4.17},{"ticker":"FOX","name":"Fox Corporation","sector":"Communication Services","reportDate":"2026-05-11T12:30:00.000Z","expectedEps":null,"previousEps":4.17},{"ticker":"GEHC","name":"GE HealthCare Technologies Inc.","sector":"Healthcare","reportDate":"2026-04-29T12:30:00.000Z","expectedEps":1.04831,"previousEps":4.55},{"ticker":"GEN","name":"Gen Digital Inc.","sector":"Technology","reportDate":"2026-05-07T20:00:00.000Z","expectedEps":0.6491,"previousEps":0.97},{"ticker":"GILD","name":"Gilead Sciences, Inc.","sector":"Healthcare","reportDate":"2026-04-23T20:00:00.000Z","expectedEps":1.90886,"previousEps":6.77},{"ticker":"HAS","name":"Hasbro, Inc.","sector":"Consumer Cyclical","reportDate":"2026-04-23T12:30:00.000Z","expectedEps":0.99787,"previousEps":-2.3},{"ticker":"HSIC","name":"Henry Schein, Inc.","sector":"Healthcare","reportDate":"2026-05-04T12:30:00.000Z","expectedEps":1.21024,"previousEps":3.27},{"ticker":"HOLX","name":"Hologic, Inc.","sector":"Healthcare","reportDate":"2026-04-30T20:00:00.000Z","expectedEps":1.05444,"previousEps":2.41},{"ticker":"HON","name":"Honeywell International Inc.","sector":"Industrials","reportDate":"2026-04-28T12:30:00.000Z","expectedEps":2.32484,"previousEps":6.94},{"ticker":"HST","name":"Host Hotels & Resorts, Inc.","sector":"Real Estate","reportDate":"2026-04-29T20:00:00.000Z","expectedEps":0.33,"previousEps":1.1},{"ticker":"HBAN","name":"Huntington Bancshares Incorpora","sector":"Financial Services","reportDate":"2026-04-23T12:30:00.000Z","expectedEps":0.19114,"previousEps":1.39},{"ticker":"IDXX","name":"IDEXX Laboratories, Inc.","sector":"Healthcare","reportDate":"2026-04-30T12:30:00.000Z","expectedEps":3.43229,"previousEps":13.09},{"ticker":"INCY","name":"Incyte Corporation","sector":"Healthcare","reportDate":"2026-04-28T12:30:00.000Z","expectedEps":1.40771,"previousEps":6.41},{"ticker":"PODD","name":"Insulet Corporation","sector":"Healthcare","reportDate":"2026-05-07T12:30:00.000Z","expectedEps":1.20146,"previousEps":3.49},{"ticker":"INTC","name":"Intel Corporation","sector":"Technology","reportDate":"2026-04-23T20:00:00.000Z","expectedEps":0.002,"previousEps":-0.06},{"ticker":"IBKR","name":"Interactive Brokers Group, Inc.","sector":"Financial Services","reportDate":"2026-04-14T20:00:00.000Z","expectedEps":0.59342,"previousEps":2.22},{"ticker":"INTU","name":"Intuit Inc.","sector":"Technology","reportDate":"2026-05-21T20:00:00.000Z","expectedEps":12.5518,"previousEps":15.37},{"ticker":"ISRG","name":"Intuitive Surgical, Inc.","sector":"Healthcare","reportDate":"2026-04-21T20:00:00.000Z","expectedEps":2.1238,"previousEps":7.89},{"ticker":"JBHT","name":"J.B. Hunt Transport Services, I","sector":"Industrials","reportDate":"2026-04-14T20:00:00.000Z","expectedEps":1.4493,"previousEps":6.12},{"ticker":"JKHY","name":"Jack Henry & Associates, Inc.","sector":"Technology","reportDate":"2026-05-05T20:00:00.000Z","expectedEps":1.41875,"previousEps":6.96},{"ticker":"KDP","name":"Keurig Dr Pepper Inc.","sector":"Consumer Defensive","reportDate":"2026-04-23T12:30:00.000Z","expectedEps":0.36795,"previousEps":1.53},{"ticker":"KMB","name":"Kimberly-Clark Corporation","sector":"Consumer Defensive","reportDate":"2026-04-21T12:30:00.000Z","expectedEps":1.93069,"previousEps":4.86},{"ticker":"KLAC","name":"KLA Corporation","sector":"Technology","reportDate":"2026-04-29T20:00:00.000Z","expectedEps":9.16123,"previousEps":34.28},{"ticker":"KHC","name":"The Kraft Heinz Company","sector":"Consumer Defensive","reportDate":"2026-04-28T12:30:00.000Z","expectedEps":0.49995,"previousEps":-4.93},{"ticker":"LRCX","name":"Lam Research Corporation","sector":"Technology","reportDate":"2026-04-22T20:00:00.000Z","expectedEps":1.35091,"previousEps":4.88},{"ticker":"LIN","name":"Linde plc","sector":"Basic Materials","reportDate":"2026-04-30T12:30:00.000Z","expectedEps":4.27051,"previousEps":14.59},{"ticker":"LULU","name":"lululemon athletica inc.","sector":"Consumer Cyclical","reportDate":"2026-03-17T20:00:00.000Z","expectedEps":4.78012,"previousEps":14.37},{"ticker":"MAR","name":"Marriott International","sector":"Consumer Cyclical","reportDate":"2026-05-05T12:30:00.000Z","expectedEps":2.53412,"previousEps":9.5},{"ticker":"MTCH","name":"Match Group, Inc.","sector":"Communication Services","reportDate":"2026-05-05T20:00:00.000Z","expectedEps":0.85632,"previousEps":2.38},{"ticker":"META","name":"Meta Platforms, Inc.","sector":"Communication Services","reportDate":"2026-04-29T20:00:00.000Z","expectedEps":6.59875,"previousEps":23.51},{"ticker":"MCHP","name":"Microchip Technology Incorporat","sector":"Technology","reportDate":"2026-05-07T20:00:00.000Z","expectedEps":0.50405,"previousEps":-0.3},{"ticker":"MU","name":"Micron Technology, Inc.","sector":"Technology","reportDate":"2026-03-18T20:00:00.000Z","expectedEps":8.6013,"previousEps":10.51},{"ticker":"MSFT","name":"Microsoft Corporation","sector":"Technology","reportDate":"2026-04-29T20:00:00.000Z","expectedEps":4.08551,"previousEps":15.99},{"ticker":"MRNA","name":"Moderna, Inc.","sector":"Healthcare","reportDate":"2026-04-30T12:30:00.000Z","expectedEps":-2.09545,"previousEps":-7.26},{"ticker":"MDLZ","name":"Mondelez International, Inc.","sector":"Consumer Defensive","reportDate":"2026-04-28T20:00:00.000Z","expectedEps":0.61297,"previousEps":1.89},{"ticker":"MPWR","name":"Monolithic Power Systems, Inc.","sector":"Technology","reportDate":"2026-04-30T20:00:00.000Z","expectedEps":4.89264,"previousEps":12.85},{"ticker":"MNST","name":"Monster Beverage Corporation","sector":"Consumer Defensive","reportDate":"2026-05-07T20:00:00.000Z","expectedEps":0.52844,"previousEps":1.94},{"ticker":"NDAQ","name":"Nasdaq, Inc.","sector":"Financial Services","reportDate":"2026-04-23T12:30:00.000Z","expectedEps":0.92547,"previousEps":3.09},{"ticker":"NTAP","name":"NetApp, Inc.","sector":"Technology","reportDate":"2026-05-28T20:00:00.000Z","expectedEps":2.26141,"previousEps":5.96},{"ticker":"NFLX","name":"Netflix, Inc.","sector":"Communication Services","reportDate":"2026-04-16T20:00:00.000Z","expectedEps":0.76058,"previousEps":2.53},{"ticker":"NWSA","name":"News Corporation","sector":"Communication Services","reportDate":"2026-05-07T20:00:00.000Z","expectedEps":0.19866,"previousEps":0.77},{"ticker":"NWS","name":"News Corporation","sector":"Communication Services","reportDate":"2026-05-07T20:00:00.000Z","expectedEps":0.19866,"previousEps":0.77},{"ticker":"NDSN","name":"Nordson Corporation","sector":"Industrials","reportDate":"2026-05-27T20:00:00.000Z","expectedEps":2.80966,"previousEps":9.25},{"ticker":"NTRS","name":"Northern Trust Corporation","sector":"Financial Services","reportDate":"2026-04-21T12:30:00.000Z","expectedEps":2.24686,"previousEps":8.74},{"ticker":"NVDA","name":"NVIDIA Corporation","sector":"Technology","reportDate":"2026-05-20T20:00:00.000Z","expectedEps":1.77408,"previousEps":4.89},{"ticker":"NXPI","name":"NXP Semiconductors N.V.","sector":"Technology","reportDate":"2026-04-27T20:00:00.000Z","expectedEps":2.98234,"previousEps":7.95},{"ticker":"ORLY","name":"O\'Reilly Automotive, Inc.","sector":"Consumer Cyclical","reportDate":"2026-04-22T20:00:00.000Z","expectedEps":0.69914,"previousEps":2.97},{"ticker":"ODFL","name":"Old Dominion Freight Line, Inc.","sector":"Industrials","reportDate":"2026-04-22T12:30:00.000Z","expectedEps":1.03304,"previousEps":4.83},{"ticker":"ON","name":"ON Semiconductor Corporation","sector":"Technology","reportDate":"2026-05-04T12:30:00.000Z","expectedEps":0.61403,"previousEps":0.29},{"ticker":"PCAR","name":"PACCAR Inc.","sector":"Industrials","reportDate":"2026-04-28T12:30:00.000Z","expectedEps":1.17006,"previousEps":4.51},{"ticker":"PLTR","name":"Palantir Technologies Inc.","sector":"Technology","reportDate":"2026-05-04T20:00:00.000Z","expectedEps":0.2793,"previousEps":0.64},{"ticker":"PANW","name":"Palo Alto Networks, Inc.","sector":"Technology","reportDate":"2026-05-20T20:00:00.000Z","expectedEps":0.79731,"previousEps":1.8},{"ticker":"PSKY","name":"Paramount Skydance Corporation","sector":"Communication Services","reportDate":"2026-05-07T20:00:00.000Z","expectedEps":0.1561,"previousEps":0.03},{"ticker":"PAYX","name":"Paychex, Inc.","sector":"Technology","reportDate":"2026-03-25T12:30:00.000Z","expectedEps":1.66977,"previousEps":4.42},{"ticker":"PYPL","name":"PayPal Holdings, Inc.","sector":"Financial Services","reportDate":"2026-05-05T12:30:00.000Z","expectedEps":1.27755,"previousEps":5.41},{"ticker":"PEP","name":"Pepsico, Inc.","sector":"Consumer Defensive","reportDate":"2026-04-23T12:30:00.000Z","expectedEps":1.54301,"previousEps":6.01},{"ticker":"POOL","name":"Pool Corporation","sector":"Industrials","reportDate":"2026-04-23T12:30:00.000Z","expectedEps":1.34857,"previousEps":10.86},{"ticker":"PFG","name":"Principal Financial Group Inc","sector":"Financial Services","reportDate":"2026-04-23T20:00:00.000Z","expectedEps":2.08579,"previousEps":5.25},{"ticker":"PTC","name":"PTC Inc.","sector":"Technology","reportDate":"2026-04-29T20:00:00.000Z","expectedEps":2.18892,"previousEps":6.79},{"ticker":"QCOM","name":"QUALCOMM Incorporated","sector":"Technology","reportDate":"2026-04-29T20:00:00.000Z","expectedEps":2.5766,"previousEps":4.96},{"ticker":"REG","name":"Regency Centers Corporation","sector":"Real Estate","reportDate":"2026-04-29T20:00:00.000Z","expectedEps":0.62171,"previousEps":2.82},{"ticker":"REGN","name":"Regeneron Pharmaceuticals, Inc.","sector":"Healthcare","reportDate":"2026-04-29T12:30:00.000Z","expectedEps":9.10972,"previousEps":41.44},{"ticker":"HOOD","name":"Robinhood Markets, Inc.","sector":"Financial Services","reportDate":"2026-04-29T20:00:00.000Z","expectedEps":0.51284,"previousEps":2.05},{"ticker":"ROP","name":"Roper Technologies, Inc.","sector":"Technology","reportDate":"2026-04-28T12:30:00.000Z","expectedEps":4.981,"previousEps":14.2},{"ticker":"ROST","name":"Ross Stores, Inc.","sector":"Consumer Cyclical","reportDate":"2026-05-21T20:00:00.000Z","expectedEps":1.67836,"previousEps":6.62},{"ticker":"SNDK","name":"Sandisk Corporation","sector":"Technology","reportDate":"2026-05-06T20:00:00.000Z","expectedEps":13.93056,"previousEps":-7.47},{"ticker":"SBAC","name":"SBA Communications Corporation","sector":"Real Estate","reportDate":"2026-04-27T20:00:00.000Z","expectedEps":1.81131,"previousEps":9.81},{"ticker":"STX","name":"Seagate Technology Holdings PLC","sector":"Technology","reportDate":"2026-05-05T20:00:00.000Z","expectedEps":3.47092,"previousEps":8.84},{"ticker":"SWKS","name":"Skyworks Solutions, Inc.","sector":"Technology","reportDate":"2026-05-12T20:00:00.000Z","expectedEps":1.04351,"previousEps":2.61},{"ticker":"SBUX","name":"Starbucks Corporation","sector":"Consumer Cyclical","reportDate":"2026-04-28T12:30:00.000Z","expectedEps":0.40586,"previousEps":1.2},{"ticker":"STLD","name":"Steel Dynamics, Inc.","sector":"Basic Materials","reportDate":"2026-04-22T12:30:00.000Z","expectedEps":3.23912,"previousEps":8},{"ticker":"SMCI","name":"Super Micro Computer, Inc.","sector":"Technology","reportDate":"2026-05-05T20:00:00.000Z","expectedEps":0.62264,"previousEps":1.37},{"ticker":"SNPS","name":"Synopsys, Inc.","sector":"Technology","reportDate":"2026-05-27T20:00:00.000Z","expectedEps":3.15016,"previousEps":6.49},{"ticker":"TMUS","name":"T-Mobile US, Inc.","sector":"Communication Services","reportDate":"2026-04-23T12:30:00.000Z","expectedEps":2.0818,"previousEps":9.71},{"ticker":"TROW","name":"T. Rowe Price Group, Inc.","sector":"Financial Services","reportDate":"2026-05-01T12:30:00.000Z","expectedEps":2.42718,"previousEps":9.24},{"ticker":"TTWO","name":"Take-Two Interactive Software, ","sector":"Communication Services","reportDate":"2026-05-14T20:00:00.000Z","expectedEps":-0.48489,"previousEps":-22.57},{"ticker":"TER","name":"Teradyne, Inc.","sector":"Technology","reportDate":"2026-04-29T20:00:00.000Z","expectedEps":2.10644,"previousEps":3.47},{"ticker":"TSLA","name":"Tesla, Inc.","sector":"Consumer Cyclical","reportDate":"2026-04-21T20:00:00.000Z","expectedEps":0.40362,"previousEps":1.06},{"ticker":"TXN","name":"Texas Instruments Incorporated","sector":"Technology","reportDate":"2026-04-28T20:00:00.000Z","expectedEps":1.3645,"previousEps":5.44},{"ticker":"TTD","name":"The Trade Desk, Inc.","sector":"Communication Services","reportDate":"2026-05-07T20:00:00.000Z","expectedEps":0.31958,"previousEps":0.9},{"ticker":"TSCO","name":"Tractor Supply Company","sector":"Consumer Cyclical","reportDate":"2026-04-23T12:30:00.000Z","expectedEps":0.34598,"previousEps":2.06},{"ticker":"TRMB","name":"Trimble Inc.","sector":"Technology","reportDate":"2026-05-06T12:30:00.000Z","expectedEps":0.71964,"previousEps":1.76},{"ticker":"ULTA","name":"Ulta Beauty, Inc.","sector":"Consumer Cyclical","reportDate":"2026-03-12T20:00:00.000Z","expectedEps":8.02659,"previousEps":26.04},{"ticker":"UAL","name":"United Airlines Holdings, Inc.","sector":"Industrials","reportDate":"2026-04-14T20:00:00.000Z","expectedEps":1.2496,"previousEps":10.2},{"ticker":"VRSN","name":"VeriSign, Inc.","sector":"Technology","reportDate":"2026-04-23T20:00:00.000Z","expectedEps":2.23981,"previousEps":8.82},{"ticker":"VRSK","name":"Verisk Analytics, Inc.","sector":"Industrials","reportDate":"2026-05-06T12:30:00.000Z","expectedEps":1.73512,"previousEps":6.48},{"ticker":"VRTX","name":"Vertex Pharmaceuticals Incorpor","sector":"Healthcare","reportDate":"2026-05-04T20:00:00.000Z","expectedEps":4.41341,"previousEps":15.31},{"ticker":"VTRS","name":"Viatris Inc.","sector":"Healthcare","reportDate":"2026-05-07T12:30:00.000Z","expectedEps":0.5074,"previousEps":-3},{"ticker":"WMT","name":"Walmart Inc.","sector":"Consumer Defensive","reportDate":"2026-05-21T12:30:00.000Z","expectedEps":0.66154,"previousEps":2.73},{"ticker":"WBD","name":"Warner Bros. Discovery, Inc. - ","sector":"Communication Services","reportDate":"2026-05-07T12:30:00.000Z","expectedEps":-0.0738,"previousEps":0.29},{"ticker":"WDC","name":"Western Digital Corporation","sector":"Technology","reportDate":"2026-05-06T20:00:00.000Z","expectedEps":2.35225,"previousEps":10.59},{"ticker":"WTW","name":"Willis Towers Watson Public Lim","sector":"Financial Services","reportDate":"2026-04-23T12:30:00.000Z","expectedEps":3.72252,"previousEps":16.26},{"ticker":"WDAY","name":"Workday, Inc.","sector":"Technology","reportDate":"2026-05-21T20:00:00.000Z","expectedEps":2.51426,"previousEps":2.59},{"ticker":"WYNN","name":"Wynn Resorts, Limited","sector":"Consumer Cyclical","reportDate":"2026-05-06T20:00:00.000Z","expectedEps":1.268,"previousEps":3.14},{"ticker":"XEL","name":"Xcel Energy Inc.","sector":"Utilities","reportDate":"2026-04-23T12:30:00.000Z","expectedEps":0.94505,"previousEps":3.42},{"ticker":"ZBRA","name":"Zebra Technologies Corporation","sector":"Technology","reportDate":"2026-05-12T12:30:00.000Z","expectedEps":4.25112,"previousEps":8.18}]');
+        if (!window.__INITIAL_DATA__) { window.__INITIAL_DATA__ = earningsData; }
+
+        // State
+        let currentData = [...earningsData];
+        let sortCol = 'date';
+        let sortAsc = true;
+
+        // Elements
+        const tableBody = document.getElementById('tableBody');
+        const searchInput = document.getElementById('searchInput');
+        const sectorFilter = document.getElementById('sectorFilter');
+        const dateFilter = document.getElementById('dateFilter');
+        const headers = document.querySelectorAll('th[data-sort]');
+
+        // Formatters
+        const formatDate = (dateString) => {
+            if (!dateString) return 'Unconfirmed';
+            const d = new Date(dateString);
+            return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+        };
+
+        const formatTime = (dateString) => {
+            if (!dateString) return '-';
+            const d = new Date(dateString);
+            const hours = d.getUTCHours();
+            // Simple heuristic: if time is around 12:00-14:00 UTC it's morning (BMO), if 20:00-22:00 UTC it's evening (AMC)
+            if (hours >= 10 && hours <= 16) return 'BMO';
+            if (hours >= 20 || hours <= 2) return 'AMC';
+            return 'TBD';
+        };
+
+        const formatNumber = (num) => {
+            if (num === null || num === undefined) return 'null';
+            return num.toFixed(2);
+        };
+
+        // Render Table
+        function renderTable() {
+            tableBody.innerHTML = '';
+
+            if (currentData.length === 0) {
+                tableBody.innerHTML = '<tr><td colspan="7" style="text-align: center; color: #5a6a80;">No earnings reports match your filters.</td></tr>';
+                return;
+            }
+
+            currentData.forEach(item => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td><span class="ticker">${item.ticker}</span></td>
+                    <td>${item.name}</td>
+                    <td><span class="sector-tag">${item.sector}</span></td>
+                    <td class="mono">${formatDate(item.reportDate)}</td>
+                    <td class="mono">${formatTime(item.reportDate)}</td>
+                    <td class="mono">${formatNumber(item.expectedEps)}</td>
+                    <td class="mono">${formatNumber(item.previousEps)}</td>
+                `;
+                tableBody.appendChild(tr);
+            });
+        }
+
+        // Filtering
+        function applyFilters() {
+            const search = searchInput.value.toLowerCase();
+            const sector = sectorFilter.value;
+            const days = dateFilter.value;
+
+            const now = new Date();
+            let cutoffDate = null;
+            if (days !== 'all') {
+                cutoffDate = new Date(now.getTime() + parseInt(days) * 24 * 60 * 60 * 1000);
+            }
+
+            currentData = earningsData.filter(item => {
+                // Search
+                const matchSearch = item.ticker.toLowerCase().includes(search) || item.name.toLowerCase().includes(search);
+
+                // Sector
+                const matchSector = sector === 'all' || item.sector === sector;
+
+                // Date
+                let matchDate = true;
+                if (cutoffDate) {
+                    if (!item.reportDate) {
+                        matchDate = false;
+                    } else {
+                        const d = new Date(item.reportDate);
+                        matchDate = d >= now && d <= cutoffDate;
+                    }
+                }
+
+                return matchSearch && matchSector && matchDate;
+            });
+
+            doSort();
+            renderTable();
+            updateChart();
+        }
+
+        // Sorting
+        function doSort() {
+            currentData.sort((a, b) => {
+                let valA = a[sortCol];
+                let valB = b[sortCol];
+
+                if (sortCol === 'expected') { valA = a.expectedEps || -9999; valB = b.expectedEps || -9999; }
+                if (sortCol === 'previous') { valA = a.previousEps || -9999; valB = b.previousEps || -9999; }
+                if (sortCol === 'date') {
+                    valA = a.reportDate ? new Date(a.reportDate).getTime() : 9999999999999;
+                    valB = b.reportDate ? new Date(b.reportDate).getTime() : 9999999999999;
+                }
+                if (sortCol === 'time') {
+                    valA = formatTime(a.reportDate);
+                    valB = formatTime(b.reportDate);
+                }
+
+                if (valA < valB) return sortAsc ? -1 : 1;
+                if (valA > valB) return sortAsc ? 1 : -1;
+                return 0;
+            });
+        }
+
+        // Event Listeners
+        searchInput.addEventListener('input', applyFilters);
+        sectorFilter.addEventListener('change', applyFilters);
+        dateFilter.addEventListener('change', applyFilters);
+
+        headers.forEach(th => {
+            th.addEventListener('click', () => {
+                const col = th.dataset.sort;
+                if (sortCol === col) {
+                    sortAsc = !sortAsc;
+                } else {
+                    sortCol = col;
+                    sortAsc = true;
+                }
+
+                // Update header text arrows
+                headers.forEach(h => h.textContent = h.textContent.replace(' ↑', ' ↕').replace(' ↓', ' ↕'));
+                th.textContent = th.textContent.replace(' ↕', sortAsc ? ' ↑' : ' ↓');
+
+                doSort();
+                renderTable();
+            });
+        });
+
+        // Chart
+        let myChart = null;
+        function updateChart() {
+            const ctx = document.getElementById('sectorChart').getContext('2d');
+
+            // Count reports by sector in current filtered data
+            const counts = {};
+            currentData.forEach(item => {
+                if(item.sector && item.sector !== 'Unknown') {
+                    counts[item.sector] = (counts[item.sector] || 0) + 1;
+                }
+            });
+
+            const labels = Object.keys(counts);
+            const dataVals = Object.values(counts);
+
+            if (myChart) {
+                myChart.destroy();
+            }
+
+            Chart.defaults.color = '#a0b0c0';
+            Chart.defaults.font.family = 'Inter';
+
+            myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Upcoming Reports',
+                        data: dataVals,
+                        backgroundColor: '#4a8fe7',
+                        borderRadius: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        title: {
+                            display: true,
+                            text: 'Upcoming Reports by Sector (Filtered)',
+                            color: '#fff',
+                            font: { size: 16, weight: 'bold' }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            grid: { color: '#152040' }
+                        },
+                        x: {
+                            grid: { display: false }
+                        }
+                    }
+                }
+            });
+        }
+
+        // Init
+        doSort();
+        renderTable();
+        updateChart();
+
+    </script>
+</body>
+</html>
