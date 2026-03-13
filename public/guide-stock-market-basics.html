@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stock Market Basics | Westmount Research</title>
+  <meta name="description" content="A complete beginner's guide to the stock market. Learn how stocks work, market caps, P/E ratios, and index funds to start your investing journey today.">
+  <link rel="canonical" href="https://westmountfundamentals.com/guide-stock-market-basics">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Stock Market Basics | Westmount Research">
+  <meta property="og:description" content="A complete beginner's guide to the stock market. Learn how stocks work, market caps, P/E ratios, and index funds to start your investing journey today.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://westmountfundamentals.com/guide-stock-market-basics">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Stock Market Basics | Westmount Research">
+  <meta name="twitter:description" content="A complete beginner's guide to the stock market. Learn how stocks work, market caps, P/E ratios, and index funds to start your investing journey today.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Schema -->
+  <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the stock market?","acceptedAnswer":{"@type":"Answer","text":"The stock market is a collection of exchanges where investors can buy and sell shares of publicly traded companies. It provides companies with access to capital and gives investors a portion of ownership in those companies."}},{"@type":"Question","name":"How does the stock market work for beginners?","acceptedAnswer":{"@type":"Answer","text":"For beginners, the stock market works by opening a brokerage account, funding it, and then buying shares of companies or index funds. When a company's value grows or it pays dividends, your investment can increase in value."}},{"@type":"Question","name":"What are stocks?","acceptedAnswer":{"@type":"Answer","text":"Stocks are a type of security that represents fractional ownership in a corporation. When you buy a stock, you are buying a small piece of that company, entitling you to a proportion of its assets and profits."}},{"@type":"Question","name":"What is a market order vs limit order?","acceptedAnswer":{"@type":"Answer","text":"A market order buys or sells a stock immediately at the best available current price. A limit order sets a specific price at which you are willing to buy or sell, meaning the trade will only execute if the stock reaches that price."}},{"@type":"Question","name":"What is an index fund?","acceptedAnswer":{"@type":"Answer","text":"An index fund is a type of mutual fund or exchange-traded fund (ETF) designed to track the performance of a specific market index, such as the S&P 500, providing broad market exposure and diversification."}}]}
+  </script>
+  <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Article","headline":"Guide: Stock Market Basics for Beginners","description":"A complete beginner's guide to the stock market. Learn how stocks work, market caps, P/E ratios, and index funds to start your investing journey today.","datePublished":"2026-03-13T04:04:13.300Z","publisher":{"@type":"Organization","name":"Westmount Research","logo":{"@type":"ImageObject","url":"https://westmountfundamentals.com/logo.png"}}}
+  </script>
+
+  <style>
+    :root {
+      --bg: #060a12;
+      --card-bg: #0a1020;
+      --border: #152040;
+      --accent: #4a8fe7;
+      --text-main: #c8d0de;
+      --text-muted: #5a6a80;
+      --text-light: #fff;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    /* Sticky Nav */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(6, 10, 18, 0.85);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav a { color: var(--text-light); text-decoration: none; font-weight: 600; font-size: 0.95rem; }
+    nav .brand { font-weight: 800; font-size: 1.1rem; color: var(--text-light); }
+    nav .brand span { color: var(--accent); }
+    .nav-links { display: flex; gap: 24px; }
+    .nav-links a:hover { color: var(--accent); }
+    @media (max-width: 600px) { .nav-links { display: none; } }
+
+    /* Layout */
+    .container { max-width: 900px; margin: 0 auto; padding: 40px 24px 80px; }
+
+    /* Typography */
+    h1 {
+      font-size: 3.5rem;
+      font-weight: 900;
+      letter-spacing: -1.5px;
+      line-height: 1.1;
+      margin-bottom: 24px;
+      background: linear-gradient(135deg, #fff 0%, #a0b0c0 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    h2 { font-size: 2rem; font-weight: 800; color: var(--text-light); margin: 48px 0 20px; letter-spacing: -0.5px; }
+    h3 { font-size: 1.4rem; font-weight: 700; color: var(--text-light); margin: 32px 0 16px; }
+    p { margin-bottom: 20px; font-size: 1.1rem; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    ul, ol { margin-bottom: 20px; padding-left: 24px; font-size: 1.1rem; }
+    li { margin-bottom: 10px; }
+
+    .intro { font-size: 1.25rem; color: var(--text-muted); margin-bottom: 40px; }
+
+    /* Stats Row */
+    .stats-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 40px; }
+    .stat-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      text-align: center;
+    }
+    .stat-value { font-size: 2rem; font-weight: 900; color: var(--accent); font-family: 'JetBrains Mono', monospace; line-height: 1.2; }
+    .stat-label { font-size: 0.85rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-top: 8px; }
+
+    /* Content Blocks */
+    .highlight-box {
+      background: rgba(74, 143, 231, 0.05);
+      border-left: 4px solid var(--accent);
+      padding: 24px;
+      border-radius: 0 12px 12px 0;
+      margin: 32px 0;
+    }
+    .highlight-box p:last-child { margin-bottom: 0; }
+
+    /* Table Controls */
+    .table-controls { display: flex; gap: 16px; margin-bottom: 16px; flex-wrap: wrap; }
+    .table-controls input, .table-controls select {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      color: var(--text-light);
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      outline: none;
+      font-family: 'Inter', sans-serif;
+    }
+    .table-controls input:focus, .table-controls select:focus {
+      border-color: var(--accent);
+    }
+    .table-controls input { flex: 1; min-width: 200px; }
+
+    /* Table */
+    .table-container { overflow-x: auto; margin-bottom: 32px; border: 1px solid var(--border); border-radius: 12px; background: var(--card-bg); }
+    table { width: 100%; border-collapse: collapse; text-align: left; }
+    th, td { padding: 16px; border-bottom: 1px solid var(--border); }
+    th { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); font-weight: 600; background: rgba(0,0,0,0.2); cursor: pointer; user-select: none; }
+    th:hover { color: var(--text-light); }
+    th.sort-asc::after { content: " ↑"; }
+    th.sort-desc::after { content: " ↓"; }
+    td { font-family: 'JetBrains Mono', monospace; font-size: 0.95rem; }
+    tr:last-child td { border-bottom: none; }
+    .ticker { font-weight: 700; color: var(--text-light); background: rgba(255,255,255,0.1); padding: 4px 8px; border-radius: 4px; }
+
+    /* Chart */
+    .chart-container { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin: 32px 0; height: 400px; }
+
+    /* FAQ Section */
+    .faq-item { border-bottom: 1px solid var(--border); padding: 24px 0; }
+    .faq-q { font-size: 1.2rem; font-weight: 700; color: var(--text-light); margin-bottom: 12px; }
+    .faq-a { font-size: 1.05rem; color: var(--text-main); }
+
+    /* Footer */
+    footer { text-align: center; padding: 40px 24px; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 0.9rem; margin-top: 60px; }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 2.5rem; }
+      .stats-row { grid-template-columns: 1fr; }
+    }
+  </style>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="brand">Westmount<span>Fundamentals</span></a>
+    <div class="nav-links">
+      <a href="/#studies">Studies</a>
+      <a href="/#tools">Tools</a>
+      <a href="/#guides">Guides</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h1>Guide: Stock Market Basics for Beginners</h1>
+    <p class="intro">The stock market can seem incredibly complex, filled with jargon and flashing red and green numbers. But at its core, it's just a place where buyers and sellers trade pieces of businesses. This guide breaks down the fundamentals.</p>
+
+    <div class="stats-row">
+      <div class="stat-card">
+        <div class="stat-value">~10%</div>
+        <div class="stat-label">Historical Avg Annual Return</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">S&P 500</div>
+        <div class="stat-label">The Main US Benchmark</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" id="spyPriceLoading">...</div>
+        <div class="stat-label">Current SPY ETF Price</div>
+      </div>
+    </div>
+
+    <h2>What Are Stocks?</h2>
+    <p>A stock represents partial ownership in a company. When a company wants to raise money to grow, it can borrow it (bonds/loans) or sell pieces of itself to the public (stocks). If you own 1 share of Apple out of its billions of shares, you own a tiny fraction of Apple's buildings, cash, and future profits.</p>
+
+    <div class="highlight-box">
+      <strong>Key Concept:</strong> You make money in stocks in two ways:
+      <br>1. <strong>Capital Appreciation:</strong> Buying a stock for $100 and selling it for $150.
+      <br>2. <strong>Dividends:</strong> The company paying you a portion of its profits in cash every quarter just for owning the stock.
+    </div>
+
+    <h2>Market Orders vs. Limit Orders</h2>
+    <p>When you log into your brokerage account (like Fidelity, Schwab, or Robinhood) to buy a stock, you'll see different order types:</p>
+    <ul>
+      <li><strong>Market Order:</strong> "Buy this stock right now at whatever the current best price is." It guarantees the trade happens, but not the exact price.</li>
+      <li><strong>Limit Order:</strong> "Buy this stock ONLY if the price drops to $150 or lower." It guarantees the price you pay, but the trade might not happen if the stock never reaches that price.</li>
+    </ul>
+
+    <h2>Important Metrics: Market Cap & P/E Ratio</h2>
+    <p>How do you know if a stock is "big" or "expensive"? You don't look at the share price alone. A $10 stock isn't necessarily cheaper than a $100 stock.</p>
+
+    <h3>Market Capitalization (Market Cap)</h3>
+    <p>This is the total value of the entire company. It's calculated by multiplying the stock price by the total number of shares that exist.</p>
+
+    <h3>Price-to-Earnings (P/E) Ratio</h3>
+    <p>This tells you how much you are paying for $1 of the company's profit. A P/E of 20 means investors are willing to pay $20 for every $1 the company earns in a year. A lower P/E <em>might</em> mean the stock is cheaper, or it might mean investors expect profits to shrink.</p>
+
+    <h2>Real-Time Examples</h2>
+    <p>Here is live data for some of the most well-known stocks and ETFs to give you context on market caps and P/E ratios.</p>
+
+    <div class="table-controls">
+      <input type="text" id="searchInput" placeholder="Search by Symbol or Name...">
+      <select id="filterSelect">
+        <option value="all">All Stocks</option>
+        <option value="has_pe">Has P/E Ratio</option>
+        <option value="has_div">Pays Dividend</option>
+      </select>
+    </div>
+
+    <div class="table-container">
+      <table id="dataTable">
+        <thead>
+          <tr>
+            <th data-sort="symbol">Symbol</th>
+            <th data-sort="name">Name</th>
+            <th data-sort="price">Price</th>
+            <th data-sort="marketCap">Market Cap</th>
+            <th data-sort="peRatio">P/E Ratio</th>
+            <th data-sort="dividendYield">Div Yield</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody">
+          <!-- Populated by JS -->
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Diversification and Index Funds</h2>
+    <p>Picking individual winning stocks is incredibly hard. Even professionals struggle to beat the market average consistently.</p>
+    <p>Instead of trying to find the needle in the haystack, you can just buy the entire haystack. This is where <strong>Index Funds</strong> and <strong>ETFs</strong> (Exchange Traded Funds) come in. An index fund like one tracking the S&P 500 buys a little bit of the 500 largest US companies. If one goes bankrupt, you barely notice because the other 499 prop up your portfolio.</p>
+
+    <div class="chart-container">
+      <canvas id="growthChart"></canvas>
+    </div>
+    <p style="text-align: center; font-size: 0.9rem; color: var(--text-muted); margin-top: -20px;"><em>Hypothetical growth of $10,000 at 10% annual return vs 2% savings account over 30 years.</em></p>
+
+    <h2>Common Beginner Mistakes</h2>
+    <ol>
+      <li><strong>Trying to time the market:</strong> Waiting for the "perfect drop" to buy usually results in missing out on years of gains. "Time in the market beats timing the market."</li>
+      <li><strong>Panic selling:</strong> The market drops 10% on average once a year. It's normal. Selling when you see red locks in your losses.</li>
+      <li><strong>Chasing hype:</strong> Buying a stock just because it's trending on social media usually means you're buying at the top right before the crash.</li>
+    </ol>
+
+    <h2>Methodology & Data Sources</h2>
+    <p>Financial metrics displayed in the examples table are sourced directly via the Yahoo Finance API (yahoo-finance2). Stock data represents a point-in-time snapshot. The hypothetical chart assumes a fixed 10% annual return for the stock market (roughly the historical average of the S&P 500 before inflation) and 2% for a savings account, compounded annually.</p>
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <div class="faq-q">What is the stock market?</div>
+      <div class="faq-a">The stock market is a collection of exchanges where investors can buy and sell shares of publicly traded companies. It provides companies with access to capital and gives investors a portion of ownership in those companies.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How does the stock market work for beginners?</div>
+      <div class="faq-a">For beginners, the stock market works by opening a brokerage account, funding it, and then buying shares of companies or index funds. When a company's value grows or it pays dividends, your investment can increase in value.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What are stocks?</div>
+      <div class="faq-a">Stocks are a type of security that represents fractional ownership in a corporation. When you buy a stock, you are buying a small piece of that company, entitling you to a proportion of its assets and profits.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What is a market order vs limit order?</div>
+      <div class="faq-a">A market order buys or sells a stock immediately at the best available current price. A limit order sets a specific price at which you are willing to buy or sell, meaning the trade will only execute if the stock reaches that price.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What is an index fund?</div>
+      <div class="faq-a">An index fund is a type of mutual fund or exchange-traded fund (ETF) designed to track the performance of a specific market index, such as the S&P 500, providing broad market exposure and diversification.</div>
+    </div>
+
+    <footer>
+      <p>© 2026 Westmount Research · A GAB Ventures property. Not investment advice. All information for educational purposes only.</p>
+    </footer>
+  </div>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VYF72NSC1Q"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VYF72NSC1Q');
+  </script>
+
+  <script>
+    // Inject real data from build step
+    window.__INITIAL_DATA__ = [{"symbol":"SPY","name":"State Street SPDR S&P 500 ETF T","price":666.06,"marketCap":611297918976,"peRatio":26.421228,"dividendYield":1.06,"fiftyTwoWeekHigh":697.84,"fiftyTwoWeekLow":481.8},{"symbol":"QQQ","name":"Invesco QQQ Trust, Series 1","price":597.26,"marketCap":234782916608,"peRatio":32.705517,"dividendYield":0.46,"fiftyTwoWeekHigh":637.01,"fiftyTwoWeekLow":402.39},{"symbol":"AAPL","name":"Apple Inc.","price":255.76,"marketCap":3759141289984,"peRatio":32.374683,"dividendYield":0.4,"fiftyTwoWeekHigh":288.62,"fiftyTwoWeekLow":169.21},{"symbol":"MSFT","name":"Microsoft Corporation","price":401.86,"marketCap":2986775150592,"peRatio":25.131956,"dividendYield":0.9,"fiftyTwoWeekHigh":555.45,"fiftyTwoWeekLow":344.79},{"symbol":"TSLA","name":"Tesla, Inc.","price":395.01,"marketCap":1482248159232,"peRatio":372.65097,"dividendYield":null,"fiftyTwoWeekHigh":498.83,"fiftyTwoWeekLow":214.25},{"symbol":"JPM","name":"JP Morgan Chase & Co.","price":282.89,"marketCap":762963558400,"peRatio":14.137432,"dividendYield":2.09,"fiftyTwoWeekHigh":337.25,"fiftyTwoWeekLow":202.16},{"symbol":"WMT","name":"Walmart Inc.","price":125.33,"marketCap":999237484544,"peRatio":45.908424,"dividendYield":0.8,"fiftyTwoWeekHigh":134.69,"fiftyTwoWeekLow":79.81},{"symbol":"KO","name":"Coca-Cola Company (The)","price":77.61,"marketCap":333847887872,"peRatio":25.529606,"dividendYield":2.65,"fiftyTwoWeekHigh":82,"fiftyTwoWeekLow":65.35}];
+
+    // Formatting utilities
+    const formatCurrency = (val) => val != null ? new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(val) : 'N/A';
+    const formatCap = (val) => {
+      if (val == null) return 'N/A';
+      if (val >= 1e12) return '$' + (val / 1e12).toFixed(2) + 'T';
+      if (val >= 1e9) return '$' + (val / 1e9).toFixed(2) + 'B';
+      if (val >= 1e6) return '$' + (val / 1e6).toFixed(2) + 'M';
+      return '$' + val;
+    };
+    const formatPE = (val) => val != null ? val.toFixed(1) : 'N/A';
+    const formatPct = (val) => val != null ? val.toFixed(2) + '%' : 'N/A';
+
+    let currentData = [...window.__INITIAL_DATA__];
+    let sortColumn = null;
+    let sortAsc = true;
+
+    const tableBody = document.getElementById('tableBody');
+    const searchInput = document.getElementById('searchInput');
+    const filterSelect = document.getElementById('filterSelect');
+    const headers = document.querySelectorAll('th[data-sort]');
+
+    const spyData = window.__INITIAL_DATA__.find(s => s.symbol === 'SPY');
+    if (spyData) {
+      document.getElementById('spyPriceLoading').innerText = formatCurrency(spyData.price);
+    }
+
+    function renderTable() {
+      tableBody.innerHTML = '';
+      currentData.forEach(stock => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td><span class="ticker">${stock.symbol}</span></td>
+          <td>${stock.name}</td>
+          <td>${formatCurrency(stock.price)}</td>
+          <td>${formatCap(stock.marketCap)}</td>
+          <td>${formatPE(stock.peRatio)}</td>
+          <td>${formatPct(stock.dividendYield)}</td>
+        `;
+        tableBody.appendChild(tr);
+      });
+    }
+
+    function applyFilters() {
+      const searchTerm = searchInput.value.toLowerCase();
+      const filterVal = filterSelect.value;
+
+      currentData = window.__INITIAL_DATA__.filter(stock => {
+        const matchesSearch = stock.symbol.toLowerCase().includes(searchTerm) || stock.name.toLowerCase().includes(searchTerm);
+        let matchesFilter = true;
+
+        if (filterVal === 'has_pe') {
+          matchesFilter = stock.peRatio != null;
+        } else if (filterVal === 'has_div') {
+          matchesFilter = stock.dividendYield != null && stock.dividendYield > 0;
+        }
+
+        return matchesSearch && matchesFilter;
+      });
+
+      if (sortColumn) {
+        sortData(sortColumn, sortAsc);
+      } else {
+        renderTable();
+      }
+    }
+
+    function sortData(column, asc) {
+      currentData.sort((a, b) => {
+        let valA = a[column];
+        let valB = b[column];
+
+        if (valA == null) valA = asc ? Infinity : -Infinity;
+        if (valB == null) valB = asc ? Infinity : -Infinity;
+
+        if (typeof valA === 'string') {
+          return asc ? valA.localeCompare(valB) : valB.localeCompare(valA);
+        } else {
+          return asc ? valA - valB : valB - valA;
+        }
+      });
+      renderTable();
+    }
+
+    searchInput.addEventListener('input', applyFilters);
+    filterSelect.addEventListener('change', applyFilters);
+
+    headers.forEach(th => {
+      th.addEventListener('click', () => {
+        const column = th.getAttribute('data-sort');
+        if (sortColumn === column) {
+          sortAsc = !sortAsc;
+        } else {
+          sortColumn = column;
+          sortAsc = true;
+        }
+
+        headers.forEach(h => h.classList.remove('sort-asc', 'sort-desc'));
+        th.classList.add(sortAsc ? 'sort-asc' : 'sort-desc');
+
+        applyFilters();
+      });
+    });
+
+    renderTable();
+
+    // Render Chart
+    const ctx = document.getElementById('growthChart').getContext('2d');
+
+    // Generate data
+    const years = Array.from({length: 31}, (_, i) => i);
+    const initialInvestment = 10000;
+    const marketData = years.map(y => initialInvestment * Math.pow(1.10, y));
+    const savingsData = years.map(y => initialInvestment * Math.pow(1.02, y));
+
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: years.map(y => 'Year ' + y),
+        datasets: [
+          {
+            label: 'Stock Market (10% avg)',
+            data: marketData,
+            borderColor: '#4a8fe7',
+            backgroundColor: 'rgba(74, 143, 231, 0.1)',
+            fill: true,
+            tension: 0.4
+          },
+          {
+            label: 'Savings Account (2%)',
+            data: savingsData,
+            borderColor: '#5a6a80',
+            backgroundColor: 'transparent',
+            borderDash: [5, 5],
+            fill: false,
+            tension: 0.4
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        interaction: { mode: 'index', intersect: false },
+        plugins: {
+          legend: { labels: { color: '#c8d0de' } },
+          tooltip: {
+            callbacks: {
+              label: function(context) {
+                let label = context.dataset.label || '';
+                if (label) { label += ': '; }
+                if (context.parsed.y !== null) {
+                  label += new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(context.parsed.y);
+                }
+                return label;
+              }
+            }
+          }
+        },
+        scales: {
+          x: { ticks: { color: '#5a6a80' }, grid: { color: '#152040' } },
+          y: {
+            ticks: {
+              color: '#5a6a80',
+              callback: function(value) { return '$' + value / 1000 + 'k'; }
+            },
+            grid: { color: '#152040' }
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
