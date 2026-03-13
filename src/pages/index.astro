@@ -63,7 +63,9 @@ const guides = [
   { title: "How ETF Expense Ratios Work", subtitle: "fees · NAV deduction · cost calculator", slug: "/guide-how-etf-expense-ratios-work.html", stat: "💰", statLabel: "the hidden fee explained", desc: "You're paying ETF fees every day and never see a bill. Here's exactly how expense ratios silently eat your returns.", tag: "GUIDE" },
 ];
 
-const lists = [];
+const lists = [
+  { emoji: "📋", name: "50 Highest Dividend Yield Stocks in the S&P 500 (2026)", slug: "/list-highest-dividend-yield-stocks-2026", desc: "Ranked list of the 50 highest dividend yield stocks in the S&P 500, ranked by yield. Complete with payout ratio sustainability analysis and consecutive years of dividend payments." },
+];
 ---
 <html lang="en">
 <head>
@@ -340,6 +342,28 @@ const lists = [];
             <h3 class="study-name">{guide.title || guide.name}</h3>
             {guide.subtitle && <p style="font-size:0.85rem; color:#e78f4a; margin-bottom:8px;">{guide.subtitle}</p>}
             <p class="study-desc">{guide.desc}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  )}
+
+
+  <!-- Lists Section -->
+  {lists.length > 0 && (
+    <div class="section-container" id="lists">
+      <div class="section-header">
+        <span class="section-tag" style="background:rgba(143,74,231,0.1); color:#8f4ae7;">📋 LISTS</span>
+        <h2 class="section-title">Curated Lists</h2>
+        <p class="section-sub">Ranked lists and curated data collections.</p>
+      </div>
+      <div class="studies-grid">
+        {lists.map(list => (
+          <a class="study-card" href={list.slug} style="border-top: 2px solid #8f4ae7;">
+            {list.emoji && <span class="study-emoji">{list.emoji}</span>}
+            <h3 class="study-name">{list.title || list.name}</h3>
+            {list.subtitle && <p style="font-size:0.85rem; color:#8f4ae7; margin-bottom:8px;">{list.subtitle}</p>}
+            <p class="study-desc">{list.desc}</p>
           </a>
         ))}
       </div>
