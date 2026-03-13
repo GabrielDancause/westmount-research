@@ -22,6 +22,10 @@ const tools = [
   { title: "Bond Yield Calculator", subtitle: "YTM · duration · current yield", slug: "/bond-yield-calculator", stat: "YTM", statLabel: "yield to maturity", desc: "Calculate bond yield to maturity, current yield, and modified duration.", tag: "TOOL", emoji: "📈" },
   { title: "Position Size Calculator", subtitle: "risk management", slug: "/position-size-calculator", stat: "%", statLabel: "risk per trade", desc: "Calculate optimal position size based on account size, risk tolerance, and stop-loss.", tag: "TOOL", emoji: "🎯" },
   { title: "Retirement Withdrawal Calculator", subtitle: "4% rule · safe spending", slug: "/retirement-withdrawal-calculator", stat: "4%", statLabel: "safe withdrawal rate", desc: "How long will your savings last? Monte Carlo simulation with multiple withdrawal strategies.", tag: "TOOL", emoji: "🏖️" },
+  { title: "Dollar Cost Averaging Calculator", subtitle: "DCA · lump sum comparison", slug: "/dollar-cost-averaging-calculator", stat: "DCA", statLabel: "investment strategy simulator", desc: "Compare dollar cost averaging vs lump sum investing with historical data and custom scenarios.", tag: "TOOL", emoji: "📊" },
+  { title: "Tax-Loss Harvesting Calculator", subtitle: "tax savings · offset gains", slug: "/tax-loss-harvesting-calculator", stat: "$", statLabel: "potential tax savings", desc: "Calculate how much you could save by harvesting investment losses to offset capital gains.", tag: "TOOL", emoji: "📋" },
+  { title: "Stock Correlation Matrix", subtitle: "diversification · correlation analysis", slug: "/stock-correlation-matrix", stat: "ρ", statLabel: "correlation coefficients", desc: "Analyze correlations between stocks to build a truly diversified portfolio.", tag: "TOOL", emoji: "🔗" },
+  { title: "Sector Rotation Analysis 2026", subtitle: "sector momentum · rotation signals", slug: "/sector-rotation-analysis-2026", stat: "11", statLabel: "sectors tracked", desc: "Track sector rotation patterns and momentum signals across all GICS sectors.", tag: "TOOL", emoji: "🔄" },
 ];
 
 const studies = [
@@ -77,6 +81,8 @@ const studies = [
   { title: "P/E Ratio by Sector 2026", subtitle: "sector valuations", slug: "/pe-ratio-by-sector-2026", stat: "11", statLabel: "sectors analyzed", desc: "Current and historical P/E ratios for all 11 S&P 500 sectors vs 10-year averages.", tag: "ORIGINAL RESEARCH" },
   { title: "Operating Margin by Industry 2026", subtitle: "profitability rankings", slug: "/operating-margin-by-industry-2026", stat: "30+", statLabel: "industries ranked", desc: "Operating and net profit margins across 30+ industries. Most and least profitable.", tag: "ORIGINAL RESEARCH" },
   { title: "Insider Buying Tracker 2026", subtitle: "SEC Form 4 filings", slug: "/insider-buying-tracker-2026", stat: "📋", statLabel: "insider purchases tracked", desc: "Latest insider buying activity from CEOs and directors across S&P 500 companies.", tag: "ORIGINAL RESEARCH" },
+  { title: "S&P 500 Sector Performance 2026", subtitle: "YTD returns · sector rankings", slug: "/sp500-sector-performance-study-2026", stat: "11", statLabel: "sectors ranked by performance", desc: "2026 sector performance rankings with YTD returns, drawdowns, and momentum analysis.", tag: "ORIGINAL RESEARCH" },
+  { title: "Market Concentration Analysis 2026", subtitle: "top holdings · index risk", slug: "/market-concentration-analysis-2026", stat: "%", statLabel: "concentration risk analyzed", desc: "How concentrated is the stock market in 2026? Deep analysis of top-heavy index risk.", tag: "ORIGINAL RESEARCH" },
 ];
 
 const guides = [
@@ -90,6 +96,8 @@ const guides = [
   { title: "Understanding Market Cycles", subtitle: "expansion · peak · contraction · trough", slug: "/guide-market-cycles", stat: "4", statLabel: "phases decoded", desc: "The hidden indicators that signal where we are in the cycle — and how to position your portfolio for each phase.", tag: "GUIDE" },
   { title: "Technical Analysis for Fundamental Investors", subtitle: "what works · what doesn't", slug: "/guide-technical-analysis-basics", stat: "6", statLabel: "evidence-backed signals", desc: "A skeptical value investor's honest take on which chart signals actually work and which to ignore.", tag: "GUIDE" },
   { title: "How ETF Expense Ratios Work", subtitle: "fees · NAV deduction · cost calculator", slug: "/guide-how-etf-expense-ratios-work", stat: "💰", statLabel: "the hidden fee explained", desc: "You're paying ETF fees every day and never see a bill. Here's exactly how expense ratios silently eat your returns.", tag: "GUIDE" },
+  { title: "How to Read a Balance Sheet", subtitle: "assets · liabilities · equity", slug: "/guide-read-balance-sheet", stat: "3", statLabel: "key sections explained", desc: "Understand assets, liabilities, and shareholder equity. Spot red flags before they hit the stock price.", tag: "GUIDE" },
+  { title: "Options Trading Strategy Guide", subtitle: "covered calls · spreads · iron condors", slug: "/options-trading-strategy-guide", stat: "10+", statLabel: "strategies explained", desc: "Comprehensive options strategies from basic covered calls to advanced multi-leg trades.", tag: "GUIDE" },
 
   { title: "How to Choose an S&P 500 Index Fund", subtitle: "VOO vs SPY vs IVV vs SPLG vs FXAIX", slug: "/guide-sp500-index-funds", stat: "5", statLabel: "funds compared", desc: "Complete guide to choosing between S&P 500 index funds and ETFs.", tag: "GUIDE" },
   { title: "Dividend Investing for Beginners", subtitle: "yield · payout · DRIP explained", slug: "/guide-dividend-investing-beginners", stat: "101", statLabel: "beginner friendly", desc: "How to start dividend investing: evaluate stocks, avoid traps, build an income portfolio.", tag: "GUIDE" },
@@ -100,6 +108,7 @@ const lists = [
   { title: "50 Highest Dividend Yield Stocks 2026", subtitle: "S&P 500 · ranked by yield", slug: "/list-highest-dividend-yield-stocks-2026", stat: "50", statLabel: "highest yielding stocks", desc: "Top 50 highest dividend yield stocks in the S&P 500, ranked with sustainability flags.", tag: "LIST", emoji: "💰" },
   { title: "20 Safest Dividend Stocks 2026", subtitle: "low payout · high quality", slug: "/list-safest-dividend-stocks-2026", stat: "20", statLabel: "safety-ranked dividends", desc: "The 20 safest dividend stocks based on payout ratio, credit rating, and cash flow stability.", tag: "LIST", emoji: "🛡️" },
   { title: "Best Monthly Dividend Stocks & ETFs", subtitle: "monthly payers ranked", slug: "/list-best-monthly-dividend-stocks", stat: "📅", statLabel: "monthly payers listed", desc: "Complete list of stocks and ETFs that pay monthly dividends, ranked by yield.", tag: "LIST", emoji: "📅" },
+  { title: "Best Robo-Advisors in Canada 2026", subtitle: "fees · features · performance", slug: "/list-best-robo-advisors-canada-2026", stat: "10+", statLabel: "platforms compared", desc: "Data-driven comparison of Canadian robo-advisors: management fees, minimum investments, and portfolio performance.", tag: "LIST", emoji: "🇨🇦" },
 ];
 ---
 <html lang="en">
