@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Correlation Matrix | Westmount Fundamentals</title>
+    <meta name="description" content="Calculate real-time stock correlations across any mix of tickers. See how assets move together to optimize portfolio diversification and lower risk.">
+    <link rel="canonical" href="https://westmountfundamentals.com/stock-correlation-matrix.html" />
+    <meta property="og:title" content="Stock Correlation Matrix | Westmount Fundamentals" />
+    <meta property="og:description" content="Calculate real-time stock correlations across any mix of tickers. See how assets move together to optimize portfolio diversification and lower risk." />
+    <meta property="og:url" content="https://westmountfundamentals.com/stock-correlation-matrix.html" />
+    <meta property="og:type" content="website" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: #060a12;
+            color: #c8d0de;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            padding: 40px 24px;
+            background: linear-gradient(180deg, #0a1628 0%, #060a12 100%);
+            text-align: center;
+            border-bottom: 1px solid #152040;
+        }
+        .header-tag {
+            color: #4a8fe7;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            display: inline-block;
+            background: rgba(74,143,231,0.1);
+            padding: 4px 12px;
+            border-radius: 12px;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #fff;
+            margin-bottom: 16px;
+            letter-spacing: -1px;
+        }
+        .header-desc {
+            color: #5a6a80;
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 1.05rem;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 24px;
+        }
+
+        /* Tool Section */
+        .tool-card {
+            background: #0a1020;
+            border: 1px solid #152040;
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 40px;
+        }
+
+        /* Inputs */
+        .input-group {
+            margin-bottom: 24px;
+        }
+        .input-group label {
+            display: block;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #8a9bb3;
+            margin-bottom: 8px;
+        }
+        input[type="text"] {
+            width: 100%;
+            background: #060a12;
+            border: 1px solid #152040;
+            color: #fff;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.1rem;
+            padding: 12px 16px;
+            border-radius: 8px;
+            transition: all 0.2s;
+            text-transform: uppercase;
+        }
+        input[type="text"]:focus {
+            outline: none;
+            border-color: #4a8fe7;
+            box-shadow: 0 0 0 2px rgba(74,143,231,0.2);
+        }
+        .hint {
+            font-size: 0.8rem;
+            color: #5a6a80;
+            margin-top: 6px;
+        }
+
+        button {
+            background: #4a8fe7;
+            color: #fff;
+            border: none;
+            padding: 12px 24px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.2s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        button:hover { background: #3a7fd7; }
+        button:disabled { background: #2a3a5a; color: #5a6a80; cursor: not-allowed; }
+
+        /* Error state */
+        .error-message {
+            color: #ff5252;
+            background: rgba(255, 82, 82, 0.1);
+            border: 1px solid rgba(255, 82, 82, 0.3);
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            margin-top: 16px;
+            display: none;
+        }
+
+        /* Matrix Table */
+        .matrix-container {
+            margin-top: 32px;
+            overflow-x: auto;
+            border: 1px solid #152040;
+            border-radius: 8px;
+            display: none;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+        }
+        th, td {
+            padding: 12px 16px;
+            text-align: center;
+            border: 1px solid #152040;
+            min-width: 80px;
+        }
+        th {
+            background: #060a12;
+            color: #8a9bb3;
+            font-weight: 600;
+        }
+        td.ticker-col {
+            background: #060a12;
+            color: #fff;
+            font-weight: 700;
+            text-align: left;
+            position: sticky;
+            left: 0;
+            z-index: 1;
+        }
+
+        /* Content Sections */
+        .content-section {
+            background: #0a1020;
+            border: 1px solid #152040;
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 32px;
+        }
+        .content-section h2 {
+            font-size: 1.5rem;
+            color: #fff;
+            margin-bottom: 16px;
+            font-weight: 800;
+        }
+        .content-section p {
+            margin-bottom: 16px;
+            color: #8a9bb3;
+        }
+
+        /* FAQ */
+        .faq-item { margin-bottom: 24px; }
+        .faq-item h3 {
+            font-size: 1.1rem;
+            color: #e0e8f0;
+            margin-bottom: 8px;
+        }
+        .faq-item p { color: #8a9bb3; font-size: 0.95rem; margin-bottom: 0; }
+
+        /* Loader */
+        .loader {
+            display: none;
+            width: 24px;
+            height: 24px;
+            border: 3px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 1s ease-in-out infinite;
+            margin-left: 12px;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 40px 24px;
+            font-size: 0.85rem;
+            color: #3a4a5a;
+            border-top: 1px solid #152040;
+            background: #040810;
+            margin-top: 40px;
+        }
+        .footer a { color: #4a8fe7; text-decoration: none; }
+        .footer a:hover { text-decoration: underline; }
+        .disclaimer {
+            max-width: 600px;
+            margin: 16px auto 0;
+            color: #2a3a4a;
+            font-size: 0.75rem;
+            line-height: 1.5;
+        }
+    </style>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VYF72NSC1Q"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-VYF72NSC1Q');
+</script>
+</head>
+<body>
+<script src="/nav.js"></script>
+
+    <header>
+        <span class="header-tag">Interactive Tool</span>
+        <h1>Stock Correlation Matrix</h1>
+        <p class="header-desc">Enter up to 10 tickers to calculate their 1-year daily return correlation. Discover how assets move together to optimize portfolio diversification.</p>
+    </header>
+
+    <div class="container">
+        <!-- Tool Section -->
+        <div class="tool-card">
+            <div class="input-group">
+                <label for="tickers">Stock Symbols (Comma Separated)</label>
+                <input type="text" id="tickers" value="SPY, QQQ, AAPL, MSFT, TSLA, GLD, TLT" placeholder="e.g. AAPL, MSFT, GOOGL, AMZN">
+                <div class="hint">Calculates Pearson correlation of daily close returns over the trailing 252 trading days.</div>
+            </div>
+
+            <button id="calc-btn">
+                <span>Calculate Matrix</span>
+                <div class="loader" id="loader"></div>
+            </button>
+
+            <div id="error-msg" class="error-message"></div>
+
+            <div class="matrix-container" id="matrix-container">
+                <table id="matrix-table">
+                    <thead>
+                        <tr id="matrix-head"></tr>
+                    </thead>
+                    <tbody id="matrix-body"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="content-section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <h3>What does a stock correlation of 1.0 mean?</h3>
+                <p>A correlation of 1.0 means perfect positive correlation. It indicates that two assets move in the exact same direction, in perfect proportion. This is typically only seen when comparing an asset to itself, or to an ETF that strictly tracks it.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Why is negative correlation important for a portfolio?</h3>
+                <p>Negative correlation (values between 0 and -1) means that when one asset goes up, the other tends to go down. Holding negatively correlated assets can reduce overall portfolio volatility and mitigate losses during market downturns, a core principle of modern portfolio theory.</p>
+            </div>
+            <div class="faq-item">
+                <h3>How frequently does stock correlation change?</h3>
+                <p>Correlation is not static; it changes continuously based on market conditions, economic cycles, and sector-specific news. During a severe market crash or panic, the correlation of almost all equities tends to converge toward 1.0 as assets are sold off simultaneously.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Does a correlation of 0 mean two stocks are unrelated?</h3>
+                <p>A correlation of 0 (or near zero) indicates that there is no linear relationship between the price movements of the two stocks. While their daily returns don't move together in a predictable pattern, they may still be exposed to different, non-linear macroeconomic risks.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What is the Pearson correlation coefficient?</h3>
+                <p>The Pearson correlation coefficient is a statistical measure that calculates the linear relationship between two variables. In finance, it measures how closely the daily returns of two assets move together, mapped on a scale from -1.0 to 1.0.</p>
+            </div>
+        </div>
+
+        <!-- Methodology Section -->
+        <div class="content-section">
+            <h2>Methodology</h2>
+            <p>This tool computes the Pearson correlation coefficient between the daily logarithmic returns of the specified assets over the past 252 trading days (approximately 1 year). Daily adjusted close prices are fetched directly via Yahoo Finance APIs.</p>
+            <p>The resulting matrix displays values ranging from -1.0 to 1.0. A value of 1.0 means perfect positive correlation (they move in lockstep), 0.0 means no linear correlation, and -1.0 means perfect negative correlation (they move in exactly opposite directions).</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        © 2026 <a href="/">westmount-research</a> · A <a href="https://gab.ae">GAB Ventures</a> property
+        <div class="disclaimer">This site provides data and analysis for informational purposes only. Nothing here constitutes investment advice. Historical correlation does not guarantee future relationships. Do your own research.</div>
+    </div>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What does a stock correlation of 1.0 mean?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A correlation of 1.0 means perfect positive correlation. It indicates that two assets move in the exact same direction, in perfect proportion. This is typically only seen when comparing an asset to itself, or to an ETF that strictly tracks it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why is negative correlation important for a portfolio?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Negative correlation (values between 0 and -1) means that when one asset goes up, the other tends to go down. Holding negatively correlated assets can reduce overall portfolio volatility and mitigate losses during market downturns, a core principle of modern portfolio theory."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How frequently does stock correlation change?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Correlation is not static; it changes continuously based on market conditions, economic cycles, and sector-specific news. During a severe market crash or panic, the correlation of almost all equities tends to converge toward 1.0 as assets are sold off simultaneously."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does a correlation of 0 mean two stocks are unrelated?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A correlation of 0 (or near zero) indicates that there is no linear relationship between the price movements of the two stocks. While their daily returns don't move together in a predictable pattern, they may still be exposed to different, non-linear macroeconomic risks."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the Pearson correlation coefficient?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Pearson correlation coefficient is a statistical measure that calculates the linear relationship between two variables. In finance, it measures how closely the daily returns of two assets move together, mapped on a scale from -1.0 to 1.0."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <script>
+        const btn = document.getElementById('calc-btn');
+        const loader = document.getElementById('loader');
+        const errorMsg = document.getElementById('error-msg');
+        const matrixContainer = document.getElementById('matrix-container');
+        const matrixHead = document.getElementById('matrix-head');
+        const matrixBody = document.getElementById('matrix-body');
+
+        function getCellColor(val) {
+            if (val === 1) return '#0a1020';
+            if (val > 0.8) return 'rgba(74, 143, 231, 0.4)';
+            if (val > 0.5) return 'rgba(74, 143, 231, 0.2)';
+            if (val > 0.2) return 'rgba(74, 143, 231, 0.1)';
+            if (val < -0.8) return 'rgba(255, 82, 82, 0.4)';
+            if (val < -0.5) return 'rgba(255, 82, 82, 0.2)';
+            if (val < -0.2) return 'rgba(255, 82, 82, 0.1)';
+            return 'transparent';
+        }
+
+        async function fetchYahooData(ticker) {
+            // Using a generic CORS proxy to access Yahoo API from browser
+            const proxy = 'https://corsproxy.io/?';
+            const url = `https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(ticker)}?interval=1d&range=1y`;
+            const res = await fetch(proxy + encodeURIComponent(url));
+            if (!res.ok) throw new Error(`Failed to fetch ${ticker}`);
+            const data = await res.json();
+
+            const result = data.chart?.result?.[0];
+            if (!result || !result.indicators.quote[0].close) {
+                throw new Error(`Invalid data for ${ticker}`);
+            }
+
+            const timestamps = result.timestamp;
+            const closes = result.indicators.quote[0].close;
+
+            // Clean out nulls
+            const cleanData = [];
+            for (let i = 0; i < timestamps.length; i++) {
+                if (closes[i] != null) {
+                    cleanData.push({ t: timestamps[i], c: closes[i] });
+                }
+            }
+            return cleanData;
+        }
+
+        function calculateReturns(prices) {
+            const returns = [];
+            for (let i = 1; i < prices.length; i++) {
+                // Log return: ln(P_t / P_{t-1})
+                returns.push(Math.log(prices[i] / prices[i-1]));
+            }
+            return returns;
+        }
+
+        function pearsonCorrelation(x, y) {
+            const n = Math.min(x.length, y.length);
+            if (n === 0) return 0;
+
+            // Align arrays (assuming they cover the same exact period)
+            // In a more robust implementation, we would align by timestamp.
+            // For this simple 1-year trailing tool, we just take the last N items.
+            const xAligned = x.slice(-n);
+            const yAligned = y.slice(-n);
+
+            let sumX = 0, sumY = 0, sumXY = 0, sumX2 = 0, sumY2 = 0;
+
+            for (let i = 0; i < n; i++) {
+                const xi = xAligned[i];
+                const yi = yAligned[i];
+                sumX += xi;
+                sumY += yi;
+                sumXY += xi * yi;
+                sumX2 += xi * xi;
+                sumY2 += yi * yi;
+            }
+
+            const numerator = (n * sumXY) - (sumX * sumY);
+            const denom = Math.sqrt((n * sumX2 - sumX * sumX) * (n * sumY2 - sumY * sumY));
+            if (denom === 0) return 0;
+            return numerator / denom;
+        }
+
+        async function calculateMatrix() {
+            btn.disabled = true;
+            loader.style.display = 'block';
+            errorMsg.style.display = 'none';
+            matrixContainer.style.display = 'none';
+            matrixHead.innerHTML = '';
+            matrixBody.innerHTML = '';
+
+            try {
+                const inputVal = document.getElementById('tickers').value;
+                const tickers = inputVal.split(',')
+                    .map(t => t.trim().toUpperCase())
+                    .filter(t => t.length > 0);
+
+                if (tickers.length < 2) {
+                    throw new Error("Please enter at least 2 tickers.");
+                }
+                if (tickers.length > 10) {
+                    throw new Error("Please enter a maximum of 10 tickers.");
+                }
+
+                // Fetch data
+                const returnsMap = {};
+                for (const ticker of tickers) {
+                    const data = await fetchYahooData(ticker);
+                    const prices = data.map(d => d.c);
+                    returnsMap[ticker] = calculateReturns(prices);
+                }
+
+                // Build Matrix
+                matrixHead.appendChild(document.createElement('th')); // empty corner
+                tickers.forEach(t => {
+                    const th = document.createElement('th');
+                    th.textContent = t;
+                    matrixHead.appendChild(th);
+                });
+
+                for (let i = 0; i < tickers.length; i++) {
+                    const tr = document.createElement('tr');
+                    const tCol = document.createElement('td');
+                    tCol.className = 'ticker-col';
+                    tCol.textContent = tickers[i];
+                    tr.appendChild(tCol);
+
+                    for (let j = 0; j < tickers.length; j++) {
+                        const td = document.createElement('td');
+                        if (i === j) {
+                            td.textContent = '1.00';
+                            td.style.background = getCellColor(1);
+                        } else {
+                            const r = pearsonCorrelation(returnsMap[tickers[i]], returnsMap[tickers[j]]);
+                            td.textContent = r.toFixed(2);
+                            td.style.background = getCellColor(r);
+                            if (Math.abs(r) > 0.8) td.style.color = '#fff';
+                        }
+                        tr.appendChild(td);
+                    }
+                    matrixBody.appendChild(tr);
+                }
+
+                matrixContainer.style.display = 'block';
+
+            } catch (err) {
+                errorMsg.textContent = err.message || "An error occurred fetching data.";
+                errorMsg.style.display = 'block';
+            } finally {
+                btn.disabled = false;
+                loader.style.display = 'none';
+            }
+        }
+
+        btn.addEventListener('click', calculateMatrix);
+    </script>
+</body>
+</html>

@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tax-Loss Harvesting Calculator & Strategy Guide | Westmount Fundamentals</title>
+<meta name="description" content="Optimize your tax-loss harvesting strategies with our comprehensive calculator. Track portfolio losses, wash sale rule warnings, tax brackets, and carryforwards.">
+<link rel="canonical" href="https://westmountfundamentals.com/tax-loss-harvesting-calculator.html">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VYF72NSC1Q"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-VYF72NSC1Q');
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is tax-loss harvesting?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tax-loss harvesting is an investment strategy where you sell securities at a loss to offset capital gains or ordinary income. This can lower your overall tax liability while allowing you to reinvest the proceeds into similar, but not substantially identical, assets."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does the wash sale rule work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The IRS wash sale rule prevents you from claiming a tax deduction for a security sold in a wash sale. A wash sale occurs if you sell a security at a loss and buy the same or a 'substantially identical' security within 30 days before or after the sale."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much capital loss can I deduct against ordinary income?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "If your capital losses exceed your capital gains, you can use up to $3,000 of the excess loss to offset ordinary income per year ($1,500 if married filing separately). Any remaining losses can be carried forward to future tax years indefinitely."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between short-term and long-term capital gains?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Short-term capital gains apply to assets held for one year or less and are taxed at ordinary income tax rates. Long-term capital gains apply to assets held for more than one year and benefit from lower tax rates (typically 0%, 15%, or 20%)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I carry forward unused capital losses?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, if your net capital losses exceed the $3,000 annual limit for offsetting ordinary income, you can carry forward the remaining amount to offset gains or income in future tax years indefinitely."
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+:root {
+  --bg-color: #060a12;
+  --card-bg: #0a1020;
+  --border-color: #152040;
+  --accent-color: #4a8fe7;
+  --accent-light: #6ba3f0;
+  --text-main: #c8d0de;
+  --text-muted: #5a6a80;
+  --buy-color: #27ae60;
+  --sell-color: #e74c3c;
+  --warning-color: #f39c12;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  background: var(--bg-color);
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+.header {
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--border-color);
+  background: #040810;
+}
+.header a {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 1.1rem;
+  letter-spacing: -0.5px;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+h1 { color: #fff; font-size: 2.5rem; font-weight: 900; letter-spacing: -1px; margin-bottom: 8px; }
+h2 { color: #fff; font-size: 1.5rem; margin-bottom: 16px; font-weight: 800; }
+p { color: var(--text-muted); margin-bottom: 24px; font-size: 1.1rem; }
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 40px;
+  position: relative;
+  overflow: hidden;
+}
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 3px;
+  background: var(--accent-color);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+.form-group label {
+  display: block;
+  font-size: 0.9rem;
+  color: #fff;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+.form-group input, .form-group select {
+  width: 100%;
+  background: #040810;
+  border: 1px solid var(--border-color);
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  padding: 10px 12px;
+  border-radius: 6px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.form-group input:focus, .form-group select:focus {
+  border-color: var(--accent-light);
+}
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+}
+.checkbox-group input {
+  width: auto;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+@media (max-width: 600px) {
+  .grid-2 { grid-template-columns: 1fr; }
+}
+
+.btn {
+  background: var(--accent-color);
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: background 0.2s;
+  width: 100%;
+}
+.btn:hover {
+  background: var(--accent-light);
+}
+
+.summary-panel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 24px;
+  padding: 20px;
+  background: #040810;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.summary-item {
+  display: flex;
+  flex-direction: column;
+}
+.summary-label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+.summary-val {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: #fff;
+  font-family: 'JetBrains Mono', monospace;
+}
+.summary-val.positive { color: var(--buy-color); }
+.summary-val.negative { color: var(--sell-color); }
+
+.warning-banner {
+  background: rgba(243, 156, 18, 0.1);
+  border: 1px solid rgba(243, 156, 18, 0.3);
+  color: #f39c12;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin-top: 20px;
+  font-size: 0.9rem;
+  display: none;
+}
+.warning-banner strong { color: #f1c40f; }
+
+.strategy-guide h3 {
+  color: #fff;
+  font-size: 1.2rem;
+  margin-top: 24px;
+  margin-bottom: 12px;
+}
+.strategy-guide ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  color: var(--text-main);
+  margin-bottom: 24px;
+}
+.strategy-guide li {
+  margin-bottom: 8px;
+}
+
+.table-container {
+  overflow-x: auto;
+  margin-top: 16px;
+  margin-bottom: 24px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 500px;
+}
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+th {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+td {
+  color: #e0e8f0;
+}
+
+/* FAQ Section */
+.faq-section {
+  margin-top: 60px;
+  padding-top: 40px;
+  border-top: 1px solid var(--border-color);
+}
+.faq-item {
+  margin-bottom: 24px;
+}
+.faq-item h3 {
+  font-size: 1.1rem;
+  color: #fff;
+  margin-bottom: 8px;
+}
+.faq-item p {
+  font-size: 0.95rem;
+  margin-bottom: 0;
+}
+
+.footer {
+  text-align: center;
+  padding: 50px 24px;
+  font-size: 0.85rem;
+  color: #3a4a5a;
+  border-top: 1px solid #151f2e;
+  background: #040810;
+  margin-top: 40px;
+}
+.footer a { color: var(--accent-color); text-decoration: none; }
+.footer a:hover { text-decoration: underline; }
+.disclaimer {
+  max-width: 600px;
+  margin: 16px auto 0;
+  color: #2a3a4a;
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+</style>
+</head>
+<body>
+<script src="/nav.js"></script>
+
+<div class="header">
+  <a href="/">← Westmount Fundamentals</a>
+</div>
+
+<div class="container">
+  <h1>Tax-Loss Harvesting Calculator</h1>
+  <p>Optimize your portfolio by strategically selling losing positions to offset taxes on gains and income. Track wash sale warnings, calculate tax savings, and manage loss carryforwards.</p>
+
+  <div class="card">
+    <h2>Calculator Details</h2>
+
+    <div class="grid-2">
+      <div class="form-group">
+        <label for="shares">Number of Shares</label>
+        <input type="number" id="shares" value="100" min="0" step="any">
+      </div>
+      <div class="form-group">
+        <label for="costBasis">Purchase Price per Share ($)</label>
+        <input type="number" id="costBasis" value="150.00" min="0" step="0.01">
+      </div>
+      <div class="form-group">
+        <label for="currentPrice">Current Price per Share ($)</label>
+        <input type="number" id="currentPrice" value="120.00" min="0" step="0.01">
+      </div>
+      <div class="form-group">
+        <label for="holdingPeriod">Holding Period</label>
+        <select id="holdingPeriod">
+          <option value="short">Short-Term (1 year or less)</option>
+          <option value="long">Long-Term (More than 1 year)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="ordinaryTaxRate">Marginal Ordinary Tax Rate (%)</label>
+        <input type="number" id="ordinaryTaxRate" value="24" min="0" max="100" step="0.1">
+      </div>
+      <div class="form-group">
+        <label for="capitalGainsRate">Long-Term Capital Gains Rate (%)</label>
+        <select id="capitalGainsRate">
+          <option value="0">0%</option>
+          <option value="15" selected>15%</option>
+          <option value="20">20%</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Existing Capital Gains to Offset ($)</label>
+      <input type="number" id="existingGains" value="0" min="0" step="100">
+      <small style="color: var(--text-muted); font-size: 0.8rem;">Gains of the same holding period type.</small>
+    </div>
+
+    <div class="checkbox-group">
+      <input type="checkbox" id="washSale">
+      <label for="washSale" style="margin-bottom:0;">I plan to repurchase the same or identical asset within 30 days.</label>
+    </div>
+
+    <div class="warning-banner" id="washSaleWarning">
+      <strong>Wash Sale Alert:</strong> Repurchasing a substantially identical security within 30 days of realizing a loss violates the IRS Wash Sale Rule. Your loss will be disallowed for tax purposes and instead added to the cost basis of the new shares. Consider using a replacement fund to maintain market exposure.
+    </div>
+
+    <div style="margin-top: 24px;">
+      <button class="btn" id="calculate-btn">Calculate Tax Savings</button>
+    </div>
+
+    <div class="summary-panel" id="results-panel" style="display: none;">
+      <div class="summary-item">
+        <span class="summary-label">Total Realized Loss</span>
+        <span class="summary-val negative" id="res-total-loss">-$0.00</span>
+      </div>
+      <div class="summary-item">
+        <span class="summary-label">Estimated Tax Savings</span>
+        <span class="summary-val positive" id="res-tax-savings">$0.00</span>
+      </div>
+      <div class="summary-item">
+        <span class="summary-label">Loss Carryforward</span>
+        <span class="summary-val" id="res-carryforward">$0.00</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="card strategy-guide">
+    <h2>Strategy Guide & Replacement Funds</h2>
+    <p>Tax-loss harvesting allows you to turn investment losses into tax deductions. When you sell a security at a loss, you can use that loss to offset capital gains realized in the same year. If your losses exceed your gains, you can use up to $3,000 to offset ordinary income, with the remainder carried forward to future years.</p>
+
+    <h3>The Wash Sale Rule & Replacement Strategy</h3>
+    <p>The IRS forbids claiming a loss on a sale if you buy a "substantially identical" security within 30 days before or after the sale. To maintain your market exposure while harvesting losses, you can swap to a similar, but not identical, ETF.</p>
+
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Asset Class</th>
+            <th>Original Fund</th>
+            <th>Replacement Fund Idea</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>S&P 500</td>
+            <td>SPY or VOO</td>
+            <td>IVV (iShares Core S&P 500) or VTI (Total Stock Market)</td>
+          </tr>
+          <tr>
+            <td>Total Stock Market</td>
+            <td>VTI (Vanguard)</td>
+            <td>ITOT (iShares Core S&P Total US Stock Market)</td>
+          </tr>
+          <tr>
+            <td>Nasdaq 100</td>
+            <td>QQQ</td>
+            <td>QQQM or VUG (Vanguard Growth ETF)</td>
+          </tr>
+          <tr>
+            <td>Developed Markets</td>
+            <td>VEA (Vanguard)</td>
+            <td>IEFA (iShares Core MSCI EAFE)</td>
+          </tr>
+          <tr>
+            <td>Emerging Markets</td>
+            <td>VWO (Vanguard)</td>
+            <td>IEMG (iShares Core MSCI Emerging Markets)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Best Practices</h3>
+    <ul>
+      <li><strong>Match holding periods:</strong> Short-term losses first offset short-term gains. Long-term losses first offset long-term gains.</li>
+      <li><strong>Mind the $3,000 limit:</strong> Only up to $3,000 of net capital losses can be deducted against ordinary income per year.</li>
+      <li><strong>Track carryforwards:</strong> Keep a record of unused losses, as they carry forward indefinitely.</li>
+      <li><strong>Avoid dividend dates:</strong> Be cautious of dividend distributions which can complicate the cost basis and wash sale calculations.</li>
+    </ul>
+  </div>
+
+  <div class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <h3>What is tax-loss harvesting?</h3>
+      <p>Tax-loss harvesting is an investment strategy where you sell securities at a loss to offset capital gains or ordinary income. This can lower your overall tax liability while allowing you to reinvest the proceeds into similar, but not substantially identical, assets.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>How does the wash sale rule work?</h3>
+      <p>The IRS wash sale rule prevents you from claiming a tax deduction for a security sold in a wash sale. A wash sale occurs if you sell a security at a loss and buy the same or a "substantially identical" security within 30 days before or after the sale.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>How much capital loss can I deduct against ordinary income?</h3>
+      <p>If your capital losses exceed your capital gains, you can use up to $3,000 of the excess loss to offset ordinary income per year ($1,500 if married filing separately). Any remaining losses can be carried forward to future tax years indefinitely.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>What is the difference between short-term and long-term capital gains?</h3>
+      <p>Short-term capital gains apply to assets held for one year or less and are taxed at ordinary income tax rates. Long-term capital gains apply to assets held for more than one year and benefit from lower tax rates (typically 0%, 15%, or 20%).</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Can I carry forward unused capital losses?</h3>
+      <p>Yes, if your net capital losses exceed the $3,000 annual limit for offsetting ordinary income, you can carry forward the remaining amount to offset gains or income in future tax years indefinitely.</p>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  © <script>document.write(new Date().getFullYear())</script> <a href="/">westmount-research</a> · A <a href="https://gab.ae">GAB Ventures</a> property
+  <div class="disclaimer">Data for informational purposes only. Not investment advice. Always consult a qualified tax professional regarding your specific tax situation.</div>
+</div>
+
+<script>
+  const formatCurrency = (val) => {
+    return new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    }).format(val);
+  };
+
+  const washSaleCheckbox = document.getElementById('washSale');
+  const washSaleWarning = document.getElementById('washSaleWarning');
+
+  washSaleCheckbox.addEventListener('change', (e) => {
+    washSaleWarning.style.display = e.target.checked ? 'block' : 'none';
+  });
+
+  document.getElementById('calculate-btn').addEventListener('click', () => {
+    const shares = parseFloat(document.getElementById('shares').value) || 0;
+    const costBasis = parseFloat(document.getElementById('costBasis').value) || 0;
+    const currentPrice = parseFloat(document.getElementById('currentPrice').value) || 0;
+    const holdingPeriod = document.getElementById('holdingPeriod').value;
+    const ordTaxRate = (parseFloat(document.getElementById('ordinaryTaxRate').value) || 0) / 100;
+    const cgTaxRate = (parseFloat(document.getElementById('capitalGainsRate').value) || 0) / 100;
+    const existingGains = parseFloat(document.getElementById('existingGains').value) || 0;
+    const isWashSale = washSaleCheckbox.checked;
+
+    const resultsPanel = document.getElementById('results-panel');
+    const elLoss = document.getElementById('res-total-loss');
+    const elSavings = document.getElementById('res-tax-savings');
+    const elCarryforward = document.getElementById('res-carryforward');
+
+    // Calculate Loss
+    const totalCost = shares * costBasis;
+    const currentValue = shares * currentPrice;
+    let realizedLoss = totalCost - currentValue;
+
+    if (realizedLoss <= 0 || isWashSale) {
+      // No loss or wash sale cancels loss
+      elLoss.textContent = formatCurrency(0);
+      elLoss.className = 'summary-val';
+      elSavings.textContent = formatCurrency(0);
+      elSavings.className = 'summary-val';
+      elCarryforward.textContent = formatCurrency(0);
+      resultsPanel.style.display = 'flex';
+      return;
+    }
+
+    elLoss.textContent = '-' + formatCurrency(realizedLoss);
+    elLoss.className = 'summary-val negative';
+
+    let taxSavings = 0;
+    let remainingLoss = realizedLoss;
+
+    // 1. Offset existing gains of the same type
+    if (existingGains > 0) {
+      const offsetGains = Math.min(remainingLoss, existingGains);
+      // Tax savings based on type
+      const applicableRate = holdingPeriod === 'short' ? ordTaxRate : cgTaxRate;
+      taxSavings += offsetGains * applicableRate;
+      remainingLoss -= offsetGains;
+    }
+
+    // 2. Offset ordinary income (up to $3k)
+    let carryforward = 0;
+    if (remainingLoss > 0) {
+      const ordinaryOffset = Math.min(remainingLoss, 3000);
+      taxSavings += ordinaryOffset * ordTaxRate;
+      remainingLoss -= ordinaryOffset;
+      carryforward = remainingLoss;
+    }
+
+    elSavings.textContent = formatCurrency(taxSavings);
+    elSavings.className = 'summary-val positive';
+
+    elCarryforward.textContent = formatCurrency(carryforward);
+
+    resultsPanel.style.display = 'flex';
+  });
+</script>
+
+</body>
+</html>

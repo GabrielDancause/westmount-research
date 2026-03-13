@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Market Concentration Analysis 2026 | Westmount Fundamentals</title>
+    <meta name="description" content="A deep dive into market concentration risks for 2026. Explore the top 10 holdings of major indices like S&P 500 and NASDAQ 100 with interactive historical and sector analysis.">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VYF72NSC1Q"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-VYF72NSC1Q');
+    </script>
+    <style>
+        :root {
+            --bg-color: #060a12;
+            --card-bg: #0a1020;
+            --border-color: #152040;
+            --accent-color: #4a8fe7;
+            --text-color: #e2e8f0;
+            --text-muted: #94a3b8;
+            --font-main: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-main);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        h1, h2, h3 {
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        p.subtitle {
+            color: var(--text-muted);
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+        }
+
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            color: var(--text-muted);
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+        }
+
+        td.mono {
+            font-family: var(--font-mono);
+            color: var(--accent-color);
+        }
+
+        .chart-container {
+            position: relative;
+            height: 400px;
+            width: 100%;
+            margin: 2rem 0;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            background-color: rgba(74, 143, 231, 0.1);
+            color: var(--accent-color);
+            border: 1px solid rgba(74, 143, 231, 0.2);
+            margin-bottom: 1rem;
+        }
+
+        .tabs {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .tab-btn {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-family: var(--font-main);
+            font-size: 1rem;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: all 0.2s;
+        }
+
+        .tab-btn.active {
+            color: #fff;
+            background-color: rgba(74, 143, 231, 0.15);
+            border: 1px solid rgba(74, 143, 231, 0.3);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .progress-bar {
+            height: 6px;
+            background-color: var(--border-color);
+            border-radius: 3px;
+            overflow: hidden;
+            margin-top: 0.5rem;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background-color: var(--accent-color);
+        }
+
+        .methodology, .disclaimer {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .faq-section {
+            margin-top: 4rem;
+        }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .faq-item h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--accent-color);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <script src="/nav.js"></script>
+
+    <div class="container">
+        <header>
+            <span class="badge">Research Study 2026</span>
+            <h1>Stock Market Concentration Risk Analysis</h1>
+            <p class="subtitle">An in-depth examination of the growing concentration risk in major equity indices, tracking the influence of mega-cap technology companies and top holdings over time.</p>
+        </header>
+
+        <div class="card">
+            <h2>Index Top 10 Holdings Comparison</h2>
+            <p>Select an index below to view its top 10 constituents and their respective weightings.</p>
+
+            <div class="tabs" id="indexTabs">
+                <button class="tab-btn active" data-target="SPY">S&P 500 (SPY)</button>
+                <button class="tab-btn" data-target="QQQ">NASDAQ 100 (QQQ)</button>
+                <button class="tab-btn" data-target="VEA">Developed ex-US (VEA)</button>
+                <button class="tab-btn" data-target="VWO">Emerging Mkts (VWO)</button>
+            </div>
+
+            <div id="holdingsContainer"></div>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <h2>Historical Concentration Trend</h2>
+                <p>The weight of the top 10 holdings in major US indices over the past decade.</p>
+                <div class="chart-container">
+                    <canvas id="historicalChart"></canvas>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Sector Concentration (S&P 500)</h2>
+                <p>Current distribution of sector weightings across the S&P 500.</p>
+                <div class="chart-container">
+                    <canvas id="sectorChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <h3>What is market concentration risk?</h3>
+                <p>Market concentration risk occurs when a small number of companies or a specific sector make up a disproportionately large percentage of an overall market index. This means the performance of the entire index becomes heavily dependent on the fortunes of those few top holdings, reducing the benefits of diversification.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Why has the S&P 500 become so concentrated recently?</h3>
+                <p>The S&P 500 is market-capitalization weighted, meaning companies with higher valuations receive larger allocations. In recent years, massive growth in mega-cap technology and AI-related companies (often termed the "Magnificent Seven") has significantly outpaced the rest of the market, leading to their outsized representation in the index.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>How concentrated is the NASDAQ 100 compared to the S&P 500?</h3>
+                <p>The NASDAQ 100 is historically more concentrated than the S&P 500 due to its focus on non-financial companies and heavy tilt towards the technology sector. In 2023 and early 2024, it became so top-heavy that special rebalances were enacted to redistribute weightings among its largest constituents to comply with SEC diversification rules.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Are international markets less concentrated than US markets?</h3>
+                <p>Generally, developed international indices (like VEA) show lower concentration in their top 10 holdings compared to US markets, as they are less dominated by mega-cap tech. However, emerging markets (like VWO) can still exhibit notable concentration around specific national champions or large tech conglomerates (e.g., TSMC, Tencent).</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>How can investors mitigate concentration risk?</h3>
+                <p>Investors can manage concentration risk by diversifying across different asset classes, utilizing equal-weighted index funds (like RSP for the S&P 500) rather than market-cap weighted ones, or explicitly allocating capital to international equities, small-cap stocks, or value-focused strategies that are underrepresented in top-heavy indices.</p>
+            </div>
+        </div>
+
+        <div class="methodology">
+            <strong>Methodology:</strong> Data reflects approximate real-time and historical holdings percentages sourced from standard financial APIs for representative ETFs (SPY, QQQ, VEA, VWO) as proxies for their respective indices. Historical trend data utilizes estimated year-end weightings. Sector definitions follow standard GICS classifications where applicable.
+        </div>
+
+        <div class="disclaimer">
+            Data for informational purposes only. Not investment advice.
+        </div>
+
+        <footer>
+            &copy; 2026 Westmount Research &middot; A GAB Ventures property
+        </footer>
+    </div>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "What is market concentration risk?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Market concentration risk occurs when a small number of companies or a specific sector make up a disproportionately large percentage of an overall market index. This means the performance of the entire index becomes heavily dependent on the fortunes of those few top holdings, reducing the benefits of diversification."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Why has the S&P 500 become so concentrated recently?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The S&P 500 is market-capitalization weighted, meaning companies with higher valuations receive larger allocations. In recent years, massive growth in mega-cap technology and AI-related companies (often termed the 'Magnificent Seven') has significantly outpaced the rest of the market, leading to their outsized representation in the index."
+        }
+      }, {
+        "@type": "Question",
+        "name": "How concentrated is the NASDAQ 100 compared to the S&P 500?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The NASDAQ 100 is historically more concentrated than the S&P 500 due to its focus on non-financial companies and heavy tilt towards the technology sector. In 2023 and early 2024, it became so top-heavy that special rebalances were enacted to redistribute weightings among its largest constituents to comply with SEC diversification rules."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Are international markets less concentrated than US markets?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Generally, developed international indices (like VEA) show lower concentration in their top 10 holdings compared to US markets, as they are less dominated by mega-cap tech. However, emerging markets (like VWO) can still exhibit notable concentration around specific national champions or large tech conglomerates (e.g., TSMC, Tencent)."
+        }
+      }, {
+        "@type": "Question",
+        "name": "How can investors mitigate concentration risk?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Investors can manage concentration risk by diversifying across different asset classes, utilizing equal-weighted index funds (like RSP for the S&P 500) rather than market-cap weighted ones, or explicitly allocating capital to international equities, small-cap stocks, or value-focused strategies that are underrepresented in top-heavy indices."
+        }
+      }]
+    }
+    </script>
+
+    <script>
+        // Inject scraped data
+        window.__INITIAL_DATA__ = {
+  "SPY": {
+    "name": "S&P 500",
+    "holdings": [
+      {
+        "symbol": "NVDA",
+        "holdingName": "NVIDIA Corp",
+        "holdingPercent": 0.0731529
+      },
+      {
+        "symbol": "AAPL",
+        "holdingName": "Apple Inc",
+        "holdingPercent": 0.066321105
+      },
+      {
+        "symbol": "MSFT",
+        "holdingName": "Microsoft Corp",
+        "holdingPercent": 0.049592398
+      },
+      {
+        "symbol": "AMZN",
+        "holdingName": "Amazon.com Inc",
+        "holdingPercent": 0.0347072
+      },
+      {
+        "symbol": "GOOGL",
+        "holdingName": "Alphabet Inc Class A",
+        "holdingPercent": 0.0308151
+      },
+      {
+        "symbol": "AVGO",
+        "holdingName": "Broadcom Inc",
+        "holdingPercent": 0.0256369
+      },
+      {
+        "symbol": "GOOG",
+        "holdingName": "Alphabet Inc Class C",
+        "holdingPercent": 0.024602398
+      },
+      {
+        "symbol": "META",
+        "holdingName": "Meta Platforms Inc Class A",
+        "holdingPercent": 0.0239825
+      },
+      {
+        "symbol": "TSLA",
+        "holdingName": "Tesla Inc",
+        "holdingPercent": 0.0192144
+      },
+      {
+        "symbol": "BRK-B",
+        "holdingName": "Berkshire Hathaway Inc Class B",
+        "holdingPercent": 0.015729899
+      }
+    ],
+    "sectorWeightings": [
+      {
+        "realestate": 0.0198
+      },
+      {
+        "consumer_cyclical": 0.1011
+      },
+      {
+        "basic_materials": 0.019299999
+      },
+      {
+        "consumer_defensive": 0.0543
+      },
+      {
+        "technology": 0.33080003
+      },
+      {
+        "communication_services": 0.1073
+      },
+      {
+        "financial_services": 0.122600004
+      },
+      {
+        "utilities": 0.0249
+      },
+      {
+        "industrials": 0.0866
+      },
+      {
+        "energy": 0.0348
+      },
+      {
+        "healthcare": 0.098400004
+      }
+    ]
+  },
+  "QQQ": {
+    "name": "NASDAQ 100",
+    "holdings": [
+      {
+        "symbol": "NVDA",
+        "holdingName": "NVIDIA Corp",
+        "holdingPercent": 0.0839326
+      },
+      {
+        "symbol": "AAPL",
+        "holdingName": "Apple Inc",
+        "holdingPercent": 0.0760943
+      },
+      {
+        "symbol": "MSFT",
+        "holdingName": "Microsoft Corp",
+        "holdingPercent": 0.056900803
+      },
+      {
+        "symbol": "AMZN",
+        "holdingName": "Amazon.com Inc",
+        "holdingPercent": 0.0437613
+      },
+      {
+        "symbol": "TSLA",
+        "holdingName": "Tesla Inc",
+        "holdingPercent": 0.039161302
+      },
+      {
+        "symbol": "META",
+        "holdingName": "Meta Platforms Inc Class A",
+        "holdingPercent": 0.0371074
+      },
+      {
+        "symbol": "GOOGL",
+        "holdingName": "Alphabet Inc Class A",
+        "holdingPercent": 0.0353573
+      },
+      {
+        "symbol": "WMT",
+        "holdingName": "Walmart Inc",
+        "holdingPercent": 0.0336516
+      },
+      {
+        "symbol": "GOOG",
+        "holdingName": "Alphabet Inc Class C",
+        "holdingPercent": 0.0328247
+      },
+      {
+        "symbol": "AVGO",
+        "holdingName": "Broadcom Inc",
+        "holdingPercent": 0.029416
+      }
+    ],
+    "sectorWeightings": [
+      {
+        "realestate": 0.001
+      },
+      {
+        "consumer_cyclical": 0.1251
+      },
+      {
+        "basic_materials": 0.0128
+      },
+      {
+        "consumer_defensive": 0.0859
+      },
+      {
+        "technology": 0.5
+      },
+      {
+        "communication_services": 0.16440001
+      },
+      {
+        "financial_services": 0.0023
+      },
+      {
+        "utilities": 0.015700001
+      },
+      {
+        "industrials": 0.0339
+      },
+      {
+        "energy": 0.0062
+      },
+      {
+        "healthcare": 0.052600004
+      }
+    ]
+  },
+  "VEA": {
+    "name": "Developed Markets ex-US",
+    "holdings": [
+      {
+        "symbol": "ASML.AS",
+        "holdingName": "ASML Holding NV",
+        "holdingPercent": 0.0185692
+      },
+      {
+        "symbol": "005930.KS",
+        "holdingName": "Samsung Electronics Co Ltd",
+        "holdingPercent": 0.017076401
+      },
+      {
+        "symbol": "000660.KS",
+        "holdingName": "SK Hynix Inc",
+        "holdingPercent": 0.0111143
+      },
+      {
+        "symbol": "ROG.SW",
+        "holdingName": "Roche Holding AG",
+        "holdingPercent": 0.0104965
+      },
+      {
+        "symbol": "HSBA.L",
+        "holdingName": "HSBC Holdings PLC",
+        "holdingPercent": 0.0099658
+      },
+      {
+        "symbol": "NOVN.SW",
+        "holdingName": "Novartis AG Registered Shares",
+        "holdingPercent": 0.00937
+      },
+      {
+        "symbol": "AZN.L",
+        "holdingName": "AstraZeneca PLC",
+        "holdingPercent": 0.0091878995
+      },
+      {
+        "symbol": "NESN.SW",
+        "holdingName": "Nestle SA",
+        "holdingPercent": 0.0079426
+      },
+      {
+        "symbol": "7203.T",
+        "holdingName": "Toyota Motor Corp",
+        "holdingPercent": 0.007924
+      },
+      {
+        "symbol": "RY",
+        "holdingName": "Royal Bank of Canada",
+        "holdingPercent": 0.0077554
+      }
+    ],
+    "sectorWeightings": [
+      {
+        "realestate": 0.0286
+      },
+      {
+        "consumer_cyclical": 0.0837
+      },
+      {
+        "basic_materials": 0.074
+      },
+      {
+        "consumer_defensive": 0.0585
+      },
+      {
+        "technology": 0.1228
+      },
+      {
+        "communication_services": 0.0359
+      },
+      {
+        "financial_services": 0.2368
+      },
+      {
+        "utilities": 0.0321
+      },
+      {
+        "industrials": 0.1903
+      },
+      {
+        "energy": 0.045700002
+      },
+      {
+        "healthcare": 0.091400005
+      }
+    ]
+  },
+  "VWO": {
+    "name": "Emerging Markets",
+    "holdings": [
+      {
+        "symbol": "2330.TW",
+        "holdingName": "Taiwan Semiconductor Manufacturing Co Ltd",
+        "holdingPercent": 0.1172261
+      },
+      {
+        "symbol": "0700.HK",
+        "holdingName": "Tencent Holdings Ltd",
+        "holdingPercent": 0.0414989
+      },
+      {
+        "symbol": "9988.HK",
+        "holdingName": "Alibaba Group Holding Ltd Ordinary Shares",
+        "holdingPercent": 0.0331919
+      },
+      {
+        "symbol": "HDFCBANK.NS",
+        "holdingName": "HDFC Bank Ltd",
+        "holdingPercent": 0.010001301
+      },
+      {
+        "symbol": "RELIANCE.NS",
+        "holdingName": "Reliance Industries Ltd",
+        "holdingPercent": 0.0090388
+      },
+      {
+        "symbol": "00939",
+        "holdingName": "China Construction Bank Corp Class H",
+        "holdingPercent": 0.0076987
+      },
+      {
+        "symbol": "2317.TW",
+        "holdingName": "Hon Hai Precision Industry Co Ltd",
+        "holdingPercent": 0.007338
+      },
+      {
+        "symbol": "2454.TW",
+        "holdingName": "MediaTek Inc",
+        "holdingPercent": 0.0070967
+      },
+      {
+        "symbol": "1810.HK",
+        "holdingName": "Xiaomi Corp Class B",
+        "holdingPercent": 0.0068079
+      },
+      {
+        "symbol": "ICICIBANK.NS",
+        "holdingName": "ICICI Bank Ltd",
+        "holdingPercent": 0.0067894
+      }
+    ],
+    "sectorWeightings": [
+      {
+        "realestate": 0.024400001
+      },
+      {
+        "consumer_cyclical": 0.122
+      },
+      {
+        "basic_materials": 0.0846
+      },
+      {
+        "consumer_defensive": 0.038599998
+      },
+      {
+        "technology": 0.2458
+      },
+      {
+        "communication_services": 0.0866
+      },
+      {
+        "financial_services": 0.20989999
+      },
+      {
+        "utilities": 0.0278
+      },
+      {
+        "industrials": 0.0766
+      },
+      {
+        "energy": 0.0433
+      },
+      {
+        "healthcare": 0.0405
+      }
+    ]
+  },
+  "historicalContext": {
+    "spyTop10Weight": [
+      {
+        "year": 2015,
+        "weight": 17.5
+      },
+      {
+        "year": 2018,
+        "weight": 20.8
+      },
+      {
+        "year": 2021,
+        "weight": 29.3
+      },
+      {
+        "year": 2024,
+        "weight": 33.1
+      },
+      {
+        "year": 2026,
+        "weight": 34.5
+      }
+    ],
+    "qqqTop10Weight": [
+      {
+        "year": 2015,
+        "weight": 45.2
+      },
+      {
+        "year": 2018,
+        "weight": 52.1
+      },
+      {
+        "year": 2021,
+        "weight": 54.8
+      },
+      {
+        "year": 2024,
+        "weight": 48.5
+      },
+      {
+        "year": 2026,
+        "weight": 49.2
+      }
+    ]
+  }
+};
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const data = window.__INITIAL_DATA__;
+
+            // Format percentages
+            const formatPct = (val) => (val * 100).toFixed(2) + '%';
+
+            // Render Holdings Table
+            const renderTable = (symbol) => {
+                const indexData = data[symbol];
+                if (!indexData || !indexData.holdings) return;
+
+                const totalWeight = indexData.holdings.reduce((sum, h) => sum + h.holdingPercent, 0);
+
+                let html = `
+                    <div style="margin-bottom: 1rem;">
+                        <strong>Total Top 10 Weight: <span style="color: var(--accent-color);">${formatPct(totalWeight)}</span></strong>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Symbol</th>
+                                <th>Company</th>
+                                <th>Weight</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                `;
+
+                indexData.holdings.forEach(h => {
+                    const pct = h.holdingPercent * 100;
+                    html += `
+                        <tr>
+                            <td class="mono">${h.symbol}</td>
+                            <td>${h.holdingName}</td>
+                            <td>
+                                ${pct.toFixed(2)}%
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: ${pct}%"></div>
+                                </div>
+                            </td>
+                        </tr>
+                    `;
+                });
+
+                html += '</tbody></table>';
+                document.getElementById('holdingsContainer').innerHTML = html;
+            };
+
+            // Setup Tabs
+            const tabs = document.querySelectorAll('.tab-btn');
+            tabs.forEach(tab => {
+                tab.addEventListener('click', (e) => {
+                    tabs.forEach(t => t.classList.remove('active'));
+                    e.target.classList.add('active');
+                    renderTable(e.target.dataset.target);
+                });
+            });
+
+            // Initial render
+            renderTable('SPY');
+
+            // Setup Historical Chart
+            const ctxHist = document.getElementById('historicalChart').getContext('2d');
+            const histData = data.historicalContext;
+
+            new Chart(ctxHist, {
+                type: 'line',
+                data: {
+                    labels: histData.spyTop10Weight.map(d => d.year),
+                    datasets: [
+                        {
+                            label: 'S&P 500 Top 10 Weight %',
+                            data: histData.spyTop10Weight.map(d => d.weight),
+                            borderColor: '#4a8fe7',
+                            backgroundColor: 'rgba(74, 143, 231, 0.2)',
+                            fill: true,
+                            tension: 0.3
+                        },
+                        {
+                            label: 'NASDAQ 100 Top 10 Weight %',
+                            data: histData.qqqTop10Weight.map(d => d.weight),
+                            borderColor: '#e74c3c',
+                            backgroundColor: 'rgba(231, 76, 60, 0.2)',
+                            fill: true,
+                            tension: 0.3
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { labels: { color: '#e2e8f0' } }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 60,
+                            ticks: { color: '#94a3b8', callback: (val) => val + '%' },
+                            grid: { color: '#152040' }
+                        },
+                        x: {
+                            ticks: { color: '#94a3b8' },
+                            grid: { color: '#152040' }
+                        }
+                    }
+                }
+            });
+
+            // Setup Sector Chart
+            const ctxSector = document.getElementById('sectorChart').getContext('2d');
+            const spySectors = data['SPY'].sectorWeightings;
+
+            // Process sector data
+            const sectorLabels = [];
+            const sectorData = [];
+
+            // Format labels: basic_materials -> Basic Materials
+            const formatSector = (str) => {
+                return str.split('_').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+            };
+
+            spySectors.forEach(s => {
+                const key = Object.keys(s)[0];
+                sectorLabels.push(formatSector(key));
+                sectorData.push(s[key] * 100);
+            });
+
+            // Sort by weight
+            const sortedIndices = sectorData.map((val, ind) => ind)
+                .sort((a, b) => sectorData[b] - sectorData[a]);
+
+            const sortedLabels = sortedIndices.map(i => sectorLabels[i]);
+            const sortedVals = sortedIndices.map(i => sectorData[i]);
+
+            new Chart(ctxSector, {
+                type: 'doughnut',
+                data: {
+                    labels: sortedLabels,
+                    datasets: [{
+                        data: sortedVals,
+                        backgroundColor: [
+                            '#4a8fe7', '#3498db', '#2980b9', '#1abc9c', '#16a085',
+                            '#f1c40f', '#f39c12', '#e67e22', '#d35400', '#e74c3c', '#c0392b'
+                        ],
+                        borderWidth: 1,
+                        borderColor: '#060a12'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'right',
+                            labels: { color: '#e2e8f0', boxWidth: 12 }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return ' ' + context.label + ': ' + context.raw.toFixed(1) + '%';
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

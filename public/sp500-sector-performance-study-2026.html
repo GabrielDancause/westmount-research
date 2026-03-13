@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>S&P 500 Sector Performance 2026 | Westmount Fundamentals</title>
+  <meta name="description" content="A comprehensive analysis of S&P 500 sector performance for 2026. Track YTD, 1-Year, 3-Year, and 5-Year returns across all 11 GICS sectors.">
+  <link rel="canonical" href="https://westmountfundamentals.com/sp500-sector-performance-study-2026.html">
+  <meta property="og:title" content="S&P 500 Sector Performance 2026">
+  <meta property="og:description" content="Track YTD, 1-Year, 3-Year, and 5-Year returns across all 11 GICS sectors.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://westmountfundamentals.com/sp500-sector-performance-study-2026.html">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-color: #060a12;
+      --card-bg: #0a1020;
+      --border-color: #152040;
+      --accent-color: #4a8fe7;
+      --text-main: #c8d0de;
+      --text-muted: #8a94a6;
+      --text-highlight: #ffffff;
+      --positive: #22c55e;
+      --negative: #ef4444;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      line-height: 1.6;
+      padding-top: 48px; /* For injected nav */
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 24px;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .header-tag {
+      display: inline-block;
+      background: rgba(74, 143, 231, 0.1);
+      color: var(--accent-color);
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 6px 16px;
+      border-radius: 20px;
+      letter-spacing: 1px;
+      margin-bottom: 16px;
+    }
+
+    .header h1 {
+      font-size: 3rem;
+      font-weight: 900;
+      color: var(--text-highlight);
+      letter-spacing: -1px;
+      margin-bottom: 20px;
+      line-height: 1.1;
+    }
+
+    .header p {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .table-container {
+      overflow-x: auto;
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      margin-bottom: 60px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    th, td {
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--border-color);
+      white-space: nowrap;
+    }
+
+    th {
+      background: rgba(6, 10, 18, 0.5);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 700;
+      color: var(--text-muted);
+      position: sticky;
+      top: 0;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr:hover td {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .sector-name {
+      font-weight: 700;
+      color: var(--text-highlight);
+    }
+
+    .symbol {
+      display: inline-block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      color: var(--accent-color);
+      background: rgba(74, 143, 231, 0.1);
+      padding: 2px 6px;
+      border-radius: 4px;
+      margin-left: 8px;
+    }
+
+    .mono {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.95rem;
+    }
+
+    .pos { color: var(--positive); }
+    .neg { color: var(--negative); }
+
+    /* Highlight SPY row */
+    tr.spy-row td {
+      background: rgba(74, 143, 231, 0.05);
+      font-weight: 600;
+    }
+
+    .faq-section {
+      margin-bottom: 60px;
+    }
+
+    .faq-section h2 {
+      font-size: 2rem;
+      color: var(--text-highlight);
+      margin-bottom: 30px;
+    }
+
+    .faq-item {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 16px;
+    }
+
+    .faq-q {
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--text-highlight);
+      margin-bottom: 12px;
+    }
+
+    .faq-a {
+      color: var(--text-muted);
+    }
+
+    .footer {
+      text-align: center;
+      padding: 50px 24px;
+      font-size: 0.85rem;
+      color: #3a4a5a;
+      border-top: 1px solid #151f2e;
+      background: #040810;
+    }
+
+    .disclaimer {
+      max-width: 600px;
+      margin: 16px auto 0;
+      color: #2a3a4a;
+      font-size: 0.75rem;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 768px) {
+      .header h1 { font-size: 2.2rem; }
+      .container { padding: 40px 16px; }
+      th, td { padding: 12px 16px; }
+    }
+  </style>
+
+  <!-- Google Analytics Tracking ID G-VYF72NSC1Q -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VYF72NSC1Q"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VYF72NSC1Q');
+  </script>
+</head>
+<body>
+  <script src="/nav.js"></script>
+
+  <div class="container">
+    <div class="header">
+      <span class="header-tag">📊 ORIGINAL STUDY</span>
+      <h1>S&P 500 Sector Performance 2026</h1>
+      <p>Tracking the year-to-date and historical returns across all 11 Global Industry Classification Standard (GICS) sectors, represented by their respective SPDR ETFs. Compare against the baseline S&P 500 index (SPY).</p>
+    </div>
+
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Sector</th>
+            <th style="text-align:right">YTD Return</th>
+            <th style="text-align:right">1Y Return</th>
+            <th style="text-align:right">3Y Return</th>
+            <th style="text-align:right">5Y Return</th>
+            <th style="text-align:right">Div Yield</th>
+            <th style="text-align:right">Beta (3Y)</th>
+          </tr>
+        </thead>
+        <tbody>
+
+    <tr class="">
+      <td>
+        <span class="sector-name">Energy</span>
+        <span class="symbol">XLE</span>
+      </td>
+      <td style="text-align:right" class="mono"><span class="pos">+25.97%</span></td>
+      <td style="text-align:right" class="mono"><span class="pos">+33.14%</span></td>
+      <td style="text-align:right" class="mono"><span class="pos">+14.19%</span></td>
+      <td style="text-align:right" class="mono"><span class="pos">+21.13%</span></td>
+      <td style="text-align:right" class="mono">3.84%</td>
+      <td style="text-align:right" class="mono">0.51</td>
+    </tr>
+
+    <tr class="">
+      <td>
+        <span class="sector-name">Consumer Staples</span>
+        <span class="symbol">XLP</span>
+      </td>
+      <td style="text-align:right" class="mono"><span class="pos">+10.67%</span></td>
+      <td style="text-align:right" class="mono"><span class="pos">+6.59%</span></td>
+      <td style="text-align:right" class="mono"><span class="pos">+9.25%</span></td>
+      <td style="text-align:right" class="mono"><span class="pos">+8.58%</span></td>
+      <td style="text-align:right" class="mono">2.01%</td>
+      <td style="text-align:right" class="mono">0.59</td>
+    </tr>
+
+    <tr class="">
+      <td>
+        <span class="sector-name">Materials</span>
+        <span class="symbol">XLB</span>
+      </td>
+      <td style="text-align:right" class="mono"><span class="pos">+10.23%</span></td>
+      <td style="text-align:right" class="mono"><span class="pos">+16.09%</span></td>
+      <td style="text-align:right" class="mono"><span class="pos">+9.89%</span></td>
+      <td style="text-align:right" class="mono"><span class="pos">+7.53%</span></td>
+      <td style="text-align:right" class="mono">2.78%</td>
+      <td style="text-align:right" class="mono">1.14</td>
+    </tr>
+
+    <tr class="">
+      <td>
+        <span class="sector-name">Industrials</span>
+        <span class="symbol">XLI</span>
+      </td>
+      <td style="text-align:right" class="mono"><span class="pos">+10.20%</span></td>
+      <td style="text-align:right" class="mono"><span class="pos">+29.06%</span></td>
+      <td style="text-align:right" class="mono"><span class="pos">+21.05%</span></td>
+      <td style="text-align:right" class="mono"><span class="pos">+14.43%</span></td>
+      <td style="text-align:right" class="mono">0.73%</td>
+      <td style="text-align:right" class="mono">1.24</td>
+    </tr>
+
+    <tr class="">
+      <td>
+        <span class="sector-name">Utilities</span>
+        <span class="symbol">XLU</span>
+      </td>
+      <td style="text-align:right" class="mono"><span class="pos">+9.74%</span></td>
+      <td style="text-align:right" class="mono"><span class="pos">+24.67%</span></td>
+      <td style="text-align:right" class="mono"><span class="pos">+16.21%</span></td>
+      <td style="text-align:right" class="mono"><span class="pos">+12.20%</span></td>
+      <td style="text-align:right" class="mono">4.16%</td>
+      <td style="text-align:right" class="mono">0.72</td>
+    </tr>
+
+    <tr class="">
+      <td>
+        <span class="sector-name">Real Estate</span>
+        <span class="symbol">XLRE</span>
+      </td>
+      <td style="text-align:right" class="mono"><span class="pos">+6.52%</span></td>
+      <td style="text-align:right" class="mono"><span class="pos">+4.65%</span></td>
+      <td style="text-align:right" class="mono"><span class="pos">+8.52%</span></td>
+      <td style="text-align:right" class="mono"><span class="pos">+6.30%</span></td>
+      <td style="text-align:right" class="mono">N/A</td>
+      <td style="text-align:right" class="mono">1.14</td>
+    </tr>
+
+    <tr class="">
+      <td>
+        <span class="sector-name">Communication Services</span>
+        <span class="symbol">XLC</span>
+      </td>
+      <td style="text-align:right" class="mono"><span class="neg">-0.14%</span></td>
+      <td style="text-align:right" class="mono"><span class="pos">+18.64%</span></td>
+      <td style="text-align:right" class="mono"><span class="pos">+31.81%</span></td>
+      <td style="text-align:right" class="mono"><span class="pos">+11.02%</span></td>
+      <td style="text-align:right" class="mono">0.00%</td>
+      <td style="text-align:right" class="mono">0.95</td>
+    </tr>
+
+    <tr class="">
+      <td>
+        <span class="sector-name">Health Care</span>
+        <span class="symbol">XLV</span>
+      </td>
+      <td style="text-align:right" class="mono"><span class="neg">-0.35%</span></td>
+      <td style="text-align:right" class="mono"><span class="pos">+5.15%</span></td>
+      <td style="text-align:right" class="mono"><span class="pos">+9.03%</span></td>
+      <td style="text-align:right" class="mono"><span class="pos">+8.05%</span></td>
+      <td style="text-align:right" class="mono">1.17%</td>
+      <td style="text-align:right" class="mono">0.65</td>
+    </tr>
+
+    <tr class="spy-row">
+      <td>
+        <span class="sector-name">S&P 500 (Baseline)</span>
+        <span class="symbol">SPY</span>
+      </td>
+      <td style="text-align:right" class="mono"><span class="neg">-0.54%</span></td>
+      <td style="text-align:right" class="mono"><span class="pos">+19.15%</span></td>
+      <td style="text-align:right" class="mono"><span class="pos">+21.69%</span></td>
+      <td style="text-align:right" class="mono"><span class="pos">+13.42%</span></td>
+      <td style="text-align:right" class="mono">0.83%</td>
+      <td style="text-align:right" class="mono">1.00</td>
+    </tr>
+
+    <tr class="">
+      <td>
+        <span class="sector-name">Information Technology</span>
+        <span class="symbol">XLK</span>
+      </td>
+      <td style="text-align:right" class="mono"><span class="neg">-2.92%</span></td>
+      <td style="text-align:right" class="mono"><span class="pos">+28.69%</span></td>
+      <td style="text-align:right" class="mono"><span class="pos">+27.38%</span></td>
+      <td style="text-align:right" class="mono"><span class="pos">+17.44%</span></td>
+      <td style="text-align:right" class="mono">0.79%</td>
+      <td style="text-align:right" class="mono">1.24</td>
+    </tr>
+
+    <tr class="">
+      <td>
+        <span class="sector-name">Consumer Discretionary</span>
+        <span class="symbol">XLY</span>
+      </td>
+      <td style="text-align:right" class="mono"><span class="neg">-4.04%</span></td>
+      <td style="text-align:right" class="mono"><span class="pos">+12.38%</span></td>
+      <td style="text-align:right" class="mono"><span class="pos">+18.97%</span></td>
+      <td style="text-align:right" class="mono"><span class="pos">+7.92%</span></td>
+      <td style="text-align:right" class="mono">1.02%</td>
+      <td style="text-align:right" class="mono">1.32</td>
+    </tr>
+
+    <tr class="">
+      <td>
+        <span class="sector-name">Financials</span>
+        <span class="symbol">XLF</span>
+      </td>
+      <td style="text-align:right" class="mono"><span class="neg">-8.11%</span></td>
+      <td style="text-align:right" class="mono"><span class="pos">+3.87%</span></td>
+      <td style="text-align:right" class="mono"><span class="pos">+16.33%</span></td>
+      <td style="text-align:right" class="mono"><span class="pos">+10.15%</span></td>
+      <td style="text-align:right" class="mono">1.15%</td>
+      <td style="text-align:right" class="mono">0.95</td>
+    </tr>
+
+        </tbody>
+      </table>
+    </div>
+
+    <div class="faq-section">
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <div class="faq-q">What are the 11 GICS sectors?</div>
+        <div class="faq-a">The Global Industry Classification Standard (GICS) divides the stock market into 11 main sectors: Information Technology, Health Care, Financials, Consumer Discretionary, Communication Services, Industrials, Consumer Staples, Energy, Utilities, Real Estate, and Materials.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Which S&P 500 sector has performed the best historically?</div>
+        <div class="faq-a">Historically, Information Technology has been the top-performing sector over the past decade, driven by the massive growth of large-cap tech companies like Apple, Microsoft, and Nvidia. However, sector leadership often rotates depending on the macroeconomic environment.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">What is sector rotation?</div>
+        <div class="faq-a">Sector rotation is an investment strategy that involves moving capital from one industry sector to another in anticipation of the various stages of the business cycle. For instance, defensive sectors like Utilities and Consumer Staples often perform better during economic downturns, while cyclical sectors like Industrials and Consumer Discretionary outperform during economic expansions.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Which S&P 500 sectors offer the highest dividend yields?</div>
+        <div class="faq-a">Typically, the Utilities (XLU) and Real Estate (XLRE) sectors offer the highest dividend yields. These companies generally have stable cash flows and pay out a significant portion of their earnings as dividends, making them attractive to income-focused investors. Energy (XLE) also frequently provides high yields.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">How is Beta used to measure sector risk?</div>
+        <div class="faq-a">Beta measures a sector's volatility relative to the broader market (the S&P 500, which has a Beta of 1.0). A Beta greater than 1 indicates higher volatility (more risk, potentially higher reward), common in sectors like Technology and Consumer Discretionary. A Beta less than 1 indicates lower volatility, typical of defensive sectors like Utilities and Consumer Staples.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    © 2026 Westmount Research · A <a href="https://gab.ae" style="color: #4a8fe7; text-decoration: none;">GAB Ventures</a> property
+    <div class="disclaimer">Data for informational purposes only. Not investment advice. Real-time market data provided by third-party APIs. Yields and returns are subject to market fluctuations.</div>
+  </div>
+
+  <!-- FAQPage JSON-LD Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What are the 11 GICS sectors?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The Global Industry Classification Standard (GICS) divides the stock market into 11 main sectors: Information Technology, Health Care, Financials, Consumer Discretionary, Communication Services, Industrials, Consumer Staples, Energy, Utilities, Real Estate, and Materials."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which S&P 500 sector has performed the best historically?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Historically, Information Technology has been the top-performing sector over the past decade, driven by the massive growth of large-cap tech companies like Apple, Microsoft, and Nvidia. However, sector leadership often rotates depending on the macroeconomic environment."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is sector rotation?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sector rotation is an investment strategy that involves moving capital from one industry sector to another in anticipation of the various stages of the business cycle. For instance, defensive sectors like Utilities and Consumer Staples often perform better during economic downturns, while cyclical sectors like Industrials and Consumer Discretionary outperform during economic expansions."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which S&P 500 sectors offer the highest dividend yields?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Typically, the Utilities (XLU) and Real Estate (XLRE) sectors offer the highest dividend yields. These companies generally have stable cash flows and pay out a significant portion of their earnings as dividends, making them attractive to income-focused investors. Energy (XLE) also frequently provides high yields."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is Beta used to measure sector risk?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Beta measures a sector's volatility relative to the broader market (the S&P 500, which has a Beta of 1.0). A Beta greater than 1 indicates higher volatility (more risk, potentially higher reward), common in sectors like Technology and Consumer Discretionary. A Beta less than 1 indicates lower volatility, typical of defensive sectors like Utilities and Consumer Staples."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <script>
+    window.__INITIAL_DATA__ = [{"symbol":"XLE","name":"Energy","price":55.6,"ytdReturn":0.2596735,"oneYearReturn":0.3314439,"threeYearReturn":0.1418853,"fiveYearReturn":0.21129909,"dividendYield":0.038352273,"expenseRatio":0.08,"beta3y":0.51,"marketCap":37876244000},{"symbol":"XLP","name":"Consumer Staples","price":85.72,"ytdReturn":0.1067199,"oneYearReturn":0.065878004,"threeYearReturn":0.092537604,"fiveYearReturn":0.0858279,"dividendYield":0.0201233,"expenseRatio":0.08,"beta3y":0.59,"marketCap":17557141500},{"symbol":"XLB","name":"Materials","price":49.88,"ytdReturn":0.1023153,"oneYearReturn":0.1609222,"threeYearReturn":0.098894395,"fiveYearReturn":0.075299405,"dividendYield":0.02780556,"expenseRatio":0.08,"beta3y":1.14,"marketCap":7245534200},{"symbol":"XLI","name":"Industrials","price":170.02,"ytdReturn":0.101985596,"oneYearReturn":0.2905929,"threeYearReturn":0.2105367,"fiveYearReturn":0.1442782,"dividendYield":0.0072540073,"expenseRatio":0.08,"beta3y":1.24,"marketCap":31647199200},{"symbol":"XLU","name":"Utilities","price":46.56,"ytdReturn":0.0974467,"oneYearReturn":0.2467377,"threeYearReturn":0.16210109,"fiveYearReturn":0.1220132,"dividendYield":0.0416222,"expenseRatio":0.08,"beta3y":0.72,"marketCap":24356755500},{"symbol":"XLRE","name":"Real Estate","price":42.92,"ytdReturn":0.0651797,"oneYearReturn":0.0465198,"threeYearReturn":0.0851735,"fiveYearReturn":0.0630456,"dividendYield":null,"expenseRatio":0.08,"beta3y":1.14,"marketCap":7705807900},{"symbol":"XLC","name":"Communication Services","price":117.38,"ytdReturn":-0.0013592,"oneYearReturn":0.1863662,"threeYearReturn":0.31812072,"fiveYearReturn":0.1102201,"dividendYield":0,"expenseRatio":0.08,"beta3y":0.95,"marketCap":27163584500},{"symbol":"XLV","name":"Health Care","price":153.15,"ytdReturn":-0.0034884,"oneYearReturn":0.0514676,"threeYearReturn":0.0902945,"fiveYearReturn":0.0805453,"dividendYield":0.011733437,"expenseRatio":0.08,"beta3y":0.65,"marketCap":43115045000},{"symbol":"SPY","name":"S&P 500 (Baseline)","price":677.18,"ytdReturn":-0.0053525,"oneYearReturn":0.19150521,"threeYearReturn":0.2169227,"fiveYearReturn":0.1342271,"dividendYield":0.008347708,"expenseRatio":0.0945,"beta3y":1,"marketCap":698270220000},{"symbol":"XLK","name":"Information Technology","price":139.76,"ytdReturn":-0.0292422,"oneYearReturn":0.2868956,"threeYearReturn":0.2737833,"fiveYearReturn":0.1743572,"dividendYield":0.007892101,"expenseRatio":0.08,"beta3y":1.24,"marketCap":87685669000},{"symbol":"XLY","name":"Consumer Discretionary","price":114.44,"ytdReturn":-0.0403651,"oneYearReturn":0.1237863,"threeYearReturn":0.1897052,"fiveYearReturn":0.0792178,"dividendYield":0.010210315,"expenseRatio":0.08,"beta3y":1.32,"marketCap":22737530900},{"symbol":"XLF","name":"Financials","price":50.06,"ytdReturn":-0.0810663,"oneYearReturn":0.0387392,"threeYearReturn":0.1633111,"fiveYearReturn":0.1015113,"dividendYield":0.0115239415,"expenseRatio":0.08,"beta3y":0.95,"marketCap":49680445000}];
+  </script>
+</body>
+</html>

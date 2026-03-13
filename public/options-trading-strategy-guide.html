@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Options Trading Strategy Guide | Westmount Fundamentals</title>
+  <meta name="description" content="A comprehensive guide to options trading strategies from basic to advanced. Learn about covered calls, straddles, iron condors, risk/reward profiles, and Greek calculations." />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VYF72NSC1Q"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-VYF72NSC1Q');
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: #060a12;
+      color: #c8d0de;
+      line-height: 1.6;
+    }
+    a { color: #4a8fe7; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .header {
+      padding: 40px 24px;
+      text-align: center;
+      background: linear-gradient(180deg, #0a1628 0%, #060a12 100%);
+      border-bottom: 1px solid #152040;
+    }
+    .header .tag {
+      color: #4a8fe7;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      display: inline-block;
+      background: rgba(74,143,231,0.1);
+      padding: 6px 16px;
+      border-radius: 20px;
+    }
+    .header h1 {
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: #fff;
+      margin-bottom: 16px;
+      letter-spacing: -1px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 24px;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #fff;
+      margin: 40px 0 20px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #152040;
+    }
+    h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #e0e8f0;
+      margin: 24px 0 12px;
+    }
+    p { margin-bottom: 16px; font-size: 1.05rem; }
+    ul { margin-bottom: 20px; padding-left: 24px; }
+    li { margin-bottom: 8px; font-size: 1.05rem; }
+
+    .card {
+      background: #0a1020;
+      border: 1px solid #152040;
+      border-radius: 12px;
+      padding: 24px;
+      margin: 24px 0;
+    }
+    .card h4 { color: #4a8fe7; font-size: 1.1rem; margin-bottom: 12px; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      background: #0a1020;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    th, td {
+      padding: 16px;
+      text-align: left;
+      border-bottom: 1px solid #152040;
+    }
+    th {
+      background: #0d1428;
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+    td { font-size: 0.95rem; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin: 24px 0;
+    }
+
+    /* Strategy Selector Tool */
+    .selector-container {
+      background: #0a1020;
+      border: 1px solid #152040;
+      border-radius: 12px;
+      padding: 30px;
+      margin: 40px 0;
+    }
+    .selector-title {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .outlook-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+    .outlook-btn {
+      background: #0d1428;
+      border: 1px solid #152040;
+      color: #c8d0de;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .outlook-btn:hover {
+      background: #1a2332;
+      border-color: #4a8fe7;
+    }
+    .outlook-btn.active {
+      background: #4a8fe7;
+      color: #fff;
+      border-color: #4a8fe7;
+    }
+
+    .strategy-result {
+      display: none;
+      background: #060a12;
+      border: 1px solid #152040;
+      border-radius: 8px;
+      padding: 24px;
+    }
+    .strategy-result.active {
+      display: block;
+    }
+    .strategy-name {
+      color: #4a8fe7;
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .strategy-risk-reward {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 16px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.9rem;
+    }
+    .risk-badge { color: #f87171; }
+    .reward-badge { color: #4ade80; }
+
+    .faq-item {
+      margin-bottom: 24px;
+      background: #0a1020;
+      border: 1px solid #152040;
+      border-radius: 8px;
+      padding: 20px;
+    }
+    .faq-q { font-weight: 700; color: #fff; margin-bottom: 8px; font-size: 1.1rem; }
+    .faq-a { color: #c8d0de; }
+
+    .footer {
+      text-align: center;
+      padding: 50px 24px;
+      font-size: 0.85rem;
+      color: #3a4a5a;
+      border-top: 1px solid #152040;
+      background: #040810;
+      margin-top: 60px;
+    }
+    .footer-section {
+      max-width: 800px;
+      margin: 0 auto 20px;
+      text-align: left;
+      background: #0a1020;
+      padding: 24px;
+      border-radius: 12px;
+      border: 1px solid #152040;
+    }
+    .footer-section h4 { color: #e0e8f0; margin-bottom: 12px; font-size: 1rem; }
+    .footer-section p { font-size: 0.85rem; color: #6a7a90; margin-bottom: 0; }
+  </style>
+
+  <!-- JSON-LD FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the difference between a simple option trade and a spread?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A simple option trade involves buying or selling a single call or put. A spread involves buying and selling multiple options simultaneously (often with different strike prices or expirations) to limit risk, reduce cost, or define a specific payoff range."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does an Iron Condor work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "An Iron Condor is a neutral, non-directional strategy combining a bear call spread and a bull put spread. It profits when the underlying stock remains within a specific price range between the two short strikes through expiration."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What does 'breakeven point' mean in options strategies?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The breakeven point is the exact price the underlying asset must reach at expiration for the strategy to have zero profit and zero loss. Complex strategies like Iron Condors have multiple breakeven points (upper and lower bounds)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does implied volatility (IV) impact options spreads?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "When IV is high, options premiums are expensive. Sellers often use strategies like Credit Spreads or Iron Condors to collect high premiums, hoping IV will crush (decrease). When IV is low, buying strategies like Debit Spreads or Straddles become relatively cheaper."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are the core Greeks to monitor for an options strategy?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The primary Greeks are Delta (directional risk), Gamma (acceleration of Delta), Theta (time decay), and Vega (sensitivity to volatility changes). Tracking net Greeks across a spread helps understand how the entire position will behave as market conditions change."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+<script src="/nav.js"></script>
+
+  <div class="header">
+    <span class="tag">Educational Guide</span>
+    <h1>Options Trading Strategy Guide</h1>
+    <p style="color: #6a7a90; max-width: 600px; margin: 0 auto;">From Covered Calls to Iron Condors: Mastering risk, reward, and market outlooks.</p>
+  </div>
+
+  <div class="container">
+    <p>While buying a simple call or put is the foundation of options trading, seasoned traders combine multiple contracts to construct specific payoff profiles. These "strategies" allow traders to define their exact maximum risk and reward, trade non-directionally, or capitalize on volatility crush.</p>
+
+    <!-- Strategy Selector Tool -->
+    <div class="selector-container" id="strategySelector">
+      <div class="selector-title">Interactive Strategy Selector</div>
+      <p style="text-align: center; font-size: 0.95rem; color: #a0aec0; margin-bottom: 24px;">Select your market outlook to see the optimal options strategy.</p>
+
+      <div class="outlook-buttons">
+        <button class="outlook-btn active" data-outlook="bullish">Bullish</button>
+        <button class="outlook-btn" data-outlook="bearish">Bearish</button>
+        <button class="outlook-btn" data-outlook="neutral">Neutral (Range-bound)</button>
+        <button class="outlook-btn" data-outlook="volatile">Highly Volatile (Breakout)</button>
+      </div>
+
+      <div id="result-bullish" class="strategy-result active">
+        <div class="strategy-name">Bull Call Spread (Debit Spread)</div>
+        <div class="strategy-risk-reward">
+          <span class="risk-badge">Max Risk: Net Premium Paid</span>
+          <span class="reward-badge">Max Reward: Strike Width - Net Premium</span>
+        </div>
+        <p class="desc"></p>
+        <p style="font-size: 0.9rem; margin-bottom: 0;"><strong>Setup:</strong> Buy a lower strike Call, Sell a higher strike Call (same expiration).</p>
+      </div>
+
+      <div id="result-bearish" class="strategy-result">
+        <div class="strategy-name">Bear Put Spread (Debit Spread)</div>
+        <div class="strategy-risk-reward">
+          <span class="risk-badge">Max Risk: Net Premium Paid</span>
+          <span class="reward-badge">Max Reward: Strike Width - Net Premium</span>
+        </div>
+        <p class="desc"></p>
+        <p style="font-size: 0.9rem; margin-bottom: 0;"><strong>Setup:</strong> Buy a higher strike Put, Sell a lower strike Put (same expiration).</p>
+      </div>
+
+      <div id="result-neutral" class="strategy-result">
+        <div class="strategy-name">Iron Condor</div>
+        <div class="strategy-risk-reward">
+          <span class="risk-badge">Max Risk: Strike Width - Net Credit</span>
+          <span class="reward-badge">Max Reward: Net Credit Received</span>
+        </div>
+        <p class="desc"></p>
+        <p style="font-size: 0.9rem; margin-bottom: 0;"><strong>Setup:</strong> Sell a slightly OTM Call spread & Sell a slightly OTM Put spread simultaneously.</p>
+      </div>
+
+      <div id="result-volatile" class="strategy-result">
+        <div class="strategy-name">Long Straddle</div>
+        <div class="strategy-risk-reward">
+          <span class="risk-badge">Max Risk: Total Premium Paid</span>
+          <span class="reward-badge">Max Reward: Unlimited (Upside) / Substantial (Downside)</span>
+        </div>
+        <p class="desc"></p>
+        <p style="font-size: 0.9rem; margin-bottom: 0;"><strong>Setup:</strong> Buy an ATM Call and Buy an ATM Put simultaneously.</p>
+      </div>
+    </div>
+
+    <h2>1. The Building Blocks: Single-Leg Income Strategies</h2>
+    <p>Before advancing to multi-leg spreads, it's essential to understand the two most common single-leg income strategies used by stock owners.</p>
+
+    <div class="card">
+      <h4>Covered Call</h4>
+      <p>A strategy where you own 100 shares of a stock and sell 1 Out-of-the-Money (OTM) call option against those shares. You collect the premium upfront as income. If the stock stays below the strike price, you keep the shares and the premium. If it rises above the strike, your shares will be "called away" (sold) at the strike price, capping your upside.</p>
+      <ul>
+        <li><strong>Best for:</strong> Neutral to slightly bullish markets.</li>
+        <li><strong>Breakeven:</strong> Stock Purchase Price - Premium Received.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h4>Protective Put</h4>
+      <p>A Protective Put involves owning the underlying stock and buying a put option to act as an insurance policy against a severe drop in the stock price. If the stock falls, the put option gains value, offsetting the losses in the stock portfolio. If the stock rises, you lose the premium paid for the put, but profit from the stock's appreciation.</p>
+      <ul>
+        <li><strong>Best for:</strong> Protecting a stock position against short-term downside risk while maintaining upside potential.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h4>Cash-Secured Put</h4>
+      <p>Instead of placing a limit order to buy a stock, you sell a put option at your desired entry price and hold cash equivalent to the potential purchase cost. You collect premium while waiting. If the stock drops below the strike, you are assigned and buy the stock at a discount (Strike Price - Premium). If it stays above, you simply keep the premium.</p>
+      <ul>
+        <li><strong>Best for:</strong> Acquiring stock at a discount; neutral to bullish outlook.</li>
+        <li><strong>Breakeven:</strong> Strike Price - Premium Received.</li>
+      </ul>
+    </div>
+
+    <h2>2. Vertical Spreads: Defining Risk and Reward</h2>
+    <p>A vertical spread involves buying and selling options of the same type (Calls or Puts) and same expiration date, but different strike prices. Spreads cap your maximum possible loss, but also cap your maximum possible gain.</p>
+
+    <h3>Debit Spreads (Paying to enter)</h3>
+    <p>You use a debit spread when you want to buy an option, but want to reduce the cost by selling another option further Out-of-the-Money.</p>
+    <ul>
+      <li><strong>Bull Call Spread:</strong> Buy a lower strike Call, sell a higher strike Call. You want the stock to rise past the higher strike.</li>
+      <li><strong>Bear Put Spread:</strong> Buy a higher strike Put, sell a lower strike Put. You want the stock to fall below the lower strike.</li>
+    </ul>
+
+    <h3>Credit Spreads (Getting paid to enter)</h3>
+    <p>You use a credit spread when you want to sell an option to collect premium, but want to cap your catastrophic risk by buying a cheaper option further Out-of-the-Money to act as insurance.</p>
+    <ul>
+      <li><strong>Bull Put Spread:</strong> Sell a higher strike Put, buy a lower strike Put. You want the stock to stay above the higher strike so both expire worthless, allowing you to keep the net credit.</li>
+      <li><strong>Bear Call Spread:</strong> Sell a lower strike Call, buy a higher strike Call. You want the stock to stay below the lower strike.</li>
+    </ul>
+
+    <h2>3. Advanced Neutral Strategies</h2>
+    <p>What if you don't know which direction a stock will go, but you have a strong opinion on <em>how much</em> it will move? These strategies trade volatility rather than direction.</p>
+
+    <div class="grid">
+      <div class="card" style="margin: 0;">
+        <h4>Long Straddle (Expecting a Breakout)</h4>
+        <p>Buy an At-the-Money (ATM) Call and Buy an ATM Put simultaneously. You pay a large premium, meaning the stock needs to make a massive move in <em>either</em> direction to overcome the cost. Profits are theoretically unlimited.</p>
+      </div>
+      <div class="card" style="margin: 0;">
+        <h4>Iron Condor (Expecting Low Volatility)</h4>
+        <p>Sell an OTM Bear Call Spread and sell an OTM Bull Put Spread. You collect a net credit. You want the stock to remain "trapped" between your two short strikes. If it breaks out of the range, your losses are capped by the long wings of your spreads.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h4>Iron Butterfly</h4>
+      <p>Similar to an Iron Condor, but the short Call and short Put share the exact same At-the-Money strike price, with protective wings further out. It collects a much higher premium than an Iron Condor but requires the stock to pin exactly at (or very near) the short strike for maximum profit. The profit tent is much narrower.</p>
+    </div>
+
+    <h2>4. Greek Calculations and Net Position Management</h2>
+    <p>When trading complex spreads, looking at the Greeks of a single leg is insufficient. You must calculate the <strong>Net Greeks</strong> of the entire position.</p>
+    <ul>
+      <li><strong>Net Delta:</strong> Positive net delta means the overall position is bullish. Negative net delta means it's bearish. An Iron Condor is designed to be "Delta Neutral" (Net Delta near zero).</li>
+      <li><strong>Net Theta:</strong> If you sold premium (Credit Spreads, Iron Condors), your Net Theta will be positive. Time decay works in your favor. Every day that passes without the stock moving against you adds theoretical value to your account. If you bought premium (Debit Spreads, Straddles), Theta works against you.</li>
+      <li><strong>Net Vega:</strong> Credit spreads generally have negative Net Vega, meaning they benefit from a decrease in Implied Volatility (IV Crush).</li>
+    </ul>
+
+    <h2>5. Timing and Volatility Impact (IV Crush)</h2>
+    <p>A critical mistake new traders make is buying options immediately before an earnings announcement. Implied Volatility (IV) usually surges heading into an unknown event like earnings, inflating the price of all options (high Vega).</p>
+    <p>The moment the earnings report is released, the uncertainty disappears, and IV plummets instantly. This is known as <strong>IV Crush</strong>. An option buyer can correctly predict the direction of the stock, but still lose money because the massive drop in Vega completely offsets the gains from Delta.</p>
+    <p>Conversely, advanced traders often use Iron Condors or Credit Spreads <em>before</em> earnings specifically to sell inflated premium and profit from the subsequent IV Crush.</p>
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <div class="faq-q">What is the difference between a simple option trade and a spread?</div>
+      <div class="faq-a">A simple option trade involves buying or selling a single call or put. A spread involves buying and selling multiple options simultaneously (often with different strike prices or expirations) to limit risk, reduce cost, or define a specific payoff range.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How does an Iron Condor work?</div>
+      <div class="faq-a">An Iron Condor is a neutral, non-directional strategy combining a bear call spread and a bull put spread. It profits when the underlying stock remains within a specific price range between the two short strikes through expiration.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What does 'breakeven point' mean in options strategies?</div>
+      <div class="faq-a">The breakeven point is the exact price the underlying asset must reach at expiration for the strategy to have zero profit and zero loss. Complex strategies like Iron Condors have multiple breakeven points (upper and lower bounds).</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How does implied volatility (IV) impact options spreads?</div>
+      <div class="faq-a">When IV is high, options premiums are expensive. Sellers often use strategies like Credit Spreads or Iron Condors to collect high premiums, hoping IV will crush (decrease). When IV is low, buying strategies like Debit Spreads or Straddles become relatively cheaper.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What are the core Greeks to monitor for an options strategy?</div>
+      <div class="faq-a">The primary Greeks are Delta (directional risk), Gamma (acceleration of Delta), Theta (time decay), and Vega (sensitivity to volatility changes). Tracking net Greeks across a spread helps understand how the entire position will behave as market conditions change.</div>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    <div class="footer-section">
+      <h4>Methodology</h4>
+      <p>This educational guide outlines standardized, multi-leg options strategies as defined by standard options clearing mechanics. The interactive tool uses static logic to map generalized market outlooks to conventional theoretical strategies. All examples assume standardized multiplier contracts and ignore real-world slippage, commissions, early assignment risk, and margin requirements. Calculations for breakevens and risk profiles are theoretical.</p>
+    </div>
+    <div class="footer-section">
+      <h4>Disclaimer</h4>
+      <p>Data for informational purposes only. Not investment advice. Options trading entails significant risk and is not appropriate for all investors. Complex, multi-leg strategies carry unique risks including the potential for significant losses. Nothing on this site constitutes a recommendation to employ any specific strategy or to buy or sell any security. Always consult with a qualified financial advisor or broker before trading.</p>
+    </div>
+    <div>
+      © 2026 <a href="/">westmount-research</a> · A <a href="https://gab.ae">GAB Ventures</a> property
+    </div>
+  </div>
+
+  <script>
+    // Strategy Selector Logic
+    document.addEventListener('DOMContentLoaded', () => {
+      const buttons = document.querySelectorAll('.outlook-btn');
+      const results = document.querySelectorAll('.strategy-result');
+
+      // Set initial descriptions
+      document.querySelector('#result-bullish .desc').textContent = "You expect the stock to rise moderately. A bull call spread reduces the cost of entry compared to a naked call, while capping your maximum potential profit.";
+      document.querySelector('#result-bearish .desc').textContent = "You expect the stock to decline. A bear put spread reduces your upfront cost compared to buying a naked put, while limiting your maximum reward.";
+      document.querySelector('#result-neutral .desc').textContent = "You expect the stock to trade sideways in a tight range. You sell premium on both sides to collect income, protected by further OTM long options to cap risk.";
+      document.querySelector('#result-volatile .desc').textContent = "You expect a massive move (e.g., upcoming earnings or FDA approval) but don't know the direction. You buy both an ATM Call and ATM Put.";
+
+      buttons.forEach(button => {
+        button.addEventListener('click', () => {
+          // Remove active class from all buttons and results
+          buttons.forEach(btn => btn.classList.remove('active'));
+          results.forEach(res => res.classList.remove('active'));
+
+          // Add active class to clicked button
+          button.classList.add('active');
+
+          // Show corresponding result
+          const outlook = button.getAttribute('data-outlook');
+          const targetResult = document.getElementById(`result-${outlook}`);
+          if (targetResult) {
+            targetResult.classList.add('active');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

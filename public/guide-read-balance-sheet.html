@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Read a Balance Sheet | Westmount Fundamentals</title>
+  <meta name="description" content="A comprehensive guide on how to read and analyze a company's balance sheet, including assets, liabilities, and shareholders' equity.">
+
+  <link rel="canonical" href="https://westmountfundamentals.com/guide-read-balance-sheet.html">
+  <meta property="og:title" content="How to Read a Balance Sheet | Westmount Fundamentals">
+  <meta property="og:description" content="A comprehensive guide on how to read and analyze a company's balance sheet, including assets, liabilities, and shareholders' equity.">
+  <meta property="og:url" content="https://westmountfundamentals.com/guide-read-balance-sheet.html">
+  <meta property="og:type" content="article">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VYF72NSC1Q"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VYF72NSC1Q');
+  </script>
+
+  <!-- FAQPage JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the accounting equation?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The fundamental accounting equation is: Assets = Liabilities + Shareholders' Equity. A balance sheet must always balance according to this formula."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between current and non-current assets?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Current assets are expected to be converted into cash or consumed within one year (like cash, inventory). Non-current assets are long-term investments, property, plant, and equipment (PP&E), and intangible assets expected to provide value for more than one year."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is working capital?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Working capital is calculated as Current Assets minus Current Liabilities. It represents a company's short-term liquidity and operational efficiency."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are retained earnings?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Retained earnings represent the cumulative amount of net income a company has kept over time, after paying out dividends to shareholders. It is found in the Shareholders' Equity section."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why is the balance sheet important to investors?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The balance sheet provides a snapshot of a company's financial health at a specific point in time. It helps investors assess liquidity, financial leverage, and the overall net worth of the business."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg: #060a12;
+      --card-bg: #0a1020;
+      --border: #152040;
+      --accent: #4a8fe7;
+      --text: #c8d0de;
+      --text-muted: #5a6a80;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 60px 24px;
+    }
+
+    h1, h2, h3 {
+      color: #fff;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+
+    h1 { font-size: 2.5rem; margin-bottom: 1rem; line-height: 1.2; }
+    h2 { font-size: 1.8rem; margin-top: 2.5rem; margin-bottom: 1rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
+    h3 { font-size: 1.3rem; margin-top: 1.5rem; margin-bottom: 0.5rem; color: var(--accent); }
+
+    p { margin-bottom: 1.5rem; }
+
+    .tag {
+      display: inline-block;
+      background: rgba(74,143,231,0.1);
+      color: var(--accent);
+      font-size: 0.8rem;
+      font-weight: 800;
+      padding: 4px 12px;
+      border-radius: 4px;
+      letter-spacing: 1px;
+      margin-bottom: 16px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+
+    .equation-box {
+      text-align: center;
+      background: rgba(74, 143, 231, 0.05);
+      border: 1px solid var(--accent);
+      padding: 30px;
+      border-radius: 12px;
+      margin: 30px 0;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.5rem;
+      color: #fff;
+    }
+
+    ul { margin-left: 24px; margin-bottom: 1.5rem; }
+    li { margin-bottom: 0.5rem; }
+
+    .faq-item {
+      margin-bottom: 1.5rem;
+    }
+    .faq-question {
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.5rem;
+    }
+    .faq-answer {
+      color: var(--text);
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 50px 24px;
+      font-size: 0.85rem;
+      color: #3a4a5a;
+      border-top: 1px solid var(--border);
+      background: #040810;
+      margin-top: 60px;
+    }
+    .footer a { color: var(--accent); text-decoration: none; }
+    .footer a:hover { text-decoration: underline; }
+    .disclaimer {
+      max-width: 600px;
+      margin: 16px auto 0;
+      color: #2a3a4a;
+      font-size: 0.75rem;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 2rem; }
+      .equation-box { font-size: 1.2rem; padding: 20px; }
+      .container { padding: 40px 20px; }
+    }
+  </style>
+</head>
+<body>
+  <script src="/nav.js"></script>
+
+  <div class="container">
+    <span class="tag">EDUCATIONAL GUIDE</span>
+    <h1>How to Read a Balance Sheet</h1>
+    <p style="font-size: 1.1rem; color: #8a9bb0;">A step-by-step guide to understanding assets, liabilities, and shareholders' equity to evaluate a company's financial health.</p>
+
+    <div class="card" style="margin-top: 30px;">
+      <p style="margin-bottom: 0;"><strong>The Balance Sheet</strong> is one of the three core financial statements used to evaluate a business. It provides a snapshot of what a company owns and owes, as well as the amount invested by shareholders at a specific point in time.</p>
+    </div>
+
+    <h2>The Fundamental Accounting Equation</h2>
+    <p>Every balance sheet is built upon a simple formula that must always balance. A company has to pay for all the things it owns (assets) by either borrowing money (liabilities) or taking it from investors (shareholders' equity).</p>
+
+    <div class="equation-box">
+      Assets = Liabilities + Equity
+    </div>
+
+    <h2>1. Assets: What the Company Owns</h2>
+    <p>Assets are resources with economic value that a corporation owns or controls with the expectation that it will provide a future benefit. They are typically listed in order of liquidity (how easily they can be converted to cash).</p>
+
+    <h3>Current Assets</h3>
+    <p>Assets that are expected to be converted into cash within one year.</p>
+    <ul>
+      <li><strong>Cash & Cash Equivalents:</strong> The most liquid assets, including Treasury bills and short-term certificates of deposit.</li>
+      <li><strong>Accounts Receivable:</strong> Money owed to the company by customers for goods or services delivered.</li>
+      <li><strong>Inventory:</strong> Goods available for sale or raw materials used to produce goods.</li>
+    </ul>
+
+    <h3>Non-Current (Long-Term) Assets</h3>
+    <p>Assets that are not expected to be converted to cash within a year.</p>
+    <ul>
+      <li><strong>Property, Plant, and Equipment (PP&E):</strong> Physical, long-term assets like buildings, machinery, and land.</li>
+      <li><strong>Intangible Assets:</strong> Non-physical assets such as patents, trademarks, and goodwill.</li>
+    </ul>
+
+    <h2>2. Liabilities: What the Company Owes</h2>
+    <p>Liabilities are a company's financial debt or obligations that arise during business operations. Like assets, they are categorized by their due dates.</p>
+
+    <h3>Current Liabilities</h3>
+    <p>Obligations due within one year.</p>
+    <ul>
+      <li><strong>Accounts Payable:</strong> Money the company owes to suppliers and vendors.</li>
+      <li><strong>Short-Term Debt:</strong> Bank loans or obligations due within 12 months.</li>
+      <li><strong>Current Portion of Long-Term Debt:</strong> The portion of a long-term loan that must be paid this year.</li>
+    </ul>
+
+    <h3>Non-Current (Long-Term) Liabilities</h3>
+    <p>Debts due after one year.</p>
+    <ul>
+      <li><strong>Long-Term Debt:</strong> Bonds payable or long-term bank loans.</li>
+      <li><strong>Deferred Tax Liabilities:</strong> Taxes accrued but not yet paid to the government.</li>
+    </ul>
+
+    <h2>3. Shareholders' Equity: The Net Worth</h2>
+    <p>Shareholders' equity (or owners' equity) is the amount of money that would be returned to shareholders if all the assets were liquidated and all the company's debt was paid off.</p>
+    <ul>
+      <li><strong>Common Stock:</strong> The amount investors paid for shares when the stock was first issued.</li>
+      <li><strong>Retained Earnings:</strong> The cumulative net income a company has generated over time, minus any dividends paid to shareholders. It shows how much profit is being reinvested into the business.</li>
+    </ul>
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="card">
+      <div class="faq-item">
+        <div class="faq-question">What is the accounting equation?</div>
+        <div class="faq-answer">The fundamental accounting equation is: Assets = Liabilities + Shareholders' Equity. A balance sheet must always balance according to this formula.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">What is the difference between current and non-current assets?</div>
+        <div class="faq-answer">Current assets are expected to be converted into cash or consumed within one year (like cash, inventory). Non-current assets are long-term investments, property, plant, and equipment (PP&E), and intangible assets expected to provide value for more than one year.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">What is working capital?</div>
+        <div class="faq-answer">Working capital is calculated as Current Assets minus Current Liabilities. It represents a company's short-term liquidity and operational efficiency.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">What are retained earnings?</div>
+        <div class="faq-answer">Retained earnings represent the cumulative amount of net income a company has kept over time, after paying out dividends to shareholders. It is found in the Shareholders' Equity section.</div>
+      </div>
+      <div class="faq-item" style="margin-bottom: 0;">
+        <div class="faq-question">Why is the balance sheet important to investors?</div>
+        <div class="faq-answer">The balance sheet provides a snapshot of a company's financial health at a specific point in time. It helps investors assess liquidity, financial leverage, and the overall net worth of the business.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    © 2026 <a href="/">Westmount Research</a> · A <a href="https://gab.ae">GAB Ventures</a> property
+    <div class="disclaimer">Data for informational purposes only. Not investment advice. Do your own research.</div>
+  </div>
+</body>
+</html>

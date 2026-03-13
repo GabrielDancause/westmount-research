@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Technical Analysis for Fundamental Investors: What Actual...</title>
+  <title>Technical Analysis for Fundamental Investors: What Actually Works</title>
   <meta name="description" content="A skeptical value investor's guide to technical analysis. Discover which chart signals actually work and which indicators you are better off ignoring...">
-  <link rel="canonical" href="https://westmountfundamentals.com/guide-technical-analysis-basics">
-  
+  <link rel="canonical" href="https://westmountfundamentals.com/guide-technical-analysis-basics.html">
+
   <!-- Open Graph -->
   <meta property="og:title" content="Technical Analysis for Fundamental Investors: What Actually Works">
   <meta property="og:description" content="A skeptical value investor's guide to technical analysis. Discover which chart signals actually work and which indicators you are better off ignoring...">
-  <meta property="og:url" content="https://westmountfundamentals.com/guide-technical-analysis-basics">
+  <meta property="og:url" content="https://westmountfundamentals.com/guide-technical-analysis-basics.html">
   <meta property="og:type" content="article">
 
   <!-- JSON-LD FAQ Schema -->
@@ -120,7 +120,7 @@
     p { margin-bottom: 1.5rem; }
     ul, ol { margin-bottom: 1.5rem; padding-left: 1.5rem; }
     li { margin-bottom: 0.5rem; }
-    
+
     a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
 
@@ -290,23 +290,20 @@
       .controls { flex-direction: column; align-items: flex-start; }
     }
   </style>
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Technical Analysis for Fundamental Investors: What Actually Works">
-  <meta name="twitter:description" content="A skeptical value investor's guide to technical analysis. Discover which chart signals actually work and which indicators you are better off ignoring...">
 </head>
 <body>
-<nav style="position:sticky;top:0;z-index:1000;background:rgba(6,10,18,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.06)">
-<div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:48px">
-<a href="/" style="font-size:0.9rem;font-weight:700;color:#fff;text-decoration:none;letter-spacing:-0.3px">Westmount Fundamentals</a>
-<div style="display:flex;gap:8px">
-<a href="/#studies" style="color:#8a94a6;text-decoration:none;font-size:0.82rem;font-weight:500;padding:6px 14px;border-radius:6px">Studies</a>
-<a href="/#tools" style="color:#8a94a6;text-decoration:none;font-size:0.82rem;font-weight:500;padding:6px 14px;border-radius:6px">Tools</a>
-<a href="/#guides" style="color:#8a94a6;text-decoration:none;font-size:0.82rem;font-weight:500;padding:6px 14px;border-radius:6px">Guides</a>
-</div>
-</div>
-</nav>
+  <nav style="position: sticky; top: 0; background: var(--card-bg); border-bottom: 1px solid var(--border); z-index: 1000; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center;">
+    <a href="/" style="font-weight: 800; color: var(--heading); font-size: 1.2rem; display: flex; align-items: center; gap: 8px;">
+      Westmount Fundamentals
+    </a>
+    <div style="display: flex; gap: 20px; font-weight: 500; font-size: 0.9rem;">
+      <a href="/#studies" style="color: var(--text);">Studies</a>
+      <a href="/#tools" style="color: var(--text);">Tools</a>
+      <a href="/#guides" style="color: var(--text);">Guides</a>
+    </div>
+  </nav>
 
-<div class="container">
+  <div class="container">
     <div class="header-section">
       <div class="tag">GUIDE</div>
       <h1>Technical Analysis for Fundamental Investors</h1>
@@ -400,27 +397,27 @@
 
     <div class="faq-section">
       <h2>Frequently Asked Questions</h2>
-      
+
       <div class="faq-item">
         <div class="faq-q">Should fundamental investors use technical analysis?</div>
         <div class="faq-a">Yes, but strictly as a secondary tool. Fundamental analysis should dictate WHAT to buy and sell, while simple technical analysis (like volume and key moving averages) can help optimize WHEN to enter or exit positions.</div>
       </div>
-      
+
       <div class="faq-item">
         <div class="faq-q">Do support and resistance levels actually work?</div>
         <div class="faq-a">Yes, support and resistance work primarily because of market psychology and memory. They represent price points where large pools of buyers or sellers have historically stepped in, creating self-fulfilling prophecies.</div>
       </div>
-      
+
       <div class="faq-item">
         <div class="faq-q">What is the difference between the 50-day and 200-day moving average?</div>
         <div class="faq-a">The 50-day moving average measures the medium-term trend and is closely watched by institutional traders. The 200-day moving average represents the long-term macroeconomic trend; stocks trading below it are generally considered to be in a downtrend.</div>
       </div>
-      
+
       <div class="faq-item">
         <div class="faq-q">Is RSI a good indicator for value investing?</div>
         <div class="faq-a">The Relative Strength Index (RSI) can be useful for value investors when looking to initiate a position in a stock they already like fundamentally. An RSI below 30 indicates the stock is temporarily oversold and might offer a better entry price.</div>
       </div>
-      
+
       <div class="faq-item">
         <div class="faq-q">Do chart patterns like head and shoulders work?</div>
         <div class="faq-a">Most complex chart patterns lack robust statistical evidence. For fundamental investors, relying on subjective patterns like "head and shoulders" or Elliott Wave theory is generally not recommended, as they are prone to confirmation bias.</div>
@@ -457,9 +454,9 @@
       let currentPrice = 100;
       const vol = parseInt(volInput.value);
       const trend = parseInt(trendInput.value) / 10;
-      
+
       priceData = [];
-      
+
       for(let i=0; i<points; i++) {
         // Random walk with drift
         const change = (Math.random() - 0.5) * vol + trend;
@@ -471,7 +468,7 @@
       // Calculate SMAs
       sma50Data = calculateSMA(priceData, 50);
       sma200Data = calculateSMA(priceData, 200);
-      
+
       drawChart();
     }
 
@@ -487,18 +484,18 @@
 
     function drawChart() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      
+
       if(priceData.length === 0) return;
 
       const padding = 20;
       const width = canvas.width - padding * 2;
       const height = canvas.height - padding * 2;
-      
+
       // Find min/max for scaling
       let allVisibleData = [...priceData];
       sma50Data.forEach(v => { if(v) allVisibleData.push(v); });
       sma200Data.forEach(v => { if(v) allVisibleData.push(v); });
-      
+
       const maxVal = Math.max(...allVisibleData) * 1.05;
       const minVal = Math.min(...allVisibleData) * 0.95;
       const range = maxVal - minVal;
@@ -523,7 +520,7 @@
         ctx.strokeStyle = color;
         ctx.lineWidth = lineWidth;
         ctx.lineJoin = 'round';
-        
+
         let started = false;
         for(let i=0; i<data.length; i++) {
           if(data[i] !== null) {
