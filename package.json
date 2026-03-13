@@ -11,28 +11,13 @@
   "dependencies": {
     "@playwright/test": "^1.58.2",
     "astro": "^5.17.1",
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
     "axios": "^1.13.6",
->>>>>>> main
->>>>>>> main
     "cheerio": "^1.2.0",
-    "jsdom": "^28.1.0",
-    "node-fetch": "^3.3.2",
-    "puppeteer": "^24.39.0",
-=======
-<<<<<<< HEAD
-    "cheerio": "^1.2.0",
-=======
     "chart.js": "^4.5.1",
->>>>>>> main
     "jsdom": "^28.1.0",
     "node-fetch": "^3.3.2",
     "playwright": "^1.58.2",
->>>>>>> main
+    "puppeteer": "^24.39.0",
     "yahoo-finance2": "^3.13.2"
   },
   "devDependencies": {
