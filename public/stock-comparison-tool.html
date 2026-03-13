@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stock Comparison Tool: Compare Any Two Stocks</title>
+  <meta name="description" content="Compare any two stocks side-by-side. Analyze P/E, dividend yield, market cap, ROE, revenue growth, and more with our interactive stock comparison tool.">
+  <link rel="canonical" href="https://westmountfundamentals.com/stock-comparison-tool">
+  <meta property="og:title" content="Stock Comparison Tool: Compare Any Two Stocks">
+  <meta property="og:description" content="Compare any two stocks side-by-side. Analyze P/E, dividend yield, market cap, ROE, revenue growth, and more with our interactive stock comparison tool.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://westmountfundamentals.com/stock-comparison-tool">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Stock Comparison Tool: Compare Any Two Stocks">
+  <meta name="twitter:description" content="Compare any two stocks side-by-side. Analyze P/E, dividend yield, market cap, ROE, revenue growth, and more with our interactive stock comparison tool.">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do you compare two stocks side by side?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "To compare two stocks side by side, look at key financial metrics such as the Price-to-Earnings (P/E) ratio, Dividend Yield, Market Capitalization, Return on Equity (ROE), and Revenue Growth. Our stock comparison tool automatically aligns these metrics for any two tickers so you can evaluate their relative valuation and performance."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which is better: high P/E or low P/E?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A low P/E ratio may indicate that a stock is undervalued compared to its earnings, which appeals to value investors. A high P/E ratio often suggests that investors expect higher future growth, typical of growth stocks. The 'better' choice depends on your investment strategy and the industry average."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How to choose between two similar stocks?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "When choosing between two similar stocks, compare their valuation (P/E, P/B), profitability (Profit Margin, ROE), growth (Revenue Growth), and risk (Beta). Additionally, consider their dividend yield if you are seeking income, and review their historical 52-week price range."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is a good ROE for a stock?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A good Return on Equity (ROE) is typically around 15% to 20%, though it varies significantly by industry. A higher ROE indicates that a company is more efficient at generating profit from its shareholders' equity."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why compare stock market caps?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Comparing market capitalization helps you understand the size and stability of the companies. Large-cap stocks are generally more stable and often pay dividends, while small-cap stocks might offer higher growth potential but come with greater risk and volatility."
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Stock Comparison Tool: Compare Any Two Stocks",
+    "description": "Compare any two stocks side-by-side. Analyze P/E, dividend yield, market cap, ROE, revenue growth, and more with our interactive stock comparison tool.",
+    "datePublished": "2026-03-01T08:00:00+00:00",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Westmount Research",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://westmountfundamentals.com/logo.png"
+      }
+    }
+  }
+  </script>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VYF72NSC1Q"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VYF72NSC1Q');
+  </script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;700&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: #060a12;
+      color: #c8d0de;
+      line-height: 1.6;
+    }
+
+    /* Nav */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(6, 10, 18, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid #152040;
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .nav-brand {
+      color: #fff;
+      font-weight: 800;
+      font-size: 1.1rem;
+      text-decoration: none;
+      letter-spacing: -0.5px;
+    }
+    .nav-links a {
+      color: #8a9cbd;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-left: 24px;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: #4a8fe7; }
+
+    /* Layout */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 24px;
+    }
+
+    /* Header */
+    .header { text-align: center; margin-bottom: 50px; }
+    h1 {
+      font-size: 3rem;
+      font-weight: 900;
+      letter-spacing: -1.5px;
+      margin-bottom: 16px;
+      background: linear-gradient(90deg, #fff, #8a9cbd);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .subtitle { color: #8a9cbd; font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+
+    /* Controls */
+    .controls {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .input-group label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #8a9cbd;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .controls input {
+      background: #0a1020;
+      border: 1px solid #152040;
+      color: #fff;
+      padding: 12px 16px;
+      border-radius: 8px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1rem;
+      width: 150px;
+      text-transform: uppercase;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .controls input:focus { border-color: #4a8fe7; }
+    .controls button {
+      background: #4a8fe7;
+      color: #fff;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      align-self: flex-end;
+      transition: background 0.2s;
+    }
+    .controls button:hover { background: #3a75c4; }
+
+    /* Comparison Area */
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+
+    .stock-card {
+      background: #0a1020;
+      border: 1px solid #152040;
+      border-radius: 12px;
+      padding: 32px;
+      text-align: center;
+      display: none;
+    }
+    .stock-card.active { display: block; }
+
+    .ticker { font-size: 2.5rem; font-weight: 900; color: #fff; font-family: 'JetBrains Mono', monospace; margin-bottom: 8px; }
+    .company-name { color: #8a9cbd; font-size: 1.1rem; margin-bottom: 24px; }
+
+    .metrics-list { text-align: left; }
+    .metric-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 0;
+      border-bottom: 1px solid #152040;
+    }
+    .metric-item:last-child { border-bottom: none; }
+    .metric-label { color: #8a9cbd; font-size: 0.9rem; font-weight: 500; }
+    .metric-value { color: #fff; font-family: 'JetBrains Mono', monospace; font-weight: 700; }
+
+    /* Winner highlighting */
+    .metric-value.winner { color: #4ae78f; }
+    .metric-value.loser { color: #e74a6b; }
+
+    /* Chart Area */
+    .chart-container {
+      background: #0a1020;
+      border: 1px solid #152040;
+      border-radius: 12px;
+      padding: 32px;
+      margin-bottom: 60px;
+      display: none;
+      height: 400px;
+    }
+    .chart-container.active { display: block; }
+
+    /* Error Message */
+    .error-message {
+      color: #e74a6b;
+      text-align: center;
+      margin-bottom: 20px;
+      font-weight: 600;
+      display: none;
+    }
+
+    /* Table fallback or detailed view */
+    .table-container {
+      background: #0a1020;
+      border: 1px solid #152040;
+      border-radius: 12px;
+      overflow-x: auto;
+      margin-bottom: 60px;
+      display: none;
+    }
+    .table-container.active { display: block; }
+    table { width: 100%; border-collapse: collapse; text-align: left; }
+    th {
+      background: #0d1428;
+      padding: 16px 20px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #8a9cbd;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border-bottom: 1px solid #152040;
+    }
+    td {
+      padding: 16px 20px;
+      border-bottom: 1px solid #152040;
+      color: #e0e8f0;
+    }
+    td.mono { font-family: 'JetBrains Mono', monospace; }
+    tr:last-child td { border-bottom: none; }
+
+    /* Sections */
+    .content-section { margin-bottom: 60px; }
+    .content-section h2 { font-size: 2rem; color: #fff; margin-bottom: 24px; letter-spacing: -0.5px; }
+    .content-section p { margin-bottom: 16px; color: #8a9cbd; }
+
+    /* FAQ */
+    .faq-item { margin-bottom: 24px; }
+    .faq-item h3 { font-size: 1.2rem; color: #fff; margin-bottom: 8px; }
+    .faq-item p { color: #8a9cbd; }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 40px 24px;
+      border-top: 1px solid #152040;
+      color: #5a6a80;
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 768px) {
+      .comparison-grid { grid-template-columns: 1fr; }
+      h1 { font-size: 2.2rem; }
+      .nav-links { display: none; }
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="nav-brand">Westmount Fundamentals</a>
+    <div class="nav-links">
+      <a href="/#studies">Studies</a>
+      <a href="/#tools">Tools</a>
+      <a href="/#guides">Guides</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="header">
+      <h1>Stock Comparison Tool</h1>
+      <p class="subtitle">Instantly compare any two stocks side-by-side. Analyze valuation, profitability, growth, and risk metrics to make data-driven investment decisions.</p>
+    </div>
+
+    <div class="controls">
+      <div class="input-group">
+        <label for="ticker1">Stock A</label>
+        <input type="text" id="ticker1" placeholder="e.g. AAPL" value="AAPL">
+      </div>
+      <div class="input-group">
+        <label for="ticker2">Stock B</label>
+        <input type="text" id="ticker2" placeholder="e.g. MSFT" value="MSFT">
+      </div>
+      <button id="compareBtn">Compare Stocks</button>
+    </div>
+
+    <div id="errorMsg" class="error-message"></div>
+
+    <div class="comparison-grid">
+      <div id="card1" class="stock-card">
+        <div class="ticker" id="t1-ticker">--</div>
+        <div class="company-name" id="t1-name">--</div>
+        <div class="metrics-list">
+          <div class="metric-item"><span class="metric-label">P/E Ratio</span><span class="metric-value" id="t1-pe">--</span></div>
+          <div class="metric-item"><span class="metric-label">P/B Ratio</span><span class="metric-value" id="t1-pb">--</span></div>
+          <div class="metric-item"><span class="metric-label">Dividend Yield</span><span class="metric-value" id="t1-div">--</span></div>
+          <div class="metric-item"><span class="metric-label">Market Cap</span><span class="metric-value" id="t1-mcap">--</span></div>
+          <div class="metric-item"><span class="metric-label">Revenue Growth</span><span class="metric-value" id="t1-rev">--</span></div>
+          <div class="metric-item"><span class="metric-label">Profit Margin</span><span class="metric-value" id="t1-margin">--</span></div>
+          <div class="metric-item"><span class="metric-label">ROE</span><span class="metric-value" id="t1-roe">--</span></div>
+          <div class="metric-item"><span class="metric-label">Beta</span><span class="metric-value" id="t1-beta">--</span></div>
+          <div class="metric-item"><span class="metric-label">52-Wk Range</span><span class="metric-value" id="t1-range" style="font-size: 0.85rem;">--</span></div>
+        </div>
+      </div>
+
+      <div id="card2" class="stock-card">
+        <div class="ticker" id="t2-ticker">--</div>
+        <div class="company-name" id="t2-name">--</div>
+        <div class="metrics-list">
+          <div class="metric-item"><span class="metric-label">P/E Ratio</span><span class="metric-value" id="t2-pe">--</span></div>
+          <div class="metric-item"><span class="metric-label">P/B Ratio</span><span class="metric-value" id="t2-pb">--</span></div>
+          <div class="metric-item"><span class="metric-label">Dividend Yield</span><span class="metric-value" id="t2-div">--</span></div>
+          <div class="metric-item"><span class="metric-label">Market Cap</span><span class="metric-value" id="t2-mcap">--</span></div>
+          <div class="metric-item"><span class="metric-label">Revenue Growth</span><span class="metric-value" id="t2-rev">--</span></div>
+          <div class="metric-item"><span class="metric-label">Profit Margin</span><span class="metric-value" id="t2-margin">--</span></div>
+          <div class="metric-item"><span class="metric-label">ROE</span><span class="metric-value" id="t2-roe">--</span></div>
+          <div class="metric-item"><span class="metric-label">Beta</span><span class="metric-value" id="t2-beta">--</span></div>
+          <div class="metric-item"><span class="metric-label">52-Wk Range</span><span class="metric-value" id="t2-range" style="font-size: 0.85rem;">--</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="chartSection" class="chart-container">
+      <canvas id="radarChart"></canvas>
+    </div>
+
+    <div class="table-container" id="tableSection">
+      <div style="padding: 16px 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #152040;">
+        <h3 style="color: #fff; font-size: 1.1rem; margin: 0;">All Stocks Data</h3>
+        <input type="text" id="tableSearch" placeholder="Search ticker or name..." style="background: #060a12; border: 1px solid #152040; color: #fff; padding: 8px 12px; border-radius: 6px; font-family: 'Inter', sans-serif; font-size: 0.9rem; outline: none;">
+      </div>
+      <table id="dataTable">
+        <thead>
+          <tr>
+            <th style="cursor: pointer;" onclick="sortTable(0)">Ticker ↕</th>
+            <th style="cursor: pointer;" onclick="sortTable(1)">Name ↕</th>
+            <th style="cursor: pointer;" onclick="sortTable(2)">P/E ↕</th>
+            <th style="cursor: pointer;" onclick="sortTable(3)">P/B ↕</th>
+            <th style="cursor: pointer;" onclick="sortTable(4)">Yield ↕</th>
+            <th style="cursor: pointer;" onclick="sortTable(5)">Mkt Cap ↕</th>
+            <th style="cursor: pointer;" onclick="sortTable(6)">Rev Gr ↕</th>
+            <th style="cursor: pointer;" onclick="sortTable(7)">Margin ↕</th>
+            <th style="cursor: pointer;" onclick="sortTable(8)">ROE ↕</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody">
+          <!-- Rows injected via JS -->
+        </tbody>
+      </table>
+    </div>
+
+    <div class="content-section">
+      <h2>Methodology</h2>
+      <p>This stock comparison tool leverages fundamental financial data to provide a side-by-side analysis of two publicly traded companies. The data is pre-compiled for major US equities, covering key valuation metrics (Price-to-Earnings, Price-to-Book), profitability metrics (Return on Equity, Profit Margin), growth indicators (Revenue Growth), and risk factors (Beta).</p>
+      <p>Metrics are calculated based on the most recent trailing twelve months (TTM) data where applicable. Market capitalization is represented in billions or millions for readability. When comparing two stocks, 'better' values are highlighted contextually (e.g., lower P/E may be highlighted as a value metric, while higher ROE is highlighted for profitability). This tool is designed for educational purposes to help investors quickly screen and compare equities.</p>
+    </div>
+
+    <div class="content-section">
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <h3>How do you compare two stocks side by side?</h3>
+        <p>To compare two stocks side by side, look at key financial metrics such as the Price-to-Earnings (P/E) ratio, Dividend Yield, Market Capitalization, Return on Equity (ROE), and Revenue Growth. Our stock comparison tool automatically aligns these metrics for any two tickers so you can evaluate their relative valuation and performance.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Which is better: high P/E or low P/E?</h3>
+        <p>A low P/E ratio may indicate that a stock is undervalued compared to its earnings, which appeals to value investors. A high P/E ratio often suggests that investors expect higher future growth, typical of growth stocks. The 'better' choice depends on your investment strategy and the industry average.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>How to choose between two similar stocks?</h3>
+        <p>When choosing between two similar stocks, compare their valuation (P/E, P/B), profitability (Profit Margin, ROE), growth (Revenue Growth), and risk (Beta). Additionally, consider their dividend yield if you are seeking income, and review their historical 52-week price range.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>What is a good ROE for a stock?</h3>
+        <p>A good Return on Equity (ROE) is typically around 15% to 20%, though it varies significantly by industry. A higher ROE indicates that a company is more efficient at generating profit from its shareholders' equity.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Why compare stock market caps?</h3>
+        <p>Comparing market capitalization helps you understand the size and stability of the companies. Large-cap stocks are generally more stable and often pay dividends, while small-cap stocks might offer higher growth potential but come with greater risk and volatility.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 Westmount Research &middot; A GAB Ventures property. Not investment advice. All information for educational purposes only.</p>
+  </footer>
+
+  <script>
+    // Data will be injected here during the build process
+    const stockData = {"ABBV":{"name":"AbbVie Inc.","pe":95.09283,"pb":null,"div":3.04,"mcap":398492237824,"revGrowth":10,"profitMargin":6.909999999999999,"roe":6225,"beta":0.334,"low52":164.39,"high52":244.81},"AOS":{"name":"A.O. Smith Corporation","pe":17.290909,"pb":4.9638357,"div":2.06,"mcap":9205959680,"revGrowth":0,"profitMargin":14.26,"roe":29.197,"beta":1.304,"low52":58.83,"high52":81.87},"MMM":{"name":"3M Company","pe":24.808653,"pb":16.815159,"div":2.01,"mcap":78530969600,"revGrowth":2,"profitMargin":13.027,"roe":75.50099999999999,"beta":1.131,"low52":121.98,"high52":177.41},"AFL":{"name":"AFLAC Incorporated","pe":16.07478,"pb":1.9282385,"div":2.23,"mcap":56609579008,"revGrowth":-9.9,"profitMargin":21.242,"roe":13.117999999999999,"beta":0.65,"low52":96.95,"high52":119.32},"ACN":{"name":"Accenture plc","pe":16.1891,"pb":3.908337,"div":3.24,"mcap":121578225664,"revGrowth":6,"profitMargin":10.7609995,"roe":25.016,"beta":1.251,"low52":188.73,"high52":326.73},"AES":{"name":"The AES Corporation","pe":10.854962,"pb":2.4925504,"div":4.95,"mcap":10132587520,"revGrowth":4.7,"profitMargin":7.439,"roe":1.9539999999999997,"beta":0.941,"low52":9.46,"high52":17.65},"A":{"name":"Agilent Technologies, Inc.","pe":24.696901,"pb":4.5682597,"div":0.88,"mcap":31573389312,"revGrowth":7.000000000000001,"profitMargin":18.259001,"roe":19.945998,"beta":1.312,"low52":96.43,"high52":160.27},"APD":{"name":"Air Products and Chemicals, Inc","pe":null,"pb":4.1967173,"div":2.61,"mcap":64677117952,"revGrowth":5.800000000000001,"profitMargin":-2.733,"roe":-1.667,"beta":0.864,"low52":229.11,"high52":301.11},"ALB":{"name":"Albemarle Corporation","pe":null,"pb":2.6434298,"div":0.96,"mcap":19313979392,"revGrowth":15.9,"profitMargin":-9.929,"roe":-4.656,"beta":1.476,"low52":49.43,"high52":206},"ABT":{"name":"Abbott Laboratories","pe":29.069893,"pb":3.6025052,"div":2.29,"mcap":187913027584,"revGrowth":4.3999999999999995,"profitMargin":14.718,"roe":12.961,"beta":0.744,"low52":105.27,"high52":139.06},"ALLE":{"name":"Allegion plc","pe":19.62988,"pb":6.071265,"div":1.42,"mcap":12564320256,"revGrowth":9.3,"profitMargin":15.828999999999999,"roe":36.083999999999996,"beta":1.008,"low52":116.57,"high52":183.11},"ALL":{"name":"Allstate Corporation (The)","pe":5.3884363,"pb":1.8633162,"div":2.1,"mcap":53212631040,"revGrowth":5.1,"profitMargin":15.190999999999999,"roe":39.518002,"beta":0.206,"low52":176,"high52":216.75},"ARE":{"name":"Alexandria Real Estate Equities","pe":null,"pb":0.5539449,"div":8.13,"mcap":8708343808,"revGrowth":-5.2,"profitMargin":-47.384998,"roe":-5.856,"beta":1.319,"low52":44.1,"high52":101.22},"MO":{"name":"Altria Group, Inc.","pe":16.436893,"pb":null,"div":6.39,"mcap":113679646720,"revGrowth":-0.5,"profitMargin":34.495,"roe":null,"beta":0.434,"low52":52.82,"high52":70.51},"AEE":{"name":"Ameren Corporation","pe":20.560747,"pb":2.2687898,"div":2.74,"mcap":30406696960,"revGrowth":-8.799999999999999,"profitMargin":17.19,"roe":11.337,"beta":0.531,"low52":91.77,"high52":113.64},"AIG":{"name":"American International Group, I","pe":14.084716,"pb":1.0005102,"div":2.31,"mcap":41266778112,"revGrowth":-7.199999999999999,"profitMargin":11.634,"roe":7.399,"beta":0.58,"low52":71.25,"high52":88.07},"AMCR":{"name":"Amcor plc","pe":30.323309,"pb":1.6014137,"div":6.12,"mcap":18634303488,"revGrowth":68.10000000000001,"profitMargin":3.039,"roe":7.734000000000001,"beta":0.635,"low52":38.35,"high52":50.94},"AXP":{"name":"American Express Company","pe":19.615986,"pb":6.1867776,"div":1.24,"mcap":207957426176,"revGrowth":10.6,"profitMargin":16.174999,"roe":33.992,"beta":1.152,"low52":220.43,"high52":387.49},"AMT":{"name":"American Tower Corporation (REI","pe":33.3692,"pb":22.961828,"div":3.77,"mcap":84200849408,"revGrowth":7.5,"profitMargin":23.763001,"roe":26.279999999999998,"beta":0.907,"low52":166.88,"high52":234.33},"AWK":{"name":"American Water Works Company, I","pe":24.254387,"pb":2.4899144,"div":2.46,"mcap":26987599872,"revGrowth":5.800000000000001,"profitMargin":21.615000000000002,"roe":10.496,"beta":0.759,"low52":121.28,"high52":155.5},"AMP":{"name":"Ameriprise Financial, Inc.","pe":12.135888,"pb":6.1356764,"div":1.42,"mcap":40905457664,"revGrowth":8.6,"profitMargin":18.841,"roe":60.507999999999996,"beta":1.271,"low52":396.14,"high52":550.18},"AME":{"name":"AMETEK, Inc.","pe":33.735527,"pb":4.6453047,"div":0.61,"mcap":49625051136,"revGrowth":13.4,"profitMargin":19.999,"roe":14.594,"beta":1.013,"low52":145.02,"high52":242.05},"APH":{"name":"Amphenol Corporation","pe":39.362278,"pb":12.022862,"div":0.74,"mcap":161604894720,"revGrowth":49.1,"profitMargin":18.490000000000002,"roe":36.851,"beta":1.214,"low52":56.45,"high52":167.04},"AON":{"name":"Aon plc","pe":18.561104,"pb":7.2458086,"div":0.94,"mcap":67900198912,"revGrowth":3.6999999999999997,"profitMargin":21.506001,"roe":46.94,"beta":0.828,"low52":304.59,"high52":402.49},"APO":{"name":"Apollo Global Management, Inc. ","pe":18.104694,"pb":2.646508,"div":1.92,"mcap":58216386560,"revGrowth":87.7,"profitMargin":10.9840006,"roe":14.698,"beta":1.638,"low52":99.56,"high52":157.28},"APTV":{"name":"Aptiv PLC","pe":93.42667,"pb":1.6191049,"div":null,"mcap":15140683776,"revGrowth":5,"profitMargin":0.8090001,"roe":1.9480000000000002,"beta":1.534,"low52":47.19,"high52":88.93},"ARES":{"name":"Ares Management Corporation","pe":56.432747,"pb":7.60741,"div":5.22,"mcap":31933720576,"revGrowth":19.5,"profitMargin":9.415,"roe":13.520001,"beta":1.565,"low52":95.8,"high52":195.26},"ADM":{"name":"Archer-Daniels-Midland Company","pe":32.51121,"pb":1.5308276,"div":2.94,"mcap":34887135232,"revGrowth":-13.700000000000001,"profitMargin":1.343,"roe":4.721,"beta":0.683,"low52":40.98,"high52":73.72},"AJG":{"name":"Arthur J. Gallagher & Co.","pe":35.514782,"pb":2.2504218,"div":1.33,"mcap":52502392832,"revGrowth":36.7,"profitMargin":11.484,"roe":6.906,"beta":0.672,"low52":195,"high52":351.23},"ANET":{"name":"Arista Networks, Inc.","pe":48.738182,"pb":13.614017,"div":null,"mcap":168781987840,"revGrowth":28.9,"profitMargin":38.991,"roe":31.4,"beta":1.46,"low52":59.43,"high52":164.94},"T":{"name":"AT&T Inc.","pe":9.009869,"pb":1.7439195,"div":4.09,"mcap":194180022272,"revGrowth":3.5999999999999996,"profitMargin":17.471999999999998,"roe":18.805,"beta":0.576,"low52":22.95,"high52":29.79},"AZO":{"name":"AutoZone, Inc.","pe":25.352625,"pb":null,"div":null,"mcap":59704127488,"revGrowth":null,"profitMargin":12.776000000000002,"roe":null,"beta":0.355,"low52":3210.72,"high52":4388.11},"ATO":{"name":"Atmos Energy Corporation","pe":24.353323,"pb":2.163524,"div":2.17,"mcap":30902339584,"revGrowth":14.2,"profitMargin":25.667997999999997,"roe":9.237,"beta":0.698,"low52":141.59,"high52":188.8},"AIZ":{"name":"Assurant, Inc.","pe":12.7245865,"pb":1.8258141,"div":1.55,"mcap":10782464000,"revGrowth":7.9,"profitMargin":6.81,"roe":15.899,"beta":0.547,"low52":174.97,"high52":246.31},"AVY":{"name":"Avery Dennison Corporation","pe":19.432953,"pb":5.8635345,"div":2.15,"mcap":13146895360,"revGrowth":3.9,"profitMargin":7.768999999999999,"roe":30.212998000000002,"beta":0.97,"low52":156.23,"high52":199.54},"BAC":{"name":"Bank of America Corporation","pe":12.370079,"pb":1.2260346,"div":2.31,"mcap":344166629376,"revGrowth":7.199999999999999,"profitMargin":28.401,"roe":10.217,"beta":1.263,"low52":33.07,"high52":57.55},"BALL":{"name":"Ball Corporation","pe":18.69394,"pb":3.0198746,"div":1.3,"mcap":16532130816,"revGrowth":16.2,"profitMargin":6.9299996,"roe":16.122,"beta":1.115,"low52":43.51,"high52":68.29},"AVB":{"name":"AvalonBay Communities, Inc.","pe":23.082321,"pb":2.060996,"div":4.14,"mcap":24218398720,"revGrowth":3.6999999999999997,"profitMargin":34.569,"roe":8.887999500000001,"beta":0.745,"low52":166.73,"high52":217.32},"BAX":{"name":"Baxter International Inc.","pe":null,"pb":1.5111595,"div":1.99,"mcap":9265966080,"revGrowth":8,"profitMargin":-8.5109994,"roe":-13.713000000000001,"beta":0.553,"low52":17,"high52":35.03},"BDX":{"name":"Becton, Dickinson and Company","pe":26.083334,"pb":1.7978579,"div":2.57,"mcap":57833168896,"revGrowth":1.6,"profitMargin":8.014000000000001,"roe":6.959999999999999,"beta":0.307,"low52":127.58648,"high52":187.35},"BLK":{"name":"BlackRock, Inc.","pe":26.151884,"pb":2.5607162,"div":2.41,"mcap":143549284352,"revGrowth":23.400000000000002,"profitMargin":22.930999,"roe":10.715999499999999,"beta":1.487,"low52":773.74,"high52":1219.94},"BBY":{"name":"Best Buy Co., Inc.","pe":12.420634,"pb":4.4331136,"div":6.08,"mcap":13152338944,"revGrowth":-1,"profitMargin":2.564,"roe":37.041000000000004,"beta":1.444,"low52":54.99,"high52":84.99},"BMY":{"name":"Bristol-Myers Squibb Company","pe":17.037573,"pb":6.4972997,"div":4.2,"mcap":120050130944,"revGrowth":1.3,"profitMargin":14.637,"roe":40.442002,"beta":0.266,"low52":42.52,"high52":62.89},"BK":{"name":"The Bank of New York Mellon Cor","pe":15.827027,"pb":2.041841,"div":1.81,"mcap":81673527296,"revGrowth":7.8,"profitMargin":27.739000000000004,"roe":12.898000000000001,"beta":1.076,"low52":70.46,"high52":128.76},"BX":{"name":"Blackstone Inc.","pe":26.387598,"pb":9.229935,"div":4.42,"mcap":125570703360,"revGrowth":50.6,"profitMargin":21.243000000000002,"roe":29.228001999999996,"beta":1.794,"low52":101.73,"high52":190.09},"XYZ":{"name":"Block, Inc.","pe":28.523811,"pb":1.6242305,"div":null,"mcap":36399136768,"revGrowth":3.5999999999999996,"profitMargin":5.3969998,"roe":6.0100004,"beta":2.675,"low52":44.27,"high52":82.5},"BA":{"name":"Boeing Company (The)","pe":82.564514,"pb":29.491573,"div":null,"mcap":160909443072,"revGrowth":57.099999999999994,"profitMargin":2.4979999999999998,"roe":290.084,"beta":1.096,"low52":128.88,"high52":254.35},"BRO":{"name":"Brown & Brown, Inc.","pe":21.408228,"pb":1.8116331,"div":0.92,"mcap":23097116672,"revGrowth":36.199999999999996,"profitMargin":18.289,"roe":11.225999999999999,"beta":0.798,"low52":65.68,"high52":125.68},"BSX":{"name":"Boston Scientific Corporation","pe":35.335052,"pb":4.19497,"div":null,"mcap":101720350720,"revGrowth":15.9,"profitMargin":14.437,"roe":12.445,"beta":0.7,"low52":67.56,"high52":109.5},"BR":{"name":"Broadridge Financial Solutions,","pe":19.601105,"pb":7.1899314,"div":2.13,"mcap":20710053888,"revGrowth":7.8,"profitMargin":14.863999999999999,"roe":41.793,"beta":0.977,"low52":163.71,"high52":271.91},"BXP":{"name":"BXP, Inc.","pe":30.304598,"pb":1.6242607,"div":5.37,"mcap":9336214528,"revGrowth":-31.900000000000002,"profitMargin":8.7790005,"roe":4.916,"beta":1.032,"low52":49.72,"high52":79.33},"BG":{"name":"Bunge Limited","pe":25.523329,"pb":1.53022,"div":2.28,"mcap":24349249536,"revGrowth":75.5,"profitMargin":1.16,"roe":5.9639999999999995,"beta":0.743,"low52":68.33,"high52":127.15},"BLDR":{"name":"Builders FirstSource, Inc.","pe":22.262209,"pb":2.200371,"div":null,"mcap":9578398720,"revGrowth":-12.1,"profitMargin":2.8649999999999998,"roe":10.064,"beta":1.564,"low52":86.18,"high52":151.03},"CPT":{"name":"Camden Property Trust","pe":28.740112,"pb":2.4805558,"div":4.16,"mcap":10824659968,"revGrowth":2.1999999999999997,"profitMargin":24.229,"roe":8.598,"beta":0.821,"low52":97.17,"high52":124.32},"CPB":{"name":"The Campbell's Company","pe":11.159793,"pb":1.6101443,"div":6.8,"mcap":6454606336,"revGrowth":-4.5,"profitMargin":5.48,"roe":13.891,"beta":-0.064,"low52":21.59,"high52":40.59},"CCL":{"name":"Carnival Corporation","pe":11.841584,"pb":2.5547369,"div":0.58,"mcap":33132539904,"revGrowth":6.6000000000000005,"profitMargin":10.366999,"roe":25.632998,"beta":2.459,"low52":15.07,"high52":34.03},"CAH":{"name":"Cardinal Health, Inc.","pe":31.478447,"pb":null,"div":0.95,"mcap":51555385344,"revGrowth":18.8,"profitMargin":0.679,"roe":null,"beta":0.616,"low52":120.72,"high52":233.6},"COF":{"name":"Capital One Financial Corporati","pe":52.65579,"pb":1.0250944,"div":1.76,"mcap":110361755648,"revGrowth":51.6,"profitMargin":7.482999599999999,"roe":2.394,"beta":1.139,"low52":143.22,"high52":259.64},"CVNA":{"name":"Carvana Co.","pe":34.631954,"pb":12.096061,"div":null,"mcap":64129912832,"revGrowth":57.99999999999999,"profitMargin":6.9239999999999995,"roe":67.946,"beta":3.673,"low52":148.25,"high52":486.89},"CARR":{"name":"Carrier Global Corporation","pe":33.426037,"pb":3.4217699,"div":1.64,"mcap":47216824320,"revGrowth":-6,"profitMargin":6.824,"roe":10.925,"beta":1.289,"low52":50.24,"high52":81.09},"CNC":{"name":"Centene Corporation","pe":null,"pb":0.85200244,"div":null,"mcap":17000523776,"revGrowth":23.200000000000003,"profitMargin":-3.7890002,"roe":-28.677999999999997,"beta":0.459,"low52":25.08,"high52":66.03},"CAT":{"name":"Caterpillar, Inc.","pe":37.231136,"pb":15.293231,"div":0.85,"mcap":327908622336,"revGrowth":18,"profitMargin":13.144,"roe":43.525999999999996,"beta":1.531,"low52":267.3,"high52":789.81},"COR":{"name":"Cencora, Inc.","pe":42.284172,"pb":35.94801,"div":0.69,"mcap":68601245696,"revGrowth":5.5,"profitMargin":0.49900003000000004,"roe":133.467,"beta":0.646,"low52":252.49,"high52":377.54},"CBRE":{"name":"CBRE Group Inc","pe":34.15544,"pb":4.3234735,"div":null,"mcap":39234658304,"revGrowth":11.799999999999999,"profitMargin":2.8529999999999998,"roe":13.572000000000001,"beta":1.341,"low52":108.45,"high52":174.27},"CNP":{"name":"CenterPoint Energy, Inc (Holdin","pe":27.125,"pb":2.5405374,"div":2.14,"mcap":28390686720,"revGrowth":10.7,"profitMargin":11.243,"roe":9.6429996,"beta":0.539,"low52":34.65,"high52":44.04},"CRL":{"name":"Charles River Laboratories Inte","pe":null,"pb":2.3741834,"div":null,"mcap":7515116032,"revGrowth":-0.8,"profitMargin":-3.595,"roe":-4.232,"beta":1.652,"low52":91.86,"high52":228.88},"CF":{"name":"CF Industries Holdings, Inc.","pe":15.16165,"pb":4.316501,"div":1.66,"mcap":21212551168,"revGrowth":22.8,"profitMargin":20.538999,"roe":23.401,"beta":0.689,"low52":67.34,"high52":137.44},"SCHW":{"name":"Charles Schwab Corporation (The","pe":19.621504,"pb":3.7604582,"div":1.38,"mcap":162127708160,"revGrowth":18.9,"profitMargin":37.004999999999995,"roe":18.101999,"beta":0.919,"low52":65.88,"high52":107.5},"CMG":{"name":"Chipotle Mexican Grill, Inc.","pe":28.561405,"pb":15.004608,"div":null,"mcap":43053375488,"revGrowth":4.9,"profitMargin":12.878,"roe":47.355000000000004,"beta":1.019,"low52":29.75,"high52":58.42},"CVX":{"name":"Chevron Corporation","pe":29.664158,"pb":2.091976,"div":3.71,"mcap":393812672512,"revGrowth":-8.200000000000001,"profitMargin":6.6610000000000005,"roe":7.231,"beta":0.658,"low52":132.04,"high52":198.88},"CB":{"name":"Chubb Limited","pe":12.828338,"pb":1.747513,"div":1.2,"mcap":129698619392,"revGrowth":5.5,"profitMargin":17.291,"roe":14.337,"beta":0.489,"low52":264.1,"high52":345.67},"CI":{"name":"The Cigna Group","pe":11.992784,"pb":1.6793306,"div":2.39,"mcap":71023419392,"revGrowth":10.4,"profitMargin":2.167,"roe":15.129999999999999,"beta":0.234,"low52":239.51,"high52":350},"CIEN":{"name":"Ciena Corporation","pe":215.91667,"pb":17.062458,"div":null,"mcap":47649132544,"revGrowth":33.1,"profitMargin":4.4699997,"roe":8.201,"beta":1.09,"low52":49.21,"high52":365.9},"C":{"name":"Citigroup, Inc.","pe":15.092991,"pb":0.9590386,"div":2.2,"mcap":184553160704,"revGrowth":4.3999999999999995,"profitMargin":18.893999,"roe":6.8309999999999995,"beta":1.131,"low52":55.51,"high52":125.16},"CHD":{"name":"Church & Dwight Company, Inc.","pe":32.83444,"pb":5.8608665,"div":1.23,"mcap":23811299328,"revGrowth":3.9,"profitMargin":11.878,"roe":17.62,"beta":0.426,"low52":81.33,"high52":113.91},"CFG":{"name":"Citizens Financial Group, Inc.","pe":14.751295,"pb":1.0097177,"div":3.14,"mcap":24454944768,"revGrowth":10.7,"profitMargin":23.968999999999998,"roe":7.2410000000000005,"beta":1.085,"low52":32.6,"high52":68.79},"CLX":{"name":"Clorox Company (The)","pe":17.795418,"pb":null,"div":4.42,"mcap":13262926848,"revGrowth":-0.8,"profitMargin":11.1719996,"roe":987.1790000000001,"beta":0.568,"low52":96.66,"high52":150.84},"CMS":{"name":"CMS Energy Corporation","pe":21.750708,"pb":2.637491,"div":3.01,"mcap":23526995968,"revGrowth":12.3,"profitMargin":12.542,"roe":10.8559996,"beta":0.432,"low52":67.71,"high52":78.47},"KO":{"name":"Coca-Cola Company (The)","pe":25.529606,"pb":10.378444,"div":2.65,"mcap":333847887872,"revGrowth":2.4,"profitMargin":27.339999999999996,"roe":43.323,"beta":0.332,"low52":65.35,"high52":82},"CL":{"name":"Colgate-Palmolive Company","pe":33.441063,"pb":1312.6865,"div":2.32,"mcap":70496149504,"revGrowth":5.800000000000001,"profitMargin":10.459999999999999,"roe":497.47,"beta":0.264,"low52":74.55,"high52":99.33},"FIX":{"name":"Comfort Systems USA, Inc.","pe":47.617332,"pb":19.70198,"div":0.16,"mcap":48455196672,"revGrowth":41.699999999999996,"profitMargin":11.2349994,"roe":49.238998,"beta":1.602,"low52":276.44,"high52":1500},"CAG":{"name":"ConAgra Brands, Inc.","pe":null,"pb":0.9560693,"div":8.24,"mcap":7735234560,"revGrowth":-6.800000000000001,"profitMargin":-0.8719999,"roe":-1.16,"beta":-0.061,"low52":15.96,"high52":27.68},"ED":{"name":"Consolidated Edison, Inc.","pe":20.05851,"pb":1.6888603,"div":3.08,"mcap":40874172416,"revGrowth":8.9,"profitMargin":11.958,"roe":8.767,"beta":0.345,"low52":94.96,"high52":115.25},"COP":{"name":"ConocoPhillips","pe":18.938583,"pb":2.2847917,"div":2.87,"mcap":146998509568,"revGrowth":-6.800000000000001,"profitMargin":13.252,"roe":12.357,"beta":0.279,"low52":79.88,"high52":122.5},"STZ":{"name":"Constellation Brands, Inc.","pe":23.284145,"pb":3.3351324,"div":2.72,"mcap":25821603840,"revGrowth":-9.8,"profitMargin":11.826,"roe":14.454001,"beta":0.422,"low52":126.45,"high52":196.91},"GLW":{"name":"Corning Incorporated","pe":70.91257,"pb":9.419322,"div":0.85,"mcap":111335931904,"revGrowth":20.4,"profitMargin":10.212,"roe":14.904,"beta":1.022,"low52":37.31,"high52":162.1},"CPAY":{"name":"Corpay, Inc.","pe":21.38032,"pb":5.659972,"div":null,"mcap":22495713280,"revGrowth":20.7,"profitMargin":23.625,"roe":29.071,"beta":0.819,"low52":252.84,"high52":361.99},"CTRA":{"name":"Coterra Energy Inc.","pe":14.276786,"pb":1.637984,"div":2.81,"mcap":24281540608,"revGrowth":23.400000000000002,"profitMargin":24.560000000000002,"roe":12.275,"beta":0.353,"low52":22.33,"high52":32.67},"CTVA":{"name":"Corteva, Inc.","pe":45.57143,"pb":2.2202117,"div":0.92,"mcap":53889626112,"revGrowth":-1.7000000000000002,"profitMargin":6.287,"roe":4.974,"beta":0.721,"low52":53.4,"high52":80.905},"CRH":{"name":"CRH PLC","pe":18.09982,"pb":2.778072,"div":1.44,"mcap":66783051776,"revGrowth":6.2,"profitMargin":10.022,"roe":15.684000000000001,"beta":1.203,"low52":76.75,"high52":131.55},"CMI":{"name":"Cummins Inc.","pe":26.254873,"pb":6.0248713,"div":1.41,"mcap":74436640768,"revGrowth":1.0999999999999999,"profitMargin":8.444,"roe":23.928,"beta":1.127,"low52":260.02,"high52":617.98},"CVS":{"name":"CVS Health Corporation","pe":54.72662,"pb":1.2854657,"div":3.51,"mcap":96777093120,"revGrowth":8.4,"profitMargin":0.44200000000000006,"roe":2.2869998999999996,"beta":0.464,"low52":58.35,"high52":85.15},"CCI":{"name":"Crown Castle Inc.","pe":34.170635,"pb":null,"div":4.85,"mcap":37550026752,"revGrowth":-4.3,"profitMargin":10.413,"roe":null,"beta":0.951,"low52":77.01,"high52":115.76},"DHR":{"name":"Danaher Corporation","pe":37.02982,"pb":2.5063243,"div":0.82,"mcap":131711770624,"revGrowth":4.6,"profitMargin":14.71,"roe":7.053,"beta":0.964,"low52":171,"high52":242.8},"DRI":{"name":"Darden Restaurants, Inc.","pe":20.79979,"pb":10.997617,"div":2.95,"mcap":23080138752,"revGrowth":7.3,"profitMargin":8.924,"roe":54.104,"beta":0.599,"low52":169,"high52":228.27},"DECK":{"name":"Deckers Outdoor Corporation","pe":14.302557,"pb":5.4919825,"div":null,"mcap":14675047424,"revGrowth":7.1,"profitMargin":19.348000000000003,"roe":39.688,"beta":1.161,"low52":78.91,"high52":133.43},"DVA":{"name":"DaVita Inc.","pe":16.094637,"pb":null,"div":null,"mcap":10231907328,"revGrowth":9.9,"profitMargin":5.473999999999999,"roe":64.848,"beta":0.931,"low52":101,"high52":159.42},"DELL":{"name":"Dell Technologies Inc.","pe":17.270737,"pb":null,"div":1.71,"mcap":100469710848,"revGrowth":39.5,"profitMargin":5.228,"roe":null,"beta":1.036,"low52":66.25,"high52":168.08},"DE":{"name":"Deere & Company","pe":33.09774,"pb":6.016597,"div":1.09,"mcap":158236966912,"revGrowth":13,"profitMargin":10.302,"roe":19.566,"beta":0.961,"low52":404.42,"high52":674.19},"DAL":{"name":"Delta Air Lines, Inc.","pe":7.5639687,"pb":1.8049845,"div":1.27,"mcap":37842391040,"revGrowth":2.9000000000000004,"profitMargin":7.8990005000000005,"roe":27.693,"beta":1.35,"low52":34.74,"high52":76.39},"DVN":{"name":"Devon Energy Corporation","pe":11.076738,"pb":1.8501902,"div":2.12,"mcap":28650008576,"revGrowth":-12.1,"profitMargin":16.473,"roe":17.736,"beta":0.619,"low52":25.89,"high52":46.41},"DLR":{"name":"Digital Realty Trust, Inc.","pe":50.39106,"pb":2.7925696,"div":2.7,"mcap":63104720896,"revGrowth":17.1,"profitMargin":21.52,"roe":5.469,"beta":1.133,"low52":129.95,"high52":184.79},"D":{"name":"Dominion Energy, Inc.","pe":18.10951,"pb":1.9662693,"div":4.29,"mcap":55222886400,"revGrowth":20.4,"profitMargin":18.163,"roe":9.741,"beta":0.67,"low52":48.07,"high52":67.57},"DG":{"name":"Dollar General Corporation","pe":23.480137,"pb":3.6555526,"div":1.63,"mcap":29925158912,"revGrowth":4.6,"profitMargin":3.033,"roe":16.450001,"beta":0.22,"low52":77.52,"high52":158.23},"DOV":{"name":"Dover Corporation","pe":25.570892,"pb":3.7111225,"div":0.99,"mcap":27951824896,"revGrowth":8.799999999999999,"profitMargin":13.517999999999999,"roe":15.285000000000002,"beta":1.249,"low52":143.04,"high52":237.54},"DPZ":{"name":"Domino's Pizza Inc","pe":22.52446,"pb":null,"div":2.02,"mcap":13316370432,"revGrowth":3.1,"profitMargin":12.1800005,"roe":null,"beta":1.162,"low52":370.7,"high52":499.08},"DOW":{"name":"Dow Inc.","pe":null,"pb":1.6837672,"div":5.09,"mcap":27043297280,"revGrowth":-9.1,"profitMargin":-6.563000400000001,"roe":-13.818,"beta":0.71,"low52":20.402,"high52":37.8},"DHI":{"name":"D.R. Horton, Inc.","pe":12.651501,"pb":1.6832726,"div":1.26,"mcap":40474480640,"revGrowth":-9.5,"profitMargin":9.948,"roe":13.477,"beta":1.407,"low52":110.44,"high52":184.55},"DUK":{"name":"Duke Energy Corporation (Holdin","pe":20.890652,"pb":2.0160897,"div":3.28,"mcap":102512574464,"revGrowth":8,"profitMargin":15.628,"roe":9.724,"beta":0.466,"low52":111.22,"high52":133.2},"DTE":{"name":"DTE Energy Company","pe":21.001421,"pb":2.4929924,"div":3.08,"mcap":30680147968,"revGrowth":28.9,"profitMargin":9.245000000000001,"roe":12.177,"beta":0.434,"low52":123.69,"high52":154.63},"ECL":{"name":"Ecolab Inc.","pe":37.844994,"pb":11.761021,"div":1,"mcap":78141890560,"revGrowth":17.8,"profitMargin":12.906999999999998,"roe":22.516,"beta":0.979,"low52":221.62,"high52":309.27},"DD":{"name":"DuPont de Nemours, Inc.","pe":215.90477,"pb":1.3329022,"div":1.74,"mcap":18996340736,"revGrowth":null,"profitMargin":-11.373999999999999,"roe":0.5170000299999999,"beta":1.115,"low52":22.497908,"high52":52.66},"EIX":{"name":"Edison International","pe":6.1437225,"pb":1.5984502,"div":4.91,"mcap":27304763392,"revGrowth":30.8,"profitMargin":23.083000000000002,"roe":24.103001,"beta":0.777,"low52":47.73,"high52":75.5},"ETN":{"name":"Eaton Corporation, PLC","pe":33.330784,"pb":6.9620786,"div":1.24,"mcap":135237459968,"revGrowth":13.100000000000001,"profitMargin":14.89,"roe":21.525997999999998,"beta":1.167,"low52":231.85,"high52":408.45},"EME":{"name":"EMCOR Group, Inc.","pe":25.23189,"pb":8.610085,"div":0.22,"mcap":31807490048,"revGrowth":19.7,"profitMargin":7.492999999999999,"roe":38.49,"beta":1.14,"low52":320.89,"high52":835},"EW":{"name":"Edwards Lifesciences Corporatio","pe":46.745857,"pb":4.7528367,"div":null,"mcap":49141489664,"revGrowth":13.3,"profitMargin":17.692,"roe":10.353,"beta":0.934,"low52":65.94,"high52":87.89},"EMR":{"name":"Emerson Electric Company","pe":32.397057,"pb":3.663525,"div":1.59,"mcap":74325082112,"revGrowth":4.1000000000000005,"profitMargin":12.718001000000001,"roe":9.646,"beta":1.243,"low52":90.06,"high52":165.15},"ELV":{"name":"Elevance Health, Inc.","pe":11.419676,"pb":1.4480733,"div":2.37,"mcap":63538671616,"revGrowth":9.5,"profitMargin":2.843,"roe":13.25,"beta":0.468,"low52":273.71,"high52":458.75},"EOG":{"name":"EOG Resources, Inc.","pe":14.587719,"pb":2.3977218,"div":3.08,"mcap":72187297792,"revGrowth":0,"profitMargin":21.982999,"roe":16.829,"beta":0.427,"low52":101.59,"high52":136.14},"ETR":{"name":"Entergy Corporation","pe":26.731457,"pb":2.793756,"div":2.39,"mcap":47346495488,"revGrowth":7.9,"profitMargin":13.581,"roe":10.774000000000001,"beta":0.602,"low52":75.57,"high52":107.93},"EQR":{"name":"Equity Residential","pe":20.5,"pb":2.0654557,"div":4.6,"mcap":23634190336,"revGrowth":2,"profitMargin":36.202,"roe":10.0200005,"beta":0.735,"low52":58.38,"high52":72.65},"EPAM":{"name":"EPAM Systems, Inc.","pe":20.209822,"pb":2.0044868,"div":null,"mcap":7502499840,"revGrowth":12.8,"profitMargin":6.920999999999999,"roe":10.334999999999999,"beta":1.768,"low52":125.57,"high52":222.53},"EFX":{"name":"Equifax, Inc.","pe":34.232647,"pb":4.771194,"div":1.08,"mcap":22332016640,"revGrowth":9.2,"profitMargin":10.870000000000001,"roe":13.757,"beta":1.532,"low52":166.02,"high52":281.03},"EQT":{"name":"EQT Corporation","pe":19.528702,"pb":1.6983263,"div":1.03,"mcap":40353071104,"revGrowth":26.900000000000002,"profitMargin":24.927,"roe":9.007,"beta":0.722,"low52":43.57,"high52":65.32},"EG":{"name":"Everest Group, Ltd.","pe":8.525257,"pb":0.8485378,"div":2.49,"mcap":13019361280,"revGrowth":-2.9000000000000004,"profitMargin":9.07,"roe":10.847,"beta":0.326,"low52":302.44,"high52":370.21},"ESS":{"name":"Essex Property Trust, Inc.","pe":24.147936,"pb":2.9233632,"div":4.12,"mcap":17380401152,"revGrowth":3.2,"profitMargin":34.599999999999994,"roe":12.235,"beta":0.722,"low52":243.25,"high52":310.1},"EL":{"name":"Estee Lauder Companies, Inc. (T","pe":null,"pb":7.5623546,"div":1.53,"mcap":30489972736,"revGrowth":5.6000000000000005,"profitMargin":-1.2130001,"roe":-4.340999999999999,"beta":1.112,"low52":48.37,"high52":121.64},"ES":{"name":"Eversource Energy (D/B/A)","pe":16.054825,"pb":1.6968362,"div":4.26,"mcap":27490105344,"revGrowth":13.4,"profitMargin":12.4919996,"roe":10.777000000000001,"beta":0.753,"low52":52.28,"high52":76.41},"EVRG":{"name":"Evergy, Inc.","pe":22.333332,"pb":1.8414057,"div":3.43,"mcap":18823217152,"revGrowth":6.6000000000000005,"profitMargin":14.352,"roe":8.569,"beta":0.604,"low52":61.94,"high52":85.23},"EXR":{"name":"Extra Space Storage Inc","pe":30.540302,"pb":2.2034988,"div":4.58,"mcap":31063244800,"revGrowth":4.6,"profitMargin":28.261998,"roe":7.008,"beta":1.242,"low52":121.03,"high52":155.19},"FDS":{"name":"FactSet Research Systems Inc.","pe":12.951654,"pb":3.497801,"div":2.14,"mcap":7618699264,"revGrowth":6.800000000000001,"profitMargin":25.399,"roe":28.831,"beta":0.751,"low52":185,"high52":474.79},"FRT":{"name":"Federal Realty Investment Trust","pe":22.510685,"pb":2.9421623,"div":4.2,"mcap":9144932352,"revGrowth":7.5,"profitMargin":32.092997000000004,"roe":12.235,"beta":1.011,"low52":80.65,"high52":110.89},"XOM":{"name":"Exxon Mobil Corporation","pe":22.914927,"pb":2.4735374,"div":2.72,"mcap":639723175936,"revGrowth":-1.3,"profitMargin":8.9049995,"roe":11.0810004,"beta":0.348,"low52":97.8,"high52":159.61},"FICO":{"name":"Fair Isaac Corporation","pe":40.459488,"pb":null,"div":null,"mcap":25943001088,"revGrowth":16.400000000000002,"profitMargin":31.886998,"roe":null,"beta":1.277,"low52":1068.67,"high52":2217.6},"FE":{"name":"FirstEnergy Corp.","pe":28.875,"pb":2.3474524,"div":3.67,"mcap":29370548224,"revGrowth":20.7,"profitMargin":6.845,"roe":9.195,"beta":0.601,"low52":37.58,"high52":51.44},"FDX":{"name":"FedEx Corporation","pe":19.542336,"pb":2.9490166,"div":1.6,"mcap":83322953728,"revGrowth":13.900000000000002,"profitMargin":4.814,"roe":15.886,"beta":1.281,"low52":194.3,"high52":392.86},"FIS":{"name":"Fidelity National Information S","pe":67.47945,"pb":1.8216782,"div":3.27,"mcap":25509326848,"revGrowth":8.200000000000001,"profitMargin":3.578,"roe":2.6010001000000003,"beta":0.909,"low52":46.16,"high52":82.74},"F":{"name":"Ford Motor Company","pe":null,"pb":1.3358483,"div":4.95,"mcap":48033284096,"revGrowth":-4.8,"profitMargin":-4.369,"roe":-20.193,"beta":1.665,"low52":8.44,"high52":14.8},"BEN":{"name":"Franklin Resources, Inc.","pe":22.009258,"pb":1.0185542,"div":5.29,"mcap":12393456640,"revGrowth":3.4000000000000004,"profitMargin":6.972,"roe":4.4639999999999995,"beta":1.461,"low52":16.25,"high52":28.32},"FTV":{"name":"Fortive Corporation","pe":34.52201,"pb":2.6655984,"div":0.46,"mcap":17433702400,"revGrowth":4.6,"profitMargin":13.926,"roe":6.396,"beta":0.998,"low52":45.504898,"high52":62.42},"IT":{"name":"Gartner, Inc.","pe":16.624224,"pb":35.568108,"div":null,"mcap":11574867968,"revGrowth":2.1999999999999997,"profitMargin":11.224,"roe":86.861,"beta":1.083,"low52":139.18,"high52":464.87},"FCX":{"name":"Freeport-McMoRan, Inc.","pe":38.95395,"pb":4.498898,"div":0.97,"mcap":85096710144,"revGrowth":-1.5,"profitMargin":8.505,"roe":13.946,"beta":1.438,"low52":27.66,"high52":69.75},"GRMN":{"name":"Garmin Ltd.","pe":27.442373,"pb":5.0605383,"div":1.78,"mcap":45373505536,"revGrowth":16.6,"profitMargin":22.964000000000002,"roe":19.783,"beta":0.949,"low52":169.26,"high52":261.69},"GE":{"name":"GE Aerospace","pe":38.05211,"pb":17.22163,"div":0.58,"mcap":323511418880,"revGrowth":17.599999999999998,"profitMargin":18.982,"roe":44.692,"beta":1.369,"low52":159.36,"high52":348.48},"GIS":{"name":"General Mills, Inc.","pe":8.473119,"pb":2.2565868,"div":6,"mcap":21023135744,"revGrowth":-7.199999999999999,"profitMargin":13.51,"roe":27.173000000000002,"beta":-0.095,"low52":39.29,"high52":62.61},"GNRC":{"name":"Generac Holdlings Inc.","pe":75.59259,"pb":4.549406,"div":null,"mcap":11977418752,"revGrowth":-11.600000000000001,"profitMargin":3.791,"roe":6.2829999999999995,"beta":1.769,"low52":99.5,"high52":241.09},"GD":{"name":"General Dynamics Corporation","pe":22.977362,"pb":3.7431245,"div":1.72,"mcap":96050561024,"revGrowth":7.8,"profitMargin":8.011,"roe":17.658001000000002,"beta":0.372,"low52":239.2,"high52":369.7},"GM":{"name":"General Motors Company","pe":22.461773,"pb":1.0863777,"div":0.96,"mcap":68518662144,"revGrowth":-5.1,"profitMargin":1.4579999,"roe":4.3180000000000005,"beta":1.356,"low52":41.6,"high52":87.62},"GPC":{"name":"Genuine Parts Company","pe":227.68086,"pb":3.3294961,"div":3.89,"mcap":14887457792,"revGrowth":4.1000000000000005,"profitMargin":0.271,"roe":1.5,"beta":0.734,"low52":104.01,"high52":151.57},"GEV":{"name":"GE Vernova Inc.","pe":46.958805,"pb":20.06438,"div":0.18,"mcap":225768456192,"revGrowth":3.8,"profitMargin":12.83,"roe":42.641,"beta":null,"low52":252.25,"high52":894.93},"GS":{"name":"Goldman Sachs Group, Inc. (The)","pe":15.345285,"pb":2.2091997,"div":2.19,"mcap":236199706624,"revGrowth":15.2,"profitMargin":28.917998,"roe":13.861,"beta":1.336,"low52":439.38,"high52":984.7},"GL":{"name":"Globe Life Inc.","pe":9.862829,"pb":1.8370643,"div":0.94,"mcap":11046897664,"revGrowth":3.5999999999999996,"profitMargin":19.372,"roe":20.589,"beta":0.455,"low52":109.38,"high52":152.71},"GDDY":{"name":"GoDaddy Inc.","pe":12.982316,"pb":50.595238,"div":null,"mcap":10912684032,"revGrowth":6.800000000000001,"profitMargin":17.673,"roe":192.90099999999998,"beta":0.979,"low52":73.06,"high52":193.55},"GPN":{"name":"Global Payments Inc.","pe":15.880362,"pb":0.7274851,"div":1.37,"mcap":19691057152,"revGrowth":0,"profitMargin":18.169,"roe":4.824,"beta":0.732,"low52":65.93,"high52":100.56},"HIG":{"name":"The Hartford Insurance Group, I","pe":10.090841,"pb":1.9963166,"div":1.78,"mcap":37486989312,"revGrowth":6.7,"profitMargin":13.517999999999999,"roe":21.656,"beta":0.516,"low52":107.49,"high52":144.5},"HAL":{"name":"Halliburton Company","pe":23.226667,"pb":2.7809706,"div":1.89,"mcap":29322270720,"revGrowth":0.8,"profitMargin":5.783,"roe":12.274000000000001,"beta":0.753,"low52":18.72,"high52":37.03},"DOC":{"name":"Healthpeak Properties, Inc.","pe":169,"pb":1.5661198,"div":7.15,"mcap":11746242560,"revGrowth":3.1,"profitMargin":2.528,"roe":1.164,"beta":1.081,"low52":15.71,"high52":20.81},"HCA":{"name":"HCA Healthcare, Inc.","pe":18.812435,"pb":null,"div":0.58,"mcap":119096721408,"revGrowth":6.7,"profitMargin":8.974,"roe":null,"beta":1.342,"low52":313.21,"high52":556.52},"HPE":{"name":"Hewlett Packard Enterprise Comp","pe":null,"pb":1.1576011,"div":2.66,"mcap":28799223808,"revGrowth":18.4,"profitMargin":-0.33000002,"roe":-0.471,"beta":1.311,"low52":11.965,"high52":26.44},"HSY":{"name":"The Hershey Company","pe":49.654377,"pb":9.42736,"div":2.67,"mcap":43700195328,"revGrowth":7.000000000000001,"profitMargin":7.553999999999999,"roe":18.89,"beta":0.112,"low52":150.04,"high52":239.48},"HLT":{"name":"Hilton Worldwide Holdings Inc.","pe":48.081703,"pb":null,"div":0.2,"mcap":68396376064,"revGrowth":7.000000000000001,"profitMargin":29.410999999999998,"roe":null,"beta":1.123,"low52":196.04,"high52":333.86},"HRL":{"name":"Hormel Foods Corporation","pe":25.50562,"pb":1.5733297,"div":5.08,"mcap":12491452416,"revGrowth":1.3,"profitMargin":4.03,"roe":6.1160002,"beta":0.312,"low52":21.03,"high52":32.07},"HD":{"name":"Home Depot, Inc. (The)","pe":23.801264,"pb":26.267534,"div":2.66,"mcap":337408688128,"revGrowth":-3.8,"profitMargin":8.596,"roe":145.541,"beta":1.044,"low52":326.31,"high52":426.75},"HWM":{"name":"Howmet Aerospace Inc.","pe":65.8973,"pb":18.292444,"div":0.18,"mcap":98137554944,"revGrowth":14.6,"profitMargin":18.274,"roe":30.442999999999998,"beta":1.188,"low52":105.04,"high52":267.31},"HUBB":{"name":"Hubbell Inc","pe":28.31983,"pb":6.4826455,"div":1.19,"mcap":24901425152,"revGrowth":11.899999999999999,"profitMargin":15.178001,"roe":24.542,"beta":0.997,"low52":299.425,"high52":533.8},"HPQ":{"name":"HP Inc.","pe":7.1780305,"pb":null,"div":6.5,"mcap":17395806208,"revGrowth":6.9,"profitMargin":4.462,"roe":null,"beta":1.178,"low52":17.56,"high52":29.55},"HUM":{"name":"Humana Inc.","pe":16.616243,"pb":1.1178118,"div":2.07,"mcap":19737942016,"revGrowth":11.3,"profitMargin":0.9159999999999999,"roe":7.039,"beta":0.415,"low52":163.6,"high52":315.35},"HII":{"name":"Huntington Ingalls Industries, ","pe":26.936972,"pb":3.2067823,"div":1.33,"mcap":16268448768,"revGrowth":15.7,"profitMargin":4.8460003,"roe":12.4239996,"beta":0.28,"low52":177.42,"high52":460},"IBM":{"name":"International Business Machines","pe":22.213453,"pb":7.1080494,"div":2.7,"mcap":232332361728,"revGrowth":12.2,"profitMargin":15.685001000000002,"roe":35.158001999999996,"beta":0.706,"low52":214.5,"high52":324.9},"IEX":{"name":"IDEX Corporation","pe":29.300623,"pb":3.484293,"div":1.46,"mcap":14079928320,"revGrowth":4.2,"profitMargin":13.975000000000001,"roe":12.34,"beta":0.96,"low52":153.36,"high52":217.16},"IR":{"name":"Ingersoll Rand Inc.","pe":55.97931,"pb":3.1464896,"div":0.09,"mcap":32071110656,"revGrowth":10.100000000000001,"profitMargin":7.599,"roe":5.7729997,"beta":1.289,"low52":65.61,"high52":100.96},"ITW":{"name":"Illinois Tool Works Inc.","pe":25.34542,"pb":23.769127,"div":2.37,"mcap":76551684096,"revGrowth":4.1000000000000005,"profitMargin":19.11,"roe":93.718004,"beta":1.123,"low52":214.66,"high52":303.16},"ICE":{"name":"Intercontinental Exchange Inc.","pe":27.536457,"pb":3.110244,"div":1.32,"mcap":90436018176,"revGrowth":7.8,"profitMargin":33.380002,"roe":11.885,"beta":1.051,"low52":143.17,"high52":189.35},"INVH":{"name":"Invitation Homes Inc.","pe":26.156252,"pb":1.609306,"div":4.76,"mcap":15392948224,"revGrowth":4.3,"profitMargin":21.632999,"roe":6.0939997,"beta":0.814,"low52":24.96,"high52":35.799},"IFF":{"name":"International Flavors & Fragran","pe":null,"pb":1.2647686,"div":2.33,"mcap":17929308160,"revGrowth":-6.6000000000000005,"profitMargin":-3.3150001999999996,"roe":-2.559,"beta":1.005,"low52":59.14,"high52":84.45},"IP":{"name":"International Paper Company","pe":null,"pb":1.2696321,"div":4.79,"mcap":18875586560,"revGrowth":53.1,"profitMargin":-14.877,"roe":-24.678,"beta":1.038,"low52":35.45,"high52":56.64},"IVZ":{"name":"Invesco Ltd","pe":null,"pb":1.0459964,"div":3.51,"mcap":10160130048,"revGrowth":6.2,"profitMargin":-4.417,"roe":-1.2189999999999999,"beta":1.645,"low52":11.6,"high52":29.61},"IQV":{"name":"IQVIA Holdings, Inc.","pe":20.781887,"pb":4.249276,"div":null,"mcap":27649220608,"revGrowth":10.299999999999999,"profitMargin":8.3380006,"roe":21.438,"beta":1.411,"low52":134.65,"high52":247.05},"IRM":{"name":"Iron Mountain Incorporated (Del","pe":219.14285,"pb":null,"div":3.21,"mcap":31766781952,"revGrowth":16.6,"profitMargin":2.095,"roe":null,"beta":1.148,"low52":72.33,"high52":115.24},"JBL":{"name":"Jabil Inc.","pe":39.45853,"pb":20.03974,"div":0.13,"mcap":26934341632,"revGrowth":18.7,"profitMargin":2.26,"roe":47.823003,"beta":1.183,"low52":108.66,"high52":281.37},"JPM":{"name":"JP Morgan Chase & Co.","pe":14.137432,"pb":2.227691,"div":2.09,"mcap":762963558400,"revGrowth":2.5,"profitMargin":33.910000000000004,"roe":16.134001,"beta":1.059,"low52":202.16,"high52":337.25},"JNJ":{"name":"Johnson & Johnson","pe":21.94379,"pb":7.1472015,"div":2.14,"mcap":583291961344,"revGrowth":9.1,"profitMargin":28.456,"roe":35.029998,"beta":0.326,"low52":141.5,"high52":251.71},"J":{"name":"Jacobs Solutions Inc.","pe":34.168865,"pb":4.421606,"div":1.08,"mcap":15292436480,"revGrowth":12.3,"profitMargin":3.495,"roe":9.725999999999999,"beta":0.734,"low52":105.178215,"high52":168.44},"KVUE":{"name":"Kenvue Inc.","pe":22.881578,"pb":3.0954075,"div":4.7,"mcap":33331968000,"revGrowth":3.2,"profitMargin":9.7200006,"roe":14.388000000000002,"beta":0.473,"low52":14.02,"high52":25.17},"JCI":{"name":"Johnson Controls International ","pe":43.939598,"pb":6.0690613,"div":1.19,"mcap":80143949824,"revGrowth":6.800000000000001,"profitMargin":14.169,"roe":12.640001000000002,"beta":1.389,"low52":68.03,"high52":146.49},"KEYS":{"name":"Keysight Technologies Inc.","pe":49.697716,"pb":7.8157043,"div":null,"mcap":48581603328,"revGrowth":23.3,"profitMargin":16.946,"roe":17.222999,"beta":1.137,"low52":121.43,"high52":317},"KEY":{"name":"KeyCorp","pe":12.644736,"pb":1.1849569,"div":4.17,"mcap":20943024128,"revGrowth":131.5,"profitMargin":26.101999999999997,"roe":9.482,"beta":1.086,"low52":12.73,"high52":23.35},"KMI":{"name":"Kinder Morgan, Inc.","pe":24.350365,"pb":2.3816664,"div":3.54,"mcap":74219544576,"revGrowth":13.100000000000001,"profitMargin":18.043,"roe":9.826,"beta":0.648,"low52":23.94,"high52":34.24},"KKR":{"name":"KKR & Co. Inc.","pe":35.846153,"pb":2.6367407,"div":0.85,"mcap":77682900992,"revGrowth":76.3,"profitMargin":9.241000000000001,"roe":8.558,"beta":2.013,"low52":82.67,"high52":153.87},"KIM":{"name":"Kimco Realty Corporation (HC)","pe":27.987806,"pb":1.488713,"div":4.49,"mcap":15541604352,"revGrowth":3.2,"profitMargin":27.322999999999997,"roe":5.5370003,"beta":1.058,"low52":17.93,"high52":23.91},"LW":{"name":"Lamb Weston Holdings, Inc.","pe":14.655797,"pb":3.2019315,"div":3.5,"mcap":5636807680,"revGrowth":1.0999999999999999,"profitMargin":6.0599998,"roe":23.164,"beta":0.428,"low52":39.79,"high52":67.07},"LHX":{"name":"L3Harris Technologies, Inc.","pe":42.004692,"pb":3.4055269,"div":1.37,"mcap":66942472192,"revGrowth":2.3,"profitMargin":7.345,"roe":8.190999999999999,"beta":0.606,"low52":195.72,"high52":379.23},"KR":{"name":"Kroger Company (The)","pe":48.675323,"pb":6.0755386,"div":1.94,"mcap":46025441280,"revGrowth":1.2,"profitMargin":0.68800002,"roe":14.405000000000001,"beta":0.59,"low52":58.6,"high52":76.58},"LH":{"name":"Labcorp Holdings Inc.","pe":25.110792,"pb":2.507152,"div":1.07,"mcap":21795239936,"revGrowth":5.6000000000000005,"profitMargin":6.282,"roe":10.509,"beta":0.974,"low52":209.38,"high52":293.72},"LEN":{"name":"Lennar Corporation","pe":11.596491,"pb":1.0408629,"div":2.07,"mcap":22914865152,"revGrowth":-5.800000000000001,"profitMargin":6.079,"roe":8.405999999999999,"beta":1.403,"low52":92.17,"high52":144.24},"LVS":{"name":"Las Vegas Sands Corp.","pe":22.842554,"pb":22.784382,"div":1.92,"mcap":36294897664,"revGrowth":26,"profitMargin":12.498999399999999,"roe":73.263,"beta":0.888,"low52":30.18,"high52":70.45},"LDOS":{"name":"Leidos Holdings, Inc.","pe":15.588341,"pb":4.4683533,"div":0.96,"mcap":22222508032,"revGrowth":-3.5999999999999996,"profitMargin":8.4309995,"roe":31.034002,"beta":0.617,"low52":128.32,"high52":205.77},"LII":{"name":"Lennox International, Inc.","pe":21.162788,"pb":14.428888,"div":1.02,"mcap":16915603456,"revGrowth":-11.200000000000001,"profitMargin":15.509999999999998,"roe":75.833,"beta":1.142,"low52":443.19,"high52":689.44},"LYV":{"name":"Live Nation Entertainment, Inc.","pe":null,"pb":138.4456,"div":null,"mcap":37643444224,"revGrowth":11.1,"profitMargin":1.968,"roe":36.701,"beta":1.145,"low52":113.2,"high52":175.25},"LLY":{"name":"Eli Lilly and Company","pe":42.489132,"pb":32.953968,"div":0.62,"mcap":874657087488,"revGrowth":42.6,"profitMargin":31.667,"roe":101.15899999999999,"beta":0.434,"low52":623.78,"high52":1133.95},"L":{"name":"Loews Corporation","pe":13.604768,"pb":1.1953874,"div":0.23,"mcap":22408097792,"revGrowth":4.1000000000000005,"profitMargin":9.033,"roe":9.431000000000001,"beta":0.588,"low52":78.98,"high52":114.9},"LYB":{"name":"LyondellBasell Industries NV","pe":null,"pb":2.3746088,"div":7.12,"mcap":23946895360,"revGrowth":-9.2,"profitMargin":-2.471,"roe":-6.949,"beta":0.674,"low52":41.58,"high52":75.62},"LOW":{"name":"Lowe's Companies, Inc.","pe":20.20675,"pb":null,"div":1.94,"mcap":134319833088,"revGrowth":10.9,"profitMargin":7.712,"roe":null,"beta":0.935,"low52":206.39,"high52":293.06},"MTB":{"name":"M&T Bank Corporation","pe":11.651969,"pb":1.1423565,"div":2.95,"mcap":30461513728,"revGrowth":4.7,"profitMargin":31.04,"roe":9.797,"beta":0.588,"low52":150.75,"high52":239},"LMT":{"name":"Lockheed Martin Corporation","pe":30.364187,"pb":22.243689,"div":2.08,"mcap":151063429120,"revGrowth":9.1,"profitMargin":6.6850000000000005,"roe":76.86500000000001,"beta":0.197,"low52":410.11,"high52":692},"MRSH":{"name":"Marsh","pe":20.246447,"pb":5.4869475,"div":2.07,"mcap":83715768320,"revGrowth":8.7,"profitMargin":15.418000000000001,"roe":29.352,"beta":0.731,"low52":170.37,"high52":248},"MPC":{"name":"Marathon Petroleum Corporation","pe":17.403177,"pb":3.919955,"div":1.68,"mcap":69159608320,"revGrowth":-0.5,"profitMargin":3.033,"roe":24.193001,"beta":0.708,"low52":115.1,"high52":236.11},"MLM":{"name":"Martin Marietta Materials, Inc.","pe":36.012875,"pb":3.5311198,"div":0.56,"mcap":35425488896,"revGrowth":8.6,"profitMargin":18.488,"roe":10.159001,"beta":1.149,"low52":441.95,"high52":710.97},"MA":{"name":"Mastercard Incorporated","pe":30.085299,"pb":57.465908,"div":0.69,"mcap":443818180608,"revGrowth":17.599999999999998,"profitMargin":45.646997999999996,"roe":209.915,"beta":0.836,"low52":465.59,"high52":601.77},"MAS":{"name":"Masco Corporation","pe":15.715026,"pb":null,"div":2.05,"mcap":12350806016,"revGrowth":-1.9,"profitMargin":10.711,"roe":7150,"beta":1.246,"low52":56.55,"high52":79.19},"MKC":{"name":"McCormick & Company, Incorporat","pe":19.563139,"pb":2.6818883,"div":3.2,"mcap":15386880000,"revGrowth":2.9000000000000004,"profitMargin":11.540000000000001,"roe":14.243001,"beta":0.574,"low52":57.29,"high52":83.15},"MDT":{"name":"Medtronic plc.","pe":24.407822,"pb":2.2892923,"div":3.19,"mcap":112185860096,"revGrowth":8.7,"profitMargin":13,"roe":9.39,"beta":0.729,"low52":79.55,"high52":106.33},"MCD":{"name":"McDonald's Corporation","pe":27.128141,"pb":null,"div":2.29,"mcap":231143604224,"revGrowth":9.700000000000001,"profitMargin":31.85,"roe":null,"beta":0.496,"low52":283.47,"high52":341.75},"MCK":{"name":"McKesson Corporation","pe":27.246393,"pb":null,"div":0.35,"mcap":116559183872,"revGrowth":11.4,"profitMargin":1.091,"roe":null,"beta":0.354,"low52":637,"high52":999},"MET":{"name":"MetLife, Inc.","pe":14.605096,"pb":1.5874372,"div":3.24,"mcap":45325156352,"revGrowth":27.6,"profitMargin":4.3839999999999995,"roe":12.020000999999999,"beta":0.745,"low52":65.21,"high52":85},"MRK":{"name":"Merck & Company, Inc.","pe":15.943604,"pb":5.4525356,"div":2.93,"mcap":286574968832,"revGrowth":5,"profitMargin":28.077999999999996,"roe":36.882,"beta":0.264,"low52":73.31,"high52":125.14},"MTD":{"name":"Mettler-Toledo International, I","pe":27.789675,"pb":null,"div":null,"mcap":23860422656,"revGrowth":8.1,"profitMargin":21.587,"roe":null,"beta":1.438,"low52":946.69,"high52":1525.17},"MAA":{"name":"Mid-America Apartment Communiti","pe":33.88594,"pb":2.6366844,"div":4.78,"mcap":15333012480,"revGrowth":1,"profitMargin":20.23,"roe":7.6450000000000005,"beta":0.768,"low52":125.75,"high52":169.42},"MOH":{"name":"Molina Healthcare Inc","pe":16.706606,"pb":1.869924,"div":null,"mcap":7683284992,"revGrowth":7.1,"profitMargin":1.0829999,"roe":11.022,"beta":0.5,"low52":121.06,"high52":359.97},"MGM":{"name":"MGM Resorts International","pe":47.763157,"pb":3.8588285,"div":null,"mcap":9928283136,"revGrowth":6,"profitMargin":1.174,"roe":14.89,"beta":1.396,"low52":25.3,"high52":40.16},"MOS":{"name":"Mosaic Company (The)","pe":18.447058,"pb":0.8236592,"div":3.02,"mcap":9956964352,"revGrowth":5.6000000000000005,"profitMargin":4.486,"roe":4.8249997,"beta":0.946,"low52":22.36,"high52":38.23},"MS":{"name":"Morgan Stanley","pe":15.104696,"pb":2.3982787,"div":2.49,"mcap":245117976576,"revGrowth":11,"profitMargin":23.986,"roe":15.614,"beta":1.207,"low52":94.33,"high52":192.68},"TAP":{"name":"Molson Coors Beverage Company","pe":null,"pb":0.8148383,"div":4.27,"mcap":8625624064,"revGrowth":-2.7,"profitMargin":-19.205,"roe":-18.172,"beta":0.449,"low52":42.94,"high52":63.5},"MCO":{"name":"Moody's Corporation","pe":31.151937,"pb":18.676973,"div":0.92,"mcap":75913314304,"revGrowth":13,"profitMargin":31.861,"roe":62.078,"beta":1.442,"low52":378.71,"high52":546.88},"MSCI":{"name":"MSCI Inc.","pe":34.16242,"pb":null,"div":1.5,"mcap":40301088768,"revGrowth":10.6,"profitMargin":38.358003000000004,"roe":null,"beta":1.301,"low52":486.74,"high52":626.28},"MSI":{"name":"Motorola Solutions, Inc.","pe":36.22788,"pb":31.808994,"div":1.05,"mcap":77053337600,"revGrowth":12.3,"profitMargin":18.439,"roe":104.197,"beta":0.96,"low52":359.36,"high52":492.22},"NEE":{"name":"NextEra Energy, Inc.","pe":27.79697,"pb":3.4990084,"div":2.72,"mcap":191121473536,"revGrowth":20.7,"profitMargin":24.934,"roe":8.3739996,"beta":0.749,"low52":61.72,"high52":95.91},"NEM":{"name":"Newmont Corporation","pe":17.915493,"pb":3.6794908,"div":0.89,"mcap":124927787008,"revGrowth":20.599999999999998,"profitMargin":31.253999999999998,"roe":22.343999,"beta":0.389,"low52":42.93,"high52":134.88},"NI":{"name":"NiSource Inc","pe":23.943588,"pb":2.363811,"div":2.59,"mcap":22342713344,"revGrowth":19.8,"profitMargin":13.994001,"roe":9.07,"beta":0.616,"low52":35.64,"high52":47.67},"NKE":{"name":"Nike, Inc.","pe":31.65497,"pb":5.6871195,"div":2.94,"mcap":80133152768,"revGrowth":0.6,"profitMargin":5.426,"roe":17.950001,"beta":1.286,"low52":52.28,"high52":80.17},"NSC":{"name":"Norfolk Southern Corporation","pe":22.861855,"pb":4.2043424,"div":1.81,"mcap":65408851968,"revGrowth":-1.7000000000000002,"profitMargin":23.587999,"roe":19.248,"beta":1.303,"low52":201.63,"high52":319.94},"NRG":{"name":"NRG Energy, Inc.","pe":37.930176,"pb":28.083458,"div":1.28,"mcap":32302419968,"revGrowth":13.700000000000001,"profitMargin":2.8129999999999997,"roe":41.548002000000004,"beta":1.265,"low52":79.57,"high52":189.96},"NCLH":{"name":"Norwegian Cruise Line Holdings ","pe":21.152172,"pb":4.009064,"div":null,"mcap":8864917504,"revGrowth":6.4,"profitMargin":4.3070003,"roe":23.285,"beta":2.044,"low52":14.21,"high52":27.18},"NUE":{"name":"Nucor Corporation","pe":22.001328,"pb":1.8065733,"div":1.3,"mcap":37915013120,"revGrowth":8.6,"profitMargin":5.367,"roe":9.361,"beta":1.768,"low52":97.59,"high52":196.9},"NVR":{"name":"NVR, Inc.","pe":14.757517,"pb":4.6638703,"div":null,"mcap":18283102208,"revGrowth":-5,"profitMargin":12.836,"roe":33.185002000000004,"beta":1.036,"low52":6438.805,"high52":8618.28},"NOC":{"name":"Northrop Grumman Corporation","pe":25.293713,"pb":6.2703853,"div":1.26,"mcap":105084780544,"revGrowth":9.6,"profitMargin":9.968001,"roe":26.167,"beta":0.007,"low52":450.13,"high52":774},"OXY":{"name":"Occidental Petroleum Corporatio","pe":43.266666,"pb":2.075693,"div":1.87,"mcap":57607831552,"revGrowth":148.9,"profitMargin":10.772,"roe":5.929,"beta":0.351,"low52":34.78,"high52":59.15},"ORCL":{"name":"Oracle Corporation","pe":29.917294,"pb":13.643065,"div":1.23,"mcap":457440329728,"revGrowth":21.7,"profitMargin":25.298,"roe":57.572,"beta":1.648,"low52":118.86,"high52":345.72},"OMC":{"name":"Omnicom Group Inc.","pe":null,"pb":2.0250566,"div":4,"mcap":24510773248,"revGrowth":27.900000000000002,"profitMargin":-0.316,"roe":0.479,"beta":0.71,"low52":66.33,"high52":87.17},"OKE":{"name":"ONEOK, Inc.","pe":15.669742,"pb":2.3785253,"div":4.85,"mcap":53487521792,"revGrowth":29.5,"profitMargin":10.09,"roe":15.489,"beta":0.88,"low52":64.02,"high52":103.64},"OTIS":{"name":"Otis Worldwide Corporation","pe":23.60857,"pb":null,"div":1.99,"mcap":32202219520,"revGrowth":3.3000000000000003,"profitMargin":9.59,"roe":null,"beta":0.986,"low52":82.5,"high52":105.95},"PH":{"name":"Parker-Hannifin Corporation","pe":32.962,"pb":7.956696,"div":0.77,"mcap":113868759040,"revGrowth":9.1,"profitMargin":17.287001,"roe":25.781,"beta":1.218,"low52":488.45,"high52":1034.96},"PKG":{"name":"Packaging Corporation of Americ","pe":24.975496,"pb":4.125038,"div":2.25,"mcap":19258689536,"revGrowth":10.100000000000001,"profitMargin":8.611,"roe":17.198,"beta":0.896,"low52":172.72,"high52":249.51},"PAYC":{"name":"Paycom Software, Inc.","pe":15.670793,"pb":3.912372,"div":1.15,"mcap":6952212992,"revGrowth":10.2,"profitMargin":22.099,"roe":27.417,"beta":0.812,"low52":104.9,"high52":267.76},"PNR":{"name":"Pentair plc.","pe":22.470737,"pb":3.7256887,"div":1.14,"mcap":14451214336,"revGrowth":4.9,"profitMargin":15.656,"roe":17.478001000000003,"beta":1.212,"low52":74.25,"high52":113.95},"PCG":{"name":"Pacific Gas & Electric Co.","pe":15.31356,"pb":1.2828339,"div":1.1,"mcap":39717277696,"revGrowth":2.6,"profitMargin":10.399,"roe":8.207,"beta":0.308,"low52":12.97,"high52":19.16},"PM":{"name":"Philip Morris International Inc","pe":23.69146,"pb":null,"div":3.52,"mcap":267748884480,"revGrowth":6.800000000000001,"profitMargin":27.918,"roe":null,"beta":0.395,"low52":142.11,"high52":191.3},"PFE":{"name":"Pfizer, Inc.","pe":19.60584,"pb":1.7660596,"div":6.3,"mcap":152733138944,"revGrowth":-1.2,"profitMargin":12.4180004,"roe":8.886,"beta":0.412,"low52":20.92,"high52":27.94},"PNW":{"name":"Pinnacle West Capital Corporati","pe":20.095049,"pb":1.7412194,"div":3.62,"mcap":12269479936,"revGrowth":3,"profitMargin":11.545999,"roe":9.059000000000001,"beta":0.492,"low52":85.32,"high52":103.21},"PSX":{"name":"Phillips 66","pe":16.119444,"pb":2.4003804,"div":3,"mcap":69765529600,"revGrowth":1.3,"profitMargin":3.3259999999999996,"roe":15.427,"beta":0.871,"low52":91.01,"high52":178.38},"PNC":{"name":"PNC Financial Services Group, I","pe":12.21024,"pb":1.4433217,"div":3.31,"mcap":81950384128,"revGrowth":9.6,"profitMargin":31.075000000000003,"roe":12.158,"beta":0.974,"low52":145.12,"high52":243.94},"PPL":{"name":"PPL Corporation","pe":23.943396,"pb":1.9213688,"div":3.03,"mcap":28602251264,"revGrowth":2.8000000000000003,"profitMargin":13.061,"roe":8.157,"beta":0.689,"low52":32.5,"high52":39.09},"PPG":{"name":"PPG Industries, Inc.","pe":14.556358,"pb":2.834112,"div":2.73,"mcap":22543239168,"revGrowth":5,"profitMargin":9.928001,"roe":21.077,"beta":1.123,"low52":90.24,"high52":133.43},"PG":{"name":"Procter & Gamble Company (The)","pe":22.296297,"pb":6.6909704,"div":2.76,"mcap":352243056640,"revGrowth":1.5,"profitMargin":19.299999,"roe":31.562,"beta":0.34,"low52":137.62,"high52":174.8},"PLD":{"name":"Prologis, Inc.","pe":37.05056,"pb":2.3067505,"div":3.18,"mcap":122608820224,"revGrowth":4,"profitMargin":36.205003000000005,"roe":6.127,"beta":1.416,"low52":85.35,"high52":143.95},"PRU":{"name":"Prudential Financial, Inc.","pe":9.243243,"pb":0.99047494,"div":5.74,"mcap":32134318080,"revGrowth":31.2,"profitMargin":5.84,"roe":11.359999,"beta":0.966,"low52":90.38,"high52":119.76},"PGR":{"name":"Progressive Corporation (The)","pe":10.664241,"pb":3.965827,"div":6.91,"mcap":120216264704,"revGrowth":12.2,"profitMargin":12.903,"roe":40.448,"beta":0.29,"low52":197.92,"high52":292.99},"PHM":{"name":"PulteGroup, Inc.","pe":10.832734,"pb":1.7878239,"div":0.84,"mcap":23167817728,"revGrowth":-6.3,"profitMargin":12.815999999999999,"roe":17.673999000000002,"beta":1.298,"low52":88.07,"high52":144.5},"PEG":{"name":"Public Service Enterprise Group","pe":19.542656,"pb":2.4184752,"div":3.26,"mcap":41165230080,"revGrowth":18.3,"profitMargin":17.349,"roe":12.757,"beta":0.582,"low52":74.67,"high52":91.26},"PSA":{"name":"Public Storage","pe":33.082222,"pb":10.667861,"div":4,"mcap":52255289344,"revGrowth":3.3000000000000003,"profitMargin":36.915,"roe":18.762999999999998,"beta":0.965,"low52":256.54,"high52":312.95},"Q":{"name":"Qnity Electronics, Inc.","pe":32.436363,"pb":3.1612523,"div":0.12,"mcap":22441889792,"revGrowth":8.1,"profitMargin":14.556,"roe":7.9840004,"beta":null,"low52":70.5,"high52":140.6},"RL":{"name":"Ralph Lauren Corporation","pe":22.779741,"pb":7.030401,"div":1.08,"mcap":20320077824,"revGrowth":12.2,"profitMargin":11.726,"roe":33.846,"beta":1.488,"low52":176.61,"high52":389.15},"PWR":{"name":"Quanta Services, Inc.","pe":83.2467,"pb":9.486921,"div":0.08,"mcap":84820746240,"revGrowth":19.7,"profitMargin":3.611,"roe":12.739,"beta":1.109,"low52":227.08,"high52":576.86},"DGX":{"name":"Quest Diagnostics Incorporated","pe":22.983982,"pb":3.0818324,"div":1.72,"mcap":22346364928,"revGrowth":7.1,"profitMargin":8.9899994,"roe":14.751,"beta":0.63,"low52":157.2,"high52":213.5},"RJF":{"name":"Raymond James Financial, Inc.","pe":14.132943,"pb":2.2805855,"div":1.46,"mcap":28550199296,"revGrowth":5.7,"profitMargin":14.758,"roe":17.124,"beta":1.007,"low52":117.57,"high52":177.66},"RTX":{"name":"RTX Corporation","pe":41.01818,"pb":4.177176,"div":1.31,"mcap":273286610944,"revGrowth":12.1,"profitMargin":7.598000000000001,"roe":10.951999599999999,"beta":0.406,"low52":112.27,"high52":214.5},"O":{"name":"Realty Income Corporation","pe":55.581196,"pb":1.5400099,"div":5.01,"mcap":60853444608,"revGrowth":11,"profitMargin":18.370001,"roe":2.702,"beta":0.774,"low52":50.71,"high52":67.94},"RF":{"name":"Regions Financial Corporation","pe":11.008696,"pb":1.2420897,"div":3.99,"mcap":22202511360,"revGrowth":15.6,"profitMargin":30.556,"roe":11.65,"beta":1.041,"low52":17.74,"high52":31.53},"RSG":{"name":"Republic Services, Inc.","pe":32.960583,"pb":5.8105364,"div":1.12,"mcap":69893267456,"revGrowth":2.1999999999999997,"profitMargin":12.892999999999999,"roe":18.301001,"beta":0.521,"low52":201.42,"high52":258.75},"RMD":{"name":"ResMed Inc.","pe":22.988132,"pb":5.3558097,"div":1,"mcap":33924026368,"revGrowth":11,"profitMargin":27.526,"roe":25.676,"beta":0.887,"low52":199.92,"high52":293.81},"ROK":{"name":"Rockwell Automation, Inc.","pe":41.03093,"pb":10.743852,"div":1.48,"mcap":40273567744,"revGrowth":11.899999999999999,"profitMargin":11.557,"roe":23.735999999999997,"beta":1.522,"low52":215,"high52":438.72},"RCL":{"name":"Royal Caribbean Cruises Ltd.","pe":17.06082,"pb":7.179922,"div":1.48,"mcap":72675270656,"revGrowth":13.3,"profitMargin":23.797001,"roe":47.731,"beta":1.926,"low52":164.01,"high52":366.5},"RVTY":{"name":"Revvity, Inc.","pe":41.145634,"pb":1.312623,"div":0.31,"mcap":9609717760,"revGrowth":5.8999999999999995,"profitMargin":8.445,"roe":3.216,"beta":1.107,"low52":81.36,"high52":118.3},"ROL":{"name":"Rollins, Inc.","pe":51,"pb":19.464287,"div":1.3,"mcap":26743916544,"revGrowth":9.700000000000001,"profitMargin":14.004,"roe":38.944,"beta":0.796,"low52":49.73,"high52":66.14},"CRM":{"name":"Salesforce, Inc.","pe":25.548717,"pb":3.130282,"div":0.91,"mcap":186725351424,"revGrowth":12.1,"profitMargin":17.958,"roe":12.3959996,"beta":1.307,"low52":174.57,"high52":296.05},"SLB":{"name":"SLB Limited","pe":18.961704,"pb":2.5521193,"div":2.45,"mcap":66890502144,"revGrowth":5,"profitMargin":9.449000999999999,"roe":13.904001,"beta":0.709,"low52":31.11,"high52":52.45},"SPGI":{"name":"S&P Global Inc.","pe":28.609407,"pb":4.0288754,"div":0.9,"mcap":127085166592,"revGrowth":9,"profitMargin":29.154000000000003,"roe":13.086999999999998,"beta":1.221,"low52":381.61,"high52":579.05},"SHW":{"name":"Sherwin-Williams Company (The)","pe":30.964912,"pb":17.015694,"div":0.99,"mcap":78718050304,"revGrowth":5.6000000000000005,"profitMargin":10.8950004,"roe":59.391000000000005,"beta":1.244,"low52":308.84,"high52":379.65},"SRE":{"name":"DBA Sempra","pe":33.88727,"pb":1.9252939,"div":2.83,"mcap":60879552512,"revGrowth":-0.2,"profitMargin":13.4,"roe":5.1909998,"beta":0.7,"low52":61.9,"high52":97.45},"NOW":{"name":"ServiceNow, Inc.","pe":67.646706,"pb":9.125939,"div":null,"mcap":119199506432,"revGrowth":20.7,"profitMargin":13.165,"roe":15.488,"beta":1.019,"low52":98,"high52":211.478},"SPG":{"name":"Simon Property Group, Inc.","pe":13.227786,"pb":11.804279,"div":4.56,"mcap":60951490560,"revGrowth":13.200000000000001,"profitMargin":72.71,"roe":104.10900000000001,"beta":1.397,"low52":136.34,"high52":205.12},"SW":{"name":"Smurfit WestRock plc","pe":29.857141,"pb":1.1285738,"div":4.29,"mcap":20818114560,"revGrowth":0.5,"profitMargin":2.242,"roe":3.911,"beta":1.004,"low52":32.729,"high52":52.65},"SJM":{"name":"The J.M. Smucker Company","pe":null,"pb":2.1600032,"div":4.09,"mcap":11309598720,"revGrowth":7.000000000000001,"profitMargin":-14.068,"roe":-20.683001,"beta":0.176,"low52":93.3,"high52":120.76},"SO":{"name":"Southern Company (The)","pe":24.959183,"pb":3.040492,"div":3.08,"mcap":109521231872,"revGrowth":10.100000000000001,"profitMargin":14.689,"roe":11.043,"beta":0.41,"low52":83.09,"high52":100.84},"SNA":{"name":"Snap-On Incorporated","pe":18.979155,"pb":3.1846282,"div":2.64,"mcap":18941671424,"revGrowth":3.1,"profitMargin":19.722,"roe":18.327999000000002,"beta":0.749,"low52":289.81,"high52":390.13},"LUV":{"name":"Southwest Airlines Company","pe":48.873417,"pb":2.4941862,"div":1.72,"mcap":19967356928,"revGrowth":7.3999999999999995,"profitMargin":1.5709999999999997,"roe":4.812,"beta":1.094,"low52":23.82,"high52":55.11},"SWK":{"name":"Stanley Black & Decker, Inc.","pe":26.826412,"pb":1.217232,"div":4.5,"mcap":11039311872,"revGrowth":-1,"profitMargin":2.656,"roe":4.522,"beta":1.149,"low52":53.91,"high52":93.37},"SOLV":{"name":"Solventum Corporation","pe":7.445946,"pb":2.272009,"div":null,"mcap":11471357952,"revGrowth":-3.6999999999999997,"profitMargin":18.691,"roe":38.861000000000004,"beta":null,"low52":60.7,"high52":88.2},"STE":{"name":"STERIS plc (Ireland)","pe":29.57521,"pb":2.9116564,"div":1.11,"mcap":20841517056,"revGrowth":9.2,"profitMargin":12.144,"roe":10.468,"beta":1.036,"low52":204.9,"high52":269.44},"STT":{"name":"State Street Corporation","pe":13.107448,"pb":1.4160767,"div":2.67,"mcap":34414088192,"revGrowth":7.6,"profitMargin":21.209998,"roe":11.078000000000001,"beta":1.416,"low52":72.81,"high52":137.05},"TPR":{"name":"Tapestry, Inc.","pe":55.51362,"pb":52.471493,"div":1.1,"mcap":29197381632,"revGrowth":14.000000000000002,"profitMargin":6.950000000000001,"roe":55.337,"beta":1.597,"low52":58.39,"high52":161.97},"SYY":{"name":"Sysco Corporation","pe":22.886793,"pb":17.81204,"div":2.55,"mcap":40666005504,"revGrowth":3,"profitMargin":2.1760002,"roe":82.345,"beta":0.595,"low52":67.12,"high52":91.85},"SYF":{"name":"Synchrony Financial","pe":6.893319,"pb":1.4296889,"div":1.84,"mcap":23040145408,"revGrowth":5,"profitMargin":36.408,"roe":21.304001,"beta":1.412,"low52":40.545,"high52":88.77},"TRGP":{"name":"Targa Resources, Inc.","pe":28.051826,"pb":16.663868,"div":1.69,"mcap":51192918016,"revGrowth":-7.9,"profitMargin":11.293000000000001,"roe":51.381,"beta":0.853,"low52":144.14,"high52":250},"SYK":{"name":"Stryker Corporation","pe":40.144047,"pb":5.7530622,"div":1.02,"mcap":129046446080,"revGrowth":11.4,"profitMargin":12.923999,"roe":15.079,"beta":0.869,"low52":328.225,"high52":404.87},"TGT":{"name":"Target Corporation","pe":14.254927,"pb":3.2425694,"div":3.84,"mcap":52416253952,"revGrowth":-1.5,"profitMargin":3.5360000000000005,"roe":24.034001,"beta":1.105,"low52":83.44,"high52":126},"TDY":{"name":"Teledyne Technologies Incorpora","pe":34.26444,"pb":2.8402557,"div":null,"mcap":29942827008,"revGrowth":7.3,"profitMargin":14.632000000000001,"roe":8.926,"beta":0.975,"low52":419,"high52":693.38},"TEL":{"name":"TE Connectivity plc","pe":28.54834,"pb":4.474297,"div":1.38,"mcap":58073059328,"revGrowth":21.7,"profitMargin":11.405999999999999,"roe":16.097,"beta":1.245,"low52":116.3,"high52":250.67},"TPL":{"name":"Texas Pacific Land Corporation","pe":75.78366,"pb":24.995037,"div":0.46,"mcap":36468011008,"revGrowth":13.900000000000002,"profitMargin":60.30799999999999,"roe":37.152,"beta":0.731,"low52":269.23334,"high52":547.2},"TXT":{"name":"Textron Inc.","pe":17.878906,"pb":2.0262074,"div":0.09,"mcap":15942829056,"revGrowth":15.6,"profitMargin":6.2230001999999995,"roe":12.242,"beta":0.935,"low52":57.7,"high52":101.57},"TKO":{"name":"TKO Group Holdings, Inc.","pe":89.057526,"pb":4.1879773,"div":1.54,"mcap":15884703744,"revGrowth":11.899999999999999,"profitMargin":4.127,"roe":5.6339998,"beta":0.167,"low52":133.07,"high52":226.94},"TJX":{"name":"TJX Companies, Inc. (The)","pe":32.055553,"pb":17.199162,"div":1.08,"mcap":173384728576,"revGrowth":8.5,"profitMargin":9.1000006,"roe":59.129,"beta":0.736,"low52":112.3,"high52":162.68},"TT":{"name":"Trane Technologies plc","pe":32.077568,"pb":10.889331,"div":0.97,"mcap":93533954048,"revGrowth":5.6000000000000005,"profitMargin":13.688,"roe":36.956,"beta":1.188,"low52":298.15,"high52":479.37},"TMO":{"name":"Thermo Fisher Scientific Inc","pe":26.810705,"pb":3.352377,"div":0.36,"mcap":176785653760,"revGrowth":7.199999999999999,"profitMargin":15.045998999999998,"roe":13.024000999999998,"beta":0.971,"low52":385.46,"high52":643.99},"TDG":{"name":"Transdigm Group Incorporated","pe":39.44498,"pb":null,"div":null,"mcap":69233762304,"revGrowth":13.900000000000002,"profitMargin":22.239,"roe":null,"beta":0.918,"low52":1183.6,"high52":1623.83},"TRV":{"name":"The Travelers Companies, Inc.","pe":11.010208,"pb":1.996932,"div":1.47,"mcap":67367387136,"revGrowth":3.5000000000000004,"profitMargin":12.878,"roe":20.698999,"beta":0.502,"low52":230.43,"high52":313.12},"TFC":{"name":"Truist Financial Corporation","pe":11.615183,"pb":0.92937034,"div":4.56,"mcap":55425601536,"revGrowth":3.2,"profitMargin":28.803,"roe":8.236,"beta":0.861,"low52":33.56,"high52":56.2},"TYL":{"name":"Tyler Technologies, Inc.","pe":47.92233,"pb":4.0237565,"div":null,"mcap":14852294656,"revGrowth":6.3,"profitMargin":13.532,"roe":8.901,"beta":0.934,"low52":283.72,"high52":621.34},"TSN":{"name":"Tyson Foods, Inc.","pe":108.98214,"pb":1.1922251,"div":3.41,"mcap":21487380480,"revGrowth":5.1,"profitMargin":0.36300002,"roe":1.2560000999999998,"beta":0.441,"low52":50.56,"high52":66.41},"USB":{"name":"U.S. Bancorp","pe":11.142858,"pb":1.3714468,"div":3.94,"mcap":79984254976,"revGrowth":5.3,"profitMargin":28.724,"roe":12.184000000000001,"beta":1.041,"low52":35.18,"high52":61.19},"UNP":{"name":"Union Pacific Corporation","pe":20.375628,"pb":7.8415627,"div":2.2,"mcap":144846864384,"revGrowth":-0.6,"profitMargin":29.122999999999998,"roe":40.377,"beta":0.952,"low52":204.66,"high52":268.14},"UBER":{"name":"Uber Technologies, Inc.","pe":15.427061,"pb":5.580026,"div":null,"mcap":151619289088,"revGrowth":20.1,"profitMargin":19.326,"roe":39.925998,"beta":1.215,"low52":60.63,"high52":101.99},"UPS":{"name":"United Parcel Service, Inc.","pe":14.922256,"pb":5.1216445,"div":6.51,"mcap":83118563328,"revGrowth":-3.2,"profitMargin":6.285,"roe":33.772000000000006,"beta":1.054,"low52":82,"high52":122.41},"UDR":{"name":"UDR, Inc.","pe":31.893806,"pb":3.6455595,"div":4.77,"mcap":13568665600,"revGrowth":1.5,"profitMargin":21.597,"roe":9.378,"beta":0.691,"low52":32.94,"high52":45.56},"UNH":{"name":"UnitedHealth Group Incorporated","pe":20.925226,"pb":2.6671736,"div":3.1,"mcap":251471577088,"revGrowth":12.3,"profitMargin":2.694,"roe":12.537999999999998,"beta":0.38,"low52":234.6,"high52":606.36},"URI":{"name":"United Rentals, Inc.","pe":18.991201,"pb":5.162911,"div":1.01,"mcap":46693076992,"revGrowth":2.8000000000000003,"profitMargin":15.492,"roe":28.357,"beta":1.654,"low52":525.91,"high52":1021.47},"VLO":{"name":"Valero Energy Corporation","pe":31.109499,"pb":2.9712465,"div":2.08,"mcap":71924301824,"revGrowth":-2.1,"profitMargin":2.025,"roe":8.299,"beta":0.734,"low52":99,"high52":240.27},"VTR":{"name":"Ventas, Inc.","pe":159.62962,"pb":3.2679985,"div":2.42,"mcap":40942002176,"revGrowth":21.4,"profitMargin":4.321,"roe":2.17,"beta":0.76,"low52":60.15,"high52":87.87},"VLTO":{"name":"Veralto Corp","pe":23.872341,"pb":7.1808,"div":0.57,"mcap":22287169536,"revGrowth":3.8,"profitMargin":17.082000999999998,"roe":36.498000000000005,"beta":1.106,"low52":83.865,"high52":110.11},"UHS":{"name":"Universal Health Services, Inc.","pe":8.249892,"pb":1.598741,"div":0.43,"mcap":11636393984,"revGrowth":9.1,"profitMargin":8.574,"roe":21.326,"beta":1.261,"low52":152.33,"high52":246.33},"V":{"name":"Visa Inc.","pe":28.752346,"pb":15.298991,"div":0.87,"mcap":590944141312,"revGrowth":14.6,"profitMargin":50.233000000000004,"roe":53.954,"beta":0.791,"low52":299,"high52":375.51},"VZ":{"name":"Verizon Communications Inc.","pe":12.470444,"pb":2.044005,"div":5.58,"mcap":213541355520,"revGrowth":2,"profitMargin":12.4280006,"roe":17.069000000000003,"beta":0.281,"low52":38.39,"high52":51.41},"VST":{"name":"Vistra Corp.","pe":73.201836,"pb":20.583,"div":0.57,"mcap":54069776384,"revGrowth":13.600000000000001,"profitMargin":5.322,"roe":17.656,"beta":1.45,"low52":90.51,"high52":219.82},"VICI":{"name":"VICI Properties Inc.","pe":10.988506,"pb":1.1027377,"div":6.27,"mcap":30653511680,"revGrowth":3.8,"profitMargin":69.281,"roe":10.217,"beta":0.699,"low52":27.48,"high52":34.01},"WRB":{"name":"W.R. Berkley Corporation","pe":15.438202,"pb":2.670969,"div":0.53,"mcap":26107453440,"revGrowth":1.5,"profitMargin":12.0979995,"roe":19.700001,"beta":0.336,"low52":61.97,"high52":78.96},"WAB":{"name":"Westinghouse Air Brake Technolo","pe":35.14035,"pb":3.6802378,"div":0.43,"mcap":41091268608,"revGrowth":14.799999999999999,"profitMargin":10.477000499999999,"roe":11.096,"beta":0.979,"low52":151.81,"high52":266.27},"VMC":{"name":"Vulcan Materials Company (Holdi","pe":32.32966,"pb":4.041455,"div":0.78,"mcap":34857451520,"revGrowth":3.2,"profitMargin":13.559,"roe":12.972,"beta":1.059,"low52":218.87,"high52":331.09},"GWW":{"name":"W.W. Grainger, Inc.","pe":30.552797,"pb":13.735515,"div":0.81,"mcap":51456942080,"revGrowth":4.5,"profitMargin":9.508,"roe":46.098998,"beta":1.092,"low52":893.99,"high52":1218.63},"WM":{"name":"Waste Management, Inc.","pe":35.666668,"pb":9.624087,"div":1.45,"mcap":96239951872,"revGrowth":7.1,"profitMargin":10.744,"roe":29.696,"beta":0.533,"low52":194.11,"high52":248.13},"DIS":{"name":"Walt Disney Company (The)","pe":14.643594,"pb":1.6278918,"div":1.49,"mcap":176327868416,"revGrowth":5.2,"profitMargin":12.8,"roe":12.024,"beta":1.443,"low52":80.1,"high52":124.69},"WELL":{"name":"Welltower Inc.","pe":145.21127,"pb":3.408997,"div":1.44,"mcap":143876571136,"revGrowth":41.3,"profitMargin":8.644,"roe":2.5390001,"beta":0.813,"low52":130.29,"high52":216.43},"WAT":{"name":"Waters Corporation","pe":26.306406,"pb":6.587152,"div":null,"mcap":27794223104,"revGrowth":6.800000000000001,"profitMargin":20.302,"roe":29.279,"beta":1.203,"low52":275.05,"high52":414.15},"WFC":{"name":"Wells Fargo & Company","pe":12.020766,"pb":1.4146333,"div":2.34,"mcap":236216107008,"revGrowth":5,"profitMargin":26.659,"roe":11.732,"beta":1.071,"low52":58.42,"high52":97.76},"WEC":{"name":"WEC Energy Group, Inc.","pe":23.869295,"pb":2.7504842,"div":3.36,"mcap":37452382208,"revGrowth":11.1,"profitMargin":15.892999999999999,"roe":11.576,"beta":0.534,"low52":100.61,"high52":118.19},"WMB":{"name":"Williams Companies, Inc. (The)","pe":34.355137,"pb":7.0340605,"div":2.82,"mcap":89809313792,"revGrowth":8.7,"profitMargin":22.129999,"roe":18.555,"beta":0.649,"low52":51.58,"high52":76.87},"WST":{"name":"West Pharmaceutical Services, I","pe":34.033875,"pb":5.238829,"div":0.37,"mcap":16643445760,"revGrowth":7.5,"profitMargin":16.059999,"roe":16.855,"beta":1.179,"low52":187.43,"high52":322.34},"WY":{"name":"Weyerhaeuser Company","pe":51.17778,"pb":1.7604343,"div":3.62,"mcap":16601428992,"revGrowth":-9.8,"profitMargin":4.6919998,"roe":3.3840000000000003,"beta":1.032,"low52":21.16,"high52":30.28},"YUM":{"name":"Yum! Brands, Inc.","pe":28.60289,"pb":null,"div":1.92,"mcap":43996868608,"revGrowth":6.5,"profitMargin":18.98,"roe":null,"beta":0.639,"low52":137.33,"high52":169.39},"WSM":{"name":"Williams-Sonoma, Inc.","pe":19.768469,"pb":10.438985,"div":1.42,"mcap":21404962816,"revGrowth":4.6,"profitMargin":14.297,"roe":56.918997000000005,"beta":1.558,"low52":130.07,"high52":222},"XYL":{"name":"Xylem Inc.","pe":30.617346,"pb":2.5465732,"div":1.41,"mcap":29221154816,"revGrowth":6.3,"profitMargin":10.592,"roe":8.396,"beta":1.169,"low52":100.47,"high52":154.27},"ZBH":{"name":"Zimmer Biomet Holdings, Inc.","pe":26.08169,"pb":1.4255581,"div":1.02,"mcap":18349629440,"revGrowth":10.9,"profitMargin":8.566,"roe":5.599,"beta":0.591,"low52":84.59,"high52":114.44},"ADBE":{"name":"Adobe Inc.","pe":16.15449,"pb":9.586042,"div":null,"mcap":110744690688,"revGrowth":10.5,"profitMargin":29.997,"roe":55.425999999999995,"beta":1.532,"low52":244.28,"high52":422.95},"AMD":{"name":"Advanced Micro Devices, Inc.","pe":76.05385,"pb":5.116171,"div":null,"mcap":322397470720,"revGrowth":34.1,"profitMargin":12.515001,"roe":7.081999999999999,"beta":2.022,"low52":76.48,"high52":267.08},"ZTS":{"name":"Zoetis Inc.","pe":19.147594,"pb":14.728919,"div":1.77,"mcap":50882437120,"revGrowth":3,"profitMargin":28.235,"roe":65.99199999999999,"beta":0.954,"low52":115.23,"high52":172.23},"AKAM":{"name":"Akamai Technologies, Inc.","pe":34.35505,"pb":3.0664341,"div":null,"mcap":15281349632,"revGrowth":7.3999999999999995,"profitMargin":10.742,"roe":9.1730006,"beta":0.704,"low52":67.51,"high52":113.5},"ALGN":{"name":"Align Technology, Inc.","pe":29.543362,"pb":2.941892,"div":null,"mcap":11976509440,"revGrowth":5.3,"profitMargin":10.17,"roe":10.3870004,"beta":1.823,"low52":122,"high52":208.31},"ABNB":{"name":"Airbnb, Inc.","pe":31.687342,"pb":9.375917,"div":null,"mcap":76557934592,"revGrowth":12,"profitMargin":20.513001,"roe":30.232999999999997,"beta":1.163,"low52":99.88,"high52":143.88},"GOOGL":{"name":"Alphabet Inc.","pe":28.10648,"pb":8.8362,"div":0.27,"mcap":3672044208128,"revGrowth":18,"profitMargin":32.810003,"roe":35.705003000000005,"beta":1.112,"low52":140.53,"high52":349},"LNT":{"name":"Alliant Energy Corporation","pe":22.792994,"pb":2.5092912,"div":2.91,"mcap":18403569664,"revGrowth":9,"profitMargin":18.569,"roe":11.299,"beta":0.611,"low52":57.09,"high52":72.65},"GOOG":{"name":"Alphabet Inc.","pe":28.101019,"pb":8.826303,"div":0.27,"mcap":3667931430912,"revGrowth":18,"profitMargin":32.810003,"roe":35.705003000000005,"beta":1.112,"low52":142.66,"high52":350.15},"AMZN":{"name":"Amazon.com, Inc.","pe":29.223152,"pb":5.4699,"div":null,"mcap":2249287794688,"revGrowth":13.600000000000001,"profitMargin":10.8339995,"roe":22.286,"beta":1.42,"low52":161.38,"high52":258.6},"AEP":{"name":"American Electric Power Company","pe":19.882708,"pb":2.2966425,"div":2.9,"mcap":71512711168,"revGrowth":13.200000000000001,"profitMargin":16.364999,"roe":12.486,"beta":0.573,"low52":97.46,"high52":134.6},"AMGN":{"name":"Amgen Inc.","pe":25.82795,"pb":22.88817,"div":2.67,"mcap":198263701504,"revGrowth":8.6,"profitMargin":20.982,"roe":106.10299,"beta":0.425,"low52":261.43,"high52":391.29},"ADI":{"name":"Analog Devices, Inc.","pe":56.276554,"pb":4.4398685,"div":1.27,"mcap":150010494976,"revGrowth":30.4,"profitMargin":23.024,"roe":7.861999999999999,"beta":1.021,"low52":158.65,"high52":363.2},"AAPL":{"name":"Apple Inc.","pe":32.374683,"pb":42.640877,"div":0.4,"mcap":3759141289984,"revGrowth":15.7,"profitMargin":27.037,"roe":152.02099,"beta":1.116,"low52":169.21,"high52":288.62},"APA":{"name":"APA Corporation","pe":8.423559,"pb":1.9470514,"div":3.03,"mcap":11872782336,"revGrowth":-28.000000000000004,"profitMargin":16.510999,"roe":25.319999999999997,"beta":0.708,"low52":13.58,"high52":34.16},"AMAT":{"name":"Applied Materials, Inc.","pe":34.55635,"pb":12.324867,"div":0.52,"mcap":267660787712,"revGrowth":-2.1,"profitMargin":27.784002,"roe":38.863,"beta":1.634,"low52":123.74,"high52":395.95},"APP":{"name":"Applovin Corporation","pe":44.66501,"pb":71.20919,"div":null,"mcap":151853318144,"revGrowth":65.9,"profitMargin":60.827,"roe":212.945,"beta":2.505,"low52":200.5,"high52":745.61},"ADSK":{"name":"Autodesk, Inc.","pe":47.688934,"pb":17.398176,"div":null,"mcap":52976680960,"revGrowth":19.400000000000002,"profitMargin":15.597999000000002,"roe":39.675,"beta":1.467,"low52":215.01,"high52":329.09},"ACGL":{"name":"Arch Capital Group Ltd.","pe":8.122414,"pb":1.4413118,"div":null,"mcap":34166618112,"revGrowth":8.5,"profitMargin":22.073,"roe":19.540001,"beta":0.365,"low52":82.45,"high52":103.39},"AXON":{"name":"Axon Enterprise, Inc.","pe":332.93332,"pb":12.353436,"div":null,"mcap":40150597632,"revGrowth":38.5,"profitMargin":4.4850003,"roe":4.476,"beta":1.524,"low52":396.41,"high52":885.92},"ADP":{"name":"Automatic Data Processing, Inc.","pe":19.908829,"pb":13.076777,"div":3.19,"mcap":83902889984,"revGrowth":6.2,"profitMargin":19.964000000000002,"roe":73.843,"beta":0.854,"low52":203.26,"high52":329.93},"BKR":{"name":"Baker Hughes Company","pe":21.500002,"pb":2.9288483,"div":1.56,"mcap":55242420224,"revGrowth":0.3,"profitMargin":9.332,"roe":14.552000000000001,"beta":0.879,"low52":33.6,"high52":67},"AVGO":{"name":"Broadcom Inc.","pe":65.61914,"pb":5.6731563,"div":0.76,"mcap":1592925749248,"revGrowth":16.400000000000002,"profitMargin":36.571997,"roe":33.370999,"beta":1.257,"low52":138.1,"high52":414.61},"TECH":{"name":"Bio-Techne Corp","pe":97.11321,"pb":3.9896133,"div":0.6,"mcap":8052651520,"revGrowth":-0.4,"profitMargin":6.672000000000001,"roe":3.966,"beta":1.475,"low52":46.01,"high52":72.16},"BKNG":{"name":"Booking Holdings Inc. Common St","pe":25.476955,"pb":null,"div":0.91,"mcap":135952883712,"revGrowth":16,"profitMargin":20.076999,"roe":null,"beta":1.227,"low52":3765.45,"high52":5839.41},"BIIB":{"name":"Biogen Inc.","pe":21.059225,"pb":1.4867526,"div":null,"mcap":27135651840,"revGrowth":-7.1,"profitMargin":13.071999000000002,"roe":7.394,"beta":0.145,"low52":110.04,"high52":202.41},"CDNS":{"name":"Cadence Design Systems, Inc.","pe":71.50739,"pb":14.414378,"div":null,"mcap":80092176384,"revGrowth":6.2,"profitMargin":20.934999,"roe":21.855,"beta":1.025,"low52":221.56,"high52":376.45},"CHRW":{"name":"C.H. Robinson Worldwide, Inc.","pe":35.58178,"pb":11.027978,"div":1.43,"mcap":20386177024,"revGrowth":-6.5,"profitMargin":3.6170002,"roe":32.911,"beta":0.903,"low52":84.68,"high52":203.34},"CDW":{"name":"CDW Corporation","pe":14.027194,"pb":5.634558,"div":2.12,"mcap":14774377472,"revGrowth":6.3,"profitMargin":4.756,"roe":43.018,"beta":1.046,"low52":113.04,"high52":192.3},"CINF":{"name":"Cincinnati Financial Corporatio","pe":10.825972,"pb":1.6040121,"div":2.16,"mcap":25622919168,"revGrowth":21.8,"profitMargin":18.945,"roe":16.036,"beta":0.636,"low52":123.02,"high52":174.27},"CHTR":{"name":"Charter Communications, Inc.","pe":5.939796,"pb":1.6965222,"div":null,"mcap":27833366528,"revGrowth":-2.3,"profitMargin":9.105,"roe":28.667998,"beta":1.023,"low52":180.38,"high52":437.06},"CTAS":{"name":"Cintas Corporation","pe":41.83117,"pb":17.34518,"div":0.91,"mcap":77664755712,"revGrowth":9.3,"profitMargin":17.584999,"roe":43.396,"beta":0.944,"low52":180.39,"high52":229.24},"CTSH":{"name":"Cognizant Technology Solutions ","pe":13.416667,"pb":1.9517019,"div":2.11,"mcap":29528311808,"revGrowth":4.9,"profitMargin":10.564999,"roe":15.158,"beta":0.983,"low52":60.04,"high52":87.03},"CSCO":{"name":"Cisco Systems, Inc.","pe":27.964027,"pb":6.432768,"div":2.15,"mcap":307158089728,"revGrowth":9.700000000000001,"profitMargin":18.756,"roe":23.754998999999998,"beta":0.829,"low52":52.11,"high52":88.19},"COIN":{"name":"Coinbase Global, Inc. - 3","pe":43.422474,"pb":3.4985154,"div":null,"mcap":52105936896,"revGrowth":-22.2,"profitMargin":18.310000000000002,"roe":10.055,"beta":3.709,"low52":139.36,"high52":444.65},"CME":{"name":"CME Group Inc.","pe":27.884409,"pb":3.8882713,"div":1.71,"mcap":111876669440,"revGrowth":8,"profitMargin":62.583999999999996,"roe":14.75,"beta":0.26,"low52":248.53,"high52":329.16},"CMCSA":{"name":"Comcast Corporation","pe":5.595547,"pb":1.1217734,"div":4.32,"mcap":109899857920,"revGrowth":1.2,"profitMargin":16.166,"roe":21.41,"beta":0.78,"low52":24.133083,"high52":35.35145},"CEG":{"name":"Constellation Energy Corporatio","pe":40.749996,"pb":6.4882946,"div":0.57,"mcap":109158178816,"revGrowth":12.9,"profitMargin":9.081999999999999,"roe":16.364,"beta":1.107,"low52":161.35,"high52":412.7},"COO":{"name":"The Cooper Companies, Inc.","pe":35.58209,"pb":1.6683384,"div":null,"mcap":13954581504,"revGrowth":6.2,"profitMargin":9.668000000000001,"roe":4.868,"beta":1.03,"low52":61.78,"high52":89.83},"COST":{"name":"Costco Wholesale Corporation","pe":52.12052,"pb":13.873724,"div":0.52,"mcap":445165076480,"revGrowth":9.2,"profitMargin":2.9860001,"roe":29.650998,"beta":0.993,"low52":844.06,"high52":1067.08},"CSGP":{"name":"CoStar Group, Inc.","pe":2168,"pb":2.1741965,"div":null,"mcap":18376955904,"revGrowth":26.900000000000002,"profitMargin":0.21600001000000002,"roe":0.08800000000000001,"beta":0.902,"low52":43.16,"high52":97.43},"CPRT":{"name":"Copart, Inc.","pe":21.36478,"pb":3.3428462,"div":null,"mcap":32883560448,"revGrowth":-3.5999999999999996,"profitMargin":33.757999999999996,"roe":17.129,"beta":1.106,"low52":33.81,"high52":63.85},"CRWD":{"name":"CrowdStrike Holdings, Inc.","pe":null,"pb":25.262615,"div":null,"mcap":111980773376,"revGrowth":23.3,"profitMargin":-3.3770002,"roe":-4.137,"beta":1.124,"low52":298,"high52":566.9},"CSX":{"name":"CSX Corporation","pe":25.467533,"pb":5.5442467,"div":1.39,"mcap":72931819520,"revGrowth":-0.8999999999999999,"profitMargin":20.501,"roe":22.511,"beta":1.263,"low52":26.22,"high52":43.35},"DDOG":{"name":"Datadog, Inc.","pe":410.19354,"pb":12.010958,"div":null,"mcap":44995735552,"revGrowth":29.2,"profitMargin":3.144,"roe":3.343,"beta":1.36,"low52":81.63,"high52":201.69},"DXCM":{"name":"DexCom, Inc.","pe":31.224882,"pb":9.14518,"div":null,"mcap":25452462080,"revGrowth":13.100000000000001,"profitMargin":17.939,"roe":34.497002,"beta":1.526,"low52":54.11,"high52":89.98},"DLTR":{"name":"Dollar Tree, Inc.","pe":21.155302,"pb":6.470111,"div":null,"mcap":22783207424,"revGrowth":9.4,"profitMargin":-15.397,"roe":20.066999,"beta":0.692,"low52":61.87,"high52":142.4},"FANG":{"name":"Diamondback Energy, Inc.","pe":30.945805,"pb":1.3625482,"div":2.38,"mcap":50363875328,"revGrowth":-9.4,"profitMargin":11.64,"roe":3.7350000000000003,"beta":0.569,"low52":114,"high52":186.66},"DASH":{"name":"DoorDash, Inc.","pe":75.58411,"pb":7.0009522,"div":null,"mcap":70268461056,"revGrowth":37.7,"profitMargin":6.816,"roe":10.439,"beta":1.902,"low52":155.4,"high52":285.5},"ERIE":{"name":"Erie Indemnity Company","pe":22.755617,"pb":5.5654025,"div":2.41,"mcap":12708006912,"revGrowth":2.9000000000000004,"profitMargin":13.752,"roe":26.194,"beta":0.411,"low52":237.59,"high52":434},"EQIX":{"name":"Equinix, Inc.","pe":70.75528,"pb":6.740889,"div":1.98,"mcap":95451709440,"revGrowth":8.1,"profitMargin":14.579001,"roe":9.722,"beta":1.031,"low52":701.41,"high52":992.9},"EA":{"name":"Electronic Arts Inc.","pe":74.283585,"pb":8.094986,"div":0.38,"mcap":49820508160,"revGrowth":1,"profitMargin":9.307,"roe":10.027,"beta":0.754,"low52":131.15,"high52":204.89},"EBAY":{"name":"eBay Inc.","pe":21.126759,"pb":8.756568,"div":1.35,"mcap":40680001536,"revGrowth":15,"profitMargin":18.297,"roe":40.847,"beta":1.371,"low52":58.71,"high52":101.15},"EXE":{"name":"Expand Energy Corporation","pe":14.244386,"pb":1.3886492,"div":2.94,"mcap":25922144256,"revGrowth":38.3,"profitMargin":15.628,"roe":10.0659996,"beta":0.473,"low52":91.015,"high52":126.621},"EXC":{"name":"Exelon Corporation","pe":18.124542,"pb":1.7569774,"div":3.44,"mcap":50612727808,"revGrowth":-1.0999999999999999,"profitMargin":11.411,"roe":9.936,"beta":0.515,"low52":41.71,"high52":49.88},"EXPE":{"name":"Expedia Group, Inc.","pe":23.205912,"pb":21.718182,"div":0.73,"mcap":27895062528,"revGrowth":11.4,"profitMargin":8.783000000000001,"roe":48.672,"beta":1.41,"low52":130.01,"high52":303.8},"EXPD":{"name":"Expeditors International of Was","pe":23.864094,"pb":8.083547,"div":1.09,"mcap":19061796864,"revGrowth":-3.3000000000000003,"profitMargin":7.321,"roe":35.431000000000004,"beta":1.107,"low52":100.47,"high52":167.19},"FAST":{"name":"Fastenal Company","pe":41.51376,"pb":13.173217,"div":1.93,"mcap":51961868288,"revGrowth":11.1,"profitMargin":15.345,"roe":33.291,"beta":0.862,"low52":35.305,"high52":50.63},"FFIV":{"name":"F5, Inc.","pe":23.42088,"pb":4.5450015,"div":null,"mcap":16059927552,"revGrowth":7.3,"profitMargin":22.455,"roe":20.843999999999998,"beta":0.994,"low52":223.76,"high52":346},"FITB":{"name":"Fifth Third Bancorp","pe":12.348442,"pb":1.4443818,"div":3.55,"mcap":39310290944,"revGrowth":11.600000000000001,"profitMargin":30.186,"roe":12.1929996,"beta":0.967,"low52":32.25,"high52":55.44},"FSLR":{"name":"First Solar, Inc.","pe":13.893107,"pb":2.2226973,"div":null,"mcap":21200359424,"revGrowth":11.1,"profitMargin":29.28,"roe":17.45,"beta":1.648,"low52":116.56,"high52":285.99},"FTNT":{"name":"Fortinet, Inc.","pe":34.876034,"pb":50.660263,"div":null,"mcap":62763905024,"revGrowth":14.799999999999999,"profitMargin":27.256999999999998,"roe":135.71601,"beta":1.04,"low52":70.12,"high52":109.33},"FISV":{"name":"Fiserv, Inc.","pe":8.843848,"pb":null,"div":null,"mcap":30157357056,"revGrowth":null,"profitMargin":null,"roe":null,"beta":null,"low52":55.865,"high52":227},"FOX":{"name":"Fox Corporation","pe":12.585132,"pb":2.0422616,"div":1.06,"mcap":24500494336,"revGrowth":2,"profitMargin":11.407,"roe":16.823,"beta":0.537,"low52":43.18,"high52":68.175},"FOXA":{"name":"Fox Corporation","pe":13.846523,"pb":2.246955,"div":0.97,"mcap":24562368512,"revGrowth":2,"profitMargin":11.407,"roe":16.823,"beta":0.537,"low52":46.42,"high52":76.39},"GEHC":{"name":"GE HealthCare Technologies Inc.","pe":15.457143,"pb":3.0881708,"div":0.19,"mcap":32052881408,"revGrowth":7.1,"profitMargin":10.104000000000001,"roe":22.378,"beta":1.181,"low52":57.65,"high52":89.77},"GEN":{"name":"Gen Digital Inc.","pe":21.649485,"pb":5.4573803,"div":2.35,"mcap":12951037952,"revGrowth":25.8,"profitMargin":12.757,"roe":26.901999999999997,"beta":1.095,"low52":20.935,"high52":32.22},"HAS":{"name":"Hasbro, Inc.","pe":null,"pb":24.794056,"div":2.97,"mcap":13380622336,"revGrowth":31.3,"profitMargin":-6.8580000000000005,"roe":-36.355,"beta":0.526,"low52":49,"high52":106.98},"GILD":{"name":"Gilead Sciences, Inc.","pe":21.449041,"pb":7.9380097,"div":2.25,"mcap":180266680320,"revGrowth":4.7,"profitMargin":28.903000000000002,"roe":40.655,"beta":0.374,"low52":93.37,"high52":157.29},"HON":{"name":"Honeywell International Inc.","pe":33.631123,"pb":10.664351,"div":1.99,"mcap":148366704640,"revGrowth":-3.3000000000000003,"profitMargin":12.629999999999999,"roe":26.136,"beta":0.904,"low52":169.04807,"high52":248.18},"HOLX":{"name":"Hologic, Inc.","pe":31.207468,"pb":3.19852,"div":null,"mcap":16790249472,"revGrowth":2.5,"profitMargin":13.178,"roe":10.8559996,"beta":0.728,"low52":51.9,"high52":75.75},"HSIC":{"name":"Henry Schein, Inc.","pe":22.926605,"pb":2.6747298,"div":null,"mcap":8825829376,"revGrowth":7.7,"profitMargin":3.019,"roe":8.701,"beta":0.852,"low52":60.56,"high52":89.29},"HST":{"name":"Host Hotels & Resorts, Inc.","pe":17,"pb":1.9611957,"div":4.17,"mcap":13028087808,"revGrowth":12.8,"profitMargin":12.475999999999999,"roe":11.489,"beta":1.154,"low52":12.22,"high52":21},"HBAN":{"name":"Huntington Bancshares Incorpora","pe":11.13669,"pb":1.1229597,"div":3.96,"mcap":31421186048,"revGrowth":10.299999999999999,"profitMargin":28.743999999999996,"roe":10.095,"beta":0.967,"low52":11.92,"high52":19.46},"INCY":{"name":"Incyte Corporation","pe":14.357254,"pb":3.5344496,"div":null,"mcap":18315302912,"revGrowth":27.800000000000004,"profitMargin":25.026,"roe":29.87,"beta":0.844,"low52":53.56,"high52":112.29},"IDXX":{"name":"IDEXX Laboratories, Inc.","pe":43.637127,"pb":28.361969,"div":null,"mcap":45611880448,"revGrowth":14.299999999999999,"profitMargin":24.618000000000002,"roe":66.202,"beta":1.696,"low52":356.14,"high52":769.98},"INTC":{"name":"Intel Corporation","pe":null,"pb":1.9773641,"div":null,"mcap":226031828992,"revGrowth":-4.1000000000000005,"profitMargin":-0.505,"roe":0.022000000000000002,"beta":1.375,"low52":17.67,"high52":54.6},"PODD":{"name":"Insulet Corporation","pe":67.64184,"pb":10.966739,"div":null,"mcap":16618348544,"revGrowth":31.2,"profitMargin":9.123999600000001,"roe":18.124000000000002,"beta":1.435,"low52":233.29,"high52":354.88},"IBKR":{"name":"Interactive Brokers Group, Inc.","pe":30.144142,"pb":5.5581393,"div":0.47,"mcap":113764884480,"revGrowth":15.2,"profitMargin":15.847998999999998,"roe":23.507998999999998,"beta":1.251,"low52":32.82,"high52":79.18},"JBHT":{"name":"J.B. Hunt Transport Services, I","pe":32.86438,"pb":5.336712,"div":0.86,"mcap":19151265792,"revGrowth":-1.6,"profitMargin":4.986,"roe":15.787,"beta":1.207,"low52":122.79,"high52":236},"ISRG":{"name":"Intuitive Surgical, Inc.","pe":60.74398,"pb":9.548352,"div":null,"mcap":170203267072,"revGrowth":18.8,"profitMargin":28.375998000000003,"roe":16.690001,"beta":1.68,"low52":425,"high52":603.88},"INTU":{"name":"Intuit Inc.","pe":28.310345,"pb":6.3366294,"div":1.05,"mcap":121085403136,"revGrowth":41,"profitMargin":21.57,"roe":23.457000999999998,"beta":1.282,"low52":349,"high52":813.7},"JKHY":{"name":"Jack Henry & Associates, Inc.","pe":23.899426,"pb":5.4489465,"div":1.41,"mcap":12039212032,"revGrowth":7.9,"profitMargin":20.587,"roe":24.284,"beta":0.726,"low52":144.12,"high52":193.39},"KMB":{"name":"Kimberly-Clark Corporation","pe":20.127571,"pb":21.61768,"div":5.12,"mcap":32468645888,"revGrowth":-0.6,"profitMargin":12.2880004,"roe":126.603,"beta":0.234,"low52":96.26,"high52":147.12},"KDP":{"name":"Keurig Dr Pepper Inc.","pe":17.601307,"pb":1.4339722,"div":3.33,"mcap":36588879872,"revGrowth":10.5,"profitMargin":12.522,"roe":8.356,"beta":0.303,"low52":25.03,"high52":36.12},"KHC":{"name":"The Kraft Heinz Company","pe":null,"pb":0.63457334,"div":6.91,"mcap":26433019904,"revGrowth":-3.4000000000000004,"profitMargin":-23.437999,"roe":-12.837000000000002,"beta":0.01,"low52":21.985,"high52":31.15},"KLAC":{"name":"KLA Corporation","pe":41.119312,"pb":33.820477,"div":0.52,"mcap":185206685696,"revGrowth":7.199999999999999,"profitMargin":35.764,"roe":100.726,"beta":1.448,"low52":551.33,"high52":1693.35},"LIN":{"name":"Linde plc","pe":33.612747,"pb":5.9457326,"div":1.33,"mcap":227253125120,"revGrowth":5.800000000000001,"profitMargin":20.297001,"roe":17.817,"beta":0.797,"low52":387.78,"high52":510.65},"LRCX":{"name":"Lam Research Corporation","pe":42.92828,"pb":25.834259,"div":0.48,"mcap":263125729280,"revGrowth":22.1,"profitMargin":30.220000000000002,"roe":65.565,"beta":1.787,"low52":56.32,"high52":256.68},"META":{"name":"Meta Platforms, Inc.","pe":27.145044,"pb":7.432192,"div":0.32,"mcap":1614311718912,"revGrowth":23.799999999999997,"profitMargin":30.084,"roe":30.238,"beta":1.279,"low52":479.8,"high52":796.25},"MAR":{"name":"Marriott International","pe":33.295788,"pb":null,"div":0.82,"mcap":83817267200,"revGrowth":6.3,"profitMargin":37.252998,"roe":null,"beta":1.101,"low52":205.4,"high52":370},"MTCH":{"name":"Match Group, Inc.","pe":12.6470585,"pb":null,"div":2.52,"mcap":7105712640,"revGrowth":2.1,"profitMargin":17.591,"roe":null,"beta":1.341,"low52":26.39,"high52":39.2},"LULU":{"name":"lululemon athletica inc.","pe":11.008351,"pb":4.1429434,"div":null,"mcap":18759618560,"revGrowth":7.1,"profitMargin":15.720001,"roe":41.016999999999996,"beta":1.013,"low52":157.95,"high52":348.5},"MU":{"name":"Micron Technology, Inc.","pe":38.56803,"pb":7.76146,"div":0.11,"mcap":456225193984,"revGrowth":56.699999999999996,"profitMargin":28.145999999999997,"roe":22.554001,"beta":1.542,"low52":61.54,"high52":455.5},"MCHP":{"name":"Microchip Technology Incorporat","pe":null,"pb":5.174462,"div":2.77,"mcap":33945427968,"revGrowth":15.6,"profitMargin":-1.574,"roe":-1.0930001,"beta":1.447,"low52":34.13,"high52":83.35},"MRNA":{"name":"Moderna, Inc.","pe":null,"pb":2.431903,"div":null,"mcap":21085814784,"revGrowth":-29.799999999999997,"profitMargin":-145.16499000000002,"roe":-28.868,"beta":1.352,"low52":22.28,"high52":59.55},"MDLZ":{"name":"Mondelez International, Inc.","pe":28.756613,"pb":2.6957989,"div":3.61,"mcap":70130982912,"revGrowth":9.3,"profitMargin":6.36,"roe":9.332,"beta":0.366,"low52":51.2,"high52":71.15},"MPWR":{"name":"Monolithic Power Systems, Inc.","pe":80.45759,"pb":14.26002,"div":0.75,"mcap":50782117888,"revGrowth":20.8,"profitMargin":22.272,"roe":19.173999,"beta":1.49,"low52":438.86,"high52":1256.22},"MSFT":{"name":"Microsoft Corporation","pe":25.131956,"pb":7.6377454,"div":0.9,"mcap":2986775150592,"revGrowth":16.7,"profitMargin":39.044000000000004,"roe":34.390998,"beta":1.108,"low52":344.79,"high52":555.45},"NTAP":{"name":"NetApp, Inc.","pe":16.263422,"pb":16.574898,"div":2.13,"mcap":19197990912,"revGrowth":4.3999999999999995,"profitMargin":18.065001,"roe":112.58699999999999,"beta":1.349,"low52":71.84,"high52":126.66},"MNST":{"name":"Monster Beverage Corporation","pe":39.685566,"pb":9.123118,"div":null,"mcap":75317059584,"revGrowth":17.599999999999998,"profitMargin":22.973,"roe":26.815,"beta":0.437,"low52":54.22,"high52":87.38},"NFLX":{"name":"Netflix, Inc.","pe":37.27668,"pb":14.960342,"div":null,"mcap":400052584448,"revGrowth":17.599999999999998,"profitMargin":24.304001,"roe":42.762001999999995,"beta":1.714,"low52":75.01,"high52":134.115},"NWS":{"name":"News Corporation","pe":34.62338,"pb":1.6908733,"div":0.73,"mcap":14732077056,"revGrowth":5.5,"profitMargin":13.346,"roe":6.329,"beta":0.969,"low52":25.49,"high52":35.58},"NDAQ":{"name":"Nasdaq, Inc.","pe":27.203884,"pb":3.9179678,"div":1.26,"mcap":47997878272,"revGrowth":13.4,"profitMargin":34.063998,"roe":15.253,"beta":1.035,"low52":64.84,"high52":101.79},"NWSA":{"name":"News Corporation","pe":30.623377,"pb":1.4955286,"div":0.83,"mcap":13514177536,"revGrowth":5.5,"profitMargin":13.346,"roe":6.329,"beta":0.969,"low52":22.2,"high52":31.61},"NTRS":{"name":"Northern Trust Corporation","pe":15.709383,"pb":2.1191216,"div":2.24,"mcap":25514158080,"revGrowth":8.200000000000001,"profitMargin":21.459,"roe":13.492,"beta":1.266,"low52":81.62,"high52":157.6},"NDSN":{"name":"Nordson Corporation","pe":28.940542,"pb":4.798437,"div":1.2,"mcap":14933270528,"revGrowth":8.799999999999999,"profitMargin":18.386,"roe":17.473,"beta":0.99,"low52":165.03,"high52":305.28},"NVDA":{"name":"NVIDIA Corporation","pe":37.451942,"pb":28.29728,"div":0.02,"mcap":4451217702912,"revGrowth":73.2,"profitMargin":55.603004,"roe":101.485,"beta":2.375,"low52":86.62,"high52":212.19},"NXPI":{"name":"NXP Semiconductors N.V.","pe":24.052832,"pb":4.808147,"div":2.03,"mcap":48319926272,"revGrowth":7.199999999999999,"profitMargin":16.472,"roe":20.698999,"beta":1.44,"low52":148.09,"high52":256.36},"ODFL":{"name":"Old Dominion Freight Line, Inc.","pe":36.488613,"pb":8.525954,"div":0.61,"mcap":36851507200,"revGrowth":-5.7,"profitMargin":18.625,"roe":23.93,"beta":1.219,"low52":126.01,"high52":221.63},"ON":{"name":"ON Semiconductor Corporation","pe":198.93103,"pb":2.9827826,"div":null,"mcap":23213209600,"revGrowth":-11.200000000000001,"profitMargin":2.0179998,"roe":1.498,"beta":1.53,"low52":31.04,"high52":73.76},"ORLY":{"name":"O'Reilly Automotive, Inc.","pe":31.306398,"pb":null,"div":null,"mcap":78484799488,"revGrowth":7.8,"profitMargin":14.274000000000001,"roe":null,"beta":0.599,"low52":85.83133,"high52":108.72},"PCAR":{"name":"PACCAR Inc.","pe":25.902437,"pb":3.1861448,"div":1.12,"mcap":61434986496,"revGrowth":-13.700000000000001,"profitMargin":8.352,"roe":12.922,"beta":1.046,"low52":84.65,"high52":131.88},"PANW":{"name":"Palo Alto Networks, Inc.","pe":93.4,"pb":12.5828905,"div":null,"mcap":137185918976,"revGrowth":14.899999999999999,"profitMargin":12.956999,"roe":16.259001,"beta":0.822,"low52":139.57,"high52":223.61},"PLTR":{"name":"Palantir Technologies Inc.","pe":239.84375,"pb":49.69246,"div":null,"mcap":367122219008,"revGrowth":70,"profitMargin":36.310002000000004,"roe":25.983,"beta":1.739,"low52":66.12,"high52":207.52},"PSKY":{"name":"Paramount Skydance Corporation","pe":326.6667,"pb":0.942036,"div":2.01,"mcap":10895063040,"revGrowth":2.1,"profitMargin":-2.149,"roe":-0.8630000000000001,"beta":1.259,"low52":9.79,"high52":20.86},"PAYX":{"name":"Paychex, Inc.","pe":20.739819,"pb":8.480895,"div":4.6,"mcap":32906545152,"revGrowth":18.3,"profitMargin":26.445999999999998,"roe":40.884998,"beta":0.889,"low52":86.89,"high52":161.24},"PYPL":{"name":"PayPal Holdings, Inc.","pe":8.199631,"pb":2.0148067,"div":1.23,"mcap":41505521664,"revGrowth":3.6999999999999997,"profitMargin":15.775,"roe":25.732001999999998,"beta":1.459,"low52":38.46,"high52":79.5},"PEP":{"name":"Pepsico, Inc.","pe":26.432611,"pb":10.6417465,"div":3.55,"mcap":217215664128,"revGrowth":5.6000000000000005,"profitMargin":8.773,"roe":42.848000000000006,"beta":0.375,"low52":127.6,"high52":171.48},"POOL":{"name":"Pool Corporation","pe":18.79558,"pb":6.2994165,"div":2.37,"mcap":7603364352,"revGrowth":-0.5,"profitMargin":7.683,"roe":33.058998,"beta":1.247,"low52":203.8,"high52":345},"PTC":{"name":"PTC Inc.","pe":23.189987,"pb":4.872057,"div":null,"mcap":18737129472,"revGrowth":21.4,"profitMargin":28.612,"roe":23.141001,"beta":1.042,"low52":133.38,"high52":219.69},"PFG":{"name":"Principal Financial Group Inc","pe":16.417143,"pb":1.5765791,"div":3.55,"mcap":18935412736,"revGrowth":-3.6999999999999997,"profitMargin":7.5840004,"roe":10.524000000000001,"beta":0.876,"low52":68.39,"high52":97.88},"QCOM":{"name":"QUALCOMM Incorporated","pe":26.44153,"pb":6.104827,"div":2.65,"mcap":140074106880,"revGrowth":5,"profitMargin":11.958,"roe":21.48,"beta":1.267,"low52":120.8,"high52":205.95},"REGN":{"name":"Regeneron Pharmaceuticals, Inc.","pe":18.016651,"pb":2.4507298,"div":0.49,"mcap":78931468288,"revGrowth":2.5,"profitMargin":31.409,"roe":14.864999000000001,"beta":0.397,"low52":476.49,"high52":821.11},"REG":{"name":"Regency Centers Corporation","pe":27.145391,"pb":2.089703,"div":3.89,"mcap":14295311360,"revGrowth":8.9,"profitMargin":32.740003,"roe":7.683,"beta":0.926,"low52":63.44,"high52":79.9},"ROP":{"name":"Roper Technologies, Inc.","pe":24.421127,"pb":1.8593504,"div":1.03,"mcap":37326508032,"revGrowth":9.700000000000001,"profitMargin":19.441,"roe":7.929,"beta":0.927,"low52":313.07,"high52":594.25},"ROST":{"name":"Ross Stores, Inc.","pe":31.697886,"pb":10.843324,"div":0.84,"mcap":68245479424,"revGrowth":12.2,"profitMargin":9.428999600000001,"roe":36.678,"beta":0.98,"low52":122.36,"high52":216.8},"HOOD":{"name":"Robinhood Markets, Inc.","pe":37.13171,"pb":7.5061636,"div":null,"mcap":68531478528,"revGrowth":26.5,"profitMargin":42.097,"roe":21.993999,"beta":2.479,"low52":29.66,"high52":153.86},"SNDK":{"name":"Sandisk Corporation","pe":null,"pb":8.967496,"div":null,"mcap":91338440704,"revGrowth":61.199999999999996,"profitMargin":-11.659,"roe":-9.372,"beta":null,"low52":27.885,"high52":725},"STX":{"name":"Seagate Technology Holdings PLC","pe":42.30543,"pb":177.74715,"div":0.77,"mcap":83781009408,"revGrowth":21.5,"profitMargin":19.586000000000002,"roe":null,"beta":1.648,"low52":63.19,"high52":459.84},"SBAC":{"name":"SBA Communications Corporation","pe":18.830784,"pb":null,"div":2.65,"mcap":19517462528,"revGrowth":3.6999999999999997,"profitMargin":37.427,"roe":null,"beta":0.833,"low52":177.49,"high52":245.16},"SBUX":{"name":"Starbucks Corporation","pe":83.48333,"pb":null,"div":2.44,"mcap":114135072768,"revGrowth":5.5,"profitMargin":3.6310002,"roe":null,"beta":0.928,"low52":75.5,"high52":104.82},"SWKS":{"name":"Skyworks Solutions, Inc.","pe":21.149426,"pb":1.4368266,"div":5.13,"mcap":8300623872,"revGrowth":-3.1,"profitMargin":9.7270004,"roe":6.485,"beta":1.297,"low52":47.93,"high52":90.9},"STLD":{"name":"Steel Dynamics, Inc.","pe":21.8875,"pb":2.8333793,"div":1.1,"mcap":25564028928,"revGrowth":14.000000000000002,"profitMargin":6.523,"roe":13.284001,"beta":1.395,"low52":103.17,"high52":208.47},"SMCI":{"name":"Super Micro Computer, Inc.","pe":22.554745,"pb":2.6469076,"div":null,"mcap":18554890240,"revGrowth":123.4,"profitMargin":3.1109999999999998,"roe":13.193,"beta":1.487,"low52":27.6,"high52":62.36},"SNPS":{"name":"Synopsys, Inc.","pe":64.51772,"pb":2.624118,"div":null,"mcap":80210853888,"revGrowth":65.5,"profitMargin":13.755999999999998,"roe":5.5430003,"beta":1.156,"low52":365.74,"high52":651.73},"TMUS":{"name":"T-Mobile US, Inc.","pe":22.07724,"pb":4.0081143,"div":1.91,"mcap":239774253056,"revGrowth":11.3,"profitMargin":12.4469995,"roe":18.177,"beta":0.412,"low52":181.36,"high52":272.6},"TROW":{"name":"T. Rowe Price Group, Inc.","pe":9.51407,"pb":1.7692401,"div":5.82,"mcap":19185215488,"revGrowth":6,"profitMargin":28.532999999999998,"roe":18.791,"beta":1.553,"low52":77.85,"high52":118.22},"TTWO":{"name":"Take-Two Interactive Software, ","pe":null,"pb":11.077575,"div":null,"mcap":38738706432,"revGrowth":24.9,"profitMargin":-60.449003999999995,"roe":-86.217004,"beta":0.958,"low52":188.56,"high52":264.79},"TTD":{"name":"The Trade Desk, Inc.","pe":29.472223,"pb":5.0814176,"div":null,"mcap":12625291264,"revGrowth":14.299999999999999,"profitMargin":15.306000000000001,"roe":16.317,"beta":1.19,"low52":21.08,"high52":91.45},"TSLA":{"name":"Tesla, Inc.","pe":372.65097,"pb":18.03946,"div":null,"mcap":1482248159232,"revGrowth":-3.1,"profitMargin":4.0009998,"roe":4.9250003,"beta":1.926,"low52":214.25,"high52":498.83},"TXN":{"name":"Texas Instruments Incorporated","pe":34.93566,"pb":10.592465,"div":2.86,"mcap":173033570304,"revGrowth":10.4,"profitMargin":28.283,"roe":30.148000000000003,"beta":0.979,"low52":139.95,"high52":231.32},"TRMB":{"name":"Trimble Inc.","pe":37.59091,"pb":2.6752934,"div":null,"mcap":15740851200,"revGrowth":-1.4000000000000001,"profitMargin":11.8190005,"roe":7.321999999999999,"beta":1.574,"low52":52.91,"high52":87.5},"TER":{"name":"Teradyne, Inc.","pe":82.596535,"pb":16.001898,"div":0.17,"mcap":44870500352,"revGrowth":43.9,"profitMargin":17.368001,"roe":19.733999999999998,"beta":1.801,"low52":65.77,"high52":344.92},"TSCO":{"name":"Tractor Supply Company","pe":23.349514,"pb":9.820335,"div":1.94,"mcap":25317496832,"revGrowth":3.3000000000000003,"profitMargin":7.061000000000001,"roe":45.183997999999995,"beta":0.698,"low52":46.85,"high52":63.99},"ULTA":{"name":"Ulta Beauty, Inc.","pe":23.990015,"pb":10.558429,"div":null,"mcap":28010526720,"revGrowth":12.9,"profitMargin":9.932,"roe":47.967,"beta":0.847,"low52":323.37,"high52":714.97},"VRSN":{"name":"VeriSign, Inc.","pe":26.660997,"pb":null,"div":1.37,"mcap":21798404096,"revGrowth":7.6,"profitMargin":49.842998,"roe":null,"beta":0.765,"low52":208.86,"high52":310.6},"VRSK":{"name":"Verisk Analytics, Inc.","pe":30.561728,"pb":88.68786,"div":0.98,"mcap":27601344512,"revGrowth":null,"profitMargin":29.56,"roe":437.94603,"beta":0.797,"low52":164.6,"high52":322.92},"UAL":{"name":"United Airlines Holdings, Inc.","pe":8.483334,"pb":1.8315554,"div":null,"mcap":28013047808,"revGrowth":4.8,"profitMargin":5.6760002,"roe":23.987,"beta":1.247,"low52":52,"high52":119.21},"WMT":{"name":"Walmart Inc.","pe":45.908424,"pb":10.028808,"div":0.8,"mcap":999237484544,"revGrowth":5.6000000000000005,"profitMargin":3.0700000000000003,"roe":21.847,"beta":0.657,"low52":79.81,"high52":134.69},"WBD":{"name":"Warner Bros. Discovery, Inc. - ","pe":94.58621,"pb":1.8939446,"div":null,"mcap":68054228992,"revGrowth":-5.7,"profitMargin":1.949,"roe":2.078,"beta":1.675,"low52":7.52,"high52":30},"VRTX":{"name":"Vertex Pharmaceuticals Incorpor","pe":31.229914,"pb":6.5060554,"div":null,"mcap":121445023744,"revGrowth":9.5,"profitMargin":32.939997,"roe":22.541,"beta":0.315,"low52":362.5,"high52":519.68},"VTRS":{"name":"Viatris Inc.","pe":null,"pb":1.0798967,"div":3.44,"mcap":15894424576,"revGrowth":5,"profitMargin":-24.58,"roe":-21.080999,"beta":0.796,"low52":6.85,"high52":16.47},"WYNN":{"name":"Wynn Resorts, Limited","pe":31.461782,"pb":null,"div":1,"mcap":10302146560,"revGrowth":1.5,"profitMargin":4.585999999999999,"roe":null,"beta":1.034,"low52":65.25,"high52":134.72},"WDAY":{"name":"Workday, Inc.","pe":51.791508,"pb":4.4535193,"div":null,"mcap":35815378944,"revGrowth":14.499999999999998,"profitMargin":7.255000000000001,"roe":8.231,"beta":1.167,"low52":117.76,"high52":276},"WTW":{"name":"Willis Towers Watson Public Lim","pe":17.627922,"pb":3.4168584,"div":1.32,"mcap":27444426752,"revGrowth":-3.3000000000000003,"profitMargin":16.533001,"roe":20.076,"beta":0.622,"low52":275.6,"high52":352.79},"WDC":{"name":"Western Digital Corporation","pe":24.662888,"pb":12.487687,"div":0.19,"mcap":89297256448,"revGrowth":null,"profitMargin":35.644,"roe":41.126000000000005,"beta":1.853,"low52":28.83,"high52":309.9},"ZBRA":{"name":"Zebra Technologies Corporation","pe":24.944986,"pb":2.8203568,"div":null,"mcap":10337221632,"revGrowth":10.6,"profitMargin":7.7649995999999994,"roe":11.6809994,"beta":1.679,"low52":203.7,"high52":352.66},"XEL":{"name":"Xcel Energy Inc.","pe":23.631578,"pb":2.1347632,"div":2.93,"mcap":50421723136,"revGrowth":14.099999999999998,"profitMargin":13.757,"roe":9.358,"beta":0.426,"low52":65.21,"high52":84.23}};
+
+    let chartInstance = null;
+
+    function formatNumber(num, isPercent = false, isCurrency = false, isCap = false) {
+      if (num === null || num === undefined || isNaN(num)) return 'N/A';
+
+      if (isCap) {
+        if (num >= 1e12) return '$' + (num / 1e12).toFixed(2) + 'T';
+        if (num >= 1e9) return '$' + (num / 1e9).toFixed(2) + 'B';
+        if (num >= 1e6) return '$' + (num / 1e6).toFixed(2) + 'M';
+        return '$' + num.toLocaleString();
+      }
+
+      if (isPercent) return num.toFixed(2) + '%';
+      if (isCurrency) return '$' + num.toFixed(2);
+
+      return num.toLocaleString(undefined, { maximumFractionDigits: 2 });
+    }
+
+    function highlightWinner(el1, el2, val1, val2, lowerIsBetter = false) {
+      el1.classList.remove('winner', 'loser');
+      el2.classList.remove('winner', 'loser');
+
+      if (val1 === null || val2 === null || isNaN(val1) || isNaN(val2)) return;
+
+      if (val1 === val2) return;
+
+      const v1Wins = lowerIsBetter ? (val1 < val2) : (val1 > val2);
+
+      if (v1Wins) {
+        el1.classList.add('winner');
+        el2.classList.add('loser');
+      } else {
+        el1.classList.add('loser');
+        el2.classList.add('winner');
+      }
+    }
+
+    function compareStocks() {
+      const t1 = document.getElementById('ticker1').value.toUpperCase().trim();
+      const t2 = document.getElementById('ticker2').value.toUpperCase().trim();
+      const errorMsg = document.getElementById('errorMsg');
+
+      if (!t1 || !t2) {
+        errorMsg.textContent = 'Please enter two valid ticker symbols.';
+        errorMsg.style.display = 'block';
+        return;
+      }
+
+      const data1 = stockData[t1];
+      const data2 = stockData[t2];
+
+      if (!data1 || !data2) {
+        const missing = [];
+        if (!data1) missing.push(t1);
+        if (!data2) missing.push(t2);
+        errorMsg.textContent = `Data not found for: ${missing.join(', ')}. Please try major US equities.`;
+        errorMsg.style.display = 'block';
+        return;
+      }
+
+      errorMsg.style.display = 'none';
+
+      // Populate Card 1
+      document.getElementById('t1-ticker').textContent = t1;
+      document.getElementById('t1-name').textContent = data1.name || t1;
+
+      const pe1 = document.getElementById('t1-pe');
+      const pb1 = document.getElementById('t1-pb');
+      const div1 = document.getElementById('t1-div');
+      const mcap1 = document.getElementById('t1-mcap');
+      const rev1 = document.getElementById('t1-rev');
+      const margin1 = document.getElementById('t1-margin');
+      const roe1 = document.getElementById('t1-roe');
+      const beta1 = document.getElementById('t1-beta');
+      const range1 = document.getElementById('t1-range');
+
+      pe1.textContent = formatNumber(data1.pe);
+      pb1.textContent = formatNumber(data1.pb);
+      div1.textContent = formatNumber(data1.div, true);
+      mcap1.textContent = formatNumber(data1.mcap, false, false, true);
+      rev1.textContent = formatNumber(data1.revGrowth, true);
+      margin1.textContent = formatNumber(data1.profitMargin, true);
+      roe1.textContent = formatNumber(data1.roe, true);
+      beta1.textContent = formatNumber(data1.beta);
+      range1.textContent = `${formatNumber(data1.low52, false, true)} - ${formatNumber(data1.high52, false, true)}`;
+
+      // Populate Card 2
+      document.getElementById('t2-ticker').textContent = t2;
+      document.getElementById('t2-name').textContent = data2.name || t2;
+
+      const pe2 = document.getElementById('t2-pe');
+      const pb2 = document.getElementById('t2-pb');
+      const div2 = document.getElementById('t2-div');
+      const mcap2 = document.getElementById('t2-mcap');
+      const rev2 = document.getElementById('t2-rev');
+      const margin2 = document.getElementById('t2-margin');
+      const roe2 = document.getElementById('t2-roe');
+      const beta2 = document.getElementById('t2-beta');
+      const range2 = document.getElementById('t2-range');
+
+      pe2.textContent = formatNumber(data2.pe);
+      pb2.textContent = formatNumber(data2.pb);
+      div2.textContent = formatNumber(data2.div, true);
+      mcap2.textContent = formatNumber(data2.mcap, false, false, true);
+      rev2.textContent = formatNumber(data2.revGrowth, true);
+      margin2.textContent = formatNumber(data2.profitMargin, true);
+      roe2.textContent = formatNumber(data2.roe, true);
+      beta2.textContent = formatNumber(data2.beta);
+      range2.textContent = `${formatNumber(data2.low52, false, true)} - ${formatNumber(data2.high52, false, true)}`;
+
+      // Highlight winners (skip market cap, beta, range as they are subjective)
+      highlightWinner(pe1, pe2, data1.pe, data2.pe, true); // Lower PE better
+      highlightWinner(pb1, pb2, data1.pb, data2.pb, true); // Lower PB better
+      highlightWinner(div1, div2, data1.div, data2.div, false); // Higher Div better
+      highlightWinner(rev1, rev2, data1.revGrowth, data2.revGrowth, false); // Higher Rev Growth better
+      highlightWinner(margin1, margin2, data1.profitMargin, data2.profitMargin, false); // Higher Margin better
+      highlightWinner(roe1, roe2, data1.roe, data2.roe, false); // Higher ROE better
+
+      // Show cards
+      document.getElementById('card1').classList.add('active');
+      document.getElementById('card2').classList.add('active');
+
+      updateChart(t1, t2, data1, data2);
+    }
+
+    function normalize(val, max) {
+      if (val === null || val === undefined || max === null || max === 0) return 0;
+      return Math.max(0, Math.min(100, (val / max) * 100));
+    }
+
+    function updateChart(t1, t2, d1, d2) {
+      document.getElementById('chartSection').classList.add('active');
+
+      const ctx = document.getElementById('radarChart').getContext('2d');
+
+      // Calculate relative scores (0-100) for radar chart
+      // For PE/PB, lower is better, so we invert.
+
+      const maxDiv = Math.max(d1.div || 0.1, d2.div || 0.1);
+      const maxRev = Math.max(d1.revGrowth || 0.1, d2.revGrowth || 0.1);
+      const maxMargin = Math.max(d1.profitMargin || 0.1, d2.profitMargin || 0.1);
+      const maxRoe = Math.max(d1.roe || 0.1, d2.roe || 0.1);
+
+      // Invert valuation metrics: score = (min / val) * 100
+      const minPe = Math.min(d1.pe || 100, d2.pe || 100);
+      const minPb = Math.min(d1.pb || 100, d2.pb || 100);
+
+      const s1 = [
+        d1.pe ? (minPe / d1.pe) * 100 : 0,
+        d1.pb ? (minPb / d1.pb) * 100 : 0,
+        normalize(d1.div, maxDiv),
+        normalize(d1.revGrowth, maxRev),
+        normalize(d1.profitMargin, maxMargin),
+        normalize(d1.roe, maxRoe)
+      ];
+
+      const s2 = [
+        d2.pe ? (minPe / d2.pe) * 100 : 0,
+        d2.pb ? (minPb / d2.pb) * 100 : 0,
+        normalize(d2.div, maxDiv),
+        normalize(d2.revGrowth, maxRev),
+        normalize(d2.profitMargin, maxMargin),
+        normalize(d2.roe, maxRoe)
+      ];
+
+      if (chartInstance) {
+        chartInstance.destroy();
+      }
+
+      Chart.defaults.color = '#8a9cbd';
+      Chart.defaults.font.family = "'Inter', sans-serif";
+
+      chartInstance = new Chart(ctx, {
+        type: 'radar',
+        data: {
+          labels: ['Value (P/E)', 'Value (P/B)', 'Yield', 'Growth', 'Margin', 'ROE'],
+          datasets: [
+            {
+              label: t1,
+              data: s1,
+              backgroundColor: 'rgba(74, 143, 231, 0.2)',
+              borderColor: '#4a8fe7',
+              pointBackgroundColor: '#4a8fe7',
+              borderWidth: 2
+            },
+            {
+              label: t2,
+              data: s2,
+              backgroundColor: 'rgba(231, 74, 107, 0.2)',
+              borderColor: '#e74a6b',
+              pointBackgroundColor: '#e74a6b',
+              borderWidth: 2
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            r: {
+              angleLines: { color: '#152040' },
+              grid: { color: '#152040' },
+              pointLabels: { color: '#c8d0de', font: { size: 12, weight: '600' } },
+              ticks: { display: false, min: 0, max: 100 }
+            }
+          },
+          plugins: {
+            legend: {
+              position: 'top',
+              labels: { color: '#fff', font: { size: 14, weight: '700' } }
+            },
+            tooltip: {
+              callbacks: {
+                label: function(context) {
+                  return context.dataset.label + ' Relative Score: ' + Math.round(context.raw);
+                }
+              }
+            }
+          }
+        }
+      });
+    }
+
+    document.getElementById('compareBtn').addEventListener('click', compareStocks);
+    document.getElementById('ticker1').addEventListener('keypress', (e) => { if(e.key === 'Enter') compareStocks(); });
+    document.getElementById('ticker2').addEventListener('keypress', (e) => { if(e.key === 'Enter') compareStocks(); });
+
+    // Table Functionality
+    let currentSortColumn = -1;
+    let sortAscending = true;
+
+    function initTable() {
+      const tbody = document.getElementById('tableBody');
+      const searchInput = document.getElementById('tableSearch');
+
+      if (!tbody || typeof stockData !== 'object' || Object.keys(stockData).length === 0) return;
+
+      document.getElementById('tableSection').classList.add('active');
+
+      const rowsHTML = Object.entries(stockData).map(([ticker, data]) => {
+        return `
+          <tr data-ticker="${ticker}" data-name="${data.name || ''}">
+            <td class="mono" style="color: #4a8fe7; cursor: pointer;" onclick="setCompareTicker('${ticker}')">${ticker}</td>
+            <td>${data.name || 'N/A'}</td>
+            <td class="mono" data-val="${data.pe || 99999}">${formatNumber(data.pe)}</td>
+            <td class="mono" data-val="${data.pb || 99999}">${formatNumber(data.pb)}</td>
+            <td class="mono" data-val="${data.div || -99999}">${formatNumber(data.div, true)}</td>
+            <td class="mono" data-val="${data.mcap || -99999}">${formatNumber(data.mcap, false, false, true)}</td>
+            <td class="mono" data-val="${data.revGrowth || -99999}">${formatNumber(data.revGrowth, true)}</td>
+            <td class="mono" data-val="${data.profitMargin || -99999}">${formatNumber(data.profitMargin, true)}</td>
+            <td class="mono" data-val="${data.roe || -99999}">${formatNumber(data.roe, true)}</td>
+          </tr>
+        `;
+      }).join('');
+
+      tbody.innerHTML = rowsHTML;
+
+      searchInput.addEventListener('input', function(e) {
+        const term = e.target.value.toLowerCase();
+        const rows = tbody.querySelectorAll('tr');
+        rows.forEach(row => {
+          const ticker = row.getAttribute('data-ticker').toLowerCase();
+          const name = row.getAttribute('data-name').toLowerCase();
+          if (ticker.includes(term) || name.includes(term)) {
+            row.style.display = '';
+          } else {
+            row.style.display = 'none';
+          }
+        });
+      });
+    }
+
+    function sortTable(colIndex) {
+      const table = document.getElementById("dataTable");
+      const tbody = document.getElementById("tableBody");
+      const rows = Array.from(tbody.querySelectorAll("tr"));
+
+      if (currentSortColumn === colIndex) {
+        sortAscending = !sortAscending;
+      } else {
+        sortAscending = true;
+        currentSortColumn = colIndex;
+      }
+
+      rows.sort((a, b) => {
+        let valA, valB;
+
+        if (colIndex === 0 || colIndex === 1) { // Text columns
+          valA = a.cells[colIndex].textContent.trim().toLowerCase();
+          valB = b.cells[colIndex].textContent.trim().toLowerCase();
+        } else { // Numeric data-val
+          valA = parseFloat(a.cells[colIndex].getAttribute('data-val'));
+          valB = parseFloat(b.cells[colIndex].getAttribute('data-val'));
+
+          if (isNaN(valA)) valA = sortAscending ? 999999 : -999999;
+          if (isNaN(valB)) valB = sortAscending ? 999999 : -999999;
+        }
+
+        if (valA < valB) return sortAscending ? -1 : 1;
+        if (valA > valB) return sortAscending ? 1 : -1;
+        return 0;
+      });
+
+      rows.forEach(row => tbody.appendChild(row));
+    }
+
+    function setCompareTicker(ticker) {
+      const t1 = document.getElementById('ticker1');
+      const t2 = document.getElementById('ticker2');
+      if (t1.value === '') {
+        t1.value = ticker;
+      } else if (t2.value === '') {
+        t2.value = ticker;
+      } else {
+        t1.value = t2.value;
+        t2.value = ticker;
+      }
+      compareStocks();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Initial setup if data exists and is not just a string placeholder
+    if (typeof stockData === 'object' && Object.keys(stockData).length > 0) {
+      initTable();
+    }
+  </script>
+</body>
+</html>
